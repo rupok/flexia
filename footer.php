@@ -14,10 +14,10 @@
 	</div><!-- #content -->
 
 	<?php get_sidebar(); ?>
-	
+
 	<footer id="flexia-colophon-top" class="footer-widget-area">
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	</footer>
+	</footer><!-- #colophon top -->
 
 	<footer id="flexia-colophon-bottom" class="site-footer">
 		<div class="site-info">
@@ -31,9 +31,7 @@
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'flexia' ), 'flexia', '<a href="https://codetic.net/">Codetic</a>' );
 			?>
 		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-
-
+	</footer><!-- #colophon bottom -->
 
 </div><!-- #page -->
 
