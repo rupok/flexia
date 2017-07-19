@@ -1,8 +1,10 @@
+@charset "UTF-8";
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Normalize
 # Typography
+# Font Awesome
 # Layout
 # Elements
 # Forms
@@ -21,6 +23,10 @@
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Font Awesome
+--------------------------------------------------------------*/
+@import "https://use.fontawesome.com/c895056382.css";
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -244,7 +250,7 @@ input,
 select,
 optgroup,
 textarea {
-  color: #404040;
+  color: #4d4d4d;
   font-family: sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -253,6 +259,31 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.75em 0;
+}
+
+h3 {
+  font-size: 1.17em;
+  margin: 0.83em 0;
+}
+
+h5 {
+  font-size: .83em;
+  margin: 1.5em 0;
+}
+
+h6 {
+  font-size: .75em;
+  margin: 1.67em 0;
 }
 
 p {
@@ -264,7 +295,26 @@ dfn, cite, em, i {
 }
 
 blockquote {
-  margin: 0 1.5em;
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "“" "”" "‘" "’";
+  font-style: italic;
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+  font-size: 15px;
 }
 
 address {
@@ -475,8 +525,40 @@ figure {
 }
 
 table {
-  margin: 0 0 1.5em;
+  background-color: transparent;
+  box-sizing: border-box;
+  margin: 1.6em 0;
+  max-width: 100%;
   width: 100%;
+}
+
+table th, table td {
+  border-top: 1px solid #efefef;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+table th {
+  color: #000;
+}
+
+table caption + thead tr:first-child th, table caption + thead tr:first-child td, table colgroup + thead tr:first-child th, table colgroup + thead tr:first-child td, table thead:first-child tr:first-child th, table thead:first-child tr:first-child td {
+  border-top: 0 none;
+}
+
+table tbody + tbody {
+  border-top: 2px solid #efefef;
+}
+
+table table table {
+  background-color: #fff;
+}
+
+table tbody > tr:nth-child(2n+1) > td, table tbody > tr:nth-child(2n+1) > th {
+  background-color: #f6f6f6;
 }
 
 /*--------------------------------------------------------------
@@ -489,7 +571,7 @@ input[type="submit"] {
   border: 1px solid;
   border-color: #ccc #ccc #bbb;
   border-radius: 3px;
-  background: #e6e6e6;
+  background: #ebebeb;
   color: rgba(0, 0, 0, 0.8);
   font-size: 12px;
   font-size: 0.75rem;
@@ -567,13 +649,13 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue;
+  color: #F56A6A;
 }
 a:visited {
-  color: purple;
+  color: #23527c;
 }
 a:hover, a:focus, a:active {
-  color: midnightblue;
+  color: #23527c;
 }
 a:focus {
   outline: thin dotted;
