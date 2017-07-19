@@ -1,6 +1,6 @@
 === Flexia ===
 
-Contributors: automattic
+Contributors: Codetic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.0
@@ -9,7 +9,7 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called Flexia.
+A modern lightweight and versatile theme for WordPress
 
 == Description ==
 
@@ -25,14 +25,9 @@ A modern lightweight and versatile theme for WordPress
 
 = Does this theme support any plugins? =
 
-Flexia includes support for Infinite Scroll in Jetpack.
+Flexia includes support for all standard plugins including the major page builders.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 0.0.1 - July 19 2017 =
 * Initial release
-
-== Credits ==
-
-* Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
