@@ -1,4 +1,4 @@
-# Copyright (C) 2017 Automattic
+# Copyright (C) 2017 Codetic
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
@@ -95,7 +95,7 @@ msgstr ""
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#: inc/template-tags.php:89 template-parts/content-page.php:35
+#: inc/template-tags.php:89 framework/views/template-parts/content-page.php:35
 #. translators: %s: Name of current post. Only visible to screen readers
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
@@ -105,32 +105,32 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: template-parts/content-none.php:14
+#: framework/views/template-parts/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:25
+#: framework/views/template-parts/content-none.php:25
 #. translators: 1: link to WP admin new post page.
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:38
+#: framework/views/template-parts/content-none.php:38
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:44
+#: framework/views/template-parts/content-none.php:44
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:22 template-parts/content.php:45
+#: framework/views/template-parts/content-page.php:22 framework/views/template-parts/content.php:45
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content.php:34
+#: framework/views/template-parts/content.php:34
 #. translators: %s: Name of current post. Only visible to screen readers
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
