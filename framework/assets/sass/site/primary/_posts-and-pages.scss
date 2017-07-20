@@ -6,7 +6,17 @@
 	margin: 0 0 1.5em;
 }
 
-.updated:not(.published){
+.entry-date.updated{
+	display: none;
+}
+.entry-date.published{
+	display: inline-block;
+}
+
+.single-post .entry-date.updated{
+	display: inline-block;
+}
+.single-post .entry-date.published{
 	display: none;
 }
 
@@ -19,4 +29,19 @@
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.single-post .entry-meta {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.single-post .entry-meta > span {
+	text-align: center;
+	flex: 1 1 auto;
+	border-right: 1px solid rgba(0,0,0, .15);
+}
+
+.single-post .entry-meta > span:last-child {
+	border-right: none;
 }

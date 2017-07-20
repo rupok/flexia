@@ -1,26 +1,44 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying single post
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Flexia
  */
 
+$thumbnail = '';
+    if (function_exists('has_post_thumbnail')) {
+        if ( has_post_thumbnail() ) {
+             $thumbnail = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+        }
+    }
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+    <header class="single-blog-header" style="background: url('<?php echo $thumbnail; ?>') no-repeat fixed center center / cover;">
+        <div class="header-inner">
+                <div class="header-content">
+                    <?php the_title( '<h1 class="blog-title">', '</h1>' ); ?>
+                    <div class="blog-author">
+                        <div class="author-avatar">
+                                <?php echo get_avatar( get_the_author_meta( 'ID' ), 96 ); ?> 
+                            <div class="avatar-body">
+                                <h4 class="avatar-heading"><?php the_author(); ?></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </header>
+
     <header class="entry-header single-blog-meta">
         <?php
-        if ( is_singular() ) :
-            the_title( '<h1 class="entry-title">', '</h1>' );
-        else :
-            the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-        endif;
-
         if ( 'post' === get_post_type() ) : ?>
         <div class="entry-meta">
-            <?php flexia_posted_on(); ?>
+            <?php flexia_updated_on(); ?>
         </div><!-- .entry-meta -->
         <?php
         endif; ?>

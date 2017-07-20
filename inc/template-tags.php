@@ -14,7 +14,7 @@ if ( ! function_exists( 'flexia_posted_on' ) ) :
 function flexia_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s"> %2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		$time_string = '<time class="entry-date published" datetime="%1$s"> %2$s</time><time class="entry-date updated" datetime="%3$s">%4$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
@@ -43,6 +43,46 @@ function flexia_posted_on() {
 
 }
 endif;
+
+if ( ! function_exists( 'flexia_updated_on' ) ) :
+
+function flexia_updated_on() {
+	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="entry-date updated" datetime="%3$s">%4$s</time>';
+	}
+
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date() )
+	);
+
+	$updated_on = sprintf(
+		/* translators: %s: post date. */
+		esc_html_x( 'Updated on %s', 'post date', 'flexia' ),
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+	);
+
+	echo '<span class="updated-on"> <i class="fa fa-clock-o fa-fw"></i>' . $updated_on . '</span>'; // WPCS: XSS OK. // WPCS: XSS OK.
+
+		$categories_list = get_the_category_list( esc_html__( ', ', 'flexia' ) );
+		if ( $categories_list ) {
+			/* translators: 1: list of categories. */
+			printf( '<span class="cat-links"> <i class="fa fa-folder-o fa-fw" aria-hidden="true"></i>' . esc_html__( '%1$s', 'flexia' ) . '</span>
+', $categories_list ); // WPCS: XSS OK.
+		}
+
+	?>
+
+	<span class="comments-count"><i class="fa fa-comments fa-fw"></i><a class="scroll-to-comments" href="#comments"><?php comments_number( 'No Responses', '1 Comment', '% Comments' ); ?></a></span>
+
+<?php
+}
+endif;
+
+
 
 if ( ! function_exists( 'flexia_entry_footer' ) ) :
 /**
