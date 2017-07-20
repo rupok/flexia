@@ -12,15 +12,6 @@
   flex: 1 100%;
 }
 
-.flexia-topbar {
-  background: #333;
-  color: #fff;
-}
-
-.flexia-navbar {
-  background: #ddd;
-}
-
 .content-area {
   order: 1;
   overflow: hidden;
@@ -35,25 +26,6 @@
   order: 3;
 }
 
-.footer-widget-area {
-  background: #ddd;
-}
-
-.site-footer {
-  background: #666;
-}
-
-.flexia-navbar {
-  background: #ddd;
-}
-
-.flexia-sidebar-left {
-  background: gold;
-}
-
-.flexia-sidebar-right {
-  background: hotpink;
-}
 
 
 @media all and (min-width: 768px) {
@@ -101,4 +73,24 @@
   .flexia-sidebar-right {
     flex: 0 0 250px;
   }
+}
+
+/* Colors */
+
+.flexia-topbar {
+  background: $color__dark;
+  color: $color__light;
+}
+
+.flexia-navbar {
+  background: $color__light;
+  color: $color__dark;
+}
+
+.footer-widget-area {
+  background: $color__footer-widget-bg;
+}
+
+.site-footer {
+  background: $color__footer-bg;
 }

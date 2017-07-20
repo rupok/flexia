@@ -10,6 +10,7 @@ html {
 
 body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	font-size: $body__font-size;
 }
 
 blockquote, q {
