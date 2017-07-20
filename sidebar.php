@@ -7,17 +7,10 @@
  * @package Flexia
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
 ?>
-
-<aside id="flexia-sidebar-left" class="flexia-sidebar flexia-sidebar-left">
-	<?php dynamic_sidebar( 'sidebar-left' ); ?>
-</aside><!-- #sidebar-left -->
-
-<aside id="flexia-sidebar-right" class="flexia-sidebar flexia-sidebar-right">
-	<?php dynamic_sidebar( 'sidebar-right' ); ?>
-</aside><!-- #sidebar-right -->
+<?php
+	get_template_part( 'framework/views/template-parts/content', 'sidebar-left' );
+	get_template_part( 'framework/views/template-parts/content', 'sidebar-right' );
+?>
 
 

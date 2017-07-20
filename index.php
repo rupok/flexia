@@ -14,42 +14,56 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<div id="page" class="site">
 
-		<?php
-		if ( have_posts() ) :
+	<?php get_template_part( 'framework/views/template-parts/content', 'masthead' ); ?>
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+	<div id="content" class="site-content">
+		<div class="flexia-wrapper flexia-container">
 
-			<?php
-			endif;
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main flexia-container">
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+				<?php
+				if ( have_posts() ) :
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'framework/views/template-parts/content', get_post_format() );
+					if ( is_home() && ! is_front_page() ) : ?>
+						<header>
+							<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+						</header>
 
-			endwhile;
+					<?php
+					endif;
 
-			the_posts_navigation();
+					/* Start the Loop */
+					while ( have_posts() ) : the_post();
 
-		else :
+						/*
+						 * Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'framework/views/template-parts/content', get_post_format() );
 
-			get_template_part( 'framework/views/template-parts/content', 'none' );
+					endwhile;
 
-		endif; ?>
+					the_posts_navigation();
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+				else :
+
+					get_template_part( 'framework/views/template-parts/content', 'none' );
+
+				endif; ?>
+
+				</main><!-- #main -->
+			</div><!-- #primary -->
+
+			<?php get_sidebar(); ?>
+
+		</div><!-- #flexia-wrapper -->
+	</div><!-- #content --> 
+</div><!-- #page -->
 
 <?php
+get_template_part( 'framework/views/template-parts/content', 'footer' );
 get_footer();

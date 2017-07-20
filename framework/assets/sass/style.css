@@ -359,6 +359,8 @@ big {
 .flexia-container {
   margin: 0 auto;
   width: 100%;
+  max-width: 1000px;
+  background-color: #ccc;
 }
 
 .flexia-container.width {
@@ -457,7 +459,7 @@ big {
     margin-bottom: 0;
   }
 }
-.site {
+.flexia-wrapper {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -467,7 +469,7 @@ big {
   flex-flow: row wrap;
 }
 
-.site > * {
+.flexia-wrapper > * {
   flex: 1 100%;
 }
 
@@ -478,6 +480,20 @@ big {
 
 .flexia-navbar {
   background: #ddd;
+}
+
+.content-area {
+  order: 1;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.flexia-sidebar-left {
+  order: 2;
+}
+
+.flexia-sidebar-right {
+  order: 3;
 }
 
 .footer-widget-area {
@@ -492,7 +508,7 @@ big {
   background: #ddd;
 }
 
-.site-content {
+.content-area {
   text-align: left;
   background: #f9f9f9;
 }
@@ -506,7 +522,7 @@ big {
 }
 
 @media all and (min-width: 768px) {
-  .site-content {
+  .content-area {
     flex: 3 0px;
   }
 
@@ -514,25 +530,18 @@ big {
     order: 1;
   }
 
-  .site-content {
+  .content-area {
     order: 2;
   }
 
   .flexia-sidebar-right {
     order: 3;
   }
-
-  .footer-widget-area {
-    order: 4;
-  }
-
-  .site-footer {
-    order: 5;
-  }
 }
 @media all and (min-width: 768px) and (max-width: 959px) {
-  .site-content {
+  .content-area {
     flex: 1 1 100%;
+    order: 1;
   }
 
   .flexia-sidebar-left {
