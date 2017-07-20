@@ -2,19 +2,23 @@
 	flex: 0 0 auto;
 }
 
+.flexia-colophon-inner .widget {
+	margin: 10px;
+}
+
 .flexia-sidebar {
 	padding: 20px;
 }
 
 @media all and (min-width: 768px) {
 .flexia-colophon-inner .widget {
-	flex: 1 1 50%;
+	flex: 1 1 30%;
 }
 }
 
 @media all and (min-width: 960px) {
 .flexia-colophon-inner .widget {
-	flex: 1 1 25%;
+	flex: 1 1 20%;
 }
 }
 
