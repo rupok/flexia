@@ -6,3 +6,19 @@
 		max-width: 100%;
 	}
 }
+
+.flexia-colophon-inner .widget {
+	flex: 0 0 auto;
+}
+
+@media all and (min-width: 768px) {
+.flexia-colophon-inner .widget {
+	flex: 1 1 50%;
+}
+}
+
+@media all and (min-width: 960px) {
+.flexia-colophon-inner .widget {
+	flex: 1 1 25%;
+}
+}

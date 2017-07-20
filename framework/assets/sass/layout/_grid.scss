@@ -1,98 +1,56 @@
-.site {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
+.flexia-container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.flexia-container.width {
+  width: 88%;
+}
+
+.flexia-container.width.max {
+  max-width: 1200px;
+  width: 88%;
+}
+
+.flexia-row {
+  width: 100%;
   display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
 }
 
-.site > * {
-  flex: 1 100%;
+.flexia-column {
+  position: relative;
+  min-height: 1px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.flexia-topbar {
-  background: #333;
-  color: #fff;
+[class*="flexia-column-"] {
+  padding: 20px;
 }
 
-.flexia-navbar {
-  background: #ddd;
-}
-
-.footer-widget-area {
-  background: #ddd;
-}
-
-.site-footer {
-  background: #666;
-}
-
-.flexia-navbar {
-  background: #ddd;
-}
-.site-content {
-  text-align: left;
-  background: #f9f9f9;
-}
-
-.flexia-sidebar-left {
-  background: gold;
-}
-
-.flexia-sidebar-right {
-  background: hotpink;
-}
-
-
-@media all and (min-width: 768px) {
-  .site-content {
-    flex: 3 0px;
+@media all and(min-width: 481px) {
+  [class*="flexia-column-"] {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
   }
-
-  .flexia-sidebar-left {
-    order: 1;
+    @for $flex from 1 through 12 {
+    .flexia-column-#{$flex} {
+      flex: $flex;
+    }
   }
-
-  .site-content {
-    order: 2;
+  .full-width {
+    margin-bottom: 20px;
+    margin-right: 0;
   }
-
-  .flexia-sidebar-right {
-    order: 3;
-  }
-  .footer-widget-area {
-    order: 4;
-  }
-  .site-footer {
-    order: 5;
-  }
-}
-
-@media all and (min-width: 768px) and (max-width: 959px) {
-
-  .site-content {
-    flex: 1 1 100%;
-  }
-
- .flexia-sidebar-left {
-    flex: 1 1 auto;
-    order: 2;
-  }
-
-  .flexia-sidebar-right {
-    flex: 1 1 auto;
-    order: 3;
-  }
-}
-
-@media all and (min-width: 960px) {
-  .flexia-sidebar-left {
-    flex: 0 0 250px;
-  }
-
-  .flexia-sidebar-right {
-    flex: 0 0 250px;
+  .space-off {
+    margin-bottom: 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }

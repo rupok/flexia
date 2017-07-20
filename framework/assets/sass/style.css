@@ -356,6 +356,107 @@ big {
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
+.flexia-container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.flexia-container.width {
+  width: 88%;
+}
+
+.flexia-container.width.max {
+  max-width: 1200px;
+  width: 88%;
+}
+
+.flexia-row {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flexia-column {
+  position: relative;
+  min-height: 1px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+[class*="flexia-column-"] {
+  padding: 20px;
+}
+
+@media all and (min-width: 481px) {
+  [class*="flexia-column-"] {
+    margin-right: 20px;
+  }
+  [class*="flexia-column-"]:last-child {
+    margin-right: 0;
+  }
+
+  .flexia-column-1 {
+    flex: 1;
+  }
+
+  .flexia-column-2 {
+    flex: 2;
+  }
+
+  .flexia-column-3 {
+    flex: 3;
+  }
+
+  .flexia-column-4 {
+    flex: 4;
+  }
+
+  .flexia-column-5 {
+    flex: 5;
+  }
+
+  .flexia-column-6 {
+    flex: 6;
+  }
+
+  .flexia-column-7 {
+    flex: 7;
+  }
+
+  .flexia-column-8 {
+    flex: 8;
+  }
+
+  .flexia-column-9 {
+    flex: 9;
+  }
+
+  .flexia-column-10 {
+    flex: 10;
+  }
+
+  .flexia-column-11 {
+    flex: 11;
+  }
+
+  .flexia-column-12 {
+    flex: 12;
+  }
+
+  .full-width {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+
+  .space-off {
+    margin-bottom: 0;
+  }
+  .space-off:last-child {
+    margin-bottom: 0;
+  }
+}
 .site {
   display: -webkit-box;
   display: -moz-box;
@@ -453,6 +554,13 @@ big {
     flex: 0 0 250px;
   }
 }
+.flexia-colophon-inner {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: row wrap;
+}
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -846,6 +954,20 @@ a:hover, a:active {
   max-width: 100%;
 }
 
+.flexia-colophon-inner .widget {
+  flex: 0 0 auto;
+}
+
+@media all and (min-width: 768px) {
+  .flexia-colophon-inner .widget {
+    flex: 1 1 50%;
+  }
+}
+@media all and (min-width: 960px) {
+  .flexia-colophon-inner .widget {
+    flex: 1 1 25%;
+  }
+}
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
