@@ -12,18 +12,20 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header single-blog-meta">
 		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php flexia_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
+		
+		endif;
+
+		if ( is_singular() ) :
+			the_title( '<h1 class="entry-title">', '</h1>' );
+		else :
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif; ?>
+
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -33,7 +35,7 @@
             echo $trimmed_content;
         ?>
 	</div><!-- .entry-content -->
-	
+
 
 	<footer class="entry-footer">
 		<a href="<?php the_permalink() ?>" class="btn btn-read-more">Continue Reading</a>

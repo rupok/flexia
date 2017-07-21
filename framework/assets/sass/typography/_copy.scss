@@ -35,7 +35,17 @@ blockquote p {
 }
 
 address {
+	font-style: italic;
 	margin: 0 0 1.5em;
+}
+
+img {
+    border: 0 none;
+    vertical-align: middle;
+}
+
+svg:not(:root) {
+    overflow: hidden;
 }
 
 pre {

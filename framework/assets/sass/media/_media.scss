@@ -14,6 +14,17 @@ object {
 	max-width: 100%;
 }
 
+audio, canvas, video {
+    display: inline-block;
+}
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+[hidden] {
+    display: none;
+}
+
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
 	display: inline-block;

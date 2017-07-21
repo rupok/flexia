@@ -1,5 +1,76 @@
 .sticky {
-	display: block;
+	position: relative;
+}
+.sticky:before {
+	font: normal normal normal 15px/1 FontAwesome;
+	font-size: 15px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	position: absolute;
+	content: "\f08d";
+	top: 25px;
+	right: 20px;
+	width: 28px;
+	height: 28px;
+	background: #f54128;
+	color: #fff;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 30px;
+	-webkit-transform: rotate(40deg);
+	-moz-transform: rotate(40deg);
+	-ms-transform: rotate(40deg);
+	-o-transform: rotate(40deg);
+	transform: rotate(40deg);
+	transition: all .5s ease-in 0.1s;
+}
+
+.sticky:hover:before {
+	-webkit-transform: rotate(400deg);
+	-moz-transform: rotate(400deg);
+	-ms-transform: rotate(400deg);
+	-o-transform: rotate(400deg);
+	transform: rotate(400deg);
+}
+
+
+.post-content button, .post-content input, .post-content select, .post-content textarea {
+  font-family: inherit;
+  font-size: inherit;
+  height: 45px;
+  line-height: inherit;
+  padding: 0 10px;
+}
+
+.post-password-form input[type="submit"], .post-content button, .post-content input[type="button"], 
+.post-content input[type="reset"], .post-content input[type="submit"] {
+  background: none repeat scroll 0 0 #f56a6a;
+  border: medium none;
+  cursor: pointer;
+  color: #fff;
+  padding: 0 10px;
+  font-size: 16px;
+  height: 45px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.post-password-form input[type="submit"], .post-content button:hover, .post-content input[type="button"]:hover, 
+.post-content input[type="reset"]:hover, .post-content input[type="submit"]:hover {
+  background: #E95D55;
+}
+
+/* Post Formats */
+
+.format-status .post-content {
+  border-left: 5px solid #a1a1a1;
+  font-style: italic;
+  padding-left: 20px;
+}
+
+.format-chat .post-content p:nth-child(2n) {
+	font-weight: bold;
 }
 
 .hentry {
@@ -18,6 +89,16 @@
 }
 .single-post .entry-date.published{
 	display: none;
+}
+
+.entry-meta, .entry-meta a {
+	color: $color__text-main;
+	font-size: 13px;
+	font-family: $font__heading;
+}
+
+.entry-meta a:hover {
+	color: #50626c;
 }
 
 .page-content,
@@ -45,3 +126,113 @@
 .single-post .entry-meta > span:last-child {
 	border-right: none;
 }
+
+.entry-title{
+  color: #202021;
+  font-family: $font__main;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 1;
+  margin: 10px auto;
+  padding-bottom: 50px;
+  position: relative;
+  text-align: left;
+  text-transform: uppercase;
+  word-break: break-all;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.single-blog-header .entry-title, .single-page-header .entry-title {
+  color: #fff;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.single-blog-header .entry-title:after, .single-page-header .entry-title:after{
+  display: none;
+}
+
+.blog .entry-header {
+	margin-top: 3em;
+}
+
+.entry-title a {
+  text-decoration: none;
+  color: #202021;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.entry-title a:hover {
+  color: #50626c;
+}
+
+.entry-title:after {
+  background-color: rgba(0,0,0, .15);
+  bottom: 20px;
+  content: "";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  width: 80px;
+}
+
+.entry-content {
+	color: $color__text-main;
+	display: block;
+	font-size: 1em;
+	font-weight: 300;
+	line-height: 2em;
+	padding-bottom: 5px;
+	position: relative;
+	text-align: left;
+}
+
+.blog .entry-content  {
+	margin-top: 0;
+}
+
+.btn-read-more {
+  background-color: #f2f2f2;
+  border: 1px solid #3f3f46;
+  border-radius: 0;
+  color: #3f3f46;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin: 15px auto;
+  padding: 10px 50px;
+  text-transform: uppercase;
+}
+
+.btn-read-more:hover {
+  background: #3f3f46;
+  padding: 10px 50px;
+  color: #fff;
+  border: 1px solid #3f3f46;
+  border-radius: 0;
+
+}
+
+.btn-read-more:after {
+  content:"\f061";
+  color: #fff;
+}
+
+.btn-read-more:after {
+  position:absolute;
+  font-family:'FontAwesome';
+  font-weight:400;
+  right:-3em;
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+  transition: .4s;
+  color:#fff
+}
+
+.btn-read-more:hover:after {
+  right:2em
+}
+
+
