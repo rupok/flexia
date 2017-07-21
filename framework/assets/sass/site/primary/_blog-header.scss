@@ -1,0 +1,62 @@
+
+/* Blog Listing Page */
+
+.blog .flexia-wrapper.flexia-container {
+  padding-top: 2em;
+}
+
+.blog-header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: row nowrap;
+}
+
+.paged .blog-header {
+  height: 275px;
+}
+
+.paged .blog-header span,
+.paged .blog-header .scroll-down {
+  display: none;
+}
+
+.header-inner {
+  background: rgba(0, 0, 0, 0.5);
+  flex: 0 0 100%;
+  text-align: center;
+  padding: 5em 2em;
+}
+
+.single-blog-header {
+  background-color: #28292e!important;
+  height: 500px;
+  position: relative;
+  width: 100%;
+}
+
+.single-page-header {
+  background-color: #28292e!important;
+  height: 275px;
+  position: relative;
+  width: 100%;
+}
+
+.blog-header h2{
+  font-size: 24px;
+}
+
+.blog-desc{
+  display: block;
+  font-family: "Merriweather",serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  line-height: 1.2;
+  opacity: 0.6;
+  padding: 0.5em 2em;
+}
+
+.header-content {
+  color: #fff;
+  text-align: center;
+}

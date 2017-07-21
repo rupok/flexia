@@ -885,6 +885,63 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
+## Post Pagination
+--------------------------------------------------------------*/
+.post-pagination {
+  display: flex;
+  margin: 1em 0;
+  padding: 0;
+  justify-content: flex-start;
+  flex-flow: row nowrap;
+}
+
+.post-pagination li {
+  list-style: none;
+  margin-right: 5px;
+}
+
+.post-pagination > li > a, .post-pagination > li > span {
+  position: relative;
+  padding: 8px 12px;
+  margin-bottom: 0;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: #f56a6a;
+  color: white;
+  outline: 0;
+  text-decoration: none;
+  -webkit-transition: all .1s linear;
+  transition: all .1s linear;
+}
+
+.post-pagination > li > a:hover {
+  background: #E65A50;
+  border: 1px solid #E65A50;
+  color: #fff;
+}
+
+.next, .prev {
+  padding: 6px 20px !important;
+}
+
+.post-pagination > .active > a,
+.post-pagination > .active > a:focus,
+.post-pagination > .active > a:hover,
+.post-pagination > .active > span,
+.post-pagination > .active > span:focus,
+.post-pagination > .active > span:hover {
+  background: #3f3f46;
+  border-color: #3f3f46;
+  color: #fff;
+  cursor: default;
+  z-index: 2;
+}
+
+/*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
@@ -1312,6 +1369,67 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+/* Blog Listing Page */
+.blog .flexia-wrapper.flexia-container {
+  padding-top: 2em;
+}
+
+.blog-header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: row nowrap;
+}
+
+.paged .blog-header {
+  height: 275px;
+}
+
+.paged .blog-header span,
+.paged .blog-header .scroll-down {
+  display: none;
+}
+
+.header-inner {
+  background: rgba(0, 0, 0, 0.5);
+  flex: 0 0 100%;
+  text-align: center;
+  padding: 5em 2em;
+}
+
+.single-blog-header {
+  background-color: #28292e !important;
+  height: 500px;
+  position: relative;
+  width: 100%;
+}
+
+.single-page-header {
+  background-color: #28292e !important;
+  height: 275px;
+  position: relative;
+  width: 100%;
+}
+
+.blog-header h2 {
+  font-size: 24px;
+}
+
+.blog-desc {
+  display: block;
+  font-family: "Merriweather",serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  line-height: 1.2;
+  opacity: 0.6;
+  padding: 0.5em 2em;
+}
+
+.header-content {
+  color: #fff;
+  text-align: center;
+}
+
 .sticky {
   position: relative;
 }

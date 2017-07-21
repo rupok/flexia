@@ -1,0 +1,53 @@
+.post-pagination {
+  display: flex;
+  margin: 1em 0;
+  padding: 0;
+  justify-content: flex-start;
+  flex-flow: row nowrap;
+}
+
+.post-pagination li {
+  list-style: none;
+  margin-right: 5px;
+}
+
+.post-pagination > li > a, .post-pagination > li > span {
+  position: relative;
+  padding: 8px 12px;
+  margin-bottom: 0;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: #f56a6a;
+  color: white;
+  outline: 0;
+  text-decoration: none;
+  -webkit-transition: all .1s linear;
+  transition: all .1s linear;
+}
+
+.post-pagination > li > a:hover {
+  background: #E65A50;
+  border: 1px solid #E65A50;
+  color: #fff;
+}
+
+.next, .prev {
+  padding: 6px 20px !important;
+}
+
+.post-pagination > .active > a, 
+.post-pagination > .active > a:focus, 
+.post-pagination > .active > a:hover, 
+.post-pagination > .active > span, 
+.post-pagination > .active > span:focus, 
+.post-pagination > .active > span:hover {
+  background: #3f3f46;
+  border-color: #3f3f46;
+  color: #fff;
+  cursor: default;
+  z-index: 2;
+}
