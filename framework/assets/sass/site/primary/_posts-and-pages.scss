@@ -91,6 +91,10 @@
 	display: none;
 }
 
+.entry-meta > span {
+	margin-right: 10px;
+}
+
 .entry-meta, .entry-meta a {
 	color: $color__text-main;
 	font-size: 13px;
@@ -98,7 +102,7 @@
 }
 
 .entry-meta a:hover {
-	color: #50626c;
+	color: $color__link;
 }
 
 .page-content,
@@ -158,6 +162,10 @@
 	margin-top: 3em;
 }
 
+.blog .hentry:first-child .entry-header {
+	margin-top: 1.5em;
+}
+
 .entry-title a {
   text-decoration: none;
   color: #202021;
@@ -190,8 +198,13 @@
 	text-align: left;
 }
 
-.blog .entry-content  {
+.blog .entry-content {
 	margin-top: 0;
+	max-width: 90%;
+}
+
+.blog .content-area {
+	padding: 0 4em 3em 0;
 }
 
 .btn-read-more {

@@ -3,11 +3,11 @@
 }
 
 .flexia-colophon-inner .widget {
-	margin: 10px;
+	margin: 1em;
 }
 
 .flexia-sidebar {
-	padding: 20px;
+	padding: 1.5em;
 }
 
 @media all and (min-width: 768px) {
@@ -34,7 +34,7 @@
 	font-size: 1em;
 	font-weight: 300;
 	line-height: 1.5;
-	padding: .5em;
+	padding: 1em;
 	position: relative;
 	text-align: left;
 	word-wrap: break-word;
@@ -275,19 +275,26 @@
 
 /* Search widget */
 .search-form {
-  height: 50px;
-  padding: 8px 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: row nowrap;
+}
+
+.search-form .search-field {
+  flex: 1 1 auto;
+  padding: 10px;
+}
+
+.search-form .search-submit {
+  flex: 1 1 40px;
+  align-self: stretch;
 }
 
 .search-field, .search-field:focus {
-  background: none repeat scroll 0 0 #f1f1f1;
+  background-color: #f1f1f1;
   border: medium none !important;
   box-shadow: none;
-  float: left;
-  height: 35px;
-  margin-right: 10px;
-  padding-left: 10px !important;
-  width: calc(100% - 55px);
   border-radius: 0;
 }
 
@@ -295,10 +302,6 @@
   background-color: #F56A6A;
   border: 0 none !important;
   color: #fff !important;
-  float: right;
-  height: 33px;
-  padding: 0;
-  width: 42px;
   border-radius: 0;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -308,10 +311,6 @@
   background-color: #e65a50;
   border: 0 none !important;
   color: #fff !important;
-  float: right;
-  height: 33px;
-  padding: 0;
-  width: 42px;
 }
 
 /* Recent Post widget */

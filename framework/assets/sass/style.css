@@ -982,11 +982,11 @@ a:hover, a:active {
 }
 
 .flexia-colophon-inner .widget {
-  margin: 10px;
+  margin: 1em;
 }
 
 .flexia-sidebar {
-  padding: 20px;
+  padding: 1.5em;
 }
 
 @media all and (min-width: 768px) {
@@ -1010,7 +1010,7 @@ a:hover, a:active {
   font-size: 1em;
   font-weight: 300;
   line-height: 1.5;
-  padding: .5em;
+  padding: 1em;
   position: relative;
   text-align: left;
   word-wrap: break-word;
@@ -1244,19 +1244,26 @@ a:hover, a:active {
 
 /* Search widget */
 .search-form {
-  height: 50px;
-  padding: 8px 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: row nowrap;
+}
+
+.search-form .search-field {
+  flex: 1 1 auto;
+  padding: 10px;
+}
+
+.search-form .search-submit {
+  flex: 1 1 40px;
+  align-self: stretch;
 }
 
 .search-field, .search-field:focus {
-  background: none repeat scroll 0 0 #f1f1f1;
+  background-color: #f1f1f1;
   border: medium none !important;
   box-shadow: none;
-  float: left;
-  height: 35px;
-  margin-right: 10px;
-  padding-left: 10px !important;
-  width: calc(100% - 55px);
   border-radius: 0;
 }
 
@@ -1264,10 +1271,6 @@ a:hover, a:active {
   background-color: #F56A6A;
   border: 0 none !important;
   color: #fff !important;
-  float: right;
-  height: 33px;
-  padding: 0;
-  width: 42px;
   border-radius: 0;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -1277,10 +1280,6 @@ a:hover, a:active {
   background-color: #e65a50;
   border: 0 none !important;
   color: #fff !important;
-  float: right;
-  height: 33px;
-  padding: 0;
-  width: 42px;
 }
 
 /* Recent Post widget */
@@ -1407,6 +1406,10 @@ a:hover, a:active {
   display: none;
 }
 
+.entry-meta > span {
+  margin-right: 10px;
+}
+
 .entry-meta, .entry-meta a {
   color: #4d4d4d;
   font-size: 13px;
@@ -1414,7 +1417,7 @@ a:hover, a:active {
 }
 
 .entry-meta a:hover {
-  color: #50626c;
+  color: #F56A6A;
 }
 
 .page-content,
@@ -1474,6 +1477,10 @@ a:hover, a:active {
   margin-top: 3em;
 }
 
+.blog .hentry:first-child .entry-header {
+  margin-top: 1.5em;
+}
+
 .entry-title a {
   text-decoration: none;
   color: #202021;
@@ -1499,7 +1506,7 @@ a:hover, a:active {
 .entry-content {
   color: #4d4d4d;
   display: block;
-  font-size: 18px;
+  font-size: 1em;
   font-weight: 300;
   line-height: 2em;
   padding-bottom: 5px;
@@ -1507,8 +1514,17 @@ a:hover, a:active {
   text-align: left;
 }
 
+.blog .entry-content {
+  margin-top: 0;
+  max-width: 90%;
+}
+
+.blog .content-area {
+  padding: 0 4em 3em 0;
+}
+
 .btn-read-more {
-  background: none repeat scroll 0 0 #f2f2f2;
+  background-color: #f2f2f2;
   border: 1px solid #3f3f46;
   border-radius: 0;
   color: #3f3f46;
