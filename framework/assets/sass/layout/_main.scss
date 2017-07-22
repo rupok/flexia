@@ -1,4 +1,4 @@
-.flexia-wrapper {
+.flexia-wrapper,.entry-content-wrapper {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -8,11 +8,12 @@
   flex-flow: row wrap;
 }
 
-.flexia-wrapper > * {
+.flexia-wrapper > *,
+.entry-content-wrapper > * {
   flex: 1 100%;
 }
 
-.content-area {
+.content-area, .single-post-entry {
   order: 1;
   overflow: hidden;
   max-width: 100%;
@@ -29,7 +30,7 @@
 
 
 @media all and (min-width: 768px) {
-  .content-area {
+  .content-area, .single-post-entry {
     flex: 3 0px;
   }
 
@@ -37,7 +38,7 @@
     order: 1;
   }
 
-  .content-area {
+  .content-area, .single-post-entry {
     order: 2;
   }
 
@@ -49,7 +50,7 @@
 
 @media all and (min-width: 768px) and (max-width: 959px) {
 
-  .content-area {
+  .content-area, .single-post-entry {
     flex: 1 1 100%;
     order: 1;
   }
@@ -67,11 +68,13 @@
 
 @media all and (min-width: 960px) {
   .flexia-sidebar-left {
-    flex: 0 0 250px;
+    flex: 0 0 auto;
+    width: 300px;
   }
 
   .flexia-sidebar-right {
-    flex: 0 0 250px;
+    flex: 0 0 auto;
+    width: 300px;
   }
 }
 

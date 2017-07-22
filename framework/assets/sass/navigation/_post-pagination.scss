@@ -35,8 +35,8 @@
   color: #fff;
 }
 
-.next, .prev {
-  padding: 6px 20px !important;
+.post-pagination .next, .post-pagination .prev {
+  padding: 8px 20px;
 }
 
 .post-pagination > .active > a, 
