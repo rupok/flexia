@@ -64,6 +64,7 @@
 
 .flexia-social-share {
 	display: flex;
+	flex-flow: row wrap;
 	color: #949494;
 	font-size: 1em;
 	text-transform: uppercase;
@@ -90,12 +91,14 @@
 	padding: 0;
 	margin: 0;
 	flex: 0 0 auto;
+	text-align: center;
 }
 
 .flexia-social-share-links li {
 	list-style: none;
 	display: inline-block;
 	padding: 0 1em;
+	text-align: center;
 }
 
 .flexia-social-share-links li a {
