@@ -20,17 +20,17 @@ $thumbnail = '';
 
     <header class="single-blog-header" style="background: url('<?php echo $thumbnail; ?>') no-repeat fixed center center / cover;">
         <div class="header-inner">
-                <div class="header-content">
-                    <?php the_title( '<h1 class="blog-title">', '</h1>' ); ?>
-                    <div class="blog-author">
-                        <div class="author-avatar">
-                                <?php echo get_avatar( get_the_author_meta( 'ID' ), 96 ); ?> 
-                            <div class="avatar-body">
-                                <h4 class="avatar-heading"><?php the_author(); ?></h4>
-                            </div>
+            <div class="header-content">
+                <?php the_title( '<h1 class="blog-title">', '</h1>' ); ?>
+                <div class="blog-author">
+                    <div class="author-avatar">
+                            <?php echo get_avatar( get_the_author_meta( 'ID' ), 96 ); ?> 
+                        <div class="author-body">
+                            <h4 class="author-heading"><?php the_author(); ?></h4>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </header>
 
@@ -73,6 +73,22 @@ $thumbnail = '';
             </footer><!-- .entry-footer -->
 
             <?php the_post_navigation(); ?>
+
+            <div class="post-author">
+                <div class="author-avatar">
+                    <div class="avatar-container">
+                        <?php echo get_avatar( get_the_author_meta( 'ID' ), 96 ); ?> 
+                    </div>
+
+                    <div class="author-body">
+                        <span>Author</span>
+                        <h4 class="author-heading">
+                             <?php the_author_posts_link(); ?> 
+                        </h4>
+                        <h5 class="author-bio"><?php the_author_meta('description'); ?></h5>
+                    </div>
+                </div>
+            </div> <!-- Author end -->
 
             <?php
                 // If comments are open or we have at least one comment, load up the comment template
