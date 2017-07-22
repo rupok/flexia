@@ -1808,6 +1808,206 @@ a:hover, a:active {
   display: block;
 }
 
+.comments-area {
+  background: rgba(255, 255, 255, 0.8);
+  color: #797979;
+  font-size: 17px;
+  margin: 10px auto;
+  padding: 3em;
+}
+
+.comments-area a {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+ol.comment-list li {
+  list-style: none;
+}
+
+.comments-area .comments-title, .comments-area .comment-reply-title {
+  font-family: "PT Sans", sans-serif;
+  font-size: 1.5em;
+  margin: 1em auto 2.5em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.comments-area footer {
+  margin-top: 0;
+  text-align: left;
+}
+
+.comment-respond .comment-reply-title {
+  margin-top: 2em;
+}
+
+.comments-area .comment-list {
+  padding-left: 0;
+}
+
+.comments-area .comment-list, .comments-area .comment-list .children {
+  list-style-type: none;
+}
+
+.comments-area .comment-metadata {
+  margin-bottom: 1em;
+}
+
+.comments-area .comment-metadata a {
+  color: #8e8e8e;
+  font-size: 13px;
+}
+
+.comments-area .comment-author img {
+  float: left;
+  height: 60px;
+  margin-right: 20px;
+  width: 60px;
+}
+
+.comments-area .comment-author a {
+  color: #35353c;
+  text-decoration: none;
+}
+
+.comments-area .comment-author .says {
+  display: none;
+}
+
+.comments-area .comment-metadata {
+  font-size: 12px;
+}
+
+.comments-area .comment-content {
+  color: #323232;
+  font-size: 14px;
+  line-height: 30px;
+  margin-top: 10px;
+}
+
+.comment-content > p {
+  margin: 0 0 1em;
+}
+
+.comment-body {
+  border-top: 1px dashed rgba(0, 0, 0, 0.15);
+  padding-top: 2em;
+}
+
+.comments-area .comment-content, .comments-area .comment-awaiting-moderation, .comments-area .reply {
+  padding-left: 80px;
+}
+
+.comments-area .comment-awaiting-moderation {
+  font-size: 12px;
+}
+
+.comments-area .reply {
+  margin-bottom: 20px;
+}
+
+.comments-area .reply .comment-reply-link {
+  font-size: 13px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.comments-area .reply .comment-reply-link:hover {
+  color: #3c3c3c;
+}
+
+.comments-area .comment-respond {
+  border-top: 1px dashed rgba(0, 0, 0, 0.15);
+  margin-bottom: 2em;
+  outline: 0 none;
+}
+
+.comments-area .comment-form-comment label, .comments-area .comment-form-comment textarea {
+  width: 100%;
+}
+
+.comments-area .comment-form-comment textarea, .comments-area .comment-respond .comment-form-author input, .comments-area .comment-respond .comment-form-email input, .comments-area .comment-respond .comment-form-url input {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: none;
+  color: #808086;
+  font-size: 13px;
+  font-weight: 300;
+  outline: 0 none;
+  padding: 8px 10px;
+}
+
+.comments-area .comment-respond .form-submit input {
+  background-color: #3c3c3c;
+  border: medium none;
+  color: #fff;
+  display: inline-block;
+  font-weight: 300;
+  margin-top: 20px;
+  outline: 0 none;
+  padding: 1em 2em;
+  text-decoration: none;
+  font-size: 1em;
+  border-radius: 3px;
+}
+
+.comments-area .comment-respond .form-submit input:hover {
+  background-color: #F56A6A;
+}
+
+.comments-area .comment-respond .form-submit input, .comments-area .comment-respond .form-submit input:hover {
+  transition: all 0.2s ease-out 0s;
+}
+
+.comments-area .comment-respond .comment-form-author label, .comments-area .comment-respond .comment-form-email label, .comments-area .comment-respond .comment-form-url label {
+  width: 100px;
+}
+
+.comments-area .comment-notes {
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.comments-area .comment-form label {
+  color: #323232;
+  font-size: 13px;
+}
+
+.comments-area .blog-img-wide.blogdetails img {
+  height: auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.edit-link {
+  margin-left: 10px;
+}
+
+.entry-footer .edit-link {
+  display: block;
+  margin: 10px 0;
+}
+
+.post-edit-link {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.comment-reply-title a {
+  color: #F56A6A;
+}
+
+.comment-reply-title a:hover {
+  color: #f00;
+  color: #f00;
+}
+
+.comment-reply-title small {
+  font-size: 100%;
+  transform: scale(0.8);
+  display: inline-block;
+}
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
