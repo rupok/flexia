@@ -21,9 +21,9 @@ get_header(); ?>
 	<header class="blog-header" style="background: url('<?php echo header_image(); ?>') no-repeat fixed center center / cover;">
         <div class="header-inner">
             <div class="header-content">
-                <span><i class="fa fa-3x fa-home"></i></span>
-                <h2>Rupok's Blog</h2>
-                <p class="blog-desc">Thoughts, stories and ideas</p>
+                <span><i class="fa fa-3x fa-pencil"></i></span>
+                <h2><?php bloginfo( 'name' ); ?></h2>
+                <p class="blog-desc"><?php printf( esc_html__( '%s', 'flexia' ), get_bloginfo ( 'description' ) ); ?><br /></p>
             </div>
 
             <a href="#main" class="scroll-down"><i class="fa fa-angle-down fa-3x" aria-hidden="true"></i>

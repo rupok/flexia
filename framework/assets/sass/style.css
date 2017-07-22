@@ -1404,17 +1404,11 @@ a:hover, a:active {
   padding: 5em 2em;
 }
 
-.single-blog-header {
-  background-color: #28292e !important;
-  position: relative;
-  width: 100%;
-}
-
 .blog-header h2 {
   font-size: 24px;
 }
 
-.blog-desc {
+.header-content .blog-desc {
   display: block;
   font-family: "Merriweather",serif;
   font-size: 1.4rem;
@@ -1427,6 +1421,108 @@ a:hover, a:active {
 .header-content {
   color: #fff;
   text-align: center;
+}
+
+.single-page-header .header-content {
+  padding-bottom: 0;
+}
+
+.header-content h2 {
+  font-family: "PT Sans",sans-serif;
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.5em;
+  margin: 20px auto 5px;
+  text-transform: uppercase;
+}
+
+.header-content p {
+  display: block;
+  font-family: "Merriweather",serif;
+  font-size: 2rem;
+  font-style: italic;
+  line-height: 1.2;
+  opacity: 0.9;
+  padding: 0.5em 2em;
+}
+
+.header-content span i {
+  background: none repeat scroll 0 0 rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  box-shadow: 0 0 0 30px transparent;
+  display: inline-block;
+  font-size: 2.5em;
+  padding: .5em;
+  height: 2em;
+  line-height: 1em;
+  text-align: center;
+  width: 2em;
+  margin: 15px auto;
+  display: block;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all 0.3s;
+}
+
+.blog-header:hover .header-content span i {
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+  -webkit-transition: box-shadow .4s ease-in-out;
+  -moz-transition: box-shadow .4s ease-in-out;
+  -o-transition: box-shadow .4s ease-in-out;
+  -ms-transition: box-shadow .4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out;
+}
+
+/* Single Posts */
+.single-blog-header {
+  background-color: #28292e;
+  position: relative;
+  width: 100%;
+}
+
+.single-blog-header .header-content .blog-title {
+  color: #fff;
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 1.5em;
+  letter-spacing: 1px;
+  margin: 1em auto .5em;
+  text-transform: uppercase;
+}
+
+.single-blog-header .header-content p {
+  font-size: 1.5rem;
+}
+
+.author-avatar > img {
+  border-radius: 50%;
+  width: 80px;
+}
+
+.avatar-heading {
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.single-blog-meta .entry-meta, .single-blog-meta .entry-meta a {
+  color: #bbbbbb;
+  font-family: "Merriweather",serif;
+  font-size: 1em;
+  text-align: center;
+}
+
+.single-blog-meta .entry-meta a:hover {
+  color: #50626c;
+}
+
+.single-blog-meta .entry-meta i {
+  color: #F54128;
+  -webkit-transform: scale(1.25);
+  transform: scale(1.25);
+  margin-right: .5em;
 }
 
 .sticky {
