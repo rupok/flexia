@@ -1797,8 +1797,8 @@ a:hover, a:active {
   right: 2em;
 }
 
+/* post author style */
 .post-author {
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
   width: 100%;
   color: #797979;
   margin: 2em auto;
@@ -1857,6 +1857,58 @@ a:hover, a:active {
 .post-author .author-avatar > .avatar-container .avatar {
   padding-top: 10px;
   border-radius: 50%;
+}
+
+/* Post social share style */
+.flexia-social-share {
+  display: flex;
+  color: #949494;
+  font-size: 1em;
+  text-transform: uppercase;
+  padding: 1em;
+  margin: 2em 0 5em;
+  letter-spacing: 1px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flexia-social-share .flexia-social-share-heading {
+  flex: 0 0 auto;
+}
+
+.flexia-social-share .flexia-social-share-heading h5 {
+  font-family: "Merriweather", serif;
+  font-size: 1em;
+  margin: 1em 0;
+}
+
+.flexia-social-share-links {
+  padding: 0;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.flexia-social-share-links li {
+  list-style: none;
+  display: inline-block;
+  padding: 0 1em;
+}
+
+.flexia-social-share-links li a {
+  color: #F56A6A;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+}
+
+.flexia-social-share-links li a:hover {
+  color: #23527c;
+}
+
+.flexia-social-share-links li a i {
+  font-size: 2em;
 }
 
 /*--------------------------------------------------------------

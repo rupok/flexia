@@ -74,21 +74,8 @@ $thumbnail = '';
 
             <?php the_post_navigation(); ?>
 
-            <div class="post-author">
-                <div class="author-avatar">
-                    <div class="avatar-container">
-                        <?php echo get_avatar( get_the_author_meta( 'ID' ), 96 ); ?> 
-                    </div>
-
-                    <div class="author-body">
-                        <span>Author</span>
-                        <h4 class="author-heading">
-                             <?php the_author_posts_link(); ?> 
-                        </h4>
-                        <h5 class="author-bio"><?php the_author_meta('description'); ?></h5>
-                    </div>
-                </div>
-            </div> <!-- Author end -->
+            <?php get_template_part( 'framework/views/template-parts/content', 'post-author' ); ?>
+            <?php get_template_part( 'framework/views/template-parts/content', 'social-sharer' ); ?>
 
             <?php
                 // If comments are open or we have at least one comment, load up the comment template
