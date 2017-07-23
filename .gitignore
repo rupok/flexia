@@ -1,3 +1,4 @@
 
 framework/assets/node_modules/
 framework/assets/.sass-cache/
+.DS_Store
