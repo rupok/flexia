@@ -1,11 +1,12 @@
 
 /* Blog Listing Page */
 
-.blog .flexia-wrapper.flexia-container {
+.blog .flexia-wrapper.flexia-container, .archive .flexia-wrapper.flexia-container {
   padding-top: 3em;
 }
 
 .blog-header {
+  background-color: #28292e;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -28,11 +29,11 @@
   padding: 5em 2em;
 }
 
-.blog-header h2{
+.blog-header h2 {
   font-size: 24px;
 }
 
-.header-content .blog-desc{
+.header-content .blog-desc, .header-content .archive-description > p {
   display: block;
   font-family: "Merriweather",serif;
   font-size: 1.4rem;
