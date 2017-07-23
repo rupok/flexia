@@ -11,10 +11,7 @@
   justify-content: center;
   align-content: center;
   flex-flow: row nowrap;
-}
-
-.paged .blog-header {
-  height: 275px;
+  position: relative;
 }
 
 .paged .blog-header span,
@@ -27,6 +24,10 @@
   flex: 0 0 100%;
   text-align: center;
   padding: 5em 2em;
+}
+
+.paged .blog-header .header-inner {
+  padding: 3em 1em;
 }
 
 .blog-header h2 {
@@ -46,6 +47,10 @@
 .header-content {
   color: #fff;
   text-align: center;
+}
+
+.blog .header-content {
+  padding-bottom: 3em;
 }
 
 .single-page-header .header-content {
@@ -151,4 +156,29 @@
   -webkit-transform: scale(1.25);
   transform: scale(1.25);
   margin-right: .5em;
+}
+
+.scroll-down {
+  /*background: url("../../../img/icons/icon-arrow-down.svg") no-repeat center center / 100% auto;*/
+  background: url("../img/icons/icon-arrow-down.svg") no-repeat center center / 100% auto;
+  bottom: 3em;
+  display: block;
+  height: 44px;
+  left: 50%;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  width: 44px;
+  outline: none;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-animation: cd-translate 1.2s .4s;
+  -moz-animation: cd-translate 1.2s .4s;
+  animation: cd-translate 1.2s .4s;
+  -webkit-animation-iteration-count: 5;
+  -moz-animation-iteration-count: 5;
+  animation-iteration-count: 5;
 }
