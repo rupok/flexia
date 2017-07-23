@@ -1,3 +1,7 @@
+.flexia-wrapper.flexia-container {
+  padding-top: 3em;
+}
+
 .sticky {
 	position: relative;
 }
@@ -91,7 +95,7 @@
 	display: none;
 }
 
-.blog .entry-meta > span, .archive .entry-meta > span {
+.blog .entry-meta > span, .archive .entry-meta > span, .search .entry-meta > span {
 	margin-right: 10px;
 }
 
@@ -182,7 +186,7 @@
 	margin-top: 4em;
 }
 
-.blog .hentry:first-child .entry-header, .archive .hentry:first-child .entry-header {
+.hentry:first-child .entry-header {
 	margin-top: 1.5em;
 }
 
@@ -218,12 +222,12 @@
 	text-align: left;
 }
 
-.blog .entry-content, .archive .entry-content {
+.blog .entry-content, .archive .entry-content,  .search .entry-content {
 	margin-top: 0;
 	max-width: 90%;
 }
 
-.blog .content-area, .archive .content-area {
+.flexia-wrapper > .content-area {
 	padding: 0 3em 3em;
 }
 

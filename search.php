@@ -9,43 +9,68 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+<div id="page" class="site">
 
-		<?php
-		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title"><?php
+	<?php get_template_part( 'framework/views/template-parts/content', 'masthead' ); ?>
+	
+	<header class="page-header search-header">
+        <div class="header-inner">
+            <div class="header-content">
+                <h2 class="page-title"><?php
 					/* translators: %s: search query. */
 					printf( esc_html__( 'Search Results for: %s', 'flexia' ), '<span>' . get_search_query() . '</span>' );
-				?></h1>
-			</header><!-- .page-header -->
+				?></h2>
+            </div>
+        </div>
+    </header>
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+	<div id="content" class="site-content">
+		<div class="flexia-wrapper flexia-container">
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'framework/views/template-parts/content', 'search' );
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main flexia-container">
 
-			endwhile;
+				<?php
+				if ( have_posts() ) :
 
-			the_posts_navigation();
+					if ( is_home() && ! is_front_page() ) : ?>
+						<header>
+							<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+						</header>
 
-		else :
+					<?php
+					endif;
 
-			get_template_part( 'framework/views/template-parts/content', 'none' );
+					/* Start the Loop */
+					while ( have_posts() ) : the_post();
 
-		endif; ?>
+						/*
+						 * Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'framework/views/template-parts/content', get_post_format() );
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+					endwhile;
+
+					get_template_part( 'framework/views/template-parts/content', 'pagination' ); 
+
+				else :
+
+					get_template_part( 'framework/views/template-parts/content', 'none' );
+
+				endif; ?>
+
+				
+				</main><!-- #main -->
+			</div><!-- #primary -->
+
+			<?php get_sidebar(); ?>
+
+		</div><!-- #flexia-wrapper -->
+	</div><!-- #content --> 
+</div><!-- #page -->
 
 <?php
-get_sidebar();
+get_template_part( 'framework/views/template-parts/content', 'footer' );
 get_footer();

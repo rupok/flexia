@@ -12,7 +12,7 @@ get_header(); ?>
 
 	<?php get_template_part( 'framework/views/template-parts/content', 'masthead' ); ?>
 	
-	<header class="blog-header" style="background: url('<?php echo header_image(); ?>') no-repeat fixed center center / cover;">
+	<header class="page-header blog-header" style="background: url('<?php echo header_image(); ?>') no-repeat fixed center center / cover;">
         <div class="header-inner">
             <div class="header-content">
 				<?php the_archive_title( '<h2 class="page-title">', '</h2>' ); ?>

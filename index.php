@@ -18,11 +18,11 @@ get_header(); ?>
 
 	<?php get_template_part( 'framework/views/template-parts/content', 'masthead' ); ?>
 	
-	<header class="blog-header" style="background: url('<?php echo header_image(); ?>') no-repeat fixed center center / cover;">
+	<header class="page-header blog-header" style="background: url('<?php echo header_image(); ?>') no-repeat fixed center center / cover;">
         <div class="header-inner">
             <div class="header-content">
                 <span><i class="fa fa-3x fa-pencil"></i></span>
-                <h2><?php bloginfo( 'name' ); ?></h2>
+                <h2 class="page-title"><?php bloginfo( 'name' ); ?></h2>
                 <p class="blog-desc"><?php printf( esc_html__( '%s', 'flexia' ), get_bloginfo ( 'description' ) ); ?><br /></p>
             </div>
 
