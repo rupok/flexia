@@ -32,11 +32,17 @@
 .header-content p {
   display: block;
   font-family: "Merriweather",serif;
-  font-size: 2rem;
+  font-size: 1em;
   font-style: italic;
   line-height: 1.2;
   opacity: 0.9;
   padding: 0.5em 2em;
+}
+
+.header-content .author-bio {
+	font-size: 1.5em;
+	padding: 0;
+	margin: 0 0 1.5em;
 }
 
 .header-content span i {

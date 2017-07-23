@@ -19,7 +19,7 @@ get_header(); ?>
             		<?php echo get_avatar( get_the_author_meta( 'ID' ), 128 ); ?> 
             	</div>
 				<h2 class="page-title"><?php the_author(); ?> </h2>
-                <?php the_archive_description( '<div class="author-bio">', '</div>' ); ?>
+                <?php the_archive_description( '<p class="author-bio">', '</p>' ); ?>
             </div>
         </div>
     </header>
