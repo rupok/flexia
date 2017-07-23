@@ -186,7 +186,7 @@
 	margin-top: 4em;
 }
 
-.hentry:first-child .entry-header {
+body:not(.single-post) .hentry:first-child .entry-header {
 	margin-top: 1.5em;
 }
 
@@ -229,6 +229,10 @@
 
 .flexia-wrapper > .content-area {
 	padding: 0 3em 3em;
+}
+
+.single-post .flexia-wrapper > .content-area {
+	padding: 0;
 }
 
 .btn-read-more {
