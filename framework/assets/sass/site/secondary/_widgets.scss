@@ -297,15 +297,15 @@
 
 .search-field, .search-field:focus {
   background-color: #f1f1f1;
-  border: medium none !important;
+  border: medium none;
   box-shadow: none;
   border-radius: 0;
 }
 
 .search-submit {
   background-color: #F56A6A;
-  border: 0 none !important;
-  color: #fff !important;
+  border: 0 none;
+  color: #fff;
   border-radius: 0;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -313,8 +313,8 @@
 
 .search-submit:hover {
   background-color: #e65a50;
-  border: 0 none !important;
-  color: #fff !important;
+  border: 0 none;
+  color: #fff;
 }
 
 /* Recent Post widget */
