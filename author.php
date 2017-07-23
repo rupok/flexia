@@ -15,8 +15,11 @@ get_header(); ?>
 	<header class="page-header archive-header" style="background: url('<?php echo header_image(); ?>') no-repeat fixed center center / cover;">
         <div class="header-inner">
             <div class="header-content">
-				<?php the_archive_title( '<h2 class="page-title">', '</h2>' ); ?>
-                <?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
+            	<div class="author-avatar">
+            		<?php echo get_avatar( get_the_author_meta( 'ID' ), 128 ); ?> 
+            	</div>
+				<h2 class="page-title"><?php the_author(); ?> </h2>
+                <?php the_archive_description( '<div class="author-bio">', '</div>' ); ?>
             </div>
         </div>
     </header>
