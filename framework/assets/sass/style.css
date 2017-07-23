@@ -825,8 +825,8 @@ a:hover, a:active {
 }
 
 .menu-mobile:after {
-  content: "\f394";
-  font-family: "Ionicons";
+  content: "\f0c9 ";
+  font-family: "FontAwesome";
   font-size: 2.5rem;
   padding: 0;
   float: right;
@@ -838,8 +838,8 @@ a:hover, a:active {
 }
 
 .menu-dropdown-icon:before {
-  content: "\f489";
-  font-family: "Ionicons";
+  content: "\f067";
+  font-family: "FontAwesome";
   display: none;
   cursor: pointer;
   float: right;

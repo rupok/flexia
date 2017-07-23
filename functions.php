@@ -47,26 +47,6 @@ function flexia_setup() {
 		'menu-1' => esc_html__( 'Primary', 'flexia' ),
 	) );
 
-	// Flexia megamenu
-
-	function flexia_nav_menu_args($args = '')
-	{
-	    $args['container'] = false;
-	    return $args;
-	}
-
-	// Remove Injected classes, ID's and Page ID's from Navigation <li> items
-	function flexia_css_attributes_filter($var)
-	{
-	    return is_array($var) ? array() : '';
-	}
-
-	add_filter('wp_nav_menu_args', 'flexia_nav_menu_args'); // Remove surrounding <div> from WP Navigation
-	add_filter('nav_menu_css_class', 'flexia_css_attributes_filter', 100, 1); // Remove Navigation <li> injected classes
-	add_filter('nav_menu_item_id', 'flexia_css_attributes_filter', 100, 1); // Remove Navigation <li> injected ID
-	add_filter('page_css_class', 'flexia_css_attributes_filter', 100, 1); // Remove Navigation <li> Page ID's
-
-
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
