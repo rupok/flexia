@@ -1647,6 +1647,10 @@ a:hover, a:active {
   align-content: center;
   flex-flow: row nowrap;
   position: relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
 }
 
 .header-inner {
@@ -1745,12 +1749,6 @@ a:hover, a:active {
 }
 
 /* Single Posts */
-.single-blog-header {
-  background-color: #28292e;
-  position: relative;
-  width: 100%;
-}
-
 .single-blog-header .header-content .blog-title {
   color: #fff;
   font-size: 3em;
@@ -1765,13 +1763,13 @@ a:hover, a:active {
   font-size: 1.5rem;
 }
 
-.author-avatar > img {
-  border-radius: 50%;
-  width: 80px;
-}
-
 .header-content .author-avatar > img {
   width: 120px;
+  border-radius: 50%;
+}
+
+.single-post .header-content .author-avatar > img {
+  width: 80px;
 }
 
 .author-heading {

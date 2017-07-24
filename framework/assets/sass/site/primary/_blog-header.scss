@@ -20,7 +20,6 @@
   padding: 0.5em 2em;
 }
 
-
 .blog .header-content {
   padding-bottom: 3em;
 }
@@ -31,12 +30,6 @@
 
 
 /* Single Posts */
-
-.single-blog-header {
-  background-color: #28292e;
-  position: relative;
-  width: 100%;
-}
 
 .single-blog-header .header-content .blog-title {
   color: #fff;
@@ -53,13 +46,13 @@
   font-size: 1.5rem;
 }
 
-.author-avatar > img {
-  border-radius: 50%;
-  width: 80px;
-}
-
 .header-content .author-avatar > img {
   width: 120px;
+  border-radius: 50%;
+}
+
+.single-post .header-content .author-avatar > img{
+  width: 80px;
 }
 
 .author-heading {
@@ -167,4 +160,3 @@
   transform: translateX(-50%) scale(1)
 }
 }
-

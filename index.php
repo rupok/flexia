@@ -18,7 +18,7 @@ get_header(); ?>
 
 	<?php get_template_part( 'framework/views/template-parts/content', 'masthead' ); ?>
 	
-	<header class="page-header blog-header" style="background: url('<?php echo header_image(); ?>') no-repeat fixed center center / cover;">
+	<header class="page-header blog-header" style="background-image: url('<?php echo esc_attr(header_image()); ?>');">
         <div class="header-inner">
             <div class="header-content">
                 <span><i class="fa fa-3x fa-pencil"></i></span>
