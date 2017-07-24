@@ -17,6 +17,23 @@
 	margin: 1em;
 }
 
+.flexia-back-to-top, .flexia-back-to-top:visited {
+	font-size: 20px;
+	background: rgba(0,0,0,.5);
+	color: #ffffff;
+	border-radius: 3px;
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	line-height: 40px;
+	width: 40px;
+	text-align: center;
+	z-index: 10;
+	-webkit-transition: opacity .3s ease-in-out;
+	transition: opacity .3s ease-in-out;
+}
+
+
 @media all and (min-width: 768px) {
 .flexia-colophon-inner .widget {
 	flex: 1 1 30%;

@@ -13,6 +13,8 @@ function flexia_site_scripts() {
 
 	wp_enqueue_script( 'flexia-navigation', get_template_directory_uri() . '/framework/assets/site/js/navigation.js', array(), '', true );
 
+	wp_enqueue_script( 'flexia-body-js', get_template_directory_uri() . '/framework/assets/site/js/flexia-body.js', array('jquery'), '', true );
+
 	wp_enqueue_script( 'flexia-skip-link-focus-fix', get_template_directory_uri() . '/framework/assets/site/js/skip-link-focus-fix.js', array(), '', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
