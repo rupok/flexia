@@ -26,7 +26,7 @@ get_header(); ?>
                 <p class="blog-desc"><?php printf( esc_html__( '%s', 'flexia' ), get_bloginfo ( 'description' ) ); ?><br /></p>
             </div>
 
-            <a href="#main" class="scroll-down"></a>
+            <a href="#content" class="scroll-down"></a>
         </div>
     </header>
 

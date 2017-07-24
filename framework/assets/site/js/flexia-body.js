@@ -47,4 +47,18 @@ jQuery( document ).ready( function($) {
 			});
 		}
 	});
+
+    // Scroll to Blog
+
+        $('a.scroll-down').click(function() {
+        $('html, body').animate({ scrollTop:$('#content').offset().top }, 500);
+        return false;
+    });
+
+    // Scroll to Blog Comments
+
+        $('a.scroll-to-comments').click(function() {
+        $('html, body').animate({ scrollTop:$('#comments').offset().top }, 500);
+        return false;
+    });
 });
