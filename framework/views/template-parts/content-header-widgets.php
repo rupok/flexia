@@ -19,3 +19,5 @@
 		<?php dynamic_sidebar( 'header-4' ); ?>
 	</div>
 </div>
+
+<div class="header-widget-toggle toggle-collapsed"></div>
