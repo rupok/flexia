@@ -663,6 +663,42 @@ big {
   transform: rotate(180deg);
 }
 
+.flexia-navbar {
+  width: 100%;
+}
+
+.flexia-navbar-inner {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-branding {
+  flex: 0 0 auto;
+}
+
+.site-branding .custom-logo-link .custom-logo {
+  height: 65px;
+  padding: 15px;
+  vertical-align: middle;
+  width: auto;
+}
+
+.main-navigation {
+  margin: 0 1em;
+  flex: 0 0 auto;
+}
+
+.custom-logo-link + .site-title {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  word-wrap: normal !important;
+}
+
 .flexia-colophon-inner {
   display: flex;
   justify-content: center;
@@ -980,32 +1016,7 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.site-branding {
-  display: inline-block;
-  padding: 10px 10px 0;
-}
-
-.site-branding .custom-logo-link .custom-logo {
-  height: 55px;
-  vertical-align: middle;
-  display: inline-block;
-  width: auto;
-}
-
-.custom-logo-link + .site-title {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  word-wrap: normal !important;
-}
-
 .main-navigation {
-  display: inline-block;
-  float: right;
-  clear: right;
-  width: auto;
   margin: 0 1em;
 }
 .main-navigation ul {
@@ -1040,7 +1051,7 @@ a:hover, a:active {
 .main-navigation li {
   float: left;
   position: relative;
-  margin: .5em;
+  margin: .5em 0;
 }
 .main-navigation a {
   display: block;
@@ -1863,6 +1874,10 @@ a:hover, a:active {
 .flexia-wrapper.flexia-container {
   padding-top: 3em;
   overflow: hidden;
+}
+
+.single-post .flexia-wrapper.flexia-container {
+  padding-top: 0;
 }
 
 .sticky {
