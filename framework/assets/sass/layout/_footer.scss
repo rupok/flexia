@@ -4,3 +4,27 @@
 	align-content: center;
 	flex-flow: row wrap;
 }
+
+.flexia-colophon-inner .widget {
+	flex: 1 1 auto;
+}
+
+.footer-widget-area {
+  padding: .5em;
+}
+
+.flexia-colophon-inner .widget {
+	margin: 1em;
+}
+
+@media all and (min-width: 768px) {
+.flexia-colophon-inner .widget {
+	flex: 1 1 30%;
+}
+}
+
+@media all and (min-width: 960px) {
+.flexia-colophon-inner .widget {
+	flex: 1 1 20%;
+}
+}

@@ -568,6 +568,44 @@ big {
   background: #262625;
 }
 
+.flexia-header-widget-inner {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: row wrap;
+}
+
+.flexia-header-widget-inner .widget {
+  flex: 1 1 auto;
+}
+
+.flexia-header-widget-area {
+  padding: .5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 9999;
+  border: 4px double rgba(0, 0, 0, 0.15);
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.flexia-header-widget-inner .widget {
+  margin: 1em;
+}
+
+@media all and (min-width: 768px) {
+  .flexia-header-widget-inner .widget {
+    flex: 1 1 30%;
+  }
+}
+@media all and (min-width: 960px) {
+  .flexia-header-widget-inner .widget {
+    flex: 1 1 20%;
+  }
+}
 .flexia-colophon-inner {
   display: flex;
   justify-content: center;
@@ -575,6 +613,57 @@ big {
   flex-flow: row wrap;
 }
 
+.flexia-colophon-inner .widget {
+  flex: 1 1 auto;
+}
+
+.footer-widget-area {
+  padding: .5em;
+}
+
+.flexia-colophon-inner .widget {
+  margin: 1em;
+}
+
+@media all and (min-width: 768px) {
+  .flexia-colophon-inner .widget {
+    flex: 1 1 30%;
+  }
+}
+@media all and (min-width: 960px) {
+  .flexia-colophon-inner .widget {
+    flex: 1 1 20%;
+  }
+}
+.flexia-sidebar {
+  padding: 0 1.5em;
+}
+
+@media all and (max-width: 959px) {
+  .widget.widget_search {
+    flex: 1 100% !important;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 959px) {
+  .flexia-sidebar {
+    padding: 0 0 1.5em;
+  }
+
+  .flexia-sidebar-inner {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0 .5em;
+  }
+
+  .flexia-sidebar-inner > .widget {
+    flex: 1 1 30%;
+    margin: 1em;
+  }
+
+  .widget.widget_search .search-submit {
+    max-width: 100px;
+  }
+}
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -1119,35 +1208,9 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-.flexia-colophon-inner .widget {
-  flex: 0 0 auto;
-}
-
-.footer-widget-area {
-  padding: .5em;
-}
-
-.flexia-colophon-inner .widget {
-  margin: 1em;
-}
-
-.flexia-sidebar {
-  padding: 0 1.5em;
-}
-
-@media all and (min-width: 768px) {
-  .flexia-colophon-inner .widget {
-    flex: 1 1 30%;
-  }
-}
-@media all and (min-width: 960px) {
-  .flexia-colophon-inner .widget {
-    flex: 1 1 20%;
-  }
-}
 /* Widget Style */
 .widget {
-  background: none repeat scroll 0 0 rgba(255, 255, 255, 0.8);
+  background-color: #fff;
   border: 1px solid transparent;
   border-radius: 0;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
@@ -1405,6 +1468,11 @@ a:hover, a:active {
 .search-form .search-submit {
   flex: 1 1 40px;
   align-self: stretch;
+  padding: 0 20px;
+}
+
+.widget .search-form .search-submit {
+  max-width: 60px;
 }
 
 .search-field, .search-field:focus {
@@ -1687,6 +1755,7 @@ a:hover, a:active {
 }
 .flexia-wrapper.flexia-container {
   padding-top: 3em;
+  overflow: hidden;
 }
 
 .sticky {

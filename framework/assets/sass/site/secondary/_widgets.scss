@@ -1,35 +1,8 @@
-.flexia-colophon-inner .widget {
-	flex: 0 0 auto;
-}
-
-.footer-widget-area {
-  padding: .5em;
-}
-
-.flexia-colophon-inner .widget {
-	margin: 1em;
-}
-
-.flexia-sidebar {
-  padding: 0 1.5em;
-}
-
-@media all and (min-width: 768px) {
-.flexia-colophon-inner .widget {
-	flex: 1 1 30%;
-}
-}
-
-@media all and (min-width: 960px) {
-.flexia-colophon-inner .widget {
-	flex: 1 1 20%;
-}
-}
 
 /* Widget Style */
 
 .widget {
-	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.8);
+	background-color: #fff;
 	border: 1px solid transparent;
 	border-radius: 0;
 	box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
@@ -279,6 +252,7 @@
 }
 
 /* Search widget */
+
 .search-form {
   display: flex;
   justify-content: center;
@@ -294,6 +268,11 @@
 .search-form .search-submit {
   flex: 1 1 40px;
   align-self: stretch;
+  padding: 0 20px;
+}
+
+.widget .search-form .search-submit {
+  max-width: 60px;
 }
 
 .search-field, .search-field:focus {

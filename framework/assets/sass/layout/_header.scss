@@ -1,0 +1,39 @@
+.flexia-header-widget-inner {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-flow: row wrap;
+}
+
+.flexia-header-widget-inner .widget {
+	flex: 1 1 auto;
+}
+
+.flexia-header-widget-area {
+	padding: .5em;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #fff;
+	z-index: 9999;
+	border: 4px double rgba(0,0,0, .15);
+	-webkit-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+
+.flexia-header-widget-inner .widget {
+	margin: 1em;
+}
+
+@media all and (min-width: 768px) {
+.flexia-header-widget-inner .widget {
+	flex: 1 1 30%;
+}
+}
+
+@media all and (min-width: 960px) {
+.flexia-header-widget-inner .widget {
+	flex: 1 1 20%;
+}
+}

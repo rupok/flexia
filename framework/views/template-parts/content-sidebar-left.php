@@ -13,5 +13,7 @@ if ( ! is_active_sidebar( 'sidebar-left' ) ) {
 ?>
 
 <aside id="flexia-sidebar-left" class="flexia-sidebar flexia-sidebar-left">
-	<?php dynamic_sidebar( 'sidebar-left' ); ?>
+	<div class="flexia-sidebar-inner">
+		<?php dynamic_sidebar( 'sidebar-left' ); ?>
+	</div>
 </aside><!-- #sidebar-left -->
