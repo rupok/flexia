@@ -978,11 +978,16 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation {
-  clear: both;
-  display: block;
+.site-branding {
   float: left;
-  width: 100%;
+  margin: 1em;
+}
+
+.main-navigation {
+  display: inline-block;
+  float: right;
+  width: auto;
+  margin: 1em;
 }
 .main-navigation ul {
   display: none;
@@ -991,6 +996,7 @@ a:hover, a:active {
   padding-left: 0;
 }
 .main-navigation ul ul {
+  background-color: #fff;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
   position: absolute;
@@ -1015,10 +1021,12 @@ a:hover, a:active {
 .main-navigation li {
   float: left;
   position: relative;
+  margin: .5em;
 }
 .main-navigation a {
   display: block;
   text-decoration: none;
+  padding: 15px;
 }
 
 /* Small menu. */
