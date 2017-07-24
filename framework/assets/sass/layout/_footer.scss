@@ -20,7 +20,7 @@
 .flexia-back-to-top, .flexia-back-to-top:visited {
 	font-size: 20px;
 	background: rgba(0,0,0,.5);
-	color: #ffffff;
+	color: #fff;
 	border-radius: 3px;
 	position: fixed;
 	bottom: 30px;
@@ -33,6 +33,10 @@
 	transition: opacity .3s ease-in-out;
 }
 
+.flexia-back-to-top:focus, .flexia-back-to-top:hover {
+	background: rgba(0,0,0,.75);
+	color: #fff;
+}
 
 @media all and (min-width: 768px) {
 .flexia-colophon-inner .widget {
