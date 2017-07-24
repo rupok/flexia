@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<div id="page" class="site">>
+<div id="page" class="site">
 
 	<?php get_template_part( 'framework/views/template-parts/content', 'masthead' ); ?>
 

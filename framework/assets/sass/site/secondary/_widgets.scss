@@ -11,7 +11,7 @@
 }
 
 .flexia-sidebar {
-	padding: 1.5em;
+  padding: 0 1.5em;
 }
 
 @media all and (min-width: 768px) {
@@ -72,7 +72,7 @@
 }
 
 .widget ul, .widget ol {
-  padding-left: 1em;
+  padding: 0;
   margin: 0;
 }
 
@@ -118,8 +118,9 @@
   opacity: .8;
 }
 
-.widget li a {
-  font-size: .8em;
+.widget li {
+  font-size: 0.875em;
+  line-height: 1.8;
 }
 
 .widget form {

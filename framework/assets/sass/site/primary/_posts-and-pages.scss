@@ -125,8 +125,9 @@
 }
 
 .entry-content.single-post-entry {
-	margin: 0 auto;
-	padding: 1.5em 4em;
+  margin: 0 1.5em;
+  padding: 1.5em 4em;
+  background-color: #fff;
 }
 
 .single-post .entry-meta {
@@ -175,19 +176,12 @@
   display: none;
 }
 
-.single-post .flexia-sidebar-left {
-	padding-right: 0;
-}
-.single-post .flexia-sidebar-right {
-	padding-left: 0;
-}
-
 .blog .entry-header, .archive .entry-header {
 	margin-top: 4em;
 }
 
 body:not(.single-post) .hentry:first-child .entry-header {
-	margin-top: 1.5em;
+  margin-top: 0;
 }
 
 .entry-title a {
@@ -228,11 +222,14 @@ body:not(.single-post) .hentry:first-child .entry-header {
 }
 
 .flexia-wrapper > .content-area {
-	padding: 0 3em 3em;
+  background-color: #fff;
+  padding: 2.5em;
+  margin-bottom: 1.5em;
 }
 
 .single-post .flexia-wrapper > .content-area {
-	padding: 0;
+  padding: 0;
+  background-color: transparent;
 }
 
 .btn-read-more {
