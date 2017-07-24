@@ -553,6 +553,8 @@ big {
 .flexia-topbar {
   background: #262625;
   color: #fff;
+  min-height: 40px;
+  overflow: hidden;
 }
 
 .flexia-navbar {
@@ -979,12 +981,15 @@ a:hover, a:active {
 ## Menus
 --------------------------------------------------------------*/
 .site-branding {
-  float: left;
-  margin: 1em;
+  display: inline-block;
+  padding: 10px 10px 0;
 }
 
-.site-branding .custom-logo-link {
-  width: 250px;
+.site-branding .custom-logo-link .custom-logo {
+  height: 55px;
+  vertical-align: middle;
+  display: inline-block;
+  width: auto;
 }
 
 .custom-logo-link + .site-title {
@@ -999,8 +1004,9 @@ a:hover, a:active {
 .main-navigation {
   display: inline-block;
   float: right;
+  clear: right;
   width: auto;
-  margin: 1em;
+  margin: 0 1em;
 }
 .main-navigation ul {
   display: none;
@@ -1276,8 +1282,8 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
-.clear:before,
-.clear:after,
+.clearfix:before,
+.clearfix:after,
 .entry-content:before,
 .entry-content:after,
 .comment-content:before,
@@ -1293,7 +1299,7 @@ a:hover, a:active {
   table-layout: fixed;
 }
 
-.clear:after,
+.clearfix:after,
 .entry-content:after,
 .comment-content:after,
 .site-header:after,
@@ -1805,6 +1811,10 @@ a:hover, a:active {
   animation-iteration-count: 5;
 }
 
+.scroll-down:focus {
+  outline: none;
+}
+
 @-webkit-keyframes flexia-translate {
   0% {
     -webkit-transform: translateX(-50%) scale(1);
@@ -1902,7 +1912,7 @@ a:hover, a:active {
 
 .post-password-form input[type="submit"], .post-content button, .post-content input[type="button"],
 .post-content input[type="reset"], .post-content input[type="submit"] {
-  background: none repeat scroll 0 0 #f56a6a;
+  background-color: #f56a6a;
   border: medium none;
   cursor: pointer;
   color: #fff;

@@ -83,6 +83,8 @@
 .flexia-topbar {
   background: $color__dark;
   color: $color__light;
+  min-height: 40px;
+  overflow: hidden;
 }
 
 .flexia-navbar {

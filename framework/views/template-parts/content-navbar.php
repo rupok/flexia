@@ -12,7 +12,7 @@
 ?>
 
 <div class="flexia-navbar">
-	<div class="flexia-container">
+	<div class="flexia-container clearfix">
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
