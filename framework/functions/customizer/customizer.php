@@ -42,6 +42,36 @@ function flexia_customize_register( $wp_customize ) {
 	}
 
 
+  // Layout Settings
+
+  $wp_customize->add_section( 'container_settings' , array(
+    'title'      => __('Container Width','flexia'), 
+    'panel'      => 'layout_settings',
+    'priority'   => 20    
+  ) );  
+  $wp_customize->add_setting(
+      'flexia_container_width',
+      array(          
+          'sanitize_callback' => 'sanitize_text'          
+      )
+  );
+  $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'container_width',
+            array(
+                'label'          => __( 'Container Width', 'flexia' ),
+                'section'        => 'container_settings',
+                'settings'       => 'flexia_container_width',
+                'type'           => 'text',
+                'default'		 => '1200'
+            )
+        )
+   );
+
+
+
+
   // Create custom panels
   $wp_customize->add_panel( 'general_settings', array(
       'priority' => 10,
