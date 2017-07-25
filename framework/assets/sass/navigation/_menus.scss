@@ -10,6 +10,7 @@
 		ul {
 			background-color: #fff; 
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			width: 220px;
 			float: left;
 			position: absolute;
 			top: 100%;
@@ -29,7 +30,8 @@
 			}
 
 			a {
-				width: 200px;
+				text-align: left;
+				padding: 15px;
 			}
 
 			:hover > a,
@@ -54,21 +56,101 @@
 
 		&:hover > a,
 		&.focus > a {
+			color: #1b1f21;
 		}
 	}
 
 	a {
+		position: relative;
 		display: block;
 		text-decoration: none;
-		padding: 15px;
+		padding: 10px 5px;
+		font-size: 13px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: #4d4d4d;
+		-moz-transition: ease-out 0.3s 0.1s;
+		-o-transition: ease-out 0.3s 0.1s;
+		-webkit-transition: ease-out 0.3s;
+		-webkit-transition-delay: 0.1s;
+		transition: ease-out 0.3s 0.1s;
+
+		&::after {
+			height: 0.1em;
+			width: 100%;
+			background-color: #4d4d4d;
+			content: "";
+			position: absolute;
+			left: 0px;
+			bottom: 0;
+			-moz-transform: scaleX(0);
+			-ms-transform: scaleX(0);
+			-webkit-transform: scaleX(0);
+			transform: scaleX(0);
+			-moz-transition: 0.3s;
+			-o-transition: 0.3s;
+			-webkit-transition: 0.3s;
+			transition: 0.3s;
+		}
+
+		&:hover::after {
+			background-color: #1b1f21; 
+			-moz-transform: scaleX(1);
+			-ms-transform: scaleX(1);
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+		}
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+		color: #1b1f21;
+
+		&::after {
+		background-color: #1b1f21; 
+		-moz-transform: scaleX(1);
+		-ms-transform: scaleX(1);
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1);
+		}
 	}
 }
+
+.main-navigation .nav-menu > li {
+	padding: 0 .625em;
+}
+
+.main-navigation li.menu-item-has-children::after {
+	content: "\f107";
+	position: absolute;
+	right: 5px;
+	top: 10px;
+	font-family: "FontAwesome";
+	font-size: .8em;
+}
+
+.main-navigation ul ul li.menu-item-has-children::after {
+	top: 15px;
+	right: 15px;
+}
+
+/* Submenu */
+
+.main-navigation li ul li {
+	float: none;
+	margin: 0;
+}
+
+.main-navigation ul ul a:hover {
+	background-color: rgba(0,0,0, .05);
+}
+
+.main-navigation ul ul a::after {
+	display: none;
+}
+
 
 /* Small menu. */
 .menu-toggle,
