@@ -18,6 +18,6 @@
 		<?php dynamic_sidebar( 'header-3' ); ?>
 		<?php dynamic_sidebar( 'header-4' ); ?>
 	</div>
+<div class="header-widget-toggle toggle-collapsed"></div>
 </div>
 
-<div class="header-widget-toggle toggle-collapsed"></div>

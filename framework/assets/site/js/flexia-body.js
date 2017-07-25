@@ -35,7 +35,7 @@ jQuery( document ).ready( function($) {
 	});
 
 	_window.scroll(function() {
-		if ( _window.scrollTop() > 200 ) {
+		if ( _window.scrollTop() > 300 ) {
 			$('.toggle-collapsed').css({
 				'opacity': '0',
 				'visibility': 'hidden'

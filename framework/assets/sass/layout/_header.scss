@@ -7,6 +7,12 @@
 
 .flexia-header-widget-inner .widget {
 	flex: 1 1 auto;
+	background-color: transparent;
+	color: #fff;
+}
+
+.flexia-header-widget-inner .widget a {
+	color: #F56A6A;
 }
 
 .flexia-header-widget-area {
@@ -15,9 +21,8 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	background-color: #fff;
+	background-color: #262625;
 	z-index: 99;
-	border-bottom: 4px double rgba(0,0,0, .15);
 	-webkit-transform: translateY(-100%);
 	transform: translateY(-100%);
 	-webkit-transition: -webkit-transform 500ms ease;
@@ -52,12 +57,18 @@
 .header-widget-toggle {
 	cursor: pointer;
 	height: 40px;
-	position: fixed;
+	position: absolute;
 	width: 40px;
-	top: 0;
 	right: 0;
-	background-color: rgba(0,0,0, .5);
+	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 999;
+	bottom: -40px;
+	-webkit-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.header-widget-toggle:hover {
+	background-color: rgba(0,0,0, .75);
 }
 
 .header-widget-toggle.toggle-collapsed {
