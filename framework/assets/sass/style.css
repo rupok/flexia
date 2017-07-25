@@ -1129,6 +1129,7 @@ a:hover, a:active {
 }
 
 .main-navigation ul ul li.menu-item-has-children::after {
+  content: "\f105";
   top: 15px;
   right: 15px;
 }
