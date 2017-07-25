@@ -24,12 +24,3 @@
 	margin: 0 1em;
 	flex: 0 0 auto;
 }
-
-.custom-logo-link + .site-title {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	word-wrap: normal !important;
-}

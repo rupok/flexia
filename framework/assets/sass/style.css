@@ -701,15 +701,6 @@ big {
   flex: 0 0 auto;
 }
 
-.custom-logo-link + .site-title {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  word-wrap: normal !important;
-}
-
 .flexia-colophon-inner {
   display: flex;
   justify-content: center;
@@ -804,7 +795,7 @@ html {
 }
 
 body {
-  background: #fff;
+  background: #f9f9f9;
   /* Fallback for when there is no custom background color defined. */
   font-size: 16px;
   overflow-x: hidden;
