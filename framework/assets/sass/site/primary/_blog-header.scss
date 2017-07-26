@@ -32,6 +32,11 @@
   padding-bottom:  0;
 }
 
+.header-content .flexia-blog-logo {
+  max-width: 100%;
+  margin: 0 auto 10px;
+}
+
 @media all and(min-width: 1400px) {
 .blog-header .header-inner {
   padding: 6em 2em;
@@ -74,7 +79,7 @@
 .single-post .single-blog-meta .entry-meta, .single-post .single-blog-meta .entry-meta a {
   color: #bbbbbb;
   font-family: "Merriweather",serif;
-  font-size: 1em;
+  font-size: 13px;
   text-align: center;
 }
 

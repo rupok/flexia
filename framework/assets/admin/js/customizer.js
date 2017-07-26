@@ -93,6 +93,29 @@
         } );
     });  
 
+    // Blog logo width
+
+    wp.customize( 'blog_logo_width', function( value ) {
+        value.bind( function( to ) {            
+            $( '.header-content .flexia-blog-logo' ).css( 'width', to );            
+        } );
+
+    // Blog title font size
+
+    wp.customize( 'blog_title_font_size', function( value ) {
+        value.bind( function( to ) {            
+            $( '.blog-header .header-content > .page-title, .archive-header .header-content > .page-title' ).css( 'font-size', to );            
+        } );
+    });  
+
+    // Blog description font size
+
+    wp.customize( 'blog_desc_font_size', function( value ) {
+        value.bind( function( to ) {            
+            $( '.header-content .blog-desc, .header-content .archive-description > p' ).css( 'font-size', to );            
+        } );
+    });  
+
     // Sidebars width 
 
     wp.customize( 'left_sidebar_width', function( value ) {
@@ -100,6 +123,7 @@
             $( '.flexia-sidebar-left' ).css( 'width', to + 'px' );            
         } );
     });  
+    
     wp.customize( 'right_sidebar_width', function( value ) {
         value.bind( function( to ) {            
             $( '.flexia-sidebar-right' ).css( 'width', to + 'px' );            

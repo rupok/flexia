@@ -1853,6 +1853,11 @@ a:hover, a:active {
   padding-bottom: 0;
 }
 
+.header-content .flexia-blog-logo {
+  max-width: 100%;
+  margin: 0 auto 10px;
+}
+
 @media all and (min-width: 1400px) {
   .blog-header .header-inner {
     padding: 6em 2em;
@@ -1890,7 +1895,7 @@ a:hover, a:active {
 .single-post .single-blog-meta .entry-meta, .single-post .single-blog-meta .entry-meta a {
   color: #bbbbbb;
   font-family: "Merriweather",serif;
-  font-size: 1em;
+  font-size: 13px;
   text-align: center;
 }
 
@@ -2285,6 +2290,7 @@ body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
   max-width: 600px;
   flex: 1 1 80%;
   color: #4d4d4d;
+  padding-top: 10px;
 }
 
 .post-author .author-body > span {
@@ -2329,7 +2335,7 @@ body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
   display: flex;
   flex-flow: row wrap;
   color: #949494;
-  font-size: 1em;
+  font-size: 13px;
   text-transform: uppercase;
   padding: 1em;
   margin: 2em 0 5em;

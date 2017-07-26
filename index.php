@@ -12,7 +12,11 @@
  * @package Flexia
  */
 
-get_header(); ?>
+get_header(); 
+
+	$icon_class = get_theme_mod('blog_icon_class');
+
+?>
 
 <div id="page" class="site">
 
@@ -21,7 +25,17 @@ get_header(); ?>
 	<header class="page-header blog-header" style="background-image: url('<?php echo esc_attr(header_image()); ?>');">
         <div class="header-inner">
             <div class="header-content">
-                <span><i class="fa fa-3x fa-pencil"></i></span>
+
+            	<?php if( get_theme_mod('show_blog_logo') == 'blog_icon' ) :  ?>
+
+               		<span><i class="fa fa-3x <?php echo $icon_class ?>"></i></span>
+
+               	<?php elseif( get_theme_mod('show_blog_logo') == 'blog_logo_image' ) :  ?>
+
+               		<img class="flexia-blog-logo" src="<?php echo get_theme_mod('blog_logo'); ?>">
+
+                <?php endif; ?>
+
                 <h2 class="page-title"><?php bloginfo( 'name' ); ?></h2>
                 <p class="blog-desc"><?php printf( esc_html__( '%s', 'flexia' ), get_bloginfo ( 'description' ) ); ?><br /></p>
             </div>

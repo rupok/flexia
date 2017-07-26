@@ -73,6 +73,14 @@ function flexia_header_style() {
 	  	background-color: <?php echo get_theme_mod('sidebar_widget_bg_color'); ?>;
 	  }
 
+	  .blog-header .header-content > .page-title, .archive-header .header-content > .page-title {
+	  	font-size: <?php echo get_theme_mod('blog_title_font_size'); ?>px;
+	  }
+
+	  .header-content .blog-desc, .header-content .archive-description > p {
+	  	font-size: <?php echo get_theme_mod('blog_desc_font_size'); ?>px;
+	  }
+
 	</style>
 	<?php
 }

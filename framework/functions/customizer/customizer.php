@@ -344,6 +344,131 @@ function flexia_customize_register( $wp_customize ) {
 	) ) );
 
 
+	// Blog logo/Icon
+
+	$wp_customize->add_setting( 'show_blog_logo' , array(
+	    'default'   => 'blog_icon',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'show_blog_logo',
+	        array(
+	            'label'          => __( 'Blog Logo / Icon', 'flexia' ),
+	            'section'        => 'blog_settings',
+	            'settings'       => 'show_blog_logo',
+	            'description'    => 'Set an icon or logo for blog home page.',
+	            'type'           => 'select',
+	            'choices'        => array(
+	                'blog_icon'   => __( 'Icon' ),
+	                'blog_logo_image'   => __( 'Image' ),
+	                'blog_logo_none'   => __( 'None' )
+	            )
+	        )
+	    )
+	);
+
+
+	$wp_customize->add_setting( 'blog_icon_class' , array(
+	    'default'   => 'fa-pencil',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'blog_icon_class',
+	        array(
+	            'label'          => __( 'Icon Class (Font Awesome)', 'flexia' ),
+	            'section'        => 'blog_settings',
+	            'settings'       => 'blog_icon_class',
+	            'description'    => 'Enter font awesome icon class (i.e. fa-pencil)',
+	            'type'           => 'text',
+	        )
+	    )
+	);
+
+
+	$wp_customize->add_setting( 'blog_logo' , array(
+	    'default'   => '',
+	) );
+
+
+	$wp_customize->add_control(
+       new WP_Customize_Image_Control(
+           $wp_customize,
+           'blog_logo',
+           array(
+               'label'      => __( 'Upload a logo for blog', 'flexia' ),
+               'section'    => 'blog_settings',
+               'settings'   => 'blog_logo',
+               'context'    => 'flexia_blog_logo' 
+           )
+       )
+   );
+
+
+	$wp_customize->add_setting( 'blog_logo_width' , array(
+	    'default'   => '150',
+	    'transport' => 'postMessage',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'blog_logo_width',
+	        array(
+	            'label'          => __( 'Blog Logo width (px)', 'flexia' ),
+	            'section'        => 'blog_settings',
+	            'settings'       => 'blog_logo_width',
+	            'type'           => 'text',
+	        )
+	    )
+	);
+
+	$wp_customize->add_setting( 'blog_title_font_size', array(
+			'default'       => get_theme_mod( 'blog_title_font_size', '54' ),
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'blog_title_font_size', array(
+		'type'     => 'range-value',
+		'section'  => 'blog_settings',
+		'settings' => 'blog_title_font_size',
+		'label'    => __( 'Blog Title Font Size (px)' ),
+		'input_attrs' => array(
+			'min'    => 1,
+			'max'    => 160,
+			'step'   => 1,
+			'suffix' => 'px', //optional suffix
+	  	),
+	) ) );
+
+	$wp_customize->add_setting( 'blog_desc_font_size', array(
+			'default'       => get_theme_mod( 'blog_desc_font_size', '18' ),
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'blog_desc_font_size', array(
+		'type'     => 'range-value',
+		'section'  => 'blog_settings',
+		'settings' => 'blog_desc_font_size',
+		'label'    => __( 'Blog Description Font Size (px)' ),
+		'input_attrs' => array(
+			'min'    => 1,
+			'max'    => 72,
+			'step'   => 1,
+			'suffix' => 'px', //optional suffix
+	  	),
+	) ) );
+
 
   // Create custom panels
   $wp_customize->add_panel( 'general_settings', array(
