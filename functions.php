@@ -80,11 +80,6 @@ add_action( 'after_setup_theme', 'flexia_content_width', 0 );
 
 
 /**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -111,6 +106,7 @@ require get_template_directory() . '/framework/functions/flexia/widgets.php';
  * Customizer additions.
  */
 require get_template_directory() . '/framework/functions/customizer/customizer.php';
+
 
 /**
  * Load Jetpack compatibility file.

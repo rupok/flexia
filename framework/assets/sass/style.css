@@ -685,6 +685,7 @@ big {
 
 .site-branding {
   flex: 0 0 auto;
+  margin: 0 1em;
 }
 
 .site-branding .custom-logo-link .custom-logo {
@@ -751,6 +752,7 @@ big {
 }
 .flexia-sidebar {
   padding: 0 1em;
+  width: 300px;
 }
 
 @media all and (max-width: 959px) {

@@ -101,6 +101,34 @@ function flexia_customize_register( $wp_customize ) {
 	) ) );
 
 
+
+	$wp_customize->add_setting( 'content_layout' , array(
+	    'default'   => 'content_layout1',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'content_layout',
+	        array(
+	            'label'          => __( 'Content Layout', 'flexia' ),
+	            'section'        => 'layout_settings',
+	            'settings'       => 'content_layout',
+	            'description'    => 'This settings will be reflected on blog page, single posts and archives. For pages, you can use page templates.',
+	            'type'           => 'radio',
+	            'choices'        => array(
+	                'content_layout1'   => __( 'Sidebar | Content | Sidebar' ),
+	                'content_layout2'   => __( 'Sidebar | Content' ),
+	                'content_layout3'   => __( 'Content | Sidebar' ),
+	                'content_layout4'   => __( 'Content Only' )
+	            )
+	        )
+	    )
+	);
+
+
+
 	$wp_customize->add_setting( 'left_sidebar_width', array(
 			'default'       => get_theme_mod( 'left_sidebar_width', '300' ),
 			'capability'    => 'edit_theme_options',
@@ -116,7 +144,7 @@ function flexia_customize_register( $wp_customize ) {
 		'input_attrs' => array(
 			'min'    => 100,
 			'max'    => 500,
-			'step'   => 10,
+			'step'   => 5,
 			'suffix' => 'px', //optional suffix
 	  	),
 	) ) );
@@ -137,7 +165,7 @@ function flexia_customize_register( $wp_customize ) {
 		'input_attrs' => array(
 			'min'    => 100,
 			'max'    => 500,
-			'step'   => 10,
+			'step'   => 5,
 			'suffix' => 'px', //optional suffix
 	  	),
 	) ) );

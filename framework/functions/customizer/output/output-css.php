@@ -61,6 +61,11 @@ function flexia_header_style() {
 	    width: <?php echo get_theme_mod('right_sidebar_width'); ?>px;
 	  }
 
+
+
+
+
+
 	</style>
 	<?php
 }
