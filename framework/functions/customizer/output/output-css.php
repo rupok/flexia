@@ -29,10 +29,7 @@ function flexia_header_style() {
 		// If the user has set a custom color for the text use that.
 		else :
 	?>
-		.site-title a,
-		.site-description {
-			color: #<?php echo esc_attr( $header_text_color ); ?>;
-		}
+
 	<?php endif; ?>
 
 	  .flexia-container.width {
@@ -71,6 +68,10 @@ function flexia_header_style() {
 
 	  .flexia-sidebar .widget {
 	  	background-color: <?php echo get_theme_mod('sidebar_widget_bg_color'); ?>;
+	  }
+
+	  .header-content .flexia-blog-logo {
+	  	width: <?php echo get_theme_mod('blog_logo_width'); ?>px;
 	  }
 
 	  .blog-header .header-content > .page-title, .archive-header .header-content > .page-title {

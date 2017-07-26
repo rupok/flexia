@@ -97,15 +97,16 @@
 
     wp.customize( 'blog_logo_width', function( value ) {
         value.bind( function( to ) {            
-            $( '.header-content .flexia-blog-logo' ).css( 'width', to );            
+            $( '.header-content .flexia-blog-logo' ).css( 'width', to + 'px' );            
         } );
-
+    });  
+    
     // Blog title font size
 
     wp.customize( 'blog_title_font_size', function( value ) {
         value.bind( function( to ) {            
-            $( '.blog-header .header-content > .page-title' ).css( 'font-size', to );            
-            $( '.archive-header .header-content > .page-title' ).css( 'font-size', to );            
+            $( '.blog-header .header-content > .page-title' ).css( 'font-size', to + 'px' );            
+          
         } );
     });  
 
@@ -113,8 +114,8 @@
 
     wp.customize( 'blog_desc_font_size', function( value ) {
         value.bind( function( to ) {            
-            $( '.header-content .blog-desc' ).css( 'font-size', to );            
-            $( '.header-content .archive-description > p' ).css( 'font-size', to );            
+            $( '.header-content .blog-desc' ).css( 'font-size', to + 'px' );            
+            $( '.header-content .archive-description > p' ).css( 'font-size', to + 'px' );            
         } );
     });  
 
