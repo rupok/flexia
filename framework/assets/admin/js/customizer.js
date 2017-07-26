@@ -54,6 +54,45 @@
         } );
     });  
 
+	// Post Container width 
+
+    wp.customize( 'post_width', function( value ) {
+        value.bind( function( to ) {            
+            $( '.single-post .entry-content-wrapper' ).css( 'width', to + '%' );            
+        } );
+    });  
+
+    wp.customize( 'post_max_width', function( value ) {
+        value.bind( function( to ) {            
+            $( '.single-post .entry-content-wrapper' ).css( 'max-width', to + 'px' );            
+        } );
+    });  
+
+    wp.customize( 'blog_bg_color', function( value ) {
+        value.bind( function( to ) {            
+            $( 'body.blog, body.archive, body.single-post' ).css( 'background-color', to );            
+        } );
+    });  
+
+    wp.customize( 'post_content_bg_color', function( value ) {
+        value.bind( function( to ) {            
+            $( 'body:not(.single-post) .flexia-wrapper > .content-area  article.hentry' ).css( 'background-color', to );            
+            $( '.entry-content.single-post-entry' ).css( 'background-color', to );            
+        } );
+    });  
+
+    wp.customize( 'post_meta_bg_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.single-post .entry-header.single-blog-meta' ).css( 'background-color', to );            
+        } );
+    });  
+
+    wp.customize( 'sidebar_widget_bg_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-sidebar .widget' ).css( 'background-color', to );            
+        } );
+    });  
+
     // Sidebars width 
 
     wp.customize( 'left_sidebar_width', function( value ) {

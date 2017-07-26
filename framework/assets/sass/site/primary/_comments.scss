@@ -6,11 +6,10 @@
 }
 
 .comments-area {
-  background: rgba(255, 255, 255, 0.8);
   color: #797979;
   font-size: 17px;
   margin: 10px auto;
-  padding: 3em;
+  padding: 1em 0;
 }
 
 .comments-area a {
@@ -109,6 +108,7 @@ ol.comment-list li {
     width: 100%;
 }
 .comments-area .comment-form-comment textarea, .comments-area .comment-respond .comment-form-author input, .comments-area .comment-respond .comment-form-email input, .comments-area .comment-respond .comment-form-url input {
+    background-color: rgba(255,255,255, .8);
     border: 1px solid rgba(0,0,0, .15);
     box-shadow: none;
     color: #808086;

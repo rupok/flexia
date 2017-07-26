@@ -18,8 +18,8 @@
 	-moz-osx-font-smoothing: grayscale;
 	position: absolute;
 	content: "\f08d";
-	top: -10px;
-	right: -20px;
+	top: 10px;
+	right: 10px;
 	width: 28px;
 	height: 28px;
 	background: #f54128;
@@ -126,7 +126,7 @@
 }
 
 .single-post .entry-content-wrapper {
-	margin: 3em 0 0;
+	margin: 3em auto 0;
 }
 
 .entry-content.single-post-entry {
@@ -182,12 +182,9 @@
 }
 
 .blog .entry-header, .archive .entry-header {
-	margin-top: 4em;
+	margin-top: 0;
 }
 
-body:not(.single-post) .hentry:first-child .entry-header {
-  margin-top: 0;
-}
 
 .entry-title a {
   text-decoration: none;
@@ -227,9 +224,11 @@ body:not(.single-post) .hentry:first-child .entry-header {
 }
 
 .flexia-wrapper > .content-area {
-  background-color: #fff;
-  padding: 2.5em;
   margin: 0 1em 1.5em;
+}
+
+body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
+  padding: 2.5em;
 }
 
 .single-post .flexia-wrapper > .content-area {
@@ -239,8 +238,7 @@ body:not(.single-post) .hentry:first-child .entry-header {
 }
 
 .btn-read-more {
-  background-color: #f2f2f2;
-  border: 1px solid #3f3f46;
+  border: 1px solid rgba(0,0,0, .25);
   border-radius: 0;
   color: #3f3f46;
   font-size: 12px;

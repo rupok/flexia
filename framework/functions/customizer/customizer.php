@@ -56,7 +56,7 @@ function flexia_customize_register( $wp_customize ) {
   // Layout Settings
 
 	$wp_customize->add_section( 'layout_settings' , array(
-	'title'      => __('Flexia Layout','flexia'), 
+	'title'      => __('Layout','flexia'), 
 	'priority'   => 20    
 	) );  
 
@@ -93,7 +93,7 @@ function flexia_customize_register( $wp_customize ) {
 		'settings' => 'container_width',
 		'label'    => __( 'Site Width (%)' ),
 		'input_attrs' => array(
-			'min'    => 70,
+			'min'    => 50,
 			'max'    => 100,
 			'step'   => 1,
 			'suffix' => '%', //optional suffix
@@ -169,6 +169,120 @@ function flexia_customize_register( $wp_customize ) {
 			'max'    => 500,
 			'step'   => 5,
 			'suffix' => 'px', //optional suffix
+	  	),
+	) ) );
+
+
+
+  // Blog Settings
+
+	$wp_customize->add_section( 'blog_settings' , array(
+	'title'      => __('Blog Styles','flexia'), 
+	'priority'   => 30    
+	) );  
+
+	$wp_customize->add_setting( 'blog_bg_color' , array(
+	    'default'     => '#f9f9f9',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'blog_bg_color', 
+		array(
+			'label'      => __( 'Blog Body Background', 'flexia' ),
+			'section'    => 'blog_settings',
+			'settings'   => 'blog_bg_color',
+		) ) 
+	);
+
+	$wp_customize->add_setting( 'post_content_bg_color' , array(
+	    'default'     => '#fff',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'post_content_bg_color', 
+		array(
+			'label'      => __( 'Post Content Background', 'flexia' ),
+			'section'    => 'blog_settings',
+			'settings'   => 'post_content_bg_color',
+		) ) 
+	);
+
+	$wp_customize->add_setting( 'post_meta_bg_color' , array(
+	    'default'     => '#fff',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'post_meta_bg_color', 
+		array(
+			'label'      => __( 'Post Meta Background', 'flexia' ),
+			'section'    => 'blog_settings',
+			'settings'   => 'post_meta_bg_color',
+		) ) 
+	);
+
+	$wp_customize->add_setting( 'sidebar_widget_bg_color' , array(
+	    'default'     => '#fff',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'sidebar_widget_bg_color', 
+		array(
+			'label'      => __( 'Sidebar Widget Background', 'flexia' ),
+			'section'    => 'blog_settings',
+			'settings'   => 'sidebar_widget_bg_color',
+		) ) 
+	);
+
+
+	$wp_customize->add_setting( 'post_max_width', array(
+			'default'       => get_theme_mod( 'post_max_width', '1200' ),
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'post_max_width', array(
+		'type'     => 'range-value',
+		'section'  => 'blog_settings',
+		'settings' => 'post_max_width',
+		'label'    => __( 'Post Max Width (px)' ),
+		'input_attrs' => array(
+			'min'    => 600,
+			'max'    => 2000,
+			'step'   => 5,
+			'suffix' => 'px', //optional suffix
+	  	),
+	) ) );
+
+	$wp_customize->add_setting( 'post_width', array(
+			'default'       => get_theme_mod( 'post_width', '90' ),
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'post_width', array(
+		'type'     => 'range-value',
+		'section'  => 'blog_settings',
+		'settings' => 'post_width',
+		'label'    => __( 'Post Width (%)' ),
+		'input_attrs' => array(
+			'min'    => 50,
+			'max'    => 100,
+			'step'   => 1,
+			'suffix' => '%', //optional suffix
 	  	),
 	) ) );
 

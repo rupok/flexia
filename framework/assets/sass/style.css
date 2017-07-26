@@ -794,7 +794,7 @@ html {
 }
 
 body {
-  background: #f9f9f9;
+  background-color: #f9f9f9;
   /* Fallback for when there is no custom background color defined. */
   font-size: 16px;
   overflow-x: hidden;
@@ -1981,8 +1981,8 @@ a:hover, a:active {
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
   content: "\f08d";
-  top: -10px;
-  right: -20px;
+  top: 10px;
+  right: 10px;
   width: 28px;
   height: 28px;
   background: #f54128;
@@ -2089,7 +2089,7 @@ a:hover, a:active {
 }
 
 .single-post .entry-content-wrapper {
-  margin: 3em 0 0;
+  margin: 3em auto 0;
 }
 
 .entry-content.single-post-entry {
@@ -2145,10 +2145,6 @@ a:hover, a:active {
 }
 
 .blog .entry-header, .archive .entry-header {
-  margin-top: 4em;
-}
-
-body:not(.single-post) .hentry:first-child .entry-header {
   margin-top: 0;
 }
 
@@ -2191,9 +2187,11 @@ body:not(.single-post) .hentry:first-child .entry-header {
 }
 
 .flexia-wrapper > .content-area {
-  background-color: #fff;
-  padding: 2.5em;
   margin: 0 1em 1.5em;
+}
+
+body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
+  padding: 2.5em;
 }
 
 .single-post .flexia-wrapper > .content-area {
@@ -2203,8 +2201,7 @@ body:not(.single-post) .hentry:first-child .entry-header {
 }
 
 .btn-read-more {
-  background-color: #f2f2f2;
-  border: 1px solid #3f3f46;
+  border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 0;
   color: #3f3f46;
   font-size: 12px;
@@ -2395,11 +2392,10 @@ body:not(.single-post) .hentry:first-child .entry-header {
 }
 
 .comments-area {
-  background: rgba(255, 255, 255, 0.8);
   color: #797979;
   font-size: 17px;
   margin: 10px auto;
-  padding: 3em;
+  padding: 1em 0;
 }
 
 .comments-area a {
@@ -2514,6 +2510,7 @@ ol.comment-list li {
 }
 
 .comments-area .comment-form-comment textarea, .comments-area .comment-respond .comment-form-author input, .comments-area .comment-respond .comment-form-email input, .comments-area .comment-respond .comment-form-url input {
+  background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: none;
   color: #808086;
