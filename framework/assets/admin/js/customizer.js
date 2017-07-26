@@ -104,7 +104,8 @@
 
     wp.customize( 'blog_title_font_size', function( value ) {
         value.bind( function( to ) {            
-            $( '.blog-header .header-content > .page-title, .archive-header .header-content > .page-title' ).css( 'font-size', to );            
+            $( '.blog-header .header-content > .page-title' ).css( 'font-size', to );            
+            $( '.archive-header .header-content > .page-title' ).css( 'font-size', to );            
         } );
     });  
 
@@ -112,7 +113,8 @@
 
     wp.customize( 'blog_desc_font_size', function( value ) {
         value.bind( function( to ) {            
-            $( '.header-content .blog-desc, .header-content .archive-description > p' ).css( 'font-size', to );            
+            $( '.header-content .blog-desc' ).css( 'font-size', to );            
+            $( '.header-content .archive-description > p' ).css( 'font-size', to );            
         } );
     });  
 
@@ -123,7 +125,7 @@
             $( '.flexia-sidebar-left' ).css( 'width', to + 'px' );            
         } );
     });  
-    
+
     wp.customize( 'right_sidebar_width', function( value ) {
         value.bind( function( to ) {            
             $( '.flexia-sidebar-right' ).css( 'width', to + 'px' );            
