@@ -12,7 +12,7 @@
 ?>
 
 <div class="flexia-topbar">
-	<div class="flexia-topbar-inner flexia-container">
+	<div class="flexia-topbar-inner flexia-container max width">
 		<p>This is Topbar</p>
 	</div>
 </div>

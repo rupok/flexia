@@ -44,13 +44,26 @@
 
     wp.customize( 'container_width', function( value ) {
         value.bind( function( to ) {            
-            $( '.flexia-container' ).css( 'width', to + '%' );            
+            $( '.flexia-container.width' ).css( 'width', to + '%' );            
         } );
     });  
 
     wp.customize( 'container_max_width', function( value ) {
         value.bind( function( to ) {            
-            $( '.flexia-container' ).css( 'max-width', to + 'px' );            
+            $( '.flexia-container.max' ).css( 'max-width', to + 'px' );            
+        } );
+    });  
+
+    // Sidebars width 
+
+    wp.customize( 'left_sidebar_width', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-sidebar-left' ).css( 'width', to + 'px' );            
+        } );
+    });  
+    wp.customize( 'right_sidebar_width', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-sidebar-right' ).css( 'width', to + 'px' );            
         } );
     });  
 

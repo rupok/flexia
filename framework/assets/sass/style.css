@@ -541,12 +541,10 @@ big {
 @media all and (min-width: 960px) {
   .flexia-sidebar-left {
     flex: 0 0 auto;
-    width: 300px;
   }
 
   .flexia-sidebar-right {
     flex: 0 0 auto;
-    width: 300px;
   }
 }
 /* Colors */

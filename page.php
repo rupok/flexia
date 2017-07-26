@@ -21,7 +21,7 @@ get_header(); ?>
 	<div id="content" class="site-content">
 		<div class="flexia-wrapper flexia-container">
 			<div id="primary" class="content-area">
-				<main id="main" class="site-main flexia-container">
+				<main id="main" class="site-main flexia-container max width">
 
 					<?php
 					while ( have_posts() ) : the_post();

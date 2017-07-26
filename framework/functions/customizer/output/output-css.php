@@ -45,9 +45,20 @@ function flexia_header_style() {
 		}
 	<?php endif; ?>
 
-	  .flexia-container {
+	  .flexia-container.width {
 	    width: <?php echo get_theme_mod('container_width'); ?>%;
+	  }
+
+	  .flexia-container.max {
 	    max-width: <?php echo get_theme_mod('container_max_width'); ?>px;
+	  }
+
+	  .flexia-sidebar-left {
+	    width: <?php echo get_theme_mod('left_sidebar_width'); ?>px;
+	  }
+
+	  .flexia-sidebar-right {
+	    width: <?php echo get_theme_mod('right_sidebar_width'); ?>px;
 	  }
 
 	</style>

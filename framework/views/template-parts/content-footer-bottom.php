@@ -10,7 +10,7 @@
 ?>
 
 <footer id="flexia-colophon-bottom" class="site-footer">
-	<div class="flexia-colophon-inner flexia-container">
+	<div class="flexia-colophon-inner flexia-container max width">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'flexia' ) ); ?>"><?php
 				/* translators: %s: CMS name, i.e. WordPress. */

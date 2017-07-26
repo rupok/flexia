@@ -101,6 +101,48 @@ function flexia_customize_register( $wp_customize ) {
 	) ) );
 
 
+	$wp_customize->add_setting( 'left_sidebar_width', array(
+			'default'       => get_theme_mod( 'left_sidebar_width', '300' ),
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'left_sidebar_width', array(
+		'type'     => 'range-value',
+		'section'  => 'layout_settings',
+		'settings' => 'left_sidebar_width',
+		'label'    => __( 'Left Sidebar Width (px)' ),
+		'input_attrs' => array(
+			'min'    => 100,
+			'max'    => 500,
+			'step'   => 10,
+			'suffix' => 'px', //optional suffix
+	  	),
+	) ) );
+
+
+	$wp_customize->add_setting( 'right_sidebar_width', array(
+			'default'       => get_theme_mod( 'left_sidebar_width', '300' ),
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'right_sidebar_width', array(
+		'type'     => 'range-value',
+		'section'  => 'layout_settings',
+		'settings' => 'right_sidebar_width',
+		'label'    => __( 'Right Sidebar Width (px)' ),
+		'input_attrs' => array(
+			'min'    => 100,
+			'max'    => 500,
+			'step'   => 10,
+			'suffix' => 'px', //optional suffix
+	  	),
+	) ) );
+
+
 
   // Create custom panels
   $wp_customize->add_panel( 'general_settings', array(

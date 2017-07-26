@@ -12,7 +12,7 @@
 ?>
 
 <div class="flexia-navbar">
-	<div class="flexia-container flexia-navbar-inner">
+	<div class="flexia-container max width flexia-navbar-inner">
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
