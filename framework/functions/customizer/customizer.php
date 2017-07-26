@@ -286,6 +286,48 @@ function flexia_customize_register( $wp_customize ) {
 	  	),
 	) ) );
 
+	// Show post navigation
+
+	$wp_customize->add_setting( 'post_navigation', array(
+			'default'     => true,
+			'capability'  => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_navigation', array(
+			'label'	      => esc_html__( 'Enable Next/Prev posts?', 'flexia' ),
+			'section'     => 'blog_settings',
+			'settings'    => 'post_navigation',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+	// Show author under post
+
+	$wp_customize->add_setting( 'post_author', array(
+			'default'     => true,
+			'capability'  => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_author', array(
+			'label'	      => esc_html__( 'Show Author under post?', 'flexia' ),
+			'section'     => 'blog_settings',
+			'settings'    => 'post_author',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+
+	// Show author under post
+
+	$wp_customize->add_setting( 'post_social_share', array(
+			'default'     => true,
+			'capability'  => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_social_share', array(
+			'label'	      => esc_html__( 'Show Social Share under post?', 'flexia' ),
+			'section'     => 'blog_settings',
+			'settings'    => 'post_social_share',
+			'type'        => 'light',// light, ios, flat
+	) ) );
 
 
   // Create custom panels

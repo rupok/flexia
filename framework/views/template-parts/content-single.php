@@ -72,10 +72,23 @@ $thumbnail = '';
                 <?php flexia_entry_footer(); ?>
             </footer><!-- .entry-footer -->
 
-            <?php the_post_navigation(); ?>
+            <?php if( get_theme_mod('post_navigation') == true ) : 
 
-            <?php get_template_part( 'framework/views/template-parts/content', 'post-author' ); ?>
-            <?php get_template_part( 'framework/views/template-parts/content', 'social-sharer' ); ?>
+                the_post_navigation(); 
+
+            endif; ?>
+
+            <?php if( get_theme_mod('post_author') == true ) : 
+
+                get_template_part( 'framework/views/template-parts/content', 'post-author' );
+
+            endif; ?>
+
+            <?php if( get_theme_mod('post_social_share') == true ) : 
+
+                get_template_part( 'framework/views/template-parts/content', 'social-sharer' );
+
+            endif; ?>
 
             <?php
                 // If comments are open or we have at least one comment, load up the comment template
