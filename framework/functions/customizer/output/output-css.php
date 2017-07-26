@@ -56,7 +56,8 @@ function flexia_header_style() {
 	    width: <?php echo get_theme_mod('right_sidebar_width'); ?>px;
 	  }
 
-	  body.blog, body.archive, body.single-post {
+	  body.blog, body.archive, body.single-post,
+	  body.blog.custom-background, body.archive.custom-background, body.single-post.custom-background {
 	  	background-color: <?php echo get_theme_mod('blog_bg_color'); ?>;
 	  }
 

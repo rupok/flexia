@@ -100,6 +100,10 @@
 	display: none;
 }
 
+.single-post .entry-date:only-child {
+  display: inline-block;
+}
+
 .blog .entry-meta > span, .archive .entry-meta > span, .search .entry-meta > span {
 	margin-right: 10px;
 }

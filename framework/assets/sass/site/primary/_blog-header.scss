@@ -13,7 +13,7 @@
 .header-content .blog-desc, .header-content .archive-description > p {
   display: block;
   font-family: "Merriweather",serif;
-  font-size: 1.4rem;
+  font-size: 1.2em;
   font-style: italic;
   line-height: 1.2;
   opacity: 0.6;
@@ -21,12 +21,23 @@
 }
 
 .blog .header-content {
-  padding-bottom: 3em;
+  padding: 3em 0;
+}
+
+.blog.paged .header-content {
+  padding: 0;
 }
 
 .single-page-header .header-content {
   padding-bottom:  0;
 }
+
+@media all and(min-width: 1400px) {
+.blog-header .header-inner {
+  padding: 6em 2em;
+}
+}
+
 
 
 /* Single Posts */

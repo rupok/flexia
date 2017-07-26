@@ -26,7 +26,11 @@ get_header(); ?>
                 <p class="blog-desc"><?php printf( esc_html__( '%s', 'flexia' ), get_bloginfo ( 'description' ) ); ?><br /></p>
             </div>
 
-            <a href="#content" class="scroll-down"></a>
+            <?php if( get_theme_mod('scroll_bottom_arrow') == true ) : 
+
+           		echo '<a href="#content" class="scroll-down"></a>';
+
+            endif; ?>
         </div>
     </header>
 

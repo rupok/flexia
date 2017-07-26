@@ -18,7 +18,9 @@ $thumbnail = '';
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <header class="page-header single-blog-header" <?php if ( ! empty( $thumbnail ) ) : ?> style="background-image: url('<?php echo $thumbnail; ?>');" <?php endif; ?>>
+    <header class="page-header single-blog-header" <?php if ( ! empty( $thumbnail ) ) : ?> 
+    style="background-image: url('<?php echo $thumbnail; ?>');" <?php endif; ?> <?php if ( empty( $thumbnail ) ) : ?> 
+    style="background-image: url('<?php echo esc_attr(header_image()); ?>');" <?php endif; ?>>
         <div class="header-inner">
             <div class="header-content">
                 <?php the_title( '<h1 class="blog-title">', '</h1>' ); ?>

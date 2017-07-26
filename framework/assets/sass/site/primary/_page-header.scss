@@ -15,7 +15,7 @@
   background: rgba(0, 0, 0, 0.5);
   flex: 0 0 100%;
   text-align: center;
-  padding: 5em 2em;
+  padding: 5em 1em;
 }
 
 .header-content {
@@ -76,4 +76,16 @@
   -o-transition: box-shadow .4s ease-in-out;
   -ms-transition: box-shadow .4s ease-in-out;
   transition: box-shadow .4s ease-in-out
+}
+
+@media all and (min-width: 600px) and(max-width: 959px) {
+.header-inner {
+  padding: 4em 1em;
+}
+}
+
+@media all and (max-width: 599px) {
+.header-inner {
+  padding: 2em 1em;
+}
 }

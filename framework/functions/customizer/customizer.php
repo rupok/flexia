@@ -329,6 +329,21 @@ function flexia_customize_register( $wp_customize ) {
 			'type'        => 'light',// light, ios, flat
 	) ) );
 
+	// Show scroll bottom anchor
+
+	$wp_customize->add_setting( 'scroll_bottom_arrow', array(
+			'default'     => true,
+			'capability'  => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'scroll_bottom_arrow', array(
+			'label'	      => esc_html__( 'Show Scrol to bottom arrow?', 'flexia' ),
+			'section'     => 'blog_settings',
+			'settings'    => 'scroll_bottom_arrow',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+
 
   // Create custom panels
   $wp_customize->add_panel( 'general_settings', array(
@@ -337,6 +352,7 @@ function flexia_customize_register( $wp_customize ) {
       'title' => __( 'General Settings', 'flexia' ),
       'description' => __( 'Controls the basic settings for the theme.', 'flexia' ),
   ) );
+
 
   $wp_customize->add_panel( 'design_settings', array(
       'priority' => 30,
