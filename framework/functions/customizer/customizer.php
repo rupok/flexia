@@ -10,6 +10,17 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
+
+/**
+ * Check for WP_Customizer_Control existence before adding custom control because WP_Customize_Control
+ * is loaded on customizer page only
+ *
+ * @see _wp_customize_include()
+ */
+if ( class_exists( 'WP_Customize_Control' ) ) {
+	require_once( get_template_directory() . '/framework/functions/customizer/controls.php' );
+}
+
 function flexia_customize_register( $wp_customize ) {
 
 	// Customize title and tagline sections and labels
@@ -44,31 +55,50 @@ function flexia_customize_register( $wp_customize ) {
 
   // Layout Settings
 
-  $wp_customize->add_section( 'container_settings' , array(
-    'title'      => __('Container Width','flexia'), 
-    'panel'      => 'layout_settings',
-    'priority'   => 20    
-  ) );  
-  $wp_customize->add_setting(
-      'flexia_container_width',
-      array(          
-          'sanitize_callback' => 'sanitize_text'          
-      )
-  );
-  $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'container_width',
-            array(
-                'label'          => __( 'Container Width', 'flexia' ),
-                'section'        => 'container_settings',
-                'settings'       => 'flexia_container_width',
-                'type'           => 'text',
-                'default'		 => '1200'
-            )
-        )
-   );
+	$wp_customize->add_section( 'layout_settings' , array(
+	'title'      => __('Flexia Layout','flexia'), 
+	'priority'   => 20    
+	) );  
 
+	$wp_customize->add_setting( 'container_max_width', array(
+			'default'       => get_theme_mod( 'container_max_width', '1200' ),
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'container_max_width', array(
+		'type'     => 'range-value',
+		'section'  => 'layout_settings',
+		'settings' => 'container_max_width',
+		'label'    => __( 'Site Max Width (px)' ),
+		'input_attrs' => array(
+			'min'    => 600,
+			'max'    => 2000,
+			'step'   => 5,
+			'suffix' => 'px', //optional suffix
+	  	),
+	) ) );
+
+	$wp_customize->add_setting( 'container_width', array(
+			'default'       => get_theme_mod( 'container_width', '90' ),
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'container_width', array(
+		'type'     => 'range-value',
+		'section'  => 'layout_settings',
+		'settings' => 'container_width',
+		'label'    => __( 'Site Width (%)' ),
+		'input_attrs' => array(
+			'min'    => 70,
+			'max'    => 100,
+			'step'   => 1,
+			'suffix' => '%', //optional suffix
+	  	),
+	) ) );
 
 
 
@@ -79,12 +109,7 @@ function flexia_customize_register( $wp_customize ) {
       'title' => __( 'General Settings', 'flexia' ),
       'description' => __( 'Controls the basic settings for the theme.', 'flexia' ),
   ) );
-  $wp_customize->add_panel( 'layout_settings', array(
-      'priority' => 20,
-      'theme_supports' => '',
-      'title' => __( 'Layout', 'flexia' ),
-      'description' => __( 'Controls the layout of the theme.', 'flexia' ),
-  ) ); 
+
   $wp_customize->add_panel( 'design_settings', array(
       'priority' => 30,
       'theme_supports' => '',

@@ -752,7 +752,7 @@ big {
   }
 }
 .flexia-sidebar {
-  padding: 0 1.5em;
+  padding: 0 1em;
 }
 
 @media all and (max-width: 959px) {
@@ -1982,8 +1982,8 @@ a:hover, a:active {
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
   content: "\f08d";
-  top: 25px;
-  right: 20px;
+  top: -10px;
+  right: -20px;
   width: 28px;
   height: 28px;
   background: #f54128;

@@ -39,4 +39,19 @@
 			}
 		} );
 	} );
+
+	// Container width 
+
+    wp.customize( 'container_width', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-container' ).css( 'width', to + '%' );            
+        } );
+    });  
+
+    wp.customize( 'container_max_width', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-container' ).css( 'max-width', to + 'px' );            
+        } );
+    });  
+
 } )( jQuery );

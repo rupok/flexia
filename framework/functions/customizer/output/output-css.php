@@ -44,6 +44,12 @@ function flexia_header_style() {
 			color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}
 	<?php endif; ?>
+
+	  .flexia-container {
+	    width: <?php echo get_theme_mod('container_width'); ?>%;
+	    max-width: <?php echo get_theme_mod('container_max_width'); ?>px;
+	  }
+
 	</style>
 	<?php
 }
