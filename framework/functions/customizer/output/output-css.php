@@ -82,6 +82,26 @@ function flexia_header_style() {
 	  	font-size: <?php echo get_theme_mod('blog_desc_font_size'); ?>px;
 	  }
 
+	@media all and (max-width: 959px) {
+	  .blog-header .header-content > .page-title, .archive-header .header-content > .page-title {
+	  	font-size: calc(<?php echo get_theme_mod('blog_title_font_size'); ?>px * .75);
+	  }
+
+	  .header-content .blog-desc, .header-content .archive-description > p {
+	  	font-size: calc(<?php echo get_theme_mod('blog_desc_font_size'); ?>px * .75);
+	  }
+	}
+
+	@media all and (max-width: 480px) {
+	  .blog-header .header-content > .page-title, .archive-header .header-content > .page-title {
+	  	font-size: calc(<?php echo get_theme_mod('blog_title_font_size'); ?>px * .5);
+	  }
+
+	  .header-content .blog-desc, .header-content .archive-description > p {
+	  	font-size: calc(<?php echo get_theme_mod('blog_desc_font_size'); ?>px * .5);
+	  }
+	}
+
 	</style>
 	<?php
 }
