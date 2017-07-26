@@ -2198,6 +2198,7 @@ body:not(.single-post) .hentry:first-child .entry-header {
 
 .single-post .flexia-wrapper > .content-area {
   padding: 0;
+  margin: 0;
   background-color: transparent;
 }
 

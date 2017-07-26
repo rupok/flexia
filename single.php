@@ -13,7 +13,7 @@ get_header(); ?>
 <?php get_template_part( 'framework/views/template-parts/content', 'masthead' ); ?>
 
 	<div id="content" class="site-content">
-		<div class="flexia-wrapper flexia-container max width">
+		<div class="flexia-wrapper flexia-container">
 			<div id="primary" class="content-area">
 				<main id="main" class="site-main flexia-container">
 
