@@ -140,6 +140,7 @@ function flexia_customize_register( $wp_customize ) {
 		'type'     => 'range-value',
 		'section'  => 'layout_settings',
 		'settings' => 'left_sidebar_width',
+		'default' => '300',
 		'label'    => __( 'Left Sidebar Width (px)' ),
 		'input_attrs' => array(
 			'min'    => 100,
@@ -161,6 +162,7 @@ function flexia_customize_register( $wp_customize ) {
 		'type'     => 'range-value',
 		'section'  => 'layout_settings',
 		'settings' => 'right_sidebar_width',
+		'default' => '300',
 		'label'    => __( 'Right Sidebar Width (px)' ),
 		'input_attrs' => array(
 			'min'    => 100,
