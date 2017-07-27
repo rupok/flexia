@@ -11,13 +11,9 @@
 }
 
 .header-content .blog-desc, .header-content .archive-description > p {
-  display: block;
-  font-family: "Merriweather",serif;
   font-size: 1.2em;
-  font-style: italic;
-  line-height: 1.2;
-  opacity: 0.6;
-  padding: 0.5em 2em;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .blog .header-content {
@@ -97,7 +93,7 @@
 .scroll-down {
   /*background: url("../../../img/icons/icon-arrow-down.svg") no-repeat center center / 100% auto;*/
   background: url("../img/icons/icon-arrow-down.svg") no-repeat center center / 100% auto;
-  bottom: 3em;
+  bottom: 1em;
   display: block;
   height: 44px;
   left: 50%;

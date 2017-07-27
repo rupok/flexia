@@ -1762,7 +1762,7 @@ a:hover, a:active {
   font-weight: 700;
   letter-spacing: 1px;
   line-height: 1.5em;
-  margin: 20px auto 5px;
+  margin: 0 auto;
   text-transform: uppercase;
 }
 
@@ -1772,8 +1772,7 @@ a:hover, a:active {
   font-size: 1em;
   font-style: italic;
   line-height: 1.2;
-  opacity: 0.9;
-  padding: 0.5em 2em;
+  padding: 0.5em;
 }
 
 .header-content .author-bio {
@@ -1783,7 +1782,7 @@ a:hover, a:active {
 }
 
 .header-content span i {
-  background: none repeat scroll 0 0 rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   box-shadow: 0 0 0 30px transparent;
   display: inline-block;
@@ -1793,7 +1792,7 @@ a:hover, a:active {
   line-height: 1em;
   text-align: center;
   width: 2em;
-  margin: 15px auto;
+  margin: 0 auto 1em;
   display: block;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
@@ -1832,13 +1831,9 @@ a:hover, a:active {
 }
 
 .header-content .blog-desc, .header-content .archive-description > p {
-  display: block;
-  font-family: "Merriweather",serif;
   font-size: 1.2em;
-  font-style: italic;
-  line-height: 1.2;
-  opacity: 0.6;
-  padding: 0.5em 2em;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .blog .header-content {
@@ -1913,7 +1908,7 @@ a:hover, a:active {
 .scroll-down {
   /*background: url("../../../img/icons/icon-arrow-down.svg") no-repeat center center / 100% auto;*/
   background: url("../img/icons/icon-arrow-down.svg") no-repeat center center/100% auto;
-  bottom: 3em;
+  bottom: 1em;
   display: block;
   height: 44px;
   left: 50%;

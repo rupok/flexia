@@ -36,8 +36,30 @@ get_header();
 
                 <?php endif; ?>
 
-                <h2 class="page-title"><?php bloginfo( 'name' ); ?></h2>
-                <p class="blog-desc"><?php printf( esc_html__( '%s', 'flexia' ), get_bloginfo ( 'description' ) ); ?><br /></p>
+                <h2 class="page-title"><?php 
+
+                	if( get_theme_mod('blog_title') !== '' ) : 
+
+                		echo get_theme_mod('blog_title');
+
+                	else:
+
+                		bloginfo( 'name' ); 
+
+                	endif;?></h2>
+
+                <p class="blog-desc"><?php 
+
+                	if( get_theme_mod('blog_desc') !== '' ) : 
+
+                		echo get_theme_mod('blog_desc');
+
+                	else:
+
+                		printf( esc_html__( '%s', 'flexia' ), get_bloginfo ( 'description' ) );
+                			
+                	
+                	endif;?></p>
             </div>
 
             <?php if( get_theme_mod('scroll_bottom_arrow') == true ) : 

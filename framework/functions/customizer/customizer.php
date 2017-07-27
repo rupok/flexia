@@ -429,6 +429,25 @@ function flexia_customize_register( $wp_customize ) {
 	    )
 	);
 
+	$wp_customize->add_setting( 'blog_title' , array(
+	    'default'   => '',
+	    'transport' => 'postMessage',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'blog_title',
+	        array(
+	            'label'          => __( 'Blog Title', 'flexia' ),
+	            'section'        => 'blog_settings',
+	            'settings'       => 'blog_title',
+	            'type'           => 'text',
+	        )
+	    )
+	);
+
 	$wp_customize->add_setting( 'blog_title_font_size', array(
 			'default'       => get_theme_mod( 'blog_title_font_size', '54' ),
 			'capability'    => 'edit_theme_options',
@@ -448,6 +467,26 @@ function flexia_customize_register( $wp_customize ) {
 			'suffix' => 'px', //optional suffix
 	  	),
 	) ) );
+
+	$wp_customize->add_setting( 'blog_desc' , array(
+	    'default'   => '',
+	    'transport' => 'postMessage',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'blog_desc',
+	        array(
+	            'label'          => __( 'Blog Description', 'flexia' ),
+	            'section'        => 'blog_settings',
+	            'settings'       => 'blog_desc',
+	            'type'           => 'text',
+	        )
+	    )
+	);
+
 
 	$wp_customize->add_setting( 'blog_desc_font_size', array(
 			'default'       => get_theme_mod( 'blog_desc_font_size', '18' ),

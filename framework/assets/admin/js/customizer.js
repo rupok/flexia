@@ -100,8 +100,15 @@
             $( '.header-content .flexia-blog-logo' ).css( 'width', to + 'px' );            
         } );
     });  
-    
-    // Blog title font size
+
+    // Blog title and font size
+
+    wp.customize( 'blog_title', function( value ) {
+        value.bind( function( to ) {            
+            $( '.blog-header .header-content > .page-title' ).text( to );            
+          
+        } );
+    });  
 
     wp.customize( 'blog_title_font_size', function( value ) {
         value.bind( function( to ) {            
@@ -110,7 +117,14 @@
         } );
     });  
 
-    // Blog description font size
+    // Blog description and font size
+
+    wp.customize( 'blog_desc', function( value ) {
+        value.bind( function( to ) {            
+            $( '.header-content .blog-desc' ).text( to );            
+          
+        } );
+    }); 
 
     wp.customize( 'blog_desc_font_size', function( value ) {
         value.bind( function( to ) {            
