@@ -18,7 +18,7 @@
 				wp_nav_menu( array(
 					'theme_location' => 'footer-menu',
 					'menu_id'        => 'flexia-footer-menu',
-					'menu_class'        => 'flexia-footer-menu',
+					'menu_class'     => 'nav-menu flexia-footer-menu',
 				) );
 			?>
 		</nav><!-- #site-navigation -->

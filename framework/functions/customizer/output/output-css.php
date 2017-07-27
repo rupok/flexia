@@ -107,11 +107,11 @@ function flexia_header_style() {
 	}
 
 	.flexia-topbar {
-		background-color: <?php echo get_theme_mod('header_topbar_bg_color'); ?>;
+		background-color: <?php echo get_theme_mod('flexia_topbar_bg_color'); ?>;
 	}
 
 	.flexia-navbar {
-		background-color: <?php echo get_theme_mod('header_navbar_bg_color'); ?>;
+		background-color: <?php echo get_theme_mod('flexia_navbar_bg_color'); ?>;
 	}
 
 	.flexia-footer-widget-area {

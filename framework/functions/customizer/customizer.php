@@ -532,30 +532,45 @@ function flexia_customize_register( $wp_customize ) {
 
 	// Enable Topbar
 
-	$wp_customize->add_setting( 'header_topbar', array(
+	$wp_customize->add_setting( 'flexia_enable_topbar', array(
 			'default'     => true,
 			'capability'  => 'edit_theme_options',
 	) );
 
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'header_topbar', array(
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'flexia_enable_topbar', array(
 			'label'	      => esc_html__( 'Enable Topbar?', 'flexia' ),
 			'section'     => 'flexia_header_settings',
-			'settings'    => 'header_topbar',
+			'settings'    => 'flexia_enable_topbar',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+
+	// Enable Topbar Menu
+
+	$wp_customize->add_setting( 'flexia_enable_topbar_menu', array(
+			'default'     => true,
+			'capability'  => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'flexia_enable_topbar_menu', array(
+			'label'	      => esc_html__( 'Enable Topbar Menu?', 'flexia' ),
+			'section'     => 'flexia_header_settings',
+			'settings'    => 'flexia_enable_topbar_menu',
 			'type'        => 'light',// light, ios, flat
 	) ) );
 
 
 	// Enable Navbar
 
-	$wp_customize->add_setting( 'header_navbar', array(
+	$wp_customize->add_setting( 'flexia_navbar', array(
 			'default'     => true,
 			'capability'  => 'edit_theme_options',
 	) );
 
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'header_navbar', array(
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'flexia_navbar', array(
 			'label'	      => esc_html__( 'Enable Navbar?', 'flexia' ),
 			'section'     => 'flexia_header_settings',
-			'settings'    => 'header_navbar',
+			'settings'    => 'flexia_navbar',
 			'type'        => 'light',// light, ios, flat
 	) ) );
 
@@ -578,7 +593,7 @@ function flexia_customize_register( $wp_customize ) {
 		) ) 
 	);
 
-	$wp_customize->add_setting( 'header_topbar_bg_color' , array(
+	$wp_customize->add_setting( 'flexia_topbar_bg_color' , array(
 	    'default'     => '#262625',
 	    'transport'   => 'postMessage',
 	) );
@@ -586,15 +601,15 @@ function flexia_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control( 
 		$wp_customize, 
-		'header_topbar_bg_color', 
+		'flexia_topbar_bg_color', 
 		array(
 			'label'      => __( 'Topbar Background', 'flexia' ),
 			'section'    => 'flexia_header_settings',
-			'settings'   => 'header_topbar_bg_color',
+			'settings'   => 'flexia_topbar_bg_color',
 		) ) 
 	);
 
-	$wp_customize->add_setting( 'header_navbar_bg_color' , array(
+	$wp_customize->add_setting( 'flexia_navbar_bg_color' , array(
 	    'default'     => '#fff',
 	    'transport'   => 'postMessage',
 	) );
@@ -602,27 +617,27 @@ function flexia_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control( 
 		$wp_customize, 
-		'header_navbar_bg_color', 
+		'flexia_navbar_bg_color', 
 		array(
 			'label'      => __( 'Navbar Background', 'flexia' ),
 			'section'    => 'flexia_header_settings',
-			'settings'   => 'header_navbar_bg_color',
+			'settings'   => 'flexia_navbar_bg_color',
 		) ) 
 	);
 
 
-	$wp_customize->add_setting( 'header_topbar_content' , array(
+	$wp_customize->add_setting( 'flexia_topbar_content' , array(
 	    'default'     => '<p>This is Topbar Content. Cutomize this from Customize &gt; Header &gt; Topbar Content</p>',
 	) );
 
 	$wp_customize->add_control(
 	    new WP_Customize_Control(
 	        $wp_customize,
-	        'header_topbar_content',
+	        'flexia_topbar_content',
 	        array(
 	            'label'          => __( 'Topbar Content', 'flexia' ),
 	            'section'        => 'flexia_header_settings',
-	            'settings'       => 'header_topbar_content',
+	            'settings'       => 'flexia_topbar_content',
 	            'type'           => 'textarea',
 	        )
 	    )

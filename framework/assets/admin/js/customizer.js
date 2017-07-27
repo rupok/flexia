@@ -155,13 +155,13 @@
         } );
     });  
 
-    wp.customize( 'header_topbar_bg_color', function( value ) {
+    wp.customize( 'flexia_topbar_bg_color', function( value ) {
         value.bind( function( to ) {            
             $( '.flexia-topbar' ).css( 'background-color', to );            
         } );
     });  
 
-    wp.customize( 'header_navbar_bg_color', function( value ) {
+    wp.customize( 'flexia_navbar_bg_color', function( value ) {
         value.bind( function( to ) {            
             $( '.flexia-navbar' ).css( 'background-color', to );            
         } );

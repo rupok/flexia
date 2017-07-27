@@ -1,3 +1,13 @@
+.nav-menu li a {
+	-moz-transition: ease-out 0.3s 0.1s;
+	-o-transition: ease-out 0.3s 0.1s;
+	-webkit-transition: ease-out 0.3s;
+	-webkit-transition-delay: 0.1s;
+	transition: ease-out 0.3s 0.1s;
+
+
+}
+
 .flexia-header-widget-inner {
 	display: flex;
 	justify-content: center;
@@ -104,15 +114,50 @@
 
 /* Flexia Topbar */
 
-.flexia-topbar {
-  color: $color__light;
-  overflow: hidden;
+.flexia-topbar-inner {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .flexia-topbar-content {
 	font-size: .8em;
+	color: #cbced3;
+}
+
+.flexia-topbar-content {
+	font-size: .8em;
+	color: #cbced3;
+	padding: .5em 0;
 }
 
 .flexia-topbar-content p {
-	margin: .5em 0;
+	margin: 0;
 }
+
+.flexia-topbar-menu {
+	margin: 0 1em;
+	padding: 0;
+	text-align: right;
+}
+
+.flexia-topbar-menu li {
+	list-style: none;
+	text-align: right;
+	display: inline-block;
+	margin: 0;
+}
+
+.flexia-topbar-menu li a {
+	color: #cbced3;
+	font-size: 13px;
+	padding: .625em;
+	display: block;
+}
+
+.flexia-topbar-menu li a:hover {
+	background-color: rgba(0,0,0, .5);
+	color: #fff;
+}
+

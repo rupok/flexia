@@ -17,11 +17,11 @@
 		get_template_part( 'framework/views/template-parts/content', 'header-widgets' ); 
 	endif; ?>
 
-	<?php if( get_theme_mod('header_topbar') == true ) : 
+	<?php if( get_theme_mod('flexia_enable_topbar') == true ) : 
 		get_template_part( 'framework/views/template-parts/content', 'topbar' );
 	endif; ?>
 
-	<?php if( get_theme_mod('header_navbar') == true ) : 
+	<?php if( get_theme_mod('flexia_navbar') == true ) : 
 		get_template_part( 'framework/views/template-parts/content', 'navbar' );
 	endif; ?>
 

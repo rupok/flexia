@@ -30,7 +30,7 @@
 				wp_nav_menu( array(
 					'theme_location' => 'primary',
 					'menu_id'        => 'flexia-primary-menu',
-					'menu_class'     => 'flexia-primary-menu',
+					'menu_class'     => 'nav-menu flexia-primary-menu',
 				) );
 			?>
 		</nav><!-- #site-navigation -->
