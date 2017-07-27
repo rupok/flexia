@@ -31,7 +31,7 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 99;
+	z-index: 9999;
 	-webkit-transform: translateY(-100%);
 	transform: translateY(-100%);
 	-webkit-transition: -webkit-transform 500ms ease;
@@ -83,6 +83,10 @@
 .header-widget-toggle.toggle-collapsed {
 	-webkit-transition: opacity 0.3s ease-in-out;
 	transition: opacity 0.3s ease-in-out;
+}
+
+.admin-bar .header-widget-toggle.toggle-collapsed {
+	margin-bottom: -32px;
 }
 
 .header-widget-toggle::before, .header-widget-toggle::after {
@@ -137,10 +141,14 @@
 	margin: 0;
 }
 
-.flexia-topbar-menu {
+.flexia-topbar-menu, .flexia-topbar-menu > ul {
 	margin: 0 1em;
 	padding: 0;
 	text-align: right;
+}
+
+.flexia-topbar-menu .sub-menu {
+	display: none;
 }
 
 .flexia-topbar-menu li {

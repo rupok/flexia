@@ -70,6 +70,14 @@ function flexia_header_style() {
 	  	background-color: <?php echo get_theme_mod('sidebar_widget_bg_color'); ?>;
 	  }
 
+	  .flexia-header-logo {
+	  	width: <?php echo get_theme_mod('flexia_header_logo_width'); ?>px;
+	  }
+
+	  .flexia-sticky-navbar .flexia-header-logo {
+	  	width: calc(<?php echo get_theme_mod('flexia_header_logo_width'); ?>px * .65);
+	  }
+
 	  .header-content .flexia-blog-logo {
 	  	width: <?php echo get_theme_mod('blog_logo_width'); ?>px;
 	  }

@@ -516,6 +516,48 @@ function flexia_customize_register( $wp_customize ) {
 	'priority'   => 40    
 	) );  
 
+
+	// Header Logo
+
+	$wp_customize->add_setting( 'flexia_header_logo' , array(
+	    'default'   => '',
+	) );
+
+
+	$wp_customize->add_control(
+       new WP_Customize_Image_Control(
+           $wp_customize,
+           'flexia_header_logo',
+           array(
+               'label'      => __( 'Upload Header Logo', 'flexia' ),
+               'section'    => 'flexia_header_settings',
+               'settings'   => 'flexia_header_logo',
+               'context'    => 'flexia_header_logo' 
+           )
+       )
+   );
+
+	// Header Logo width
+
+	$wp_customize->add_setting( 'flexia_header_logo_width' , array(
+	    'default'   => '150',
+	    'transport' => 'postMessage',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'flexia_header_logo_width',
+	        array(
+	            'label'          => __( 'Logo width (px)', 'flexia' ),
+	            'section'        => 'flexia_header_settings',
+	            'settings'       => 'flexia_header_logo_width',
+	            'type'           => 'text',
+	        )
+	    )
+	);
+
 	// Enable Header widget area
 
 	$wp_customize->add_setting( 'header_widget_area', array(

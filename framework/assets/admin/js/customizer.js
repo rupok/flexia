@@ -93,6 +93,14 @@
         } );
     });  
 
+    // Header logo width
+
+    wp.customize( 'flexia_header_logo_width', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-header-logo' ).css( 'width', to + 'px' );            
+        } );
+    });  
+
     // Blog logo width
 
     wp.customize( 'blog_logo_width', function( value ) {

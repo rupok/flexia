@@ -577,7 +577,7 @@ big {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 99;
+  z-index: 9999;
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
   -webkit-transition: -webkit-transform 500ms ease;
@@ -626,6 +626,10 @@ big {
 .header-widget-toggle.toggle-collapsed {
   -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
+}
+
+.admin-bar .header-widget-toggle.toggle-collapsed {
+  margin-bottom: -32px;
 }
 
 .header-widget-toggle::before, .header-widget-toggle::after {
@@ -681,10 +685,14 @@ big {
   margin: 0;
 }
 
-.flexia-topbar-menu {
+.flexia-topbar-menu, .flexia-topbar-menu > ul {
   margin: 0 1em;
   padding: 0;
   text-align: right;
+}
+
+.flexia-topbar-menu .sub-menu {
+  display: none;
 }
 
 .flexia-topbar-menu li {
@@ -710,6 +718,7 @@ big {
 .flexia-navbar {
   width: 100%;
   color: #262625;
+  z-index: 99;
   box-shadow: 0 0.15em 0.35em 0 rgba(0, 0, 0, 0.135);
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -730,11 +739,24 @@ big {
   margin: 0 1em;
 }
 
-.site-branding .custom-logo-link .custom-logo {
-  height: 65px;
+.site-branding .site-title, .site-branding .site-title a {
+  font-size: 1.25em;
+  text-transform: uppercase;
+  margin: 1em 0;
+}
+
+.site-branding .flexia-header-logo {
   padding: 15px;
-  vertical-align: middle;
-  width: auto;
+  max-width: 100%;
+}
+
+.flexia-header-logo + .site-title {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  word-wrap: normal !important;
 }
 
 .main-navigation {
@@ -750,6 +772,10 @@ big {
   z-index: 99;
   animation-duration: 0.5s;
   animation-name: slideInDown;
+}
+
+.admin-bar .flexia-navbar.flexia-sticky-navbar {
+  margin-top: 32px;
 }
 
 @keyframes slideInDown {
@@ -830,7 +856,7 @@ big {
   margin: 1em auto 0;
 }
 
-.flexia-footer-menu {
+.flexia-footer-menu, .flexia-footer-menu > ul {
   margin: 0;
   padding: 0;
   display: flex;

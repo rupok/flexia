@@ -11,13 +11,11 @@
 
 if( get_theme_mod('flexia_navbar_position') == 'flexia-navbar-static-top' ) : 
 
-	
-$navbar_class = 'flexia-navbar-static-top';
+	$navbar_class = 'flexia-navbar-static-top';
 
 else:
 
-
-$navbar_class = 'flexia-navbar-fixed-top';
+	$navbar_class = 'flexia-navbar-fixed-top';
 
 endif; 
 
@@ -27,9 +25,15 @@ endif;
 <div class="flexia-navbar <?php echo $navbar_class;?>">
 	<div class="flexia-container max width flexia-navbar-inner">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) : ?>
+
+			<?php if( get_theme_mod('flexia_header_logo') !== '' ) :  ?>
+
+               			<img class="flexia-header-logo" alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_theme_mod('flexia_header_logo'); ?>">
+
+             <?php endif; ?>
+
+
+			<?php if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
