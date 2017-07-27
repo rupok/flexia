@@ -50,6 +50,20 @@ function flexia_setup() {
 	) );
 
 	/**
+	 * Register topbar menu
+	 */
+	register_nav_menus( array(
+		'topbar-menu' => esc_html__( 'Topbar Menu', 'flexia' ),
+	) );
+
+	/**
+	 * Register footer menu
+	 */
+	register_nav_menus( array(
+		'footer-menu' => esc_html__( 'Footer Menu', 'flexia' ),
+	) );
+
+	/**
 	 * Enable support for Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'status', 'chat' ) );
