@@ -9,7 +9,7 @@
 
 ?>
 
-<footer id="flexia-colophon-top" class="footer-widget-area">
+<footer id="flexia-colophon-top" class="flexia-footer-widget-area">
 	<div class="flexia-colophon-inner flexia-container max width">
 		<?php dynamic_sidebar( 'footer-1' ); ?>
 		<?php dynamic_sidebar( 'footer-2' ); ?>

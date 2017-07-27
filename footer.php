@@ -13,10 +13,14 @@
 
 <?php wp_footer(); ?>
 
+<?php if( get_theme_mod('flexia_scroll_to_top') == true ) : ?>
+
 <a title="Scroll back to top" rel="nofollow" href="#" class="flexia-back-to-top" style="opacity: 0; visibility: hidden;" data-scroll-speed="400" data-start-scroll="300">
 	<i class="fa fa-angle-up" aria-hidden="true"></i>
 	<span class="screen-reader-text">Scroll back to top</span>
 </a>
+
+<?php endif; ?>
 
 </body>
 </html>

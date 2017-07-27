@@ -167,4 +167,31 @@
         } );
     });  
 
+    // Footer Area 
+
+    wp.customize( 'footer_widget_area_bg_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-footer-widget-area' ).css( 'background-color', to );            
+        } );
+    });  
+
+    wp.customize( 'flexia_footer_bg_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-site-footer' ).css( 'background-color', to );            
+        } );
+    });  
+
+    wp.customize( 'flexia_footer_content_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-site-footer .site-info' ).css( 'color', to );            
+        } );
+    });  
+    
+    wp.customize( 'flexia_footer_link_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-site-footer .site-info a' ).css( 'color', to );            
+        } );
+    });  
+ 
+
 } )( jQuery );

@@ -112,6 +112,19 @@ function flexia_header_style() {
 		background-color: <?php echo get_theme_mod('header_navbar_bg_color'); ?>;
 	}
 
+	.flexia-footer-widget-area {
+		background-color: <?php echo get_theme_mod('footer_widget_area_bg_color'); ?>;
+	}
+	.flexia-site-footer {
+		background-color: <?php echo get_theme_mod('flexia_footer_bg_color'); ?>;
+	}
+	.flexia-site-footer .site-info {
+		color: <?php echo get_theme_mod('flexia_footer_content_color'); ?>;
+	}
+	.flexia-site-footer .site-info a {
+		color: <?php echo get_theme_mod('flexia_footer_link_color'); ?>;
+	}
+
 	</style>
 	<?php
 }

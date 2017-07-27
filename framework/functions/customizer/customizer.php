@@ -650,7 +650,7 @@ function flexia_customize_register( $wp_customize ) {
 			'type'        => 'light',// light, ios, flat
 	) ) );
 
-	// Enable Topbar
+	// Enable Bottom Footer
 
 	$wp_customize->add_setting( 'footer_bottom', array(
 			'default'     => true,
@@ -664,7 +664,104 @@ function flexia_customize_register( $wp_customize ) {
 			'type'        => 'light',// light, ios, flat
 	) ) );
 
+	// Enable Scrol to Top
 
+	$wp_customize->add_setting( 'flexia_scroll_to_top', array(
+			'default'     => true,
+			'capability'  => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'flexia_scroll_to_top', array(
+			'label'	      => esc_html__( 'Enable Scrol to top?', 'flexia' ),
+			'section'     => 'flexia_footer_settings',
+			'settings'    => 'flexia_scroll_to_top',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+
+	$wp_customize->add_setting( 'footer_widget_area_bg_color' , array(
+	    'default'     => '#fff',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'footer_widget_area_bg_color', 
+		array(
+			'label'      => __( 'Footer Widget Area Background', 'flexia' ),
+			'section'    => 'flexia_footer_settings',
+			'settings'   => 'footer_widget_area_bg_color',
+		) ) 
+	);
+
+
+	$wp_customize->add_setting( 'flexia_footer_bg_color' , array(
+	    'default'     => '#262625',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_footer_bg_color', 
+		array(
+			'label'      => __( 'Footer Background', 'flexia' ),
+			'section'    => 'flexia_footer_settings',
+			'settings'   => 'flexia_footer_bg_color',
+		) ) 
+	);
+
+
+	$wp_customize->add_setting( 'flexia_footer_content_color' , array(
+	    'default'     => '#CBCED3',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_footer_content_color', 
+		array(
+			'label'      => __( 'Footer Content Color', 'flexia' ),
+			'section'    => 'flexia_footer_settings',
+			'settings'   => 'flexia_footer_content_color',
+		) ) 
+	);
+
+	$wp_customize->add_setting( 'flexia_footer_link_color' , array(
+	    'default'     => '#FF5F5F',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_footer_link_color', 
+		array(
+			'label'      => __( 'Footer Links Color', 'flexia' ),
+			'section'    => 'flexia_footer_settings',
+			'settings'   => 'flexia_footer_link_color',
+		) ) 
+	);
+
+
+	$wp_customize->add_setting( 'flexia_footer_content' , array(
+	    'default'     => '<p>Copyright &copy; 2017 | Flexia by <a href="https://www.codetic.net" target="_blank">Codetic</a></p>',
+	) );
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'flexia_footer_content',
+	        array(
+	            'label'          => __( 'Footer Content', 'flexia' ),
+	            'section'        => 'flexia_footer_settings',
+	            'settings'       => 'flexia_footer_content',
+	            'type'           => 'textarea',
+	        )
+	    )
+	);
 
   // Create custom panels
   $wp_customize->add_panel( 'flexia_general_settings', array(
