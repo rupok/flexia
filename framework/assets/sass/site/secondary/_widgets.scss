@@ -122,6 +122,16 @@
 }
 
 
+/* Menu widget */
+
+.widget .menu .sub-menu {
+  padding-left: 1em;
+}
+
+.widget .menu li a, .widget .menu .sub-menu li a {
+  font-size: 14px;
+}
+
 
 /* Text Widget */
 .widget .textwidget {
