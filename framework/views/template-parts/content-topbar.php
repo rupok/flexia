@@ -13,6 +13,8 @@
 
 <div class="flexia-topbar">
 	<div class="flexia-topbar-inner flexia-container max width">
-		<p>This is Topbar</p>
+		<div class="flexia-topbar-content">
+			<?php echo get_theme_mod('header_topbar_content'); ?>
+		</div>
 	</div>
 </div>

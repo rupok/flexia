@@ -55,7 +55,7 @@ function flexia_customize_register( $wp_customize ) {
 
   // Layout Settings
 
-	$wp_customize->add_section( 'layout_settings' , array(
+	$wp_customize->add_section( 'flexia_layout_settings' , array(
 	'title'      => __('Layout','flexia'), 
 	'priority'   => 20    
 	) );  
@@ -69,7 +69,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'container_max_width', array(
 		'type'     => 'range-value',
-		'section'  => 'layout_settings',
+		'section'  => 'flexia_layout_settings',
 		'settings' => 'container_max_width',
 		'label'    => __( 'Site Max Width (px)' ),
 		'input_attrs' => array(
@@ -89,7 +89,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'container_width', array(
 		'type'     => 'range-value',
-		'section'  => 'layout_settings',
+		'section'  => 'flexia_layout_settings',
 		'settings' => 'container_width',
 		'label'    => __( 'Site Width (%)' ),
 		'input_attrs' => array(
@@ -113,7 +113,7 @@ function flexia_customize_register( $wp_customize ) {
 	        'content_layout',
 	        array(
 	            'label'          => __( 'Content Layout', 'flexia' ),
-	            'section'        => 'layout_settings',
+	            'section'        => 'flexia_layout_settings',
 	            'settings'       => 'content_layout',
 	            'description'    => 'This settings will be reflected on blog page, single posts and archives. For pages, you can use page templates.',
 	            'type'           => 'radio',
@@ -138,7 +138,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'left_sidebar_width', array(
 		'type'     => 'range-value',
-		'section'  => 'layout_settings',
+		'section'  => 'flexia_layout_settings',
 		'settings' => 'left_sidebar_width',
 		'default' => '300',
 		'label'    => __( 'Left Sidebar Width (px)' ),
@@ -160,7 +160,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'right_sidebar_width', array(
 		'type'     => 'range-value',
-		'section'  => 'layout_settings',
+		'section'  => 'flexia_layout_settings',
 		'settings' => 'right_sidebar_width',
 		'default' => '300',
 		'label'    => __( 'Right Sidebar Width (px)' ),
@@ -176,7 +176,7 @@ function flexia_customize_register( $wp_customize ) {
 
   // Blog Settings
 
-	$wp_customize->add_section( 'blog_settings' , array(
+	$wp_customize->add_section( 'flexia_blog_settings' , array(
 	'title'      => __('Blog Styles','flexia'), 
 	'priority'   => 30    
 	) );  
@@ -192,7 +192,7 @@ function flexia_customize_register( $wp_customize ) {
 		'blog_bg_color', 
 		array(
 			'label'      => __( 'Blog Body Background', 'flexia' ),
-			'section'    => 'blog_settings',
+			'section'    => 'flexia_blog_settings',
 			'settings'   => 'blog_bg_color',
 		) ) 
 	);
@@ -208,7 +208,7 @@ function flexia_customize_register( $wp_customize ) {
 		'post_content_bg_color', 
 		array(
 			'label'      => __( 'Post Content Background', 'flexia' ),
-			'section'    => 'blog_settings',
+			'section'    => 'flexia_blog_settings',
 			'settings'   => 'post_content_bg_color',
 		) ) 
 	);
@@ -224,7 +224,7 @@ function flexia_customize_register( $wp_customize ) {
 		'post_meta_bg_color', 
 		array(
 			'label'      => __( 'Post Meta Background', 'flexia' ),
-			'section'    => 'blog_settings',
+			'section'    => 'flexia_blog_settings',
 			'settings'   => 'post_meta_bg_color',
 		) ) 
 	);
@@ -240,7 +240,7 @@ function flexia_customize_register( $wp_customize ) {
 		'sidebar_widget_bg_color', 
 		array(
 			'label'      => __( 'Sidebar Widget Background', 'flexia' ),
-			'section'    => 'blog_settings',
+			'section'    => 'flexia_blog_settings',
 			'settings'   => 'sidebar_widget_bg_color',
 		) ) 
 	);
@@ -255,7 +255,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'post_max_width', array(
 		'type'     => 'range-value',
-		'section'  => 'blog_settings',
+		'section'  => 'flexia_blog_settings',
 		'settings' => 'post_max_width',
 		'label'    => __( 'Post Max Width (px)' ),
 		'input_attrs' => array(
@@ -275,7 +275,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'post_width', array(
 		'type'     => 'range-value',
-		'section'  => 'blog_settings',
+		'section'  => 'flexia_blog_settings',
 		'settings' => 'post_width',
 		'label'    => __( 'Post Width (%)' ),
 		'input_attrs' => array(
@@ -295,7 +295,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_navigation', array(
 			'label'	      => esc_html__( 'Enable Next/Prev posts?', 'flexia' ),
-			'section'     => 'blog_settings',
+			'section'     => 'flexia_blog_settings',
 			'settings'    => 'post_navigation',
 			'type'        => 'light',// light, ios, flat
 	) ) );
@@ -309,7 +309,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_author', array(
 			'label'	      => esc_html__( 'Show Author under post?', 'flexia' ),
-			'section'     => 'blog_settings',
+			'section'     => 'flexia_blog_settings',
 			'settings'    => 'post_author',
 			'type'        => 'light',// light, ios, flat
 	) ) );
@@ -324,7 +324,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_social_share', array(
 			'label'	      => esc_html__( 'Show Social Share under post?', 'flexia' ),
-			'section'     => 'blog_settings',
+			'section'     => 'flexia_blog_settings',
 			'settings'    => 'post_social_share',
 			'type'        => 'light',// light, ios, flat
 	) ) );
@@ -338,7 +338,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'scroll_bottom_arrow', array(
 			'label'	      => esc_html__( 'Show Scrol to bottom arrow?', 'flexia' ),
-			'section'     => 'blog_settings',
+			'section'     => 'flexia_blog_settings',
 			'settings'    => 'scroll_bottom_arrow',
 			'type'        => 'light',// light, ios, flat
 	) ) );
@@ -357,7 +357,7 @@ function flexia_customize_register( $wp_customize ) {
 	        'show_blog_logo',
 	        array(
 	            'label'          => __( 'Blog Logo / Icon', 'flexia' ),
-	            'section'        => 'blog_settings',
+	            'section'        => 'flexia_blog_settings',
 	            'settings'       => 'show_blog_logo',
 	            'description'    => 'Set an icon or logo for blog home page.',
 	            'type'           => 'select',
@@ -382,7 +382,7 @@ function flexia_customize_register( $wp_customize ) {
 	        'blog_icon_class',
 	        array(
 	            'label'          => __( 'Icon Class (Font Awesome)', 'flexia' ),
-	            'section'        => 'blog_settings',
+	            'section'        => 'flexia_blog_settings',
 	            'settings'       => 'blog_icon_class',
 	            'description'    => 'Enter font awesome icon class (i.e. fa-pencil)',
 	            'type'           => 'text',
@@ -402,7 +402,7 @@ function flexia_customize_register( $wp_customize ) {
            'blog_logo',
            array(
                'label'      => __( 'Upload a logo for blog', 'flexia' ),
-               'section'    => 'blog_settings',
+               'section'    => 'flexia_blog_settings',
                'settings'   => 'blog_logo',
                'context'    => 'flexia_blog_logo' 
            )
@@ -422,7 +422,7 @@ function flexia_customize_register( $wp_customize ) {
 	        'blog_logo_width',
 	        array(
 	            'label'          => __( 'Blog Logo width (px)', 'flexia' ),
-	            'section'        => 'blog_settings',
+	            'section'        => 'flexia_blog_settings',
 	            'settings'       => 'blog_logo_width',
 	            'type'           => 'text',
 	        )
@@ -441,7 +441,7 @@ function flexia_customize_register( $wp_customize ) {
 	        'blog_title',
 	        array(
 	            'label'          => __( 'Blog Title', 'flexia' ),
-	            'section'        => 'blog_settings',
+	            'section'        => 'flexia_blog_settings',
 	            'settings'       => 'blog_title',
 	            'type'           => 'text',
 	        )
@@ -457,7 +457,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'blog_title_font_size', array(
 		'type'     => 'range-value',
-		'section'  => 'blog_settings',
+		'section'  => 'flexia_blog_settings',
 		'settings' => 'blog_title_font_size',
 		'label'    => __( 'Blog Title Font Size (px)' ),
 		'input_attrs' => array(
@@ -480,7 +480,7 @@ function flexia_customize_register( $wp_customize ) {
 	        'blog_desc',
 	        array(
 	            'label'          => __( 'Blog Description', 'flexia' ),
-	            'section'        => 'blog_settings',
+	            'section'        => 'flexia_blog_settings',
 	            'settings'       => 'blog_desc',
 	            'type'           => 'text',
 	        )
@@ -497,7 +497,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'blog_desc_font_size', array(
 		'type'     => 'range-value',
-		'section'  => 'blog_settings',
+		'section'  => 'flexia_blog_settings',
 		'settings' => 'blog_desc_font_size',
 		'label'    => __( 'Blog Description Font Size (px)' ),
 		'input_attrs' => array(
@@ -509,8 +509,165 @@ function flexia_customize_register( $wp_customize ) {
 	) ) );
 
 
+  // Header Settings
+
+	$wp_customize->add_section( 'flexia_header_settings' , array(
+	'title'      => __('Header','flexia'), 
+	'priority'   => 40    
+	) );  
+
+	// Enable Header widget area
+
+	$wp_customize->add_setting( 'header_widget_area', array(
+			'default'     => true,
+			'capability'  => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'header_widget_area', array(
+			'label'	      => esc_html__( 'Enable Header Widget Area?', 'flexia' ),
+			'section'     => 'flexia_header_settings',
+			'settings'    => 'header_widget_area',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+	// Enable Topbar
+
+	$wp_customize->add_setting( 'header_topbar', array(
+			'default'     => true,
+			'capability'  => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'header_topbar', array(
+			'label'	      => esc_html__( 'Enable Topbar?', 'flexia' ),
+			'section'     => 'flexia_header_settings',
+			'settings'    => 'header_topbar',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+
+	// Enable Navbar
+
+	$wp_customize->add_setting( 'header_navbar', array(
+			'default'     => true,
+			'capability'  => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'header_navbar', array(
+			'label'	      => esc_html__( 'Enable Navbar?', 'flexia' ),
+			'section'     => 'flexia_header_settings',
+			'settings'    => 'header_navbar',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+
+	// Header widget, Topbar, Navbar background colors
+
+	$wp_customize->add_setting( 'header_widget_area_bg_color' , array(
+	    'default'     => '#262625',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'header_widget_area_bg_color', 
+		array(
+			'label'      => __( 'Header Widget Area Background', 'flexia' ),
+			'section'    => 'flexia_header_settings',
+			'settings'   => 'header_widget_area_bg_color',
+		) ) 
+	);
+
+	$wp_customize->add_setting( 'header_topbar_bg_color' , array(
+	    'default'     => '#262625',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'header_topbar_bg_color', 
+		array(
+			'label'      => __( 'Topbar Background', 'flexia' ),
+			'section'    => 'flexia_header_settings',
+			'settings'   => 'header_topbar_bg_color',
+		) ) 
+	);
+
+	$wp_customize->add_setting( 'header_navbar_bg_color' , array(
+	    'default'     => '#fff',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'header_navbar_bg_color', 
+		array(
+			'label'      => __( 'Navbar Background', 'flexia' ),
+			'section'    => 'flexia_header_settings',
+			'settings'   => 'header_navbar_bg_color',
+		) ) 
+	);
+
+
+	$wp_customize->add_setting( 'header_topbar_content' , array(
+	    'default'     => '<p>This is Topbar Content. Cutomize this from Customize &gt; Header &gt; Topbar Content</p>',
+	) );
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'header_topbar_content',
+	        array(
+	            'label'          => __( 'Topbar Content', 'flexia' ),
+	            'section'        => 'flexia_header_settings',
+	            'settings'       => 'header_topbar_content',
+	            'type'           => 'textarea',
+	        )
+	    )
+	);
+
+
+  // Footer Settings
+
+	$wp_customize->add_section( 'flexia_footer_settings' , array(
+	'title'      => __('Footer','flexia'), 
+	'priority'   => 50    
+	) );  
+
+	// Enable Footer widget area
+
+	$wp_customize->add_setting( 'footer_widget_area', array(
+			'default'     => true,
+			'capability'  => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'footer_widget_area', array(
+			'label'	      => esc_html__( 'Enable Footer Widget Area?', 'flexia' ),
+			'section'     => 'flexia_footer_settings',
+			'settings'    => 'footer_widget_area',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+	// Enable Topbar
+
+	$wp_customize->add_setting( 'footer_bottom', array(
+			'default'     => true,
+			'capability'  => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'footer_bottom', array(
+			'label'	      => esc_html__( 'Enable Bottom Footer?', 'flexia' ),
+			'section'     => 'flexia_footer_settings',
+			'settings'    => 'footer_bottom',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+
+
   // Create custom panels
-  $wp_customize->add_panel( 'general_settings', array(
+  $wp_customize->add_panel( 'flexia_general_settings', array(
       'priority' => 10,
       'theme_supports' => '',
       'title' => __( 'General Settings', 'flexia' ),
@@ -518,7 +675,7 @@ function flexia_customize_register( $wp_customize ) {
   ) );
 
 
-  $wp_customize->add_panel( 'design_settings', array(
+  $wp_customize->add_panel( 'flexia_design_settings', array(
       'priority' => 30,
       'theme_supports' => '',
       'title' => __( 'Design', 'flexia' ),
@@ -526,11 +683,11 @@ function flexia_customize_register( $wp_customize ) {
   ) ); 
 
   // Assign sections to panels
-  $wp_customize->get_section('title_tagline')->panel = 'general_settings';      
-  $wp_customize->get_section('static_front_page')->panel = 'general_settings';
-  $wp_customize->get_section('background_image')->panel = 'design_settings';
+  $wp_customize->get_section('title_tagline')->panel = 'flexia_general_settings';      
+  $wp_customize->get_section('static_front_page')->panel = 'flexia_general_settings';
+  $wp_customize->get_section('background_image')->panel = 'flexia_design_settings';
   $wp_customize->get_section('background_image')->priority = 1000;
-  $wp_customize->get_section('header_image')->panel = 'design_settings';  
+  $wp_customize->get_section('header_image')->panel = 'flexia_design_settings';  
 
 
 }
@@ -538,5 +695,4 @@ add_action( 'customize_register', 'flexia_customize_register' );
 
 
 require get_template_directory() . '/framework/functions/customizer/output/header.php';
-require get_template_directory() . '/framework/functions/customizer/output/layout.php';
 require get_template_directory() . '/framework/functions/customizer/output/output-css.php';

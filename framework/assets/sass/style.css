@@ -546,27 +546,6 @@ big {
     flex: 0 0 auto;
   }
 }
-/* Colors */
-.flexia-topbar {
-  background: #262625;
-  color: #fff;
-  min-height: 40px;
-  overflow: hidden;
-}
-
-.flexia-navbar {
-  background: #fff;
-  color: #262625;
-}
-
-.footer-widget-area {
-  background: #ebebeb;
-}
-
-.site-footer {
-  background: #262625;
-}
-
 .flexia-header-widget-inner {
   display: flex;
   justify-content: center;
@@ -590,7 +569,6 @@ big {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #262625;
   z-index: 99;
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
@@ -671,8 +649,23 @@ big {
   transform: rotate(180deg);
 }
 
+/* Flexia Topbar */
+.flexia-topbar {
+  color: #fff;
+  overflow: hidden;
+}
+
+.flexia-topbar-content {
+  font-size: .8em;
+}
+
+.flexia-topbar-content p {
+  margin: .5em 0;
+}
+
 .flexia-navbar {
   width: 100%;
+  color: #262625;
 }
 
 .flexia-navbar-inner {

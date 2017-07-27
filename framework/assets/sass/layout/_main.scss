@@ -75,25 +75,3 @@
     flex: 0 0 auto;
   }
 }
-
-/* Colors */
-
-.flexia-topbar {
-  background: $color__dark;
-  color: $color__light;
-  min-height: 40px;
-  overflow: hidden;
-}
-
-.flexia-navbar {
-  background: $color__light;
-  color: $color__dark;
-}
-
-.footer-widget-area {
-  background: $color__footer-widget-bg;
-}
-
-.site-footer {
-  background: $color__footer-bg;
-}

@@ -147,4 +147,24 @@
         } );
     });  
 
+    // Header Area 
+
+    wp.customize( 'header_widget_area_bg_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-header-widget-area' ).css( 'background-color', to );            
+        } );
+    });  
+
+    wp.customize( 'header_topbar_bg_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-topbar' ).css( 'background-color', to );            
+        } );
+    });  
+
+    wp.customize( 'header_navbar_bg_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-navbar' ).css( 'background-color', to );            
+        } );
+    });  
+
 } )( jQuery );

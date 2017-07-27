@@ -21,7 +21,6 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	background-color: #262625;
 	z-index: 99;
 	-webkit-transform: translateY(-100%);
 	transform: translateY(-100%);
@@ -101,4 +100,19 @@
 .header-widget-toggle.toggle-collapsed:before {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+/* Flexia Topbar */
+
+.flexia-topbar {
+  color: $color__light;
+  overflow: hidden;
+}
+
+.flexia-topbar-content {
+	font-size: .8em;
+}
+
+.flexia-topbar-content p {
+	margin: .5em 0;
 }

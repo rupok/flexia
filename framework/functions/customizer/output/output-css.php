@@ -102,6 +102,16 @@ function flexia_header_style() {
 	  }
 	}
 
+	.flexia-header-widget-area {
+		background-color: <?php echo get_theme_mod('header_widget_area_bg_color'); ?>;
+	}
+	.flexia-topbar {
+		background-color: <?php echo get_theme_mod('header_topbar_bg_color'); ?>;
+	}
+	.flexia-navbar {
+		background-color: <?php echo get_theme_mod('header_navbar_bg_color'); ?>;
+	}
+
 	</style>
 	<?php
 }

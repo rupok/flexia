@@ -13,10 +13,17 @@
 
 <header id="masthead" class="site-header">
 
-	<?php get_template_part( 'framework/views/template-parts/content', 'header-widgets' ); ?>
+	<?php if( get_theme_mod('header_widget_area') == true ) : 
+		get_template_part( 'framework/views/template-parts/content', 'header-widgets' ); 
+	endif; ?>
 
-	<?php get_template_part( 'framework/views/template-parts/content', 'topbar' ); ?>
+	<?php if( get_theme_mod('header_topbar') == true ) : 
+		get_template_part( 'framework/views/template-parts/content', 'topbar' );
+	endif; ?>
 
-	<?php get_template_part( 'framework/views/template-parts/content', 'navbar' ); ?>
+	<?php if( get_theme_mod('header_navbar') == true ) : 
+		get_template_part( 'framework/views/template-parts/content', 'navbar' );
+	endif; ?>
+
 
 </header><!-- #masthead -->
