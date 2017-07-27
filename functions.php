@@ -42,10 +42,22 @@ function flexia_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	/**
+	 * Register primary menu
+	 */
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'flexia' ),
+		'primary' => esc_html__( 'Primary Menu', 'flexia' ),
 	) );
+
+	/**
+	 * Enable support for Post Formats
+	 */
+	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'status', 'chat' ) );
+	
+	/**
+	 * Enable support for WooCommerce
+	 */
+	add_theme_support( 'woocommerce' );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments

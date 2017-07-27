@@ -70,18 +70,6 @@
   background: #E95D55;
 }
 
-/* Post Formats */
-
-.format-status .post-content {
-  border-left: 5px solid #a1a1a1;
-  font-style: italic;
-  padding-left: 20px;
-}
-
-.format-chat .post-content p:nth-child(2n) {
-	font-weight: bold;
-}
-
 .hentry {
 	margin: 0 0 1.5em;
 }
@@ -279,6 +267,29 @@ body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
 
 .btn-read-more:hover:after {
   right:2em
+}
+
+
+/* Post Formats */
+
+.blog .format-status .entry-header, .blog .format-status .entry-footer,
+.archive .format-status .entry-header, .archive .format-status .entry-footer,
+.blog .format-link .entry-footer, .archive .format-link .entry-footer,
+.blog .format-quote .entry-footer, .archive .format-quote .entry-footer,
+.blog .format-chat .entry-footer, .archive .format-chat .entry-footer  {
+  display: none;
+}
+
+
+.format-quote .entry-content {
+  border-left: 5px solid #a1a1a1;
+  font-style: italic;
+  padding-left: 1em;
+}
+
+.format-chat .entry-content {
+  border-left: 5px solid #a1a1a1;
+  padding-left: 1em;
 }
 
 
