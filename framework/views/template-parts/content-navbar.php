@@ -44,11 +44,20 @@ endif;
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'flexia' ); ?></button>
 			<?php
+
+				if ( has_nav_menu( 'primary' ) ) :
 				wp_nav_menu( array(
 					'theme_location' => 'primary',
 					'menu_id'        => 'flexia-primary-menu',
 					'menu_class'     => 'nav-menu flexia-primary-menu',
+					'container'      => false,
 				) );
+
+				else :
+
+				  echo '<ul class="flexia-primary-menu"><li><a href="' . home_url( '/' ) . 'wp-admin/nav-menus.php">Assign a Menu</a></li></ul>';
+				endif;
+
 			?>
 		</nav><!-- #site-navigation -->
 	</div><!-- #flexia-container -->

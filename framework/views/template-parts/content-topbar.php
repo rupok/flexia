@@ -20,11 +20,17 @@
 		<?php if( get_theme_mod('flexia_enable_topbar_menu') == true ) : ?>
 		<nav id="site-navigation" class="topbar-navigation">
 			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'topbar-menu',
-					'menu_id'        => 'flexia-topbar-menu',
-					'menu_class'     => 'nav-menu flexia-topbar-menu',
-				) );
+
+				if ( has_nav_menu( 'topbar-menu' ) ) :
+					wp_nav_menu( array(
+						'theme_location' => 'topbar-menu',
+						'menu_id'        => 'flexia-topbar-menu',
+						'menu_class'     => 'nav-menu flexia-topbar-menu',
+						'container'      => false,
+					) );
+				else :
+				  echo '<ul class="flexia-topbar-menu"><li><a href="' . home_url( '/' ) . 'wp-admin/nav-menus.php">Assign Topbar Menu</a></li></ul>';
+				endif;
 			?>
 		</nav><!-- #site-navigation -->
 		<?php endif; ?>
