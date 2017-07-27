@@ -575,6 +575,31 @@ function flexia_customize_register( $wp_customize ) {
 	) ) );
 
 
+	// Navbar position
+
+	$wp_customize->add_setting( 'flexia_navbar_position' , array(
+	    'default'   => 'flexia-navbar-static-top',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'flexia_navbar_position',
+	        array(
+	            'label'          => __( 'Navbar Position', 'flexia' ),
+	            'section'        => 'flexia_header_settings',
+	            'settings'       => 'flexia_navbar_position',
+	            'type'           => 'radio',
+	            'choices'        => array(
+	                'flexia-navbar-static-top'   => __( 'Static Top' ),
+	                'flexia-navbar-fixed-top'   => __( 'Sticky Top' ),
+	            )
+	        )
+	    )
+	);
+
+
 	// Header widget, Topbar, Navbar background colors
 
 	$wp_customize->add_setting( 'header_widget_area_bg_color' , array(

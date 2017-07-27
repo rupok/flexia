@@ -9,9 +9,22 @@
  * @package Flexia
  */
 
+if( get_theme_mod('flexia_navbar_position') == 'flexia-navbar-static-top' ) : 
+
+	
+$navbar_class = 'flexia-navbar-static-top';
+
+else:
+
+
+$navbar_class = 'flexia-navbar-fixed-top';
+
+endif; 
+
+
 ?>
 
-<div class="flexia-navbar">
+<div class="flexia-navbar <?php echo $navbar_class;?>">
 	<div class="flexia-container max width flexia-navbar-inner">
 		<div class="site-branding">
 			<?php

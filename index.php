@@ -32,7 +32,11 @@ get_header();
 
                	<?php elseif( get_theme_mod('show_blog_logo') == 'blog_logo_image' ) :  ?>
 
-               		<img class="flexia-blog-logo" src="<?php echo get_theme_mod('blog_logo'); ?>">
+               		<?php if( get_theme_mod('blog_logo') !== '' ) :  ?>
+
+               			<img class="flexia-blog-logo" src="<?php echo get_theme_mod('blog_logo'); ?>">
+
+               		<?php endif; ?>
 
                 <?php endif; ?>
 

@@ -61,4 +61,19 @@ jQuery( document ).ready( function($) {
         $('html, body').animate({ scrollTop:$('#comments').offset().top }, 500);
         return false;
     });
+
+  	// Sticky menu
+
+	  $(window).scroll(function() {
+	    var scrollPos = $(window).scrollTop(),
+	        navbar = $('.flexia-navbar-fixed-top');
+
+	    if (scrollPos > 350) {
+	      navbar.addClass('flexia-sticky-navbar');
+	    } else {
+	      navbar.removeClass('flexia-sticky-navbar');
+	    }
+	  });
+
+
 });

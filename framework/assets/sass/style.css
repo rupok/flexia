@@ -674,6 +674,7 @@ big {
   font-size: .8em;
   color: #cbced3;
   padding: .5em 0;
+  text-align: center;
 }
 
 .flexia-topbar-content p {
@@ -696,7 +697,7 @@ big {
 .flexia-topbar-menu li a {
   color: #cbced3;
   font-size: 13px;
-  padding: .625em;
+  padding: .625em 1em;
   display: block;
   line-height: 1.8;
 }
@@ -709,6 +710,12 @@ big {
 .flexia-navbar {
   width: 100%;
   color: #262625;
+  box-shadow: 0 0.15em 0.35em 0 rgba(0, 0, 0, 0.135);
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 .flexia-navbar-inner {
@@ -733,6 +740,29 @@ big {
 .main-navigation {
   margin: 0 1em;
   flex: 0 0 auto;
+}
+
+.flexia-navbar.flexia-sticky-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  animation-duration: 0.5s;
+  animation-name: slideInDown;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.slideInDown {
+  animation-name: slideInDown;
 }
 
 .flexia-colophon-inner {
@@ -1922,7 +1952,7 @@ a:hover, a:active {
 
 @media all and (min-width: 1400px) {
   .blog-header .header-inner {
-    padding: 6em 2em;
+    padding: 8em 2em;
   }
 }
 /* Single Posts */
