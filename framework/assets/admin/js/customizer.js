@@ -189,7 +189,22 @@
     
     wp.customize( 'flexia_footer_link_color', function( value ) {
         value.bind( function( to ) {            
-            $( '.flexia-site-footer .site-info a' ).css( 'color', to );            
+            $( '.flexia-site-footer .site-info a, .flexia-footer-menu li a' ).css( 'color', to );                      
+        } );
+    });  
+
+    wp.customize( 'flexia_footer_link_hover_color', function( value ) {
+        value.bind( function( to ) {       
+		    var colorLink=$(".flexia-site-footer .site-info a, .flexia-footer-menu li a").css('color');
+		    $(".flexia-site-footer .site-info a, .flexia-footer-menu li a").hover(
+		    function() {
+		        //mouse over
+		        $(this).css('color', to)
+		    }, function() {
+		        //mouse out
+		        $(this).css('color', colorLink)
+		    });
+
         } );
     });  
  

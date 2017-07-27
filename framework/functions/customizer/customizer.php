@@ -664,6 +664,21 @@ function flexia_customize_register( $wp_customize ) {
 			'type'        => 'light',// light, ios, flat
 	) ) );
 
+
+	// Enable footer menu
+
+	$wp_customize->add_setting( 'flexia_enbale_footer_menu', array(
+			'default'     => true,
+			'capability'  => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'flexia_enbale_footer_menu', array(
+			'label'	      => esc_html__( 'Enable Footer Menu?', 'flexia' ),
+			'section'     => 'flexia_footer_settings',
+			'settings'    => 'flexia_enbale_footer_menu',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
 	// Enable Scrol to Top
 
 	$wp_customize->add_setting( 'flexia_scroll_to_top', array(
@@ -677,6 +692,7 @@ function flexia_customize_register( $wp_customize ) {
 			'settings'    => 'flexia_scroll_to_top',
 			'type'        => 'light',// light, ios, flat
 	) ) );
+
 
 
 	$wp_customize->add_setting( 'footer_widget_area_bg_color' , array(
@@ -730,7 +746,7 @@ function flexia_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'flexia_footer_link_color' , array(
-	    'default'     => '#FF5F5F',
+	    'default'     => '#F56A6A',
 	    'transport'   => 'postMessage',
 	) );
 
@@ -742,6 +758,22 @@ function flexia_customize_register( $wp_customize ) {
 			'label'      => __( 'Footer Links Color', 'flexia' ),
 			'section'    => 'flexia_footer_settings',
 			'settings'   => 'flexia_footer_link_color',
+		) ) 
+	);
+
+	$wp_customize->add_setting( 'flexia_footer_link_hover_color' , array(
+	    'default'     => '#E65A50',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_footer_link_hover_color', 
+		array(
+			'label'      => __( 'Footer Links Hover Color', 'flexia' ),
+			'section'    => 'flexia_footer_settings',
+			'settings'   => 'flexia_footer_link_hover_color',
 		) ) 
 	);
 

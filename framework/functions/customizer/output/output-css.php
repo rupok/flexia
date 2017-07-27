@@ -105,9 +105,11 @@ function flexia_header_style() {
 	.flexia-header-widget-area {
 		background-color: <?php echo get_theme_mod('header_widget_area_bg_color'); ?>;
 	}
+
 	.flexia-topbar {
 		background-color: <?php echo get_theme_mod('header_topbar_bg_color'); ?>;
 	}
+
 	.flexia-navbar {
 		background-color: <?php echo get_theme_mod('header_navbar_bg_color'); ?>;
 	}
@@ -115,14 +117,21 @@ function flexia_header_style() {
 	.flexia-footer-widget-area {
 		background-color: <?php echo get_theme_mod('footer_widget_area_bg_color'); ?>;
 	}
+
 	.flexia-site-footer {
 		background-color: <?php echo get_theme_mod('flexia_footer_bg_color'); ?>;
 	}
+
 	.flexia-site-footer .site-info {
 		color: <?php echo get_theme_mod('flexia_footer_content_color'); ?>;
 	}
-	.flexia-site-footer .site-info a {
+
+	.flexia-site-footer .site-info a, .flexia-footer-menu li a {
 		color: <?php echo get_theme_mod('flexia_footer_link_color'); ?>;
+	}
+
+	.flexia-site-footer .site-info a:hover, .flexia-footer-menu li a:hover {
+		color: <?php echo get_theme_mod('flexia_footer_link_hover_color'); ?>;
 	}
 
 	</style>
