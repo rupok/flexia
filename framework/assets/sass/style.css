@@ -1330,7 +1330,7 @@ a:hover, a:active {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 3px;
-  background: #f56a6a;
+  background-color: rgba(0, 0, 0, 0.75);
   color: white;
   outline: 0;
   text-decoration: none;
@@ -1339,8 +1339,7 @@ a:hover, a:active {
 }
 
 .post-pagination > li > a:hover {
-  background: #E65A50;
-  border: 1px solid #E65A50;
+  background: #f56a6a;
   color: #fff;
 }
 
@@ -1354,8 +1353,7 @@ a:hover, a:active {
 .post-pagination > .active > span,
 .post-pagination > .active > span:focus,
 .post-pagination > .active > span:hover {
-  background: #3f3f46;
-  border-color: #3f3f46;
+  background: rgba(0, 0, 0, 0.25);
   color: #fff;
   cursor: default;
   z-index: 2;
