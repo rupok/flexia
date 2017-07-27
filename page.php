@@ -19,9 +19,9 @@ get_header(); ?>
 	<?php get_template_part( 'framework/views/template-parts/content', 'masthead' ); ?>
 
 	<div id="content" class="site-content">
-		<div class="flexia-wrapper flexia-container">
+		<div class="flexia-wrapper flexia-container max width">
 			<div id="primary" class="content-area">
-				<main id="main" class="site-main flexia-container max width">
+				<main id="main" class="site-main flexia-container">
 
 					<?php
 					while ( have_posts() ) : the_post();

@@ -75,3 +75,10 @@
     flex: 0 0 auto;
   }
 }
+
+
+@media all and (max-width: 480px) {
+  .flexia-sidebar {
+    flex: 1 1 auto;
+  }
+}

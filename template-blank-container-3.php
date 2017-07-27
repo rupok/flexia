@@ -11,7 +11,7 @@ get_header(); ?>
 
 <div id="page" class="site">
 	<div id="content" class="site-content">
-		<div class="flexia-wrapper flexia-container">
+		<div class="flexia-wrapper flexia-container max width">
 			<div id="primary" class="content-area">
 				<main id="main" class="site-main flexia-container">
 
