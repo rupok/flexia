@@ -12,7 +12,7 @@
 		return;
 	}
 
-	button = container.getElementsByTagName( 'button' )[0];
+	button = container.getElementsByClassName( 'flexia-burger-menu' )[0];
 	if ( 'undefined' === typeof button ) {
 		return;
 	}
@@ -104,3 +104,30 @@
 		}
 	}( container ) );
 } )();
+
+jQuery( document ).ready( function($) {
+
+var clickDelay      = 500,
+    clickDelayTimer = null;
+
+$('.burger-click-region').on('click', function () {
+  
+  if(clickDelayTimer === null) {
+  
+    var $burger = $(this);
+    $burger.toggleClass('active');
+    $burger.parent().toggleClass('is-open');
+
+    if(!$burger.hasClass('active')) {
+      $burger.addClass('closing');
+    }
+
+    clickDelayTimer = setTimeout(function () {
+      $burger.removeClass('closing');
+      clearTimeout(clickDelayTimer);
+      clickDelayTimer = null;
+    }, clickDelay);
+  }
+});
+});
+

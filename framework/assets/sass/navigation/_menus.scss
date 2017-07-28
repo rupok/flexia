@@ -136,7 +136,6 @@
 
 .main-navigation li ul li {
 	float: none;
-	margin: 0;
 }
 
 .main-navigation ul ul a:hover {
@@ -149,13 +148,15 @@
 
 
 /* Small menu. */
+
+
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
 }
 
 @media screen and (min-width: 37.5em) {
-	.menu-toggle {
+	.flexia-burger-menu {
 		display: none;
 	}
 	.main-navigation ul {
@@ -181,4 +182,225 @@
 		text-align: right;
 		width: 50%;
 	}
+}
+
+
+@media screen and (max-width: 37.5em) {
+
+.main-navigation {
+	margin: 0;
+}
+
+.main-navigation .flexia-primary-menu {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	padding: 1em;
+	border-top: 1px solid rgba(0,0,0, .05);
+	background-color: #fff;
+	animation-duration: 0.25s;
+	animation-name: fadeIn;
+}
+
+.main-navigation .nav-menu > li {
+	float: none;
+	display: block;
+}
+
+.main-navigation .nav-menu > li {
+	padding: 0;
+}
+
+.main-navigation .nav-menu > li a {
+	padding: 15px;
+	border: 1px solid rgba(0,0,0, .135);
+}
+
+.main-navigation li:hover > a, .main-navigation li.focus > a {
+	background-color: rgba(0,0,0, .05);
+}
+
+.main-navigation a:hover::after {
+	display: none;
+}
+
+.main-navigation li.menu-item-has-children::after {
+	right: 10px;
+	top: 15px;
+}
+
+/* Submenu on mobile */
+
+.main-navigation ul ul, .main-navigation ul ul ul {
+	position: relative;
+	left: auto;
+	right: auto;
+	float: none;
+	height: 0;
+	top: auto;
+	overflow: hidden;
+	width: 100%;
+}
+
+.main-navigation ul li:hover > ul, .main-navigation ul li.focus > ul {
+	height: auto;
+	box-shadow: none;
+	padding-left: 1em;
+}
+
+.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+	left: 0;
+	margin-bottom: 0;
+}
+
+.main-navigation ul ul li.menu-item-has-children::after {
+	content: "\f107";
+}
+
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+
+/* Burger menu */
+
+.flexia-burger-menu {
+  position: relative;
+  width: auto;
+  min-width: 50px;
+  height: 30px;
+  margin: 0 auto;
+  color: #4d4d4d;
+  text-transform: uppercase;
+}
+
+.burger-click-region {
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.flexia-burger-menu-txt {
+  display: block;
+  position: absolute;
+  right: 40px;
+  top: 1px;
+  font-size: 14px;
+  cursor: default;
+  transition: opacity 200ms ease-out, transform 200ms cubic-bezier(.34, .55, .25, .83);
+  
+  .is-open & {
+    opacity: 0;
+    transform: translate3d(-50px, 0, 0);
+  }
+}
+
+$menu-animation-duration: 400ms;
+$menu-animation-timing:   ease-out;
+
+.burger-menu-piece {
+	display: block;
+	position: absolute;
+	width: 30px;
+	border-top: 2px solid #4d4d4d;
+	transform-origin: 58% 50%;
+    transition: transform $menu-animation-duration $menu-animation-timing;
+  
+  &:nth-child(1) {
+    top: 0;
+  }
+  
+  &:nth-child(2) {
+    top: 10px;
+    opacity: 1;
+    transition: transform $menu-animation-duration $menu-animation-timing, opacity 0ms linear $menu-animation-duration / 2;
+  }
+  
+  &:nth-child(3) {
+    top: 20px;
+  }
+  
+  .active & {
+    
+      &:nth-child(1) {
+        animation: burger-open-top $menu-animation-duration $menu-animation-timing forwards;
+      }
+    
+      &:nth-child(2) {
+        opacity: 0;
+        transition: transform $menu-animation-duration $menu-animation-timing, opacity 0ms linear $menu-animation-duration / 2;
+      }
+    
+      &:nth-child(3) {
+        animation: burger-open-bot $menu-animation-duration $menu-animation-timing forwards;
+      }
+  }
+  
+  .closing & {
+    &:nth-child(1) {
+      animation: burger-close-top $menu-animation-duration $menu-animation-timing forwards;
+    }
+    
+    &:nth-child(3) {
+      animation: burger-close-bot $menu-animation-duration $menu-animation-timing forwards;
+    }
+  }
+}
+
+@keyframes burger-open-top {
+  50% {
+    transform: translate3d(0, 12px, 0);
+  }
+  100% {
+    transform: translate3d(0, 12px, 0) rotate(45deg);
+  }
+}
+
+@keyframes burger-open-bot {
+  50% {
+    transform: translate3d(0, -12px, 0);
+  }
+  100% {
+    transform: translate3d(0, -12px, 0) rotate(-45deg);
+  }
+}
+
+@keyframes burger-close-top {
+  0% {
+    transform: translate3d(0, 12px, 0) rotate(45deg);
+  }
+  50% {
+    transform: translate3d(0, 12px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes burger-close-bot {
+  0% {
+    transform: translate3d(0, -12px, 0) rotate(-45deg);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
 }

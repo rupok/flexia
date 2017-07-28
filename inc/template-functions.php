@@ -17,6 +17,11 @@ function flexia_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	if( get_theme_mod('content_layout') == 'content_layout1' ) {
+		$classes[] = 'sidebar-left-right';
+	}
+
+
 	return $classes;
 }
 add_filter( 'body_class', 'flexia_body_classes' );

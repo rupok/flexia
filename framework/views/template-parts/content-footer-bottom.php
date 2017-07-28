@@ -13,7 +13,7 @@
 	<div class="flexia-colophon-inner flexia-container max width">
 
 		<?php if( get_theme_mod('flexia_enbale_footer_menu') == true ) : ?>
-		<nav id="site-navigation" class="footer-navigation">
+		<nav id="footer-navigation" class="footer-navigation">
 			<?php
 
 				if ( has_nav_menu( 'footer-menu' ) ) :

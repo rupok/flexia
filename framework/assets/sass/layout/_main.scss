@@ -82,3 +82,21 @@
     flex: 1 1 auto;
   }
 }
+
+@media all and (min-width: 960px) and (max-width: 1023px) { 
+.sidebar-left-right .content-area, .sidebar-left-right .single-post-entry {
+  flex: 1 1 100%;
+  order: 1;
+}
+.sidebar-left-right .flexia-sidebar-left {
+  flex: 1 1 auto;
+  order: 2;
+}
+
+.sidebar-left-right .flexia-sidebar-right {
+  flex: 1 1 auto;
+  order: 3;
+}
+}
+
+

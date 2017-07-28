@@ -23,42 +23,52 @@ endif;
 ?>
 
 <div class="flexia-navbar <?php echo $navbar_class;?>">
-	<div class="flexia-container max width flexia-navbar-inner">
-		<div class="site-branding">
+	<div class="flexia-navbar-container">
+		<div class="flexia-container max width flexia-navbar-inner">
+			<div class="site-branding">
 
-			<?php if( get_theme_mod('flexia_header_logo') !== '' ) :  ?>
+				<?php if( get_theme_mod('flexia_header_logo') !== '' ) :  ?>
 
-               			<img class="flexia-header-logo" alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_theme_mod('flexia_header_logo'); ?>">
+	               			<img class="flexia-header-logo" alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_theme_mod('flexia_header_logo'); ?>">
 
-             <?php endif; ?>
+	             <?php endif; ?>
 
 
-			<?php if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
+				<?php if ( is_front_page() && is_home() ) : ?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php else : ?>
+					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php
+				endif; ?>
+			</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'flexia' ); ?></button>
-			<?php
+			<nav id="site-navigation" class="main-navigation">
+			  <div class="flexia-burger-menu">
+			    <div class="burger-click-region">
+			      <span class="burger-menu-piece"></span>
+			      <span class="burger-menu-piece"></span>
+			      <span class="burger-menu-piece"></span>
+			    </div>
+			    <span class="flexia-burger-menu-txt"><?php esc_html_e( 'Navigate', 'flexia' ); ?></span>
+			  </div>
 
-				if ( has_nav_menu( 'primary' ) ) :
-				wp_nav_menu( array(
-					'theme_location' => 'primary',
-					'menu_id'        => 'flexia-primary-menu',
-					'menu_class'     => 'nav-menu flexia-primary-menu',
-					'container'      => false,
-				) );
+				<?php
 
-				else :
+					if ( has_nav_menu( 'primary' ) ) :
+					wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'menu_id'        => 'flexia-primary-menu',
+						'menu_class'     => 'nav-menu flexia-primary-menu',
+						'container'      => false,
+					) );
 
-				  echo '<ul class="flexia-primary-menu"><li><a href="' . home_url( '/' ) . 'wp-admin/nav-menus.php">Assign a Menu</a></li></ul>';
-				endif;
+					else :
 
-			?>
-		</nav><!-- #site-navigation -->
-	</div><!-- #flexia-container -->
+					  echo '<ul class="flexia-primary-menu"><li><a href="' . home_url( '/' ) . 'wp-admin/nav-menus.php">Assign a Menu</a></li></ul>';
+					endif;
+
+				?>
+			</nav><!-- #site-navigation -->
+		</div><!-- #flexia-container -->
+	</div><!-- #flexia-navbar-container -->
 </div>

@@ -26,6 +26,7 @@
 .flexia-sidebar-inner > .widget {
 	flex: 1 1 30%;
 	margin: 1em;
+	min-width: 250px;
 }
 
 .widget.widget_search .search-submit {
