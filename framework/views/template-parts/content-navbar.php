@@ -42,15 +42,8 @@ endif;
 				endif; ?>
 			</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation">
-			  <div class="flexia-burger-menu">
-			    <div class="burger-click-region">
-			      <span class="burger-menu-piece"></span>
-			      <span class="burger-menu-piece"></span>
-			      <span class="burger-menu-piece"></span>
-			    </div>
-			    <span class="flexia-burger-menu-txt"><?php esc_html_e( 'Navigate', 'flexia' ); ?></span>
-			  </div>
+			<nav id="site-navigation" class="flexia-menu main-navigation">
+			  <a class="flexia-nav-btn"></a>
 
 				<?php
 
