@@ -27,89 +27,85 @@
 
 /* Submenu styles */
 
-.main-navigation > ul > li.has-sub > a {
-    padding-right: 30px
+.main-navigation ul.sub-menu {
+	background-color: #fff; 
 }
 
-.main-navigation > ul > li.has-sub > a:after {
-    position: absolute;
-    top: 22px;
-    right: 11px;
-    width: 8px;
-    height: 2px;
-    display: block;
-    background: #ddd;
-    content: ''
+.main-navigation > ul > li.has-sub {
+    padding-right: 20px
 }
 
-.main-navigation > ul > li.has-sub > a:before {
-    position: absolute;
-    top: 19px;
-    right: 14px;
-    display: block;
-    width: 2px;
-    height: 8px;
-    background: #ddd;
-    content: '';
-    -webkit-transition: all .25s ease;
-    -ms-transition: all .25s ease;
-    transition: all .25s ease
-}
-
-.main-navigation > ul > li.has-sub:hover > a:before {
-    top: 23px;
-    height: 0
-}
-
-.main-navigation li:hover > ul > li {
-    height: 35px
-}
-
-.main-navigation ul ul li a {
-    border-bottom: 1px solid rgba(150, 150, 150, 0.15);
-    padding: 11px 15px;
-    width: 170px;
-    font-size: 12px;
-    text-decoration: none;
-    color: #ddd;
-    font-weight: 400;
-}
-
-.main-navigation ul ul li:hover > a,
-.main-navigation ul ul li a:hover {
-    color: #fff
-}
-.main-navigation ul ul li.has-sub > a:after {
+.main-navigation > ul > li.has-sub:after {
     position: absolute;
     top: 16px;
     right: 11px;
     width: 8px;
     height: 2px;
     display: block;
-    background: #ddd;
+    background: #4d4d4d;
     content: ''
 }
-.main-navigation ul ul li.has-sub > a:before {
+
+.main-navigation > ul > li.has-sub:before {
     position: absolute;
     top: 13px;
     right: 14px;
     display: block;
     width: 2px;
     height: 8px;
-    background: #ddd;
+    background: #4d4d4d;
     content: '';
     -webkit-transition: all .25s ease;
     -ms-transition: all .25s ease;
     transition: all .25s ease
 }
-.main-navigation ul ul > li.has-sub:hover > a:before {
-    top: 17px;
+
+.main-navigation > ul > li.has-sub:hover:before {
+    top: 23px;
     height: 0
 }
-.main-navigation ul ul li.has-sub:hover,
-.main-navigation ul li.has-sub ul li.has-sub ul li:hover {
-    background: #363636;
+
+.main-navigation li:hover > ul > li {
+    height: 45px
 }
+
+.main-navigation ul ul li a {
+	border-bottom: 1px solid rgba(0,0,0, 0.05);
+	padding: 17px 15px;
+	width: 220px;
+	font-size: 13px;
+	color: #4d4d4d;
+}
+
+
+.main-navigation ul ul li.has-sub:after {
+    position: absolute;
+    top: 21px;
+    right: 11px;
+    width: 8px;
+    height: 2px;
+    display: block;
+    background: #4d4d4d;
+    content: ''
+}
+.main-navigation ul ul li.has-sub:before {
+    position: absolute;
+    top: 18px;
+    right: 14px;
+    display: block;
+    width: 2px;
+    height: 8px;
+    background: #4d4d4d;
+    content: '';
+    -webkit-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    transition: all .25s ease
+}
+.main-navigation ul ul > li.has-sub:hover:before {
+    top: 17px;
+    height: 0;
+}
+
 .main-navigation ul ul ul li.current-menu-item a {
     border-left: 1px solid #333
 }
@@ -117,6 +113,56 @@
 .main-navigation > ul ul > li.has-sub > ul > li.current-menu-item> a {
     border-top: 1px solid #333
 }
+
+@media screen and (min-width: 768px) {
+
+.main-navigation ul.sub-menu {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.main-navigation ul ul li:hover > a, .main-navigation ul ul li a:hover {
+	color: #1b1f21;
+	background-color: rgba(0,0,0, .05);
+}
+
+.main-navigation > ul > li:not(.has-sub) > a::after {
+	height: 0.1em;
+	width: 100%;
+	background-color: #4d4d4d;
+	content: "";
+	position: absolute;
+	left: 0px;
+	bottom: 0;
+	-moz-transform: scaleX(0);
+	-ms-transform: scaleX(0);
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+}
+
+.main-navigation > ul > li:not(.has-sub) > a:hover::after {
+	background-color: #1b1f21; 
+	-moz-transform: scaleX(1);
+	-ms-transform: scaleX(1);
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+
+.main-navigation ul ul li:last-child > a,
+.main-navigation ul ul li.last-item > a {
+    border-bottom: 0
+}
+
+}
+
+.flexia-nav-btn {
+	right: 10px;
+	top: calc(50% - 25px);
+}
+
 
 @media screen and (max-width: 767px) {
 .main-navigation .flexia-primary-menu {
@@ -129,23 +175,37 @@
 }
 
 .main-navigation ul li {
-    border-top: 1px solid rgba(150,150,150, .15);
+	padding: 0;
+	margin: 0.5em 0;
+	border: none;
 }
 
-.main-navigation ul li:hover {
-	background-color: rgba(150,150,150, .15);
+.main-navigation ul li ul {
+	padding-left: 1em;
+}
+
+.main-navigation li:hover > ul > li {
+	height: auto;
+}
+
+.main-navigation > ul > li.has-sub {
+	padding-right: .625em;
+}
+
+.main-navigation .nav-menu > li a {
+	padding: 15px;
+	border: 1px solid rgba(0,0,0, .135);
+	display: block;
+	width: 100%;
+}
+
+.main-navigation ul li a:hover, .main-navigation ul li a:focus, .main-navigation ul li.current-menu-item a  {
+	background-color: #262625;
+	color: #fff;
 }
 
 .main-navigation ul ul li a {
     padding-left: 25px;
-}
-
-.main-navigation ul ul li {
-	background-color: #eee;
-}
-
-.main-navigation ul ul li:hover {
-    background: #ccc;
 }
 
 .main-navigation ul ul ul li a {
@@ -155,11 +215,6 @@
 .main-navigation ul ul li a {
     color: #333;
     background: none;
-}
-
-.main-navigation ul ul li:hover > a,
-.main-navigation ul ul li.current-menu-item > a {
-    color: #000;
 }
 
 .flexia-nav-btn:after {
@@ -175,20 +230,20 @@
 }
 
 .main-navigation .submenu-button {
-    border-left: 1px solid #444;
+	border-left: 1px solid rgba(0,0,0, .135);
+	height: 45px;
+	width: 45px;
+	right: .625em;
 }
-.main-navigation .submenu-button {
-    border-left: 1px solid #444;
-    height: 46px;
-    width: 46px;
+
+.main-navigation ul ul .submenu-button {
+	right: 0;
 }
-.main-navigation .submenu-button.submenu-opened {
+
+.main-navigation .submenu-button:hover, .main-navigation .submenu-button.submenu-opened {
     background: #262626
 }
-.main-navigation ul ul .submenu-button {
-    height: 34px;
-    width: 34px
-}
+
 .main-navigation .submenu-button:after {
     position: absolute;
     top: 22px;
@@ -196,10 +251,6 @@
     width: 8px;
     height: 2px;
     background: #ddd;
-}
-.main-navigation ul ul .submenu-button:after {
-    top: 15px;
-    right: 13px
 }
 .main-navigation .submenu-button.submenu-opened:after {
     background: #fff
@@ -211,8 +262,5 @@
     height: 8px;
     background: #ddd;
 }
-.main-navigation ul ul .submenu-button:before {
-    top: 12px;
-    right: 16px
-}
+
 }

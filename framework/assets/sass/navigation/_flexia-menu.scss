@@ -54,7 +54,6 @@
     height: 0;
     -webkit-transition: all .25s ease;
     -ms-transition: all .25s ease;
-    background: #333;
     transition: all .25s ease
 }
 .flexia-menu li:hover > ul {
@@ -66,10 +65,60 @@
     top: 0
 }
 
-.flexia-menu ul ul li:last-child > a,
-.flexia-menu ul ul li.last-item > a {
-    border-bottom: 0
+.flexia-nav-btn {
+    width: 55px;
+    height: 46px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    z-index: 9999;
 }
+.flexia-nav-btn:after {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    display: block;
+    height: 8px;
+    width: 20px;
+    content: ''
+}
+.flexia-nav-btn:before {
+    -webkit-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    display: block;
+    height: 2px;
+    width: 20px;
+    content: ''
+}
+.flexia-nav-btn.menu-opened:after {
+    -webkit-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+    top: 23px;
+    border: 0;
+    height: 2px;
+    width: 19px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+.flexia-nav-btn.menu-opened:before {
+    top: 23px;
+    width: 19px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg)
+}
+
 .flexia-nav-btn {
 	display: none;
 }
@@ -109,64 +158,11 @@
         margin: 0;
         text-align: left
     }
-    .flexia-menu > ul > li.has-sub > a:after,
-    .flexia-menu > ul > li.has-sub > a:before,
-    .flexia-menu ul ul > li.has-sub > a:after,
-    .flexia-menu ul ul > li.has-sub > a:before {
-        display: none
-    }
-    .flexia-nav-btn {
-        width: 55px;
-        height: 46px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        cursor: pointer;
-        z-index: 9999;
-    }
-    .flexia-nav-btn:after {
-        position: absolute;
-        top: 22px;
-        right: 20px;
-        display: block;
-        height: 8px;
-        width: 20px;
-        content: ''
-    }
-    .flexia-nav-btn:before {
-        -webkit-transition: all .3s ease;
-        -ms-transition: all .3s ease;
-        transition: all .3s ease;
-        position: absolute;
-        top: 16px;
-        right: 20px;
-        display: block;
-        height: 2px;
-        width: 20px;
-        content: ''
-    }
-    .flexia-nav-btn.menu-opened:after {
-        -webkit-transition: all .3s ease;
-        -ms-transition: all .3s ease;
-        transition: all .3s ease;
-        top: 23px;
-        border: 0;
-        height: 2px;
-        width: 19px;
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        transform: rotate(45deg)
-    }
-    .flexia-nav-btn.menu-opened:before {
-        top: 23px;
-        width: 19px;
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        transform: rotate(-45deg)
+    .flexia-menu > ul > li.has-sub:after,
+    .flexia-menu > ul > li.has-sub:before,
+    .flexia-menu ul ul > li.has-sub:after,
+    .flexia-menu ul ul > li.has-sub:before {
+        display: none!important;
     }
     .flexia-menu .submenu-button {
         position: absolute;
@@ -176,7 +172,7 @@
         display: block;
         cursor: pointer
     }
-    .flexia-menu .submenu-button:before .flexia-menu .submenu-button:after {
+    .flexia-menu .submenu-button:before, .flexia-menu .submenu-button:after {
         position: absolute;
         display: block;
         content: ''

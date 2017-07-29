@@ -693,6 +693,10 @@ big {
 }
 
 /* Flexia Topbar */
+.flexia-topbar {
+  position: relative;
+}
+
 .flexia-topbar-inner {
   display: flex;
   flex-flow: row wrap;
@@ -742,6 +746,7 @@ big {
 .site-branding {
   flex: 0 0 auto;
   margin: 0 1em;
+  min-height: 45px;
 }
 
 .site-branding .site-title, .site-branding .site-title a {
@@ -1183,7 +1188,6 @@ a:hover, a:active {
   height: 0;
   -webkit-transition: all .25s ease;
   -ms-transition: all .25s ease;
-  background: #333;
   transition: all 0.25s ease;
 }
 
@@ -1196,9 +1200,62 @@ a:hover, a:active {
   top: 0;
 }
 
-.flexia-menu ul ul li:last-child > a,
-.flexia-menu ul ul li.last-item > a {
-  border-bottom: 0;
+.flexia-nav-btn {
+  width: 55px;
+  height: 46px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.flexia-nav-btn:after {
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  display: block;
+  height: 8px;
+  width: 20px;
+  content: "";
+}
+
+.flexia-nav-btn:before {
+  -webkit-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  display: block;
+  height: 2px;
+  width: 20px;
+  content: "";
+}
+
+.flexia-nav-btn.menu-opened:after {
+  -webkit-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+  top: 23px;
+  border: 0;
+  height: 2px;
+  width: 19px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.flexia-nav-btn.menu-opened:before {
+  top: 23px;
+  width: 19px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .flexia-nav-btn {
@@ -1247,69 +1304,11 @@ a:hover, a:active {
     text-align: left;
   }
 
-  .flexia-menu > ul > li.has-sub > a:after,
-  .flexia-menu > ul > li.has-sub > a:before,
-  .flexia-menu ul ul > li.has-sub > a:after,
-  .flexia-menu ul ul > li.has-sub > a:before {
-    display: none;
-  }
-
-  .flexia-nav-btn {
-    width: 55px;
-    height: 46px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    cursor: pointer;
-    z-index: 9999;
-  }
-
-  .flexia-nav-btn:after {
-    position: absolute;
-    top: 22px;
-    right: 20px;
-    display: block;
-    height: 8px;
-    width: 20px;
-    content: "";
-  }
-
-  .flexia-nav-btn:before {
-    -webkit-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    transition: all .3s ease;
-    position: absolute;
-    top: 16px;
-    right: 20px;
-    display: block;
-    height: 2px;
-    width: 20px;
-    content: "";
-  }
-
-  .flexia-nav-btn.menu-opened:after {
-    -webkit-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    transition: all .3s ease;
-    top: 23px;
-    border: 0;
-    height: 2px;
-    width: 19px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-
-  .flexia-nav-btn.menu-opened:before {
-    top: 23px;
-    width: 19px;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+  .flexia-menu > ul > li.has-sub:after,
+  .flexia-menu > ul > li.has-sub:before,
+  .flexia-menu ul ul > li.has-sub:after,
+  .flexia-menu ul ul > li.has-sub:before {
+    display: none !important;
   }
 
   .flexia-menu .submenu-button {
@@ -1321,7 +1320,7 @@ a:hover, a:active {
     cursor: pointer;
   }
 
-  .flexia-menu .submenu-button:before .flexia-menu .submenu-button:after {
+  .flexia-menu .submenu-button:before, .flexia-menu .submenu-button:after {
     position: absolute;
     display: block;
     content: "";
@@ -1368,92 +1367,84 @@ a:hover, a:active {
 }
 
 /* Submenu styles */
-.main-navigation > ul > li.has-sub > a {
-  padding-right: 30px;
+.main-navigation ul.sub-menu {
+  background-color: #fff;
 }
 
-.main-navigation > ul > li.has-sub > a:after {
-  position: absolute;
-  top: 22px;
-  right: 11px;
-  width: 8px;
-  height: 2px;
-  display: block;
-  background: #ddd;
-  content: "";
+.main-navigation > ul > li.has-sub {
+  padding-right: 20px;
 }
 
-.main-navigation > ul > li.has-sub > a:before {
-  position: absolute;
-  top: 19px;
-  right: 14px;
-  display: block;
-  width: 2px;
-  height: 8px;
-  background: #ddd;
-  content: '';
-  -webkit-transition: all .25s ease;
-  -ms-transition: all .25s ease;
-  transition: all 0.25s ease;
-}
-
-.main-navigation > ul > li.has-sub:hover > a:before {
-  top: 23px;
-  height: 0;
-}
-
-.main-navigation li:hover > ul > li {
-  height: 35px;
-}
-
-.main-navigation ul ul li a {
-  border-bottom: 1px solid rgba(150, 150, 150, 0.15);
-  padding: 11px 15px;
-  width: 170px;
-  font-size: 12px;
-  text-decoration: none;
-  color: #ddd;
-  font-weight: 400;
-}
-
-.main-navigation ul ul li:hover > a,
-.main-navigation ul ul li a:hover {
-  color: #fff;
-}
-
-.main-navigation ul ul li.has-sub > a:after {
+.main-navigation > ul > li.has-sub:after {
   position: absolute;
   top: 16px;
   right: 11px;
   width: 8px;
   height: 2px;
   display: block;
-  background: #ddd;
+  background: #4d4d4d;
   content: "";
 }
 
-.main-navigation ul ul li.has-sub > a:before {
+.main-navigation > ul > li.has-sub:before {
   position: absolute;
   top: 13px;
   right: 14px;
   display: block;
   width: 2px;
   height: 8px;
-  background: #ddd;
+  background: #4d4d4d;
   content: '';
   -webkit-transition: all .25s ease;
   -ms-transition: all .25s ease;
   transition: all 0.25s ease;
 }
 
-.main-navigation ul ul > li.has-sub:hover > a:before {
-  top: 17px;
+.main-navigation > ul > li.has-sub:hover:before {
+  top: 23px;
   height: 0;
 }
 
-.main-navigation ul ul li.has-sub:hover,
-.main-navigation ul li.has-sub ul li.has-sub ul li:hover {
-  background: #363636;
+.main-navigation li:hover > ul > li {
+  height: 45px;
+}
+
+.main-navigation ul ul li a {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 17px 15px;
+  width: 220px;
+  font-size: 13px;
+  color: #4d4d4d;
+}
+
+.main-navigation ul ul li.has-sub:after {
+  position: absolute;
+  top: 21px;
+  right: 11px;
+  width: 8px;
+  height: 2px;
+  display: block;
+  background: #4d4d4d;
+  content: "";
+}
+
+.main-navigation ul ul li.has-sub:before {
+  position: absolute;
+  top: 18px;
+  right: 14px;
+  display: block;
+  width: 2px;
+  height: 8px;
+  background: #4d4d4d;
+  content: '';
+  -webkit-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  transition: all 0.25s ease;
+}
+
+.main-navigation ul ul > li.has-sub:hover:before {
+  top: 17px;
+  height: 0;
 }
 
 .main-navigation ul ul ul li.current-menu-item a {
@@ -1463,6 +1454,52 @@ a:hover, a:active {
 .main-navigation > ul > li.has-sub > ul > li.current-menu-item > a,
 .main-navigation > ul ul > li.has-sub > ul > li.current-menu-item > a {
   border-top: 1px solid #333;
+}
+
+@media screen and (min-width: 768px) {
+  .main-navigation ul.sub-menu {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  .main-navigation ul ul li:hover > a, .main-navigation ul ul li a:hover {
+    color: #1b1f21;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .main-navigation > ul > li:not(.has-sub) > a::after {
+    height: 0.1em;
+    width: 100%;
+    background-color: #4d4d4d;
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+
+  .main-navigation > ul > li:not(.has-sub) > a:hover::after {
+    background-color: #1b1f21;
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+
+  .main-navigation ul ul li:last-child > a,
+  .main-navigation ul ul li.last-item > a {
+    border-bottom: 0;
+  }
+}
+.flexia-nav-btn {
+  right: 10px;
+  top: calc(50% - 25px);
 }
 
 @media screen and (max-width: 767px) {
@@ -1476,23 +1513,37 @@ a:hover, a:active {
   }
 
   .main-navigation ul li {
-    border-top: 1px solid rgba(150, 150, 150, 0.15);
+    padding: 0;
+    margin: 0.5em 0;
+    border: none;
   }
 
-  .main-navigation ul li:hover {
-    background-color: rgba(150, 150, 150, 0.15);
+  .main-navigation ul li ul {
+    padding-left: 1em;
+  }
+
+  .main-navigation li:hover > ul > li {
+    height: auto;
+  }
+
+  .main-navigation > ul > li.has-sub {
+    padding-right: .625em;
+  }
+
+  .main-navigation .nav-menu > li a {
+    padding: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.135);
+    display: block;
+    width: 100%;
+  }
+
+  .main-navigation ul li a:hover, .main-navigation ul li a:focus, .main-navigation ul li.current-menu-item a {
+    background-color: #262625;
+    color: #fff;
   }
 
   .main-navigation ul ul li a {
     padding-left: 25px;
-  }
-
-  .main-navigation ul ul li {
-    background-color: #eee;
-  }
-
-  .main-navigation ul ul li:hover {
-    background: #ccc;
   }
 
   .main-navigation ul ul ul li a {
@@ -1504,41 +1555,32 @@ a:hover, a:active {
     background: none;
   }
 
-  .main-navigation ul ul li:hover > a,
-  .main-navigation ul ul li.current-menu-item > a {
-    color: #000;
-  }
-
   .flexia-nav-btn:after {
     border-top: 2px solid #4d4d4d;
     border-bottom: 2px solid #4d4d4d;
   }
 
   .flexia-nav-btn:before {
-    background: #4d4d4d;
+    background-color: #4d4d4d;
   }
 
   .flexia-nav-btn.menu-opened:after, .flexia-nav-btn.menu-opened:before {
-    background: #4d4d4d;
+    background-color: #4d4d4d;
   }
 
   .main-navigation .submenu-button {
-    border-left: 1px solid #444;
-  }
-
-  .main-navigation .submenu-button {
-    border-left: 1px solid #444;
-    height: 46px;
-    width: 46px;
-  }
-
-  .main-navigation .submenu-button.submenu-opened {
-    background: #262626;
+    border-left: 1px solid rgba(0, 0, 0, 0.135);
+    height: 45px;
+    width: 45px;
+    right: .625em;
   }
 
   .main-navigation ul ul .submenu-button {
-    height: 34px;
-    width: 34px;
+    right: 0;
+  }
+
+  .main-navigation .submenu-button:hover, .main-navigation .submenu-button.submenu-opened {
+    background: #262626;
   }
 
   .main-navigation .submenu-button:after {
@@ -1548,11 +1590,6 @@ a:hover, a:active {
     width: 8px;
     height: 2px;
     background: #ddd;
-  }
-
-  .main-navigation ul ul .submenu-button:after {
-    top: 15px;
-    right: 13px;
   }
 
   .main-navigation .submenu-button.submenu-opened:after {
@@ -1565,11 +1602,6 @@ a:hover, a:active {
     width: 2px;
     height: 8px;
     background: #ddd;
-  }
-
-  .main-navigation ul ul .submenu-button:before {
-    top: 12px;
-    right: 16px;
   }
 }
 .flexia-topbar-menu, .flexia-topbar-menu > ul {

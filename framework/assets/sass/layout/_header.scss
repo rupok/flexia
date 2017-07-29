@@ -126,6 +126,10 @@
 
 /* Flexia Topbar */
 
+.flexia-topbar{
+	position: relative;
+}
+
 .flexia-topbar-inner {
 	display: flex;
 	flex-flow: row wrap;
