@@ -16,7 +16,7 @@
 }
 
 
-.flexia-topbar-menu li a:hover {
+.flexia-topbar-menu li a:hover, .flexia-topbar-menu li.current-menu-item a {
 	background-color: rgba(0,0,0, .5);
 	color: #fff;
 }
@@ -37,7 +37,7 @@
 	background-color: #262625; 
 }
 
-.topbar-navigation > ul > li.has-sub a {
+.topbar-navigation > ul > li.menu-item-has-children a {
 	padding-right: 25px;
 }
 
@@ -85,7 +85,7 @@
 
 .topbar-navigation ul ul li.has-sub:after {
     position: absolute;
-    top: 21px;
+    top: 50%;
     right: 11px;
     width: 8px;
     height: 2px;
@@ -95,7 +95,7 @@
 }
 .topbar-navigation ul ul li.has-sub:before {
     position: absolute;
-    top: 18px;
+    top: calc(50% - 3px);
     right: 14px;
     display: block;
     width: 2px;
@@ -170,13 +170,14 @@
 
 
 @media screen and (max-width: 767px) {
-.topbar-navigation .flexia-primary-menu {
+.topbar-navigation .flexia-topbar-menu {
 	position: absolute;
 	left: 0;
 	right: 0;
 	top: 100%;
 	padding: 1em;
-	background-color: #fff;
+	background-color: #262625;
+	margin: 0;
 }
 
 .topbar-navigation ul li {
@@ -194,18 +195,22 @@
 }
 
 .topbar-navigation > ul > li.has-sub {
-	padding-right: .625em;
+	padding-right: 0;
+}
+
+.topbar-navigation .submenu-button {
+	right: 0;
 }
 
 .topbar-navigation .nav-menu > li a {
 	padding: 15px;
-	border: 1px solid rgba(0,0,0, .135);
+	border: 1px solid rgba(0, 0, 0, 0.4);
 	display: block;
 	width: 100%;
 }
 
 .topbar-navigation ul li a:hover, .topbar-navigation ul li a:focus, .topbar-navigation ul li.current-menu-item a  {
-	background-color: #262625;
+	background-color: rgba(0, 0, 0, 0.5);
 	color: #fff;
 }
 
@@ -217,36 +222,29 @@
     padding-left: 35px;
 }
 
-.topbar-navigation ul ul li a {
-    color: #333;
-    background: none;
+.topbar-navigation .flexia-nav-btn:after {
+    border-top: 2px solid #cbced3;
+    border-bottom: 2px solid #cbced3;
+}
+.topbar-navigation .flexia-nav-btn:before {
+    background-color: #cbced3;
 }
 
-.flexia-nav-btn:after {
-    border-top: 2px solid #4d4d4d;
-    border-bottom: 2px solid #4d4d4d;
-}
-.flexia-nav-btn:before {
-    background-color: #4d4d4d;
-}
-
-.flexia-nav-btn.menu-opened:after, .flexia-nav-btn.menu-opened:before  {
-    background-color: #4d4d4d;
+.topbar-navigation .flexia-nav-btn.menu-opened::after, .topbar-navigation .flexia-nav-btn.menu-opened::before {
+	background-color: #cbced3;
+	border: none;
 }
 
 .topbar-navigation .submenu-button {
 	border-left: 1px solid rgba(0,0,0, .135);
 	height: 45px;
 	width: 45px;
-	right: .625em;
-}
-
-.topbar-navigation ul ul .submenu-button {
 	right: 0;
 }
 
+
 .topbar-navigation .submenu-button:hover, .topbar-navigation .submenu-button.submenu-opened {
-    background: #262626
+    background: rgba(0,0,0, .6);
 }
 
 .topbar-navigation .submenu-button:after {

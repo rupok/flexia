@@ -35,7 +35,11 @@
 	min-height: 45px;
 }
 
-.main-navigation > ul > li.has-sub {
+.main-navigation > ul > li.menu-item-has-children {
+    padding-right: 20px
+}
+
+.main-navigation ul ul li.menu-item-has-children a {
     padding-right: 20px
 }
 
@@ -70,11 +74,10 @@
 }
 
 .main-navigation li:hover > ul > li {
-    height: 45px
+    height: 45px;
 }
 
 .main-navigation ul ul li a {
-	border-bottom: 1px solid rgba(0,0,0, 0.05);
 	padding: 17px 15px;
 	width: 220px;
 	font-size: 13px;
@@ -84,7 +87,7 @@
 
 .main-navigation ul ul li.has-sub:after {
     position: absolute;
-    top: 21px;
+    top: 50%;
     right: 11px;
     width: 8px;
     height: 2px;
@@ -94,7 +97,7 @@
 }
 .main-navigation ul ul li.has-sub:before {
     position: absolute;
-    top: 18px;
+    top: calc(50% - 3px);
     right: 14px;
     display: block;
     width: 2px;
