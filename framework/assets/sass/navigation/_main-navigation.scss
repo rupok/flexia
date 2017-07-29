@@ -31,6 +31,10 @@
 	background-color: #fff; 
 }
 
+.main-navigation > ul > li > ul.sub-menu > li:first-child {
+	min-height: 45px;
+}
+
 .main-navigation > ul > li.has-sub {
     padding-right: 20px
 }
