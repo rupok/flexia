@@ -43,7 +43,7 @@ endif;
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="flexia-menu main-navigation">
-			  <a class="flexia-nav-btn"></a>
+				<a class="flexia-nav-btn"></a>
 
 				<?php
 

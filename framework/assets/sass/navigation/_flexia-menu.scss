@@ -1,0 +1,195 @@
+.nav-menu, .nav-menu ul {
+	margin: 0;
+	padding: 0;
+}
+
+.nav-menu li a {
+    -moz-transition: ease-out 0.3s 0.1s;
+    -o-transition: ease-out 0.3s 0.1s;
+    -webkit-transition: ease-out 0.3s;
+    -webkit-transition-delay: 0.1s;
+    transition: ease-out 0.3s 0.1s;
+}
+
+.flexia-menu ul {
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+}
+
+.flexia-menu ul {
+    z-index: 9999;
+}
+
+.flexia-menu ul,
+.flexia-menu ul li,
+.flexia-menu ul li a {
+    list-style: none;
+    line-height: 1;
+    display: block;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.flexia-menu > ul:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0
+}
+
+.flexia-menu > ul > li {
+    float: left
+}
+
+.flexia-menu ul ul {
+    position: absolute;
+    left: -9999px
+}
+.flexia-menu ul ul li {
+    height: 0;
+    -webkit-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    background: #333;
+    transition: all .25s ease
+}
+.flexia-menu li:hover > ul {
+    left: auto
+}
+
+.flexia-menu ul ul ul {
+    margin-left: 100%;
+    top: 0
+}
+
+.flexia-menu ul ul li:last-child > a,
+.flexia-menu ul ul li.last-item > a {
+    border-bottom: 0
+}
+.flexia-nav-btn {
+	display: none;
+}
+@media screen and (max-width: 767px) {
+
+	.flexia-nav-btn {
+		display: block;
+	}
+
+    .flexia-menu {
+        width: 100%
+    }
+    .flexia-menu ul {
+        width: 100%;
+        display: none
+    }
+    .flexia-menu ul li {
+        width: 100%;
+    }
+    .flexia-menu ul ul li,
+    .flexia-menu li:hover > ul > li {
+        height: auto
+    }
+    .flexia-menu ul li a,
+    .flexia-menu ul ul li a {
+        width: 100%;
+        border-bottom: 0
+    }
+    .flexia-menu > ul > li {
+        float: none
+    }
+    .flexia-menu ul ul,
+    .flexia-menu ul ul ul {
+        position: relative;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        text-align: left
+    }
+    .flexia-menu > ul > li.has-sub > a:after,
+    .flexia-menu > ul > li.has-sub > a:before,
+    .flexia-menu ul ul > li.has-sub > a:after,
+    .flexia-menu ul ul > li.has-sub > a:before {
+        display: none
+    }
+    .flexia-nav-btn {
+        width: 55px;
+        height: 46px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        z-index: 9999;
+    }
+    .flexia-nav-btn:after {
+        position: absolute;
+        top: 22px;
+        right: 20px;
+        display: block;
+        height: 8px;
+        width: 20px;
+        content: ''
+    }
+    .flexia-nav-btn:before {
+        -webkit-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        transition: all .3s ease;
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        display: block;
+        height: 2px;
+        width: 20px;
+        content: ''
+    }
+    .flexia-nav-btn.menu-opened:after {
+        -webkit-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        transition: all .3s ease;
+        top: 23px;
+        border: 0;
+        height: 2px;
+        width: 19px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg)
+    }
+    .flexia-nav-btn.menu-opened:before {
+        top: 23px;
+        width: 19px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg)
+    }
+    .flexia-menu .submenu-button {
+        position: absolute;
+        z-index: 99;
+        right: 0;
+        top: 0;
+        display: block;
+        cursor: pointer
+    }
+    .flexia-menu .submenu-button:before .flexia-menu .submenu-button:after {
+        position: absolute;
+        display: block;
+        content: ''
+    }
+
+    .flexia-menu .submenu-button.submenu-opened:before {
+        display: none
+    }
+    .flexia-menu ul ul ul li.current-menu-item a {
+        border-left: none
+    }
+    .flexia-menu > ul > li.has-sub > ul > li.current-menu-item > a,
+    .flexia-menu > ul ul > li.has-sub > ul > li.current-menu-item > a {
+        border-top: none
+    }
+}

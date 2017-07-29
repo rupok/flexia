@@ -1,0 +1,38 @@
+.flexia-topbar-menu, .flexia-topbar-menu > ul {
+	margin: 0 1em;
+	padding: 0;
+}
+
+.flexia-topbar-menu li {
+	list-style: none;
+	display: inline-block;
+	margin: 0;
+}
+
+
+.flexia-topbar-menu li a {
+	color: #cbced3;
+	font-size: 12px;
+	padding: .625em 1em;
+	display: block;
+	line-height: 1.8;
+}
+
+.topbar-navigation > ul > li > a {
+	text-transform: uppercase;
+}
+
+.flexia-topbar-menu li a:hover {
+	background-color: rgba(0,0,0, .5);
+	color: #fff;
+}
+
+.topbar-navigation .flexia-nav-btn {
+	left: 0;
+	right: auto;
+}
+
+.topbar-navigation > ul > li.has-sub:hover > a:before {
+    top: 23px;
+    height: 0
+}

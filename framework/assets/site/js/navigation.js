@@ -50,7 +50,12 @@
 
 (function($) {
     $(document).ready(function() {
-        $(".flexia-menu").flexiaNav({
+        $(".main-navigation").flexiaNav({
+            format: "multitoggle"
+        });
+    });
+    $(document).ready(function() {
+        $(".topbar-navigation").flexiaNav({
             format: "multitoggle"
         });
     });

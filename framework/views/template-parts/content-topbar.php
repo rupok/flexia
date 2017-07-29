@@ -18,7 +18,9 @@
 		</div>
 
 		<?php if( get_theme_mod('flexia_enable_topbar_menu') == true ) : ?>
-		<nav id="topbar-navigation" class="topbar-navigation">
+		<nav id="topbar-navigation" class="flexia-menu topbar-navigation">
+			<a class="flexia-nav-btn"></a>
+			
 			<?php
 
 				if ( has_nav_menu( 'topbar-menu' ) ) :

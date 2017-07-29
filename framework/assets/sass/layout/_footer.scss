@@ -62,31 +62,4 @@
 	margin-top: .5em;
 }
 
-/* Footer Menu */
-
-.footer-navigation {
-	width: 100%;
-	margin: 1em auto 0;
-}
-
-.flexia-footer-menu, .flexia-footer-menu > ul {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.flexia-footer-menu li {
-	list-style: none;
-	flex: 0 0 auto;
-	margin: 10px;
-}
-
-.flexia-footer-menu li a {
-	font-size: 13px;
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-}
 
