@@ -4,6 +4,7 @@
 }
 
 .nav-menu li a {
+    cursor: pointer;
     -moz-transition: ease-out 0.3s 0.1s;
     -o-transition: ease-out 0.3s 0.1s;
     -webkit-transition: ease-out 0.3s;
@@ -15,10 +16,6 @@
     z-index: 9999;
     margin: 0;
     padding: 0;
-}
-
-.flexia-menu ul {
-    z-index: 9999;
 }
 
 .flexia-menu ul,

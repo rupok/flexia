@@ -567,6 +567,11 @@ big {
     order: 3;
   }
 }
+.site-header {
+  position: relative;
+  z-index: 1;
+}
+
 .flexia-header-widget-inner {
   display: flex;
   justify-content: center;
@@ -1137,6 +1142,7 @@ a:hover, a:active {
 }
 
 .nav-menu li a {
+  cursor: pointer;
   -moz-transition: ease-out 0.3s 0.1s;
   -o-transition: ease-out 0.3s 0.1s;
   -webkit-transition: ease-out 0.3s;
@@ -1148,10 +1154,6 @@ a:hover, a:active {
   z-index: 9999;
   margin: 0;
   padding: 0;
-}
-
-.flexia-menu ul {
-  z-index: 9999;
 }
 
 .flexia-menu ul,
