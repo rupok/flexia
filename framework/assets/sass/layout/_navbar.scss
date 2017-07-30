@@ -34,10 +34,14 @@
 	margin: 1em 0;
 }
 
-.site-branding .flexia-header-logo {
+.flexia-header-logo {
+	display: block;
 	padding: 15px;
-	max-width: 100%;
+}
 
+.site-branding .flexia-header-logo > img {
+	max-width: 100%;
+	width: 100%;
 }
 
 .flexia-header-logo + .site-title {

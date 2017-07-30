@@ -29,7 +29,7 @@ endif;
 
 				<?php if( get_theme_mod('flexia_header_logo') !== '' ) :  ?>
 
-	               			<img class="flexia-header-logo" alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_theme_mod('flexia_header_logo'); ?>">
+	               			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="flexia-header-logo"><img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_theme_mod('flexia_header_logo'); ?>"></a>
 
 	             <?php endif; ?>
 

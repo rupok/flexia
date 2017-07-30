@@ -3,6 +3,7 @@
 	z-index: 1;
 }
 
+
 .flexia-header-widget-inner {
 	display: flex;
 	justify-content: center;
@@ -40,6 +41,9 @@
 }
 
 .flexia-header-widget-area.header-widget-open {
+	overflow-y: scroll;
+	max-height: 100%;
+	z-index: 99999;
 	-webkit-transform: translateY(0);
 	transform: translateY(0);
 }
@@ -63,11 +67,6 @@
 }
 
 @media all and (max-width: 959px) {
-.flexia-header-widget-area.header-widget-open {
-	overflow-y: scroll;
-	max-height: 100%;
-	z-index: 99999;
-}
 .header-widget-toggle:not(.toggle-collapsed) {
 	top: 20px;
 	bottom: auto;
