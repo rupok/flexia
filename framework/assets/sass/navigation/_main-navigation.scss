@@ -11,6 +11,33 @@
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	color: #4d4d4d;
+
+		&::after {
+			height: 2px;
+			width: 100%;
+			background-color: #4d4d4d;
+			opacity: .5;
+			content: "";
+			position: absolute;
+			left: 0px;
+			bottom: 0;
+			-moz-transform: scaleX(0);
+			-ms-transform: scaleX(0);
+			-webkit-transform: scaleX(0);
+			transform: scaleX(0);
+			-moz-transition: 0.3s;
+			-o-transition: 0.3s;
+			-webkit-transition: 0.3s;
+			transition: 0.3s;
+		}
+
+		&:hover::after {
+			background-color: #1b1f21; 
+			-moz-transform: scaleX(1);
+			-ms-transform: scaleX(1);
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+		}
 }
 
 .main-navigation > ul > li:hover > a,
@@ -23,6 +50,14 @@
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
 	color: #1b1f21;
+
+		&::after {
+		background-color: #1b1f21; 
+		-moz-transform: scaleX(1);
+		-ms-transform: scaleX(1);
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1);
+		}
 }
 
 /* Submenu styles */
@@ -132,31 +167,6 @@
 	background-color: rgba(0,0,0, .05);
 }
 
-.main-navigation > ul > li:not(.has-sub) > a::after {
-	height: 0.1em;
-	width: 100%;
-	background-color: #4d4d4d;
-	content: "";
-	position: absolute;
-	left: 0px;
-	bottom: 0;
-	-moz-transform: scaleX(0);
-	-ms-transform: scaleX(0);
-	-webkit-transform: scaleX(0);
-	transform: scaleX(0);
-	-moz-transition: 0.3s;
-	-o-transition: 0.3s;
-	-webkit-transition: 0.3s;
-	transition: 0.3s;
-}
-
-.main-navigation > ul > li:not(.has-sub) > a:hover::after {
-	background-color: #1b1f21; 
-	-moz-transform: scaleX(1);
-	-ms-transform: scaleX(1);
-	-webkit-transform: scaleX(1);
-	transform: scaleX(1);
-}
 
 .main-navigation ul ul li:last-child > a,
 .main-navigation ul ul li.last-item > a {

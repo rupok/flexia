@@ -203,8 +203,8 @@
 }
 
 .topbar-navigation .nav-menu > li a {
-	padding: 15px;
-	border: 1px solid rgba(0, 0, 0, 0.4);
+	padding: 16px;
+	border: 1px solid rgba(255,255,255, .15);
 	display: block;
 	width: 100%;
 }
@@ -236,7 +236,7 @@
 }
 
 .topbar-navigation .submenu-button {
-	border-left: 1px solid rgba(0,0,0, .135);
+	border-left: 1px solid rgba(255,255,255, .15);
 	height: 45px;
 	width: 45px;
 	right: 0;
