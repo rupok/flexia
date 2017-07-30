@@ -53,7 +53,13 @@ function flexia_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	$posted_on =  $time_string;
+
+	$posted_on = sprintf(
+		/* translators: %s: post date. */
+		esc_html_x( '%s', 'post date', 'flexie' ),
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+	);
+
 
 	$byline = sprintf(
 		/* translators: %s: post author. */

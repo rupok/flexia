@@ -20,13 +20,12 @@ blockquote {
   font-style: italic;
 }
 
-blockquote:before {
-  color: $color__bq-symbol;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
+blockquote::before {
+	color: $color__bq-symbol;
+	content: "\f10d";
+	font-family: "FontAwesome";
+	font-size: 1.5em;
+	margin-right: 0.25em;
 }
 
 blockquote p {

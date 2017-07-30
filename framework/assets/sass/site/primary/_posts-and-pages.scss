@@ -146,6 +146,10 @@
 	border-right: none;
 }
 
+.single-post .entry-meta > span.cat-links {
+  max-width: 50%;
+}
+
 .entry-title{
   color: #202021;
   font-family: $font__main;
@@ -170,6 +174,10 @@
 }
 
 .single-blog-header .entry-title:after, .single-page-header .entry-title:after{
+  display: none;
+}
+
+.attachment .page-header {
   display: none;
 }
 
@@ -269,6 +277,11 @@ body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
   right:2em
 }
 
+.post-password-form input {
+  padding: 10px;
+  height: 45px;
+}
+
 
 /* Post Formats */
 
@@ -293,3 +306,40 @@ body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
 }
 
 
+@media all and (max-width: 600px) {
+.single-post .entry-content-wrapper {
+  margin: 1em auto 0;
+}
+.entry-content.single-post-entry {
+  margin: 0 auto 2em;
+  padding: 1.5em 2em;
+  background-color: #fff;
+}
+
+.single-post .single-blog-meta .entry-meta {
+  display: block;
+}
+.single-post .entry-meta > span {
+  display: block;
+  padding: 15px 10px;
+}
+.single-post .entry-meta > span.cat-links {
+  max-width: 100%;
+}
+.post-author {
+  margin: 0 auto;
+  padding: .5em;
+}
+.flexia-social-share {
+  justify-content: center;
+  margin: 2em 0;
+}
+
+.comments-area .comments-title, .comments-area .comment-reply-title {
+  font-size: 1em;
+  margin: 1em auto;
+}
+.comments-area .comment-list li > ol, .comments-area .comment-list li > ul {
+  padding: 0;
+}
+}
