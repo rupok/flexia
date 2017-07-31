@@ -2492,6 +2492,7 @@ a:hover, a:active {
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
+  z-index: 1;
 }
 
 .header-inner {
@@ -2499,6 +2500,7 @@ a:hover, a:active {
   flex: 0 0 100%;
   text-align: center;
   padding: 5em 1em;
+  z-index: 1;
 }
 
 .header-content {
@@ -2655,6 +2657,20 @@ a:hover, a:active {
   -webkit-transform: scale(1.25);
   transform: scale(1.25);
   margin-right: .5em;
+}
+
+.header-overlay {
+  background-color: #161415;
+  background-size: cover !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0;
 }
 
 .scroll-down {

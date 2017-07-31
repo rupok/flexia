@@ -75,5 +75,30 @@ jQuery( document ).ready( function($) {
 	    }
 	  });
 
+	// Header parallax
+
+	$(window).scroll(function(e){
+	  parallax();
+	});
+
+
+	function parallax() {
+	  var scrollPosition = $(window).scrollTop();
+	  $('.page-header:not(.blog-header) .header-content').css('margin-top', (0 - (scrollPosition * .5)) + 'px');
+	  $('.page-header.blog-header .header-content').css('margin-top', (0 - (scrollPosition * .8)) + 'px');
+	}
+
+
+	// On scroll blur header
+
+   (function() {
+      $(window).scroll(function() {
+        var oVal;
+        oVal = $(window).scrollTop() / 350;
+        return $(".header-overlay").css("opacity", oVal);
+        });
+
+      }).call(this);
+
 
 });

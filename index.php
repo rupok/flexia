@@ -72,6 +72,7 @@ get_header();
 
             endif; ?>
         </div>
+        <div class="header-overlay"></div>
     </header>
 
 	<div id="content" class="site-content">

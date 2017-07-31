@@ -9,6 +9,7 @@
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
+  z-index: 1;
 }
 
 .header-inner {
@@ -16,6 +17,7 @@
   flex: 0 0 100%;
   text-align: center;
   padding: 5em 1em;
+  z-index: 1;
 }
 
 .header-content {
