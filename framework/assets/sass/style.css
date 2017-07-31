@@ -642,6 +642,11 @@ big {
     bottom: auto;
   }
 }
+@media all and (max-width: 767px) {
+  .flexia-logobar-inline {
+    margin-left: 0;
+  }
+}
 /* Header widget toggle */
 .header-widget-toggle {
   cursor: pointer;
@@ -707,7 +712,10 @@ big {
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: 1em;
+}
+
+.flexia-logobar-container {
+  flex: 1 1 auto;
 }
 
 .flexia-logobar .site-branding {
@@ -716,10 +724,6 @@ big {
 
 .flexia-logobar-stacked + .flexia-navbar .flexia-navbar-inner {
   justify-content: center;
-}
-
-.flexia-logobar-stacked .flexia-header-logo {
-  padding: 0;
 }
 
 /* Flexia Topbar */
@@ -777,19 +781,40 @@ big {
 .flexia-logobar-inline {
   flex: 0 0 auto;
   margin: 0 1em;
-  min-height: 45px;
   max-width: 450px;
 }
 
 .site-branding .site-title, .site-branding .site-title a {
-  font-size: 1.25em;
+  font-size: 1.5rem;
   text-transform: uppercase;
   margin: 1em 0;
+  font-weight: 700;
+}
+
+.site-description {
+  font-size: 1em;
+  font-family: "Merriweather", serif;
+  color: #4d4d4d;
+  font-style: italic;
+  margin-top: 0;
+}
+
+.flexia-logobar-inline .site-description {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  word-wrap: normal !important;
 }
 
 .flexia-header-logo {
   display: block;
   padding: 15px;
+}
+
+.flexia-logobar-stacked .flexia-header-logo {
+  margin: 0 auto;
 }
 
 .site-branding .flexia-header-logo > img {
@@ -1534,6 +1559,10 @@ a:hover, a:active {
 .flexia-nav-btn {
   right: 10px;
   top: calc(50% - 25px);
+}
+
+.flexia-logobar-stacked + .flexia-navbar .flexia-nav-btn {
+  right: calc(50% - 30px);
 }
 
 @media screen and (max-width: 767px) {

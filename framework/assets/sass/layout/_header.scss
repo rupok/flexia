@@ -73,6 +73,13 @@
 }
 }
 
+
+@media all and (max-width: 767px) {
+.flexia-logobar-inline {
+	margin-left: 0;
+}
+}
+
 /* Header widget toggle */
 
 .header-widget-toggle {
@@ -138,7 +145,10 @@
 	display: flex;
 	justify-content: center;
 	align-content: center;
-	padding: 1em;
+}
+
+.flexia-logobar-container {
+	flex: 1 1 auto;
 }
 
 .flexia-logobar .site-branding {
@@ -149,9 +159,6 @@
 	justify-content: center;
 }
 
-.flexia-logobar-stacked .flexia-header-logo {
-	padding: 0;
-}
 
 /* Flexia Topbar */
 

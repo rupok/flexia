@@ -180,6 +180,9 @@
 	top: calc(50% - 25px);
 }
 
+.flexia-logobar-stacked + .flexia-navbar .flexia-nav-btn {
+	right: calc(50% - 30px);
+}
 
 @media screen and (max-width: 767px) {
 .main-navigation .flexia-primary-menu {
