@@ -34,6 +34,7 @@ $thumbnail = '';
                 </div>
             </div>
         </div>
+        <div class="header-overlay"></div>
     </header>
 
     <header class="entry-header single-blog-meta">

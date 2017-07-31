@@ -48,19 +48,22 @@ jQuery( document ).ready( function($) {
 		}
 	});
 
-    // Scroll to Blog
 
-        $('a.scroll-down').click(function() {
-        $('html, body').animate({ scrollTop:$('#content').offset().top }, 500);
-        return false;
-    });
+	// smooth scroll for anchors
+   $('a[href^=#]:not([href=#])').on('click',function (e) {
+	    e.preventDefault();
 
-    // Scroll to Blog Comments
+	    var target = this.hash,
+	    $target = $(target);
 
-        $('a.scroll-to-comments').click(function() {
-        $('html, body').animate({ scrollTop:$('#comments').offset().top }, 500);
-        return false;
-    });
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 800, 'swing');
+
+	    return false;
+
+	});
+
 
   	// Sticky menu
 
@@ -77,6 +80,17 @@ jQuery( document ).ready( function($) {
 
 	// Header parallax
 
+	var topbarHeight = $('.flexia-topbar').height();
+	var navbarHeight = $('.flexia-navbar').height();
+	var headerHeight = (topbarHeight + navbarHeight) + 50;
+
+   $('.blog-header').css({ 'height': $(window).height() - headerHeight });
+   $(window).on('resize', function() {
+
+        $('.blog-header').css({ 'height': $(window).height() - headerHeight });
+        $('body').css({ 'width': $(window).width() })
+   });
+
 	$(window).scroll(function(e){
 	  parallax();
 	});
@@ -84,7 +98,6 @@ jQuery( document ).ready( function($) {
 
 	function parallax() {
 	  var scrollPosition = $(window).scrollTop();
-	  $('.page-header:not(.blog-header) .header-content').css('margin-top', (0 - (scrollPosition * .5)) + 'px');
 	  $('.page-header.blog-header .header-content').css('margin-top', (0 - (scrollPosition * .8)) + 'px');
 	}
 

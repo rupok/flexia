@@ -2535,6 +2535,7 @@ a:hover, a:active {
   background-color: #28292e;
   display: flex;
   justify-content: center;
+  align-items: center;
   align-content: center;
   flex-flow: row nowrap;
   position: relative;
@@ -2545,8 +2546,17 @@ a:hover, a:active {
   z-index: 1;
 }
 
+.page-header::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
 .header-inner {
-  background: rgba(0, 0, 0, 0.5);
   flex: 0 0 100%;
   text-align: center;
   padding: 5em 1em;
@@ -2628,6 +2638,10 @@ a:hover, a:active {
   display: none;
 }
 
+.paged .page-header.blog-header {
+  max-height: 400px;
+}
+
 .paged .blog-header .header-inner {
   padding: 3em 1em;
 }
@@ -2636,10 +2650,6 @@ a:hover, a:active {
   font-size: 1.2em;
   line-height: 1.5;
   margin: 0;
-}
-
-.blog .header-content {
-  padding: 3em 0;
 }
 
 .blog.paged .header-content {
@@ -2655,11 +2665,6 @@ a:hover, a:active {
   margin: 0 auto 1.5em;
 }
 
-@media all and (min-width: 1400px) {
-  .blog-header .header-inner {
-    padding: 7em 2em 8em;
-  }
-}
 /* Single Posts */
 .single-blog-header .header-content .blog-title {
   color: #fff;
@@ -2726,7 +2731,7 @@ a:hover, a:active {
 .scroll-down {
   /*background: url("../../../img/icons/icon-arrow-down.svg") no-repeat center center / 100% auto;*/
   background: url("../img/icons/icon-arrow-down.svg") no-repeat center center/100% auto;
-  bottom: 1em;
+  bottom: 40px;
   display: block;
   height: 44px;
   left: 50%;
@@ -3024,7 +3029,7 @@ a:hover, a:active {
   max-width: 90%;
 }
 
-.flexia-wrapper > .content-area {
+.flexia-wrapper.flexia-container > .content-area {
   margin: 0 1em 1.5em;
 }
 

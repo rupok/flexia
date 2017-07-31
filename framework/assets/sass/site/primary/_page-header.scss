@@ -2,6 +2,7 @@
   background-color: #28292e;
   display: flex;
   justify-content: center;
+  align-items: center;
   align-content: center;
   flex-flow: row nowrap;
   position: relative;
@@ -12,8 +13,17 @@
   z-index: 1;
 }
 
+.page-header::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
 .header-inner {
-  background: rgba(0, 0, 0, 0.5);
   flex: 0 0 100%;
   text-align: center;
   padding: 5em 1em;
