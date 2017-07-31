@@ -573,7 +573,7 @@ big {
 }
 .site-header {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .flexia-header-widget-inner {
@@ -656,6 +656,10 @@ big {
   transition: opacity 0.3s ease-in-out;
 }
 
+.flexia-header-widget-area.header-widget-open .header-widget-toggle {
+  bottom: 0;
+}
+
 .header-widget-toggle:hover {
   background-color: rgba(0, 0, 0, 0.75);
 }
@@ -696,6 +700,26 @@ big {
 .header-widget-toggle.toggle-collapsed:before {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+
+/* Flexia Logobar */
+.flexia-logobar {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 1em;
+}
+
+.flexia-logobar .site-branding {
+  text-align: center;
+}
+
+.flexia-logobar-stacked + .flexia-navbar .flexia-navbar-inner {
+  justify-content: center;
+}
+
+.flexia-logobar-stacked .flexia-header-logo {
+  padding: 0;
 }
 
 /* Flexia Topbar */
@@ -747,9 +771,10 @@ big {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+  min-height: 50px;
 }
 
-.site-branding {
+.flexia-logobar-inline {
   flex: 0 0 auto;
   margin: 0 1em;
   min-height: 45px;
@@ -770,15 +795,6 @@ big {
 .site-branding .flexia-header-logo > img {
   max-width: 100%;
   width: 100%;
-}
-
-.flexia-header-logo + .site-title {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  word-wrap: normal !important;
 }
 
 .main-navigation {
@@ -1795,6 +1811,10 @@ a:hover, a:active {
 }
 
 @media screen and (max-width: 767px) {
+  .flexia-topbar-content {
+    margin: 0 1em;
+  }
+
   .topbar-navigation .flexia-topbar-menu {
     position: absolute;
     left: 0;
@@ -2602,12 +2622,12 @@ a:hover, a:active {
 
 .header-content .flexia-blog-logo {
   max-width: 100%;
-  margin: 0 auto 10px;
+  margin: 0 auto 1.5em;
 }
 
 @media all and (min-width: 1400px) {
   .blog-header .header-inner {
-    padding: 8em 2em;
+    padding: 7em 2em 8em;
   }
 }
 /* Single Posts */

@@ -21,6 +21,10 @@
 		get_template_part( 'framework/views/template-parts/content', 'topbar' );
 	endif; ?>
 
+	<?php if( get_theme_mod('flexia_logobar_position') == 'flexia-logobar-stacked' ) : 
+		get_template_part( 'framework/views/template-parts/content', 'logobar' );  
+	endif; ?>
+
 	<?php if( get_theme_mod('flexia_navbar') == true ) : 
 		get_template_part( 'framework/views/template-parts/content', 'navbar' );
 	endif; ?>

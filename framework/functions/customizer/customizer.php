@@ -642,6 +642,31 @@ function flexia_customize_register( $wp_customize ) {
 	);
 
 
+	// Logobar position
+
+	$wp_customize->add_setting( 'flexia_logobar_position' , array(
+	    'default'   => 'flexia-logobar-inline',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'flexia_logobar_position',
+	        array(
+	            'label'          => __( 'Logobar Position', 'flexia' ),
+	            'section'        => 'flexia_header_settings',
+	            'settings'       => 'flexia_logobar_position',
+	            'type'           => 'radio',
+	            'choices'        => array(
+	                'flexia-logobar-inline'   => __( 'Inline' ),
+	                'flexia-logobar-stacked'   => __( 'Stacked' ),
+	            )
+	        )
+	    )
+	);
+
+
 	// Header widget, Topbar, Navbar background colors
 
 	$wp_customize->add_setting( 'header_widget_area_bg_color' , array(
@@ -675,6 +700,23 @@ function flexia_customize_register( $wp_customize ) {
 			'settings'   => 'flexia_topbar_bg_color',
 		) ) 
 	);
+
+	$wp_customize->add_setting( 'flexia_logobar_bg_color' , array(
+	    'default'     => '#fff',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_logobar_bg_color', 
+		array(
+			'label'      => __( 'Logobar Background', 'flexia' ),
+			'section'    => 'flexia_header_settings',
+			'settings'   => 'flexia_logobar_bg_color',
+		) ) 
+	);
+
 
 	$wp_customize->add_setting( 'flexia_navbar_bg_color' , array(
 	    'default'     => '#fff',

@@ -118,6 +118,10 @@ function flexia_header_style() {
 		background-color: <?php echo get_theme_mod('flexia_topbar_bg_color'); ?>;
 	}
 
+	.flexia-logobar {
+		background-color: <?php echo get_theme_mod('flexia_logobar_bg_color'); ?>;
+	}
+
 	.flexia-navbar {
 		background-color: <?php echo get_theme_mod('flexia_navbar_bg_color'); ?>;
 	}

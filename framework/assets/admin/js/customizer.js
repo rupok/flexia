@@ -169,6 +169,12 @@
         } );
     });  
 
+    wp.customize( 'flexia_logobar_bg_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-logobar' ).css( 'background-color', to );            
+        } );
+    });  
+
     wp.customize( 'flexia_navbar_bg_color', function( value ) {
         value.bind( function( to ) {            
             $( '.flexia-navbar' ).css( 'background-color', to );            

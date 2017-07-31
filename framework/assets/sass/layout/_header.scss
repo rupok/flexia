@@ -1,6 +1,6 @@
 .site-header {
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 }
 
 
@@ -88,6 +88,10 @@
 	transition: opacity 0.3s ease-in-out;
 }
 
+.flexia-header-widget-area.header-widget-open .header-widget-toggle {
+	bottom: 0;
+}
+
 .header-widget-toggle:hover {
 	background-color: rgba(0,0,0, .75);
 }
@@ -126,6 +130,27 @@
 .header-widget-toggle.toggle-collapsed:before {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+/* Flexia Logobar */
+
+.flexia-logobar {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	padding: 1em;
+}
+
+.flexia-logobar .site-branding {
+	text-align: center;
+}
+
+.flexia-logobar-stacked + .flexia-navbar .flexia-navbar-inner {
+	justify-content: center;
+}
+
+.flexia-logobar-stacked .flexia-header-logo {
+	padding: 0;
 }
 
 /* Flexia Topbar */

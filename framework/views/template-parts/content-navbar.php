@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the navbar
+ * The template for displaying the Navbar
  *
  * Contains the navbar part
  *
@@ -25,22 +25,35 @@ endif;
 <div class="flexia-navbar <?php echo $navbar_class;?>">
 	<div class="flexia-navbar-container">
 		<div class="flexia-container max width flexia-navbar-inner">
-			<div class="site-branding">
+			
+			<?php if( get_theme_mod('flexia_logobar_position') == 'flexia-logobar-inline' ) : ?>
 
-				<?php if( get_theme_mod('flexia_header_logo') !== '' ) :  ?>
+			<div class="flexia-logobar-inline">
+				<div class="site-branding">
 
-	               			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="flexia-header-logo"><img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_theme_mod('flexia_header_logo'); ?>"></a>
+					<?php if( get_theme_mod('flexia_header_logo') !== '' ) :  ?>
 
-	             <?php endif; ?>
+				       	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="flexia-header-logo"><img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_theme_mod('flexia_header_logo'); ?>"></a>
 
+				    <?php else : ?>
 
-				<?php if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-				endif; ?>
-			</div><!-- .site-branding -->
+						<?php if ( is_front_page() && is_home() ) : ?>
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<?php else : ?>
+							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<?php
+						endif;
+
+						$description = get_bloginfo( 'description', 'display' );
+						if ( $description || is_customize_preview() ) : ?>
+							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+						<?php
+						endif; ?>
+					<?php endif; ?>
+
+				</div><!-- .site-branding -->
+			</div>
+			<?php endif; ?>
 
 			<nav id="site-navigation" class="flexia-menu main-navigation">
 				<a class="flexia-nav-btn"></a>

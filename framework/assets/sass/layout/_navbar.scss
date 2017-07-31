@@ -20,9 +20,10 @@
 	flex-flow: row wrap;
 	justify-content: space-between;
 	align-items: center;
+	min-height: 50px;
 }
 
-.site-branding {
+.flexia-logobar-inline {
 	flex: 0 0 auto;
 	margin: 0 1em;
 	min-height: 45px;
@@ -43,15 +44,6 @@
 .site-branding .flexia-header-logo > img {
 	max-width: 100%;
 	width: 100%;
-}
-
-.flexia-header-logo + .site-title {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	word-wrap: normal !important;
 }
 
 .main-navigation {
