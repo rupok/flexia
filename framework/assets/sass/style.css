@@ -860,6 +860,7 @@ big {
   align-content: center;
   flex-flow: row wrap;
   padding: .5em 0;
+  align-items: flex-start;
 }
 
 .flexia-colophon-inner .widget {

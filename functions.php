@@ -129,6 +129,19 @@ require get_template_directory() . '/framework/functions/enqueue/scripts.php';
 require get_template_directory() . '/framework/functions/flexia/widgets.php';
 
 /**
+ * Integrations.
+ */
+
+function flexia_register_cornerstone_integration() {
+
+  require( '/framework/functions/flexia/integrations/cornerstone.php' );
+
+  cornerstone_register_integration( 'flexia', 'Cornerstone_Integration_Flexia' );
+
+}
+add_action( 'cornerstone_integrations', 'flexia_register_cornerstone_integration' );
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/framework/functions/customizer/customizer.php';
