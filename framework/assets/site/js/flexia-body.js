@@ -57,7 +57,23 @@ jQuery( document ).ready( function($) {
 	    $target = $(target);
 
 	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
+	        'scrollTop': $target.offset().top 
+	    }, 800, 'swing');
+
+	    return false;
+
+	});
+
+
+	// smooth scroll for anchors
+   $('a.scroll-down').on('click',function (e) {
+	    e.preventDefault();
+	    var stickyNavbarHeight = $('.flexia-navbar-fixed-top').height();
+	    var target = this.hash,
+	    $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top - stickyNavbarHeight
 	    }, 800, 'swing');
 
 	    return false;
@@ -78,7 +94,7 @@ jQuery( document ).ready( function($) {
 	    }
 	  });
 
-	// Header parallax
+	// Calculate blog header height
 
 	var topbarHeight = $('.flexia-topbar').height();
 	var logobarHeight = $('.flexia-logobar').height();
@@ -91,6 +107,8 @@ jQuery( document ).ready( function($) {
         $('.blog-header').css({ 'height': $(window).height() - headerHeight });
         $('body').css({ 'width': $(window).width() })
    });
+
+   // Header parallax
 
 	$(window).scroll(function(e){
 	  parallax();

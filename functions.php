@@ -71,8 +71,10 @@ function flexia_setup() {
 	/**
 	 * Enable support for WooCommerce
 	 */
-	add_theme_support( 'woocommerce' );
-
+	add_action( 'after_setup_theme', 'woocommerce_support' );
+	function woocommerce_support() {
+	    add_theme_support( 'woocommerce' );
+	}
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -132,14 +134,8 @@ require get_template_directory() . '/framework/functions/flexia/widgets.php';
  * Integrations.
  */
 
-function flexia_register_cornerstone_integration() {
 
-  require( '/framework/functions/flexia/integrations/cornerstone.php' );
-
-  cornerstone_register_integration( 'flexia', 'Cornerstone_Integration_Flexia' );
-
-}
-add_action( 'cornerstone_integrations', 'flexia_register_cornerstone_integration' );
+require get_template_directory() . '/framework/functions/flexia/integrations/woocommerce-integration.php';
 
 /**
  * Customizer additions.
