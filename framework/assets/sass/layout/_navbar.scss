@@ -83,9 +83,7 @@
     animation-name: slideInDown;
 }
 
-.admin-bar .flexia-navbar.flexia-sticky-navbar {
-	margin-top: 32px;
-}
+
 
 @keyframes slideInDown {
   from {
@@ -100,4 +98,10 @@
 
 .slideInDown {
   animation-name: slideInDown;
+}
+
+@media all and (min-width: 601px) {
+.admin-bar .flexia-navbar.flexia-sticky-navbar {
+	margin-top: 32px;
+}
 }
