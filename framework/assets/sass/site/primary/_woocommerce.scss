@@ -1,0 +1,19 @@
+.flexia-woocommerce-wrapper {
+	background-color: #fff;
+	padding: 2em;
+}
+
+.woocommerce-product-gallery figure {
+	margin: 0;
+}
+
+.woocommerce div.product .product_title {
+	text-transform: none;
+	font-size: 2em;
+	line-height: 1.5;
+	font-weight: normal;
+}
+
+.woocommerce div.product .product_title::after {
+	display: none;
+}

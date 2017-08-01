@@ -50,7 +50,7 @@ jQuery( document ).ready( function($) {
 
 
 	// smooth scroll for anchors
-   $('a[href^=#]:not([href=#])').on('click',function (e) {
+   $('.nav-menu a[href^=#]:not([href=#])').on('click',function (e) {
 	    e.preventDefault();
 
 	    var target = this.hash,
@@ -66,7 +66,7 @@ jQuery( document ).ready( function($) {
 
 
 	// smooth scroll for anchors
-   $('a.scroll-down').on('click',function (e) {
+   $('a.scroll-down, a.scroll-to-comments').on('click',function (e) {
 	    e.preventDefault();
 	    var stickyNavbarHeight = $('.flexia-navbar-fixed-top').height();
 	    var target = this.hash,

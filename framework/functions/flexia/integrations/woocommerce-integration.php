@@ -41,15 +41,13 @@ get_header(); ?>
 	<div id="content" class="site-content">
 		<div class="flexia-wrapper flexia-container max width">
 			<div id="primary" class="content-area">
-				<main id="main" class="site-main flexia-container">
+				<main id="main" class="site-main flexia-woocommerce-wrapper flexia-container">
 <?php
 }?>
 
 <?php function flexia_woo_wrapper_end() { ?>
 				</main><!-- #main -->
 			</div><!-- #primary -->
-
-			<?php get_sidebar(); ?>
 
 		</div><!-- #flexia-wrapper -->
 	</div><!-- #content --> 
