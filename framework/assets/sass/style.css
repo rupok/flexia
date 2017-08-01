@@ -573,7 +573,7 @@ big {
 }
 .site-header {
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
 .flexia-header-widget-inner {
@@ -837,10 +837,6 @@ big {
   animation-name: slideInDown;
 }
 
-.admin-bar .flexia-navbar.flexia-sticky-navbar {
-  margin-top: 32px;
-}
-
 @keyframes slideInDown {
   from {
     transform: translate3d(0, -100%, 0);
@@ -854,6 +850,11 @@ big {
   animation-name: slideInDown;
 }
 
+@media all and (min-width: 601px) {
+  .admin-bar .flexia-navbar.flexia-sticky-navbar {
+    margin-top: 32px;
+  }
+}
 .flexia-colophon-inner {
   display: flex;
   justify-content: center;
