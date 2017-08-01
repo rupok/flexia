@@ -81,8 +81,9 @@ jQuery( document ).ready( function($) {
 	// Header parallax
 
 	var topbarHeight = $('.flexia-topbar').height();
+	var logobarHeight = $('.flexia-logobar').height();
 	var navbarHeight = $('.flexia-navbar').height();
-	var headerHeight = (topbarHeight + navbarHeight) + 50;
+	var headerHeight = (topbarHeight + logobarHeight + navbarHeight) + 50;
 
    $('.blog-header').css({ 'height': $(window).height() - headerHeight });
    $(window).on('resize', function() {
