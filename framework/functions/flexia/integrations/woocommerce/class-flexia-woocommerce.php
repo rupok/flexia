@@ -23,6 +23,8 @@ if ( ! class_exists( 'Flexia_WooCommerce' ) ) :
 		 */
 		public function __construct() {
 			add_filter( 'woocommerce_output_related_products_args', array( $this, 'related_products_args' ) );
+			add_filter( 'woocommerce_product_thumbnails_columns', 	array( $this, 'thumbnail_columns' ) );
+			add_filter( 'loop_shop_columns', 						array( $this, 'shop_columns' ) );
 			add_filter( 'loop_shop_per_page', 						array( $this, 'products_per_page' ) );
 			add_filter( 'woocommerce_breadcrumb_defaults',          array( $this,'change_breadcrumb_delimiter' ) );
 
@@ -60,12 +62,39 @@ if ( ! class_exists( 'Flexia_WooCommerce' ) ) :
 		 */
 		public function related_products_args( $args ) {
 			$args = apply_filters( 'flexia_related_products_args', array(
-				'posts_per_page' => 3,
-				'columns'        => 3,
+				'posts_per_page' => 4,
+				'columns'        => 4,
 			) );
 
 			return $args;
 		}
+
+		/**
+		 * Product gallery thumnail columns
+		 *
+		 * @return integer number of columns
+		 * @since  1.0.0
+		 */
+		public function shop_columns() {
+			$columns = 4;
+
+
+			return intval( apply_filters( 'flexia_shop_product_columns', $columns ) );
+		}
+
+		/**
+		 * Product gallery thumnail columns
+		 *
+		 * @return integer number of columns
+		 * @since  1.0.0
+		 */
+		public function thumbnail_columns() {
+			$columns = 4;
+
+
+			return intval( apply_filters( 'flexia_product_thumbnail_columns', $columns ) );
+		}
+
 
 		/**
 		 * Products per page
