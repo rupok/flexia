@@ -3554,6 +3554,67 @@ body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
   font-weight: 400;
 }
 
+.woocommerce-message, .woocommerce-info {
+  border-top-color: #60646c;
+}
+
+.woocommerce-message::before, .woocommerce-info::before {
+  color: #60646c;
+}
+
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  border-radius: 0;
+  font-weight: 400;
+  padding: 10px 15px;
+}
+
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover {
+  background-color: black;
+  color: #fff;
+}
+
+.woocommerce #content table.cart td.actions .input-text, .woocommerce table.cart td.actions .input-text, .woocommerce-page #content table.cart td.actions .input-text, .woocommerce-page table.cart td.actions .input-text {
+  padding: 10px;
+  border-radius: 0;
+}
+
+.woocommerce #respond input#submit.disabled, .woocommerce #respond input#submit:disabled, .woocommerce #respond input#submit[disabled]:disabled, .woocommerce a.button.disabled, .woocommerce a.button:disabled, .woocommerce a.button[disabled]:disabled, .woocommerce button.button.disabled, .woocommerce button.button:disabled, .woocommerce button.button[disabled]:disabled, .woocommerce input.button.disabled, .woocommerce input.button:disabled, .woocommerce input.button[disabled]:disabled {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* cart / checkout page */
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+  padding: 15px;
+  height: auto;
+}
+
+.woocommerce-checkout .select2-container .select2-selection--single {
+  height: 40px;
+}
+
+.woocommerce-checkout .select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 40px;
+}
+
+.woocommerce-checkout .select2-container--default .select2-selection--single .select2-selection__arrow b {
+  margin-top: 4px;
+}
+
+#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment {
+  background: #f8f8f8;
+}
+
+#add_payment_method #payment div.payment_box, .woocommerce-cart #payment div.payment_box, .woocommerce-checkout #payment div.payment_box {
+  background-color: #e8e8e8;
+}
+
+#add_payment_method #payment div.payment_box::before, .woocommerce-cart #payment div.payment_box::before, .woocommerce-checkout #payment div.payment_box::before {
+  border-bottom-color: #e8e8e8;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
