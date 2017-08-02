@@ -135,7 +135,8 @@ require get_template_directory() . '/framework/functions/flexia/widgets.php';
  */
 
 
-require get_template_directory() . '/framework/functions/flexia/integrations/woocommerce-integration.php';
+require get_template_directory() . '/framework/functions/flexia/integrations/woocommerce/woocommerce-integration.php';
+require get_template_directory() . '/framework/functions/flexia/integrations/woocommerce/class-flexia-woocommerce.php';
 
 /**
  * Customizer additions.
