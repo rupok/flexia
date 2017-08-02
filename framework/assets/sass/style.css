@@ -1390,6 +1390,10 @@ a:hover, a:active {
   padding: 0 .625em;
 }
 
+.main-navigation .nav-menu li a {
+  outline: 0;
+}
+
 .main-navigation > ul > li > a {
   position: relative;
   display: block;
@@ -1446,6 +1450,10 @@ a:hover, a:active {
   -ms-transform: scaleX(1);
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
+}
+
+.main-navigation > ul > li.has-sub > a::after {
+  display: none;
 }
 
 .main-navigation > ul > li > a.cart-contents::after {
