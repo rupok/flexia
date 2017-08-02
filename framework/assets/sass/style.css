@@ -824,7 +824,9 @@ big {
 
 .main-navigation {
   margin: 0 1em;
-  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .flexia-navbar.flexia-sticky-navbar {
@@ -1446,6 +1448,25 @@ a:hover, a:active {
   transform: scaleX(1);
 }
 
+.main-navigation > ul > li > a.cart-contents::after {
+  display: none;
+}
+
+.main-navigation > ul > li > a.cart-contents {
+  padding: 10px;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+.main-navigation > ul > li > a.cart-contents:hover {
+  background-color: #262625;
+  color: #fff;
+}
+
+.main-navigation ul li a.cart-contents:hover span {
+  color: #fff;
+}
+
 /* Submenu styles */
 .main-navigation ul.sub-menu {
   background-color: #fff;
@@ -1604,6 +1625,10 @@ a:hover, a:active {
 
   .main-navigation ul li a:hover, .main-navigation ul li a:focus, .main-navigation ul li.current-menu-item a {
     background-color: #262625;
+    color: #fff;
+  }
+
+  .main-navigation ul li a.cart-contents:hover span {
     color: #fff;
   }
 
@@ -3614,6 +3639,23 @@ body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
 
 #add_payment_method #payment div.payment_box::before, .woocommerce-cart #payment div.payment_box::before, .woocommerce-checkout #payment div.payment_box::before {
   border-bottom-color: #e8e8e8;
+}
+
+.flexia-header-cart-icon {
+  font-size: 1em;
+  padding-right: 5px;
+  color: #4d4d4d;
+}
+
+.cart-contents .amount {
+  color: #4d4d4d;
+  font-size: 14px;
+}
+
+.cart-contents .count {
+  color: #60646c;
+  font-size: 12px;
+  opacity: .75;
 }
 
 /*--------------------------------------------------------------

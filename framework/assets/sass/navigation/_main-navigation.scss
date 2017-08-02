@@ -60,6 +60,25 @@
 		}
 }
 
+.main-navigation > ul > li > a.cart-contents::after {
+	display: none;
+}
+
+.main-navigation > ul > li > a.cart-contents {
+	padding: 10px;
+	-webkit-transition: all 0.15s linear;
+	transition: all 0.15s linear;
+}
+
+.main-navigation > ul > li > a.cart-contents:hover {
+	background-color: #262625;
+	color: #fff;
+}
+
+.main-navigation ul li a.cart-contents:hover span {
+	color: #fff;
+}
+
 /* Submenu styles */
 
 .main-navigation ul.sub-menu {
@@ -221,6 +240,10 @@
 
 .main-navigation ul li a:hover, .main-navigation ul li a:focus, .main-navigation ul li.current-menu-item a  {
 	background-color: #262625;
+	color: #fff;
+}
+
+.main-navigation ul li a.cart-contents:hover span {
 	color: #fff;
 }
 

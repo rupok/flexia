@@ -150,3 +150,4 @@ require get_template_directory() . '/framework/functions/customizer/customizer.p
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+

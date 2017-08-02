@@ -34,7 +34,7 @@
             else flexiaMenu.addClass('dropdown');
             if (settings.sticky === true) flexiaMenu.css('position', 'fixed');
             resizeFix = function() {
-                var mediasize = 768;
+                var mediasize = 767;
                 if ($(window).width() > mediasize) {
                     flexiaMenu.find('ul').show();
                 }

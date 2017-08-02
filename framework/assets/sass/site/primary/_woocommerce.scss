@@ -318,3 +318,20 @@
 #add_payment_method #payment div.payment_box::before, .woocommerce-cart #payment div.payment_box::before, .woocommerce-checkout #payment div.payment_box::before {
 	border-bottom-color: #e8e8e8;
 }
+
+.flexia-header-cart-icon {
+	font-size: 1em;
+	padding-right: 5px;
+	color: #4d4d4d;
+}
+
+.cart-contents .amount {
+	color: #4d4d4d;
+	font-size: 14px;
+}
+
+.cart-contents .count {
+	color: #60646c;
+	font-size: 12px;
+	opacity: .75;
+}

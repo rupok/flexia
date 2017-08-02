@@ -74,7 +74,10 @@ endif;
 					endif;
 
 				?>
+
 			</nav><!-- #site-navigation -->
+
+
 		</div><!-- #flexia-container -->
 	</div><!-- #flexia-navbar-container -->
 </div>

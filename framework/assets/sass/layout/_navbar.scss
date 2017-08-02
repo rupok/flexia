@@ -70,7 +70,9 @@
 
 .main-navigation {
 	margin: 0 1em;
-	flex: 0 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .flexia-navbar.flexia-sticky-navbar {
