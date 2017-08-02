@@ -50,6 +50,12 @@
 	transition: all 0.15s linear;
 }
 
+.woocommerce ul.products li.product .button.add_to_cart_button::before {
+	content: "\f217";
+	font-family: "FontAwesome";
+	padding-right: 8px;
+}
+
 .woocommerce ul.products li.product .button:hover {
 	background-color: #484c51;
 	color: #fff;
@@ -79,7 +85,7 @@
 
 .woocommerce a.added_to_cart::after {
 	content: "\f178";
-	font-family: FontAwesome;
+	font-family: "FontAwesome";
 	padding-left: .5em;
 }
 
