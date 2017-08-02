@@ -7,15 +7,25 @@
 	margin: 0;
 }
 
+.woocommerce div.product div.summary {
+	margin: 0 0 2em;
+}
+
 .woocommerce div.product .product_title {
 	text-transform: none;
 	font-size: 2em;
 	line-height: 1.5;
-	font-weight: normal;
+	font-weight: 400;
+	color: #484c51;
 }
 
 .woocommerce div.product .product_title::after {
 	display: none;
+}
+
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+	position: relative;
+	overflow: hidden;
 }
 
 .woocommerce ul.products li.product .woocommerce-loop-category__title, .woocommerce ul.products li.product .woocommerce-loop-product__title, .woocommerce ul.products li.product h3 {
@@ -145,4 +155,103 @@
 }
 .woocommerce .woocommerce-result-count {
 	margin: .5em 0 1em;
+}
+
+.woocommerce span.onsale {
+  background-color: #ff2a13;
+  border-radius: 0;
+  box-shadow: none;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  height: 100px;
+  letter-spacing: 0;
+  line-height: 160px;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  transform: rotate(-45deg);
+  width: 200px;
+  z-index: 1;
+}
+
+.woocommerce ul.products li.product .onsale, .woocommerce .product .onsale {
+	left: -100px;
+	top: -50px;
+	right: auto;
+	margin: 0;
+}
+
+/* single product page */
+
+.woocommerce.single-product div.product {
+	position: relative;
+	overflow: hidden;
+}
+
+.woocommerce div.product p.price, .woocommerce div.product span.price {
+	color: #60646c;
+	font-size: 1.25em;
+	font-weight: 400;
+}
+
+
+.woocommerce .quantity .qty {
+	padding: 10px;
+	border-radius: 0;
+}
+
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+	background-color: rgba(0,0,0, .75);
+	color: #fff;
+	font-weight: 400;
+	font-size: 1em;
+	padding: 15px;
+	border-radius: 0;
+	-webkit-transition: all .1s linear;
+	transition: all .1s linear;
+}
+
+.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+	background-color: rgba(0,0,0,1);
+	color: #fff;
+}
+
+.product_meta {
+	color: #60646c;
+}
+
+.product_meta > span {
+	display: block;
+	font-size: .875em;
+	margin-bottom: 5px;
+}
+
+.woocommerce .woocommerce-breadcrumb {
+	font-size: .875em;
+	color: #60646c;
+}
+
+.woocommerce-breadcrumb a, a.woocommerce-review-link, .product_meta a {
+	color: #92969e;
+}
+
+.woocommerce-breadcrumb a:hover, a.woocommerce-review-link:hover, .product_meta a:hover {
+	color: #60646c;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+	border: 1px solid rgba(0,0,0, .15);
+	background-color: #f8f8f8;
+	border-radius: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+	font-weight: 400;
+	outline: none;
+}
+
+.woocommerce div.product .woocommerce-tabs h2, .woocommerce div.product .related.products h2 {
+	font-weight: 400;
 }
