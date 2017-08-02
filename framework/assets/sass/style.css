@@ -3346,6 +3346,7 @@ body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
   display: block;
   text-align: center;
   background-color: transparent;
+  color: #484c51;
   border: 1px solid #484c51;
   padding: .618em 1em;
   font-size: 14px;
