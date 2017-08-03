@@ -772,10 +772,10 @@ big {
 
 .flexia-navbar-inner {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  min-height: 50px;
+  padding: 20px 0;
 }
 
 .flexia-logobar-inline {

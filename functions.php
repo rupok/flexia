@@ -64,6 +64,23 @@ function flexia_setup() {
 	) );
 
 	/**
+	 * Add search box to primary menu
+	 */
+	function flexia_nav_search($items, $args) {
+	     if( 'primary' === $args -> theme_location ) { 
+	     $items .= '<li class="menu-item navbar-search-menu"> <a href="javascript:void(0)">';
+	     $items .= '<i class="fa fa-search" aria-hidden="true"></i></a>';
+	     $items .= '<ul class="sub-menu search-menu-form-container"><li class="menu-item search-menu-form">' . get_search_form(false) . '</li>';
+	     $items .= '</li></ul>';
+
+	        }
+		return $items;
+
+	}
+	add_filter('wp_nav_menu_items', 'flexia_nav_search', 98, 2);
+
+
+	/**
 	 * Enable support for Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'status', 'chat' ) );
@@ -150,22 +167,5 @@ require get_template_directory() . '/framework/functions/customizer/customizer.p
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-/**
- * Add search box to primary menu
- */
-function flexia_nav_search($items, $args) {
-     if( 'primary' === $args -> theme_location ) { 
-     $items .= '<li class="menu-item navbar-search-menu"> <a href="javascript:void(0)">';
-     $items .= '<i class="fa fa-search" aria-hidden="true"></i></a>';
-     $items .= '<ul class="sub-menu search-menu-form-container"><li class="menu-item search-menu-form">' . get_search_form(false) . '</li>';
-     $items .= '</li></ul>';
-
-        }
-	return $items;
-
-}
-add_filter('wp_nav_menu_items', 'flexia_nav_search', 10, 2);
-
 
 
