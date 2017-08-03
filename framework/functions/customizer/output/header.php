@@ -20,7 +20,7 @@ add_theme_support( 'custom-background', apply_filters( 'flexia_custom_background
 function flexia_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'flexia_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '000000',
+		'default-text-color'     => 'F56A6A',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,

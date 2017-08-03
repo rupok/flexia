@@ -27,8 +27,10 @@ function flexia_customize_register( $wp_customize ) {
 	$wp_customize->get_section('title_tagline')->title = __('Site Name and Description', 'flexia');  
 	$wp_customize->get_control('blogname')->label = __('Site Name', 'flexia');  
 	$wp_customize->get_control('blogdescription')->label = __('Site Description', 'flexia');  
-	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	$wp_customize->get_setting('blogname' )->transport = 'postMessage';
+	$wp_customize->get_setting('blogdescription' )->transport  = 'postMessage';
+	$wp_customize->get_control('header_textcolor')->label = __('Logo Text Color (if no logo image)', 'flexia');  
+	$wp_customize->get_setting('header_textcolor' )->transport = 'postMessage';
 
 	// Customize the Front Page Settings
 	$wp_customize->get_section('static_front_page')->title = __('Homepage Preferences', 'flexia');
@@ -40,6 +42,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Customize Background Settings
 	$wp_customize->get_section('background_image')->title = __('Background Styles', 'flexia');  
 	$wp_customize->get_control('background_color')->section = 'background_image'; 
+	$wp_customize->get_control('header_textcolor')->section = 'flexia_header_settings'; 
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
