@@ -24,7 +24,7 @@ function flexia_custom_header_setup() {
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'flexia_header_style',
+		'wp-head-callback'       => 'flexia_customizer_style',
 	) ) );
 }
 add_action( 'after_setup_theme', 'flexia_custom_header_setup' );
