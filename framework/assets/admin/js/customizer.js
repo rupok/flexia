@@ -40,6 +40,15 @@
 		} );
 	} );
 
+
+    // Typography 
+
+    wp.customize( 'body_font_color', function( value ) {
+        value.bind( function( to ) {            
+            $( 'body, button, input, select, optgroup, textarea' ).css( 'color', to );            
+        } );
+    });  
+
 	// Container width 
 
     wp.customize( 'container_width', function( value ) {

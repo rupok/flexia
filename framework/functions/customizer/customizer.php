@@ -177,11 +177,34 @@ function flexia_customize_register( $wp_customize ) {
 
 
 
+  // Typography Settings
+
+	$wp_customize->add_section( 'flexia_typography_settings' , array(
+	'title'      => __('Typography','flexia'), 
+	'priority'   => 30    
+	) );  
+
+	$wp_customize->add_setting( 'body_font_color' , array(
+	    'default'     => '#4d4d4d',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'body_font_color', 
+		array(
+			'label'      => __( 'Body Font Color', 'flexia' ),
+			'section'    => 'flexia_typography_settings',
+			'settings'   => 'body_font_color',
+		) ) 
+	);
+
   // Blog Settings
 
 	$wp_customize->add_section( 'flexia_blog_settings' , array(
 	'title'      => __('Blog Styles','flexia'), 
-	'priority'   => 30    
+	'priority'   => 40    
 	) );  
 
 	$wp_customize->add_setting( 'blog_bg_color' , array(
@@ -516,7 +539,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_section( 'flexia_header_settings' , array(
 	'title'      => __('Header','flexia'), 
-	'priority'   => 40    
+	'priority'   => 50    
 	) );  
 
 
@@ -760,7 +783,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_section( 'flexia_footer_settings' , array(
 	'title'      => __('Footer','flexia'), 
-	'priority'   => 50    
+	'priority'   => 60    
 	) );  
 
 	// Enable Footer widget area

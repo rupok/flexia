@@ -43,6 +43,10 @@ function flexia_header_style() {
 		}
 	<?php endif; ?>
 
+	  body, button, input, select, optgroup, textarea {
+	  	color: <?php echo get_theme_mod('body_font_color'); ?>;
+	  }
+
 	  .flexia-container.width {
 	    width: <?php echo get_theme_mod('container_width'); ?>%;
 	  }
