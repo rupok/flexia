@@ -775,7 +775,8 @@ big {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 10px 0;
+  min-height: 40px;
 }
 
 .flexia-logobar-inline {
@@ -810,7 +811,7 @@ big {
 
 .flexia-header-logo {
   display: block;
-  padding: 15px;
+  padding: .5em;
 }
 
 .flexia-logobar-stacked .flexia-header-logo {
