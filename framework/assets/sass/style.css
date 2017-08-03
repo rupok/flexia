@@ -1456,6 +1456,17 @@ a:hover, a:active {
   display: none;
 }
 
+.main-navigation > ul > li.navbar-search-menu.has-sub::before, .main-navigation > ul > li.navbar-search-menu.has-sub::after {
+  display: none;
+}
+
+.flexia-menu li:hover > .sub-menu.search-menu-form-container {
+  left: -137px;
+  right: 0;
+  padding: 20px;
+  width: 320px;
+}
+
 .main-navigation > ul > li > a.cart-contents::after {
   display: none;
 }
@@ -1716,6 +1727,17 @@ a:hover, a:active {
     width: 2px;
     height: 8px;
     background: #ddd;
+  }
+
+  .sub-menu.search-menu-form-container {
+    padding: 10px;
+  }
+
+  .flexia-menu li:hover > .sub-menu.search-menu-form-container {
+    left: auto;
+    right: auto;
+    padding: 10px;
+    width: 100%;
   }
 }
 .flexia-topbar-inner {
