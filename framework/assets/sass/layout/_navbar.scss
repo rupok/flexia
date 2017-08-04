@@ -86,7 +86,14 @@
     animation-name: slideInDown;
 }
 
-
+.flexia-navbar.flexia-navbar-transparent-top {
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+}
 
 @keyframes slideInDown {
   from {

@@ -22,6 +22,11 @@ function flexia_body_classes( $classes ) {
 	}
 
 
+	if( get_theme_mod('flexia_navbar_position') == 'flexia-navbar-transparent-top' ) {
+		$classes[] = 'transparent-top-navbar';
+	}
+
+
 	return $classes;
 }
 add_filter( 'body_class', 'flexia_body_classes' );

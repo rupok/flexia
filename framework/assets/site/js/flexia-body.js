@@ -94,12 +94,15 @@ jQuery( document ).ready( function($) {
 	    }
 	  });
 
+
 	// Calculate blog header height
 
 	var topbarHeight = $('.flexia-topbar').height();
 	var logobarHeight = $('.flexia-logobar').height();
-	var navbarHeight = $('.flexia-navbar').height();
+	var navbarHeight = $('.flexia-navbar:not(.flexia-navbar-transparent-top)').height();
+	var transparentNavbarHeight = $('.flexia-navbar-transparent-top').height();
 	var headerHeight = (topbarHeight + logobarHeight + navbarHeight) + 50;
+	var transparentHeaderHeight = (topbarHeight + logobarHeight + transparentNavbarHeight);
 
    $('.blog-header').css({ 'height': $(window).height() - headerHeight });
    $(window).on('resize', function() {
@@ -107,6 +110,11 @@ jQuery( document ).ready( function($) {
         $('.blog-header').css({ 'height': $(window).height() - headerHeight });
         $('body').css({ 'width': $(window).width() })
    });
+
+	// Transparent menu
+	
+	$('body:not(.single-post) .site-header + *, .single-blog-header').css({ 'padding-top': transparentHeaderHeight });
+
 
    // Header parallax
 

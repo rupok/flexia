@@ -34,7 +34,13 @@
 }
 
 
+.transparent-top-navbar .page-header.blog-header {
+  padding-top: 0 !important;
+}
 
+.transparent-top-navbar .archive-header .header-inner, .transparent-top-navbar .single-blog-header .header-inner {
+  padding-top: 1em;
+}
 
 /* Single Posts */
 

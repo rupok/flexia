@@ -840,6 +840,15 @@ big {
   animation-name: slideInDown;
 }
 
+.flexia-navbar.flexia-navbar-transparent-top {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
 @keyframes slideInDown {
   from {
     transform: translate3d(0, -100%, 0);
@@ -2736,6 +2745,14 @@ a:hover, a:active {
 .header-content .flexia-blog-logo {
   max-width: 100%;
   margin: 0 auto 1.5em;
+}
+
+.transparent-top-navbar .page-header.blog-header {
+  padding-top: 0 !important;
+}
+
+.transparent-top-navbar .archive-header .header-inner, .transparent-top-navbar .single-blog-header .header-inner {
+  padding-top: 1em;
 }
 
 /* Single Posts */

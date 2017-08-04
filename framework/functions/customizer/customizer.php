@@ -662,6 +662,7 @@ function flexia_customize_register( $wp_customize ) {
 	            'choices'        => array(
 	                'flexia-navbar-static-top'   => __( 'Static Top' ),
 	                'flexia-navbar-fixed-top'   => __( 'Sticky Top' ),
+	                'flexia-navbar-transparent-top'   => __( 'Transparent Top' ),
 	            )
 	        )
 	    )

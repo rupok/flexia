@@ -13,6 +13,10 @@ if( get_theme_mod('flexia_navbar_position') == 'flexia-navbar-static-top' ) :
 
 	$navbar_class = 'flexia-navbar-static-top';
 
+elseif( get_theme_mod('flexia_navbar_position') == 'flexia-navbar-transparent-top' ) : 
+
+	$navbar_class = 'flexia-navbar-transparent-top';
+
 else:
 
 	$navbar_class = 'flexia-navbar-fixed-top';
