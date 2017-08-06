@@ -27,11 +27,9 @@
 .post-author .author-body > span {
 	font-size: 13px;
 	font-style: italic;
-	font-family: $font__heading;
 }
 
 .post-author .author-heading {
-	font-family: $font__main;
 	font-size: 24px;
 	font-weight: bold;
 	margin: 0 auto;
@@ -48,7 +46,6 @@
 }
 
 .post-author .author-bio {
-	font-family: $font__heading;
 	font-size: 1em;
 	margin: 5px auto;
 	line-height: 1.8;
@@ -83,7 +80,6 @@
 }
 
 .flexia-social-share .flexia-social-share-heading h5 {
-	font-family: $font__heading;
 	font-size: 1em;
 	margin: 1em 0;
 }

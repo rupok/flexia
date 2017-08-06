@@ -11,6 +11,7 @@ html {
 body {
 	background-color: $color__background-body; /* Fallback for when there is no custom background color defined. */
 	font-size: $body__font-size;
+  font-family: $font__body;
   overflow-x: hidden;
 }
 
