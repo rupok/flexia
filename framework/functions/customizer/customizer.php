@@ -543,6 +543,7 @@ function flexia_customize_register( $wp_customize ) {
 	) );  
 
 
+
 	// Header Logo
 
 	$wp_customize->add_setting( 'flexia_header_logo' , array(
@@ -584,48 +585,19 @@ function flexia_customize_register( $wp_customize ) {
 	    )
 	);
 
-	// Enable Header widget area
 
-	$wp_customize->add_setting( 'header_widget_area', array(
-			'default'     => true,
-			'capability'  => 'edit_theme_options',
-	) );
+	// Separator
 
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'header_widget_area', array(
-			'label'	      => esc_html__( 'Enable Header Widget Area?', 'flexia' ),
-			'section'     => 'flexia_header_settings',
-			'settings'    => 'header_widget_area',
-			'type'        => 'light',// light, ios, flat
-	) ) );
+	$wp_customize->add_setting('navbar_settings_title', array(
+		'default'           => '',
+		'sanitize_callback' => 'esc_html',
+	));
 
-	// Enable Topbar
-
-	$wp_customize->add_setting( 'flexia_enable_topbar', array(
-			'default'     => true,
-			'capability'  => 'edit_theme_options',
-	) );
-
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'flexia_enable_topbar', array(
-			'label'	      => esc_html__( 'Enable Topbar?', 'flexia' ),
-			'section'     => 'flexia_header_settings',
-			'settings'    => 'flexia_enable_topbar',
-			'type'        => 'light',// light, ios, flat
-	) ) );
-
-
-	// Enable Topbar Menu
-
-	$wp_customize->add_setting( 'flexia_enable_topbar_menu', array(
-			'default'     => true,
-			'capability'  => 'edit_theme_options',
-	) );
-
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'flexia_enable_topbar_menu', array(
-			'label'	      => esc_html__( 'Enable Topbar Menu?', 'flexia' ),
-			'section'     => 'flexia_header_settings',
-			'settings'    => 'flexia_enable_topbar_menu',
-			'type'        => 'light',// light, ios, flat
-	) ) );
+	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'navbar_settings_title', array(
+		'label'      => __( 'Navbar Settings', 'flexia' ),
+		'settings'		=> 'navbar_settings_title',
+		'section'  		=> 'flexia_header_settings',
+	)));
 
 
 	// Enable Navbar
@@ -694,39 +666,8 @@ function flexia_customize_register( $wp_customize ) {
 	);
 
 
-	// Header widget, Topbar, Navbar background colors
+	// Navbar background colors
 
-	$wp_customize->add_setting( 'header_widget_area_bg_color' , array(
-	    'default'     => '#262625',
-	    'transport'   => 'postMessage',
-	) );
-
-	$wp_customize->add_control( 
-		new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'header_widget_area_bg_color', 
-		array(
-			'label'      => __( 'Header Widget Area Background', 'flexia' ),
-			'section'    => 'flexia_header_settings',
-			'settings'   => 'header_widget_area_bg_color',
-		) ) 
-	);
-
-	$wp_customize->add_setting( 'flexia_topbar_bg_color' , array(
-	    'default'     => '#262625',
-	    'transport'   => 'postMessage',
-	) );
-
-	$wp_customize->add_control( 
-		new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'flexia_topbar_bg_color', 
-		array(
-			'label'      => __( 'Topbar Background', 'flexia' ),
-			'section'    => 'flexia_header_settings',
-			'settings'   => 'flexia_topbar_bg_color',
-		) ) 
-	);
 
 	$wp_customize->add_setting( 'flexia_logobar_bg_color' , array(
 	    'default'     => '#fff',
@@ -762,6 +703,64 @@ function flexia_customize_register( $wp_customize ) {
 	);
 
 
+	// Topbar Separator
+
+	$wp_customize->add_setting('topbar_settings_title', array(
+		'default'           => '',
+		'sanitize_callback' => 'esc_html',
+	));
+	
+	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'topbar_settings_title', array(
+		'label'      => __( 'Topbar Settings', 'flexia' ),
+		'settings'		=> 'topbar_settings_title',
+		'section'  		=> 'flexia_header_settings',
+	)));
+
+	// Enable Topbar
+
+	$wp_customize->add_setting( 'flexia_enable_topbar', array(
+			'default'     => true,
+			'capability'  => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'flexia_enable_topbar', array(
+			'label'	      => esc_html__( 'Enable Topbar?', 'flexia' ),
+			'section'     => 'flexia_header_settings',
+			'settings'    => 'flexia_enable_topbar',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+
+	// Enable Topbar Menu
+
+	$wp_customize->add_setting( 'flexia_enable_topbar_menu', array(
+			'default'     => true,
+			'capability'  => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'flexia_enable_topbar_menu', array(
+			'label'	      => esc_html__( 'Enable Topbar Menu?', 'flexia' ),
+			'section'     => 'flexia_header_settings',
+			'settings'    => 'flexia_enable_topbar_menu',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+	$wp_customize->add_setting( 'flexia_topbar_bg_color' , array(
+	    'default'     => '#262625',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_topbar_bg_color', 
+		array(
+			'label'      => __( 'Topbar Background', 'flexia' ),
+			'section'    => 'flexia_header_settings',
+			'settings'   => 'flexia_topbar_bg_color',
+		) ) 
+	);
+
 	$wp_customize->add_setting( 'flexia_topbar_content' , array(
 	    'default'     => '<p>This is Topbar Content. Cutomize this from Customize &gt; Header &gt; Topbar Content</p>',
 	) );
@@ -777,6 +776,52 @@ function flexia_customize_register( $wp_customize ) {
 	            'type'           => 'textarea',
 	        )
 	    )
+	);
+
+
+	// Header widget area Separator
+
+	$wp_customize->add_setting('header_widget_area_settings_title', array(
+		'default'           => '',
+		'sanitize_callback' => 'esc_html',
+	));
+	
+	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'header_widget_area_settings_title', array(
+		'label'      => __( 'Header Widget Area', 'flexia' ),
+		'settings'		=> 'header_widget_area_settings_title',
+		'section'  		=> 'flexia_header_settings',
+	)));
+
+	// Enable Header widget area
+
+	$wp_customize->add_setting( 'header_widget_area', array(
+			'default'     => true,
+			'capability'  => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'header_widget_area', array(
+			'label'	      => esc_html__( 'Enable Header Widget Area?', 'flexia' ),
+			'section'     => 'flexia_header_settings',
+			'settings'    => 'header_widget_area',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+	// Header widget area background
+
+	$wp_customize->add_setting( 'header_widget_area_bg_color' , array(
+	    'default'     => '#262625',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'header_widget_area_bg_color', 
+		array(
+			'label'      => __( 'Header Widget Area Background', 'flexia' ),
+			'section'    => 'flexia_header_settings',
+			'settings'   => 'header_widget_area_bg_color',
+		) ) 
 	);
 
 

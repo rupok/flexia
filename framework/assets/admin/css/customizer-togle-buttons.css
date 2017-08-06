@@ -1,3 +1,19 @@
+.flexia-customize-subtitle {
+  display: block;
+  margin: 0 -12px;
+  border: 1px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+  padding: 15px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #555;
+  background-color: #fff;
+}
+
 .customize-control.customize-control-light {
   margin: 15px 0;
 }

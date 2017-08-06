@@ -99,4 +99,21 @@ class Customizer_Toggle_Control extends WP_Customize_Control {
 	}
 }
 
+
+/* Custom Title */
+ 
+class Separator_Custom_control extends WP_Customize_Control{
+	public $type = 'separator';
+	public function render_content(){
+		?>
+		<label>
+			<h4 class="customize-control-title flexia-customize-subtitle"><?php echo esc_html( $this->label ); ?></h4>
+			<?php if ( ! empty( $this->description ) ) : ?>
+			<span class="description customize-control-description"><?php echo $this->description; ?></span>
+			<?php endif; ?>
+		</label>
+		<?php
+	}
+}
+
 ?>
