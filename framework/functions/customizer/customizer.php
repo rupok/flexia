@@ -239,7 +239,7 @@ function flexia_customize_register( $wp_customize ) {
 
 
     $wp_customize->add_setting( 'flexia_google_font_family', array(
-        'default'           => '',
+        'default'           => 'Open Sans',
         'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control( new Google_Font_Dropdown_Custom_Control( $wp_customize, 'flexia_google_font_family', array(
@@ -267,7 +267,7 @@ function flexia_customize_register( $wp_customize ) {
 
 
     $wp_customize->add_setting( 'flexia_heading_font_family', array(
-        'default'           => '',
+        'default'           => 'Merriweather',
         'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control( new Google_Font_Dropdown_Custom_Control( $wp_customize, 'flexia_heading_font_family', array(

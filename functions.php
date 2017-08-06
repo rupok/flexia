@@ -181,11 +181,11 @@ if ( ! function_exists( 'flexia_fonts_url' ) ){
 	        $font_families = array();
  
 	        if ( 'off' !== $content_font ) {
-	            $font_families[] = $content_font;
+	            $font_families[] = $content_font . ':300,400,700';
 	        }
  
 	        if ( 'off' !== $header_font ) {
-	            $font_families[] = $header_font;
+	            $font_families[] = $header_font . ':300,400,700';
 	        }
  
 	        $query_args = array(
