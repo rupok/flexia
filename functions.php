@@ -169,3 +169,32 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 
+/********* Google Fonts URL function  ***********/
+
+if ( ! function_exists( 'flexia_fonts_url' ) ){
+	function flexia_fonts_url() {
+	    $fonts_url = '';
+	    $content_font = get_theme_mod('flexia_google_font_family', '');
+	    $header_font = get_theme_mod('flexia_heading_font_family', '');
+ 
+	    if ( 'off' !== $content_font || 'off' !== $header_font ) {
+	        $font_families = array();
+ 
+	        if ( 'off' !== $content_font ) {
+	            $font_families[] = $content_font;
+	        }
+ 
+	        if ( 'off' !== $header_font ) {
+	            $font_families[] = $header_font;
+	        }
+ 
+	        $query_args = array(
+	            'family' => urlencode( implode( '|', array_unique($font_families) ) ),
+	        );
+ 
+	        $fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	    }
+ 
+	    return esc_url_raw( $fonts_url );
+	}
+}

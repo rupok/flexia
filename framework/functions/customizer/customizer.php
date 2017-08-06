@@ -177,12 +177,27 @@ function flexia_customize_register( $wp_customize ) {
 
 
 
-  // Typography Settings
+    // Typography Settings
 
 	$wp_customize->add_section( 'flexia_typography_settings' , array(
-	'title'      => __('Typography','flexia'), 
+	'title'      => __('Color & Typography','flexia'), 
 	'priority'   => 30    
 	) );  
+
+
+	// Typograhpy Separator
+
+	$wp_customize->add_setting('typography_settings_title_body', array(
+		'default'           => '',
+		'sanitize_callback' => 'esc_html',
+	));
+	
+	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'typography_settings_title_body', array(
+		'label'      => __( 'Body & Content', 'flexia' ),
+		'settings'		=> 'typography_settings_title_body',
+		'section'  		=> 'flexia_typography_settings',
+	)));
+
 
 	$wp_customize->add_setting( 'body_font_color' , array(
 	    'default'     => '#4d4d4d',
@@ -199,6 +214,82 @@ function flexia_customize_register( $wp_customize ) {
 			'settings'   => 'body_font_color',
 		) ) 
 	);
+
+	$wp_customize->add_setting( 'body_font_size' , array(
+	    'default'   => '16',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'body_font_size',
+	        array(
+	            'label'          => __( 'Body Font Size', 'flexia' ),
+	            'section'        => 'flexia_typography_settings',
+	            'settings'       => 'body_font_size',
+	            'description'    => '"Body Font Size (px)" will affect the sizing of all copy outside of a post or page content area.',
+	            'type'           => 'text',
+	        )
+	    )
+	);
+
+
+	// Body Font Setting
+
+
+    $wp_customize->add_setting( 'flexia_google_font_family', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control( new Google_Font_Dropdown_Custom_Control( $wp_customize, 'flexia_google_font_family', array(
+        'label'      => 'Body Font',
+        'section'    => 'flexia_typography_settings',
+        'settings'   => 'flexia_google_font_family',
+    )));
+
+
+	// Heading separator
+
+	$wp_customize->add_setting('typography_settings_title_heading', array(
+		'default'           => '',
+		'sanitize_callback' => 'esc_html',
+	));
+	
+	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'typography_settings_title_heading', array(
+		'label'      => __( 'Headings', 'flexia' ),
+		'settings'		=> 'typography_settings_title_heading',
+		'section'  		=> 'flexia_typography_settings',
+	)));
+
+
+	// Heading Font Setting
+
+
+    $wp_customize->add_setting( 'flexia_heading_font_family', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control( new Google_Font_Dropdown_Custom_Control( $wp_customize, 'flexia_heading_font_family', array(
+        'label'      => 'Heading Font',
+        'section'    => 'flexia_typography_settings',
+        'settings'   => 'flexia_heading_font_family',
+    )));
+
+
+	// Site Links separator
+
+	$wp_customize->add_setting('typography_settings_title_links', array(
+		'default'           => '',
+		'sanitize_callback' => 'esc_html',
+	));
+	
+	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'typography_settings_title_links', array(
+		'label'      => __( 'Site Links', 'flexia' ),
+		'settings'		=> 'typography_settings_title_links',
+		'section'  		=> 'flexia_typography_settings',
+	)));
+
 
   // Blog Settings
 
