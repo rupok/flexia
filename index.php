@@ -52,7 +52,7 @@ get_header();
 
                 	endif;?></h2>
 
-                <p class="blog-desc"><?php 
+                <h3 class="blog-desc"><?php 
 
                 	if( get_theme_mod('blog_desc') !== '' ) : 
 
@@ -63,7 +63,7 @@ get_header();
                 		printf( esc_html__( '%s', 'flexia' ), get_bloginfo ( 'description' ) );
                 			
                 	
-                	endif;?></p>
+                	endif;?></h3>
             </div>
 
             <?php if( get_theme_mod('scroll_bottom_arrow') == true ) : 

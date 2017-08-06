@@ -2652,7 +2652,7 @@ a:hover, a:active {
   text-transform: uppercase;
 }
 
-.header-content p {
+.header-content p, .header-content .blog-desc {
   display: block;
   font-size: 1em;
   font-style: italic;
