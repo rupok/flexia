@@ -586,7 +586,7 @@ function flexia_customize_register( $wp_customize ) {
 	);
 
 
-	// Separator
+	// Navabr Separator
 
 	$wp_customize->add_setting('navbar_settings_title', array(
 		'default'           => '',
@@ -699,6 +699,104 @@ function flexia_customize_register( $wp_customize ) {
 			'label'      => __( 'Navbar Background', 'flexia' ),
 			'section'    => 'flexia_header_settings',
 			'settings'   => 'flexia_navbar_bg_color',
+		) ) 
+	);
+
+	// Navabr Menu Separator
+
+	$wp_customize->add_setting('navbar_menu_settings_title', array(
+		'default'           => '',
+		'sanitize_callback' => 'esc_html',
+	));
+
+	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'navbar_menu_settings_title', array(
+		'label'      => __( 'Navbar Menu Settings', 'flexia' ),
+		'settings'		=> 'navbar_menu_settings_title',
+		'section'  		=> 'flexia_header_settings',
+	)));
+
+
+
+	$wp_customize->add_setting( 'flexia_nav_menu_link_color' , array(
+	    'default'     => '#4d4d4d',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_nav_menu_link_color', 
+		array(
+			'label'      => __( 'Nav menu links color', 'flexia' ),
+			'section'    => 'flexia_header_settings',
+			'settings'   => 'flexia_nav_menu_link_color',
+		) ) 
+	);
+
+
+	$wp_customize->add_setting( 'flexia_nav_menu_link_hover_color' , array(
+	    'default'     => '#1b1f21',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_nav_menu_link_hover_color', 
+		array(
+			'label'      => __( 'Nav menu links hover color', 'flexia' ),
+			'section'    => 'flexia_header_settings',
+			'settings'   => 'flexia_nav_menu_link_hover_color',
+		) ) 
+	);
+
+
+	$wp_customize->add_setting( 'flexia_submenu_bg_color' , array(
+	    'default'     => '#fff',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_submenu_bg_color', 
+		array(
+			'label'      => __( 'Submenu Background', 'flexia' ),
+			'section'    => 'flexia_header_settings',
+			'settings'   => 'flexia_submenu_bg_color',
+		) ) 
+	);
+
+	$wp_customize->add_setting( 'flexia_submenu_link_color' , array(
+	    'default'     => '#4d4d4d',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_submenu_link_color', 
+		array(
+			'label'      => __( 'Submenu links color', 'flexia' ),
+			'section'    => 'flexia_header_settings',
+			'settings'   => 'flexia_submenu_link_color',
+		) ) 
+	);
+
+
+	$wp_customize->add_setting( 'flexia_submenu_link_hover_color' , array(
+	    'default'     => '#1b1f21',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_submenu_link_hover_color', 
+		array(
+			'label'      => __( 'Submenu links hover color', 'flexia' ),
+			'section'    => 'flexia_header_settings',
+			'settings'   => 'flexia_submenu_link_hover_color',
 		) ) 
 	);
 
