@@ -42,6 +42,11 @@ function flexia_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+	/*
+	 * This theme styles the visual editor to resemble the theme style
+	 */
+	add_editor_style( 'framework/assets/admin/css/editor-style.css' );
+
 	/**
 	 * Register primary menu
 	 */
