@@ -117,7 +117,9 @@ function flexia_customize_register( $wp_customize ) {
 
 
 
-	$wp_customize->add_setting( 'content_layout' , array(
+	$wp_customize->add_setting( 
+		'content_layout' , 
+		array(
 	    'default'   => $defaults['content_layout'],
 	    'sanitize_callback' => 'flexia_sanitize_choices',
 	) );
