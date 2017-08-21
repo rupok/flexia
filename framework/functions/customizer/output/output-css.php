@@ -37,6 +37,7 @@ function flexia_customizer_style() {
 
 	body {
 		font-family: "<?php echo esc_attr( $flexia_settings['body_font_family']); ?>", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+		font-size: <?php echo esc_attr( $flexia_settings['body_font_size']); ?>px;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -52,8 +53,8 @@ function flexia_customizer_style() {
 	}
 
 	.single-post .entry-content-wrapper {
-	width: <?php echo esc_attr( $flexia_settings['container_width']); ?>%;
-	max-width: <?php echo esc_attr( $flexia_settings['container_max_width']); ?>px;
+	width: <?php echo esc_attr( $flexia_settings['post_width']); ?>%;
+	max-width: <?php echo esc_attr( $flexia_settings['post_max_width']); ?>px;
 	}
 
 	.flexia-sidebar-left {

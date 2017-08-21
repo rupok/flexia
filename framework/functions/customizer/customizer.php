@@ -118,7 +118,7 @@ function flexia_customize_register( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'content_layout' , array(
-	    'default'   => 'content_layout1',
+	    'default'   => $defaults['content_layout'],
 	    'sanitize_callback' => 'flexia_sanitize_choices',
 	) );
 
@@ -203,7 +203,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Typograhpy Separator
 
 	$wp_customize->add_setting('typography_settings_title_body', array(
-		'default'           => '',
+		'default'           => $defaults['typography_settings_title_body'],
 		'sanitize_callback' => 'esc_html',
 	));
 	
@@ -232,7 +232,7 @@ function flexia_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'body_font_size' , array(
-	    'default'   => '16',
+	    'default'   => $defaults['body_font_size'],
 	    'sanitize_callback' => 'flexia_sanitize_integer',
 	) );
 
@@ -269,7 +269,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Heading separator
 
 	$wp_customize->add_setting('typography_settings_title_heading', array(
-		'default'           => '',
+		'default'           => $defaults['typography_settings_title_heading'],
 		'sanitize_callback' => 'esc_html',
 	));
 	
@@ -297,7 +297,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Site Links separator
 
 	$wp_customize->add_setting('typography_settings_title_links', array(
-		'default'           => '',
+		'default'           => $defaults['typography_settings_title_links'],
 		'sanitize_callback' => 'esc_html',
 	));
 	
@@ -385,7 +385,7 @@ function flexia_customize_register( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'post_max_width', array(
-			'default'       => get_theme_mod( 'post_max_width', '1200' ),
+			'default'       => $defaults['post_max_width'],
 			'capability'    => 'edit_theme_options',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'flexia_sanitize_integer',
@@ -406,7 +406,7 @@ function flexia_customize_register( $wp_customize ) {
 	) ) );
 
 	$wp_customize->add_setting( 'post_width', array(
-			'default'       => get_theme_mod( 'post_width', '90' ),
+			'default'       => $defaults['post_width'],
 			'capability'    => 'edit_theme_options',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'flexia_sanitize_integer',
@@ -429,7 +429,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Show post navigation
 
 	$wp_customize->add_setting( 'post_navigation', array(
-			'default'     => true,
+			'default'     => $defaults['post_navigation'],
 			'capability'  => 'edit_theme_options',
 			'sanitize_callback' => 'flexia_sanitize_checkbox',
 	) );
@@ -444,7 +444,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Show author under post
 
 	$wp_customize->add_setting( 'post_author', array(
-			'default'     => true,
+			'default'     => $defaults['post_author'],
 			'capability'  => 'edit_theme_options',
 			'sanitize_callback' => 'flexia_sanitize_checkbox',
 	) );
@@ -460,7 +460,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Show author under post
 
 	$wp_customize->add_setting( 'post_social_share', array(
-			'default'     => true,
+			'default'     => $defaults['post_social_share'],
 			'capability'  => 'edit_theme_options',
 			'sanitize_callback' => 'flexia_sanitize_checkbox',
 	) );
@@ -475,7 +475,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Show scroll bottom anchor
 
 	$wp_customize->add_setting( 'scroll_bottom_arrow', array(
-			'default'     => true,
+			'default'     => $defaults['scroll_bottom_arrow'],
 			'capability'  => 'edit_theme_options',
 			'sanitize_callback' => 'flexia_sanitize_checkbox',
 	) );
@@ -491,7 +491,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Blog logo/Icon
 
 	$wp_customize->add_setting( 'show_blog_logo' , array(
-	    'default'   => 'blog_icon',
+	    'default'   => $defaults['show_blog_logo'],
 	    'sanitize_callback' => 'flexia_sanitize_choices',
 	) );
 
@@ -517,7 +517,7 @@ function flexia_customize_register( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'blog_icon_class' , array(
-	    'default'   => 'fa-pencil',
+	    'default'   => $defaults['blog_icon_class'],
 	    'sanitize_callback' => 'esc_html',
 	) );
 
@@ -538,7 +538,7 @@ function flexia_customize_register( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'blog_logo' , array(
-	    'default'   => '',
+	    'default'   => $defaults['blog_logo'],
 	    'sanitize_callback' => 'esc_url_raw'
 	) );
 
@@ -578,7 +578,7 @@ function flexia_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'blog_title' , array(
-	    'default'   => '',
+	    'default'   => $defaults['blog_title'],
 	    'transport' => 'postMessage',
 	    'sanitize_callback' => 'esc_html'
 	) );
@@ -619,7 +619,7 @@ function flexia_customize_register( $wp_customize ) {
 	) ) );
 
 	$wp_customize->add_setting( 'blog_desc' , array(
-	    'default'   => '',
+	    'default'   => $defaults['blog_desc'],
 	    'transport' => 'postMessage',
 	    'sanitize_callback' => 'esc_html',
 	) );
@@ -673,7 +673,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Header Logo
 
 	$wp_customize->add_setting( 'flexia_header_logo' , array(
-	    'default'   => '',
+	    'default'   => $defaults['flexia_header_logo'],
 	    'sanitize_callback' => 'esc_url_raw'
 	) );
 
@@ -731,7 +731,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Enable Navbar
 
 	$wp_customize->add_setting( 'flexia_navbar', array(
-			'default'     => true,
+			'default'     => $defaults['flexia_navbar'],
 			'capability'  => 'edit_theme_options',
 			'sanitize_callback' => 'flexia_sanitize_checkbox',
 	) );
@@ -747,7 +747,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Navbar position
 
 	$wp_customize->add_setting( 'flexia_navbar_position' , array(
-	    'default'   => 'flexia-navbar-static-top',
+	    'default'   => $defaults['flexia_navbar_position'],
 	    'sanitize_callback' => 'flexia_sanitize_choices',
 	) );
 
@@ -774,7 +774,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Logobar position
 
 	$wp_customize->add_setting( 'flexia_logobar_position' , array(
-	    'default'   => 'flexia-logobar-inline',
+	    'default'   => $defaults['flexia_logobar_position'],
 	    'sanitize_callback' => 'flexia_sanitize_choices',
 	) );
 
@@ -955,7 +955,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Enable Topbar
 
 	$wp_customize->add_setting( 'flexia_enable_topbar', array(
-			'default'     => true,
+			'default'     => $defaults['flexia_enable_topbar'],
 			'capability'  => 'edit_theme_options',
 			'sanitize_callback' => 'flexia_sanitize_checkbox',
 	) );
@@ -971,7 +971,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Enable Topbar Menu
 
 	$wp_customize->add_setting( 'flexia_enable_topbar_menu', array(
-			'default'     => true,
+			'default'     => $defaults['flexia_enable_topbar_menu'],
 			'capability'  => 'edit_theme_options',
 			'sanitize_callback' => 'flexia_sanitize_checkbox',
 	) );
@@ -1035,7 +1035,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Enable Header widget area
 
 	$wp_customize->add_setting( 'header_widget_area', array(
-			'default'     => true,
+			'default'     => $defaults['header_widget_area'],
 			'capability'  => 'edit_theme_options',
 			'sanitize_callback' => 'flexia_sanitize_checkbox',
 	) );
@@ -1077,7 +1077,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Enable Footer widget area
 
 	$wp_customize->add_setting( 'footer_widget_area', array(
-			'default'     => true,
+			'default'     => $defaults['footer_widget_area'],
 			'capability'  => 'edit_theme_options',
 			'sanitize_callback' => 'flexia_sanitize_checkbox',
 	) );
@@ -1092,7 +1092,7 @@ function flexia_customize_register( $wp_customize ) {
 	// Enable Bottom Footer
 
 	$wp_customize->add_setting( 'footer_bottom', array(
-			'default'     => true,
+			'default'     => $defaults['footer_bottom'],
 			'capability'  => 'edit_theme_options',
 			'sanitize_callback' => 'flexia_sanitize_checkbox',
 	) );
@@ -1107,23 +1107,23 @@ function flexia_customize_register( $wp_customize ) {
 
 	// Enable footer menu
 
-	$wp_customize->add_setting( 'flexia_enbale_footer_menu', array(
-			'default'     => true,
+	$wp_customize->add_setting( 'flexia_enable_footer_menu', array(
+			'default'     => $defaults['flexia_enable_footer_menu'],
 			'capability'  => 'edit_theme_options',
 			'sanitize_callback' => 'flexia_sanitize_checkbox',
 	) );
 
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'flexia_enbale_footer_menu', array(
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'flexia_enable_footer_menu', array(
 			'label'	      => esc_html__( 'Enable Footer Menu?', 'flexia' ),
 			'section'     => 'flexia_footer_settings',
-			'settings'    => 'flexia_enbale_footer_menu',
+			'settings'    => 'flexia_enable_footer_menu',
 			'type'        => 'light',// light, ios, flat
 	) ) );
 
 	// Enable Scrol to Top
 
 	$wp_customize->add_setting( 'flexia_scroll_to_top', array(
-			'default'     => true,
+			'default'     => $defaults['flexia_scroll_to_top'],
 			'capability'  => 'edit_theme_options',
 			'sanitize_callback' => 'flexia_sanitize_checkbox',
 	) );

@@ -19,7 +19,9 @@ function flexia_get_option_defaults()
 		'body_font_family' => 'Open Sans',
 		'heading_font_family' => 'Merriweather',
 		'container_width' => '90',
+		'post_width' => '90',
 		'container_max_width' => '1200',
+		'post_max_width' => '1200',
 		'left_sidebar_width' => '300',
 		'right_sidebar_width' => '300',
 		'blog_bg_color' => '#f9f9f9',
@@ -44,6 +46,31 @@ function flexia_get_option_defaults()
 		'flexia_footer_content_color' => '#CBCED3',
 		'flexia_footer_link_color' => '#F56A6A',
 		'flexia_footer_link_hover_color' => '#E65A50',
+		'content_layout' => 'content_layout1',
+		'typography_settings_title_body' => '',
+		'body_font_size' => '16',
+		'typography_settings_title_heading' => '',
+		'typography_settings_title_links' => '',
+		'post_navigation' => true,
+		'post_author' => true,
+		'post_social_share' => true,
+		'scroll_bottom_arrow' => true,
+		'show_blog_logo' => 'blog_icon',
+		'blog_icon_class' => 'fa-pencil',
+		'blog_logo' => '',
+		'blog_title' => '',
+		'blog_desc' => '',
+		'flexia_header_logo' => '',
+		'flexia_navbar' => true,
+		'flexia_navbar_position' => 'flexia-navbar-static-top',
+		'flexia_logobar_position' => 'flexia-logobar-inline',
+		'flexia_enable_topbar' => true,
+		'flexia_enable_topbar_menu' => true,
+		'header_widget_area' => true,
+		'footer_widget_area' => true,
+		'footer_bottom' => true,
+		'flexia_enable_footer_menu' => true,
+		'flexia_scroll_to_top' => true,
 
 	);
 	
@@ -66,6 +93,8 @@ function flexia_get_setting( $setting ) {
 	return $flexia_settings[ $setting ];
 }
 endif;
+
+
 
 
 
