@@ -94,8 +94,3 @@ function flexia_get_setting( $setting ) {
 }
 endif;
 
-
-
-
-
-

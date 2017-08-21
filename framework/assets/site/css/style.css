@@ -251,7 +251,6 @@ select,
 optgroup,
 textarea {
   color: #4d4d4d;
-  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -259,7 +258,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Merriweather", sans-serif;
 }
 
 h1 {
@@ -791,7 +790,6 @@ big {
 
 .site-description {
   font-size: 1em;
-  font-family: "Merriweather", sans-serif;
   color: #4d4d4d;
   font-style: italic;
   margin-top: 0;
@@ -974,6 +972,7 @@ body {
   background-color: #f9f9f9;
   /* Fallback for when there is no custom background color defined. */
   font-size: 16px;
+  font-family: "Open Sans", sans-serif;
   overflow-x: hidden;
 }
 
@@ -2317,7 +2316,6 @@ a:hover, a:active {
 
 .widget-title {
   color: #202021;
-  font-family: "Open Sans", sans-serif;
   font-size: 1em;
   font-weight: 700;
   letter-spacing: 1px;
@@ -2470,7 +2468,6 @@ a:hover, a:active {
 
 #wp-calendar caption {
   color: #202021;
-  font-family: "Open Sans", sans-serif;
   font-size: 1em;
   font-weight: 700;
   margin-bottom: 1em;
@@ -2586,7 +2583,6 @@ a:hover, a:active {
 }
 
 .latest-post .media-heading a {
-  font-family: PT Sans,sans-serif;
   font-size: 14px;
   font-weight: bold;
   line-height: 16px;
@@ -2648,7 +2644,6 @@ a:hover, a:active {
 }
 
 .header-content > .page-title {
-  font-family: "Open Sans", sans-serif;
   font-size: 3em;
   font-weight: 700;
   letter-spacing: 1px;
@@ -2657,9 +2652,8 @@ a:hover, a:active {
   text-transform: uppercase;
 }
 
-.header-content p {
+.header-content p, .header-content .blog-desc {
   display: block;
-  font-family: "Merriweather",serif;
   font-size: 1em;
   font-style: italic;
   line-height: 1.2;
@@ -2785,7 +2779,6 @@ a:hover, a:active {
 
 .single-post .single-blog-meta .entry-meta, .single-post .single-blog-meta .entry-meta a {
   color: #bbbbbb;
-  font-family: "Merriweather", sans-serif;
   font-size: 13px;
   text-align: center;
 }
@@ -2816,8 +2809,7 @@ a:hover, a:active {
 }
 
 .scroll-down {
-  /*background: url("../../../img/icons/icon-arrow-down.svg") no-repeat center center / 100% auto;*/
-  background: url("../img/icons/icon-arrow-down.svg") no-repeat center center/100% auto;
+  background: url("../../img/icons/icon-arrow-down.svg") no-repeat center center/100% auto;
   bottom: 40px;
   display: block;
   height: 44px;
@@ -2992,7 +2984,6 @@ a:hover, a:active {
 .entry-meta, .entry-meta a {
   color: #4d4d4d;
   font-size: 13px;
-  font-family: "Merriweather", sans-serif;
 }
 
 .entry-meta a:hover {
@@ -3045,7 +3036,6 @@ a:hover, a:active {
 
 .entry-title {
   color: #202021;
-  font-family: "Open Sans", sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 48px;
@@ -3266,11 +3256,9 @@ body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
 .post-author .author-body > span {
   font-size: 13px;
   font-style: italic;
-  font-family: "Merriweather", sans-serif;
 }
 
 .post-author .author-heading {
-  font-family: "Open Sans", sans-serif;
   font-size: 24px;
   font-weight: bold;
   margin: 0 auto;
@@ -3287,7 +3275,6 @@ body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
 }
 
 .post-author .author-bio {
-  font-family: "Merriweather", sans-serif;
   font-size: 1em;
   margin: 5px auto;
   line-height: 1.8;
@@ -3321,7 +3308,6 @@ body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
 }
 
 .flexia-social-share .flexia-social-share-heading h5 {
-  font-family: "Merriweather", sans-serif;
   font-size: 1em;
   margin: 1em 0;
 }
@@ -3794,7 +3780,6 @@ ol.comment-list li {
 }
 
 .comments-area .comments-title, .comments-area .comment-reply-title {
-  font-family: "Open Sans", sans-serif;
   font-size: 1.5em;
   margin: 1em auto 2.5em;
   text-align: center;
