@@ -18,7 +18,7 @@ get_header(); ?>
             <div class="header-content">
                 <h2 class="page-title"><?php
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'flexia' ), '<span>' . get_search_query() . '</span>' );
+					printf( esc_html__( 'Search Results for : %s', 'flexia' ), '<span>' . get_search_query() . '</span>' );
 				?></h2>
             </div>
         </div>
