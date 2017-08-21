@@ -12,8 +12,8 @@ if ( ! function_exists( 'flexia_get_option_defaults' ) ) :
 /**
  * Set default options
  */
-function flexia_get_option_defaults()
-{	
+function flexia_get_option_defaults() {
+
 	$flexia_defaults = array(
 		'body_font_color' => '#4d4d4d',
 		'body_font_family' => 'Open Sans',
@@ -79,18 +79,34 @@ function flexia_get_option_defaults()
 endif;
 
 
-
-if ( ! function_exists( 'flexia_get_setting' ) ) :
 /**
- * A wrapper function to get customizer settings
- */
-function flexia_get_setting( $setting ) {
-	$flexia_settings = wp_parse_args( 
-		get_option( 'flexia_settings', array() ), 
-		flexia_get_option_defaults() 
-	);
-	
-	return $flexia_settings[ $setting ];
-}
-endif;
+*  Get default customizer option
+*/
+if ( ! function_exists( 'flexia_get_option' ) ) :
 
+	/**
+	 * Get default customizer option
+	 * @param string $key Option key.
+	 * @return mixed Option value.
+	 */
+	function flexia_get_option( $key ) {
+
+		$default_options = flexia_get_option_defaults();
+
+		if ( empty( $key ) ) {
+			return;
+		}
+
+		$theme_options = (array)get_theme_mod( 'theme_options' );
+		$theme_options = wp_parse_args( $theme_options, $default_options );
+
+		$value = null;
+
+		if ( isset( $theme_options[ $key ] ) ) {
+			$value = $theme_options[ $key ];
+		}
+
+		return $value;
+	}
+
+endif;
