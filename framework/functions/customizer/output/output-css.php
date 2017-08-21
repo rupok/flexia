@@ -32,7 +32,7 @@ function flexia_customizer_style() {
 
 	body {
 		font-family: "<?php echo get_theme_mod('flexia_google_font_family'); ?>", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-		font-size: "<?php echo get_theme_mod('body_font_size'); ?>"px;
+		font-size: <?php echo get_theme_mod('body_font_size'); ?>px;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
