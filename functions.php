@@ -164,6 +164,7 @@ require get_template_directory() . '/framework/functions/flexia/integrations/woo
  * Customizer additions.
  */
 require get_template_directory() . '/framework/functions/customizer/customizer.php';
+require get_template_directory() . '/framework/functions/customizer/defaults.php';
 
 
 /**
