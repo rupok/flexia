@@ -1,4 +1,8 @@
 <?php
+
+// No direct access, please
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * The sidebar containing the right sidebar
  *

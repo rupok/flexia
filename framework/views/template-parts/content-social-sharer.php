@@ -1,4 +1,8 @@
 <?php
+
+// No direct access, please
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Template part for displaying post social sharer
  *

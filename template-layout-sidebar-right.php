@@ -1,4 +1,8 @@
 <?php
+
+// No direct access, please
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  *  TEMPLATE NAME: Sidebar Right, Content Left
  *

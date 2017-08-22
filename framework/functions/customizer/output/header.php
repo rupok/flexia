@@ -1,4 +1,8 @@
 <?php
+
+// No direct access, please
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Flexia Theme Customizer outout for header
  *

@@ -1,4 +1,9 @@
 <?php
+
+// No direct access, please
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+
 /**
  * Flexia functions and definitions
  *

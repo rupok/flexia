@@ -1,5 +1,8 @@
 <?php
 
+// No direct access, please
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class Customizer_Range_Value_Control extends WP_Customize_Control {
 	public $type = 'range-value';
 
