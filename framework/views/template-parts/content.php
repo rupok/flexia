@@ -38,6 +38,6 @@
 
 
 	<footer class="entry-footer">
-		<a href="<?php the_permalink() ?>" class="btn btn-read-more">Continue Reading</a>
+		<a href="<?php the_permalink() ?>" class="btn btn-read-more"> <?php echo esc_attr( sprintf( __( 'Continue Reading', 'flexia' )))  ?></a>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

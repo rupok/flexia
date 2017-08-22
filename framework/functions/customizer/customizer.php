@@ -262,7 +262,7 @@ function flexia_customize_register( $wp_customize ) {
         'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control( new Google_Font_Dropdown_Custom_Control( $wp_customize, 'flexia_google_font_family', array(
-        'label'      => 'Body Font',
+        'label'      => __( 'Body Font', 'flexia' ),
         'section'    => 'flexia_typography_settings',
         'settings'   => 'flexia_google_font_family',
     )));

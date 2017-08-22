@@ -29,6 +29,9 @@ function flexia_sanitize_integer( $input ) {
 	return absint( $input );
 }
 
+endif;
+
+
 if ( ! function_exists( 'flexia_sanitize_choices' ) ) :
 /**
  * Sanitize choices
@@ -64,4 +67,4 @@ function flexia_sanitize_checkbox( $input ) {
 }
 endif;
 
-endif;
+

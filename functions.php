@@ -42,31 +42,23 @@ function flexia_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+	add_image_size( 'flexia-featured-image', 2000, 1200, true );
+
+	add_image_size( 'flexia-thumbnail-avatar', 100, 100, true );
 	/*
 	 * This theme styles the visual editor to resemble the theme style
 	 */
-	add_editor_style( 'framework/assets/admin/css/editor-style.css' );
+	add_editor_style( get_template_directory() . '/framework/assets/admin/css/editor-style.css' );
 
 	/**
 	 * Register primary menu
 	 */
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'flexia' ),
-	) );
-
-	/**
-	 * Register topbar menu
-	 */
-	register_nav_menus( array(
 		'topbar-menu' => esc_html__( 'Topbar Menu', 'flexia' ),
-	) );
-
-	/**
-	 * Register footer menu
-	 */
-	register_nav_menus( array(
 		'footer-menu' => esc_html__( 'Footer Menu', 'flexia' ),
 	) );
+
 
 	/**
 	 * Add search box to primary menu

@@ -60,7 +60,7 @@ get_footer();
 
 // Add cart menu  to Navbar
 				
-if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {			  
+if( class_exists('WooCommerce') )  {			  
 
 	function add_cart_menu_to_navbar ( $items, $args ) {
 		if( 'primary' === $args -> theme_location ) {
@@ -83,7 +83,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 function flexia_add_to_cart_fragment( $fragments ) {
  
     ob_start();
-    $count = WC()->cart->cart_contents_count;
+    $count = WC()->cart->get_cart_contents_count()
     ?>
 		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'flexia' ); ?>">
 			<span class="flexia-header-cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>

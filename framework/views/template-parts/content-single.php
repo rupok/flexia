@@ -38,7 +38,7 @@ if (get_theme_mod('post_social_share') == '') {
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <header class="page-header single-blog-header" <?php if ( ! empty( $thumbnail ) ) : ?> 
-    style="background-image: url('<?php echo $thumbnail; ?>');" <?php endif; ?> <?php if ( empty( $thumbnail ) ) : ?> 
+    style="background-image: url('<?php echo esc_attr($thumbnail); ?>');" <?php endif; ?> <?php if ( empty( $thumbnail ) ) : ?> 
     style="background-image: url('<?php echo esc_attr(header_image()); ?>');" <?php endif; ?>>
         <div class="header-inner">
             <div class="header-content">

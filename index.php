@@ -53,7 +53,7 @@ if (get_theme_mod('blog_desc') == '') {
 
             	<?php if( get_theme_mod('show_blog_logo') == 'blog_icon' ) :  ?>
 
-               		<span><i class="fa fa-3x <?php echo $icon_class ?>"></i></span>
+               		<span><i class="fa fa-3x <?php echo esc_attr($icon_class); ?>"></i></span>
 
                	<?php elseif( get_theme_mod('show_blog_logo') == 'blog_logo_image' ) :  ?>
 
@@ -69,7 +69,7 @@ if (get_theme_mod('blog_desc') == '') {
 
                 	if( $blog_title !== '' ) : 
 
-                		echo $blog_title;
+                		echo esc_attr($blog_title);
 
                 	else:
 
@@ -81,7 +81,7 @@ if (get_theme_mod('blog_desc') == '') {
 
                 	if( $blog_desc !== '' ) : 
 
-                		echo $blog_desc;
+                		echo esc_attr($blog_desc);
 
                 	else:
 
