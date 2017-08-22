@@ -28,6 +28,14 @@
 
 	</header><!-- .entry-header -->
 
+	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
+		<div class="post-thumbnail">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail( 'flexia-featured-image' ); ?>
+			</a>
+		</div><!-- .post-thumbnail -->
+	<?php endif; ?>
+
 	<div class="entry-content">
        <?php
             $content = get_the_content();

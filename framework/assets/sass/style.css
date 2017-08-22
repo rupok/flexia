@@ -2751,6 +2751,20 @@ a:hover, a:active {
   padding-top: 1em;
 }
 
+.post-thumbnail {
+  margin-bottom: 1em;
+}
+
+.post-thumbnail a img {
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.post-thumbnail a:hover img, .post-thumbnail a:focus img {
+  opacity: 0.8;
+}
+
 /* Single Posts */
 .single-blog-header .header-content .blog-title {
   color: #fff;

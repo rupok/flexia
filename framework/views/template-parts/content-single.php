@@ -45,7 +45,7 @@ if (get_theme_mod('post_social_share') == '') {
                 <?php the_title( '<h1 class="blog-title">', '</h1>' ); ?>
                 <div class="blog-author">
                     <div class="author-avatar">
-                            <?php echo get_avatar( get_the_author_meta( 'ID' ), 96 ); ?> 
+                            <?php echo get_avatar( get_the_author_meta( 'ID' ), 'flexia-thumbnail-avatar' ); ?> 
                         <div class="author-body">
                             <h4 class="author-heading"><?php the_author(); ?></h4>
                         </div>
