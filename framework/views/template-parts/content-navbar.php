@@ -17,11 +17,29 @@ elseif( get_theme_mod('flexia_navbar_position') == 'flexia-navbar-transparent-to
 
 	$navbar_class = 'flexia-navbar-transparent-top';
 
-else:
+elseif( get_theme_mod('flexia_navbar_position') == 'flexia-navbar-fixed-top' ) : 
 
 	$navbar_class = 'flexia-navbar-fixed-top';
 
+else:
+
+	$navbar_class = flexia_get_option('flexia_navbar_position');
+
 endif; 
+
+
+if (get_theme_mod('flexia_logobar_position') == '') {
+    $flexia_logobar_position = flexia_get_option('flexia_logobar_position');
+} else {
+    $flexia_logobar_position = get_theme_mod('flexia_logobar_position');
+} 
+
+
+if (get_theme_mod('flexia_header_logo') == '') {
+    $flexia_header_logo = flexia_get_option('flexia_header_logo');
+} else {
+    $flexia_header_logo = get_theme_mod('flexia_header_logo');
+} 
 
 
 ?>
@@ -30,14 +48,14 @@ endif;
 	<div class="flexia-navbar-container">
 		<div class="flexia-container max width flexia-navbar-inner">
 			
-			<?php if( get_theme_mod('flexia_logobar_position') == 'flexia-logobar-inline' ) : ?>
+			<?php if( $flexia_logobar_position == 'flexia-logobar-inline' ) : ?>
 
 			<div class="flexia-logobar-inline">
 				<div class="site-branding">
 
-					<?php if( get_theme_mod('flexia_header_logo') !== '' ) :  ?>
+					<?php if( $flexia_header_logo !== '' ) :  ?>
 
-				       	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="flexia-header-logo"><img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_theme_mod('flexia_header_logo'); ?>"></a>
+				       	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="flexia-header-logo"><img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo $flexia_header_logo; ?>"></a>
 
 				    <?php else : ?>
 
