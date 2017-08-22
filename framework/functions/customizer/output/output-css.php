@@ -39,6 +39,14 @@ function flexia_customizer_style() {
 		font-family: "<?php echo get_theme_mod('flexia_heading_font_family'); ?>", "Helvetica Neue",sans-serif;
 	}
 
+	a {
+		color: <?php echo get_theme_mod('site_link_color'); ?>;
+	}
+
+	a:hover, a:focus, a:active {
+		color: <?php echo get_theme_mod('site_link_hover_color'); ?>;
+	}
+
 	.flexia-container.width {
 	width: <?php echo get_theme_mod('container_width'); ?>%;
 	}

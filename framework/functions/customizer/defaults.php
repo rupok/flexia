@@ -16,6 +16,8 @@ function flexia_get_option_defaults() {
 
 	$flexia_defaults = array(
 		'body_font_color' => '#4d4d4d',
+		'site_link_color' => '#F56A6A',
+		'site_link_hover_color' => '#23527c',
 		'body_font_family' => 'Open Sans',
 		'heading_font_family' => 'Merriweather',
 		'container_width' => '90',

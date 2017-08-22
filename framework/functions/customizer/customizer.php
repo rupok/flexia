@@ -309,6 +309,38 @@ function flexia_customize_register( $wp_customize ) {
 		'section'  		=> 'flexia_typography_settings',
 	)));
 
+	$wp_customize->add_setting( 'site_link_color' , array(
+	    'default'     => $defaults['site_link_color'],
+	    'sanitize_callback' => 'flexia_sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'site_link_color', 
+		array(
+			'label'      => __( 'Site Link Color', 'flexia' ),
+			'section'    => 'flexia_typography_settings',
+			'settings'   => 'site_link_color',
+		) ) 
+	);
+
+	$wp_customize->add_setting( 'site_link_hover_color' , array(
+	    'default'     => $defaults['site_link_hover_color'],
+	    'sanitize_callback' => 'flexia_sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'site_link_hover_color', 
+		array(
+			'label'      => __( 'Site Link Color', 'flexia' ),
+			'section'    => 'flexia_typography_settings',
+			'settings'   => 'site_link_hover_color',
+		) ) 
+	);
+
 
   // Blog Settings
 
