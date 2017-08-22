@@ -14,7 +14,32 @@
 
 get_header(); 
 
-	$icon_class = get_theme_mod('blog_icon_class');
+if (get_theme_mod('blog_icon_class') == '') {
+    $icon_class = flexia_get_option('blog_icon_class');
+} else {
+    $icon_class = get_theme_mod('blog_icon_class');
+} 
+
+
+if (get_theme_mod('scroll_bottom_arrow') == '') {
+    $scroll_bottom_arrow = flexia_get_option('scroll_bottom_arrow');
+} else {
+    $scroll_bottom_arrow = get_theme_mod('scroll_bottom_arrow');
+} 
+
+
+if (get_theme_mod('blog_title') == '') {
+    $blog_title = flexia_get_option('blog_title');
+} else {
+    $blog_title = get_theme_mod('blog_title');
+} 
+
+if (get_theme_mod('blog_desc') == '') {
+    $blog_desc = flexia_get_option('blog_desc');
+} else {
+    $blog_desc = get_theme_mod('blog_desc');
+} 
+
 
 ?>
 
@@ -42,9 +67,9 @@ get_header();
 
                 <h2 class="page-title"><?php 
 
-                	if( get_theme_mod('blog_title') !== '' ) : 
+                	if( $blog_title !== '' ) : 
 
-                		echo get_theme_mod('blog_title');
+                		echo $blog_title;
 
                 	else:
 
@@ -54,9 +79,9 @@ get_header();
 
                 <h3 class="blog-desc"><?php 
 
-                	if( get_theme_mod('blog_desc') !== '' ) : 
+                	if( $blog_desc !== '' ) : 
 
-                		echo get_theme_mod('blog_desc');
+                		echo $blog_desc;
 
                 	else:
 
@@ -66,7 +91,7 @@ get_header();
                 	endif;?></h3>
             </div>
 
-            <?php if( get_theme_mod('scroll_bottom_arrow') == true ) : 
+            <?php if( $scroll_bottom_arrow == false ) : 
 
            		echo '<a href="#content" class="scroll-down"></a>';
 
