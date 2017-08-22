@@ -69,10 +69,11 @@ function flexia_get_option_defaults() {
 		'flexia_enable_topbar' => false,
 		'flexia_enable_topbar_menu' => false,
 		'header_widget_area' => false,
-		'footer_widget_area' => true,
-		'footer_bottom' => true,
-		'flexia_enable_footer_menu' => true,
-		'flexia_scroll_to_top' => true,
+		'footer_widget_area' => false,
+		'footer_bottom' => false,
+		'flexia_enable_footer_menu' => false,
+		'flexia_scroll_to_top' => false,
+		'flexia_footer_content' => 'Copyright 2017 | Flexia by Codetic',
 
 	);
 	

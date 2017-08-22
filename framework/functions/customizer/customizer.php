@@ -1132,7 +1132,7 @@ function flexia_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'footer_bottom', array(
-			'label'	      => esc_html__( 'Enable Bottom Footer?', 'flexia' ),
+			'label'	      => esc_html__( 'Disable Bottom Footer?', 'flexia' ),
 			'section'     => 'flexia_footer_settings',
 			'settings'    => 'footer_bottom',
 			'type'        => 'light',// light, ios, flat
