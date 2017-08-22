@@ -55,7 +55,7 @@ function flexia_get_option_defaults() {
 		'post_author' => false,
 		'post_social_share' => false,
 		'scroll_bottom_arrow' => false,
-		'show_blog_logo' => 'blog_icon',
+		'show_blog_logo' => 'blog_logo_none',
 		'blog_icon_class' => 'fa-pencil',
 		'blog_logo' => '',
 		'blog_title' => '',
