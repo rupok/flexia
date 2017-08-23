@@ -40,16 +40,23 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		</div><!-- .post-thumbnail -->
 	<?php endif; ?>
 
+
+
 	<div class="entry-content">
-       <?php
-            $content = get_the_content();
-            $trimmed_content = strip_shortcodes(strip_tags(wp_trim_words( $content, 60)));
-            echo $trimmed_content;
-        ?>
+		<?php
+		/* translators: %s: Name of current post */
+		the_content( sprintf(
+			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'flexia' ),
+			get_the_title()
+		) );
+
+		wp_link_pages( array(
+			'before'      => '<div class="page-links">' . __( 'Pages:', 'flexia' ),
+			'after'       => '</div>',
+			'link_before' => '<span class="page-number">',
+			'link_after'  => '</span>',
+		) );
+		?>
 	</div><!-- .entry-content -->
 
-
-	<footer class="entry-footer">
-		<a href="<?php the_permalink() ?>" class="btn btn-read-more"> <?php echo esc_attr( sprintf( __( 'Continue Reading', 'flexia' )))  ?></a>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
