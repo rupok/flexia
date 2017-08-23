@@ -3195,17 +3195,6 @@ body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
   display: none;
 }
 
-.format-quote .entry-content {
-  border-left: 5px solid #a1a1a1;
-  font-style: italic;
-  padding-left: 1em;
-}
-
-.format-chat .entry-content {
-  border-left: 5px solid #a1a1a1;
-  padding-left: 1em;
-}
-
 @media all and (max-width: 600px) {
   .single-post .entry-content-wrapper {
     margin: 1em auto 0;
