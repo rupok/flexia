@@ -1,8 +1,4 @@
 <?php
-
-// No direct access, please
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 /**
  * The main template file
  *
@@ -43,7 +39,6 @@ if (get_theme_mod('blog_desc') == '') {
 } else {
     $blog_desc = get_theme_mod('blog_desc');
 } 
-
 
 ?>
 

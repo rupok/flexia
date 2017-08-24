@@ -1,8 +1,4 @@
 <?php
-
-// No direct access, please
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 /**
  * The header for our theme
  *
@@ -13,8 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @package Flexia
  */
 
-?>
-<!doctype html>
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">

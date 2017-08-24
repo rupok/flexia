@@ -1,5 +1,5 @@
 jQuery( document ).ready( function($) {
-
+	'use strict';
 	// Back to top
 	var _amountScrolled = $( '.flexia-back-to-top' ).data( 'start-scroll' ),
 		_scrollSpeed = $( '.flexia-back-to-top' ).data( 'scroll-speed' ),
