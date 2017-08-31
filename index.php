@@ -52,7 +52,7 @@ $blog_desc = get_theme_mod('blog_desc', '');
 
                 	if( $blog_title !== '' ) : 
 
-                		echo esc_attr($blog_title);
+                		echo esc_html($blog_title);
 
                 	else:
 
@@ -64,11 +64,11 @@ $blog_desc = get_theme_mod('blog_desc', '');
 
                 	if( $blog_desc !== '' ) : 
 
-                		echo esc_attr($blog_desc);
+                		echo esc_html($blog_desc);
 
                 	else:
 
-                		printf( esc_html__( '%s', 'flexia' ), get_bloginfo ( 'description' ) );
+                        echo wp_kses_post( get_bloginfo ( 'description' ) );
                 			
                 	
                 	endif;?></h3>
