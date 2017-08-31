@@ -33,18 +33,9 @@ else:
 endif; 
 
 
-if (get_theme_mod('flexia_logobar_position') == '') {
-    $flexia_logobar_position = flexia_get_option('flexia_logobar_position');
-} else {
-    $flexia_logobar_position = get_theme_mod('flexia_logobar_position');
-} 
+$flexia_logobar_position = get_theme_mod('flexia_logobar_position', 'flexia-logobar-inline');
 
-
-if (get_theme_mod('flexia_header_logo') == '') {
-    $flexia_header_logo = flexia_get_option('flexia_header_logo');
-} else {
-    $flexia_header_logo = get_theme_mod('flexia_header_logo');
-} 
+$flexia_header_logo = get_theme_mod('flexia_header_logo', '');
 
 
 ?>

@@ -18,24 +18,12 @@ $thumbnail = '';
         }
     }
 
+$post_navigation = get_theme_mod('post_navigation', false);
 
-if (get_theme_mod('post_navigation') == '') {
-    $post_navigation = flexia_get_option('post_navigation');
-} else {
-    $post_navigation = get_theme_mod('post_navigation');
-} 
+$post_author = get_theme_mod('post_author', false);
 
-if (get_theme_mod('post_author') == '') {
-    $post_author = flexia_get_option('post_author');
-} else {
-    $post_author = get_theme_mod('post_author');
-} 
+$post_social_share = get_theme_mod('post_social_share', false);
 
-if (get_theme_mod('post_social_share') == '') {
-    $post_social_share = flexia_get_option('post_social_share');
-} else {
-    $post_social_share = get_theme_mod('post_social_share');
-} 
 
 ?>
 

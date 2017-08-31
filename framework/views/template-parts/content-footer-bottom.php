@@ -12,11 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 
 
-if (get_theme_mod('flexia_enable_footer_menu') == '') {
-    $flexia_enable_footer_menu = flexia_get_option('flexia_enable_footer_menu');
-} else {
-    $flexia_enable_footer_menu = get_theme_mod('flexia_enable_footer_menu');
-} 
+$flexia_enable_footer_menu = get_theme_mod('flexia_enable_footer_menu', false);
 
 if (get_theme_mod('flexia_footer_content') == '') {
     $flexia_footer_content = flexia_get_option('flexia_footer_content');
