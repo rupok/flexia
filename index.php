@@ -14,31 +14,15 @@
 
 get_header(); 
 
-if (get_theme_mod('blog_icon_class') == '') {
-    $icon_class = flexia_get_option('blog_icon_class');
-} else {
-    $icon_class = get_theme_mod('blog_icon_class');
-} 
 
+$icon_class = get_theme_mod('blog_icon_class', 'fa-pencil');
 
-if (get_theme_mod('scroll_bottom_arrow') == '') {
-    $scroll_bottom_arrow = flexia_get_option('scroll_bottom_arrow');
-} else {
-    $scroll_bottom_arrow = get_theme_mod('scroll_bottom_arrow');
-} 
+$scroll_bottom_arrow = get_theme_mod('scroll_bottom_arrow', false);
 
+$blog_title = get_theme_mod('blog_title', '');
 
-if (get_theme_mod('blog_title') == '') {
-    $blog_title = flexia_get_option('blog_title');
-} else {
-    $blog_title = get_theme_mod('blog_title');
-} 
+$blog_desc = get_theme_mod('blog_desc', '');
 
-if (get_theme_mod('blog_desc') == '') {
-    $blog_desc = flexia_get_option('blog_desc');
-} else {
-    $blog_desc = get_theme_mod('blog_desc');
-} 
 
 ?>
 
