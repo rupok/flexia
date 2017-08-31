@@ -23,13 +23,14 @@ $blog_title = get_theme_mod('blog_title', '');
 
 $blog_desc = get_theme_mod('blog_desc', '');
 
+
 ?>
 
 <div id="page" class="site">
 
 	<?php get_template_part( 'framework/views/template-parts/content', 'masthead' ); ?>
 	
-	<header class="page-header blog-header" style="background-image: url('<?php echo esc_attr(header_image()); ?>');">
+	<header class="page-header blog-header" <?php if ( has_header_image() ) { ?> style="background-image: url('<?php echo( get_header_image() ); ?>'); <?php } ?>">
         <div class="header-inner">
             <div class="header-content">
 
