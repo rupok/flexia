@@ -23,7 +23,6 @@ $blog_title = get_theme_mod('blog_title', '');
 
 $blog_desc = get_theme_mod('blog_desc', '');
 
-
 ?>
 
 <div id="page" class="site">
@@ -42,7 +41,7 @@ $blog_desc = get_theme_mod('blog_desc', '');
 
                		<?php if( get_theme_mod('blog_logo') !== '' ) :  ?>
 
-               			<img class="flexia-blog-logo" src="<?php echo get_theme_mod('blog_logo'); ?>">
+               			<img class="flexia-blog-logo" src="<?php echo esc_url(get_theme_mod('blog_logo')); ?>">
 
                		<?php endif; ?>
 
