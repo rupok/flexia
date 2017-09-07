@@ -51,7 +51,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		) );
 
 		wp_link_pages( array(
-			'before'      => '<div class="page-links">' . __( 'Pages:', 'flexia' ),
+			'before'      => '<div class="page-links">' . esc_html__( 'Pages:', 'flexia' ),
 			'after'       => '</div>',
 			'link_before' => '<span class="page-number">',
 			'link_after'  => '</span>',
