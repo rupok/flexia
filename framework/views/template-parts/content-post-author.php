@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         <div class="author-body">
 
             <?php echo '
-            <span>' . __('Authori', 'flexia') . '</span>
+            <span>' . __('Author', 'flexia') . '</span>
             '; ?>
 
             <h4 class="author-heading">

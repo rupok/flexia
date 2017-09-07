@@ -15,7 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 <div class="flexia-social-share">
 	<div class="flexia-social-share-heading">
-		<h5>Share This Story</h5>
+        <?php echo '
+        <h5>' . __('Share This Story', 'flexia') . '</h5>
+        '; ?>
 	</div>
 	<ul class="flexia-social-share-links">
 		<li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank"><i class="fa fa-2x fa-fw fa-facebook"></i></a></li>
