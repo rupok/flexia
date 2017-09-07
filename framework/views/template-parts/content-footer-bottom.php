@@ -38,7 +38,10 @@ if (get_theme_mod('flexia_footer_content') == '') {
 									'container'      => false,
 								) );
 				else :
-				  echo '<ul class="flexia-footer-menu"><li><a href="' . home_url( '/' ) . 'wp-admin/nav-menus.php">Assign Footer Menu</a></li></ul>';
+
+					printf( '<ul class="flexia-footer-menu"><li><a href="%s">%s</a></li></ul>', 
+esc_url( admin_url('nav-menus.php') ),  esc_html__('Assign Footer Menu', 'flexia')) ;
+
 				endif;
 			?>
 		</nav><!-- #site-navigation -->
