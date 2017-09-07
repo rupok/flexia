@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 $thumbnail = '';
     if (function_exists('has_post_thumbnail')) {
         if ( has_post_thumbnail() ) {
-             $thumbnail = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+             $thumbnail = wp_get_attachment_url( get_post_thumbnail_id() );
         }
     }
 
@@ -31,7 +31,7 @@ $post_social_share = get_theme_mod('post_social_share', false);
 
     <header class="page-header single-blog-header" <?php if ( ! empty( $thumbnail ) ) : ?> 
     style="background-image: url('<?php echo esc_attr($thumbnail); ?>');" <?php endif; ?> <?php if ( empty( $thumbnail ) ) : ?> 
-    style="background-image: url('<?php echo esc_attr(header_image()); ?>');" <?php endif; ?>>
+    style="background-image: url('<?php echo esc_attr(get_header_image()); ?>');" <?php endif; ?>>
         <div class="header-inner">
             <div class="header-content">
                 <?php the_title( '<h1 class="blog-title">', '</h1>' ); ?>
