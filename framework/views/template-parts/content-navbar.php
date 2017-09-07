@@ -14,24 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @package Flexia
  */
 
-if( get_theme_mod('flexia_navbar_position') == 'flexia-navbar-static-top' ) : 
 
-	$navbar_class = 'flexia-navbar-static-top';
-
-elseif( get_theme_mod('flexia_navbar_position') == 'flexia-navbar-transparent-top' ) : 
-
-	$navbar_class = 'flexia-navbar-transparent-top';
-
-elseif( get_theme_mod('flexia_navbar_position') == 'flexia-navbar-fixed-top' ) : 
-
-	$navbar_class = 'flexia-navbar-fixed-top';
-
-else:
-
-	$navbar_class = flexia_get_option('flexia_navbar_position');
-
-endif; 
-
+$navbar_class = get_theme_mod('flexia_navbar_position', 'flexia-navbar-static-top');
 
 $flexia_logobar_position = get_theme_mod('flexia_logobar_position', 'flexia-logobar-inline');
 
