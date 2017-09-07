@@ -20,11 +20,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         </div>
 
         <div class="author-body">
-            <span>Author</span>
+
+            <?php echo '
+            <span>' . __('Authori', 'flexia') . '</span>
+            '; ?>
+
             <h4 class="author-heading">
                  <?php the_author_posts_link(); ?> 
             </h4>
-            <h5 class="author-bio"><?php the_author_meta('description'); ?></h5>
+            <h5 class="author-bio"><?php esc_html(the_author_meta('description')); ?></h5>
         </div>
     </div>
 </div> <!-- Author end -->
