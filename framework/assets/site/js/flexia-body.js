@@ -113,7 +113,7 @@ jQuery( document ).ready( function($) {
 
 	// Transparent menu
 	
-	$('body:not(.single-post) .site-header + *, .single-blog-header').css({ 'padding-top': transparentHeaderHeight });
+	// $('body:not(.single-post) .site-header + *, .single-blog-header').css({ 'padding-top': transparentHeaderHeight });
 
 
    // Header parallax
