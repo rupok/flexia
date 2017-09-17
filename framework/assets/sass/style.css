@@ -3129,7 +3129,7 @@ a:hover, a:active {
   margin: 0 1em 1.5em;
 }
 
-body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
+body:not(.single-post) .flexia-wrapper > .content-area article.post {
   padding: 2.5em;
 }
 
