@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
                     </div>
 
                     <div class="flexia-edd-product-details">
-                        <?php the_title( '<h1 class="blog-title">', '</h1>' ); ?>
+                        <?php the_title( '<h1 class="edd-product-title">', '</h1>' ); ?>
 
                         <?php
                             the_content( sprintf(
@@ -42,10 +42,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
                                 get_the_title()
                             ) );
 
-                            wp_link_pages( array(
-                                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'flexia' ),
-                                'after'  => '</div>',
-                            ) );
                         ?>
                     </div>
                 </div>

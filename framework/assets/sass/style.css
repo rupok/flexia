@@ -1026,16 +1026,16 @@ figure {
   /* Extra wide images within figure tags don't overflow the content area. */
 }
 
-.btn {
+.button, .btn {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
   position: relative;
   overflow: hidden;
   display: inline-block;
   vertical-align: top;
-  color: #34a1c4;
   text-decoration: none;
-  font-weight: 700;
-  border: 2px solid #34a1c4;
-  padding: 1em 5em;
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  padding: .5em 1em;
   -webkit-transition: all .2s;
   -moz-transition: all .2s;
   -ms-transition: all .2s;
@@ -1043,10 +1043,9 @@ figure {
   transition: all 0.2s;
 }
 
-.btn:hover {
-  background: #34a1c4;
+.button:hover, .btn:hover, .button:active, .btn:active, .button:focus, .btn:focus {
+  background-color: #262625;
   color: #fff;
-  padding: 1em 5em;
 }
 
 table {
@@ -3760,6 +3759,35 @@ body.woocommerce:not(.single-product) ul.products li.product-has-gallery a.wooco
 
 body.woocommerce:not(.single-product) ul.products li.product-has-gallery a.woocommerce-loop-product__link:hover .wp-post-image--secondary {
   opacity: 1;
+}
+
+/*--------------------------------------------------------------
+
+/*--------------------------------------------------------------
+## Easy Digital Downloads
+--------------------------------------------------------------*/
+.flexia-edd-product-thumb > img {
+  display: block;
+}
+
+.edd-input.edd-item-quantity {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.button.edd-add-to-cart {
+  font-size: 1em;
+}
+
+.edd_purchase_submit_wrapper .button.edd-add-to-cart {
+  font-size: 14px;
+  padding: 5px 15px;
+  margin-top: 5px;
+}
+
+.edd-product-title {
+  font-size: 1.5em;
+  line-height: 1.2;
 }
 
 /*--------------------------------------------------------------
