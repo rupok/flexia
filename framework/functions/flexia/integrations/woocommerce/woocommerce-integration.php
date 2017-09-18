@@ -6,7 +6,7 @@ add_action( 'after_setup_theme','flexia_setup_woocommerce' );
 /** 
  * Set up WooCommerce
  *
- * @since 1.3.47
+ * @since 1.0
  */
 function flexia_setup_woocommerce() {
 	
@@ -64,12 +64,12 @@ if( class_exists('WooCommerce') )  {
 
 	function add_cart_menu_to_navbar ( $items, $args ) {
 		if( 'primary' === $args -> theme_location ) {
-			$items .= '<li class="menu-item flexia-header-cart">
-	    <a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>">
-	    <span class="flexia-header-cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-		<span class="amount</span> <span class="count"></span>
-		</a>
-	</li>';
+			$items .= '<li class="menu-item flexia-header-cart">';
+	    	$items .= '<a class="cart-contents wc-cart-contents" href="' . esc_url( wc_get_cart_url() ) . '">';
+	    	$items .= '<span class="flexia-header-cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>';
+			$items .= '<span class="amount"></span> <span class="count"></span>';
+			$items .= '</a>';
+			$items .= '</li>';
 		}
 	return $items;
 	}
@@ -85,7 +85,7 @@ function flexia_add_to_cart_fragment( $fragments ) {
     ob_start();
     $count = WC()->cart->get_cart_contents_count()
     ?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'flexia' ); ?>">
+		<a class="cart-contents wc-cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'flexia' ); ?>">
 			<span class="flexia-header-cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
 			<?php if ( $count > 0 ) { ?>
 			<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'flexia' ), WC()->cart->get_cart_contents_count() ) );?></span>
@@ -94,7 +94,7 @@ function flexia_add_to_cart_fragment( $fragments ) {
 
         <?php
  
-    $fragments['a.cart-contents'] = ob_get_clean();
+    $fragments['a.wc-cart-contents'] = ob_get_clean();
      
     return $fragments;
 }
