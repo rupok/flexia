@@ -3766,6 +3766,15 @@ body.woocommerce:not(.single-product) ul.products li.product-has-gallery a.wooco
 /*--------------------------------------------------------------
 ## Easy Digital Downloads
 --------------------------------------------------------------*/
+.single-download .flexia-wrapper.flexia-container {
+  padding-top: 0;
+}
+
+.single-download .flexia-wrapper.flexia-container > .content-area {
+  margin: 0;
+  padding: 0;
+}
+
 .flexia-edd-product-thumb > img {
   display: block;
 }
@@ -3802,7 +3811,7 @@ body.woocommerce:not(.single-product) ul.products li.product-has-gallery a.wooco
   font-weight: 700;
 }
 
-#edd-purchase-button, .edd-submit, input.edd-submit[type="submit"] {
+.edd_purchase_submit_wrapper a.edd-add-to-cart.edd-submit, .edd_go_to_checkout.button.edd-submit, #edd-purchase-button, .edd-submit.button, input.edd-submit[type="submit"] {
   background-color: rgba(0, 0, 0, 0.75);
   color: #fff;
   padding: 10px 20px;
@@ -3812,7 +3821,7 @@ body.woocommerce:not(.single-product) ul.products li.product-has-gallery a.wooco
   margin: 10px 0;
 }
 
-.button.edd-submit:hover {
+.edd_purchase_submit_wrapper a.edd-add-to-cart.edd-submit:hover, .edd_go_to_checkout.button.edd-submit:hover, #edd-purchase-button:hover, .edd-submit:hover, input.edd-submit[type="submit"]:hover, .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-submit:active, .edd_go_to_checkout.button.edd-submit:active, #edd-purchase-button:active, .edd-submit:active, input.edd-submit[type="submit"]:active, .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-submit:focus, .edd_go_to_checkout.button.edd-submit:focus, #edd-purchase-button:focus, .edd-submit:focus, input.edd-submit[type="submit"]:focus {
   background-color: #262625;
   color: #fff;
 }
