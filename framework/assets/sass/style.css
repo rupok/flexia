@@ -3790,6 +3790,33 @@ body.woocommerce:not(.single-product) ul.products li.product-has-gallery a.wooco
   line-height: 1.2;
 }
 
+#edd_checkout_form_wrap fieldset#edd_checkout_user_info {
+  padding: .5em 1.387em 1.387em;
+  margin: 70px 0 21px;
+}
+
+#edd_checkout_form_wrap .edd_form legend {
+  margin: -60px 0 0;
+  font-size: 1.2em;
+  display: block;
+  font-weight: 700;
+}
+
+#edd-purchase-button, .edd-submit, input.edd-submit[type="submit"] {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 0;
+  margin: 10px 0;
+}
+
+.button.edd-submit:hover {
+  background-color: #262625;
+  color: #fff;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
