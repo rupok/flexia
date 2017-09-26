@@ -225,8 +225,12 @@
   margin: 0 1em 1.5em;
 }
 
-body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
+body:not(.single-post) .flexia-wrapper > .content-area {
   padding: 2.5em;
+}
+
+body .flexia-wrapper.flexia-blank-container > .content-area {
+  padding: 0;
 }
 
 .single-post .flexia-wrapper > .content-area {

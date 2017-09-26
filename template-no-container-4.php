@@ -15,7 +15,7 @@ get_header(); ?>
 
 <div id="page" class="site">
 	<div id="content" class="site-content">
-		<div class="flexia-wrapper">
+		<div class="flexia-wrapper flexia-blank-container">
 			<div id="primary" class="content-area">
 				<main id="main" class="site-main">
 

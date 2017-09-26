@@ -3132,8 +3132,12 @@ a:hover, a:active {
   margin: 0 1em 1.5em;
 }
 
-body:not(.single-post) .flexia-wrapper > .content-area article.hentry {
+body:not(.single-post) .flexia-wrapper > .content-area {
   padding: 2.5em;
+}
+
+body .flexia-wrapper.flexia-blank-container > .content-area {
+  padding: 0;
 }
 
 .single-post .flexia-wrapper > .content-area {
@@ -3766,10 +3770,6 @@ body.woocommerce:not(.single-product) ul.products li.product-has-gallery a.wooco
 /*--------------------------------------------------------------
 ## Easy Digital Downloads
 --------------------------------------------------------------*/
-.single-download .flexia-wrapper.flexia-container {
-  padding-top: 0;
-}
-
 .single-download .flexia-wrapper.flexia-container > .content-area {
   margin: 0;
   padding: 0;
