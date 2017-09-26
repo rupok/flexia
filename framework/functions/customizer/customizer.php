@@ -883,6 +883,20 @@ function flexia_customize_register( $wp_customize ) {
 	)));
 
 
+	// Enable Navmenu Search
+
+	$wp_customize->add_setting( 'flexia_nav_menu_search', array(
+			'default'     => $defaults['flexia_nav_menu_search'],
+			'capability'  => 'edit_theme_options',
+			'sanitize_callback' => 'flexia_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'flexia_nav_menu_search', array(
+			'label'	      => esc_html__( 'Enable Search Menu?', 'flexia' ),
+			'section'     => 'flexia_header_settings',
+			'settings'    => 'flexia_nav_menu_search',
+			'type'        => 'light',// light, ios, flat
+	) ) );
 
 	$wp_customize->add_setting( 'flexia_nav_menu_link_color' , array(
 	    'default'     => $defaults['flexia_nav_menu_link_color'],

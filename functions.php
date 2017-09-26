@@ -68,6 +68,11 @@ function flexia_setup() {
 	/**
 	 * Add search box to primary menu
 	 */
+
+	$flexia_nav_menu_search = get_theme_mod('flexia_nav_menu_search', true);
+
+	if( $flexia_nav_menu_search == true ) : 
+
 	function flexia_nav_search($items, $args) {
 	     if( 'primary' === $args -> theme_location ) { 
 	     $items .= '<li class="menu-item navbar-search-menu"> <a href="javascript:void(0)">';
@@ -81,6 +86,7 @@ function flexia_setup() {
 	}
 	add_filter('wp_nav_menu_items', 'flexia_nav_search', 98, 2);
 
+	endif;
 
 	/**
 	 * Enable support for Post Formats
