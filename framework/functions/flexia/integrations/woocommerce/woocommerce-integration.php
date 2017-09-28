@@ -42,9 +42,7 @@ get_header(); ?>
 		<div class="flexia-wrapper flexia-container max width">
 			<div id="primary" class="content-area">
 				<main id="main" class="site-main flexia-woocommerce-wrapper flexia-container">
-<?php
-}?>
-
+<?php } ?>
 <?php function flexia_woo_wrapper_end() { ?>
 				</main><!-- #main -->
 			</div><!-- #primary -->
