@@ -125,10 +125,6 @@
 	background-color: #fff; 
 }
 
-.main-navigation > ul > li > ul.sub-menu > li:first-child {
-	min-height: 45px;
-}
-
 .main-navigation > ul > li.menu-item-has-children {
     padding-right: 20px
 }
@@ -168,7 +164,7 @@
 }
 
 .main-navigation li:hover > ul > li {
-    height: 45px;
+    height: auto;
 }
 
 .main-navigation ul ul li a {
