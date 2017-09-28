@@ -3132,6 +3132,17 @@ body:not(.single-post) .flexia-wrapper > .content-area {
   padding: 2.5em;
 }
 
+body.blog .flexia-wrapper > .content-area,
+body.archive .flexia-wrapper > .content-area {
+  background-color: transparent;
+  padding: 0;
+}
+
+body.blog .flexia-wrapper > .content-area article.post,
+body.archive .flexia-wrapper > .content-area article.post {
+  padding: 2.5em;
+}
+
 body .flexia-wrapper.flexia-blank-container > .content-area {
   padding: 0;
 }

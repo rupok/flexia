@@ -73,7 +73,9 @@ function flexia_customizer_style() {
 		background-color: <?php echo get_theme_mod('blog_bg_color'); ?>;
 	}
 
-	body:not(.single-post) .flexia-wrapper > .content-area, .entry-content.single-post-entry {
+	.flexia-wrapper > .content-area, .entry-content.single-post-entry,
+	body.blog .flexia-wrapper > .content-area article.post, 
+	body.archive .flexia-wrapper > .content-area article.post {
 		background-color: <?php echo get_theme_mod('post_content_bg_color'); ?>;
 	}
 
