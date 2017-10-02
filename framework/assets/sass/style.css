@@ -3019,6 +3019,25 @@ a:hover, a:active {
   margin: 0 0 1.5em;
 }
 
+.page-links a {
+  display: inline-block;
+}
+
+.page-links .page-number {
+  padding: 0;
+  margin: 0 0 .3em .3em;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: .8em;
+  width: 2.5em;
+  height: 2.5em;
+  line-height: -webkit-calc(2.5em - 4px);
+  line-height: calc(2.5em - 4px);
+  display: inline-block;
+  text-align: center;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
 .single-post .entry-content-wrapper {
   margin: 3em auto 0;
 }

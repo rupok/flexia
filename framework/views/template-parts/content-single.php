@@ -76,8 +76,10 @@ $post_social_share = get_theme_mod('post_social_share', false);
                     ) );
 
                     wp_link_pages( array(
-                        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'flexia' ),
-                        'after'  => '</div>',
+                        'before'      => '<div class="page-links">' . esc_html__( 'Pages:', 'flexia' ),
+                        'after'       => '</div>',
+                        'link_before' => '<span class="page-number">',
+                        'link_after'  => '</span>',
                     ) );
                 ?>
             </div>
