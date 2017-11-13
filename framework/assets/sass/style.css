@@ -3258,7 +3258,7 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
 }
 
 @media all and (max-width: 600px) {
-  .entry-title {
+  .entry-title, .header-content > .page-title {
     font-size: 1.75em;
   }
 
