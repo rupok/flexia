@@ -9,14 +9,14 @@
 	margin: 0;
 	padding: 0;
 	display: flex;
+	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
 }
 
 .flexia-footer-menu li {
 	list-style: none;
-	flex: 0 0 auto;
-	margin: 10px;
+	margin: .25em .5em;
 }
 
 .flexia-footer-menu li a {
