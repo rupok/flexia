@@ -89,13 +89,15 @@
 	margin: 0;
 	flex: 0 0 auto;
 	text-align: center;
+	display: flex;
+	justify-content: space-around;
 }
 
 .flexia-social-share-links li {
 	list-style: none;
-	display: inline-block;
-	padding: 0 1em;
+	padding: 0 .75em;
 	text-align: center;
+	flex: 1 1 auto;
 }
 
 .flexia-social-share-links li a {

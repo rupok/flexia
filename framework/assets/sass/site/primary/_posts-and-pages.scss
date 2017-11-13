@@ -136,6 +136,8 @@
   transition: all .2s linear;
 }
 .single-post .entry-content-wrapper {
+  width: 90%;
+  max-width: 1400px;
 	margin: 3em auto 0;
 }
 
@@ -170,16 +172,15 @@
 
 .entry-title{
   color: #202021;
-  font-size: 42px;
+  font-size: 2.5em;
   font-weight: 700;
-  line-height: 48px;
+  line-height: 1.2;
   letter-spacing: 1;
   margin: 10px auto;
   padding-bottom: 50px;
   position: relative;
   text-align: left;
   text-transform: uppercase;
-  word-break: break-all;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
 }
@@ -332,6 +333,21 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
 
 
 @media all and (max-width: 600px) {
+
+.entry-title{
+  font-size: 1.75em;
+}
+body.blog .flexia-wrapper > .content-area article.post, body.archive .flexia-wrapper > .content-area article.post {
+  padding: 1.5em;
+}
+.flexia-wrapper.flexia-container {
+  padding-top: 2em;
+}
+
+.single-blog-header .header-content .blog-title {
+  font-size: 1.75em;
+}
+
 .single-post .entry-content-wrapper {
   margin: 1em auto 0;
 }
@@ -356,7 +372,7 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
   padding: .5em;
 }
 .flexia-social-share {
-  justify-content: center;
+  justify-content: center!important;
   margin: 2em 0;
 }
 
