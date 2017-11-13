@@ -4041,6 +4041,7 @@ ol.comment-list li {
   font-weight: 300;
   outline: 0 none;
   padding: 8px 10px;
+  width: 100%;
 }
 
 .comments-area .comment-respond .form-submit input {
