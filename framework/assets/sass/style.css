@@ -1609,6 +1609,25 @@ a:hover, a:active {
   border-top: 1px solid #333;
 }
 
+.search-menu-wrapper {
+  transition: all .5s;
+  display: none;
+  opacity: 0;
+}
+
+.search-menu-wrapper.search-menu-expanded {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: block;
+  opacity: 1;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 @media screen and (min-width: 768px) {
   .main-navigation ul.sub-menu {
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);

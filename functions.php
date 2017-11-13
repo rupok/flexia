@@ -75,12 +75,8 @@ function flexia_setup() {
 
 	function flexia_nav_search($items, $args) {
 	     if( 'primary' === $args -> theme_location ) { 
-	     $items .= '<li class="menu-item navbar-search-menu"> <a href="javascript:void(0)">';
-	     $items .= '<i class="fa fa-search" aria-hidden="true"></i></a>';
-	     $items .= '<ul class="sub-menu search-menu-form-container"><li class="menu-item search-menu-form">' . get_search_form(false) . '</li>';
-	     $items .= '</li></ul>';
-
-	        }
+	     $items .= '<li class="menu-item navbar-search-menu"> <a href="#">';
+	     $items .= '<i class="fa fa-search" aria-hidden="true"></i></a></li>';	        }
 		return $items;
 
 	}

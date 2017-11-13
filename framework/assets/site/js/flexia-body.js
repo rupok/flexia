@@ -115,6 +115,11 @@ jQuery( document ).ready( function($) {
 	
 	// $('body:not(.single-post) .site-header + *, .single-blog-header').css({ 'padding-top': transparentHeaderHeight });
 
+	// Toggle Search menu
+
+	$(".navbar-search-menu > a").click(function(){
+	    $(".search-menu-wrapper").toggleClass("search-menu-expanded");
+	});
 
    // Header parallax
 

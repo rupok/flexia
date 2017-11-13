@@ -15,6 +15,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 ?>
 
+<div class="search-menu-wrapper">
+	<div class="search-menu-form">
+		<form action="/" method="get">
+		    <label for="search">Type and press "Enter" to search</label>
+		    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
+		</form>
+	</div>
+</div>
+
 <?php wp_footer(); ?>
 
 <?php if( get_theme_mod('flexia_scroll_to_top') == true ) : ?>
