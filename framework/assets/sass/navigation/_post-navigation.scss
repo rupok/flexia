@@ -77,3 +77,33 @@
   transform: translateX(40px);
 }
 
+@media all and (max-width: 600px) {
+.nav-previous, .nav-next {
+  position: relative;
+  transform: none;
+  margin: 1em auto;
+  border: none;
+  padding: 0;
+  height: auto;
+  line-height: 2;
+}
+
+.nav-next a, .nav-previous a {
+  padding-left: 25px;
+  padding-right: 0;
+}
+
+.nav-previous:hover, .nav-next:hover {
+  transform: none;
+}
+
+.nav-next::before, .nav-previous::after {
+  padding-left: 10px;
+  right: auto;
+  left: 0;
+  font-size: inherit;
+  height: auto;
+  width: auto;
+}
+
+}
