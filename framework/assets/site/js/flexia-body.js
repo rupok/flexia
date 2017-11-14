@@ -143,6 +143,7 @@ jQuery( document ).ready( function($) {
 
 });
 
+// Overlay search
 
 (function(window) {
 
@@ -152,26 +153,30 @@ jQuery( document ).ready( function($) {
 		closeCtrl = document.getElementById('btn-search-close'),
 		searchContainer = document.querySelector('.flexia-search-overlay'),
 		inputWrapper = document.querySelector(".input-wrapper"),
-		inputSearch = searchContainer.querySelector('.search__input');
+		inputSearch = document.querySelector('.search__input');
 
 	function init() {
 		initEvents();	
 	}
 
 	function initEvents() {
-		openCtrl.addEventListener('click', openSearch);
-		closeCtrl.addEventListener('click', closeSearch);
-		document.addEventListener('keyup', function(ev) {
-			// escape key.
-			if( ev.keyCode == 27 ) {
-				closeSearch();
-			}
-		});
+		if(openCtrl){
+			openCtrl.addEventListener('click', openSearch);
+			closeCtrl.addEventListener('click', closeSearch);
+			document.addEventListener('keyup', function(ev) {
+				// escape key.
+				if( ev.keyCode == 27 ) {
+					closeSearch();
+				}
+			});
+		}
 	}
 
 	function openSearch() {
-		searchContainer.classList.add('search--open');
-		inputSearch.focus();
+		if(searchContainer){
+			searchContainer.classList.add('search--open');
+			inputSearch.focus();
+		}
 	}
 
 	function closeSearch() {
@@ -181,10 +186,12 @@ jQuery( document ).ready( function($) {
 		inputWrapper.setAttribute("data-text", '');
 	}
 
-	inputSearch.addEventListener("keyup", event => {
-	  inputWrapper.setAttribute("data-text", event.target.value);
-	});
-	
+	if(searchContainer){
+		inputSearch.addEventListener("keyup", event => {
+		inputWrapper.setAttribute("data-text", event.target.value);
+		})
+	};
+
 	init();
 
 })(window);
