@@ -11,7 +11,7 @@
 }
 
 .error-404 .search-form .search-field {
-	border: 1px solid rgba(0, 0, 0, 0.15);
+	border: 1px solid #f1f1f1;
 	padding: 1em;
 	max-width: 450px;
 }
@@ -20,4 +20,17 @@
 	border: 1px solid #F56A6A;
 	flex: 0 0 5em;
 	font-size: 1em;
+}
+
+.not-found .page-header {
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0, .15);
+  margin-bottom: 2em;
+}
+
+.not-found .page-header::before {
+  display: none;
+}
+.not-found .search-form .search-field {
+  border: 1px solid #f1f1f1;
 }
