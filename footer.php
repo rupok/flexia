@@ -15,14 +15,32 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 ?>
 
-<div class="search-menu-wrapper">
-	<div class="search-menu-form">
-		<form action="/" method="get">
-		    <label for="search">Type and press "Enter" to search</label>
-		    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
-		</form>
-	</div>
-</div>
+<?php
+	$flexia_nav_menu_search = get_theme_mod('flexia_nav_menu_search', true);
+
+	if( $flexia_nav_menu_search == true ) : 
+?>
+
+<div class="flexia-search-overlay">
+	<svg class="hidden">
+		<defs>
+			<symbol id="icon-cross" viewBox="0 0 24 24">
+				<title>cross</title>
+				<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+			</symbol>
+		</defs>
+	</svg>
+	<button id="btn-search-close" class="btn--search-close" aria-label="Close search form"><svg class="icon-search-close icon--cross"><use xlink:href="#icon-cross"></use></svg></button>
+	<form class="search__form" action="/" method="get">
+		<div class="input-wrapper" data-text="">
+			<input class="search__input" name="s" type="search" id="search" placeholder="Search..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="<?php the_search_query(); ?>"/>
+		</div>
+		<label class="search__info">Hit enter to search or ESC to close</label>
+	</form>
+
+</div><!-- /search overlay -->
+
+<?php endif; ?>
 
 <?php wp_footer(); ?>
 

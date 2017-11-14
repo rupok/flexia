@@ -115,11 +115,6 @@ jQuery( document ).ready( function($) {
 	
 	// $('body:not(.single-post) .site-header + *, .single-blog-header').css({ 'padding-top': transparentHeaderHeight });
 
-	// Toggle Search menu
-
-	$(".navbar-search-menu > a").click(function(){
-	    $(".search-menu-wrapper").toggleClass("search-menu-expanded");
-	});
 
    // Header parallax
 
@@ -147,3 +142,49 @@ jQuery( document ).ready( function($) {
 
 
 });
+
+
+(function(window) {
+
+	'use strict';
+
+	var openCtrl = document.getElementById('btn-search'),
+		closeCtrl = document.getElementById('btn-search-close'),
+		searchContainer = document.querySelector('.flexia-search-overlay'),
+		inputWrapper = document.querySelector(".input-wrapper"),
+		inputSearch = searchContainer.querySelector('.search__input');
+
+	function init() {
+		initEvents();	
+	}
+
+	function initEvents() {
+		openCtrl.addEventListener('click', openSearch);
+		closeCtrl.addEventListener('click', closeSearch);
+		document.addEventListener('keyup', function(ev) {
+			// escape key.
+			if( ev.keyCode == 27 ) {
+				closeSearch();
+			}
+		});
+	}
+
+	function openSearch() {
+		searchContainer.classList.add('search--open');
+		inputSearch.focus();
+	}
+
+	function closeSearch() {
+		searchContainer.classList.remove('search--open');
+		inputSearch.blur();
+		inputSearch.value = '';
+		inputWrapper.setAttribute("data-text", '');
+	}
+
+	inputSearch.addEventListener("keyup", event => {
+	  inputWrapper.setAttribute("data-text", event.target.value);
+	});
+	
+	init();
+
+})(window);
