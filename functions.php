@@ -75,7 +75,7 @@ function flexia_setup() {
 
 	function flexia_nav_search($items, $args) {
 	     if( 'primary' === $args -> theme_location ) { 
-	     $items .= '<li class="menu-item navbar-search-menu"> <a id="btn-search" href="#">';
+	     $items .= '<li class="menu-item navbar-search-menu"> <a id="btn-search" href="javascript:void(0);">';
 	     $items .= '<i class="fa fa-search" aria-hidden="true"></i></a></li>';	        }
 		return $items;
 

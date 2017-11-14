@@ -31,12 +31,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		</defs>
 	</svg>
 	<button id="btn-search-close" class="btn--search-close" aria-label="Close search form"><svg class="icon-search-close icon--cross"><use xlink:href="#icon-cross"></use></svg></button>
-	<form class="search__form" action="/" method="get">
-		<div class="input-wrapper" data-text="">
-			<input class="search__input" name="s" type="search" id="search" placeholder="Search..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="<?php the_search_query(); ?>"/>
-		</div>
-		<label class="search__info">Hit enter to search or ESC to close</label>
-	</form>
+	<div class="search--form-wrapper">
+		<form class="search__form" action="/" method="get">
+			<div class="search--input-wrapper" data-text="">
+				<input class="search__input" name="s" type="search" id="search" placeholder="Search..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="<?php the_search_query(); ?>"/>
+			</div>
+			<label class="search__info">Hit ENTER to search or ESC to close</label>
+		</form>
+	</div>
 
 </div><!-- /search overlay -->
 

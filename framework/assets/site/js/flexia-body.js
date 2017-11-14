@@ -152,7 +152,7 @@ jQuery( document ).ready( function($) {
 	var openCtrl = document.getElementById('btn-search'),
 		closeCtrl = document.getElementById('btn-search-close'),
 		searchContainer = document.querySelector('.flexia-search-overlay'),
-		inputWrapper = document.querySelector(".input-wrapper"),
+		inputWrapper = document.querySelector(".search--input-wrapper"),
 		inputSearch = document.querySelector('.search__input');
 
 	function init() {
