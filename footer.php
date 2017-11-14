@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 			<div class="search--input-wrapper" data-text="">
 				<input class="search__input" name="s" type="search" id="search" placeholder="Search..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="<?php the_search_query(); ?>"/>
 			</div>
-			<label class="search__info">Hit ENTER to search or ESC to close</label>
+			<label class="search__info"><?php echo __('Hit ENTER to search or ESC to close', 'flexia'); ?></label>
 		</form>
 	</div>
 
@@ -50,7 +50,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 <a title="Scroll back to top" rel="nofollow" href="#" class="flexia-back-to-top" style="opacity: 0; visibility: hidden;" data-scroll-speed="400" data-start-scroll="300">
 	<i class="fa fa-angle-up" aria-hidden="true"></i>
-	<span class="screen-reader-text">Scroll back to top</span>
+	<span class="screen-reader-text"><?php echo __('Scroll back to top', 'flexia'); ?></span>
 </a>
 
 <?php endif; ?>
