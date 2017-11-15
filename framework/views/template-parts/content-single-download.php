@@ -19,30 +19,31 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <div class="entry-content-wrapper">
         <div class="entry-content single-post-entry">
             <div class="entry-content-inner flexia-container">
-
                 <div class="flexia-edd-product">
-                    <div class="flexia-edd-product-thumb">
-                        <?php the_post_thumbnail( 'single-post-thumbnail' ); ?>
-                    </div>
+                    <div class="flexia-row">
+                        <div class="flexia-edd-product-thumb">
+                            <?php the_post_thumbnail( 'single-post-thumbnail' ); ?>
+                        </div>
 
-                    <div class="flexia-edd-product-details">
-                        <?php the_title( '<h1 class="edd-product-title">', '</h1>' ); ?>
+                        <div class="flexia-edd-product-details">
+                            <?php the_title( '<h1 class="edd-product-title">', '</h1>' ); ?>
 
-                        <?php
-                            the_content( sprintf(
-                                wp_kses(
-                                    /* translators: %s: Name of current post. Only visible to screen readers */
-                                    __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'flexia' ),
-                                    array(
-                                        'span' => array(
-                                            'class' => array(),
-                                        ),
-                                    )
-                                ),
-                                get_the_title()
-                            ) );
+                            <?php
+                                the_content( sprintf(
+                                    wp_kses(
+                                        /* translators: %s: Name of current post. Only visible to screen readers */
+                                        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'flexia' ),
+                                        array(
+                                            'span' => array(
+                                                'class' => array(),
+                                            ),
+                                        )
+                                    ),
+                                    get_the_title()
+                                ) );
 
-                        ?>
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -59,8 +60,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
             ?>
 
         </div>
-
-        <?php get_sidebar(); ?>
 
     </div><!-- .entry-content -->
 
