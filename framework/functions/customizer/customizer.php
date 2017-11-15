@@ -335,7 +335,7 @@ function flexia_customize_register( $wp_customize ) {
 		$wp_customize, 
 		'site_link_hover_color', 
 		array(
-			'label'      => __( 'Site Link Color', 'flexia' ),
+			'label'      => __( 'Site Link Hover Color', 'flexia' ),
 			'section'    => 'flexia_typography_settings',
 			'settings'   => 'site_link_hover_color',
 		) ) 
