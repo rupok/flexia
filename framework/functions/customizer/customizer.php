@@ -703,28 +703,6 @@ function flexia_customize_register( $wp_customize ) {
 	) );  
 
 
-
-	// Header Logo
-
-	$wp_customize->add_setting( 'flexia_header_logo' , array(
-	    'default'   => $defaults['flexia_header_logo'],
-	    'sanitize_callback' => 'esc_url_raw'
-	) );
-
-
-	$wp_customize->add_control(
-       new WP_Customize_Image_Control(
-           $wp_customize,
-           'flexia_header_logo',
-           array(
-               'label'      => __( 'Upload Header Logo', 'flexia' ),
-               'section'    => 'flexia_header_settings',
-               'settings'   => 'flexia_header_logo',
-               'context'    => 'flexia_header_logo' 
-           )
-       )
-   );
-
 	// Header Logo width
 
 	$wp_customize->add_setting( 'flexia_header_logo_width' , array(

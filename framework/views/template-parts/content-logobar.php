@@ -13,6 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @package Flexia
  */
 
+$flexia_custom_logo_id = get_theme_mod( 'custom_logo' );
+$flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'full' );
+
 ?>
 
 <div class="flexia-logobar flexia-logobar-stacked">
@@ -21,9 +24,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 				<div class="site-branding">
 
-					<?php if( get_theme_mod('flexia_header_logo') !== '' ) :  ?>
+					<?php if( $flexia_header_logo[0] !== NULL ) :  ?>
 
-				       	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="flexia-header-logo"><img alt="<?php esc_html(bloginfo('name')); ?>" src="<?php echo get_theme_mod('flexia_header_logo'); ?>"></a>
+				       	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="flexia-header-logo"><img alt="<?php esc_html(bloginfo('name')); ?>" src="<?php echo $flexia_header_logo[0]; ?>"></a>
 
 				    <?php else : ?>
 

@@ -10,16 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 
 /**
- * Add support for core custom logo.
- *
- * @link https://codex.wordpress.org/Theme_Logo
+ * Flexia Custom Header
  */
-
-// Set up the WordPress core custom background feature.
-add_theme_support( 'custom-background', apply_filters( 'flexia_custom_background_args', array(
-	'default-color' => 'f9f9f9',
-	'default-image' => '',
-) ) );
 
 function flexia_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'flexia_custom_header_args', array(

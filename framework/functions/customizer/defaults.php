@@ -62,7 +62,6 @@ function flexia_get_option_defaults() {
 		'blog_logo' => '',
 		'blog_title' => '',
 		'blog_desc' => '',
-		'flexia_header_logo' => '',
 		'flexia_navbar' => false,
 		'flexia_navbar_position' => 'flexia-navbar-static-top',
 		'flexia_logobar_position' => 'flexia-logobar-inline',
