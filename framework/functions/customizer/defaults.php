@@ -67,7 +67,7 @@ function flexia_get_option_defaults() {
 		'flexia_navbar_position' => 'flexia-navbar-static-top',
 		'flexia_logobar_position' => 'flexia-logobar-inline',
 		'flexia_nav_menu_search' => true,
-		'flexia_enable_topbar' => false,
+		'flexia_enable_topbar' => true,
 		'flexia_enable_topbar_menu' => false,
 		'header_widget_area' => false,
 		'footer_widget_area' => false,
