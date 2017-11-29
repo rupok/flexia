@@ -60,14 +60,14 @@ function flexia_posted_on() {
 
 	$posted_on = sprintf(
 		/* translators: %s: post date. */
-		esc_html_x( '%s', 'post date', 'flexia' ),
+		__( '<span class="screen-reader-text">Posted on</span> %s', 'flexia' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 
 	$byline = sprintf(
 		/* translators: %s: post author. */
-		esc_html_x( '%s', 'post author', 'flexia' ),
+		__( '<span class="screen-reader-text">Posted by</span> %s', 'flexia' ),
 		'<span class="author vcard"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -76,7 +76,7 @@ function flexia_posted_on() {
 		$categories_list = get_the_category_list( esc_html__( ', ', 'flexia' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
-			printf( '<span class="cat-links"> <i class="fa fa-folder-o fa-fw" aria-hidden="true"></i>' . esc_html__( '%1$s', 'flexia' ) . '</span>
+			printf( '<span class="cat-links"> <i class="fa fa-folder-o fa-fw" aria-hidden="true"></i>' . __( '<span class="screen-reader-text">Categories</span> %s', 'flexia' ) . '</span>
 ', $categories_list ); // WPCS: XSS OK.
 		}
 
@@ -109,7 +109,7 @@ function flexia_updated_on() {
 		$categories_list = get_the_category_list( esc_html__( ', ', 'flexia' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
-			printf( '<span class="cat-links"> <i class="fa fa-folder-o fa-fw" aria-hidden="true"></i>' . esc_html__( '%1$s', 'flexia' ) . '</span>
+			printf( '<span class="cat-links"> <i class="fa fa-folder-o fa-fw" aria-hidden="true"></i>' . __( '<span class="screen-reader-text">Categories</span> %s', 'flexia' ) . '</span>
 ', $categories_list ); // WPCS: XSS OK.
 		}
 
@@ -134,7 +134,7 @@ function flexia_entry_footer() {
 		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'flexia' ) );
 		if ( $tags_list ) {
 			/* translators: 1: list of tags. */
-			printf( '<i class="fa fa-tags fa-fw" aria-hidden="true"></i> <span class="tags-links">' . esc_html__( '%1$s', 'flexia' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<i class="fa fa-tags fa-fw" aria-hidden="true"></i> <span class="tags-links">' . __( '<span class="screen-reader-text">Tags</span> %s', 'flexia' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
