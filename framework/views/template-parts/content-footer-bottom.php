@@ -36,6 +36,7 @@ if (get_theme_mod('flexia_footer_content') == '') {
 									'menu_id'        => 'flexia-footer-menu',
 									'menu_class'     => 'nav-menu flexia-footer-menu',
 									'container'      => false,
+									'depth' => 1,
 								) );
 				else :
 
