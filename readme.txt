@@ -4,7 +4,7 @@ Contributors: Codetic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.0
 Tested up to: 4.9
-Stable tag: 0.0.2
+Stable tag: 0.0.3
 License: GNU General Public License v3 or later
 License URI: LICENSE
 
