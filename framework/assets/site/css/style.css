@@ -4871,7 +4871,6 @@ a:hover, a:active {
 
 .blog .entry-content, .archive .entry-content, .search .entry-content {
   margin-top: 0;
-  max-width: 90%;
 }
 
 .flexia-wrapper.flexia-container > .content-area {
@@ -4926,7 +4925,7 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
 }
 
 .more-link:after {
-  content: "\f061";
+  content: "\f178";
   color: #fff;
 }
 
