@@ -383,22 +383,6 @@ function flexia_customize_register( $wp_customize ) {
 		) ) 
 	);
 
-	$wp_customize->add_setting( 'post_meta_bg_color' , array(
-	    'default'     => $defaults['post_meta_bg_color'],
-	    'transport'   => 'postMessage',
-	    'sanitize_callback' => 'sanitize_hex_color',
-	) );
-
-	$wp_customize->add_control( 
-		new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'post_meta_bg_color', 
-		array(
-			'label'      => __( 'Post Meta Background', 'flexia' ),
-			'section'    => 'flexia_blog_settings',
-			'settings'   => 'post_meta_bg_color',
-		) ) 
-	);
 
 	$wp_customize->add_setting( 'sidebar_widget_bg_color' , array(
 	    'default'     => $defaults['sidebar_widget_bg_color'],
@@ -418,93 +402,18 @@ function flexia_customize_register( $wp_customize ) {
 	);
 
 
-	$wp_customize->add_setting( 'post_max_width', array(
-			'default'       => $defaults['post_max_width'],
-			'capability'    => 'edit_theme_options',
-			'transport' => 'postMessage',
-			'sanitize_callback' => 'flexia_sanitize_integer',
+	// Heading separator
 
-	) );
-
-	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'post_max_width', array(
-		'type'     => 'range-value',
-		'section'  => 'flexia_blog_settings',
-		'settings' => 'post_max_width',
-		'label'    => __( 'Post Max Width (px)', 'flexia' ),
-		'input_attrs' => array(
-			'min'    => 600,
-			'max'    => 2000,
-			'step'   => 5,
-			'suffix' => 'px', //optional suffix
-	  	),
-	) ) );
-
-	$wp_customize->add_setting( 'post_width', array(
-			'default'       => $defaults['post_width'],
-			'capability'    => 'edit_theme_options',
-			'transport' => 'postMessage',
-			'sanitize_callback' => 'flexia_sanitize_integer',
-
-	) );
-
-	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'post_width', array(
-		'type'     => 'range-value',
-		'section'  => 'flexia_blog_settings',
-		'settings' => 'post_width',
-		'label'    => __( 'Post Width (%)', 'flexia' ),
-		'input_attrs' => array(
-			'min'    => 50,
-			'max'    => 100,
-			'step'   => 1,
-			'suffix' => '%', //optional suffix
-	  	),
-	) ) );
-
-	// Show post navigation
-
-	$wp_customize->add_setting( 'post_navigation', array(
-			'default'     => $defaults['post_navigation'],
-			'capability'  => 'edit_theme_options',
-			'sanitize_callback' => 'flexia_sanitize_checkbox',
-	) );
-
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_navigation', array(
-			'label'	      => esc_html__( 'Hide Next/Prev posts?', 'flexia' ),
-			'section'     => 'flexia_blog_settings',
-			'settings'    => 'post_navigation',
-			'type'        => 'light',// light, ios, flat
-	) ) );
-
-	// Show author under post
-
-	$wp_customize->add_setting( 'post_author', array(
-			'default'     => $defaults['post_author'],
-			'capability'  => 'edit_theme_options',
-			'sanitize_callback' => 'flexia_sanitize_checkbox',
-	) );
-
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_author', array(
-			'label'	      => esc_html__( 'Hide Author under post?', 'flexia' ),
-			'section'     => 'flexia_blog_settings',
-			'settings'    => 'post_author',
-			'type'        => 'light',// light, ios, flat
-	) ) );
-
-
-	// Show author under post
-
-	$wp_customize->add_setting( 'post_social_share', array(
-			'default'     => $defaults['post_social_share'],
-			'capability'  => 'edit_theme_options',
-			'sanitize_callback' => 'flexia_sanitize_checkbox',
-	) );
-
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_social_share', array(
-			'label'	      => esc_html__( 'Hide Social Share under post?', 'flexia' ),
-			'section'     => 'flexia_blog_settings',
-			'settings'    => 'post_social_share',
-			'type'        => 'light',// light, ios, flat
-	) ) );
+	$wp_customize->add_setting('blog_header_settings_title_heading', array(
+		'default'           => $defaults['blog_header_settings_title_heading'],
+		'sanitize_callback' => 'esc_html',
+	));
+	
+	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'blog_header_settings_title_heading', array(
+		'label'      => __( 'Blog Header style', 'flexia' ),
+		'settings'		=> 'blog_header_settings_title_heading',
+		'section'  		=> 'flexia_blog_settings',
+	)));
 
 	// Show scroll bottom anchor
 
@@ -694,6 +603,123 @@ function flexia_customize_register( $wp_customize ) {
 	  	),
 	) ) );
 
+	// Heading separator
+
+	$wp_customize->add_setting('single_post_settings_title_heading', array(
+		'default'           => $defaults['single_post_settings_title_heading'],
+		'sanitize_callback' => 'esc_html',
+	));
+	
+	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'single_post_settings_title_heading', array(
+		'label'      => __( 'Single Post style', 'flexia' ),
+		'settings'		=> 'single_post_settings_title_heading',
+		'section'  		=> 'flexia_blog_settings',
+	)));
+
+	$wp_customize->add_setting( 'post_meta_bg_color' , array(
+	    'default'     => $defaults['post_meta_bg_color'],
+	    'transport'   => 'postMessage',
+	    'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'post_meta_bg_color', 
+		array(
+			'label'      => __( 'Post Meta Background', 'flexia' ),
+			'section'    => 'flexia_blog_settings',
+			'settings'   => 'post_meta_bg_color',
+		) ) 
+	);
+
+	$wp_customize->add_setting( 'post_max_width', array(
+			'default'       => $defaults['post_max_width'],
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'flexia_sanitize_integer',
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'post_max_width', array(
+		'type'     => 'range-value',
+		'section'  => 'flexia_blog_settings',
+		'settings' => 'post_max_width',
+		'label'    => __( 'Post Max Width (px)', 'flexia' ),
+		'input_attrs' => array(
+			'min'    => 600,
+			'max'    => 2000,
+			'step'   => 5,
+			'suffix' => 'px', //optional suffix
+	  	),
+	) ) );
+
+	$wp_customize->add_setting( 'post_width', array(
+			'default'       => $defaults['post_width'],
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'flexia_sanitize_integer',
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'post_width', array(
+		'type'     => 'range-value',
+		'section'  => 'flexia_blog_settings',
+		'settings' => 'post_width',
+		'label'    => __( 'Post Width (%)', 'flexia' ),
+		'input_attrs' => array(
+			'min'    => 50,
+			'max'    => 100,
+			'step'   => 1,
+			'suffix' => '%', //optional suffix
+	  	),
+	) ) );
+
+	// Show post navigation
+
+	$wp_customize->add_setting( 'post_navigation', array(
+			'default'     => $defaults['post_navigation'],
+			'capability'  => 'edit_theme_options',
+			'sanitize_callback' => 'flexia_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_navigation', array(
+			'label'	      => esc_html__( 'Hide Next/Prev posts?', 'flexia' ),
+			'section'     => 'flexia_blog_settings',
+			'settings'    => 'post_navigation',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+	// Show author under post
+
+	$wp_customize->add_setting( 'post_author', array(
+			'default'     => $defaults['post_author'],
+			'capability'  => 'edit_theme_options',
+			'sanitize_callback' => 'flexia_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_author', array(
+			'label'	      => esc_html__( 'Hide Author under post?', 'flexia' ),
+			'section'     => 'flexia_blog_settings',
+			'settings'    => 'post_author',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+
+	// Show author under post
+
+	$wp_customize->add_setting( 'post_social_share', array(
+			'default'     => $defaults['post_social_share'],
+			'capability'  => 'edit_theme_options',
+			'sanitize_callback' => 'flexia_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_social_share', array(
+			'label'	      => esc_html__( 'Hide Social Share under post?', 'flexia' ),
+			'section'     => 'flexia_blog_settings',
+			'settings'    => 'post_social_share',
+			'type'        => 'light',// light, ios, flat
+	) ) );
 
   // Header Settings
 
