@@ -11,6 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @package Flexia
  */
 
+$flexia_blog_content_display = get_theme_mod('flexia_blog_content_display', 'flexia_blog_content_layout_full');
+$flexia_blog_excerpt_count = get_theme_mod('flexia_blog_excerpt_count', '60');
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -40,11 +43,20 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		</div><!-- .post-thumbnail -->
 	<?php endif; ?>
 
+	<?php if( $flexia_blog_content_display == 'flexia_blog_content_display_excerpt' ) :  ?>
+    <div class="entry-content excerpt-only">
+       <?php
+            $content = get_the_content();
+            $trimmed_content = wp_trim_words( $content, $flexia_blog_excerpt_count);
+            echo $trimmed_content;
+        ?>
+        <p><a href="<?php the_permalink() ?>" class="more-link"> <?php echo esc_attr( sprintf( __( 'Continue Reading', 'flexia' )))  ?></a></p>
+    </div>
 
+	<?php else : ?>
 
 	<div class="entry-content">
 		<?php
-		/* translators: %s: Name of current post */
 		the_content( sprintf(
 			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'flexia' ),
 			get_the_title()
@@ -58,5 +70,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		) );
 		?>
 	</div><!-- .entry-content -->
+    <?php endif; ?>
 
 </article><!-- #post-<?php the_ID(); ?> -->

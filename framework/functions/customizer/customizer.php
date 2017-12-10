@@ -402,6 +402,50 @@ function flexia_customize_register( $wp_customize ) {
 	);
 
 
+	$wp_customize->add_setting( 
+		'flexia_blog_content_display' , 
+		array(
+	    'default'   => $defaults['flexia_blog_content_display'],
+	    'sanitize_callback' => 'flexia_sanitize_choices',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'flexia_blog_content_display',
+	        array(
+	            'label'          => __( 'Content Display', 'flexia' ),
+	            'section'        => 'flexia_blog_settings',
+	            'settings'       => 'flexia_blog_content_display',
+	            'description'    => 'Set whether you want to show full post content or excerpt only on blog page.',
+	            'type'           => 'radio',
+	            'choices'        => array(
+	                'flexia_blog_content_display_full'   => __( 'Show Full Post Content', 'flexia' ),
+	                'flexia_blog_content_display_excerpt'   => __( 'Show Excerpt only', 'flexia' )
+	            )
+	        )
+	    )
+	);
+
+	$wp_customize->add_setting( 'flexia_blog_excerpt_count' , array(
+	    'default'   => $defaults['flexia_blog_excerpt_count'],
+	    'sanitize_callback' => 'flexia_sanitize_integer',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'flexia_blog_excerpt_count',
+	        array(
+	            'label'          => __( 'Excerpt Count (words)', 'flexia' ),
+	            'section'        => 'flexia_blog_settings',
+	            'settings'       => 'flexia_blog_excerpt_count',
+	            'type'           => 'text',
+	        )
+	    )
+	);
 	// Heading separator
 
 	$wp_customize->add_setting('blog_header_settings_title_heading', array(
