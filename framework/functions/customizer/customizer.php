@@ -401,7 +401,6 @@ function flexia_customize_register( $wp_customize ) {
 		) ) 
 	);
 
-
 	$wp_customize->add_setting( 
 		'flexia_blog_content_display' , 
 		array(
