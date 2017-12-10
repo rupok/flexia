@@ -284,6 +284,8 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
   overflow: hidden;
   display: inline-block;
   vertical-align: top;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .more-link:hover {
