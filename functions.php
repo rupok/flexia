@@ -188,6 +188,15 @@ require get_template_directory() . '/framework/functions/customizer/defaults.php
 require get_template_directory() . '/framework/functions/customizer/customizer.php';
 
 
+// Admin only classes
+if ( is_admin() ) {
+
+	// Recommend plugins
+	require_once( get_template_directory() .'/inc/plugins/class-tgm-plugin-activation.php' );
+	require_once( get_template_directory() .'/inc/plugins/tgm-plugin-activation.php' );
+
+}
+
 /**
  * Load Jetpack compatibility file.
  */
