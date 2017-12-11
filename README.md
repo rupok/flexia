@@ -1,4 +1,4 @@
-#Flexia
+# Flexia
 
 **Contributors:** [re_enter_rupok](https://profiles.wordpress.org/re_enter_rupok), [Codetic](https://profiles.wordpress.org/codetic)
 **Theme URI:** http://www.codetic.net/flexia/
