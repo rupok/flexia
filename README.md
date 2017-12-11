@@ -1,6 +1,6 @@
-=== Flexia ===
+#Flexia
 
-**Contributors:**  [re_enter_rupok](https://profiles.wordpress.org/re_enter_rupok), [Codetic](https://profiles.wordpress.org/codetic)
+**Contributors:** [re_enter_rupok](https://profiles.wordpress.org/re_enter_rupok), [Codetic](https://profiles.wordpress.org/codetic)
 **Theme URI:** http://www.codetic.net/flexia/
 **Tags:** custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, woocommerce, edd
 **Requires at least:** 4.0
@@ -17,8 +17,8 @@ A modern lightweight and versatile theme for WordPress with the endless customiz
 
 A modern lightweight and versatile theme for WordPress with endless customization options. Works great with any WordPress Page Builder.
 
-For more information, please visit - https://flexia.pro/
-Theme Demo - http://www.codetic.net/flexia/
+** For more information, please visit - https://flexia.pro/ **
+** Theme Demo - http://www.codetic.net/flexia/ **
 
 ### Modern ###
 
