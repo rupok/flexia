@@ -1,14 +1,14 @@
 # Flexia
 
-**Contributors:** [re_enter_rupok](https://profiles.wordpress.org/re_enter_rupok), [Codetic](https://profiles.wordpress.org/codetic)
-**Theme URI:** http://www.codetic.net/flexia/
-**Tags:** custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, woocommerce, edd
-**Requires at least:** 4.0
-**Tested up to:** 4.9.1
-**Stable tag:** 0.0.4
-**Domain Path:** /languages/
-**License:** GNU General Public License v3 or later
-**License URI:** http://www.gnu.org/licenses/gpl-3.0.html
+**Contributors:** [re_enter_rupok](https://profiles.wordpress.org/re_enter_rupok), [Codetic](https://profiles.wordpress.org/codetic)    
+**Theme URI:** http://www.codetic.net/flexia/    
+**Tags:** custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, woocommerce, edd  
+**Requires at least:** 4.0  
+**Tested up to:** 4.9.1   
+**Stable tag:** 0.0.4  
+**Domain Path:** /languages/  
+**License:** GNU General Public License v3 or later  
+**License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
 
 A modern lightweight and versatile theme for WordPress with the endless customization options through Customizer. Built to work flawlessly with any Page Builder like Elementor, Cornerstone, Divi, Visual Composer and Beaver Builder. 10+ page templates give you the ability set any kind of page layout.
 
@@ -17,8 +17,8 @@ A modern lightweight and versatile theme for WordPress with the endless customiz
 
 A modern lightweight and versatile theme for WordPress with endless customization options. Works great with any WordPress Page Builder.
 
-** For more information, please visit - https://flexia.pro/ **
-** Theme Demo - http://www.codetic.net/flexia/ **
+**For more information, please visit** - https://flexia.pro/  
+**Theme Demo** - http://www.codetic.net/flexia/
 
 ### Modern ###
 
