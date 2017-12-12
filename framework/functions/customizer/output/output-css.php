@@ -39,6 +39,30 @@ function flexia_customizer_style() {
 		font-family: "<?php echo get_theme_mod('flexia_heading_font_family'); ?>", "Helvetica Neue",sans-serif;
 	}
 
+	h1 {
+		font-size: <?php echo get_theme_mod('heading1_font_size'); ?>em;
+	}
+
+	h2 {
+		font-size: <?php echo get_theme_mod('heading2_font_size'); ?>em;
+	}
+
+	h3 {
+		font-size: <?php echo get_theme_mod('heading3_font_size'); ?>em;
+	}
+
+	h4 {
+		font-size: <?php echo get_theme_mod('heading4_font_size'); ?>em;
+	}
+
+	h5 {
+		font-size: <?php echo get_theme_mod('heading5_font_size'); ?>em;
+	}
+
+	h6 {
+		font-size: <?php echo get_theme_mod('heading6_font_size'); ?>em;
+	}
+
 	a {
 		color: <?php echo get_theme_mod('site_link_color'); ?>;
 	}
@@ -136,7 +160,7 @@ function flexia_customizer_style() {
 		color: <?php echo get_theme_mod('flexia_overlay_search_field_font_color'); ?>;
 		font-size: <?php echo get_theme_mod('flexia_overlay_search_field_font_size'); ?>px;
 	}
-	
+
 	.search--input-wrapper::after {
 		font-size: <?php echo get_theme_mod('flexia_overlay_search_field_font_size'); ?>px;
 	}

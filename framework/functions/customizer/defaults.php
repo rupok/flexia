@@ -20,6 +20,12 @@ function flexia_get_option_defaults() {
 		'site_link_hover_color' => '#ff5544',
 		'body_font_family' => 'Open Sans',
 		'heading_font_family' => 'Open Sans',
+		'heading1_font_size' => '2',
+		'heading2_font_size' => '1.5',
+		'heading3_font_size' => '1.17',
+		'heading4_font_size' => '1',
+		'heading5_font_size' => '.83',
+		'heading6_font_size' => '.75',
 		'container_width' => '90',
 		'post_width' => '90',
 		'container_max_width' => '1200',
@@ -72,7 +78,6 @@ function flexia_get_option_defaults() {
 		'flexia_nav_menu_search' => true,
 		'flexia_enable_topbar' => true,
 		'flexia_enable_topbar_menu' => true,
-		//overlay search
 		'flexia_overlay_search_bg_color' => '#121738',
 		'flexia_overlay_search_border_color' => '#121738',
 		'flexia_overlay_search_border_width' => '10',
@@ -85,7 +90,6 @@ function flexia_get_option_defaults() {
 		'flexia_overlay_search_field_font_color' => '#fff',
 		'flexia_overlay_search_label_font_size' => '16',
 		'flexia_overlay_search_label_font_color' => '#fff',
-		//overlay search end
 		'header_widget_area' => false,
 		'footer_widget_area' => false,
 		'footer_bottom' => false,

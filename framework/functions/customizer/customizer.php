@@ -453,26 +453,27 @@ function flexia_customize_register( $wp_customize ) {
 		) ) 
 	);
 
-	$wp_customize->add_setting( 'body_font_size' , array(
-	    'default'   => $defaults['body_font_size'],
-	    'sanitize_callback' => 'flexia_sanitize_integer',
+
+	$wp_customize->add_setting( 'body_font_size', array(
+			'default'       => $defaults['body_font_size'],
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'flexia_sanitize_integer'
+
 	) );
 
-
-	$wp_customize->add_control(
-	    new WP_Customize_Control(
-	        $wp_customize,
-	        'body_font_size',
-	        array(
-	            'label'          => __( 'Body Font Size', 'flexia' ),
-	            'section'        => 'flexia_typography_settings',
-	            'settings'       => 'body_font_size',
-	            'description'    => '"Body Font Size (px)" will affect the sizing of all copy outside of a post or page content area.',
-	            'type'           => 'text',
-	        )
-	    )
-	);
-
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'body_font_size', array(
+		'type'     => 'range-value',
+		'section'  => 'flexia_typography_settings',
+		'settings' => 'body_font_size',
+		'label'    => __( 'Body Font Size (px)', 'flexia' ),
+		'input_attrs' => array(
+			'min'    => 1,
+			'max'    => 100,
+			'step'   => 1,
+			'suffix' => 'px', //optional suffix
+	  	),
+	) ) );
 
 	// Body Font Setting
 
@@ -515,6 +516,131 @@ function flexia_customize_register( $wp_customize ) {
         'settings'   => 'flexia_heading_font_family',
     )));
 
+	$wp_customize->add_setting( 'heading1_font_size', array(
+			'default'       => $defaults['heading1_font_size'],
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'flexia_sanitize_integer'
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'heading1_font_size', array(
+		'type'     => 'range-value',
+		'section'  => 'flexia_typography_settings',
+		'settings' => 'heading1_font_size',
+		'label'    => __( 'H1 Font Size (em)', 'flexia' ),
+		'input_attrs' => array(
+			'min'    => 1,
+			'max'    => 10,
+			'step'   => .05,
+			'suffix' => 'em', //optional suffix
+	  	),
+	) ) );
+
+	$wp_customize->add_setting( 'heading2_font_size', array(
+			'default'       => $defaults['heading2_font_size'],
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'flexia_sanitize_integer'
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'heading2_font_size', array(
+		'type'     => 'range-value',
+		'section'  => 'flexia_typography_settings',
+		'settings' => 'heading2_font_size',
+		'label'    => __( 'H2 Font Size (em)', 'flexia' ),
+		'input_attrs' => array(
+			'min'    => 1,
+			'max'    => 10,
+			'step'   => .05,
+			'suffix' => 'em', //optional suffix
+	  	),
+	) ) );
+
+	$wp_customize->add_setting( 'heading3_font_size', array(
+			'default'       => $defaults['heading3_font_size'],
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'flexia_sanitize_integer'
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'heading3_font_size', array(
+		'type'     => 'range-value',
+		'section'  => 'flexia_typography_settings',
+		'settings' => 'heading3_font_size',
+		'label'    => __( 'H3 Font Size (em)', 'flexia' ),
+		'input_attrs' => array(
+			'min'    => .5,
+			'max'    => 10,
+			'step'   => .05,
+			'suffix' => 'em', //optional suffix
+	  	),
+	) ) );
+
+	$wp_customize->add_setting( 'heading4_font_size', array(
+			'default'       => $defaults['heading1_font_size'],
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'flexia_sanitize_integer'
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'heading4_font_size', array(
+		'type'     => 'range-value',
+		'section'  => 'flexia_typography_settings',
+		'settings' => 'heading4_font_size',
+		'label'    => __( 'H4 Font Size (em)', 'flexia' ),
+		'input_attrs' => array(
+			'min'    => .1,
+			'max'    => 10,
+			'step'   => .01,
+			'suffix' => 'em', //optional suffix
+	  	),
+	) ) );
+
+	$wp_customize->add_setting( 'heading5_font_size', array(
+			'default'       => $defaults['heading5_font_size'],
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'flexia_sanitize_integer'
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'heading5_font_size', array(
+		'type'     => 'range-value',
+		'section'  => 'flexia_typography_settings',
+		'settings' => 'heading5_font_size',
+		'label'    => __( 'H5 Font Size (em)', 'flexia' ),
+		'input_attrs' => array(
+			'min'    => .1,
+			'max'    => 10,
+			'step'   => .01,
+			'suffix' => 'em', //optional suffix
+	  	),
+	) ) );
+
+	$wp_customize->add_setting( 'heading6_font_size', array(
+			'default'       => $defaults['heading6_font_size'],
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'flexia_sanitize_integer'
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'heading6_font_size', array(
+		'type'     => 'range-value',
+		'section'  => 'flexia_typography_settings',
+		'settings' => 'heading6_font_size',
+		'label'    => __( 'H6 Font Size (em)', 'flexia' ),
+		'input_attrs' => array(
+			'min'    => .1,
+			'max'    => 10,
+			'step'   => .01,
+			'suffix' => 'em', //optional suffix
+	  	),
+	) ) );
 
 	// Site Links separator
 
