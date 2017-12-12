@@ -238,6 +238,52 @@
         } );
     }); 
 
+    // Search Overlay 
+
+    wp.customize( 'flexia_overlay_search_bg_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-search-overlay' ).css( 'background-color', to );            
+        } );
+    }); 
+
+    wp.customize( 'flexia_overlay_search_close_btn_size', function( value ) {
+        value.bind( function( to ) {            
+            $( '.icon-search-close' ).css( 'width', to + 'px' );            
+            $( '.icon-search-close' ).css( 'height', to + 'px' );            
+        } );
+    }); 
+
+    wp.customize( 'flexia_overlay_search_close_btn_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.icon-search-close' ).css( 'fill', to );            
+        } );
+    }); 
+
+    wp.customize( 'flexia_overlay_search_field_font_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.search--input-wrapper .search__input, .search--input-wrapper .search__input:focus' ).css( 'color', to );           
+        } );
+    }); 
+
+    wp.customize( 'flexia_overlay_search_field_font_size', function( value ) {
+        value.bind( function( to ) {            
+            $( '.search--input-wrapper .search__input, .search--input-wrapper .search__input:focus' ).css( 'font-size', to + 'px' );                   
+        } );
+    }); 
+
+    wp.customize( 'flexia_overlay_search_label_font_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.search__info' ).css( 'color', to );         
+        } );
+    }); 
+
+    wp.customize( 'flexia_overlay_search_label_font_size', function( value ) {
+        value.bind( function( to ) {            
+            $( '.search__info' ).css( 'font-size', to + 'px' );            
+        } );
+    }); 
+
+
     // Footer Area 
 
     wp.customize( 'footer_widget_area_bg_color', function( value ) {

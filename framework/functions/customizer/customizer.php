@@ -194,6 +194,226 @@ function flexia_customize_register( $wp_customize ) {
 
 
 
+  	// Design Settings : Overlay Search
+
+	$wp_customize->add_section( 'flexia_overlay_search_settings' , array(
+	'title'      => __('Overlay Search','flexia'), 
+	'priority'   => 100    
+	) ); 
+
+	$wp_customize->add_setting( 'flexia_overlay_search_bg_color' , array(
+	    'default'     => $defaults['flexia_overlay_search_bg_color'],
+	    'transport'   => 'postMessage',
+	    'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_overlay_search_bg_color', 
+		array(
+			'label'      => __( 'Search Overlay Background Color', 'flexia' ),
+			'section'    => 'flexia_overlay_search_settings',
+			'settings'   => 'flexia_overlay_search_bg_color',
+		) ) 
+	);
+
+	$wp_customize->add_setting( 'flexia_overlay_search_border_color' , array(
+	    'default'     => $defaults['flexia_overlay_search_border_color'],
+	    'transport'   => 'postMessage',
+	    'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_overlay_search_border_color', 
+		array(
+			'label'      => __( 'Search Overlay Border Color', 'flexia' ),
+			'section'    => 'flexia_overlay_search_settings',
+			'settings'   => 'flexia_overlay_search_border_color',
+		) ) 
+	);
+
+	$wp_customize->add_setting( 'flexia_overlay_search_border_width', array(
+			'default'       => $defaults['flexia_overlay_search_border_width'],
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'flexia_sanitize_integer'
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'flexia_overlay_search_border_width', array(
+		'type'     => 'range-value',
+		'section'  => 'flexia_overlay_search_settings',
+		'settings' => 'flexia_overlay_search_border_width',
+		'label'    => __( 'Search Overlay Border width (px)', 'flexia' ),
+		'input_attrs' => array(
+			'min'    => 0,
+			'max'    => 100,
+			'step'   => 1,
+			'suffix' => 'px', //optional suffix
+	  	),
+	) ) );
+
+
+	// Search field Separator
+
+	$wp_customize->add_setting('flexia_overlay_search_heading', array(
+		'default'           => $defaults['flexia_overlay_search_heading'],
+		'sanitize_callback' => 'esc_html',
+	));
+	
+	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'flexia_overlay_search_heading', array(
+		'label'      => __( 'Search Field', 'flexia' ),
+		'settings'		=> 'flexia_overlay_search_heading',
+		'section'  		=> 'flexia_overlay_search_settings',
+	)));
+
+	$wp_customize->add_setting( 'flexia_overlay_search_field_font_color' , array(
+	    'default'     => $defaults['flexia_overlay_search_field_font_color'],
+	    'transport'   => 'postMessage',
+	    'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_overlay_search_field_font_color', 
+		array(
+			'label'      => __( 'Search Field Font Color', 'flexia' ),
+			'section'    => 'flexia_overlay_search_settings',
+			'settings'   => 'flexia_overlay_search_field_font_color',
+		) ) 
+	);
+
+	$wp_customize->add_setting( 'flexia_overlay_search_field_font_size', array(
+			'default'       => $defaults['flexia_overlay_search_field_font_size'],
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'flexia_sanitize_integer'
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'flexia_overlay_search_field_font_size', array(
+		'type'     => 'range-value',
+		'section'  => 'flexia_overlay_search_settings',
+		'settings' => 'flexia_overlay_search_field_font_size',
+		'label'    => __( 'Search Field Font Size (px)', 'flexia' ),
+		'input_attrs' => array(
+			'min'    => 15,
+			'max'    => 150,
+			'step'   => 1,
+			'suffix' => 'px', //optional suffix
+	  	),
+	) ) );
+
+	$wp_customize->add_setting( 'flexia_overlay_search_label_font_color' , array(
+	    'default'     => $defaults['flexia_overlay_search_label_font_color'],
+	    'transport'   => 'postMessage',
+	    'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_overlay_search_label_font_color', 
+		array(
+			'label'      => __( 'Label Font Color', 'flexia' ),
+			'section'    => 'flexia_overlay_search_settings',
+			'settings'   => 'flexia_overlay_search_label_font_color',
+		) ) 
+	);
+
+	$wp_customize->add_setting( 'flexia_overlay_search_label_font_size', array(
+			'default'       => $defaults['flexia_overlay_search_label_font_size'],
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'flexia_sanitize_integer'
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'flexia_overlay_search_label_font_size', array(
+		'type'     => 'range-value',
+		'section'  => 'flexia_overlay_search_settings',
+		'settings' => 'flexia_overlay_search_label_font_size',
+		'label'    => __( 'Label Font Size (px)', 'flexia' ),
+		'input_attrs' => array(
+			'min'    => 10,
+			'max'    => 50,
+			'step'   => 1,
+			'suffix' => 'px', //optional suffix
+	  	),
+	) ) );
+
+	// Close button Separator
+
+	$wp_customize->add_setting('flexia_overlay_search_close_btn_heading', array(
+		'default'           => $defaults['flexia_overlay_search_close_btn_heading'],
+		'sanitize_callback' => 'esc_html',
+	));
+	
+	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'flexia_overlay_search_close_btn_heading', array(
+		'label'      => __( 'Close Button', 'flexia' ),
+		'settings'		=> 'flexia_overlay_search_close_btn_heading',
+		'section'  		=> 'flexia_overlay_search_settings',
+	)));
+
+	$wp_customize->add_setting( 'flexia_overlay_search_close_btn_color' , array(
+	    'default'     => $defaults['flexia_overlay_search_close_btn_color'],
+	    'transport'   => 'postMessage',
+	    'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_overlay_search_close_btn_color', 
+		array(
+			'label'      => __( 'Close Button Color', 'flexia' ),
+			'section'    => 'flexia_overlay_search_settings',
+			'settings'   => 'flexia_overlay_search_close_btn_color',
+		) ) 
+	);
+
+	$wp_customize->add_setting( 'flexia_overlay_search_close_btn_hover_color' , array(
+	    'default'     => $defaults['flexia_overlay_search_close_btn_hover_color'],
+	    'transport'   => 'postMessage',
+	    'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'flexia_overlay_search_close_btn_hover_color', 
+		array(
+			'label'      => __( 'Close Button Hover Color', 'flexia' ),
+			'section'    => 'flexia_overlay_search_settings',
+			'settings'   => 'flexia_overlay_search_close_btn_hover_color',
+		) ) 
+	);
+
+	$wp_customize->add_setting( 'flexia_overlay_search_close_btn_size', array(
+			'default'       => $defaults['flexia_overlay_search_close_btn_size'],
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'flexia_sanitize_integer'
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'flexia_overlay_search_close_btn_size', array(
+		'type'     => 'range-value',
+		'section'  => 'flexia_overlay_search_settings',
+		'settings' => 'flexia_overlay_search_close_btn_size',
+		'label'    => __( 'Close Button Size (px)', 'flexia' ),
+		'input_attrs' => array(
+			'min'    => 10,
+			'max'    => 100,
+			'step'   => 1,
+			'suffix' => 'px', //optional suffix
+	  	),
+	) ) );
+
     // Typography Settings
 
 	$wp_customize->add_section( 'flexia_typography_settings' , array(
@@ -1360,6 +1580,7 @@ function flexia_customize_register( $wp_customize ) {
   $wp_customize->get_section('background_image')->panel = 'flexia_design_settings';
   $wp_customize->get_section('background_image')->priority = 1000;
   $wp_customize->get_section('header_image')->panel = 'flexia_design_settings';  
+  $wp_customize->get_section('flexia_overlay_search_settings')->panel = 'flexia_design_settings';  
 
 
 }
