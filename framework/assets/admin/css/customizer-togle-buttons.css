@@ -18,6 +18,10 @@
   margin: 15px 0;
 }
 
+.flexia-primary-menu .customize-partial-edit-shortcut button {
+  margin-left: 50px;
+}
+
 input[type=checkbox].tgl {
   display: none;
 }
