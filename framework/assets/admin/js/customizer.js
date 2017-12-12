@@ -186,7 +186,7 @@
 
     wp.customize( 'flexia_navbar_bg_color', function( value ) {
         value.bind( function( to ) {            
-            $( '.flexia-navbar' ).css( 'background-color', to );            
+            $( '.flexia-navbar' ).css( 'background-color', to );                       
         } );
     });  
 
