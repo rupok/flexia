@@ -20,7 +20,9 @@ function flexia_customizer_style() {
 	<style type="text/css">
 	<?php
 	?>
-
+	.flexia-primary-menu .customize-partial-edit-shortcut button {
+		margin-left: 50px;
+	}
 	.site-title a,
 	.site-description {
 	color: #<?php echo esc_attr( $header_text_color ); ?>;
