@@ -1,11 +1,11 @@
 === Flexia ===
 
-Contributors: re_enter_rupok, Codetic, asif2bd
-Theme URI: http://www.codetic.net/flexia/
+Contributors: re_enter_rupok, Codetic
+Theme URI: https://github.com/rupok/flexia
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 0.0.4
+Stable tag: 0.0.5
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -48,6 +48,15 @@ Source: https://picjumbo.com/entrepreneur-working-on-his-macbook/
 
 
 == Changelog ==
+
+= 0.0.5 =
+* Released: December 19, 2017
+
+* Heading typography option added to Customizer
+* Overlay search customization option added
+* Flexia Core plugin recommendation added
+* Blog customizer improved
+* Few minor bugfix and improvements
 
 = 0.0.4 =
 * Released: December 9, 2017
