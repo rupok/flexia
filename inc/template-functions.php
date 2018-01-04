@@ -55,7 +55,7 @@ function flexia_page_title() {
 	if( class_exists( 'Flexia_Core_Global_Metabox' ) ) {
 		global $post;
 		$page_title = get_post_meta( $post->ID, '_flexia_meta_key_page_title', true );
-		if( $page_title == 1 ) {
+		if( $page_title == 1 || $page_title == NULL ) {
 			?>
 			<header class="entry-header">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -126,7 +126,7 @@ function flexia_post_large_title() {
 	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 		global $post;
 		$post_title = get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
-		if( $post_title == 'large' ) {
+		if( $post_title == 'large' || $post_title == NULL ) {
 			flexia_post_large_title_markup();
 		}else {
 			return false;
@@ -212,7 +212,7 @@ function flexia_post_footer_meta() {
 	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 		global $post;
 		$footer_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_footer_meta', true );
-		if( $footer_meta == 'yes' ) {
+		if( $footer_meta == 'yes' || $footer_meta == NULL ) {
 			get_template_part( 'framework/views/template-parts/content', 'post-author' );
 		}else {
 			return false;
@@ -233,7 +233,7 @@ function flexia_post_sharer() {
 	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 		global $post;
 		$post_sharer = get_post_meta( $post->ID, '_flexia_post_meta_key_post_sharer', true );
-		if( $post_sharer == 'yes' ) {
+		if( $post_sharer == 'yes' || $post_sharer == NULL ) {
 			get_template_part( 'framework/views/template-parts/content', 'social-sharer' );
 		}else {
 			return false;
@@ -254,7 +254,7 @@ function flexia_post_navigation() {
 	if( class_exists( 'Flexia_Core' ) ) {
 		global $post;
 		$post_navigation = get_post_meta( $post->ID, '_flexia_post_meta_key_post_navigation', true );
-		if( $post_navigation == 'yes' ) {
+		if( $post_navigation == 'yes' || $post_navigation == NULL ) {
 			the_post_navigation();
 		}else {
 			return false;
