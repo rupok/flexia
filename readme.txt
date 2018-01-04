@@ -5,7 +5,7 @@ Theme URI: https://github.com/rupok/flexia
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 0.0.5
+Stable tag: 0.0.6
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -48,6 +48,17 @@ Source: https://picjumbo.com/entrepreneur-working-on-his-macbook/
 
 
 == Changelog ==
+
+= 0.0.6 =
+* Released: January 05, 2018
+
+* Post Header style control
+* Additional Body Classes option
+* Show/Hide Page/Post Title
+* Show/Hide Post Meta
+* Show/Hide Post Navigation
+* Show/Hide Post Social Sharing
+* Few minor bugfix and improvements
 
 = 0.0.5 =
 * Released: December 19, 2017
