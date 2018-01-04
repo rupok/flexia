@@ -92,10 +92,7 @@ function flexia_setup() {
 	/**
 	 * Enable support for WooCommerce
 	 */
-	add_action( 'after_setup_theme', 'woocommerce_support' );
-	function woocommerce_support() {
-	    add_theme_support( 'woocommerce' );
-	}
+	add_theme_support('woocommerce');
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
