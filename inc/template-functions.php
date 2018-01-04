@@ -52,7 +52,7 @@ add_action( 'wp_head', 'flexia_pingback_header' );
  */
 function flexia_page_title() {
 
-	if( class_exists( 'Flexia_Core' ) ) {
+	if( class_exists( 'Flexia_Core_Global_Metabox' ) ) {
 		global $post;
 		$page_title = get_post_meta( $post->ID, '_flexia_meta_key_page_title', true );
 		if( $page_title == 1 ) {
@@ -117,7 +117,7 @@ function felxia_post_large_title_markup() {
  */
 function flexia_post_large_title() {
 
-	if( class_exists( 'Flexia_Core' ) ) {
+	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 		global $post;
 		$post_title = get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
 		if( $post_title == 'large' ) {
@@ -162,7 +162,7 @@ function flexia_post_simple_title_markup() {
  */
 function flexia_post_simple_title() {
 
-	if( class_exists( 'Flexia_Core' ) ) {
+	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 		global $post;
 		$post_title = get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
 		if( $post_title == 'simple' ) {
@@ -198,7 +198,7 @@ add_filter( 'body_class', 'flexia_add_body_class', 10, 1 );
  */
 function flexia_post_footer_meta() {
 
-	if( class_exists( 'Flexia_Core' ) ) {
+	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 		global $post;
 		$footer_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_footer_meta', true );
 		if( $footer_meta == 'yes' ) {
@@ -219,7 +219,7 @@ function flexia_post_footer_meta() {
  */
 function flexia_post_sharer() {
 
-	if( class_exists( 'Flexia_Core' ) ) {
+	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 		global $post;
 		$post_sharer = get_post_meta( $post->ID, '_flexia_post_meta_key_post_sharer', true );
 		if( $post_sharer == 'yes' ) {
