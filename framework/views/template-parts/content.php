@@ -24,14 +24,15 @@ $flexia_blog_excerpt_count = get_theme_mod('flexia_blog_excerpt_count', '60');
 			<?php flexia_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
-		
+
 		endif;
 
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif; ?>
+		endif;
+		?>
 
 	</header><!-- .entry-header -->
 

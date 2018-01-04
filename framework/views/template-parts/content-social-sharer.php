@@ -10,7 +10,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *
  * @package Flexia
  */
-
+$thumbnail = '';
+    if (function_exists('has_post_thumbnail')) {
+        if ( has_post_thumbnail() ) {
+             $thumbnail = wp_get_attachment_url( get_post_thumbnail_id() );
+        }
+    }
 ?>
 
 <div class="flexia-social-share">

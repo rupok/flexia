@@ -29,38 +29,13 @@ $post_social_share = get_theme_mod('post_social_share', false);
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <header class="page-header single-blog-header" <?php if ( ! empty( $thumbnail ) ) : ?> 
-    style="background-image: url('<?php echo esc_attr($thumbnail); ?>');" <?php endif; ?> <?php if ( empty( $thumbnail ) ) : ?> 
-    style="background-image: url('<?php echo esc_attr(get_header_image()); ?>');" <?php endif; ?>>
-        <div class="header-inner">
-            <div class="header-content">
-                <?php the_title( '<h1 class="blog-title">', '</h1>' ); ?>
-                <div class="blog-author">
-                    <div class="author-avatar">
-                            <?php echo get_avatar( get_the_author_meta( 'ID' ), 'flexia-thumbnail-avatar' ); ?> 
-                        <div class="author-body">
-                            <h4 class="author-heading"><?php the_author(); ?></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-overlay"></div>
-    </header>
-
-    <header class="entry-header single-blog-meta">
-        <?php
-        if ( 'post' === get_post_type() ) : ?>
-        <div class="entry-meta">
-            <?php flexia_updated_on(); ?>
-        </div><!-- .entry-meta -->
-        <?php
-        endif; ?>
-    </header><!-- .entry-header -->
+    <?php flexia_post_large_title(); ?>
 
     <div class="entry-content-wrapper">
+
         <div class="entry-content single-post-entry">
             <div class="entry-content-inner flexia-container">
+                <?php flexia_post_simple_title(); ?>
                 <?php
                     the_content( sprintf(
                         wp_kses(
@@ -88,21 +63,21 @@ $post_social_share = get_theme_mod('post_social_share', false);
                 <?php flexia_entry_footer(); ?>
             </footer><!-- .entry-footer -->
 
-            <?php if( $post_navigation == false ) : 
+            <?php if( $post_navigation == false ) :
 
-                the_post_navigation(); 
-
-            endif; ?>
-
-            <?php if( $post_author == false ) : 
-
-                get_template_part( 'framework/views/template-parts/content', 'post-author' );
+                flexia_post_navigation();
 
             endif; ?>
 
-            <?php if( $post_social_share == false ) : 
+            <?php if( $post_author == false ) :
 
-                get_template_part( 'framework/views/template-parts/content', 'social-sharer' );
+                flexia_post_footer_meta();
+
+            endif; ?>
+
+            <?php if( $post_social_share == false ) :
+
+                flexia_post_sharer();
 
             endif; ?>
 
