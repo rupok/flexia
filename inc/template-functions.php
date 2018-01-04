@@ -99,7 +99,7 @@ function felxia_post_large_title_markup() {
         <div class="header-overlay"></div>
     </header>
 
-    <header class="entry-header single-blog-meta">
+    <header class="entry-header single-blog-meta single-post-meta-large">
         <?php
         if ( 'post' === get_post_type() ) : ?>
         <div class="entry-meta">
@@ -139,7 +139,7 @@ function flexia_post_large_title() {
  */
 function flexia_post_simple_title_markup() {
 	?>
-	<header class="entry-header single-blog-meta">
+	<header class="entry-header single-blog-meta single-post-meta-simple">
 	    <?php if ( 'post' === get_post_type() ) : ?>
 	        <div class="entry-meta">
 	            <?php flexia_posted_on(); ?>
