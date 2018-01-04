@@ -78,7 +78,13 @@ function flexia_page_title() {
  *
  * @since  v0.0.5
  */
-function felxia_post_large_title_markup() {
+function flexia_post_large_title_markup() {
+	$thumbnail = '';
+	    if (function_exists('has_post_thumbnail')) {
+	        if ( has_post_thumbnail() ) {
+	             $thumbnail = wp_get_attachment_url( get_post_thumbnail_id() );
+	        }
+	    }
 	?>
 	<header class="page-header single-blog-header" <?php if ( ! empty( $thumbnail ) ) : ?>
     style="background-image: url('<?php echo esc_attr($thumbnail); ?>');" <?php endif; ?> <?php if ( empty( $thumbnail ) ) : ?>
@@ -121,12 +127,12 @@ function flexia_post_large_title() {
 		global $post;
 		$post_title = get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
 		if( $post_title == 'large' ) {
-			felxia_post_large_title_markup();
+			flexia_post_large_title_markup();
 		}else {
 			return false;
 		}
 	}else {
-		felxia_post_large_title_markup();
+		flexia_post_large_title_markup();
 	}
 
 }
@@ -152,6 +158,11 @@ function flexia_post_simple_title_markup() {
 	        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 	    endif;?>
 	</header>
+	<?php if ( '' !== get_the_post_thumbnail()) : ?>
+		<div class="post-thumbnail">
+			<?php the_post_thumbnail( 'flexia-featured-image' ); ?>
+		</div><!-- .post-thumbnail -->
+	<?php endif; ?>
 	<?php
 }
 
