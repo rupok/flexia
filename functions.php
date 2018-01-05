@@ -231,3 +231,37 @@ if ( ! function_exists( 'flexia_fonts_url' ) ){
 	    return esc_url_raw( $fonts_url );
 	}
 }
+
+// Admin notice for Flexia Core
+
+if( class_exists( 'Flexia_Core_Global_Metabox' ) ) {
+  return false;
+} else {
+	add_action('admin_notices', 'flexia_admin_notice');
+}
+
+function flexia_admin_notice() {
+if ( current_user_can( 'install_plugins' ) )
+   {
+  global $current_user ;
+        $user_id = $current_user->ID;
+        /* Check that the user hasn't already clicked to ignore the message */
+  if ( ! get_user_meta($user_id, 'flexia_ignore_notice006') ) {
+        echo '<div class="flexia-admin-notice updated"><p>';
+        printf(__('Thanks for using <strong>Flexia!</strong> We have added lots of cool features through <strong>Flexia Core</strong> and we recommend to keep the plugin active for maximum features.<a href="admin.php?page=flexia-required-plugins" style="text-decoration: none;"><span class="dashicons dashicons-admin-plugins" style="margin-top: -1px;margin-left: 10px;"></span> Install Plugin</a>
+           <a href="%1$s" style="text-decoration: none; margin-left: 10px;"><span class="dashicons dashicons-dismiss"></span> Dismiss</a>'),  admin_url( 'admin.php?page=flexia-required-plugins&flexia_nag_ignore=0' ));
+        echo "</p></div>";
+  }
+    }
+}
+
+add_action('admin_init', 'flexia_nag_ignore');
+
+function flexia_nag_ignore() {
+  global $current_user;
+        $user_id = $current_user->ID;
+        /* If user clicks to ignore the notice, add that to their user meta */
+        if ( isset($_GET['flexia_nag_ignore']) && '0' == $_GET['flexia_nag_ignore'] ) {
+             add_user_meta($user_id, 'flexia_ignore_notice006', 'true', true);
+  }
+}
