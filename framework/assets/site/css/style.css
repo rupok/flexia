@@ -2641,6 +2641,7 @@ big {
 }
 /* Site Footer */
 .flexia-site-footer .site-info {
+  color: #CBCED3;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -4631,6 +4632,10 @@ a:hover, a:active {
     transform: translateX(-50%) scale(1);
   }
 }
+.flexia-wrapper > .content-area, body.blog .flexia-wrapper > .content-area article.post, body.archive .flexia-wrapper > .content-area article.post {
+  background-color: #fff;
+}
+
 .flexia-wrapper.flexia-container {
   padding-top: 3em;
   overflow: hidden;
