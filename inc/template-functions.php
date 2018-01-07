@@ -92,20 +92,51 @@ function flexia_post_large_title_markup() {
         <div class="header-inner">
             <div class="header-content">
                 <?php the_title( '<h1 class="blog-title">', '</h1>' ); ?>
-                <div class="blog-author">
-                    <div class="author-avatar">
-                            <?php echo get_avatar( get_the_author_meta( 'ID' ), 'flexia-thumbnail-avatar' ); ?>
-                        <div class="author-body">
-                            <h4 class="author-heading"><?php the_author(); ?></h4>
-                        </div>
-                    </div>
-                </div>
+				<?php flexia_post_large_title_author_avatar_markup(); ?>
             </div>
         </div>
         <div class="header-overlay"></div>
     </header>
+	<?php
+}
+function flexia_post_large_title_author_avatar_markup() {
 
-    <header class="entry-header single-blog-meta single-post-meta-large">
+	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
+		global $post;
+		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
+		if( $post_title_header_meta == 'yes' || $post_title_header_meta == NULL ) {
+			?>
+			<div class="blog-author">
+		        <div class="author-avatar">
+		            <?php echo get_avatar( get_the_author_meta( 'ID' ), 'flexia-thumbnail-avatar' ); ?>
+		            <div class="author-body">
+		                <h4 class="author-heading"><?php the_author(); ?></h4>
+		            </div>
+		        </div>
+		    </div>
+			<?php
+		}else {
+			return false;
+		}
+	}else {
+		?>
+		<div class="blog-author">
+	        <div class="author-avatar">
+	            <?php echo get_avatar( get_the_author_meta( 'ID' ), 'flexia-thumbnail-avatar' ); ?>
+	            <div class="author-body">
+	                <h4 class="author-heading"><?php the_author(); ?></h4>
+	            </div>
+	        </div>
+	    </div>
+		<?php
+	}
+}
+/**
+ *
+ */
+function flexia_post_large_title_header_meta_markup() {
+	?>
+	<header class="entry-header single-blog-meta single-post-meta-large">
         <?php
         if ( 'post' === get_post_type() ) : ?>
         <div class="entry-meta">
@@ -126,8 +157,12 @@ function flexia_post_large_title() {
 	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 		global $post;
 		$post_title = get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
+		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
 		if( $post_title == 'large' || $post_title == NULL ) {
 			flexia_post_large_title_markup();
+			if( $post_title_header_meta == 'yes' || $post_title_header_meta == NULL ) {
+				flexia_post_large_title_header_meta_markup();
+			}
 		}else {
 			return false;
 		}
@@ -135,35 +170,6 @@ function flexia_post_large_title() {
 		flexia_post_large_title_markup();
 	}
 
-}
-
-/**
- * This function contains simple post title markup.
- * It is used in 'flexia_post_simple_title' method.
- *
- * @since  v0.0.5
- */
-function flexia_post_simple_title_markup() {
-	?>
-	<header class="entry-header single-blog-meta single-post-meta-simple">
-	    <?php if ( 'post' === get_post_type() ) : ?>
-	        <div class="entry-meta">
-	            <?php flexia_posted_on(); ?>
-	        </div>
-	        <!-- .entry-meta -->
-	    <?php endif;
-	    if ( is_singular() ) :
-	        the_title( '<h1 class="entry-title">', '</h1>' );
-	    else :
-	        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-	    endif;?>
-	</header>
-	<?php if ( '' !== get_the_post_thumbnail()) : ?>
-		<div class="post-thumbnail">
-			<?php the_post_thumbnail( 'flexia-featured-image' ); ?>
-		</div><!-- .post-thumbnail -->
-	<?php endif; ?>
-	<?php
 }
 
 /**
@@ -176,8 +182,29 @@ function flexia_post_simple_title() {
 	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 		global $post;
 		$post_title = get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
-		if( $post_title == 'simple' ) {
-			flexia_post_simple_title_markup();
+		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
+		if( $post_title == 'simple' || $post_title == NULL ) {
+			?>
+			<header class="entry-header single-blog-meta single-post-meta-simple">
+				<?php if( $post_title_header_meta == 'yes' || $post_title_header_meta == NULL ) : ?>
+			    <?php if ( 'post' === get_post_type() ) : ?>
+			        <div class="entry-meta">
+			            <?php flexia_posted_on(); ?>
+			        </div>
+			        <!-- .entry-meta -->
+			    <?php endif; endif;
+			    if ( is_singular() ) :
+			        the_title( '<h1 class="entry-title">', '</h1>' );
+			    else :
+			        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			    endif;?>
+			</header>
+			<?php if ( '' !== get_the_post_thumbnail()) : ?>
+				<div class="post-thumbnail">
+					<?php the_post_thumbnail( 'flexia-featured-image' ); ?>
+				</div><!-- .post-thumbnail -->
+			<?php endif; ?>
+			<?php
 		}else {
 			return false;
 		}
