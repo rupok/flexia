@@ -259,23 +259,6 @@ function flexia_customize_register( $wp_customize ) {
 			'settings'   => 'sidebar_widget_bg_color',
 		) ) 
 	);
-
-	$wp_customize->add_setting( 'post_meta_bg_color' , array(
-	    'default'     => $defaults['post_meta_bg_color'],
-	    'transport'   => 'postMessage',
-	    'sanitize_callback' => 'sanitize_hex_color',
-	) );
-
-	$wp_customize->add_control( 
-		new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'post_meta_bg_color', 
-		array(
-			'label'      => __( 'Single Post Meta Background', 'flexia' ),
-			'section'    => 'background_image',
-			'settings'   => 'post_meta_bg_color',
-		) ) 
-	);
   	// Design Settings : Overlay Search
 
 	$wp_customize->add_section( 'flexia_overlay_search_settings' , array(
@@ -1040,6 +1023,23 @@ function flexia_customize_register( $wp_customize ) {
 		'settings'		=> 'single_post_settings_title_heading',
 		'section'  		=> 'flexia_single_posts_settings',
 	)));
+
+	$wp_customize->add_setting( 'post_meta_bg_color' , array(
+	    'default'     => $defaults['post_meta_bg_color'],
+	    'transport'   => 'postMessage',
+	    'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'post_meta_bg_color', 
+		array(
+			'label'      => __( 'Post Meta Background', 'flexia' ),
+			'section'    => 'flexia_single_posts_settings',
+			'settings'   => 'post_meta_bg_color',
+		) ) 
+	);
 
 	$wp_customize->add_setting( 'post_max_width', array(
 			'default'       => $defaults['post_max_width'],
