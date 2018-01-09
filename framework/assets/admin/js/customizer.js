@@ -92,7 +92,7 @@
 
     wp.customize( 'post_meta_bg_color', function( value ) {
         value.bind( function( to ) {            
-            $( '.single-post .entry-header.single-blog-meta' ).css( 'background-color', to );            
+            $( '.single-post .entry-header.single-blog-meta.single-blog-meta-large' ).css( 'background-color', to );            
         } );
     });  
 
