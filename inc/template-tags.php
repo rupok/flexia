@@ -57,29 +57,65 @@ function flexia_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
+	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
+		global $post;
+		$post_title_header_post_date =  get_post_meta( $post->ID, '_flexia_post_meta_key_header_post_date', true );
+		$post_title_header_post_category =  get_post_meta( $post->ID, '_flexia_post_meta_key_header_post_category', true );
+		$post_title_header_post_author =  get_post_meta( $post->ID, '_flexia_post_meta_key_header_author_meta', true );
 
-	$posted_on = sprintf(
-		/* translators: %s: post date. */
-		__( '<span class="screen-reader-text">Posted on</span> %s', 'flexia' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+		// Post Title Header Post Date
+		if( $post_title_header_post_date == 'yes' || $post_title_header_post_date == NULL ) {
+			$posted_on = sprintf(
+				/* translators: %s: post date. */
+				__( '<span class="screen-reader-text">Posted on</span> %s', 'flexia' ),
+				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			);
+			echo '<span class="posted-on"> <i class="fa fa-clock-o fa-fw"></i>' . $posted_on . '</span>'; // WPCS: XSS OK.
+		}
 
+		// Post Title Post Author
+		if( $post_title_header_post_author == 'yes' || $post_title_header_post_author == NULL ) {
+			$byline = sprintf(
+				/* translators: %s: post author. */
+				__( '<span class="screen-reader-text">Posted by</span> %s', 'flexia' ),
+				'<span class="author vcard"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			);
+			echo '<span class="byline"> ' . $byline . '</span>';
 
-	$byline = sprintf(
-		/* translators: %s: post author. */
-		__( '<span class="screen-reader-text">Posted by</span> %s', 'flexia' ),
-		'<span class="author vcard"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
+		}
 
-	echo '<span class="posted-on"> <i class="fa fa-clock-o fa-fw"></i>' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+		// Post Title Header Post Category
+		if( $post_title_header_post_category == 'yes' || $post_title_header_post_category == NULL ) {
+			$categories_list = get_the_category_list( esc_html__( ', ', 'flexia' ) );
+			if ( $categories_list ) {
+				/* translators: 1: list of categories. */
+				printf( '<span class="cat-links"> <i class="fa fa-folder-o fa-fw" aria-hidden="true"></i>' . __( '<span class="screen-reader-text">Categories</span> %s', 'flexia' ) . '</span>
+				', $categories_list ); // WPCS: XSS OK.
+			}
+		}
+
+	}else {
+		$posted_on = sprintf(
+			/* translators: %s: post date. */
+			__( '<span class="screen-reader-text">Posted on</span> %s', 'flexia' ),
+			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		);
+
+		$byline = sprintf(
+			/* translators: %s: post author. */
+			__( '<span class="screen-reader-text">Posted by</span> %s', 'flexia' ),
+			'<span class="author vcard"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		);
+
+		echo '<span class="posted-on"> <i class="fa fa-clock-o fa-fw"></i>' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 		$categories_list = get_the_category_list( esc_html__( ', ', 'flexia' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
 			printf( '<span class="cat-links"> <i class="fa fa-folder-o fa-fw" aria-hidden="true"></i>' . __( '<span class="screen-reader-text">Categories</span> %s', 'flexia' ) . '</span>
-', $categories_list ); // WPCS: XSS OK.
+			', $categories_list ); // WPCS: XSS OK.
 		}
-
+	}
 }
 endif;
 
@@ -98,26 +134,60 @@ function flexia_updated_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	$updated_on = sprintf(
-		/* translators: %s: post date. */
-		esc_html_x( 'Updated on %s', 'post date', 'flexia' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
-	echo '<span class="updated-on"> <i class="fa fa-clock-o fa-fw"></i>' . $updated_on . '</span>'; // WPCS: XSS OK. // WPCS: XSS OK.
-
-		$categories_list = get_the_category_list( esc_html__( ', ', 'flexia' ) );
-		if ( $categories_list ) {
-			/* translators: 1: list of categories. */
-			printf( '<span class="cat-links"> <i class="fa fa-folder-o fa-fw" aria-hidden="true"></i>' . __( '<span class="screen-reader-text">Categories</span> %s', 'flexia' ) . '</span>
-', $categories_list ); // WPCS: XSS OK.
+	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
+		global $post;
+		$post_title_header_post_date =  get_post_meta( $post->ID, '_flexia_post_meta_key_header_post_date', true );
+		$post_title_header_post_category =  get_post_meta( $post->ID, '_flexia_post_meta_key_header_post_category', true );
+		$post_title_header_post_comments =  get_post_meta( $post->ID, '_flexia_post_meta_key_header_post_comments', true );
+		// Post Title Header Post Date
+		if( $post_title_header_post_date == 'yes' || $post_title_header_post_date == NULL ) {
+			$updated_on = sprintf(
+				/* translators: %s: post date. */
+				esc_html_x( 'Updated on %s', 'post date', 'flexia' ),
+				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			);
+			echo '<span class="updated-on"> <i class="fa fa-clock-o fa-fw"></i>' . $updated_on . '</span>'; // WPCS: XSS OK. // WPCS: XSS OK.
 		}
 
-	?>
+		// Post Title Header Post Category
+		if( $post_title_header_post_category == 'yes' || $post_title_header_post_category == NULL ) {
+			$categories_list = get_the_category_list( esc_html__( ', ', 'flexia' ) );
+			if ( $categories_list ) {
+				/* translators: 1: list of categories. */
+				printf( '<span class="cat-links"> <i class="fa fa-folder-o fa-fw" aria-hidden="true"></i>' . __( '<span class="screen-reader-text">Categories</span> %s', 'flexia' ) . '</span>
+				', $categories_list ); // WPCS: XSS OK.
+			}
+		}
 
-	<span class="comments-count"><i class="fa fa-comments fa-fw"></i><a class="scroll-to-comments" href="#comments"><?php comments_number( 'No Responses', '1 Comment', '% Comments' ); ?></a></span>
+		// Post Title Post Comments
+		if( $post_title_header_post_comments == 'yes' || $post_title_header_post_comments == NULL ) {
+			?>
+			<span class="comments-count"><i class="fa fa-comments fa-fw"></i><a class="scroll-to-comments" href="#comments"><?php comments_number( 'No Responses', '1 Comment', '% Comments' ); ?></a></span>
+			<?php
+		}
 
-<?php
+	}else {
+		$updated_on = sprintf(
+			/* translators: %s: post date. */
+			esc_html_x( 'Updated on %s', 'post date', 'flexia' ),
+			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		);
+
+		echo '<span class="updated-on"> <i class="fa fa-clock-o fa-fw"></i>' . $updated_on . '</span>'; // WPCS: XSS OK. // WPCS: XSS OK.
+
+			$categories_list = get_the_category_list( esc_html__( ', ', 'flexia' ) );
+			if ( $categories_list ) {
+				/* translators: 1: list of categories. */
+				printf( '<span class="cat-links"> <i class="fa fa-folder-o fa-fw" aria-hidden="true"></i>' . __( '<span class="screen-reader-text">Categories</span> %s', 'flexia' ) . '</span>
+		', $categories_list ); // WPCS: XSS OK.
+			}
+
+		?>
+
+		<span class="comments-count"><i class="fa fa-comments fa-fw"></i><a class="scroll-to-comments" href="#comments"><?php comments_number( 'No Responses', '1 Comment', '% Comments' ); ?></a></span>
+		<?php
+	}
+
 }
 endif;
 

@@ -99,12 +99,21 @@ function flexia_post_large_title_markup() {
     </header>
 	<?php
 }
+
+/**
+ * This function contains large post title author avatar markup.
+ * It is used in 'flexia_post_large_title_markup' method.
+ *
+ * @since  v0.0.5
+ */
 function flexia_post_large_title_author_avatar_markup() {
 
 	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 		global $post;
 		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
+		$post_title_header_post_author = get_post_meta( $post->ID, '_flexia_post_meta_key_header_author_meta', true );
 		if( $post_title_header_meta == 'yes' || $post_title_header_meta == NULL ) {
+			if( $post_title_header_post_author == 'yes' || $post_title_header_post_author == NULL ) {
 			?>
 			<div class="blog-author">
 		        <div class="author-avatar">
@@ -115,6 +124,9 @@ function flexia_post_large_title_author_avatar_markup() {
 		        </div>
 		    </div>
 			<?php
+			}else {
+				return false;
+			}
 		}else {
 			return false;
 		}
@@ -183,7 +195,7 @@ function flexia_post_simple_title() {
 		global $post;
 		$post_title = get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
 		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
-		if( $post_title == 'simple' || $post_title == NULL ) {
+		if( $post_title == 'simple' ) {
 			?>
 			<header class="entry-header single-blog-meta single-post-meta-simple">
 				<?php if( $post_title_header_meta == 'yes' || $post_title_header_meta == NULL ) : ?>

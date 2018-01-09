@@ -71,10 +71,10 @@ function flexia_setup() {
 
 	$flexia_nav_menu_search = get_theme_mod('flexia_nav_menu_search', true);
 
-	if( $flexia_nav_menu_search == true ) : 
+	if( $flexia_nav_menu_search == true ) :
 
 	function flexia_nav_search($items, $args) {
-	     if( 'primary' === $args -> theme_location ) { 
+	     if( 'primary' === $args -> theme_location ) {
 	     $items .= '<li class="menu-item navbar-search-menu"> <a id="btn-search" href="javascript:void(0);">';
 	     $items .= '<i class="fa fa-search" aria-hidden="true"></i></a></li>';	        }
 		return $items;
@@ -88,7 +88,7 @@ function flexia_setup() {
 	 * Enable support for Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'status', 'chat' ) );
-	
+
 	/**
 	 * Enable support for WooCommerce
 	 */
@@ -209,25 +209,25 @@ if ( ! function_exists( 'flexia_fonts_url' ) ){
 	    $fonts_url = '';
 	    $content_font = get_theme_mod('flexia_google_font_family', '');
 	    $header_font = get_theme_mod('flexia_heading_font_family', '');
- 
+
 	    if ( 'off' !== $content_font || 'off' !== $header_font ) {
 	        $font_families = array();
- 
+
 	        if ( 'off' !== $content_font ) {
 	            $font_families[] = $content_font . ':300,400,700';
 	        }
- 
+
 	        if ( 'off' !== $header_font ) {
 	            $font_families[] = $header_font . ':300,400,700';
 	        }
- 
+
 	        $query_args = array(
 	            'family' => urlencode( implode( '|', array_unique($font_families) ) ),
 	        );
- 
+
 	        $fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	    }
- 
+
 	    return esc_url_raw( $fonts_url );
 	}
 }
