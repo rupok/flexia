@@ -2,6 +2,7 @@
 framework/assets/node_modules/
 framework/assets/.sass-cache/
 .DS_Store
+.phpintel
 framework/assets/package-lock.json
 framework/assets/.swp
 .phpintel/646fb7efd610876d13b10a225086b8ff
