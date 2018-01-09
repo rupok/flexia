@@ -37,6 +37,7 @@ function flexia_get_option_defaults() {
 		'post_meta_bg_color' => '#fff',
 		'sidebar_widget_bg_color' => '#fff',
 		'flexia_header_logo_width' => '150',
+		'flexia_blog_bg_heading' => '',
 		'blog_logo_width' => '150',
 		'blog_title_font_size' => '54',
 		'blog_desc_font_size' => '18',

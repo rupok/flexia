@@ -85,7 +85,7 @@
 
     wp.customize( 'post_content_bg_color', function( value ) {
         value.bind( function( to ) {            
-            $( 'body:not(.single-post) .flexia-wrapper > .content-area  article.hentry' ).css( 'background-color', to );            
+            $( 'body:not(.single-post) .flexia-wrapper > .content-area' ).css( 'background-color', to );            
             $( '.entry-content.single-post-entry' ).css( 'background-color', to );            
         } );
     });  
