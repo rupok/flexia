@@ -1011,18 +1011,33 @@ function flexia_customize_register( $wp_customize ) {
 	'priority'   => 20    
 	) );  
 
-	// Heading separator
+	$wp_customize->add_setting( 
+		'flexia_single_posts_layout' , 
+		array(
+	    'default'   => $defaults['flexia_single_posts_layout'],
+	    'sanitize_callback' => 'flexia_sanitize_choices',
+	) );
 
-	$wp_customize->add_setting('single_post_settings_title_heading', array(
-		'default'           => $defaults['single_post_settings_title_heading'],
-		'sanitize_callback' => 'esc_html',
-	));
-	
-	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'single_post_settings_title_heading', array(
-		'label'      => __( 'Single Post style', 'flexia' ),
-		'settings'		=> 'single_post_settings_title_heading',
-		'section'  		=> 'flexia_single_posts_settings',
-	)));
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'flexia_single_posts_layout',
+	        array(
+	            'label'          => __( 'Post Layout', 'flexia' ),
+	            'section'        => 'flexia_single_posts_settings',
+	            'settings'       => 'flexia_single_posts_layout',
+	            'description'    => 'Set the default post layout (global). You can control for individual posts from Flexia Post Settings.',
+	            'type'           => 'radio',
+	            'choices'        => array(
+	                'flexia_single_posts_layout_large'   => __( 'Large Header (Featured Image Background)', 'flexia' ),
+	                'flexia_single_posts_layout_simple'   => __( 'Simple Header', 'flexia' ),
+	                'flexia_single_posts_layout_no_header'   => __( 'No Header', 'flexia' )
+	            )
+	        )
+	    )
+	);
+
 
 	$wp_customize->add_setting( 'post_meta_bg_color' , array(
 	    'default'     => $defaults['post_meta_bg_color'],
@@ -1040,7 +1055,7 @@ function flexia_customize_register( $wp_customize ) {
 			'settings'   => 'post_meta_bg_color',
 		) ) 
 	);
-
+	
 	$wp_customize->add_setting( 'post_max_width', array(
 			'default'       => $defaults['post_max_width'],
 			'capability'    => 'edit_theme_options',

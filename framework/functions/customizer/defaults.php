@@ -70,6 +70,7 @@ function flexia_get_option_defaults() {
 		'blog_title' => '',
 		'blog_desc' => '',
 		'flexia_blog_content_display' => 'flexia_blog_content_display_full',
+		'flexia_single_posts_layout' => 'flexia_single_posts_layout_large',
 		'single_post_settings_title_heading' => '',
 		'flexia_blog_excerpt_count' => '60',
 		'flexia_navbar' => false,
