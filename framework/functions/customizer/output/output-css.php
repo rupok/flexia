@@ -105,7 +105,7 @@ function flexia_customizer_style() {
 		background-color: <?php echo get_theme_mod('post_content_bg_color'); ?>;
 	}
 
-	.single-post .entry-header.single-blog-meta.single-blog-meta-large {
+	.single-post .entry-header.single-blog-meta.single-post-meta-large {
 		background-color: <?php echo get_theme_mod('post_meta_bg_color'); ?>;
 	}
 
