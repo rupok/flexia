@@ -15,6 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @param array $classes Classes for the body element.
  * @return array
  */
+
 function flexia_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
@@ -165,12 +166,19 @@ function flexia_post_large_title_header_meta_markup() {
  * @since  v0.0.5
  */
 function flexia_post_large_title() {
-
+	$flexia_single_posts_layout = get_theme_mod('flexia_single_posts_layout', 'flexia_single_posts_layout_large');
 	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 		global $post;
 		$post_title = get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
 		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
-		if( $post_title == 'large' || $post_title == NULL ) {
+		if( $post_title == 'default' || $post_title == NULL ) {
+			if( get_theme_mod('flexia_single_posts_layout') == 'flexia_single_posts_layout_large' ) :
+				flexia_post_large_title_markup();
+				if( $post_title_header_meta == 'yes' || $post_title_header_meta == NULL ) {
+					flexia_post_large_title_header_meta_markup();
+				}
+			endif;
+		}elseif( $post_title == 'large') {
 			flexia_post_large_title_markup();
 			if( $post_title_header_meta == 'yes' || $post_title_header_meta == NULL ) {
 				flexia_post_large_title_header_meta_markup();
@@ -178,11 +186,47 @@ function flexia_post_large_title() {
 		}else {
 			return false;
 		}
-	}else {
+	}elseif( get_theme_mod('flexia_single_posts_layout') == 'flexia_single_posts_layout_large' ) {
+
 		flexia_post_large_title_markup();
+		flexia_post_large_title_header_meta_markup(); 
+
+	}else {
+
+		return false;
+
 	}
 
 }
+
+/**
+ * This function will generate simple post title markup
+ *
+ * @since  v0.0.5
+ */
+function flexia_post_simple_title_markup() {
+
+	?>
+	<header class="entry-header single-blog-meta single-post-meta-simple">
+		<?php if ( 'post' === get_post_type() ) : ?>
+			<div class="entry-meta">
+			    <?php flexia_posted_on(); ?>
+			</div>
+			<!-- .entry-meta -->
+			<?php endif; 
+			if ( is_singular() ) :
+			    the_title( '<h1 class="entry-title">', '</h1>' );
+			else :
+			    the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			endif;
+		?>
+	</header>
+
+	<?php
+
+}
+
+
 
 /**
  * This function will show/hide simple post title
@@ -217,11 +261,44 @@ function flexia_post_simple_title() {
 				</div><!-- .post-thumbnail -->
 			<?php endif; ?>
 			<?php
+		}elseif( $post_title == 'default' || $post_title == NULL ) {
+
+			if( get_theme_mod('flexia_single_posts_layout') == 'flexia_single_posts_layout_simple' ) {
+
+			?>
+			<header class="entry-header single-blog-meta single-post-meta-simple">
+				<?php if( $post_title_header_meta == 'yes' || $post_title_header_meta == NULL ) : ?>
+			    <?php if ( 'post' === get_post_type() ) : ?>
+			        <div class="entry-meta">
+			            <?php flexia_posted_on(); ?>
+			        </div>
+			        <!-- .entry-meta -->
+			    <?php endif; endif;
+			    if ( is_singular() ) :
+			        the_title( '<h1 class="entry-title">', '</h1>' );
+			    else :
+			        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			    endif;?>
+			</header>
+			<?php if ( '' !== get_the_post_thumbnail()) : ?>
+				<div class="post-thumbnail">
+					<?php the_post_thumbnail( 'flexia-featured-image' ); ?>
+				</div><!-- .post-thumbnail -->
+			<?php endif; 
+
+			}
+
 		}else {
 			return false;
 		}
+	}elseif( get_theme_mod('flexia_single_posts_layout') == 'flexia_single_posts_layout_simple' ) {
+
+		flexia_post_simple_title_markup();
+
 	}else {
+
 		return false;
+
 	}
 
 }
