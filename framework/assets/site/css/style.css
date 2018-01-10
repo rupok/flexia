@@ -4499,6 +4499,10 @@ a:hover, a:active {
 }
 
 /* Single Posts */
+.single-post .entry-header.single-blog-meta.single-post-meta-large {
+  background-color: #fff;
+}
+
 .single-blog-header .header-content .blog-title {
   color: #fff;
   font-size: 3em;
