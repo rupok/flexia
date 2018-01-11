@@ -104,7 +104,7 @@ class Customizer_Toggle_Control extends WP_Customize_Control {
 
 
 /* Custom Title */
- 
+
 class Separator_Custom_control extends WP_Customize_Control{
 	public $type = 'separator';
 	public function render_content(){
@@ -143,20 +143,24 @@ class Google_Font_Dropdown_Custom_Control extends WP_Customize_Control{
             </label>
         <?php
     }
- 
+
 	public function get_google_fonts(){
 		if (get_transient('flexia_google_font_family')) {
         	$content = get_transient('flexia_google_font_family');
 	    } else {
-	        $googleApi = 'https://www.googleapis.com/webfonts/v1/webfonts?sort=alpha&key=AIzaSyCMb72tc3wSHxA7LD9WkTxTNJgfDjsWHMw ';
+	        $googleApi = 'https://www.googleapis.com/webfonts/v1/webfonts?sort=alpha&key=AIzaSyCMb72tc3wSHxA7LD9WkTxTNJgfDjsWHMw';
 	        $fontContent = wp_remote_get( $googleApi, array('sslverify'   => false) );
-	        $content = json_decode($fontContent['body'], true);
-	        set_transient( 'flexia_google_font_family', $content, 0 );
+	        if( is_array( $fontContent ) && !empty( $fontContent['body'] ) ) {
+	        	$content = json_decode($fontContent['body'], true);
+	        	set_transient( 'flexia_google_font_family', $content, 0 );
+	        }else {
+	        	return false;
+	        }
 	    }
- 
+
 	    return $content['items'];
 	}
- 
+
 }
 
 ?>
