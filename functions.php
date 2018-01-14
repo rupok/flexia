@@ -251,7 +251,7 @@ if ( current_user_can( 'install_plugins' ) )
 
   if ( ! get_user_meta($user_id, 'flexia_ignore_notice006') ) {
         echo '<div class="flexia-admin-notice updated"><p>';
-        printf(__($flexia_admin_notice_text),  admin_url( 'admin.php?page=flexia-required-plugins&flexia_nag_ignore=0' ));
+        printf($flexia_admin_notice_text,  admin_url( 'admin.php?page=flexia-required-plugins&flexia_nag_ignore=0' ));
         echo "</p></div>";
   }
     }
