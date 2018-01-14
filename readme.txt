@@ -5,7 +5,7 @@ Theme URI: https://github.com/rupok/flexia
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 0.0.6
+Stable tag: 0.0.7
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -48,6 +48,17 @@ Source: https://picjumbo.com/entrepreneur-working-on-his-macbook/
 
 
 == Changelog ==
+
+= 0.0.7 =
+* Released: January 14, 2018
+
+* Post layout options added to Customizer
+* Post Settings updated with lots of options
+* Default colors values updated for some elements
+* WooCommerce integration improved
+* Background image and color options improved
+* Blog Customizer organized and more controls added
+* Few minor bugfix and improvements
 
 = 0.0.6 =
 * Released: January 05, 2018
