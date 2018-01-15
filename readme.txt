@@ -5,7 +5,7 @@ Theme URI: https://github.com/rupok/flexia
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 0.0.7
+Stable tag: 0.0.8
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -48,6 +48,12 @@ Source: https://picjumbo.com/entrepreneur-working-on-his-macbook/
 
 
 == Changelog ==
+
+= 0.0.8 =
+* Released: January 15, 2018
+
+* Maintenance release for v0.0.7
+* Few bugfix and improvements
 
 = 0.0.7 =
 * Released: January 14, 2018
