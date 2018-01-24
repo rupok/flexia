@@ -378,3 +378,9 @@ body.woocommerce:not(.single-product) ul.products li.product-has-gallery a.wooco
 body.woocommerce:not(.single-product) ul.products li.product-has-gallery a.woocommerce-loop-product__link:hover .wp-post-image--secondary {
 	opacity: 1;
 }
+
+/* Fixes */
+
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1, .woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2, .woocommerce .cart-collaterals .shipping_calculator .col2-set .col-1,.woocommerce .cart-collaterals .shipping_calculator .col2-set .col-2,.woocommerce-page .cart-collaterals .shipping_calculator .col2-set .col-1,.woocommerce-page .cart-collaterals .shipping_calculator .col2-set .col-2 {
+	max-width: none;
+}

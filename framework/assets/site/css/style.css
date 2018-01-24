@@ -5843,6 +5843,11 @@ body.woocommerce:not(.single-product) ul.products li.product-has-gallery a.wooco
   opacity: 1;
 }
 
+/* Fixes */
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1, .woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2, .woocommerce .cart-collaterals .shipping_calculator .col2-set .col-1, .woocommerce .cart-collaterals .shipping_calculator .col2-set .col-2, .woocommerce-page .cart-collaterals .shipping_calculator .col2-set .col-1, .woocommerce-page .cart-collaterals .shipping_calculator .col2-set .col-2 {
+  max-width: none;
+}
+
 /*--------------------------------------------------------------
 
 /*--------------------------------------------------------------
