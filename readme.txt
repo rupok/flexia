@@ -5,7 +5,7 @@ Theme URI: https://github.com/rupok/flexia
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 0.0.8
+Stable tag: 0.0.9
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -48,6 +48,12 @@ Source: https://picjumbo.com/entrepreneur-working-on-his-macbook/
 
 
 == Changelog ==
+
+= 0.0.9 =
+* Released: January 24, 2018
+
+* WooComerce layout issue fixed
+* Few bugfix and improvements
 
 = 0.0.8 =
 * Released: January 15, 2018
