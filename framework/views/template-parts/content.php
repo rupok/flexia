@@ -13,9 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 $flexia_blog_content_display = get_theme_mod('flexia_blog_content_display', 'flexia_blog_content_layout_full');
 $flexia_blog_excerpt_count = get_theme_mod('flexia_blog_excerpt_count', '60');
-
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header single-blog-meta">
 		<?php
