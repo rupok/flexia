@@ -14,6 +14,17 @@ function flexia_sanitize_integer( $input ) {
 
 endif;
 
+if ( ! function_exists( 'flexia_sanitize_float' ) ) :
+/**
+ * Sanitize float
+ * @since 1.0.0
+ */
+function flexia_sanitize_float( $input ) {
+	return filter_var( $input, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION );
+}
+
+endif;
+
 
 if ( ! function_exists( 'flexia_sanitize_choices' ) ) :
 /**
@@ -21,14 +32,14 @@ if ( ! function_exists( 'flexia_sanitize_choices' ) ) :
  * @since 1.0.0
  */
 function flexia_sanitize_choices( $input, $setting ) {
-	
+
 	// Ensure input is a slug
 	$input = sanitize_key( $input );
-	
+
 	// Get list of choices from the control
 	// associated with the setting
 	$choices = $setting->manager->get_control( $setting->id )->choices;
-	
+
 	// If the input is a valid key, return it;
 	// otherwise, return the default
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
