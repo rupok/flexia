@@ -85,7 +85,14 @@ jQuery( document ).ready( function($) {
 
 	  $(window).scroll(function() {
 	    var scrollPos = $(window).scrollTop(),
-	        navbar = $('.flexia-navbar-fixed-top');
+	    	navbar='flexia-navbar-static-top';
+			if ($('.flexia-navbar').hasClass('flexia-navbar-fixed-top')) {
+			    navbar = $('.flexia-navbar-fixed-top');
+			} else if ($('.flexia-navbar').hasClass('flexia-navbar-transparent-sticky-top')) {
+			    navbar = $('.flexia-navbar-transparent-sticky-top');
+			} else{
+				return false;
+			}
 
 	    if (scrollPos > 350) {
 	      navbar.addClass('flexia-sticky-navbar');

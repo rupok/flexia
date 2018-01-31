@@ -2555,7 +2555,7 @@ big {
   animation-name: slideInDown;
 }
 
-.flexia-navbar.flexia-navbar-transparent-top {
+.flexia-navbar.flexia-navbar-transparent-top, .flexia-navbar.flexia-navbar-transparent-sticky-top:not(.flexia-sticky-navbar) {
   background-color: transparent;
   border: none;
   box-shadow: none;
