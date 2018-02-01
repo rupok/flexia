@@ -234,7 +234,7 @@ if ( ! function_exists( 'flexia_fonts_url' ) ){
 
 // Admin notice for Flexia Core
 
-if( class_exists( 'Flexia_Core_Global_Metabox' ) ) {
+if( class_exists( 'Flexia_Core' ) ) {
   return false;
 } else {
 	add_action('admin_notices', 'flexia_admin_notice');
