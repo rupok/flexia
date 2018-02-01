@@ -57,7 +57,7 @@ function flexia_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
+	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
 		global $post;
 		$post_title_header_post_date =  get_post_meta( $post->ID, '_flexia_post_meta_key_header_post_date', true );
 		$post_title_header_post_category =  get_post_meta( $post->ID, '_flexia_post_meta_key_header_post_category', true );
@@ -134,7 +134,7 @@ function flexia_updated_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
+	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
 		global $post;
 		$post_title_header_post_date =  get_post_meta( $post->ID, '_flexia_post_meta_key_header_post_date', true );
 		$post_title_header_post_category =  get_post_meta( $post->ID, '_flexia_post_meta_key_header_post_category', true );

@@ -109,7 +109,7 @@ function flexia_post_large_title_markup() {
  */
 function flexia_post_large_title_author_avatar_markup() {
 
-	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
+	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
 		global $post;
 		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
 		$post_title_header_post_author = get_post_meta( $post->ID, '_flexia_post_meta_key_header_author_meta', true );
@@ -167,7 +167,7 @@ function flexia_post_large_title_header_meta_markup() {
  */
 function flexia_post_large_title() {
 	$flexia_single_posts_layout = get_theme_mod('flexia_single_posts_layout', 'flexia_single_posts_layout_large');
-	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
+	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
 		global $post;
 		$post_title = get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
 		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
@@ -238,7 +238,7 @@ function flexia_post_simple_title_markup() {
  */
 function flexia_post_simple_title() {
 
-	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
+	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
 		global $post;
 		$post_title = get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
 		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
@@ -281,7 +281,7 @@ add_filter( 'body_class', 'flexia_add_body_class', 10, 1 );
  */
 function flexia_post_footer_meta() {
 
-	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
+	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
 		global $post;
 		$footer_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_footer_meta', true );
 		if( $footer_meta == 'yes' || $footer_meta == NULL ) {
@@ -302,7 +302,7 @@ function flexia_post_footer_meta() {
  */
 function flexia_post_sharer() {
 
-	if( class_exists( 'Flexia_Core_Post_Metabox' ) ) {
+	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
 		global $post;
 		$post_sharer = get_post_meta( $post->ID, '_flexia_post_meta_key_post_sharer', true );
 		if( $post_sharer == 'yes' || $post_sharer == NULL ) {
