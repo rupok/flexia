@@ -53,7 +53,7 @@ add_action( 'wp_head', 'flexia_pingback_header' );
  */
 function flexia_page_title() {
 
-	if( class_exists( 'Flexia_Core_Global_Metabox' ) ) {
+	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
 		global $post;
 		$page_title = get_post_meta( $post->ID, '_flexia_meta_key_page_title', true );
 		if( $page_title == 1 || $page_title == NULL ) {
