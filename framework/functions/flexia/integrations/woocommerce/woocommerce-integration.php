@@ -57,8 +57,10 @@ get_footer();
 }
 
 // Add cart menu  to Navbar
-				
-if( class_exists('WooCommerce') )  {			  
+
+$flexia_woo_cart_menu = get_theme_mod('flexia_woo_cart_menu', false);
+
+if( $flexia_woo_cart_menu == true )  {			  
 
 	function add_cart_menu_to_navbar ( $items, $args ) {
 		if( 'primary' === $args -> theme_location ) {

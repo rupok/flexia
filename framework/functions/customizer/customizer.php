@@ -1326,6 +1326,22 @@ function flexia_customize_register( $wp_customize ) {
 			'type'        => 'light',// light, ios, flat
 	) ) );
 
+
+	// Enable Cart in menu
+
+	$wp_customize->add_setting( 'flexia_woo_cart_menu', array(
+			'default'     => $defaults['flexia_woo_cart_menu'],
+			'capability'  => 'edit_theme_options',
+			'sanitize_callback' => 'flexia_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'flexia_woo_cart_menu', array(
+			'label'	      => esc_html__( 'Enable Cart Menu?', 'flexia' ),
+			'section'     => 'flexia_header_settings',
+			'settings'    => 'flexia_woo_cart_menu',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
 	$wp_customize->add_setting( 'flexia_nav_menu_link_color' , array(
 	    'default'     => $defaults['flexia_nav_menu_link_color'],
 	    'transport'   => 'postMessage',
