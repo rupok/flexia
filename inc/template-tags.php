@@ -245,3 +245,24 @@ function flexia_entry_footer() {
 	);
 }
 endif;
+/**
+ * Fetching All Post Categories
+ */
+if( ! function_exists( 'flexia_get_categories' ) ) :
+function flexia_get_categories() {
+	$category_key = [];
+	$category_name = [];
+	$terms = get_terms( array(
+		'taxonomy' => 'category',
+		'hide_empty' => false,
+	) );
+
+	foreach( $terms as $term ) {
+		$category_key[] = $term->slug;
+		$category_name[] = $term->name;
+	}
+
+	$categories = array_combine( $category_key, $category_name );
+	return $categories;
+}
+endif;

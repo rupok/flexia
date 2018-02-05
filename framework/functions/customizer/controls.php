@@ -13,6 +13,7 @@ class Customizer_Range_Value_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 		wp_enqueue_script( 'customizer-range-value-control', get_template_directory_uri() . '/framework/assets/admin/js/customizer-range-value-control.js', array( 'jquery' ), rand(), true );
+
 		wp_enqueue_style( 'customizer-range-value-control', get_template_directory_uri() . '/framework/assets/admin/css/customizer-range-value-control.css', array(), rand() );
 	}
 
@@ -159,6 +160,48 @@ class Google_Font_Dropdown_Custom_Control extends WP_Customize_Control{
 	    }
 
 	    return $content['items'];
+	}
+
+}
+
+/**
+ * Select2 Multi-Select
+ */
+class Customizer_Select2_Multiselect extends WP_Customize_Control {
+
+	public $type = 'select2_multiselect';
+
+	public function enqueue() {
+		wp_enqueue_script( 'select2-min-js', get_template_directory_uri() . '/framework/assets/admin/js/select2.min.js', array( 'jquery' ), rand(), true );
+		wp_enqueue_script( 'customizer-multiselect-control', get_template_directory_uri() . '/framework/assets/admin/js/customizer-multiselect-control.js', array( 'select2-min-js' ), rand(), true );
+
+		wp_enqueue_style( 'select2-css', get_template_directory_uri() . '/framework/assets/admin/css/select2.min.css', array(), rand() );
+		wp_enqueue_style( 'customizer-select2-control', get_template_directory_uri() . '/framework/assets/admin/css/customizer-select2-control.css', array(), rand() );
+	}
+
+	public function render_content() {
+		if( empty( $this->choices ) )
+			return;
+		?>
+		<label>
+			<?php if( !empty( $this->label ) ) : ?>
+				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<?php endif; ?>
+			<select <?php $this->link(); ?> class="js-select2-multiselect" multiple="multiple">
+				<?php
+					foreach( $this->choices as $value => $label ) {
+						echo '<option value="' . esc_attr( $value ) . '">' . $label . '</option>';
+					}
+				?>
+			</select>
+		</label>
+		<script>
+			$(document).ready(function() {
+			    $('.js-select2-multiselect').select2();
+			});
+		</script>
+		<?php
+
 	}
 
 }
