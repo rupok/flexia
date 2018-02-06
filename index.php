@@ -13,17 +13,14 @@
  */
 
 get_header();
-
-
-$icon_class = get_theme_mod('blog_icon_class', 'fa-pencil');
-
-$scroll_bottom_arrow = get_theme_mod('scroll_bottom_arrow', false);
-
-$blog_title = get_theme_mod('blog_title', '');
-
-$blog_desc = get_theme_mod('blog_desc', '');
-
-$flexia_masonry_blog = true;
+/**
+ * Customizer Values
+ */
+$icon_class 			= get_theme_mod('blog_icon_class', 'fa-pencil');
+$scroll_bottom_arrow 	= get_theme_mod('scroll_bottom_arrow', false);
+$blog_title 			= get_theme_mod('blog_title', '');
+$blog_desc 				= get_theme_mod('blog_desc', '');
+$flexia_blog_layout 	= get_theme_mod( 'flexia_blog_content_layout', 'flexia_blog_content_layout_standard' );
 ?>
 
 <div id="page" class="site">
@@ -97,9 +94,8 @@ $flexia_masonry_blog = true;
 				endif; ?>
 
 				<main id="main" class="site-main flexia-container">
-
 				<?php
-				if( $flexia_masonry_blog != true ) :
+				if( ! class_exists( 'Flexia_Pro' ) || ! class_exists( 'Flexia_Core' ) || $flexia_blog_layout == 'flexia_blog_content_layout_standard' ) :
 					if ( have_posts() ) :
 
 						/* Start the Loop */
@@ -122,7 +118,7 @@ $flexia_masonry_blog = true;
 						get_template_part( 'framework/views/template-parts/content', 'none' );
 
 					endif;
-				elseif( $flexia_masonry_blog == true ):
+				elseif( $flexia_blog_layout == 'flexia_blog_content_layout_grid' || $flexia_blog_layout == 'flexia_blog_content_layout_masonry' ):
 					/**
 					 * A flexia hook to add blog layouts
 					 *
