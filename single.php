@@ -32,9 +32,9 @@ get_header(); ?>
 				</main><!-- #main -->
 			</div><!-- #primary -->
 
-			
+
 		</div><!-- #flexia-wrapper -->
-	</div><!-- #content --> 
+	</div><!-- #content -->
 </div><!-- #page -->
 <?php
 get_template_part( 'framework/views/template-parts/content', 'footer' );
