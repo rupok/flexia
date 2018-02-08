@@ -4,7 +4,6 @@
  * Since 1.0.0
  */
 function flexia_breadcrumbs(){
-  /* === OPTIONS === */
 	$text['home']     = 'Home'; // text for the 'Home' link
 	$text['category'] = 'Archive by Category "%s"'; // text for a category page
 	$text['tax'] 	  = 'Archive for "%s"'; // text for a taxonomy page
@@ -15,25 +14,24 @@ function flexia_breadcrumbs(){
 
 	$showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
 	$showOnHome  = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-	$delimiter   = ' &raquo; '; // delimiter between crumbs
-	$before      = '<span class="current">'; // tag before the current crumb
-	$after       = '</span>'; // tag after the current crumb
-	/* === END OF OPTIONS === */
+	$delimiter   = '<span class="breadcrumb-delimiter"><i class="fa fa-angle-right"></i></span>'; // delimiter between crumbs
+	$before      = '<li class="flexia-breadcrumb-item current"><span>'; // tag before the current crumb
+	$after       = '</span></li>'; // tag after the current crumb
 
 	global $post;
 	$homeLink = get_bloginfo('url') . '/';
-	$linkBefore = '<span typeof="v:Breadcrumb">';
-	$linkAfter = '</span>';
+	$linkBefore = '<li class="flexia-breadcrumb-item typeof="v:Breadcrumb">';
+	$linkAfter = '</li>';
 	$linkAttr = ' rel="v:url" property="v:title"';
 	$link = $linkBefore . '<a' . $linkAttr . ' href="%1$s">%2$s</a>' . $linkAfter;
 
 	if (is_home() || is_front_page()) {
 
-		if ($showOnHome == 1) echo '<div id="crumbs"><a href="' . $homeLink . '">' . $text['home'] . '</a></div>';
+		if ($showOnHome == 1) echo '<nav class="flexia-breadcrumb"><a href="' . $homeLink . '">' . $text['home'] . '</a></nav>';
 
 	} else {
 
-		echo '<div id="crumbs" xmlns:v="http://rdf.data-vocabulary.org/#">' . sprintf($link, $homeLink, $text['home']) . $delimiter;
+		echo '<nav id="flexia-breadcrumb" class="flexia-breadcrumb" xmlns:v="http://rdf.data-vocabulary.org/#"><ul class="breadcrumb">' . sprintf($link, $homeLink, $text['home']) . $delimiter;
 
 		
 		if ( is_category() ) {
@@ -137,7 +135,7 @@ function flexia_breadcrumbs(){
 			if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
 		}
 
-		echo '</div>';
+		echo '</ul></nav>';
 
 	}
 } // end flexia_breadcrumbs()

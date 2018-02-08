@@ -3937,22 +3937,20 @@ a:hover, a:active {
   display: inline-block;
 }
 
-.flexia-breadcrumb .flexia-breadcrumb-item {
+.flexia-breadcrumb .flexia-breadcrumb-item, .flexia-breadcrumb .flexia-breadcrumb-item a {
   color: #7e7e7e;
-  font-size: .75em;
+  font-size: .75rem;
   text-transform: uppercase;
   letter-spacing: 0.035em;
 }
 
-.breadcrumb .active, .breadcrumb li a:hover, .breadcrumb li a:focus {
+.flexia-breadcrumb-item.current span, .breadcrumb li a:hover, .breadcrumb li a:focus {
   color: #222;
 }
 
-.flexia-breadcrumb .breadcrumb > li + li::before {
-  padding: 0 5px;
-  color: #7e7e7e;
-  content: "/\00a0";
-  font-size: .75em;
+.breadcrumb-delimiter {
+  margin: 0 7px;
+  opacity: .5;
 }
 
 /*--------------------------------------------------------------
