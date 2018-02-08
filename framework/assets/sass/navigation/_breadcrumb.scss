@@ -1,0 +1,23 @@
+.flexia-breadcrumb .breadcrumb {
+	margin: 0;
+	padding: 0;
+}
+.flexia-breadcrumb .breadcrumb li {
+	list-style: none;
+	display: inline-block;
+}
+.flexia-breadcrumb .flexia-breadcrumb-item {
+	color: #7e7e7e;
+	font-size: .75em;
+	text-transform: uppercase;
+	letter-spacing: 0.035em;
+}
+.breadcrumb .active, .breadcrumb li a:hover, .breadcrumb li a:focus {
+	color: #222;
+}
+.flexia-breadcrumb .breadcrumb > li + li::before {
+	padding: 0 5px;
+	color: #7e7e7e;
+	content: "/\00a0";
+	font-size: .75em;
+}

@@ -89,6 +89,33 @@
   transition: box-shadow .4s ease-in-out
 }
 
+.entry-header.entry-header-mini {
+  background-color: #f8f8f8;
+  padding: 1em 0;
+}
+
+.entry-header-inner{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.entry-header.entry-header-mini .entry-title {
+  flex: 1 1 auto;
+  padding: .5em 0;
+  margin: 0;
+  font-size: 1.2em;
+  letter-spacing: .035em;
+  font-weight: 400;
+}
+.entry-header.entry-header-mini .entry-title::after{
+  display: none;
+}
+.entry-header.entry-header-mini .flexia-breadcrumb {
+  flex: 0 0 auto;
+}
+
 @media all and (min-width: 600px) and(max-width: 959px) {
 .header-inner {
   padding: 4em 1em;

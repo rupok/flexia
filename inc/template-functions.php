@@ -47,9 +47,9 @@ function flexia_pingback_header() {
 add_action( 'wp_head', 'flexia_pingback_header' );
 
 /**
- * This function will show/hide page title
+ * Page Title markup
  *
- * @since  v0.0.5
+ * @since  v1.0.0
  */
 function flexia_page_title() {
 
@@ -60,6 +60,43 @@ function flexia_page_title() {
 			?>
 			<header class="entry-header">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			</header><!-- .entry-header -->
+			<?php
+		}
+	}else {
+		?>
+		<header class="entry-header">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</header><!-- .entry-header -->
+		<?php
+	}
+
+}
+/**
+ * Page Title markup mini
+ *
+ * @since  v1.0.0
+ */
+function flexia_page_title_mini() {
+
+	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
+		global $post;
+		$page_title = get_post_meta( $post->ID, '_flexia_meta_key_page_title', true );
+		if( $page_title == 1 || $page_title == NULL ) {
+			?>
+			<header class="entry-header entry-header-mini">
+				<div class="container max width">
+					<div class="entry-header-inner">
+						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+						<nav class="flexia-breadcrumb">
+							<ul class="breadcrumb">
+							  <li><a class="flexia-breadcrumb-item" href="#">Home</a></li>
+							  <li><a class="flexia-breadcrumb-item" href="#">Parent</a></li>
+							  <li><span class="flexia-breadcrumb-item active">Active Page</span></li>
+						  </ul>
+						</nav>
+					</div>
+				</div>
 			</header><!-- .entry-header -->
 			<?php
 		}
