@@ -85,7 +85,7 @@ function flexia_page_title_large() {
 		if( $page_title == 1 || $page_title == NULL ) {
 			?>
 			<header class="entry-header entry-header-large entry-header-center">
-				<div class="container max width">
+				<div class="flexia-container max width">
 					<div class="entry-header-inner">
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 						<nav class="flexia-breadcrumb">
@@ -122,7 +122,7 @@ function flexia_page_title_mini() {
 		if( $page_title == 1 || $page_title == NULL ) {
 			?>
 			<header class="entry-header entry-header-mini">
-				<div class="container max width">
+				<div class="flexia-container max width">
 					<div class="entry-header-inner">
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 						<nav class="flexia-breadcrumb">
