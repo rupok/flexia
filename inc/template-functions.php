@@ -70,6 +70,56 @@ function flexia_page_title() {
 	}
 
 }
+/**
+ * Page Header Title markup
+ *
+ * @since  v1.0.0
+ */
+function flexia_page_header() {
+
+	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
+		global $post;
+		$page_title = get_post_meta( $post->ID, '_flexia_meta_key_page_title', true );
+		$flexia_page_header_layout 	= get_theme_mod( 'flexia_page_header_layout', 'flexia_page_header_default' );
+		$flexia_page_breadcrumb = get_theme_mod( 'flexia_page_breadcrumb', true);
+
+		if( $page_title == 1 || $page_title == NULL ) {
+
+			if( $flexia_page_header_layout == 'flexia_page_header_large') { ?>
+			<header class="entry-header entry-header-large entry-header-center">
+				<div class="flexia-container">
+					<div class="entry-header-inner">
+					<?php
+						flexia_page_title();
+						if( $flexia_page_breadcrumb == true ) {
+							flexia_breadcrumbs();
+						}
+					?>
+					</div>
+				</div>
+			</header>
+
+			<?php } elseif( $flexia_page_header_layout == 'flexia_page_header_mini') { ?>
+			<header class="entry-header entry-header-mini">
+				<div class="flexia-container max width">
+					<div class="entry-header-inner">
+					<?php
+						flexia_page_title();
+						if( $flexia_page_breadcrumb == true ) {
+							flexia_breadcrumbs();
+						}
+					?>
+					</div>
+				</div>
+			</header>
+			<?php
+			}else {
+				// no header
+			} 
+		}
+	}
+}
+
 
 /**
  * This function contains large post title markup.
