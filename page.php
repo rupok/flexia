@@ -26,40 +26,40 @@ get_header(); ?>
 	<?php get_template_part( 'framework/views/template-parts/content', 'masthead' ); ?>
 
 	<div id="content" class="site-content">
+
+	<?php if( $flexia_page_header_layout == 'flexia_page_header_large') { ?>
+		<header class="entry-header entry-header-large entry-header-center">
+			<div class="flexia-container">
+				<div class="entry-header-inner">
+				<?php
+					flexia_page_title();
+					if( $flexia_page_breadcrumb == true ) {
+						flexia_breadcrumbs();
+					}
+				?>
+				</div>
+			</div>
+		</header>
+
+	<?php } elseif( $flexia_page_header_layout == 'flexia_page_header_mini') { ?>
+		<header class="entry-header entry-header-mini">
+			<div class="flexia-container max width">
+				<div class="entry-header-inner">
+				<?php
+					flexia_page_title();
+					if( $flexia_page_breadcrumb == true ) {
+						flexia_breadcrumbs();
+					}
+				?>
+				</div>
+			</div>
+		</header>
+		<?php
+	}else {
+		// no header
+	} ?>
+		
 		<div class="flexia-wrapper flexia-container max width">
-
-		<?php if( $flexia_page_header_layout == 'flexia_page_header_large') { ?>
-			<header class="entry-header entry-header-large entry-header-center">
-				<div class="flexia-container">
-					<div class="entry-header-inner">
-					<?php
-						flexia_page_title();
-						if( $flexia_page_breadcrumb == true ) {
-							flexia_breadcrumbs();
-						}
-					?>
-					</div>
-				</div>
-			</header>
-
-		<?php } elseif( $flexia_page_header_layout == 'flexia_page_header_mini') { ?>
-			<header class="entry-header entry-header-mini">
-				<div class="flexia-container max width">
-					<div class="entry-header-inner">
-					<?php
-						flexia_page_title();
-						if( $flexia_page_breadcrumb == true ) {
-							flexia_breadcrumbs();
-						}
-					?>
-					</div>
-				</div>
-			</header>
-			<?php
-		}else {
-			// no header
-		} ?>
-
 			<div id="primary" class="content-area">
 				<main id="main" class="site-main flexia-container">
 

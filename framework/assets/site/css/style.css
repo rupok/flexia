@@ -4479,6 +4479,7 @@ a:hover, a:active {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1.5em;
 }
 
 .entry-header.entry-header-large .entry-title,
@@ -4488,7 +4489,6 @@ a:hover, a:active {
   margin: 0;
   font-size: 1.2em;
   letter-spacing: .035em;
-  font-weight: 400;
 }
 
 .entry-header.entry-header-large .entry-title::after,
