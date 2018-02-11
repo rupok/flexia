@@ -18,6 +18,7 @@ get_header(); ?>
 	<?php get_template_part( 'framework/views/template-parts/content', 'masthead' ); ?>
 
 	<div id="content" class="site-content">
+		<?php flexia_page_header(); ?>
 		<div class="flexia-wrapper flexia-container max width">
 			<div id="primary" class="content-area">
 				<main id="main" class="site-main flexia-container">
