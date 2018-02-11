@@ -141,6 +141,23 @@ function flexia_customizer_style() {
 		font-size: calc(<?php echo get_theme_mod('blog_desc_font_size'); ?>px / 1.5);
 	}
 
+	.page .entry-header.entry-header-large, .page .entry-header.entry-header-mini {
+		background-color: <?php echo get_theme_mod('flexia_page_title_bg'); ?>;
+	}
+
+	.page .entry-header .entry-title {
+		color: <?php echo get_theme_mod('flexia_page_title_font_color'); ?>;
+		font-size: <?php echo get_theme_mod('flexia_page_title_font_size'); ?>px;
+	}
+
+	.flexia-breadcrumb .flexia-breadcrumb-item, .flexia-breadcrumb .flexia-breadcrumb-item a, .flexia-breadcrumb .breadcrumb-delimiter{
+		color: <?php echo get_theme_mod('flexia_breadcrumb_font_color'); ?>;
+		font-size: <?php echo get_theme_mod('flexia_breadcrumb_font_size'); ?>px;
+	}
+	.flexia-breadcrumb-item.current span, .breadcrumb li a:hover, .breadcrumb li a:focus{
+		color: <?php echo get_theme_mod('flexia_breadcrumb_active_font_color'); ?>;
+	}
+
 	.flexia-search-overlay {
 		background-color: <?php echo get_theme_mod('flexia_overlay_search_bg_color'); ?>;
 	}

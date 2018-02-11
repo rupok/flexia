@@ -380,7 +380,7 @@ function flexia_customize_register( $wp_customize ) {
 		'type'     => 'range-value',
 		'section'  => 'flexia_page_settings',
 		'settings' => 'flexia_page_title_font_size',
-		'priority'    => 50,
+		'priority'    => 60,
 		'label'    => __( 'Page Title Font Size (px)', 'flexia' ),
 		'input_attrs' => array(
 			'min'    => 15,
@@ -390,19 +390,19 @@ function flexia_customize_register( $wp_customize ) {
 	  	),
 	) ) );
 
-	$wp_customize->add_setting( 'flexia_page_breadcrumb_font_size', array(
-			'default'       => $defaults['flexia_page_breadcrumb_font_size'],
+	$wp_customize->add_setting( 'flexia_breadcrumb_font_size', array(
+			'default'       => $defaults['flexia_breadcrumb_font_size'],
 			'capability'    => 'edit_theme_options',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'flexia_sanitize_integer'
 
 	) );
 
-	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'flexia_page_breadcrumb_font_size', array(
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'flexia_breadcrumb_font_size', array(
 		'type'     => 'range-value',
 		'section'  => 'flexia_page_settings',
-		'settings' => 'flexia_page_breadcrumb_font_size',
-		'priority'    => 60,
+		'settings' => 'flexia_breadcrumb_font_size',
+		'priority'    => 70,
 		'label'    => __( 'Breadcrumb Font Size (px)', 'flexia' ),
 		'input_attrs' => array(
 			'min'    => 1,
@@ -412,6 +412,43 @@ function flexia_customize_register( $wp_customize ) {
 	  	),
 	) ) );
 
+
+
+	$wp_customize->add_setting( 'flexia_breadcrumb_font_color' , array(
+	    'default'     => $defaults['flexia_breadcrumb_font_color'],
+	    'transport'   => 'postMessage',
+	    'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+		$wp_customize,
+		'flexia_breadcrumb_font_color',
+		array(
+			'label'      => __( 'Breadcrumb Font Color', 'flexia' ),
+			'section'    => 'flexia_page_settings',
+			'settings'   => 'flexia_breadcrumb_font_color',
+			'priority'    => 80,
+		) )
+	);
+
+	$wp_customize->add_setting( 'flexia_breadcrumb_active_font_color' , array(
+	    'default'     => $defaults['flexia_breadcrumb_active_font_color'],
+	    'transport'   => 'postMessage',
+	    'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+		$wp_customize,
+		'flexia_breadcrumb_active_font_color',
+		array(
+			'label'      => __( 'Breadcrumb Active Font Color', 'flexia' ),
+			'section'    => 'flexia_page_settings',
+			'settings'   => 'flexia_breadcrumb_active_font_color',
+			'priority'    => 90,
+		) )
+	);
 
   	// Design Settings : Overlay Search
 

@@ -118,6 +118,52 @@
         } );
     });  
 
+    // Page title and font size
+
+    wp.customize( 'flexia_page_title_bg', function( value ) {
+        value.bind( function( to ) {            
+            $( '.page .entry-header.entry-header-large, .page .entry-header.entry-header-mini' ).css( 'background-color', to );            
+          
+        } );
+    });  
+
+    wp.customize( 'flexia_page_title_font_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.page .entry-header .entry-title' ).css( 'color', to);            
+          
+        } );
+    });  
+
+    wp.customize( 'flexia_page_title_font_size', function( value ) {
+        value.bind( function( to ) {            
+            $( '.page .entry-header .entry-title' ).css( 'font-size', to + 'px' );            
+          
+        } );
+    });   
+
+    // Breadcrumbs
+
+    wp.customize( 'flexia_breadcrumb_font_size', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-breadcrumb .flexia-breadcrumb-item, .flexia-breadcrumb .flexia-breadcrumb-item a, .flexia-breadcrumb .breadcrumb-delimiter' ).css( 'font-size', to + 'px' );            
+          
+        } );
+    });  
+
+    wp.customize( 'flexia_breadcrumb_font_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-breadcrumb .flexia-breadcrumb-item, .flexia-breadcrumb .flexia-breadcrumb-item a, .flexia-breadcrumb .breadcrumb-delimiter' ).css( 'color', to);            
+          
+        } );
+    });  
+
+    wp.customize( 'flexia_breadcrumb_active_font_color', function( value ) {
+        value.bind( function( to ) {            
+            $( '.flexia-breadcrumb-item.current span, .breadcrumb li a:hover, .breadcrumb li a:focus' ).css( 'color', to);            
+          
+        } );
+    });  
+
     // Blog title and font size
 
     wp.customize( 'blog_title', function( value ) {
