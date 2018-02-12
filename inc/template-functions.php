@@ -18,6 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 function flexia_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
+
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
@@ -31,7 +32,9 @@ function flexia_body_classes( $classes ) {
 		$classes[] = 'transparent-top-navbar';
 	}
 
-
+	$theme = wp_get_theme();
+	$classes[] = 'flexia-'.$theme->display( 'Version', FALSE );
+	
 	return $classes;
 }
 add_filter( 'body_class', 'flexia_body_classes' );
