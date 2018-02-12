@@ -32,9 +32,9 @@ function flexia_body_classes( $classes ) {
 		$classes[] = 'transparent-top-navbar';
 	}
 
-	$theme = wp_get_theme();
-	$classes[] = 'flexia-'.$theme->display( 'Version', FALSE );
-	
+	$flexia_version = wp_get_theme();
+	$classes[] = 'flexia-'.$flexia_version->display( 'Version', FALSE );
+
 	return $classes;
 }
 add_filter( 'body_class', 'flexia_body_classes' );
