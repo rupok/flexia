@@ -208,6 +208,7 @@ function flexia_post_large_title_header_meta_markup() {
     </header><!-- .entry-header -->
 	<?php
 }
+
 /**
  * This function will show/hide large post title
  *
@@ -251,15 +252,18 @@ function flexia_post_large_title() {
  * @since  v0.0.5
  */
 function flexia_post_simple_title_markup() {
-
+		global $post;
+		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
 	?>
+
 	<header class="entry-header single-blog-meta single-post-meta-simple">
-		<?php if ( 'post' === get_post_type() ) : ?>
+		<?php if ( 'post' === get_post_type() ) : 
+			if( $post_title_header_meta == 'yes' || $post_title_header_meta == NULL ) { ?>
 			<div class="entry-meta">
 			    <?php flexia_posted_on(); ?>
 			</div>
 			<!-- .entry-meta -->
-			<?php endif;
+			<?php } endif;
 			if ( is_singular() ) :
 			    the_title( '<h1 class="entry-title">', '</h1>' );
 			else :
@@ -285,7 +289,7 @@ function flexia_post_simple_title_markup() {
  * @since  v0.0.5
  */
 function flexia_post_simple_title() {
-
+	$flexia_single_posts_layout = get_theme_mod('flexia_single_posts_layout', 'flexia_single_posts_layout_large');
 	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
 		global $post;
 		$post_title = get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
@@ -293,13 +297,13 @@ function flexia_post_simple_title() {
 		if( $post_title == 'simple' ) {
 			flexia_post_simple_title_markup();
 		}elseif( $post_title == 'default' || $post_title == NULL ) {
-			if( get_theme_mod('flexia_single_posts_layout') == 'flexia_single_posts_layout_simple' ) {
+			if( $flexia_single_posts_layout == 'flexia_single_posts_layout_simple' ) {
 				flexia_post_simple_title_markup();
 			}
 		}else {
 			return false;
 		}
-	}elseif( get_theme_mod('flexia_single_posts_layout') == 'flexia_single_posts_layout_simple' ) {
+	}elseif( $flexia_single_posts_layout == 'flexia_single_posts_layout_simple' ) {
 		flexia_post_simple_title_markup();
 	}else {
 		return false;
