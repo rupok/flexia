@@ -73,6 +73,7 @@ function flexia_page_title() {
 	}
 
 }
+
 /**
  * Page Header Title markup
  *
@@ -84,78 +85,27 @@ function flexia_page_header() {
 		global $post;
 		$page_header = get_post_meta( $post->ID, '_flexia_meta_key_page_header', true );
 		$flexia_page_header_layout 	= get_theme_mod( 'flexia_page_header_layout', 'flexia_page_header_default' );
-		$flexia_page_breadcrumb = get_theme_mod( 'flexia_page_breadcrumb', true);
 
 		if( $page_header == 'flexia_page_header_large' ) :
-			?>
-			<header class="entry-header entry-header-large entry-header-center">
-				<div class="flexia-container">
-					<div class="entry-header-inner">
-						<header class="entry-header">
-							<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-						</header><!-- .entry-header -->
-					<?php
-						if( $flexia_page_breadcrumb == true ) {
-							flexia_breadcrumbs();
-						}
-					?>
-					</div>
-				</div>
-			</header>
-			<?php
+
+			flexia_page_header_partial( 'entry-header-large entry-header-center' );
+
 		elseif( $page_header == 'flexia_page_header_mini' ) :
-			?>
-			<header class="entry-header entry-header-mini">
-				<div class="flexia-container max width">
-					<div class="entry-header-inner">
-						<header class="entry-header">
-							<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-						</header><!-- .entry-header -->
-					<?php
-						if( $flexia_page_breadcrumb == true ) {
-							flexia_breadcrumbs();
-						}
-					?>
-					</div>
-				</div>
-			</header>
-			<?php
+
+			flexia_page_header_partial( 'entry-header-mini', 'max width' );
+
 		elseif( $page_header == 'flexia_page_header_default' ) :
+
 			if( $flexia_page_header_layout == 'flexia_page_header_large' ) :
-				?>
-				<header class="entry-header entry-header-large entry-header-center">
-					<div class="flexia-container">
-						<div class="entry-header-inner">
-							<header class="entry-header">
-								<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-							</header><!-- .entry-header -->
-						<?php
-							if( $flexia_page_breadcrumb == true ) {
-								flexia_breadcrumbs();
-							}
-						?>
-						</div>
-					</div>
-				</header>
-				<?php
+
+				flexia_page_header_partial( 'entry-header-large entry-header-center' );
+
 			elseif( $flexia_page_header_layout == 'flexia_page_header_mini' ) :
-				?>
-				<header class="entry-header entry-header-mini">
-					<div class="flexia-container max width">
-						<div class="entry-header-inner">
-							<header class="entry-header">
-								<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-							</header><!-- .entry-header -->
-						<?php
-							if( $flexia_page_breadcrumb == true ) {
-								flexia_breadcrumbs();
-							}
-						?>
-						</div>
-					</div>
-				</header>
-				<?php
+
+				flexia_page_header_partial( 'entry-header-mini', 'max width' );
+
 			endif;
+
 		elseif( $page_header == NULL ) :
 			// No Header
 		else :
@@ -163,7 +113,26 @@ function flexia_page_header() {
 		endif;
 	}
 }
-
+// Page Header Partial
+function flexia_page_header_partial( $class_name = null, $max_width = null ) {
+	$flexia_page_breadcrumb = get_theme_mod( 'flexia_page_breadcrumb', true);
+	?>
+	<header class="entry-header <?php echo esc_attr( $class_name ); ?>">
+		<div class="flexia-container <?php echo esc_attr( $max_width ); ?>">
+			<div class="entry-header-inner">
+				<header class="entry-header">
+					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				</header><!-- .entry-header -->
+				<?php
+					if( $flexia_page_breadcrumb == true ) {
+						flexia_breadcrumbs();
+					}
+				?>
+			</div>
+		</div>
+	</header>
+	<?php
+}
 
 /**
  * This function contains large post title markup.
