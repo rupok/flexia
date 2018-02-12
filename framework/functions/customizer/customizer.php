@@ -1322,7 +1322,18 @@ function flexia_customize_register( $wp_customize ) {
 	) ) );
 
 
-	// Show author under post
+	// Social sharing Separator
+
+	$wp_customize->add_setting('flexia_social_sharing_heading', array(
+		'default'           => '',
+		'sanitize_callback' => 'esc_html',
+	));
+
+	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'flexia_social_sharing_heading', array(
+		'label'      => __( 'Social Sharing', 'flexia' ),
+		'settings'		=> 'flexia_social_sharing_heading',
+		'section'  		=> 'flexia_single_posts_settings',
+	)));
 
 	$wp_customize->add_setting( 'post_social_share', array(
 			'default'     => $defaults['post_social_share'],
@@ -1331,9 +1342,93 @@ function flexia_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_social_share', array(
-			'label'	      => esc_html__( 'Hide Social Share under post?', 'flexia' ),
+			'label'	      => esc_html__( 'Disable Social Sharing?', 'flexia' ),
 			'section'     => 'flexia_single_posts_settings',
 			'settings'    => 'post_social_share',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+	$wp_customize->add_setting( 'flexia_social_sharing_text' , array(
+	    'default'   => $defaults['flexia_social_sharing_text'],
+	    'sanitize_callback' => 'esc_html',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'flexia_social_sharing_text',
+	        array(
+	            'label'          => __( 'Social Sharing Title', 'flexia' ),
+	            'section'        => 'flexia_single_posts_settings',
+	            'settings'       => 'flexia_social_sharing_text',
+	            'type'           => 'text',
+	        )
+	    )
+	);
+
+	$wp_customize->add_setting( 'post_social_share_facebook', array(
+			'default'     => $defaults['post_social_share_facebook'],
+			'capability'  => 'edit_theme_options',
+			'sanitize_callback' => 'flexia_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_social_share_facebook', array(
+			'label'	      => esc_html__( 'Facebook Sharing', 'flexia' ),
+			'section'     => 'flexia_single_posts_settings',
+			'settings'    => 'post_social_share_facebook',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+	$wp_customize->add_setting( 'post_social_share_twitter', array(
+			'default'     => $defaults['post_social_share_twitter'],
+			'capability'  => 'edit_theme_options',
+			'sanitize_callback' => 'flexia_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_social_share_twitter', array(
+			'label'	      => esc_html__( 'Twitter Sharing', 'flexia' ),
+			'section'     => 'flexia_single_posts_settings',
+			'settings'    => 'post_social_share_twitter',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+	$wp_customize->add_setting( 'post_social_share_linkedin', array(
+			'default'     => $defaults['post_social_share_linkedin'],
+			'capability'  => 'edit_theme_options',
+			'sanitize_callback' => 'flexia_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_social_share_linkedin', array(
+			'label'	      => esc_html__( 'Linkedin Sharing', 'flexia' ),
+			'section'     => 'flexia_single_posts_settings',
+			'settings'    => 'post_social_share_linkedin',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+	$wp_customize->add_setting( 'post_social_share_gplus', array(
+			'default'     => $defaults['post_social_share_gplus'],
+			'capability'  => 'edit_theme_options',
+			'sanitize_callback' => 'flexia_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_social_share_gplus', array(
+			'label'	      => esc_html__( 'Google Plus Sharing', 'flexia' ),
+			'section'     => 'flexia_single_posts_settings',
+			'settings'    => 'post_social_share_gplus',
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+	$wp_customize->add_setting( 'post_social_share_pinterest', array(
+			'default'     => $defaults['post_social_share_pinterest'],
+			'capability'  => 'edit_theme_options',
+			'sanitize_callback' => 'flexia_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'post_social_share_pinterest', array(
+			'label'	      => esc_html__( 'Pinterest Sharing', 'flexia' ),
+			'section'     => 'flexia_single_posts_settings',
+			'settings'    => 'post_social_share_pinterest',
 			'type'        => 'light',// light, ios, flat
 	) ) );
 
