@@ -58,8 +58,8 @@ function flexia_page_title() {
 
 	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
 		global $post;
-		$page_title = get_post_meta( $post->ID, '_flexia_meta_key_page_title', true );
-		if( $page_title == 1 || $page_title == NULL ) {
+		$page_header = get_post_meta( $post->ID, '_flexia_meta_key_page_header', true );
+		if( $page_header == 'flexia_page_header_default' || $page_header == NULL ) {
 			?>
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			<?php
@@ -82,32 +82,19 @@ function flexia_page_header() {
 
 	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
 		global $post;
-		$page_title = get_post_meta( $post->ID, '_flexia_meta_key_page_title', true );
+		$page_header = get_post_meta( $post->ID, '_flexia_meta_key_page_header', true );
 		$flexia_page_header_layout 	= get_theme_mod( 'flexia_page_header_layout', 'flexia_page_header_default' );
 		$flexia_page_breadcrumb = get_theme_mod( 'flexia_page_breadcrumb', true);
 
-		if( $page_title == 1 || $page_title == NULL ) {
-
-			if( $flexia_page_header_layout == 'flexia_page_header_large') { ?>
+		if( $page_header == 'flexia_page_header_large' ) :
+			?>
 			<header class="entry-header entry-header-large entry-header-center">
 				<div class="flexia-container">
 					<div class="entry-header-inner">
+						<header class="entry-header">
+							<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+						</header><!-- .entry-header -->
 					<?php
-						flexia_page_title();
-						if( $flexia_page_breadcrumb == true ) {
-							flexia_breadcrumbs();
-						}
-					?>
-					</div>
-				</div>
-			</header>
-
-			<?php } elseif( $flexia_page_header_layout == 'flexia_page_header_mini') { ?>
-			<header class="entry-header entry-header-mini">
-				<div class="flexia-container max width">
-					<div class="entry-header-inner">
-					<?php
-						flexia_page_title();
 						if( $flexia_page_breadcrumb == true ) {
 							flexia_breadcrumbs();
 						}
@@ -116,10 +103,64 @@ function flexia_page_header() {
 				</div>
 			</header>
 			<?php
-			}else {
-				// no header
-			} 
-		}
+		elseif( $page_header == 'flexia_page_header_mini' ) :
+			?>
+			<header class="entry-header entry-header-mini">
+				<div class="flexia-container max width">
+					<div class="entry-header-inner">
+						<header class="entry-header">
+							<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+						</header><!-- .entry-header -->
+					<?php
+						if( $flexia_page_breadcrumb == true ) {
+							flexia_breadcrumbs();
+						}
+					?>
+					</div>
+				</div>
+			</header>
+			<?php
+		elseif( $page_header == 'flexia_page_header_default' ) :
+			if( $flexia_page_header_layout == 'flexia_page_header_large' ) :
+				?>
+				<header class="entry-header entry-header-large entry-header-center">
+					<div class="flexia-container">
+						<div class="entry-header-inner">
+							<header class="entry-header">
+								<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+							</header><!-- .entry-header -->
+						<?php
+							if( $flexia_page_breadcrumb == true ) {
+								flexia_breadcrumbs();
+							}
+						?>
+						</div>
+					</div>
+				</header>
+				<?php
+			elseif( $flexia_page_header_layout == 'flexia_page_header_mini' ) :
+				?>
+				<header class="entry-header entry-header-mini">
+					<div class="flexia-container max width">
+						<div class="entry-header-inner">
+							<header class="entry-header">
+								<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+							</header><!-- .entry-header -->
+						<?php
+							if( $flexia_page_breadcrumb == true ) {
+								flexia_breadcrumbs();
+							}
+						?>
+						</div>
+					</div>
+				</header>
+				<?php
+			endif;
+		elseif( $page_header == NULL ) :
+			// No Header
+		else :
+			// No Header
+		endif;
 	}
 }
 
@@ -260,7 +301,7 @@ function flexia_post_simple_title_markup() {
 	?>
 
 	<header class="entry-header single-blog-meta single-post-meta-simple">
-		<?php if ( 'post' === get_post_type() ) : 
+		<?php if ( 'post' === get_post_type() ) :
 			if( $post_title_header_meta == 'yes' || $post_title_header_meta == NULL ) { ?>
 			<div class="entry-meta">
 			    <?php flexia_posted_on(); ?>

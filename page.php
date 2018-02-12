@@ -50,7 +50,7 @@ get_header(); ?>
 			<?php get_sidebar(); ?>
 
 		</div><!-- #flexia-wrapper -->
-	</div><!-- #content --> 
+	</div><!-- #content -->
 </div><!-- #page -->
 <?php
 get_template_part( 'framework/views/template-parts/content', 'footer' );
