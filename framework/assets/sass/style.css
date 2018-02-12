@@ -3817,7 +3817,7 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Post Navigation
 --------------------------------------------------------------*/
-.nav-previous, .nav-next {
+.nav-links .nav-previous, .nav-links .nav-next {
   background-color: #fff;
   border: 1px solid #e9e9ea;
   font-size: 14px;
@@ -3836,35 +3836,35 @@ a:hover, a:active {
   -webkit-transition: all 0.5s ease 0s;
 }
 
-.nav-previous {
+.nav-links .nav-previous {
   left: 0;
   padding-left: 25px;
   transform: translateX(-100%);
   margin-left: 40px;
 }
 
-.nav-next {
+.nav-links .nav-next {
   right: 0;
   padding-right: 25px;
   transform: translateX(100%);
   margin-right: 40px;
 }
 
-.nav-previous a, .nav-next a {
+.nav-links .nav-previous a, .nav-links .nav-next a {
   outline: none;
   transition: all .3s;
   -webkit-transition: all .3s;
 }
 
-.nav-previous a {
+.nav-links .nav-previous a {
   padding-right: 50px;
 }
 
-.nav-next a {
+.nav-links .nav-next a {
   padding-left: 40px;
 }
 
-.nav-next:before, .nav-previous:after {
+.nav-links .nav-next:before, .nav-links .nav-previous:after {
   background-color: #fff;
   color: #e9e9ea;
   font-family: "FontAwesome";
@@ -3875,28 +3875,28 @@ a:hover, a:active {
   top: 0;
 }
 
-.nav-previous:after {
+.nav-links .nav-previous:after {
   content: "\f104";
   padding-left: 13px;
   right: 0;
 }
 
-.nav-next:before {
+.nav-links .nav-next:before {
   content: "\f105";
   padding-left: 15px;
   left: 0;
 }
 
-.nav-previous:hover {
+.nav-links .nav-previous:hover {
   transform: translateX(-40px);
 }
 
-.nav-next:hover {
+.nav-links .nav-next:hover {
   transform: translateX(40px);
 }
 
 @media all and (max-width: 600px) {
-  .nav-previous, .nav-next {
+  .nav-links .nav-previous, .nav-links .nav-next {
     position: relative;
     transform: none;
     margin: 1em auto;
@@ -3906,16 +3906,16 @@ a:hover, a:active {
     line-height: 2;
   }
 
-  .nav-next a, .nav-previous a {
+  .nav-links .nav-next a, .nav-links .nav-previous a {
     padding-left: 25px;
     padding-right: 0;
   }
 
-  .nav-previous:hover, .nav-next:hover {
+  .nav-links .nav-previous:hover, .nav-links .nav-next:hover {
     transform: none;
   }
 
-  .nav-next::before, .nav-previous::after {
+  .nav-links .nav-next::before, .nav-links .nav-previous::after {
     padding-left: 10px;
     right: auto;
     left: 0;
