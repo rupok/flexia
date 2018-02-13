@@ -3124,6 +3124,10 @@ a:hover, a:active {
   padding: 0 .625em;
 }
 
+.main-navigation .nav-menu > li:not(.menu-item-has-children):last-child {
+  padding-right: 0;
+}
+
 .main-navigation .nav-menu li a {
   outline: 0;
 }
@@ -4479,7 +4483,7 @@ a:hover, a:active {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1.5em;
+  padding: 0 1em;
 }
 
 .entry-header.entry-header-large .entry-title,

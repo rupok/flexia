@@ -1,7 +1,9 @@
 .main-navigation .nav-menu > li {
 	padding: 0 .625em;
 }
-
+.main-navigation .nav-menu > li:not(.menu-item-has-children):last-child {
+	padding-right: 0;
+}
 .main-navigation .nav-menu li a {
 	outline: 0;
 }
