@@ -81,10 +81,12 @@ function flexia_page_title() {
  */
 function flexia_page_header() {
 
+	$flexia_page_header_layout 	= get_theme_mod( 'flexia_page_header_layout', 'flexia_page_header_default' );
+	// If CMB2 installed
 	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
+
 		global $post;
 		$page_header = get_post_meta( $post->ID, '_flexia_meta_key_page_header', true );
-		$flexia_page_header_layout 	= get_theme_mod( 'flexia_page_header_layout', 'flexia_page_header_default' );
 
 		if( $page_header == 'flexia_page_header_large' ) :
 
@@ -111,6 +113,19 @@ function flexia_page_header() {
 		else :
 			// No Header
 		endif;
+
+	}else {
+
+		if( $flexia_page_header_layout == 'flexia_page_header_large' ) :
+
+			flexia_page_header_partial( 'entry-header-large entry-header-center' );
+
+		elseif( $flexia_page_header_layout == 'flexia_page_header_mini' ) :
+
+			flexia_page_header_partial( 'entry-header-mini', 'max width' );
+
+		endif;
+
 	}
 }
 // Page Header Partial
