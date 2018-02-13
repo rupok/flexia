@@ -58,8 +58,8 @@ function flexia_page_title() {
 
 	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
 		global $post;
-		$page_header = get_post_meta( $post->ID, '_flexia_meta_key_page_header', true );
-		if( $page_header == 'flexia_page_header_default' || $page_header == NULL ) {
+		$flexia_core_page_header = get_post_meta( $post->ID, '_flexia_meta_key_page_header', true );
+		if( $flexia_core_page_header == 'flexia_core_page_header_default' || $flexia_core_page_header == NULL ) {
 			?>
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			<?php
@@ -86,17 +86,17 @@ function flexia_page_header() {
 	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
 
 		global $post;
-		$page_header = get_post_meta( $post->ID, '_flexia_meta_key_page_header', true );
+		$flexia_core_page_header = get_post_meta( $post->ID, '_flexia_meta_key_page_header', true );
 
-		if( $page_header == 'flexia_page_header_large' ) :
+		if( $flexia_core_page_header == 'flexia_core_page_header_large' ) :
 
 			flexia_page_header_partial( 'entry-header-large entry-header-center' );
 
-		elseif( $page_header == 'flexia_page_header_mini' ) :
+		elseif( $flexia_core_page_header == 'flexia_core_page_header_mini' ) :
 
 			flexia_page_header_partial( 'entry-header-mini', 'max width' );
 
-		elseif( $page_header == 'flexia_page_header_default' ) :
+		elseif( $flexia_core_page_header == 'flexia_core_page_header_default' ) :
 
 			if( $flexia_page_header_layout == 'flexia_page_header_large' ) :
 
@@ -108,14 +108,12 @@ function flexia_page_header() {
 
 			endif;
 
-		elseif( $page_header == NULL ) :
+		elseif( $flexia_core_page_header == NULL ) :
 			// No Header
 		else :
 			// No Header
 		endif;
-
 	}else {
-
 		if( $flexia_page_header_layout == 'flexia_page_header_large' ) :
 
 			flexia_page_header_partial( 'entry-header-large entry-header-center' );
@@ -123,6 +121,10 @@ function flexia_page_header() {
 		elseif( $flexia_page_header_layout == 'flexia_page_header_mini' ) :
 
 			flexia_page_header_partial( 'entry-header-mini', 'max width' );
+
+		else:
+
+			// No header
 
 		endif;
 
