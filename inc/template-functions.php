@@ -96,7 +96,7 @@ function flexia_page_header() {
 
 			flexia_page_header_partial( 'entry-header-mini', 'max width' );
 
-		elseif( $flexia_core_page_header == 'flexia_core_page_header_default' ) :
+		elseif( $flexia_core_page_header == 'flexia_core_page_header_default' || empty( $flexia_core_page_header ) ) :
 
 			if( $flexia_page_header_layout == 'flexia_page_header_large' ) :
 
