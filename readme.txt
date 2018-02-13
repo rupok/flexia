@@ -1,11 +1,11 @@
 === Flexia ===
 
 Contributors: re_enter_rupok, Codetic
-Theme URI: https://github.com/rupok/flexia
+Theme URI: https://flexia.pro/
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.0
-Tested up to: 4.9.1
-Stable tag: 0.0.9
+Tested up to: 4.9.4
+Stable tag: 0.1.0
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -13,7 +13,6 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 A modern lightweight and versatile theme for WordPress with the endless customization options through Customizer. Built to work flawlessly with any Page Builder like Elementor, Cornerstone, Divi, Visual Composer and Beaver Builder. 10+ page templates give you the ability set any kind of page layout.
 
 For more information, please visit - https://flexia.pro/
-Theme Demo - http://www.codetic.net/flexia/
 
 -------------------------------------------------------
 Description
@@ -48,6 +47,17 @@ Source: https://picjumbo.com/entrepreneur-working-on-his-macbook/
 
 
 == Changelog ==
+
+= 0.1.0 =
+* Released: February 14, 2018
+
+* Page Settings added to Customizer
+* Page Title Control added with multiple header option
+* Breadcrumbs option added for pages
+* Social Sharing control added for single posts
+* WooCommerce Cart menu control added to Customizer
+* Typography font size bug fixed
+* Lots of improvements and bugfix
 
 = 0.0.9 =
 * Released: January 24, 2018
