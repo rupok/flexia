@@ -26,9 +26,7 @@ $pinterest_sharing = get_theme_mod('post_social_share_pinterest', true);
 
 <div class="flexia-social-share">
 	<div class="flexia-social-share-heading">
-        <?php echo '
-        <h5>' . __($social_sharing_text, 'flexia') . '</h5>
-        '; ?>
+        <h5><?php echo $social_sharing_text; ?></h5>
 	</div>
 	<ul class="flexia-social-share-links">
 		<?php if( $facebook_sharing == true ) : ?>
