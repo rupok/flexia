@@ -14,3 +14,19 @@
 	clear: both;
 	@include center-block;
 }
+
+.alignBaseline {
+  vertical-align: baseline !important;
+}
+
+.alignBottom {
+  vertical-align: bottom !important;
+}
+
+.alignMiddle {
+  vertical-align: middle !important;
+}
+
+.alignTop {
+  vertical-align: top !important;
+}

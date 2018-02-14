@@ -4018,6 +4018,22 @@ a:hover, a:active {
   margin-right: auto;
 }
 
+.alignBaseline {
+  vertical-align: baseline !important;
+}
+
+.alignBottom {
+  vertical-align: bottom !important;
+}
+
+.alignMiddle {
+  vertical-align: middle !important;
+}
+
+.alignTop {
+  vertical-align: top !important;
+}
+
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
@@ -4045,6 +4061,25 @@ a:hover, a:active {
 .site-content:after,
 .site-footer:after {
   clear: both;
+}
+
+/*--------------------------------------------------------------
+# Display
+--------------------------------------------------------------*/
+.transparent,
+body.transparent,
+body.transparent .flexia-wrapper > .content-area {
+  background-color: transparent !important;
+}
+
+.hiddenVisually {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
 }
 
 /*--------------------------------------------------------------
