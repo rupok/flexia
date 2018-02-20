@@ -349,12 +349,15 @@ function flexia_post_simple_title() {
 function flexia_add_body_class( $classes ) {
 
 	global $post;
-	$classes[] = get_post_meta( $post->ID, '_flexia_post_meta_key_body_class', true );
-	$classes[] = get_post_meta( $post->ID, '_flexia_meta_key_body_class', true );
+	if( !empty( $post ) ) {
+		$classes[] = get_post_meta( $post->ID, '_flexia_post_meta_key_body_class', true );
+		$classes[] = get_post_meta( $post->ID, '_flexia_meta_key_body_class', true );
+	}
 	return $classes;
 
 }
 add_filter( 'body_class', 'flexia_add_body_class', 10, 1 );
+
 
 /**
  * This method will show/hide post footer meta.
