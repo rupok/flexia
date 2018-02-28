@@ -95,37 +95,39 @@ $flexia_blog_layout 	= get_theme_mod( 'flexia_blog_content_layout', 'flexia_blog
 
 				<main id="main" class="site-main flexia-container">
 				<?php
-				if( ! class_exists( 'Flexia_Pro' ) || ! class_exists( 'Flexia_Core' ) || $flexia_blog_layout == 'flexia_blog_content_layout_standard' ) :
+
 					if ( have_posts() ) :
+						if( ! class_exists( 'Flexia_Pro' ) || ! class_exists( 'Flexia_Core' ) || $flexia_blog_layout == 'flexia_blog_content_layout_standard' ) :
 
-						/* Start the Loop */
-						while ( have_posts() ) : the_post();
+							/* Start the Loop */
+							while ( have_posts() ) : the_post();
 
-							/*
-							 * Include the Post-Format-specific template for the content.
-							 * If you want to override this in a child theme, then include a file
-							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-							 */
-							get_template_part( 'framework/views/template-parts/content', get_post_format() );
+								/*
+								 * Include the Post-Format-specific template for the content.
+								 * If you want to override this in a child theme, then include a file
+								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+								 */
+								get_template_part( 'framework/views/template-parts/content', get_post_format() );
 
-						endwhile;
+							endwhile;
 
 
-						get_template_part( 'framework/views/template-parts/content', 'pagination' );
+							get_template_part( 'framework/views/template-parts/content', 'pagination' );
+							elseif( $flexia_blog_layout == 'flexia_blog_content_layout_grid' || $flexia_blog_layout == 'flexia_blog_content_layout_masonry' ):
+								/**
+								 * A flexia hook to add blog layouts
+								 *
+								 * @since   v1.0.1
+								 */
+								do_action( 'flexia_blog_layout' );
+							endif;
 
 					else :
 
 						get_template_part( 'framework/views/template-parts/content', 'none' );
 
 					endif;
-				elseif( $flexia_blog_layout == 'flexia_blog_content_layout_grid' || $flexia_blog_layout == 'flexia_blog_content_layout_masonry' ):
-					/**
-					 * A flexia hook to add blog layouts
-					 *
-					 * @since   v1.0.1
-					 */
-					do_action( 'flexia_blog_layout' );
-				endif;
+
 				?>
 
 				</main><!-- #main -->
