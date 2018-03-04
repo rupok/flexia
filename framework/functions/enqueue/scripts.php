@@ -35,3 +35,21 @@ function flexia_customize_preview_js() {
 	wp_enqueue_script( 'flexia-customizer', get_template_directory_uri() . '/framework/assets/admin/js/customizer.js', array( 'customize-preview' ), '', true );
 }
 add_action( 'customize_preview_init', 'flexia_customize_preview_js' );
+
+
+/**
+ * Admin Script
+ */
+function flexia_admin_js() {
+	wp_enqueue_script( 'flexia-admin', get_template_directory_uri() . '/framework/assets/admin/js/admin.js', array( 'jquery' ), '', true );
+
+	$settings = array(
+		'ajax_url' => admin_url('admin-ajax.php'),
+		'flexia_blog_content_display' => get_theme_mod( 'flexia_blog_content_display', true ),
+		'flexia_navbar' => get_theme_mod( 'flexia_navbar', true ),
+		'body_google_font' => get_theme_mod( 'flexia_google_font_family', true ),
+	);
+
+	wp_localize_script( 'flexia-admin', 'settings', $settings );
+}
+add_action( 'admin_enqueue_scripts', 'flexia_admin_js' );

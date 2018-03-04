@@ -206,4 +206,40 @@ class Customizer_Select2_Multiselect extends WP_Customize_Control {
 
 }
 
+
+/**
+ * Select2 Multi-Select
+ */
+class Customizer_Select2_Google_Fonts extends WP_Customize_Control {
+
+	public $type = 'select2_google_fonts';
+
+	public function render_content() {
+		if( empty( $this->choices ) )
+			return;
+		?>
+		<label>
+			<?php if( !empty( $this->label ) ) : ?>
+				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<?php endif; ?>
+			<select <?php $this->link(); ?> class="js-select2-font-select">
+				<?php
+					foreach( $this->choices as $value => $label ) {
+						echo '<option value="'.$label['family'].'" ' . selected( $this->value(), $label['family'], false ) . '>'.$label['family'].'</option>';
+					}
+				?>
+			</select>
+		</label>
+		<script>
+			$(document).ready(function() {
+			    $('.js-select2-font-select').select2();
+			});
+		</script>
+		<?php
+
+	}
+
+}
+
+
 ?>

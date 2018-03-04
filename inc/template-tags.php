@@ -266,3 +266,43 @@ function flexia_get_categories() {
 	return $categories;
 }
 endif;
+
+
+
+function fleixa_get_google_fonts() {
+	return require_once( get_template_directory() . '/framework/functions/customizer/google-fonts.php' );
+}
+
+function flexia_google_fonts() {
+	return $fonts = fleixa_get_google_fonts();
+}
+
+function flexia_google_font_variants() {
+	$google_fonts = flexia_google_fonts();
+	if(isset($_POST['fontFamily'])) {
+		$find_font = search($google_fonts, 'family', $_POST['fontFamily']);
+		echo wp_json_encode( $find_font[0]['variants'] );
+	}else {
+		return;
+	}
+
+	die();
+}
+add_action( 'wp_ajax_load_google_font_variants', 'flexia_google_font_variants' );
+
+function search($array, $key, $value)
+{
+    $results = array();
+
+    if (is_array($array)) {
+        if (isset($array[$key]) && $array[$key] == $value) {
+            $results[] = $array;
+        }
+
+        foreach ($array as $subarray) {
+            $results = array_merge($results, search($subarray, $key, $value));
+        }
+    }
+
+    return $results;
+}
