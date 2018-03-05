@@ -90,33 +90,37 @@
     });
 
     wp.customize.bind( 'ready', function() {
-        wp.customize( 'flexia_google_font_family', function( value ) {
+        flexia_customizer_font_variants_generator( 'flexia_google_font_family', '#customize-control-flexia_google_font_family_variants', 'body_google_font', 'body_font_variants' );
+        flexia_customizer_font_variants_generator( 'flexia_heading_font_family', '#customize-control-flexia_heading_font_family_variants', 'heading_google_font', 'heading_font_variants' );
+    });
 
+    function flexia_customizer_font_variants_generator( font_field_name, variant_field_id, font_field_localize_name, font_variant_field_localize_name ) {
+        wp.customize( font_field_name, function( value ) {
             $.ajax({
-                    url: settings.ajax_url,
-                    data: {
-                        action: 'load_google_font_variants',
-                        postType: 'post',
-                        fontFamily: settings.body_google_font
-                    },
-                    type: 'POST',
-                    success: function( data ) {
-                        var data = $.parseJSON(data);
+                url: settings.ajax_url,
+                data: {
+                    action: 'load_google_font_variants',
+                    postType: 'post',
+                    fontFamily: settings[font_field_localize_name]
+                },
+                type: 'POST',
+                success: function( data ) {
+                    var data = $.parseJSON(data);
 
-                        $(data).each(function(i,val) {
-                            $.each(val,function(key,val) {
-                                  $('#customize-control-flexia_google_font_family_variants select').append($('<option>',
-                                    {
-                                        value: key,
-                                        text : val
-                                    }
-                                ));
-                            });
+                    $(data).each(function(i,val) {
+                        $.each(val,function(key,val) {
+                            if( key == settings[font_variant_field_localize_name] ) {
+                                var selected = 'selected';
+                            }else {
+                                var selected = '';
+                            }
+                            $(variant_field_id+' select').append('<option value="'+key+'" '+selected+'>'+val+'</option>')
                         });
-                    }
-                });
+                    });
+                }
+            });
             value.bind( function( to ) {
-                $('#customize-control-flexia_google_font_family_variants select').html('');
+                $(variant_field_id+' select').html('');
                 $.ajax({
                     url: settings.ajax_url,
                     data: {
@@ -130,7 +134,7 @@
 
                         $(data).each(function(i,val) {
                             $.each(val,function(key,val) {
-                                  $('#customize-control-flexia_google_font_family_variants select').append($('<option>',
+                                  $(variant_field_id+' select').append($('<option>',
                                     {
                                         value: key,
                                         text : val
@@ -142,5 +146,5 @@
                 });
             });
         });
-    });
+    }
 })(jQuery);

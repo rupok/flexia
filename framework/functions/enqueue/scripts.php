@@ -48,6 +48,9 @@ function flexia_admin_js() {
 		'flexia_blog_content_display' => get_theme_mod( 'flexia_blog_content_display', true ),
 		'flexia_navbar' => get_theme_mod( 'flexia_navbar', true ),
 		'body_google_font' => get_theme_mod( 'flexia_google_font_family', true ),
+		'body_font_variants' => get_theme_mod( 'flexia_google_font_family_variants', true ),
+		'heading_google_font' => get_theme_mod( 'flexia_heading_font_family', true ),
+		'heading_font_variants' => get_theme_mod( 'flexia_heading_font_family_variants', true ),
 	);
 
 	wp_localize_script( 'flexia-admin', 'settings', $settings );

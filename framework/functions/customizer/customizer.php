@@ -767,7 +767,7 @@ function flexia_customize_register( $wp_customize ) {
 	        $wp_customize,
 	        'flexia_google_font_family_variants',
 	        array(
-	            'label'          => __( 'Font Variants', 'flexia' ),
+	            'label'          => __( 'Body Font Variants', 'flexia' ),
 	            'section'        => 'flexia_typography_settings',
 	            'settings'       => 'flexia_google_font_family_variants',
 	            // 'priority'   	 => 10,
@@ -777,20 +777,6 @@ function flexia_customize_register( $wp_customize ) {
 	        )
 	    )
 	);
-
-	// $wp_customize->add_control( new Customizer_Select2_Google_Fonts(
-	// 	$wp_customize,
-	// 	'flexia_google_font_family_variants',
-	// 	array(
-	//  		'label'       => esc_html__( 'Font Variants', 'flexia' ),
-	//   		// 'placeholder' => esc_html__( 'Categories', 'flexia' ),
-	//   		'section'     => 'flexia_typography_settings',
-	//   		'settings'	  => 'flexia_google_font_family_variants',
-	//   		// 'priority'   	 => 120,
-	//   		'type'			=> 'select2_google_fonts',
-	//   		'choices'		=> flexia_google_font_variants(),
-	//   ) )
-	// );
 
 
 	// Heading separator
@@ -814,11 +800,45 @@ function flexia_customize_register( $wp_customize ) {
         'default'           =>  $defaults['body_font_family'],
         'sanitize_callback' => 'sanitize_text_field',
     ));
-    $wp_customize->add_control( new Google_Font_Dropdown_Custom_Control( $wp_customize, 'flexia_heading_font_family', array(
-        'label'      => 'Heading Font',
-        'section'    => 'flexia_typography_settings',
-        'settings'   => 'flexia_heading_font_family',
-    )));
+    // $wp_customize->add_control( new Google_Font_Dropdown_Custom_Control( $wp_customize, 'flexia_heading_font_family', array(
+    //     'label'      => 'Heading Font',
+    //     'section'    => 'flexia_typography_settings',
+    //     'settings'   => 'flexia_heading_font_family',
+    // )));
+    //
+    $wp_customize->add_control( new Customizer_Select2_Google_Fonts(
+		$wp_customize,
+		'flexia_heading_font_family',
+		array(
+	 		'label'       => esc_html__( 'Heading Font', 'flexia' ),
+	  		// 'placeholder' => esc_html__( 'Categories', 'flexia' ),
+	  		'section'     => 'flexia_typography_settings',
+	  		'settings'	  => 'flexia_heading_font_family',
+	  		// 'priority'   	 => 120,
+	  		'type'			=> 'select2_google_fonts',
+	  		'choices'		=> flexia_google_fonts(),
+	  ) )
+	);
+
+	$wp_customize->add_setting( 'flexia_heading_font_family_variants', array(
+        'default'           => '',
+        // 'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'flexia_heading_font_family_variants',
+	        array(
+	            'label'          => __( 'Heading Font Variants', 'flexia' ),
+	            'section'        => 'flexia_typography_settings',
+	            'settings'       => 'flexia_heading_font_family_variants',
+	            // 'priority'   	 => 10,
+	            'description'    => '',
+	            'type'           => 'select',
+	            'choices'        => array()
+	        )
+	    )
+	);
 
 	$wp_customize->add_setting( 'heading1_font_size', array(
 			'default'       => $defaults['heading1_font_size'],

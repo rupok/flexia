@@ -270,7 +270,7 @@ endif;
 
 
 function fleixa_get_google_fonts() {
-	return require_once( get_template_directory() . '/framework/functions/customizer/google-fonts.php' );
+	return include( get_template_directory() . '/framework/functions/customizer/google-fonts.php' );
 }
 
 function flexia_google_fonts() {
