@@ -280,7 +280,7 @@ function flexia_google_fonts() {
 function flexia_google_font_variants() {
 	$google_fonts = flexia_google_fonts();
 	if(isset($_POST['fontFamily'])) {
-		$find_font = search($google_fonts, 'family', $_POST['fontFamily']);
+		$find_font = search($google_fonts, 'name', $_POST['fontFamily']);
 		echo wp_json_encode( $find_font[0]['variants'] );
 	}else {
 		return;

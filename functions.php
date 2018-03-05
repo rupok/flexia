@@ -214,17 +214,19 @@ if ( ! function_exists( 'flexia_fonts_url' ) ){
 	function flexia_fonts_url() {
 	    $fonts_url = '';
 	    $content_font = get_theme_mod('flexia_google_font_family', '');
+	    $content_font_variant = get_theme_mod( 'flexia_google_font_family_variants', '' );
 	    $header_font = get_theme_mod('flexia_heading_font_family', '');
+	    $header_font_variant = get_theme_mod( 'flexia_heading_font_family_variants', '' );
 
 	    if ( 'off' !== $content_font || 'off' !== $header_font ) {
 	        $font_families = array();
 
 	        if ( 'off' !== $content_font ) {
-	            $font_families[] = $content_font . ':300,400,700';
+	            $font_families[] = $content_font . ':'.$content_font_variant;
 	        }
 
 	        if ( 'off' !== $header_font ) {
-	            $font_families[] = $header_font . ':300,400,700';
+	            $font_families[] = $header_font . ':'.$header_font_variant;
 	        }
 
 	        $query_args = array(

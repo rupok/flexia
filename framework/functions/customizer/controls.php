@@ -225,7 +225,7 @@ class Customizer_Select2_Google_Fonts extends WP_Customize_Control {
 			<select <?php $this->link(); ?> class="js-select2-font-select">
 				<?php
 					foreach( $this->choices as $value => $label ) {
-						echo '<option value="'.$label['family'].'" ' . selected( $this->value(), $label['family'], false ) . '>'.$label['family'].'</option>';
+						echo '<option value="'.$label['name'].'" ' . selected( $this->value(), $label['name'], false ) . '>'.$label['family'].'</option>';
 					}
 				?>
 			</select>
