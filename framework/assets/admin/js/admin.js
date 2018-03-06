@@ -91,11 +91,12 @@
 
     // Flexia Google Fonts Controllers
     wp.customize.bind( 'ready', function() {
-        flexia_customizer_font_variants_generator( 'flexia_google_font_family', '#customize-control-flexia_google_font_family_variants', 'body_google_font', 'body_font_variants' );
-        flexia_customizer_font_variants_generator( 'flexia_heading_font_family', '#customize-control-flexia_heading_font_family_variants', 'heading_google_font', 'heading_font_variants' );
+        flexia_customizer_font_variants_generator( 'flexia_google_font_family', '#customize-control-flexia_google_font_family_variants', '#customize-control-flexia_google_font_family_subsets', 'body_google_font', 'body_font_variants', 'body_font_subsets' );
+
+        flexia_customizer_font_variants_generator( 'flexia_heading_font_family', '#customize-control-flexia_heading_font_family_variants', '#customize-control-flexia_heading_font_family_subsets', 'heading_google_font', 'heading_font_variants', 'heading_font_subsets' );
     });
 
-    function flexia_customizer_font_variants_generator( font_field_name, variant_field_id, font_field_localize_name, font_variant_field_localize_name ) {
+    function flexia_customizer_font_variants_generator( font_field_name, variant_field_id, subset_field_id, font_field_localize_name, font_variant_field_localize_name, font_subset_field_localize_name ) {
         wp.customize( font_field_name, function( value ) {
             $.ajax({
                 url: settings.ajax_url,
@@ -108,7 +109,7 @@
                 success: function( data ) {
                     var data = $.parseJSON(data);
 
-                    $(data).each(function(i,val) {
+                    $(data.variants).each(function(i,val) {
                         $.each(val,function(key,val) {
                             if( key == settings[font_variant_field_localize_name] ) {
                                 var selected = 'selected';
@@ -118,10 +119,22 @@
                             $(variant_field_id+' select').append('<option value="'+key+'" '+selected+'>'+val+'</option>')
                         });
                     });
+
+                    $(data.subsets).each(function(i,val) {
+                        $.each(val,function(key,val) {
+                            if( key == settings[font_subset_field_localize_name] ) {
+                                var selected = 'selected';
+                            }else {
+                                var selected = '';
+                            }
+                            $(subset_field_id+' select').append('<option value="'+key+'" '+selected+'>'+val+'</option>')
+                        });
+                    });
                 }
             });
             value.bind( function( to ) {
                 $(variant_field_id+' select').html('');
+                $(subset_field_id+' select').html('');
                 $.ajax({
                     url: settings.ajax_url,
                     data: {
@@ -132,10 +145,19 @@
                     type: 'POST',
                     success: function( data ) {
                         var data = $.parseJSON(data);
-
-                        $(data).each(function(i,val) {
+                        $(data.variants).each(function(i,val) {
                             $.each(val,function(key,val) {
                                   $(variant_field_id+' select').append($('<option>',
+                                    {
+                                        value: key,
+                                        text : val
+                                    }
+                                ));
+                            });
+                        });
+                        $(data.subsets).each(function(i,val) {
+                            $.each(val,function(key,val) {
+                                  $(subset_field_id+' select').append($('<option>',
                                     {
                                         value: key,
                                         text : val

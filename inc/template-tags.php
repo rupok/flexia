@@ -268,20 +268,32 @@ function flexia_get_categories() {
 endif;
 
 
+/**
+ * Load All Google Fonts
+ */
 
 function fleixa_get_google_fonts() {
 	return include( get_template_directory() . '/framework/functions/customizer/google-fonts.php' );
 }
-
+/**
+ * Return All fonts
+ */
 function flexia_google_fonts() {
 	return $fonts = fleixa_get_google_fonts();
 }
 
+/**
+ * Return ALl Google Font Variants
+ */
 function flexia_google_font_variants() {
 	$google_fonts = flexia_google_fonts();
 	if(isset($_POST['fontFamily'])) {
-		$find_font = search($google_fonts, 'name', $_POST['fontFamily']);
-		echo wp_json_encode( $find_font[0]['variants'] );
+		$find_font = flexia_google_font_search($google_fonts, 'name', $_POST['fontFamily']);
+		$output = array(
+			'variants' => $find_font[0]['variants'],
+			'subsets' => $find_font[0]['subsets'],
+		);
+		echo wp_json_encode( $output );
 	}else {
 		return;
 	}
@@ -290,17 +302,18 @@ function flexia_google_font_variants() {
 }
 add_action( 'wp_ajax_load_google_font_variants', 'flexia_google_font_variants' );
 
-function search($array, $key, $value)
-{
+/**
+ * Flexia Google Font Search
+ */
+function flexia_google_font_search($array, $key, $value) {
     $results = array();
-
     if (is_array($array)) {
         if (isset($array[$key]) && $array[$key] == $value) {
             $results[] = $array;
         }
 
         foreach ($array as $subarray) {
-            $results = array_merge($results, search($subarray, $key, $value));
+            $results = array_merge($results, flexia_google_font_search($subarray, $key, $value));
         }
     }
 

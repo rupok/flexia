@@ -746,7 +746,6 @@ function flexia_customize_register( $wp_customize ) {
 	 		'label'       => esc_html__( 'Body Font', 'flexia' ),
 	  		'section'     => 'flexia_typography_settings',
 	  		'settings'	  => 'flexia_google_font_family',
-	  		// 'priority'   	 => 120,
 	  		'type'			=> 'select2_google_fonts',
 	  		'choices'		=> flexia_google_fonts(),
 	  ) )
@@ -764,6 +763,25 @@ function flexia_customize_register( $wp_customize ) {
 	            'label'          => __( 'Body Font Variants', 'flexia' ),
 	            'section'        => 'flexia_typography_settings',
 	            'settings'       => 'flexia_google_font_family_variants',
+	            'description'    => '',
+	            'type'           => 'select',
+	            'choices'        => array()
+	        )
+	    )
+	);
+
+	$wp_customize->add_setting( 'flexia_google_font_family_subsets', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'flexia_google_font_family_subsets',
+	        array(
+	            'label'          => __( 'Body Font Subsets', 'flexia' ),
+	            'section'        => 'flexia_typography_settings',
+	            'settings'       => 'flexia_google_font_family_subsets',
 	            'description'    => '',
 	            'type'           => 'select',
 	            'choices'        => array()
@@ -818,6 +836,25 @@ function flexia_customize_register( $wp_customize ) {
 	            'label'          => __( 'Heading Font Variants', 'flexia' ),
 	            'section'        => 'flexia_typography_settings',
 	            'settings'       => 'flexia_heading_font_family_variants',
+	            'description'    => '',
+	            'type'           => 'select',
+	            'choices'        => array()
+	        )
+	    )
+	);
+
+	$wp_customize->add_setting( 'flexia_heading_font_family_subsets', array(
+        'default'           => '',
+    ));
+
+    $wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'flexia_heading_font_family_subsets',
+	        array(
+	            'label'          => __( 'Heading Font Subsets', 'flexia' ),
+	            'section'        => 'flexia_typography_settings',
+	            'settings'       => 'flexia_heading_font_family_subsets',
 	            'description'    => '',
 	            'type'           => 'select',
 	            'choices'        => array()
