@@ -1,8 +1,5 @@
 <?php
 
-// Generate Google Fonts PHP Array
-// Generated from https://github.com/EmranAhmed/google-fonts-php
-
 return array(
 
   'abeezee' => array(
