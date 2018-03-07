@@ -272,14 +272,14 @@ endif;
  * Load All Google Fonts
  */
 
-function fleixa_get_google_fonts() {
+function flexia_get_google_fonts() {
 	return include( get_template_directory() . '/framework/functions/customizer/google-fonts.php' );
 }
 /**
  * Return All fonts
  */
 function flexia_google_fonts() {
-	return $fonts = fleixa_get_google_fonts();
+	return $fonts = flexia_get_google_fonts();
 }
 
 /**
