@@ -5,7 +5,7 @@ Theme URI: https://flexia.pro/
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.0
 Tested up to: 4.9.4
-Stable tag: 0.1.0
+Stable tag: 1.0.0
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -47,6 +47,14 @@ Source: https://picjumbo.com/entrepreneur-working-on-his-macbook/
 
 
 == Changelog ==
+
+= 1.0.0 =
+* Released: March 22, 2018
+
+* 404 error page improved
+* Typography control improved
+* Customizer improved for better user experience
+* Lots of improvements and bugfix
 
 = 0.1.0 =
 * Released: February 14, 2018
