@@ -826,6 +826,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'flexia_heading_font_family_variants', array(
         'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
     ));
 
     $wp_customize->add_control(
@@ -845,6 +846,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'flexia_heading_font_family_subsets', array(
         'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
     ));
 
     $wp_customize->add_control(
