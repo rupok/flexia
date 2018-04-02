@@ -130,8 +130,6 @@ class Customizer_Select2_Multiselect extends WP_Customize_Control {
 
 	public function enqueue() {
 		wp_enqueue_script( 'select2-min-js', get_template_directory_uri() . '/framework/assets/admin/js/select2.min.js', array( 'jquery' ), rand(), true );
-		wp_enqueue_script( 'customizer-multiselect-control', get_template_directory_uri() . '/framework/assets/admin/js/customizer-multiselect-control.js', array( 'select2-min-js' ), rand(), true );
-
 		wp_enqueue_style( 'select2-css', get_template_directory_uri() . '/framework/assets/admin/css/select2.min.css', array(), rand() );
 		wp_enqueue_style( 'customizer-select2-control', get_template_directory_uri() . '/framework/assets/admin/css/customizer-select2-control.css', array(), rand() );
 	}
