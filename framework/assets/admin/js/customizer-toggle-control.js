@@ -28,7 +28,7 @@
 
 	// Blog Content Display Excerpt Show/Hide
     wp.customize.bind( 'ready', function() {
-        if( 'flexia_blog_content_display_full' === settings.flexia_blog_content_display ) {
+        if( 'flexia_blog_content_display_full' === flexia_settings.flexia_blog_content_display ) {
             flexia_blog_cotnent_hide_controls();
         }else {
             flexia_blog_cotnent_show_controls();
@@ -54,7 +54,7 @@
 
     // Navbar Settings Show/Hide
     wp.customize.bind( 'ready', function() {
-        if( 1 == settings.flexia_navbar ) {
+        if( 1 == flexia_settings.flexia_navbar ) {
             flexia_blog_cotnent_hide_controls();
         }else {
             flexia_blog_cotnent_show_controls();
@@ -87,7 +87,7 @@
 
 	// Topbar Settings Show/Hide
 	wp.customize.bind( 'ready', function() {
-        if( 1 == settings.flexia_enable_topbar ) {
+        if( 1 == flexia_settings.flexia_enable_topbar ) {
             flexia_blog_cotnent_show_controls();
         }else {
             flexia_blog_cotnent_hide_controls();
@@ -125,11 +125,11 @@
     function flexia_customizer_font_variants_generator( font_field_name, variant_field_id, subset_field_id, font_field_localize_name, font_variant_field_localize_name, font_subset_field_localize_name ) {
         wp.customize( font_field_name, function( value ) {
             $.ajax({
-                url: settings.ajax_url,
+                url: flexia_settings.ajax_url,
                 data: {
                     action: 'load_google_font_variants',
                     postType: 'post',
-                    fontFamily: settings[font_field_localize_name]
+                    fontFamily: flexia_settings[font_field_localize_name]
                 },
                 type: 'POST',
                 success: function( data ) {
@@ -137,7 +137,7 @@
 
                     $(data.variants).each(function(i,val) {
                         $.each(val,function(key,val) {
-                            if( key == settings[font_variant_field_localize_name] ) {
+                            if( key == flexia_settings[font_variant_field_localize_name] ) {
                                 var selected = 'selected';
                             }else {
                                 var selected = '';
@@ -148,7 +148,7 @@
 
                     $(data.subsets).each(function(i,val) {
                         $.each(val,function(key,val) {
-                            if( key == settings[font_subset_field_localize_name] ) {
+                            if( key == flexia_settings[font_subset_field_localize_name] ) {
                                 var selected = 'selected';
                             }else {
                                 var selected = '';
@@ -162,7 +162,7 @@
                 $(variant_field_id+' select').html('');
                 $(subset_field_id+' select').html('');
                 $.ajax({
-                    url: settings.ajax_url,
+                    url: flexia_settings.ajax_url,
                     data: {
                         action: 'load_google_font_variants',
                         postType: 'post',
