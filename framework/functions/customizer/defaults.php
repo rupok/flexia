@@ -19,7 +19,11 @@ function flexia_get_option_defaults() {
 		'site_link_color' => '#F56A6A',
 		'site_link_hover_color' => '#ff5544',
 		'body_font_family' => 'Open Sans',
+		'body_font_variants' => 'Open Sans',
+		'body_font_subsets' => 'Open Sans',
 		'heading_font_family' => 'Open Sans',
+		'heading_font_variants' => 'Open Sans',
+		'heading_font_subsets' => 'Open Sans',
 		'heading1_font_size' => '2',
 		'heading2_font_size' => '1.5',
 		'heading3_font_size' => '1.17',
@@ -150,6 +154,37 @@ if ( ! function_exists( 'flexia_get_option' ) ) :
 		}
 
 		return $value;
+	}
+
+endif;
+
+
+if( ! function_exists( 'flexia_generate_defaults' ) ) : 
+
+	function flexia_generate_defaults(){
+
+		$default_options = flexia_get_option_defaults();
+		$saved_options = get_theme_mods();
+
+		$returned = [];
+
+		foreach( $default_options as $key => $option ) {
+			if( array_key_exists( $key, $saved_options ) ) {
+				$returned[ $key ] = $saved_options[ $key ];
+			} else {
+				switch ( $key ) {
+					// case 'flexia_heading_font_family':
+					// 	$returned[ $key ] = $default_options[ 'body_font_family' ];
+					// 	break;
+					default:
+						$returned[ $key ] = $default_options[ $key ];
+						break;
+				}
+			}
+		}
+
+		return $returned;
+
 	}
 
 endif;
