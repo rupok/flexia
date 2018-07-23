@@ -3,6 +3,10 @@
 // No direct access, please
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+/**
+ * Some Definition
+ */
+define('FLEXIA_DEV_MODE', true);
 
 /**
  * Flexia functions and definitions
