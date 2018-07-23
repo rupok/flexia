@@ -34,9 +34,15 @@ gulp.task('compassBuild', function() {
 	return gulp.src(files.sass.toCompile)
 		.pipe(
 			compass(compassConfig)
-			.on('error', notify.onError({
-				message: 'Sass/Compass failed. Check console for errors.'
-			}))
+			// .on('error', notify.onError({
+				
+			// 	message: 'Sass/Compass failed. Check console for errors.'
+			// }))
+			.on('error', function(error) {
+				// Would like to catch the error here
+				console.log(error);
+				this.emit('end');
+			})
 		)
 		.pipe(gulp.dest('./' + compassConfig.css))
 		.pipe(notify('Sass/Compass successfully compiled'));
@@ -52,3 +58,7 @@ gulp.task('minify-css', () => {
 
 // Default task (one-time build).
 gulp.task('default', ['compassBuild']);
+
+
+// Default task (one-time build).
+gulp.watch(['sass/*/*.scss'], ['default', 'minify-css']);

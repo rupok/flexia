@@ -115,6 +115,7 @@
 
 .main-navigation ul.sub-menu {
 	background-color: #fff; 
+	display: block;
 }
 
 .main-navigation > ul > li.menu-item-has-children {
@@ -127,7 +128,9 @@
 
 .main-navigation > ul > li.has-sub:after {
     position: absolute;
-    top: 16px;
+    // top: 16px;
+	top: 50%;
+	margin-top: -1px;
     right: 11px;
     width: 8px;
     height: 2px;
@@ -138,7 +141,9 @@
 
 .main-navigation > ul > li.has-sub:before {
     position: absolute;
-    top: 13px;
+    // top: 13px;
+	top: 50%;
+	margin-top: -4px;
     right: 14px;
     display: block;
     width: 2px;
@@ -165,7 +170,6 @@
 	font-size: 13px;
 	color: #4d4d4d;
 }
-
 
 .main-navigation ul ul li.has-sub:after {
     position: absolute;

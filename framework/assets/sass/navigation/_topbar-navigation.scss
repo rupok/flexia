@@ -15,7 +15,8 @@
 
 .main-navigation > ul > li > a {
 	position: relative;
-	display: block;
+	display: flex;
+	align-items: center;
 	text-decoration: none;
 }
 
