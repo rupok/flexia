@@ -16,6 +16,7 @@
     z-index: 9999;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
 }
 
 .flexia-menu ul,
@@ -140,6 +141,9 @@
     .flexia-menu ul {
         width: 100%;
         display: none
+    }
+    .flexia-menu ul li, .flexia-menu ul li a {
+        display: block;
     }
     .flexia-menu ul li {
         width: 100%;

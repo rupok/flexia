@@ -2498,6 +2498,7 @@ big {
   flex: 0 0 auto;
   margin: 0 1em;
   max-width: 450px;
+  padding: 10px 0px;
 }
 
 .site-branding .site-title, .site-branding .site-title a {
@@ -2932,6 +2933,7 @@ a:hover, a:active {
   z-index: 9999;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 .flexia-menu ul,
@@ -3062,6 +3064,10 @@ a:hover, a:active {
   .flexia-menu ul {
     width: 100%;
     display: none;
+  }
+
+  .flexia-menu ul li, .flexia-menu ul li a {
+    display: block;
   }
 
   .flexia-menu ul li {
@@ -3287,8 +3293,13 @@ a:hover, a:active {
   height: 0;
 }
 
+.flexia-menu.main-navigation ul ul li {
+  opacity: 0;
+}
+
 .main-navigation li:hover > ul > li {
-  height: auto;
+  height: 45px;
+  opacity: 1;
 }
 
 .main-navigation ul ul li a {
@@ -3377,12 +3388,16 @@ a:hover, a:active {
     border: none;
   }
 
+  .flexia-menu.main-navigation ul ul li {
+    opacity: 1;
+  }
+
   .main-navigation ul li ul {
     padding-left: 1em;
   }
 
   .main-navigation li:hover > ul > li {
-    height: auto;
+    height: 45px;
   }
 
   .main-navigation > ul > li.has-sub {
@@ -3398,6 +3413,10 @@ a:hover, a:active {
 
   .main-navigation ul li a:hover, .main-navigation ul li a:focus, .main-navigation ul li.current-menu-item a {
     background-color: #262625;
+    color: #fff !important;
+  }
+
+  .main-navigation ul li.current-menu-item a:hover {
     color: #fff;
   }
 
@@ -6438,3 +6457,5 @@ audio:not([controls]) {
 .gallery-caption {
   display: block;
 }
+
+/*# sourceMappingURL=style.css.map */
