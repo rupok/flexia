@@ -1,4 +1,5 @@
-.flexia-wrapper,.entry-content-wrapper {
+
+.flexia-wrapper {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -6,97 +7,102 @@
   display: flex;
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
+  >* {
+    flex: 1 100%;
+  }
 }
-
-.flexia-wrapper > *,
-.entry-content-wrapper > * {
-  flex: 1 100%;
+.entry-content-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  >* {
+    flex: 1 100%;
+  }
 }
-
-.content-area, .single-post-entry {
+.content-area {
   order: 1;
   overflow: hidden;
   max-width: 100%;
 }
-
+.single-post-entry {
+  order: 1;
+  overflow: hidden;
+  max-width: 100%;
+}
 .flexia-sidebar-left {
   order: 2;
 }
-
 .flexia-sidebar-right {
   order: 3;
 }
-
-
-
 @media all and (min-width: 768px) {
-  .content-area, .single-post-entry {
+  .content-area {
     flex: 3 0px;
+    order: 2;
   }
-
+  .single-post-entry {
+    flex: 3 0px;
+    order: 2;
+  }
   .flexia-sidebar-left {
     order: 1;
   }
-
-  .content-area, .single-post-entry {
-    order: 2;
-  }
-
   .flexia-sidebar-right {
     order: 3;
   }
-
 }
-
 @media all and (min-width: 768px) and (max-width: 959px) {
-
-  .content-area, .single-post-entry {
+  .content-area {
     flex: 1 1 100%;
     order: 1;
   }
-
- .flexia-sidebar-left {
+  .single-post-entry {
+    flex: 1 1 100%;
+    order: 1;
+  }
+  .flexia-sidebar-left {
     flex: 1 1 auto;
     order: 2;
   }
-
   .flexia-sidebar-right {
     flex: 1 1 auto;
     order: 3;
   }
 }
-
 @media all and (min-width: 960px) {
   .flexia-sidebar-left {
     flex: 0 0 auto;
   }
-
   .flexia-sidebar-right {
     flex: 0 0 auto;
   }
 }
-
-
 @media all and (max-width: 480px) {
   .flexia-sidebar {
     flex: 1 1 auto;
   }
 }
-
-@media all and (min-width: 960px) and (max-width: 1023px) { 
-.sidebar-left-right .content-area, .sidebar-left-right .single-post-entry {
-  flex: 1 1 100%;
-  order: 1;
+@media all and (min-width: 960px) and (max-width: 1023px) {
+  .sidebar-left-right {
+    .content-area {
+      flex: 1 1 100%;
+      order: 1;
+    }
+    .single-post-entry {
+      flex: 1 1 100%;
+      order: 1;
+    }
+    .flexia-sidebar-left {
+      flex: 1 1 auto;
+      order: 2;
+    }
+    .flexia-sidebar-right {
+      flex: 1 1 auto;
+      order: 3;
+    }
+  }
 }
-.sidebar-left-right .flexia-sidebar-left {
-  flex: 1 1 auto;
-  order: 2;
-}
-
-.sidebar-left-right .flexia-sidebar-right {
-  flex: 1 1 auto;
-  order: 3;
-}
-}
-
-

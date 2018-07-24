@@ -1,19 +1,41 @@
-.flexia-breadcrumb .breadcrumb {
-	margin: 0;
-	padding: 0;
+.flexia-breadcrumb {
+	.breadcrumb {
+		margin: 0;
+		padding: 0;
+		li {
+			list-style: none;
+			display: inline-block;
+		}
+	}
+	.flexia-breadcrumb-item {
+		color: $color__text-light;
+		font-size: .75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.035em;
+		a {
+			color: $color__text-light;
+			font-size: .75rem;
+			text-transform: uppercase;
+			letter-spacing: 0.035em;
+		}
+	}
 }
-.flexia-breadcrumb .breadcrumb li {
-	list-style: none;
-	display: inline-block;
+.flexia-breadcrumb-item.current {
+	span {
+		color: $color__text-dark;
+	}
 }
-.flexia-breadcrumb .flexia-breadcrumb-item, .flexia-breadcrumb .flexia-breadcrumb-item a {
-	color: #7e7e7e;
-	font-size: .75rem;
-	text-transform: uppercase;
-	letter-spacing: 0.035em;
-}
-.flexia-breadcrumb-item.current span, .breadcrumb li a:hover, .breadcrumb li a:focus {
-	color: #222;
+.breadcrumb {
+	li {
+		a {
+			&:hover {
+				color: $color__text-dark;
+			}
+			&:focus {
+				color: $color__text-dark;
+			}
+		}
+	}
 }
 .breadcrumb-delimiter {
 	margin: 0 7px;

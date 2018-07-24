@@ -1,55 +1,98 @@
 .post-pagination-container {
   margin: 3em 0;
 }
-
 .post-pagination {
   display: flex;
   margin: 1em 0;
   padding: 0;
   justify-content: flex-start;
   flex-flow: row nowrap;
-}
-
-.post-pagination li {
-  list-style: none;
-  margin-right: 5px;
-}
-
-.post-pagination > li > a, .post-pagination > li > span {
-  position: relative;
-  padding: 8px 12px;
-  margin-bottom: 0;
-  line-height: 1;
-  text-align: center;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  background-color: rgba(0,0,0, .75);
-  color: white;
-  outline: 0;
-  text-decoration: none;
-  -webkit-transition: all .1s linear;
-  transition: all .1s linear;
-}
-
-.post-pagination > li > a:hover {
-  background: #f56a6a;
-  color: #fff;
-}
-
-.post-pagination .next, .post-pagination .prev {
-  padding: 8px 20px;
-}
-
-.post-pagination > .active > a, 
-.post-pagination > .active > a:focus, 
-.post-pagination > .active > a:hover, 
-.post-pagination > .active > span, 
-.post-pagination > .active > span:focus, 
-.post-pagination > .active > span:hover {
-  background: rgba(0,0,0, .25);
-  color: #fff;
-  cursor: default;
-  z-index: 2;
+  li {
+    list-style: none;
+    margin-right: 5px;
+  }
+  >li {
+    >a {
+      position: relative;
+      padding: 8px 12px;
+      margin-bottom: 0;
+      line-height: 1;
+      text-align: center;
+      cursor: pointer;
+      background-image: none;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      background-color: $color__dark-op-75;
+      color: $color__light;
+      outline: 0;
+      text-decoration: none;
+      -webkit-transition: all .1s linear;
+      transition: all .1s linear;
+      &:hover {
+        background: $color__link;
+        color: $color__light;
+      }
+    }
+    >span {
+      position: relative;
+      padding: 8px 12px;
+      margin-bottom: 0;
+      line-height: 1;
+      text-align: center;
+      cursor: pointer;
+      background-image: none;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      background-color: $color__dark-op-75;
+      color: $color__light;
+      outline: 0;
+      text-decoration: none;
+      -webkit-transition: all .1s linear;
+      transition: all .1s linear;
+    }
+  }
+  .next {
+    padding: 8px 20px;
+  }
+  .prev {
+    padding: 8px 20px;
+  }
+  >.active {
+    >a {
+      background: rgba(0,0,0, .25);
+      color: $color__light;
+      cursor: default;
+      z-index: 2;
+      &:focus {
+        background: rgba(0,0,0, .25);
+        color: $color__light;
+        cursor: default;
+        z-index: 2;
+      }
+      &:hover {
+        background: rgba(0,0,0, .25);
+        color: $color__light;
+        cursor: default;
+        z-index: 2;
+      }
+    }
+    >span {
+      background: rgba(0,0,0, .25);
+      color: $color__light;
+      cursor: default;
+      z-index: 2;
+      &:focus {
+        background: rgba(0,0,0, .25);
+        color: $color__light;
+        cursor: default;
+        z-index: 2;
+      }
+      &:hover {
+        background: rgba(0,0,0, .25);
+        color: $color__light;
+        cursor: default;
+        z-index: 2;
+      }
+    }
+  }
 }

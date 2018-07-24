@@ -1,109 +1,142 @@
-.nav-links .nav-previous, .nav-links .nav-next {
-  background-color: #fff;
-  border: 1px solid #e9e9ea;
-  font-size: 14px;
-  height: 60px;
-  line-height: 60px;
-  overflow: hidden;
-  position: fixed;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
-  top: calc(50% - 25px);
-  white-space: nowrap;
-  width: auto;
-  max-width: 500px;
-  z-index: 999;
-  transition: all 0.5s ease 0s;
-  -webkit-transition: all 0.5s ease 0s;
+.nav-links {
+  .nav-previous {
+    background-color: $color__light;
+    border: 1px solid $color__nav-links;
+    font-size: 14px;
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+    position: fixed;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    top: calc(50% - 25px);
+    white-space: nowrap;
+    width: auto;
+    max-width: 500px;
+    z-index: 999;
+    transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    left: 0;
+    padding-left: 25px;
+    transform: translateX(-100%);
+    margin-left: 40px;
+    a {
+      outline: none;
+      transition: all .3s;
+      -webkit-transition: all .3s;
+      padding-right: 50px;
+    }
+    &:after {
+      background-color: $color__light;
+      color: $color__nav-links;
+      font-family: "FontAwesome";
+      font-size: 36px;
+      height: 60px;
+      width: 40px;
+      position: absolute;
+      top: 0;
+      content: "\f104";
+      padding-left: 13px;
+      right: 0;
+    }
+    &:hover {
+      transform: translateX(-40px);
+    }
+  }
+  .nav-next {
+    background-color: $color__light;
+    border: 1px solid $color__nav-links;
+    font-size: 14px;
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+    position: fixed;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    top: calc(50% - 25px);
+    white-space: nowrap;
+    width: auto;
+    max-width: 500px;
+    z-index: 999;
+    transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    right: 0;
+    padding-right: 25px;
+    transform: translateX(100%);
+    margin-right: 40px;
+    a {
+      outline: none;
+      transition: all .3s;
+      -webkit-transition: all .3s;
+      padding-left: 40px;
+    }
+    &:before {
+      background-color: $color__light;
+      color: $color__nav-links;
+      font-family: "FontAwesome";
+      font-size: 36px;
+      height: 60px;
+      width: 40px;
+      position: absolute;
+      top: 0;
+      content: "\f105";
+      padding-left: 15px;
+      left: 0;
+    }
+    &:hover {
+      transform: translateX(40px);
+    }
+  }
 }
-
-.nav-links .nav-previous {
-  left: 0;
-  padding-left: 25px;
-  transform: translateX(-100%);
-  margin-left: 40px;
-}
-
-.nav-links .nav-next {
-  right: 0;
-  padding-right: 25px;
-  transform: translateX(100%);
-  margin-right: 40px;
-}
-
-.nav-links .nav-previous a, .nav-links .nav-next a {
-  outline: none;
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-
-
-.nav-links .nav-previous a{
-  padding-right: 50px;
-}
-
-.nav-links .nav-next a{
-  padding-left: 40px;
-}
-
-.nav-links .nav-next:before, .nav-links .nav-previous:after {
-  background-color: #fff;
-  color: #e9e9ea;
-  font-family: "FontAwesome";
-  font-size: 36px;
-  height: 60px;
-  width: 40px;
-  position: absolute;
-  top: 0;
-}
-
-.nav-links .nav-previous:after {
-  content: "\f104";
-  padding-left:13px; 
-  right: 0;
-}
-
-.nav-links .nav-next:before {
-  content: "\f105";
-  padding-left: 15px;
-  left: 0;
-}
-
-.nav-links .nav-previous:hover {
-  transform: translateX(-40px);
-}
-
-.nav-links .nav-next:hover {
-  transform: translateX(40px);
-}
-
 @media all and (max-width: 600px) {
-.nav-links .nav-previous, .nav-links .nav-next {
-  position: relative;
-  transform: none;
-  margin: 1em auto;
-  border: none;
-  padding: 0;
-  height: auto;
-  line-height: 2;
-}
-
-.nav-links .nav-next a, .nav-links .nav-previous a {
-  padding-left: 25px;
-  padding-right: 0;
-}
-
-.nav-links .nav-previous:hover, .nav-links .nav-next:hover {
-  transform: none;
-}
-
-.nav-links .nav-next::before, .nav-links .nav-previous::after {
-  padding-left: 10px;
-  right: auto;
-  left: 0;
-  font-size: inherit;
-  height: auto;
-  width: auto;
-}
-
+  .nav-links {
+    .nav-previous {
+      position: relative;
+      transform: none;
+      margin: 1em auto;
+      border: none;
+      padding: 0;
+      height: auto;
+      line-height: 2;
+      a {
+        padding-left: 25px;
+        padding-right: 0;
+      }
+      &:hover {
+        transform: none;
+      }
+      &::after {
+        padding-left: 10px;
+        right: auto;
+        left: 0;
+        font-size: inherit;
+        height: auto;
+        width: auto;
+      }
+    }
+    .nav-next {
+      position: relative;
+      transform: none;
+      margin: 1em auto;
+      border: none;
+      padding: 0;
+      height: auto;
+      line-height: 2;
+      a {
+        padding-left: 25px;
+        padding-right: 0;
+      }
+      &:hover {
+        transform: none;
+      }
+      &::before {
+        padding-left: 10px;
+        right: auto;
+        left: 0;
+        font-size: inherit;
+        height: auto;
+        width: auto;
+      }
+    }
+  }
 }

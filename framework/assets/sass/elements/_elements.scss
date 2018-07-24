@@ -1,64 +1,93 @@
+@import "lists";
+@import "tables";
 @-ms-viewport {
   width: device-width;
 }
-
 html {
   box-sizing: border-box;
   -ms-overflow-style: scrollbar;
 }
-
-*,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
+* {
+  box-sizing: inherit;
+  &:before {
+    box-sizing: inherit;
+  }
+  &:after {
+    box-sizing: inherit;
+  }
 }
-
 body {
-	background-color: $color__background-body; /* Fallback for when there is no custom background color defined. */
-	font-size: $body__font-size;
+  background-color: $color__background-body;
+  font-size: $body__font-size;
   font-family: $font__body;
   overflow-x: hidden;
 }
-
 hr {
-	background-color: $color__background-hr;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
+  background-color: $color__background-hr;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
 }
-
-@import "lists";
-
 img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+  height: auto;
+  max-width: 100%;
 }
-
 figure {
-	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+  margin: 1em 0;
 }
-
- .button, .btn {
-  background-color: rgba(0, 0, 0, 0.75);
-  color: #fff;
-  position:relative;
-  overflow:hidden;
-  display:inline-block;
-  vertical-align:top;
-  text-decoration:none;
-  border:1px solid rgba(0, 0, 0, 0.75);
-  padding:.5em 1em;
+.button {
+  background-color: $color__dark-op-75;
+  color: $color__light;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  padding: .5em 1em;
   -webkit-transition: all .2s;
   -moz-transition: all .2s;
   -ms-transition: all .2s;
   -o-transition: all .2s;
-  transition: all .2s
+  transition: all .2s;
+  &:hover {
+    background-color: $color__dark;
+    color: $color__light;
+  }
+  &:active {
+    background-color: $color__dark;
+    color: $color__light;
+  }
+  &:focus {
+    background-color: $color__dark;
+    color: $color__light;
+  }
 }
-
-.button:hover, .btn:hover, .button:active, .btn:active, .button:focus, .btn:focus {
-  background-color: #262625;
-  color:#fff;
+.btn {
+  background-color: $color__dark-op-75;
+  color: $color__light;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  padding: .5em 1em;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -ms-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+  &:hover {
+    background-color: $color__dark;
+    color: $color__light;
+  }
+  &:active {
+    background-color: $color__dark;
+    color: $color__light;
+  }
+  &:focus {
+    background-color: $color__dark;
+    color: $color__light;
+  }
 }
-
-
-@import "tables";

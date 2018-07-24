@@ -1,125 +1,200 @@
-.flexia-edd-product-thumb > img {
-	display: block;
+/* Purchase form */
+.flexia-edd-product-thumb {
+	>img {
+		display: block;
+	}
 }
-
 .edd-input.edd-item-quantity {
 	width: 50px;
 	margin-bottom: 10px;
 }
-
 .button.edd-add-to-cart {
 	font-size: 1em;
 }
-
-.edd_purchase_submit_wrapper .button.edd-add-to-cart {
-	font-size: 14px;
-	padding: 5px 15px;
-	margin-top: 5px;
+.edd_purchase_submit_wrapper {
+	.button.edd-add-to-cart {
+		font-size: 14px;
+		padding: 5px 15px;
+		margin-top: 5px;
+	}
+	a.edd-add-to-cart.edd-submit {
+		background-color: #d5017d;
+		color: $color__light;
+		padding: 15px 40px;
+		font-size: 16px;
+		letter-spacing: 1px;
+		border-radius: 4px;
+		background-color: #4CB050;
+		color: $color__light;
+		&:hover {
+			background-color: #ff0188;
+			background-color: #55C056;
+		}
+		&:active {
+			background-color: #ff0188;
+		}
+		&:focus {
+			background-color: #ff0188;
+		}
+	}
+	.edd-add-to-cart.button {
+		background-color: #4CB050;
+		color: $color__light;
+		&:hover {
+			background-color: #55C056;
+		}
+	}
 }
-
 .edd-product-title {
 	font-size: 1.5em;
 	line-height: 1.2;
 }
-
-#edd_checkout_form_wrap fieldset#edd_checkout_user_info {
-	padding: .5em 1.387em 1.387em;
-	margin: 70px 0 21px;
+#edd_checkout_form_wrap {
+	fieldset#edd_checkout_user_info {
+		padding: .5em 1.387em 1.387em;
+		margin: 70px 0 21px;
+	}
+	.edd_form {
+		legend {
+			margin: -60px 0 0;
+			font-size: 1.2em;
+			display: block;
+			font-weight: 700;
+		}
+	}
 }
-
-#edd_checkout_form_wrap .edd_form legend {
-	margin: -60px 0 0;
-	font-size: 1.2em;
-	display: block;
-	font-weight: 700;
-}
-
-
-/* Purchase form */
-
-.edd_purchase_submit_wrapper a.edd-add-to-cart.edd-submit, .edd_go_to_checkout.button.edd-submit, #edd-purchase-button, .edd-submit.button, input.edd-submit[type="submit"] {
+.edd_go_to_checkout.button.edd-submit {
 	background-color: #d5017d;
-	color: #fff;
+	color: $color__light;
+	padding: 15px 40px;
+	font-size: 16px;
+	letter-spacing: 1px;
+	border-radius: 4px;
+	&:hover {
+		background-color: #ff0188;
+	}
+	&:active {
+		background-color: #ff0188;
+	}
+	&:focus {
+		background-color: #ff0188;
+	}
+}
+#edd-purchase-button {
+	background-color: #d5017d;
+	color: $color__light;
+	padding: 15px 40px;
+	font-size: 16px;
+	letter-spacing: 1px;
+	border-radius: 4px;
+	&:hover {
+		background-color: #ff0188;
+	}
+	&:active {
+		background-color: #ff0188;
+	}
+	&:focus {
+		background-color: #ff0188;
+	}
+}
+.edd-submit.button {
+	background-color: #d5017d;
+	color: $color__light;
 	padding: 15px 40px;
 	font-size: 16px;
 	letter-spacing: 1px;
 	border-radius: 4px;
 }
-
-.edd_purchase_submit_wrapper a.edd-add-to-cart.edd-submit:hover, .edd_go_to_checkout.button.edd-submit:hover, #edd-purchase-button:hover, .edd-submit:hover, input.edd-submit[type="submit"]:hover, .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-submit:active, .edd_go_to_checkout.button.edd-submit:active, #edd-purchase-button:active, .edd-submit:active, input.edd-submit[type="submit"]:active, .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-submit:focus, .edd_go_to_checkout.button.edd-submit:focus, #edd-purchase-button:focus, .edd-submit:focus, input.edd-submit[type="submit"]:focus {
-    background-color: #ff0188;
+input.edd-submit[type="submit"] {
+	background-color: #d5017d;
+	color: $color__light;
+	padding: 15px 40px;
+	font-size: 16px;
+	letter-spacing: 1px;
+	border-radius: 4px;
+	&:hover {
+		background-color: #ff0188;
+	}
+	&:active {
+		background-color: #ff0188;
+	}
+	&:focus {
+		background-color: #ff0188;
+	}
 }
-
-.edd_purchase_submit_wrapper .edd-add-to-cart.button, 
-.edd_purchase_submit_wrapper a.edd-add-to-cart.edd-submit{
-	background-color: #4CB050;
-	color: #fff;
+.edd-submit {
+	&:hover {
+		background-color: #ff0188;
+	}
+	&:active {
+		background-color: #ff0188;
+	}
+	&:focus {
+		background-color: #ff0188;
+	}
 }
-
-.edd_purchase_submit_wrapper .edd-add-to-cart.button:hover,
-.edd_purchase_submit_wrapper a.edd-add-to-cart.edd-submit:hover {
-	background-color: #55C056;
-}
-
 .edd-cart-added-alert {
 	padding: .5em 0;
 	position: relative;
 	color: #55C056;
 }
-
-.edd_download_purchase_form .edd_price_options li {
-	margin-bottom: 10px;
-	padding: 5px;
-	font-size: 16px;
-	border: 1px solid rgba(0,0,0, .05);
-	transition: all .3s;
-}
-
-.edd_download_purchase_form .edd_price_options li:hover {
-	border-left: 5px solid #55C056;
-}
-
-.edd_download_purchase_form .edd_price_options input[type=radio] {
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  opacity: 0;
-}
-.edd_download_purchase_form .edd_price_options span.edd_price_option_name {
-	position: relative;
-	display: inline-block;
-	padding: 8px 0 8px 30px;
-}
-.edd_download_purchase_form .edd_price_options span.edd_price_option_name::before {
-  content: '';
-  display: block;
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  left: 0;
-  top: 50%;
-  border: 3px solid #55C056;
-  border-radius: 20px;
-  transform: translateY(-50%);
-}
-.edd_download_purchase_form .edd_price_options input[type=radio]:checked + span::after {
-  content: '';
-  display: block;
-  position: absolute;
-  height: 10px;
-  width: 10px;
-  margin: 0 5px;
-  left: 0;
-  top: 50%;
-  background: #55C056;
-  border-radius: 20px;
-  transform: translateY(-50%);
-}
-
-.edd_download_purchase_form .edd_price_options label {
-	cursor: pointer;
-}
-
-.edd_download_purchase_form .edd_price_options .edd_price_option_price {
-	font-weight: 700;
+.edd_download_purchase_form {
+	.edd_price_options {
+		li {
+			margin-bottom: 10px;
+			padding: 5px;
+			font-size: 16px;
+			border: 1px solid rgba(0,0,0, .05);
+			transition: all .3s;
+			&:hover {
+				border-left: 5px solid #55C056;
+			}
+		}
+		input[type=radio] {
+			height: 1px;
+			width: 1px;
+			overflow: hidden;
+			opacity: 0;
+			&:checked {
+				&+span {
+					&::after {
+						content: '';
+						display: block;
+						position: absolute;
+						height: 10px;
+						width: 10px;
+						margin: 0 5px;
+						left: 0;
+						top: 50%;
+						background: #55C056;
+						border-radius: 20px;
+						transform: translateY(-50%);
+					}
+				}
+			}
+		}
+		span.edd_price_option_name {
+			position: relative;
+			display: inline-block;
+			padding: 8px 0 8px 30px;
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				height: 20px;
+				width: 20px;
+				left: 0;
+				top: 50%;
+				border: 3px solid #55C056;
+				border-radius: 20px;
+				transform: translateY(-50%);
+			}
+		}
+		label {
+			cursor: pointer;
+		}
+		.edd_price_option_price {
+			font-weight: 700;
+		}
+	}
 }
