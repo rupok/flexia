@@ -1,5 +1,11 @@
+/* Site Footer */
 .flexia-site-footer {
-	background-color: #262625;
+	background-color: $color__dark;
+	.site-info {
+		color: $color__light;
+		font-size: .85em;
+		margin-top: .5em;
+	}
 }
 .flexia-colophon-inner {
 	display: flex;
@@ -8,25 +14,19 @@
 	flex-flow: row wrap;
 	padding: .5em 0;
 	align-items: flex-start;
+	.widget {
+		flex: 1 1 auto;
+		min-width: 250px;
+		margin: 1em;
+	}
 }
-
-.flexia-colophon-inner .widget {
-	flex: 1 1 auto;
-	min-width: 250px;
-}
-
 .flexia-footer-widget-area {
-  padding: .5em;
+	padding: .5em;
 }
-
-.flexia-colophon-inner .widget {
-	margin: 1em;
-}
-
-.flexia-back-to-top, .flexia-back-to-top:visited {
+.flexia-back-to-top {
 	font-size: 20px;
 	background: rgba(0,0,0,.5);
-	color: #fff;
+	color: $color__light;
 	border-radius: 3px;
 	position: fixed;
 	bottom: 30px;
@@ -37,34 +37,41 @@
 	z-index: 10;
 	-webkit-transition: opacity .3s ease-in-out;
 	transition: opacity .3s ease-in-out;
+	&:visited {
+		font-size: 20px;
+		background: rgba(0,0,0,.5);
+		color: $color__light;
+		border-radius: 3px;
+		position: fixed;
+		bottom: 30px;
+		right: 30px;
+		line-height: 40px;
+		width: 40px;
+		text-align: center;
+		z-index: 10;
+		-webkit-transition: opacity .3s ease-in-out;
+		transition: opacity .3s ease-in-out;
+	}
+	&:focus {
+		background: $color__dark-op-75;
+		color: $color__light;
+	}
+	&:hover {
+		background: $color__dark-op-75;
+		color: $color__light;
+	}
 }
-
-.flexia-back-to-top:focus, .flexia-back-to-top:hover {
-	background: rgba(0,0,0,.75);
-	color: #fff;
-}
-
 @media all and (min-width: 768px) {
-.flexia-colophon-inner .widget {
-	flex: 1 1 30%;
+	.flexia-colophon-inner {
+		.widget {
+			flex: 1 1 30%;
+		}
+	}
 }
-}
-
 @media all and (min-width: 960px) {
-.flexia-colophon-inner .widget {
-	flex: 1 1 20%;
+	.flexia-colophon-inner {
+		.widget {
+			flex: 1 1 20%;
+		}
+	}
 }
-}
-
-
-/* Site Footer */
-
-.flexia-site-footer .site-info {
-	color: #CBCED3;
-	font-size: 12px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	margin-top: .5em;
-}
-
-

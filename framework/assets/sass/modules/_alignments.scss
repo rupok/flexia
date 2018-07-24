@@ -3,30 +3,23 @@
 	float: left;
 	margin-right: 1.5em;
 }
-
 .alignright {
 	display: inline;
 	float: right;
 	margin-left: 1.5em;
 }
-
 .aligncenter {
 	clear: both;
-	@include center-block;
 }
-
 .alignBaseline {
-  vertical-align: baseline !important;
+	vertical-align: baseline !important;
 }
-
 .alignBottom {
-  vertical-align: bottom !important;
+	vertical-align: bottom !important;
 }
-
 .alignMiddle {
-  vertical-align: middle !important;
+	vertical-align: middle !important;
 }
-
 .alignTop {
-  vertical-align: top !important;
+	vertical-align: top !important;
 }

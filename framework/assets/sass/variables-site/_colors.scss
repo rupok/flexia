@@ -14,6 +14,8 @@ $color__link: #F56A6A;
 $color__link-visited: #23527c;
 $color__link-hover: #23527c;
 $color__text-main: #4d4d4d;
+$color__text-light: #7e7e7e;
+$color__text-dark: #222;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
@@ -21,10 +23,15 @@ $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 
+$color__darker: #000; 
 $color__dark: #262625; 
 $color__light: #fff;
 $color__footer-widget-bg: #ebebeb;
 $color__footer-bg: #262625;
 
+$color__nav-links: #e9e9ea;
 $color__tagcloud-bg: #ebebeb;
 $color__tagcloud-bg-hover: #3f3f46;
+
+$color__dark-op-50: rgba(0, 0, 0, 0.5);
+$color__dark-op-75: rgba(0, 0, 0, 0.75);
