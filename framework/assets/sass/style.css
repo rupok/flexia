@@ -6401,13 +6401,13 @@ input.edd-submit[type="submit"]:focus {
 .edd_download_purchase_form .edd_price_options li:hover {
   border-left: 5px solid #55C056;
 }
-.edd_download_purchase_form .edd_price_options input[type=radio] {
+.edd_download_purchase_form .edd_price_options input[type="radio"] {
   height: 1px;
   width: 1px;
   overflow: hidden;
   opacity: 0;
 }
-.edd_download_purchase_form .edd_price_options input[type=radio]:checked + span::after {
+.edd_download_purchase_form .edd_price_options input[type="radio"]:checked + span::after {
   content: '';
   display: block;
   position: absolute;
