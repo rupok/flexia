@@ -19,8 +19,8 @@
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
-	align-items: center;
-	padding: 10px 0;
+	align-items: stretch;
+	// padding: 10px 0;
 	min-height: 40px;
 }
 
@@ -28,6 +28,7 @@
 	flex: 0 0 auto;
 	margin: 0 1em;
 	max-width: 450px;
+	padding: 10px 0px;
 }
 
 .site-branding .site-title, .site-branding .site-title a {
@@ -72,7 +73,7 @@
 	margin: 0 1em;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: stretch;
 }
 
 .flexia-navbar.flexia-sticky-navbar {

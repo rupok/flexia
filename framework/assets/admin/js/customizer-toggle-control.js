@@ -118,9 +118,9 @@
 
     // Flexia Google Fonts Controllers
     wp.customize.bind( 'ready', function() {
-        flexia_customizer_font_variants_generator( 'flexia_google_font_family', '#customize-control-flexia_google_font_family_variants', '#customize-control-flexia_google_font_family_subsets', 'body_google_font', 'body_font_variants', 'body_font_subsets' );
+        flexia_customizer_font_variants_generator( 'body_font_family', '#customize-control-body_font_variants', '#customize-control-body_font_subsets', 'body_google_font', 'body_font_variants', 'body_font_subsets' );
 
-        flexia_customizer_font_variants_generator( 'flexia_heading_font_family', '#customize-control-flexia_heading_font_family_variants', '#customize-control-flexia_heading_font_family_subsets', 'heading_google_font', 'heading_font_variants', 'heading_font_subsets' );
+        flexia_customizer_font_variants_generator( 'heading_font_family', '#customize-control-heading_font_variants', '#customize-control-heading_font_subsets', 'heading_google_font', 'heading_font_variants', 'heading_font_subsets' );
     });
     function flexia_customizer_font_variants_generator( font_field_name, variant_field_id, subset_field_id, font_field_localize_name, font_variant_field_localize_name, font_subset_field_localize_name ) {
         wp.customize( font_field_name, function( value ) {

@@ -49,6 +49,7 @@
         } );
     });
 
+
 	// Container width
 
     wp.customize( 'container_width', function( value ) {

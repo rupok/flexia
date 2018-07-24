@@ -78,8 +78,8 @@ function flexia_customize_register( $wp_customize ) {
 			'capability'    => 'edit_theme_options',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'flexia_sanitize_integer',
-
-	) );
+		)
+	);
 
 	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'container_max_width', array(
 		'type'     => 'range-value',
@@ -734,35 +734,35 @@ function flexia_customize_register( $wp_customize ) {
 	// Body Font Setting
 
 
-    $wp_customize->add_setting( 'flexia_google_font_family', array(
+    $wp_customize->add_setting( 'body_font_family', array(
         'default'           => $defaults['body_font_family'],
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
     $wp_customize->add_control( new Customizer_Select2_Google_Fonts(
 		$wp_customize,
-		'flexia_google_font_family',
+		'body_font_family',
 		array(
 	 		'label'       => esc_html__( 'Body Font', 'flexia' ),
 	  		'section'     => 'flexia_typography_settings',
-	  		'settings'	  => 'flexia_google_font_family',
+	  		'settings'	  => 'body_font_family',
 	  		'type'			=> 'select2_google_fonts',
 	  		'choices'		=> flexia_google_fonts(),
 	  ) )
 	);
 
-    $wp_customize->add_setting( 'flexia_google_font_family_variants', array(
+    $wp_customize->add_setting( 'body_font_variants', array(
         'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control(
 	    new WP_Customize_Control(
 	        $wp_customize,
-	        'flexia_google_font_family_variants',
+	        'body_font_variants',
 	        array(
 	            'label'          => __( 'Body Font Variants', 'flexia' ),
 	            'section'        => 'flexia_typography_settings',
-	            'settings'       => 'flexia_google_font_family_variants',
+	            'settings'       => 'body_font_variants',
 	            'description'    => '',
 	            'type'           => 'select',
 	            'choices'        => array()
@@ -770,18 +770,18 @@ function flexia_customize_register( $wp_customize ) {
 	    )
 	);
 
-	$wp_customize->add_setting( 'flexia_google_font_family_subsets', array(
+	$wp_customize->add_setting( 'body_font_subsets', array(
         'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control(
 	    new WP_Customize_Control(
 	        $wp_customize,
-	        'flexia_google_font_family_subsets',
+	        'body_font_subsets',
 	        array(
 	            'label'          => __( 'Body Font Subsets', 'flexia' ),
 	            'section'        => 'flexia_typography_settings',
-	            'settings'       => 'flexia_google_font_family_subsets',
+	            'settings'       => 'body_font_subsets',
 	            'description'    => '',
 	            'type'           => 'select',
 	            'choices'        => array()
@@ -807,24 +807,24 @@ function flexia_customize_register( $wp_customize ) {
 	// Heading Font Setting
 
 
-    $wp_customize->add_setting( 'flexia_heading_font_family', array(
+    $wp_customize->add_setting( 'heading_font_family', array(
         'default'           =>  $defaults['body_font_family'],
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
     $wp_customize->add_control( new Customizer_Select2_Google_Fonts(
 		$wp_customize,
-		'flexia_heading_font_family',
+		'heading_font_family',
 		array(
 	 		'label'       => esc_html__( 'Heading Font', 'flexia' ),
 	  		'section'     => 'flexia_typography_settings',
-	  		'settings'	  => 'flexia_heading_font_family',
+	  		'settings'	  => 'heading_font_family',
 	  		'type'			=> 'select2_google_fonts',
 	  		'choices'		=> flexia_google_fonts(),
 	  ) )
 	);
 
-	$wp_customize->add_setting( 'flexia_heading_font_family_variants', array(
+	$wp_customize->add_setting( 'heading_font_variants', array(
         'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
     ));
@@ -832,11 +832,11 @@ function flexia_customize_register( $wp_customize ) {
     $wp_customize->add_control(
 	    new WP_Customize_Control(
 	        $wp_customize,
-	        'flexia_heading_font_family_variants',
+	        'heading_font_variants',
 	        array(
 	            'label'          => __( 'Heading Font Variants', 'flexia' ),
 	            'section'        => 'flexia_typography_settings',
-	            'settings'       => 'flexia_heading_font_family_variants',
+	            'settings'       => 'heading_font_variants',
 	            'description'    => '',
 	            'type'           => 'select',
 	            'choices'        => array()
@@ -844,7 +844,7 @@ function flexia_customize_register( $wp_customize ) {
 	    )
 	);
 
-	$wp_customize->add_setting( 'flexia_heading_font_family_subsets', array(
+	$wp_customize->add_setting( 'heading_font_subsets', array(
         'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
     ));
@@ -852,11 +852,11 @@ function flexia_customize_register( $wp_customize ) {
     $wp_customize->add_control(
 	    new WP_Customize_Control(
 	        $wp_customize,
-	        'flexia_heading_font_family_subsets',
+	        'heading_font_subsets',
 	        array(
 	            'label'          => __( 'Heading Font Subsets', 'flexia' ),
 	            'section'        => 'flexia_typography_settings',
-	            'settings'       => 'flexia_heading_font_family_subsets',
+	            'settings'       => 'heading_font_subsets',
 	            'description'    => '',
 	            'type'           => 'select',
 	            'choices'        => array()
@@ -1005,7 +1005,7 @@ function flexia_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'site_link_color' , array(
 	    'default'     => $defaults['site_link_color'],
-	    'sanitize_callback' => 'sanitize_hex_color',
+		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
 	$wp_customize->add_control(
@@ -1020,7 +1020,8 @@ function flexia_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'site_link_hover_color' , array(
-	    'default'     => $defaults['site_link_hover_color'],
+		'default'     => $defaults['site_link_hover_color'],
+		// 'transport'   => 'postMessage',
 	    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
