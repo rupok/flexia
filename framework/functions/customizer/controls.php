@@ -169,6 +169,12 @@ class Customizer_Select2_Google_Fonts extends WP_Customize_Control {
 
 	public $type = 'select2_google_fonts';
 
+	public function enqueue() {
+		wp_enqueue_script( 'select2-min-js', get_template_directory_uri() . '/framework/assets/admin/js/select2.min.js', array( 'jquery' ), rand(), true );
+		wp_enqueue_style( 'select2-css', get_template_directory_uri() . '/framework/assets/admin/css/select2.min.css', array(), rand() );
+		wp_enqueue_style( 'customizer-select2-control', get_template_directory_uri() . '/framework/assets/admin/css/customizer-select2-control.css', array(), rand() );
+	}
+
 	public function render_content() {
 		if( empty( $this->choices ) )
 			return;

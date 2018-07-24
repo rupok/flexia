@@ -16,6 +16,7 @@
     z-index: 9999;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
 }
 
 .flexia-menu ul,
@@ -23,11 +24,15 @@
 .flexia-menu ul li a {
     list-style: none;
     line-height: 1;
-    display: block;
+    display: flex;
     position: relative;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box
+}
+
+.flexia-menu.topbar-navigation ul, .flexia-menu.topbar-navigation ul li, .flexia-menu.topbar-navigation ul li a {
+    display: block;
 }
 
 .flexia-menu > ul:after {
@@ -55,6 +60,11 @@
 }
 .flexia-menu li:hover > ul {
     left: auto
+}
+
+.flexia-menu > ul > li:hover > ul.sub-menu {
+    top: 100%;
+
 }
 
 .flexia-menu ul ul ul {
@@ -131,6 +141,9 @@
     .flexia-menu ul {
         width: 100%;
         display: none
+    }
+    .flexia-menu ul li, .flexia-menu ul li a {
+        display: block;
     }
     .flexia-menu ul li {
         width: 100%;
