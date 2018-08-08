@@ -60,14 +60,13 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 				<?php
 
 					if ( has_nav_menu( 'primary' ) ) :
-					wp_nav_menu( array(
-						'theme_location' => 'primary',
-						'menu_id'        => 'flexia-primary-menu',
-						'menu_class'     => 'nav-menu flexia-primary-menu',
-						'container'      => false,
-						// 'walker'      	 => new Flexia_Nav_Walker,
-					) );
-
+						wp_nav_menu( array(
+							'theme_location' => 'primary',
+							'menu_id'        => 'flexia-primary-menu',
+							'menu_class'     => 'nav-menu flexia-primary-menu',
+							'container'      => false,
+							// 'walker'      	 => new Flexia_Nav_Walker,
+						) );
 					else :
 
 					  echo '<ul class="flexia-primary-menu"><li><a href="' . home_url( '/' ) . 'wp-admin/nav-menus.php">Assign a Menu</a></li></ul>';

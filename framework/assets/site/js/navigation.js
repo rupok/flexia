@@ -69,8 +69,6 @@
                 }
             });
 
-            console.log( flexiaMenu );
-
             var megaNavParent;
 
             flexiaMegaMenu = function(){
@@ -96,7 +94,7 @@
                 return;
             }
 
-            flexiaMegaMenu();
+            // flexiaMegaMenu();
 
             flexiaMenu.find('li ul').parent().addClass('has-sub');
             multiTg = function() {
@@ -117,11 +115,11 @@
                 var mediasize = 767;
                 if ($(window).width() > mediasize) {
                     flexiaMenu.find('ul').show();
-                    megaNavParent.find('ul.sub-menu').hide();
+                    // megaNavParent.find('ul.sub-menu').hide();
                 }
                 if ($(window).width() <= mediasize) {
                     flexiaMenu.find('ul').hide().removeClass('open');
-                    $('.flexia-mega-menu-wrapper').hide();
+                    // $('.flexia-mega-menu-wrapper').hide();
                 }
             };
             resizeFix();

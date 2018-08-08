@@ -19,7 +19,15 @@
     flex-wrap: wrap;
 }
 
-.flexia-menu ul,
+.flexia-menu ul {
+    list-style: none;
+    line-height: 1;
+    display: flex;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
 .flexia-menu ul li,
 .flexia-menu ul li a {
     list-style: none;
@@ -53,7 +61,7 @@
     left: -9999px
 }
 .flexia-menu ul ul li {
-    height: 0;
+    // height: 0;
     -webkit-transition: all .25s ease;
     -ms-transition: all .25s ease;
     transition: all .25s ease
@@ -64,7 +72,6 @@
 
 .flexia-menu > ul > li:hover > ul.sub-menu {
     top: 100%;
-
 }
 
 .flexia-menu ul ul ul {

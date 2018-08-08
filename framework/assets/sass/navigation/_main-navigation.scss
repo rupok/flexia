@@ -113,9 +113,19 @@
 
 /* Submenu styles */
 
-.main-navigation ul.sub-menu {
+.main-navigation > ul.sub-menu {
 	background-color: #fff; 
 	display: block;
+	top: 120%;
+	-webkit-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    transition: all .25s ease
+}
+ul.sub-menu {
+	top: 120%;
+	-webkit-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+	transition: all .25s ease;
 }
 
 .main-navigation > ul > li.menu-item-has-children {
@@ -170,7 +180,7 @@
 }
 
 .main-navigation li:hover > ul > li {
-	height: 45px;
+	// height: 45px;
 	opacity: 1;
 }
 
@@ -407,4 +417,35 @@
 		position: relative;
 	}
 
+}
+
+
+.flexia-menu.main-navigation .flexia-megamenu-wrapper {
+	position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 99;
+    top: 100%;
+	& .flexia-megamenu-container {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: stretch;
+		background-color: #fff;
+		padding: 10px;
+
+		& > ul, & > ul ul {
+			position: static;
+			margin-left: 0;
+			li {
+				opacity: 1;
+				display: block;
+			}
+		}
+
+		& > .flexia-sub-mega-menu {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: stretch;
+		}
+	}
 }

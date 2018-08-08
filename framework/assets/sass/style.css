@@ -2936,7 +2936,15 @@ a:hover, a:active {
   flex-wrap: wrap;
 }
 
-.flexia-menu ul,
+.flexia-menu ul {
+  list-style: none;
+  line-height: 1;
+  display: flex;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .flexia-menu ul li,
 .flexia-menu ul li a {
   list-style: none;
@@ -2971,7 +2979,6 @@ a:hover, a:active {
 }
 
 .flexia-menu ul ul li {
-  height: 0;
   -webkit-transition: all .25s ease;
   -ms-transition: all .25s ease;
   transition: all 0.25s ease;
@@ -3248,9 +3255,20 @@ a:hover, a:active {
 }
 
 /* Submenu styles */
-.main-navigation ul.sub-menu {
+.main-navigation > ul.sub-menu {
   background-color: #fff;
   display: block;
+  top: 120%;
+  -webkit-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  transition: all 0.25s ease;
+}
+
+ul.sub-menu {
+  top: 120%;
+  -webkit-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  transition: all .25s ease;
 }
 
 .main-navigation > ul > li.menu-item-has-children {
@@ -3302,7 +3320,6 @@ a:hover, a:active {
 }
 
 .main-navigation li:hover > ul > li {
-  height: 45px;
   opacity: 1;
 }
 
@@ -3541,6 +3558,34 @@ a:hover, a:active {
     position: relative;
   }
 }
+.flexia-menu.main-navigation .flexia-megamenu-wrapper {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: 99;
+  top: 100%;
+}
+.flexia-menu.main-navigation .flexia-megamenu-wrapper .flexia-megamenu-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  background-color: #fff;
+  padding: 10px;
+}
+.flexia-menu.main-navigation .flexia-megamenu-wrapper .flexia-megamenu-container > ul, .flexia-menu.main-navigation .flexia-megamenu-wrapper .flexia-megamenu-container > ul ul {
+  position: static;
+  margin-left: 0;
+}
+.flexia-menu.main-navigation .flexia-megamenu-wrapper .flexia-megamenu-container > ul li, .flexia-menu.main-navigation .flexia-megamenu-wrapper .flexia-megamenu-container > ul ul li {
+  opacity: 1;
+  display: block;
+}
+.flexia-menu.main-navigation .flexia-megamenu-wrapper .flexia-megamenu-container > .flexia-sub-mega-menu {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+}
+
 .flexia-topbar-inner {
   min-height: 30px;
 }
