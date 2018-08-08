@@ -113,14 +113,29 @@
 
 /* Submenu styles */
 
-.main-navigation ul.sub-menu {
+.main-navigation > ul.sub-menu {
 	background-color: #fff; 
 	display: block;
+	top: 120%;
+	-webkit-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    transition: all .25s ease
+}
+ul.sub-menu {
+	top: 120%;
+	-webkit-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+	transition: all .25s ease;
 }
 
 .main-navigation > ul > li.menu-item-has-children {
     padding-right: 20px
 }
+
+.main-navigation > ul > li.flexia-mega-menu {
+	position: static;
+}
+
 
 .main-navigation ul ul li.menu-item-has-children a {
     padding-right: 20px
@@ -165,7 +180,7 @@
 }
 
 .main-navigation li:hover > ul > li {
-	height: 45px;
+	// height: 45px;
 	opacity: 1;
 }
 
@@ -212,6 +227,51 @@
     border-top: 1px solid #333
 }
 
+/* Simple Mega Menu CSS */
+.flexia-has-mega {
+	position: relative;
+}
+.flexia-has-mega .flexia-primary-menu, .flexia-mega-menu-wrapper ul {
+	position: static;
+}
+.flexia-menu.main-navigation .flexia-mega-menu-wrapper {
+	position: absolute;
+	display: flex;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	background: #ddd;
+
+	&>div.flexia-mega-column {
+		flex: 1;
+		padding: 10px;
+		h3 {
+			text-transform: uppercase;
+			font-size: 14px;
+		}
+
+		ul {
+			li {
+				display: block;
+				a {
+					padding: 10px 0px;
+					&:hover {
+						background: none;
+					}
+				}
+			}
+		}
+	}
+
+	ul {
+		position: static;
+		li {
+			opacity: 1;
+			height: auto;;
+		}
+	}
+}
+
 @media screen and (min-width: 768px) {
 
 	.main-navigation ul.sub-menu {
@@ -240,6 +300,7 @@
 }
 
 @media screen and (max-width: 767px) {
+
 	.main-navigation .flexia-primary-menu {
 		position: absolute;
 		left: 0;
@@ -257,6 +318,7 @@
 	.flexia-menu.main-navigation ul ul li {
 		opacity: 1;
 	}
+
 	.main-navigation ul li ul {
 		padding-left: 1em;
 	}
@@ -347,4 +409,43 @@
 		background: #ddd;
 	}
 
+	/* Flexia Simgple Mega Menu */
+	.flexia-has-mega {
+		position: static;
+	}
+	.main-navigation > ul > li.flexia-mega-menu {
+		position: relative;
+	}
+
+}
+
+
+.flexia-menu.main-navigation .flexia-megamenu-wrapper {
+	position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 99;
+    top: 100%;
+	& .flexia-megamenu-container {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: stretch;
+		background-color: #fff;
+		padding: 10px;
+
+		& > ul, & > ul ul {
+			position: static;
+			margin-left: 0;
+			li {
+				opacity: 1;
+				display: block;
+			}
+		}
+
+		& > .flexia-sub-mega-menu {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: stretch;
+		}
+	}
 }
