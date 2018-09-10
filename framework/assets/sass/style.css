@@ -2728,7 +2728,7 @@ big {
   background-color: #f9f9f9;
 }
 
-body.single-docs .flexia-wrapper > .content-area {
+body.single-docs .site-content .flexia-wrapper > .content-area {
   padding: 0;
 }
 
