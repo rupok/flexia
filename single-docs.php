@@ -57,7 +57,7 @@ get_header(); ?>
                                     <?php the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' ); ?>
 
                                     <?php if ( wedocs_get_option( 'print', 'wedocs_settings', 'on' ) == 'on' ): ?>
-                                        <a href="#" class="wedocs-print-article wedocs-hide-print wedocs-hide-mobile" title="<?php echo esc_attr( __( 'Print this article', 'wedocs' ) ); ?>"><i class="wedocs-icon wedocs-icon-print"></i></a>
+                                        <a href="#" class="wedocs-print-article wedocs-hide-print wedocs-hide-mobile" title="<?php echo esc_attr( __( 'Print this article', 'flexia' ) ); ?>"><i class="wedocs-icon wedocs-icon-print"></i></a>
                                     <?php endif; ?>
                                 </header><!-- .entry-header -->
 
@@ -65,12 +65,12 @@ get_header(); ?>
                                     <?php
                                         the_content( sprintf(
                                             /* translators: %s: Name of current post. */
-                                            wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'wedocs' ), array( 'span' => array( 'class' => array() ) ) ),
+                                            wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'flexia' ), array( 'span' => array( 'class' => array() ) ) ),
                                             the_title( '<span class="screen-reader-text">"', '"</span>', false )
                                         ) );
 
                                         wp_link_pages( array(
-                                            'before' => '<div class="page-links">' . esc_html__( 'Docs:', 'wedocs' ),
+                                            'before' => '<div class="page-links">' . esc_html__( 'Docs:', 'flexia' ),
                                             'after'  => '</div>',
                                         ) );
 
@@ -78,7 +78,7 @@ get_header(); ?>
 
                                         if ( $children ) {
                                             echo '<div class="article-child well">';
-                                                echo '<h3>' . __( 'Articles', 'wedocs' ) . '</h3>';
+                                                echo '<h3>' . __( 'Articles', 'flexia' ) . '</h3>';
                                                 echo '<ul>';
                                                     echo $children;
                                                 echo '</ul>';
@@ -89,7 +89,7 @@ get_header(); ?>
 
                                         if ( $tags_list ) {
                                             printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-                                                _x( 'Tags', 'Used before tag names.', 'wedocs' ),
+                                                _x( 'Tags', 'Used before tag names.', 'flexia' ),
                                                 $tags_list
                                             );
                                         }
@@ -100,7 +100,7 @@ get_header(); ?>
                                     <?php if ( wedocs_get_option( 'email', 'wedocs_settings', 'on' ) == 'on' ): ?>
                                         <span class="wedocs-help-link wedocs-hide-print wedocs-hide-mobile">
                                             <i class="wedocs-icon wedocs-icon-envelope"></i>
-                                            <?php printf( '%s <a id="wedocs-stuck-modal" href="%s">%s</a>', __( 'Still stuck?', 'wedocs' ), '#', __( 'How can we help?', 'wedocs' ) ); ?>
+                                            <?php printf( '%s <a id="wedocs-stuck-modal" href="%s">%s</a>', __( 'Still stuck?', 'flexia' ), '#', __( 'How can we help?', 'flexia' ) ); ?>
                                         </span>
                                     <?php endif; ?>
 
@@ -110,7 +110,7 @@ get_header(); ?>
                                     </div>
 
                                     <meta itemprop="datePublished" content="<?php echo get_the_time( 'c' ); ?>"/>
-                                    <time itemprop="dateModified" datetime="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>"><?php printf( __( 'Updated on %s', 'wedocs' ), get_the_modified_date() ); ?></time>
+                                    <time itemprop="dateModified" datetime="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>"><?php printf( __( 'Updated on %s', 'flexia' ), get_the_modified_date() ); ?></time>
                                 </footer>
 
                                 <?php wedocs_doc_nav(); ?>
