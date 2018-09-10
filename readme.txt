@@ -4,8 +4,8 @@ Contributors: re_enter_rupok, Codetic
 Theme URI: https://flexia.pro/
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.0
-Tested up to: 4.9.4
-Stable tag: 1.0.1
+Tested up to: 4.9.8
+Stable tag: 1.0.2
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -47,6 +47,12 @@ Source: https://picjumbo.com/entrepreneur-working-on-his-macbook/
 
 
 == Changelog ==
+
+= 1.0.2 =
+* Released: September 10, 2018
+
+* weDocs integration added
+* Few improvements and bugfix
 
 = 1.0.1 =
 * Released: August 1, 2018
