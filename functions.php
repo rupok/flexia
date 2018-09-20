@@ -173,7 +173,9 @@ require get_template_directory() . '/framework/functions/flexia/widgets.php';
  * Breadcrumbs.
  */
 
-require get_template_directory() . '/framework/functions/flexia/breadcrumb.php';
+if ( ! function_exists( 'flexia_breadcrumbs' ) ) {
+	require get_template_directory() . '/framework/functions/flexia/breadcrumb.php';
+}
 
 /**
  * Integrations.
