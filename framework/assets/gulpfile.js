@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
 	compass = require("gulp-compass"),
 	notify = require("gulp-notify"),
+	autoprefixer = require('gulp-autoprefixer');
  	cleanCSS = require('gulp-clean-css');
 
 
@@ -43,6 +44,9 @@ gulp.task('compassBuild', function() {
 				this.emit('end');
 			})
 		)
+		.pipe(autoprefixer({
+			browsers: ['last 10 versions']
+		}))
 		.pipe(gulp.dest('./' + compassConfig.css))
 		.pipe(notify('Sass/Compass successfully compiled'));
 });
