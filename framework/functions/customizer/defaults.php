@@ -63,6 +63,7 @@ function flexia_get_option_defaults() {
 		'flexia_submenu_bg_color' => '#fff',
 		'flexia_submenu_link_color' => '#4d4d4d',
 		'flexia_submenu_link_hover_color' => '#1b1f21',
+		'flexia_nav_menu_dropdown_animation' => 'to-top',
 		'footer_widget_area_bg_color' => '#fff',
 		'flexia_footer_bg_color' => '#262625',
 		'flexia_footer_content_color' => '#CBCED3',

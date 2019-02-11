@@ -1,332 +1,225 @@
-// // nav menu
-// .nav-menu,
-// .nav-menu ul {
-//     margin: 0;
-//     padding: 0;
+%ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
-//     li {
-//         a {
-//             cursor: pointer;
-//             transition: color ease-out 0.3s 0.1s;
-//         }
-//     }
-// }
-
-// // flexia menu
-// //@extend-elements
-// //original selectors
-// //.flexia-menu ul li, .flexia-menu ul li a
-// %extend_1 {
-// 	list-style: none;
-// 	line-height: 1;
-// 	display: flex;
-// 	position: relative;
-// 	box-sizing: border-box;
-// }
-
-// .flexia-menu {
-// 	ul {
-// 		list-style: none;
-// 		line-height: 1;
-// 		display: flex;
-// 		box-sizing: border-box;
-// 		z-index: 9999;
-// 		margin: 0;
-// 		padding: 0;
-// 		flex-wrap: wrap;
-// 		li {
-// 			@extend %extend_1;
-// 			a {
-// 				@extend %extend_1;
-// 			}
-// 		}
-// 		ul {
-// 			position: absolute;
-// 			ul {
-// 				margin-left: 100%;
-// 				top: 0;
-// 			}
-// 		}
-// 	}
-// 	> ul {
-// 		&:after {
-// 			content: ".";
-// 			display: block;
-// 			clear: both;
-// 			visibility: hidden;
-// 			line-height: 0;
-// 			height: 0;
-// 		}
-// 		> li {
-// 			float: left;
-// 			&:hover > ul.sub-menu {
-// 				top: 100%;
-// 			}
-// 		}
-// 	}
-// 	&.topbar-navigation ul {
-// 		display: block;
-// 		li {
-// 			display: block;
-// 			a {
-// 				display: block;
-// 			}
-// 		}
-// 	}
-// 	li:hover > ul {
-// 		visibility: visible;
-// 		opacity: 1;
-// 		transform: translateY(0);
-// 	}
-// }
-// .flexia-nav-btn {
-// 	width: 55px;
-// 	height: 46px;
-// 	position: absolute;
-// 	right: 0;
-// 	top: 0;
-// 	cursor: pointer;
-// 	z-index: 9999;
-// 	display: none;
-// 	&:after {
-// 		position: absolute;
-// 		top: 22px;
-// 		right: 20px;
-// 		display: block;
-// 		height: 8px;
-// 		width: 20px;
-// 		content: "";
-// 	}
-// 	&:before {
-// 		transition: all 0.3s ease;
-// 		position: absolute;
-// 		top: 16px;
-// 		right: 20px;
-// 		display: block;
-// 		height: 2px;
-// 		width: 20px;
-// 		content: "";
-// 	}
-// 	&.menu-opened {
-// 		&:after {
-// 			transition: all 0.3s ease;
-// 			top: 23px;
-// 			border: 0;
-// 			height: 2px;
-// 			width: 19px;
-// 			transform: rotate(45deg);
-// 		}
-// 		&:before {
-// 			top: 23px;
-// 			width: 19px;
-// 			transform: rotate(-45deg);
-// 		}
-// 	}
-// }
-// @media screen and(max-width: 767px) {
-// 	.flexia-nav-btn {
-// 		display: block;
-// 	}
-// 	.flexia-menu {
-// 		width: 100%;
-// 		ul {
-// 			width: 100%;
-// 			display: none;
-// 			li {
-// 				display: block;
-// 				width: 100%;
-// 				a {
-// 					display: block;
-// 					width: 100%;
-// 					border-bottom: 0;
-// 				}
-// 			}
-// 			ul {
-// 				position: relative;
-// 				left: 0;
-// 				width: 100%;
-// 				margin: 0;
-// 				text-align: left;
-// 				li {
-// 					height: auto;
-// 					a {
-// 						width: 100%;
-// 						border-bottom: 0;
-// 					}
-// 				}
-// 				ul {
-// 					position: relative;
-// 					left: 0;
-// 					width: 100%;
-// 					margin: 0;
-// 					text-align: left;
-// 					li.current-menu-item a {
-// 						border-left: none;
-// 					}
-// 				}
-// 				> li.has-sub {
-// 					&:after {
-// 						display: none !important;
-// 					}
-// 					&:before {
-// 						display: none !important;
-// 					}
-// 				}
-// 			}
-// 		}
-// 		> ul {
-// 			> li {
-// 				float: none;
-// 				&.has-sub {
-// 					&:after {
-// 						display: none !important;
-// 					}
-// 					&:before {
-// 						display: none !important;
-// 					}
-// 					> ul > li.current-menu-item > a {
-// 						border-top: none;
-// 					}
-// 				}
-// 			}
-// 			ul > li.has-sub > ul > li.current-menu-item > a {
-// 				border-top: none;
-// 			}
-// 		}
-// 		.submenu-button {
-// 			position: absolute;
-// 			z-index: 99;
-// 			right: 0;
-// 			top: 0;
-// 			display: block;
-// 			cursor: pointer;
-// 			&:before {
-// 				position: absolute;
-// 				display: block;
-// 				content: "";
-// 			}
-// 			&:after {
-// 				position: absolute;
-// 				display: block;
-// 				content: "";
-// 			}
-// 			&.submenu-opened:before {
-// 				display: none;
-// 			}
-// 		}
-// 		li:hover > ul > li {
-// 			height: auto;
-// 		}
-// 	}
-// }
+%li {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+}
 
 .flexia-menu {
     .nav-menu {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-        // &:after {
-        //     content: "";
-        //     display: table;
-        //     clear: both;
-        // }
+        @extend %ul;
 
         li {
             a {
-                text-decoration: none;
-                outline: none;
-                box-shadow: none;
+                @extend %li;
+            }
+
+            &.menu-item-has-children {
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -4px;
+                    right: 14px;
+                    display: block;
+                    width: 2px;
+                    height: 8px;
+                    background: #4d4d4d;
+                    transition: all 0.25s ease;
+
+                    @media screen and (max-width: 991px) {
+                        display: none;
+                    }
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -1px;
+                    right: 11px;
+                    width: 8px;
+                    height: 2px;
+                    display: block;
+                    background: #4d4d4d;
+
+                    @media screen and (max-width: 991px) {
+                        display: none;
+                    }
+                }
+
+                &:hover {
+                    &:before {
+                        height: 0;
+                    }
+                }
             }
 
             ul {
-                margin: 0;
-                padding: 0;
-                list-style: none;
+                @extend %ul;
 
                 li {
                     a {
-                        text-decoration: none;
-                        outline: none;
-                        box-shadow: none;
+                        @extend %li;
                     }
                 }
             }
         }
 
-        // li {
-        //     a {
-        //         font-size: 14px;
-        //         font-weight: 400;
-        //         line-height: 50px;
-        //         text-align: center;
-        //         color: #ffffff;
-        //         padding-left: 20px;
-        //         padding-right: 20px;
-        //         transition: all 100ms;
-        //     }
-
-        //     ul {
-        //         margin: 0;
-        //         padding: 0;
-        //         list-style: none;
-
-        //         li {
-        //             a {
-        //                 font-size: 13px;
-        //                 font-weight: 400;
-        //                 line-height: 40px;
-        //                 text-align: left;
-        //                 color: #000;
-        //                 padding-left: 20px;
-        //                 padding-right: 20px;
-        //             }
-
-        //             &:hover,
-        //             &.current-menu-item {
-        //                 > a {
-        //                     color: #ee355f;
-        //                     background-color: #ffffff;
-        //                 }
-        //             }
-        //         }
-        //     }
-
-        //     &:hover,
-        //     &.current-menu-item {
-        //         > a {
-        //             color: #ffffff;
-        //             background-color: #ee355f;
-        //         }
-        //     }
-        // }
-
-        // responsive menu indicator
-        .flexia-menu-indicator {
-            position: absolute;
-            top: 0;
-            right: 10px;
-            width: 28px;
-            height: 28px;
-            display: block;
-            border: 1px solid #ffffff80;
-            border-radius: 2px;
-            text-align: center;
-            transform: translateY(-50%);
-            cursor: pointer;
-
-            &:before {
-                display: block;
-                font-weight: 400;
-                line-height: 26px;
-                color: #ffffff;
-                transition: transform 300ms;
+        // animation
+        @media screen and (min-width: 992px) {
+            &.flexia-menu-dropdown-animate-fade {
+                li {
+                    ul {
+                        transition: all 200ms;
+                    }
+                }
             }
 
-            &.flexia-menu-indicator-open {
-                &:before {
-                    transform: rotate(180deg);
+            &.flexia-menu-dropdown-animate-to-top {
+                li {
+                    ul {
+                        transform: translateY(20px);
+                        transition: all 200ms;
+                    }
+
+                    &:hover {
+                        > ul {
+                            transform: translateY(0);
+                        }
+                    }
                 }
+            }
+
+            &.flexia-menu-dropdown-animate-zoom-in {
+                li {
+                    ul {
+                        transform: scale(0.8);
+                        transition: all 200ms;
+                    }
+
+                    &:hover {
+                        > ul {
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+
+            &.flexia-menu-dropdown-animate-zoom-out {
+                li {
+                    ul {
+                        transform: scale(1.2);
+                        transition: all 200ms;
+                    }
+
+                    &:hover {
+                        > ul {
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // responsive menu
+    .flexia-menu-toggle {
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        outline: none;
+
+        &:before {
+            content: "";
+            position: relative;
+            top: -2px;
+            right: 0;
+            display: block;
+            height: 2px;
+            width: 20px;
+            background-color: #4d4d4d;
+            transition: all 0.3s ease;
+        }
+
+        &:after {
+            content: "";
+            position: relative;
+            top: 2px;
+            right: 0;
+            display: block;
+            height: 8px;
+            width: 20px;
+            border-top: 2px solid #4d4d4d;
+            border-bottom: 2px solid #4d4d4d;
+            transition: all 0.3s ease;
+        }
+
+        &.flexia-menu-toggle-open {
+            &::before {
+                top: 0;
+                transform: rotate(-45deg);
+            }
+
+            &:after {
+                top: -1px;
+                border: 0;
+                height: 2px;
+                width: 20px;
+                background-color: #4d4d4d;
+                transform: rotate(45deg);
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            display: none;
+        }
+    }
+
+    .flexia-menu-indicator {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        display: block;
+        border-left: 1px solid #eeeeee;
+        text-align: center;
+        cursor: pointer;
+
+        @media screen and (min-width: 992px) {
+            display: none;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 19px;
+            right: 19px;
+            width: 2px;
+            height: 8px;
+            background: #ddd;
+            transition: all 0.25s ease;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 22px;
+            right: 16px;
+            width: 8px;
+            height: 2px;
+            background: #ddd;
+        }
+
+        &.flexia-menu-indicator-open {
+            &:before {
+                height: 0;
             }
         }
     }

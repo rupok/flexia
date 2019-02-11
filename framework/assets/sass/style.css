@@ -4089,68 +4089,206 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.flexia-menu .nav-menu {
+.flexia-menu .nav-menu, .flexia-menu .nav-menu li ul {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-.flexia-menu .nav-menu li a {
-  text-decoration: none;
-  outline: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-.flexia-menu .nav-menu li ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.flexia-menu .nav-menu li ul li a {
-  text-decoration: none;
-  outline: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-.flexia-menu .nav-menu .flexia-menu-indicator {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  width: 28px;
-  height: 28px;
-  display: block;
-  border: 1px solid #ffffff80;
-  -webkit-border-radius: 2px;
-          border-radius: 2px;
-  text-align: center;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  cursor: pointer;
-}
-.flexia-menu .nav-menu .flexia-menu-indicator:before {
-  display: block;
-  font-weight: 400;
-  line-height: 26px;
-  color: #ffffff;
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
-  -o-transition: transform 300ms;
-  transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
-}
-.flexia-menu .nav-menu .flexia-menu-indicator.flexia-menu-indicator-open:before {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
 }
 
-.flexia-menu.main-navigation .nav-menu {
+.flexia-menu .nav-menu li a, .flexia-menu .nav-menu li ul li a {
+  text-decoration: none;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.flexia-menu .nav-menu li.menu-item-has-children:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 14px;
+  display: block;
+  width: 2px;
+  height: 8px;
+  background: #4d4d4d;
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+@media screen and (max-width: 991px) {
+  .flexia-menu .nav-menu li.menu-item-has-children:before {
+    display: none;
+  }
+}
+.flexia-menu .nav-menu li.menu-item-has-children:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  right: 11px;
+  width: 8px;
+  height: 2px;
+  display: block;
+  background: #4d4d4d;
+}
+@media screen and (max-width: 991px) {
+  .flexia-menu .nav-menu li.menu-item-has-children:after {
+    display: none;
+  }
+}
+.flexia-menu .nav-menu li.menu-item-has-children:hover:before {
+  height: 0;
+}
+@media screen and (min-width: 992px) {
+  .flexia-menu .nav-menu.flexia-menu-dropdown-animate-fade li ul {
+    -webkit-transition: all 200ms;
+    -o-transition: all 200ms;
+    transition: all 200ms;
+  }
+  .flexia-menu .nav-menu.flexia-menu-dropdown-animate-to-top li ul {
+    -webkit-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+            transform: translateY(20px);
+    -webkit-transition: all 200ms;
+    -o-transition: all 200ms;
+    transition: all 200ms;
+  }
+  .flexia-menu .nav-menu.flexia-menu-dropdown-animate-to-top li:hover > ul {
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .flexia-menu .nav-menu.flexia-menu-dropdown-animate-zoom-in li ul {
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+    -webkit-transition: all 200ms;
+    -o-transition: all 200ms;
+    transition: all 200ms;
+  }
+  .flexia-menu .nav-menu.flexia-menu-dropdown-animate-zoom-in li:hover > ul {
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+  }
+  .flexia-menu .nav-menu.flexia-menu-dropdown-animate-zoom-out li ul {
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
+    -webkit-transition: all 200ms;
+    -o-transition: all 200ms;
+    transition: all 200ms;
+  }
+  .flexia-menu .nav-menu.flexia-menu-dropdown-animate-zoom-out li:hover > ul {
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+  }
+}
+.flexia-menu .flexia-menu-toggle {
+  background-color: transparent;
+  border: none;
+  -webkit-border-radius: 0;
+          border-radius: 0;
+  outline: none;
+}
+.flexia-menu .flexia-menu-toggle:before {
+  content: "";
+  position: relative;
+  top: -2px;
+  right: 0;
+  display: block;
+  height: 2px;
+  width: 20px;
+  background-color: #4d4d4d;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.flexia-menu .flexia-menu-toggle:after {
+  content: "";
+  position: relative;
+  top: 2px;
+  right: 0;
+  display: block;
+  height: 8px;
+  width: 20px;
+  border-top: 2px solid #4d4d4d;
+  border-bottom: 2px solid #4d4d4d;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.flexia-menu .flexia-menu-toggle.flexia-menu-toggle-open::before {
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.flexia-menu .flexia-menu-toggle.flexia-menu-toggle-open:after {
+  top: -1px;
+  border: 0;
+  height: 2px;
+  width: 20px;
+  background-color: #4d4d4d;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+@media screen and (min-width: 992px) {
+  .flexia-menu .flexia-menu-toggle {
+    display: none;
+  }
+}
+.flexia-menu .flexia-menu-indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-left: 1px solid #eeeeee;
+  text-align: center;
+  cursor: pointer;
+}
+@media screen and (min-width: 992px) {
+  .flexia-menu .flexia-menu-indicator {
+    display: none;
+  }
+}
+.flexia-menu .flexia-menu-indicator:before {
+  content: "";
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  width: 2px;
+  height: 8px;
+  background: #ddd;
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.flexia-menu .flexia-menu-indicator:after {
+  content: "";
+  position: absolute;
+  top: 22px;
+  right: 16px;
+  width: 8px;
+  height: 2px;
+  background: #ddd;
+}
+.flexia-menu .flexia-menu-indicator.flexia-menu-indicator-open:before {
+  height: 0;
+}
+
+.main-navigation .nav-menu {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
-.flexia-menu.main-navigation .nav-menu li {
+.main-navigation .nav-menu li {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4160,7 +4298,7 @@ a:hover, a:active {
   padding-top: 0;
   padding-bottom: 0;
 }
-.flexia-menu.main-navigation .nav-menu li a {
+.main-navigation .nav-menu li > a {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4169,22 +4307,22 @@ a:hover, a:active {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 5px;
+  padding-top: 0;
+  padding-right: 25px;
+  padding-bottom: 0;
+  padding-left: 0;
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #4d4d4d;
 }
-.flexia-menu.main-navigation .nav-menu li a span {
-  position: relative;
-  margin-left: 5px;
+.main-navigation .nav-menu li:last-child a {
+  padding-right: 0;
 }
-@media screen and (max-width: 991px) {
-  .flexia-menu.main-navigation .nav-menu li a span {
-    display: none;
-  }
+.main-navigation .nav-menu li:hover > a {
+  color: #1b1f21;
 }
-.flexia-menu.main-navigation .nav-menu li ul {
+.main-navigation .nav-menu li ul {
   position: absolute;
   top: 100%;
   left: auto;
@@ -4192,105 +4330,72 @@ a:hover, a:active {
   visibility: hidden;
   opacity: 0;
   background-color: #ffffff;
-  -webkit-box-shadow: 1px 1px 5px #0000001a;
-          box-shadow: 1px 1px 5px #0000001a;
+  -webkit-box-shadow: 3px 3px 3px #0000001a;
+          box-shadow: 3px 3px 3px #0000001a;
   z-index: 1;
 }
-.flexia-menu.main-navigation .nav-menu li ul li {
+.main-navigation .nav-menu li ul li {
   position: relative;
   float: none;
   display: block;
 }
-.flexia-menu.main-navigation .nav-menu li ul li a {
+.main-navigation .nav-menu li ul li a {
   display: block;
   font-size: 13px;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 1px;
+  color: #4d4d4d;
   padding: 15px;
 }
-.flexia-menu.main-navigation .nav-menu li ul li a span {
+.main-navigation .nav-menu li ul li a span {
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
-.flexia-menu.main-navigation .nav-menu li ul li:last-child > a {
+.main-navigation .nav-menu li ul li:last-child > a {
   border-bottom-width: 0;
 }
-.flexia-menu.main-navigation .nav-menu li ul li ul {
+.main-navigation .nav-menu li ul li:hover > a {
+  color: #1b1f21;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.main-navigation .nav-menu li ul li ul {
   top: 0;
   left: 100%;
 }
-.flexia-menu.main-navigation .nav-menu li:hover > ul {
+.main-navigation .nav-menu li:hover > ul {
   visibility: visible;
   opacity: 1;
 }
-@media screen and (min-width: 992px) {
-  .flexia-menu.main-navigation .nav-menu.flexia-menu-dropdown-animate-fade li ul {
-    -webkit-transition: all 300ms;
-    -o-transition: all 300ms;
-    transition: all 300ms;
-  }
-  .flexia-menu.main-navigation .nav-menu.flexia-menu-dropdown-animate-to-top li ul {
-    -webkit-transform: translateY(20px);
-        -ms-transform: translateY(20px);
-            transform: translateY(20px);
-    -webkit-transition: all 300ms;
-    -o-transition: all 300ms;
-    transition: all 300ms;
-  }
-  .flexia-menu.main-navigation .nav-menu.flexia-menu-dropdown-animate-to-top li:hover > ul {
-    -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-            transform: translateY(0);
-  }
-  .flexia-menu.main-navigation .nav-menu.flexia-menu-dropdown-animate-zoom-in li ul {
-    -webkit-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-            transform: scale(0.8);
-    -webkit-transition: all 300ms;
-    -o-transition: all 300ms;
-    transition: all 300ms;
-  }
-  .flexia-menu.main-navigation .nav-menu.flexia-menu-dropdown-animate-zoom-in li:hover > ul {
-    -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
-  }
-  .flexia-menu.main-navigation .nav-menu.flexia-menu-dropdown-animate-zoom-out li ul {
-    -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-            transform: scale(1.2);
-    -webkit-transition: all 300ms;
-    -o-transition: all 300ms;
-    transition: all 300ms;
-  }
-  .flexia-menu.main-navigation .nav-menu.flexia-menu-dropdown-animate-zoom-out li:hover > ul {
-    -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
-  }
-  .flexia-menu.main-navigation .nav-menu .flexia-menu-indicator {
-    display: none;
-  }
-}
 @media screen and (max-width: 991px) {
-  .flexia-menu.main-navigation .nav-menu {
+  .main-navigation .nav-menu {
     position: absolute;
-    top: 50px;
-    background-color: #54595f;
-    width: 100%;
+    top: 100%;
+    left: 1em;
+    right: 1em;
+    background-color: #ffffff;
     z-index: 9;
     display: none;
   }
-  .flexia-menu.main-navigation .nav-menu li {
+  .main-navigation .nav-menu li {
     float: none;
     display: block;
   }
-  .flexia-menu.main-navigation .nav-menu li a {
+  .main-navigation .nav-menu li.flexia-header-cart {
+    display: none;
+  }
+  .main-navigation .nav-menu li a {
     display: block;
     text-align: inherit;
+    line-height: 39px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 20px;
+    padding-right: 0;
+    border: 1px solid #eee;
+    border-bottom: 0;
   }
-  .flexia-menu.main-navigation .nav-menu li ul {
+  .main-navigation .nav-menu li ul {
     position: relative;
     top: unset;
     left: unset;
@@ -4301,24 +4406,25 @@ a:hover, a:active {
     opacity: 1;
     display: none;
   }
-  .flexia-menu.main-navigation .nav-menu li ul li {
+  .main-navigation .nav-menu li ul li {
     position: relative;
     display: block;
   }
-  .flexia-menu.main-navigation .nav-menu li ul li .flexia-menu-indicator {
-    border: 1px solid #00000080;
+  .main-navigation .nav-menu li ul li a {
+    line-height: 39px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 20px;
+    padding-right: 0;
   }
-  .flexia-menu.main-navigation .nav-menu li ul li .flexia-menu-indicator:before {
-    color: #000000;
+  .main-navigation .nav-menu li ul li:hover a {
+    background-color: initial;
   }
-  .flexia-menu.main-navigation .nav-menu li ul li ul {
+  .main-navigation .nav-menu li ul li ul {
     position: relative;
     width: 100%;
     top: unset;
     left: unset;
-  }
-  .flexia-menu.main-navigation .nav-menu li ul li ul li:last-child > a {
-    border-bottom-width: 1px;
   }
 }
 
