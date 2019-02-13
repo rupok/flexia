@@ -129,21 +129,16 @@
 // })(jQuery);
 
 (function($) {
-    $.fn.flexiaNav = function(options) {
+    $.fn.flexiaNav = function() {
         $(this).each(function() {
             var $scope = $(this)
 
-            // var $indicator_class = $('.flexia-menu-container', $scope).data('indicator-class')
-            var $indicator_class = 'fa fa-angle-down'
-
             // insert indicator
             $('.nav-menu > li.menu-item-has-children', $scope).each(function() {
-                $(this).append('<span class="flexia-menu-indicator ' + $indicator_class + '"></span>')
-                // $('> a', $(this)).append('<span class="' + $indicator_class + '"></span>')
+                $(this).append('<span class="flexia-menu-indicator"></span>')
             })
             $('.nav-menu > li ul li.menu-item-has-children', $scope).each(function() {
-                $(this).append('<span class="flexia-menu-indicator ' + $indicator_class + '"></span>')
-                // $('> a', $(this)).append('<span class="' + $indicator_class + '"></span>')
+                $(this).append('<span class="flexia-menu-indicator"></span>')
             })
 
             // insert responsive menu toggle, text
@@ -161,6 +156,8 @@
                     $('.nav-menu', $scope).addClass('flexia-menu-responsive')
                 } else {
                     $('.nav-menu', $scope).removeClass('flexia-menu-responsive')
+                    $('.flexia-menu-toggle', $scope).removeClass('flexia-menu-toggle-open')
+                    $('.flexia-menu-indicator', $scope).removeClass('flexia-menu-indicator-open')
                     $('.nav-menu, .nav-menu ul', $scope).css('display', '')
                 }
             })
@@ -178,15 +175,6 @@
 (function($) {
     $(document).ready(function() {
         $('.main-navigation').flexiaNav()
+        $('.topbar-navigation').flexiaNav()
     })
-    // $(document).ready(function() {
-    //     $(".main-navigation").flexiaNav({
-    //         format: "multitoggle"
-    //     });
-    // });
-    // $(document).ready(function() {
-    //     $(".topbar-navigation").flexiaNav({
-    //         format: "multitoggle"
-    //     });
-    // });
 })(jQuery);

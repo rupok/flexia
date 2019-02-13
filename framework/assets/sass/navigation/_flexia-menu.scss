@@ -15,8 +15,15 @@
         @extend %ul;
 
         li {
-            a {
-                @extend %li;
+            @extend %li;
+            position: relative;
+            float: left;
+            display: inline-block;
+
+            > a {
+                display: block;
+                padding: 0 15px;
+                margin: 0;
             }
 
             &.menu-item-has-children {
@@ -25,11 +32,10 @@
                     position: absolute;
                     top: 50%;
                     margin-top: -4px;
-                    right: 14px;
+                    right: 18px;
                     display: block;
                     width: 2px;
                     height: 8px;
-                    background: #4d4d4d;
                     transition: all 0.25s ease;
 
                     @media screen and (max-width: 991px) {
@@ -42,30 +48,114 @@
                     position: absolute;
                     top: 50%;
                     margin-top: -1px;
-                    right: 11px;
+                    right: 15px;
+                    display: block;
                     width: 8px;
                     height: 2px;
-                    display: block;
-                    background: #4d4d4d;
 
                     @media screen and (max-width: 991px) {
                         display: none;
                     }
                 }
 
-                &:hover {
+                &:hover,
+                &.current-menu-item,
+                &.current-menu-ancestor {
                     &:before {
                         height: 0;
                     }
+                }
+
+                > a {
+                    padding-right: 28px;
                 }
             }
 
             ul {
                 @extend %ul;
+                position: absolute;
+                top: 100%;
+                left: auto;
+                width: 220px;
+                visibility: hidden;
+                opacity: 0;
+                z-index: 99;
+                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 
                 li {
-                    a {
-                        @extend %li;
+                    @extend %li;
+                    position: relative;
+                    float: none;
+                    display: block;
+
+                    > a {
+                        display: block;
+                        padding: 0 15px;
+                        margin: 0;
+                    }
+
+                    ul {
+                        top: 0;
+                        left: 100%;
+                    }
+                }
+            }
+
+            &:hover {
+                > ul {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+
+        // Responsive menu
+        @media screen and (max-width: 991px) {
+            position: absolute;
+            top: 100%;
+            left: 1em;
+            right: 1em;
+            z-index: 99;
+            display: none;
+            padding: 10px 10px 5px 10px;
+
+            li {
+                position: relative;
+                float: none;
+                display: block;
+
+                > a {
+                    display: block;
+                    text-align: inherit;
+                    margin-bottom: 10px;
+                }
+
+                ul {
+                    position: relative;
+                    top: unset;
+                    left: unset;
+                    width: 100%;
+                    box-shadow: none;
+                    visibility: visible;
+                    opacity: 1;
+                    display: none;
+                    padding-left: 30px;
+
+                    li {
+                        position: relative;
+                        display: block;
+
+                        > a {
+                            padding: 0 15px;
+                            margin-bottom: 10px;
+                        }
+
+                        ul {
+                            position: relative;
+                            width: 100%;
+                            top: unset;
+                            left: unset;
+                        }
                     }
                 }
             }
@@ -143,7 +233,7 @@
             display: block;
             height: 2px;
             width: 20px;
-            background-color: #4d4d4d;
+            background-color: #1b1f21;
             transition: all 0.3s ease;
         }
 
@@ -155,8 +245,8 @@
             display: block;
             height: 8px;
             width: 20px;
-            border-top: 2px solid #4d4d4d;
-            border-bottom: 2px solid #4d4d4d;
+            border-top: 2px solid #1b1f21;
+            border-bottom: 2px solid #1b1f21;
             transition: all 0.3s ease;
         }
 
@@ -171,7 +261,7 @@
                 border: 0;
                 height: 2px;
                 width: 20px;
-                background-color: #4d4d4d;
+                background-color: #1b1f21;
                 transform: rotate(45deg);
             }
         }
@@ -185,11 +275,12 @@
         position: absolute;
         top: 0;
         right: 0;
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
         display: block;
-        border-left: 1px solid #eeeeee;
-        text-align: center;
+        background-color: #ffffff;
+        border: 1px solid #dddddd;
+        box-sizing: content-box;
         cursor: pointer;
 
         @media screen and (min-width: 992px) {
@@ -203,7 +294,7 @@
             right: 19px;
             width: 2px;
             height: 8px;
-            background: #ddd;
+            background: #dddddd;
             transition: all 0.25s ease;
         }
 
@@ -214,10 +305,28 @@
             right: 16px;
             width: 8px;
             height: 2px;
-            background: #ddd;
+            background: #dddddd;
+        }
+
+        &:hover {
+            background-color: #262626;
+            border-color: #262626;
+
+            &:before,
+            &:after {
+                background: #ffffff;
+            }
         }
 
         &.flexia-menu-indicator-open {
+            background-color: #262626;
+            border-color: #262626;
+
+            &:before,
+            &:after {
+                background: #ffffff;
+            }
+
             &:before {
                 height: 0;
             }
