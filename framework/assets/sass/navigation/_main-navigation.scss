@@ -126,12 +126,12 @@
         transition: all 0.15s linear;
 
         &:hover {
-            background-color: #262625;
-            color: #fff;
+            background-color: #262625 !important;
+            color: #fff !important;
         }
 
         span {
-            color: #fff;
+            color: #fff !important;
         }
     }
 

@@ -1,4 +1,6 @@
 .topbar-navigation {
+    margin: 0 1em;
+
     .nav-menu {
         li {
             > a {
@@ -15,6 +17,7 @@
             }
 
             &:hover,
+            &.current-menu-item,
             &.current-menu-ancestor {
                 &::before,
                 &:after {
@@ -38,6 +41,7 @@
                     }
 
                     &:hover,
+                    &.current-menu-item,
                     &.current-menu-ancestor {
                         &::before,
                         &:after {
@@ -55,6 +59,7 @@
 
         // Responsive menu
         @media screen and (max-width: 991px) {
+            margin: 0;
             background-color: #ffffff;
 
             li {
@@ -96,6 +101,19 @@
                     }
                 }
             }
+        }
+    }
+
+    // responsive menu toggle
+    .flexia-menu-toggle {
+        min-height: 32px;
+
+        &:before,
+        &.flexia-menu-toggle-open:after {
+            background-color: #cbced3;
+        }
+        &:after {
+            border-color: #cbced3;
         }
     }
 }

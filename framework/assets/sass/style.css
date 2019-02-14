@@ -4184,11 +4184,11 @@ a:hover, a:active {
   .flexia-menu .nav-menu {
     position: absolute;
     top: 100%;
-    left: 1em;
-    right: 1em;
+    left: 5%;
+    right: 5%;
     z-index: 99;
     display: none;
-    padding: 10px 10px 5px 10px;
+    padding: 20px 20px 10px;
   }
   .flexia-menu .nav-menu li {
     position: relative;
@@ -4482,17 +4482,20 @@ a:hover, a:active {
   transition: all 0.15s linear;
 }
 .main-navigation a.cart-contents:hover {
-  background-color: #262625;
-  color: #fff;
+  background-color: #262625 !important;
+  color: #fff !important;
 }
 .main-navigation a.cart-contents span {
-  color: #fff;
+  color: #fff !important;
 }
 .main-navigation .edd-cart-contents .amount,
 .main-navigation .edd-cart-contents .count {
   padding-left: 5px;
 }
 
+.topbar-navigation {
+  margin: 0 1em;
+}
 .topbar-navigation .nav-menu li > a {
   font-size: 12px;
   line-height: 42px;
@@ -4501,10 +4504,10 @@ a:hover, a:active {
 .topbar-navigation .nav-menu li.menu-item-has-children:before, .topbar-navigation .nav-menu li.menu-item-has-children:after {
   background-color: #cbced3;
 }
-.topbar-navigation .nav-menu li:hover::before, .topbar-navigation .nav-menu li:hover:after, .topbar-navigation .nav-menu li.current-menu-ancestor::before, .topbar-navigation .nav-menu li.current-menu-ancestor:after {
+.topbar-navigation .nav-menu li:hover::before, .topbar-navigation .nav-menu li:hover:after, .topbar-navigation .nav-menu li.current-menu-item::before, .topbar-navigation .nav-menu li.current-menu-item:after, .topbar-navigation .nav-menu li.current-menu-ancestor::before, .topbar-navigation .nav-menu li.current-menu-ancestor:after {
   background-color: #ffffff;
 }
-.topbar-navigation .nav-menu li:hover > a, .topbar-navigation .nav-menu li.current-menu-ancestor > a {
+.topbar-navigation .nav-menu li:hover > a, .topbar-navigation .nav-menu li.current-menu-item > a, .topbar-navigation .nav-menu li.current-menu-ancestor > a {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -4516,15 +4519,16 @@ a:hover, a:active {
   line-height: 45px;
   color: #cbced3;
 }
-.topbar-navigation .nav-menu li ul li:hover::before, .topbar-navigation .nav-menu li ul li:hover:after, .topbar-navigation .nav-menu li ul li.current-menu-ancestor::before, .topbar-navigation .nav-menu li ul li.current-menu-ancestor:after {
+.topbar-navigation .nav-menu li ul li:hover::before, .topbar-navigation .nav-menu li ul li:hover:after, .topbar-navigation .nav-menu li ul li.current-menu-item::before, .topbar-navigation .nav-menu li ul li.current-menu-item:after, .topbar-navigation .nav-menu li ul li.current-menu-ancestor::before, .topbar-navigation .nav-menu li ul li.current-menu-ancestor:after {
   background-color: #ffffff;
 }
-.topbar-navigation .nav-menu li ul li:hover > a, .topbar-navigation .nav-menu li ul li.current-menu-ancestor > a {
+.topbar-navigation .nav-menu li ul li:hover > a, .topbar-navigation .nav-menu li ul li.current-menu-item > a, .topbar-navigation .nav-menu li ul li.current-menu-ancestor > a {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.5);
 }
 @media screen and (max-width: 991px) {
   .topbar-navigation .nav-menu {
+    margin: 0;
     background-color: #ffffff;
   }
   .topbar-navigation .nav-menu li > a {
@@ -4550,6 +4554,15 @@ a:hover, a:active {
     color: #1b1f21;
     background-color: #ffffff;
   }
+}
+.topbar-navigation .flexia-menu-toggle {
+  min-height: 32px;
+}
+.topbar-navigation .flexia-menu-toggle:before, .topbar-navigation .flexia-menu-toggle.flexia-menu-toggle-open:after {
+  background-color: #cbced3;
+}
+.topbar-navigation .flexia-menu-toggle:after {
+  border-color: #cbced3;
 }
 
 /* Footer Menu */
