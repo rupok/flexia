@@ -31,7 +31,7 @@
             }
 
             ul {
-                background-color: #262626;
+                background-color: #262625;
 
                 li {
                     > a {
@@ -60,42 +60,42 @@
         // Responsive menu
         @media screen and (max-width: 991px) {
             margin: 0;
-            background-color: #ffffff;
+            background-color: #262625;
 
             li {
                 > a {
                     line-height: 42px;
-                    color: #4d4d4d;
-                    background-color: #ffffff;
-                    border: 1px solid #dddddd;
+                    color: #cbced3;
+                    background-color: transparent;
+                    border: 1px solid rgba(255, 255, 255, 0.15);
                 }
 
                 &:hover,
                 &.current-menu-item,
                 &.current-menu-ancestor {
                     > a {
-                        color: #1b1f21;
-                        background-color: #ffffff;
+                        color: #cbced3;
+                        background-color: transparent;
                     }
                 }
 
                 ul {
-                    background-color: #ffffff;
+                    background-color: transparent;
 
                     li {
                         > a {
                             line-height: 42px;
-                            color: #4d4d4d;
-                            background-color: #ffffff;
-                            border: 1px solid #dddddd;
+                            color: #cbced3;
+                            background-color: transparent;
+                            border: 1px solid rgba(255, 255, 255, 0.15);
                         }
 
                         &:hover,
                         &.current-menu-item,
                         &.current-menu-ancestor {
                             > a {
-                                color: #1b1f21;
-                                background-color: #ffffff;
+                                color: #cbced3;
+                                background-color: transparent;
                             }
                         }
                     }
@@ -104,7 +104,7 @@
         }
     }
 
-    // responsive menu toggle
+    // responsive menu
     .flexia-menu-toggle {
         min-height: 32px;
 
@@ -114,6 +114,39 @@
         }
         &:after {
             border-color: #cbced3;
+        }
+    }
+
+    .flexia-menu-indicator {
+        background-color: #262625;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+
+        &:before {
+            background: #dddddd;
+        }
+
+        &:after {
+            background: #dddddd;
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.15);
+
+            &:before,
+            &:after {
+                background: #ffffff;
+            }
+        }
+
+        &.flexia-menu-indicator-open {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.15);
+
+            &:before,
+            &:after {
+                background: #ffffff;
+            }
         }
     }
 }

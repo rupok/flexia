@@ -3749,22 +3749,6 @@ body.single-docs .site-content .flexia-wrapper > .content-area {
   }
 }
 @media screen and (max-width: 767px) {
-  .flexia-navbar.flexia-navbar-fixed-top:not(.flexia-sticky-navbar) .flexia-nav-btn::after {
-    border-color: #fff;
-  }
-
-  .flexia-navbar.flexia-navbar-fixed-top:not(.flexia-sticky-navbar) .flexia-nav-btn::before, .flexia-navbar.flexia-navbar-fixed-top:not(.flexia-sticky-navbar) .flexia-nav-btn.menu-opened::after, .flexia-navbar.flexia-navbar-fixed-top:not(.flexia-sticky-navbar) .flexia-nav-btn.menu-opened::before {
-    background-color: #fff;
-  }
-
-  .home .flexia-navbar .main-navigation > ul > li > a, .home .flexia-navbar:not(.flexia-sticky-navbar) .main-navigation > ul > li > a {
-    color: #252526;
-  }
-
-  .home .flexia-navbar .main-navigation > ul > li.current-menu-item > a, .home .flexia-navbar .main-navigation > ul > li > a:hover, .home .flexia-navbar:not(.flexia-sticky-navbar) .main-navigation > ul > li.current-menu-item > a {
-    color: #fff;
-  }
-
   .wedocs-doc-nav .nav-prev, .wedocs-doc-nav .nav-next {
     float: none;
     width: 100%;
@@ -4145,7 +4129,7 @@ a:hover, a:active {
     display: none;
   }
 }
-.flexia-menu .nav-menu li.menu-item-has-children:hover:before, .flexia-menu .nav-menu li.menu-item-has-children.current-menu-item:before, .flexia-menu .nav-menu li.menu-item-has-children.current-menu-ancestor:before {
+.flexia-menu .nav-menu li.menu-item-has-children:hover:before {
   height: 0;
 }
 .flexia-menu .nav-menu li.menu-item-has-children > a {
@@ -4368,15 +4352,15 @@ a:hover, a:active {
   background: #dddddd;
 }
 .flexia-menu .flexia-menu-indicator:hover {
-  background-color: #262626;
-  border-color: #262626;
+  background-color: #262625;
+  border-color: #262625;
 }
 .flexia-menu .flexia-menu-indicator:hover:before, .flexia-menu .flexia-menu-indicator:hover:after {
   background: #ffffff;
 }
 .flexia-menu .flexia-menu-indicator.flexia-menu-indicator-open {
-  background-color: #262626;
-  border-color: #262626;
+  background-color: #262625;
+  border-color: #262625;
 }
 .flexia-menu .flexia-menu-indicator.flexia-menu-indicator-open:before, .flexia-menu .flexia-menu-indicator.flexia-menu-indicator-open:after {
   background: #ffffff;
@@ -4512,7 +4496,7 @@ a:hover, a:active {
   background-color: rgba(0, 0, 0, 0.5);
 }
 .topbar-navigation .nav-menu li ul {
-  background-color: #262626;
+  background-color: #262625;
 }
 .topbar-navigation .nav-menu li ul li > a {
   font-size: 12px;
@@ -4529,30 +4513,30 @@ a:hover, a:active {
 @media screen and (max-width: 991px) {
   .topbar-navigation .nav-menu {
     margin: 0;
-    background-color: #ffffff;
+    background-color: #262625;
   }
   .topbar-navigation .nav-menu li > a {
     line-height: 42px;
-    color: #4d4d4d;
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
+    color: #cbced3;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
   .topbar-navigation .nav-menu li:hover > a, .topbar-navigation .nav-menu li.current-menu-item > a, .topbar-navigation .nav-menu li.current-menu-ancestor > a {
-    color: #1b1f21;
-    background-color: #ffffff;
+    color: #cbced3;
+    background-color: transparent;
   }
   .topbar-navigation .nav-menu li ul {
-    background-color: #ffffff;
+    background-color: transparent;
   }
   .topbar-navigation .nav-menu li ul li > a {
     line-height: 42px;
-    color: #4d4d4d;
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
+    color: #cbced3;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
   .topbar-navigation .nav-menu li ul li:hover > a, .topbar-navigation .nav-menu li ul li.current-menu-item > a, .topbar-navigation .nav-menu li ul li.current-menu-ancestor > a {
-    color: #1b1f21;
-    background-color: #ffffff;
+    color: #cbced3;
+    background-color: transparent;
   }
 }
 .topbar-navigation .flexia-menu-toggle {
@@ -4563,6 +4547,30 @@ a:hover, a:active {
 }
 .topbar-navigation .flexia-menu-toggle:after {
   border-color: #cbced3;
+}
+.topbar-navigation .flexia-menu-indicator {
+  background-color: #262625;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.topbar-navigation .flexia-menu-indicator:before {
+  background: #dddddd;
+}
+.topbar-navigation .flexia-menu-indicator:after {
+  background: #dddddd;
+}
+.topbar-navigation .flexia-menu-indicator:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.topbar-navigation .flexia-menu-indicator:hover:before, .topbar-navigation .flexia-menu-indicator:hover:after {
+  background: #ffffff;
+}
+.topbar-navigation .flexia-menu-indicator.flexia-menu-indicator-open {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.topbar-navigation .flexia-menu-indicator.flexia-menu-indicator-open:before, .topbar-navigation .flexia-menu-indicator.flexia-menu-indicator-open:after {
+  background: #ffffff;
 }
 
 /* Footer Menu */

@@ -58,9 +58,8 @@
                     }
                 }
 
-                &:hover,
-                &.current-menu-item,
-                &.current-menu-ancestor {
+                // removed &.current-menu-item, &.current-menu-ancestor
+                &:hover {
                     &:before {
                         height: 0;
                     }
@@ -309,8 +308,8 @@
         }
 
         &:hover {
-            background-color: #262626;
-            border-color: #262626;
+            background-color: #262625;
+            border-color: #262625;
 
             &:before,
             &:after {
@@ -319,8 +318,8 @@
         }
 
         &.flexia-menu-indicator-open {
-            background-color: #262626;
-            border-color: #262626;
+            background-color: #262625;
+            border-color: #262625;
 
             &:before,
             &:after {
