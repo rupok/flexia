@@ -4412,6 +4412,7 @@ a:hover, a:active {
 .main-navigation .nav-menu li ul li > a {
   font-size: 13px;
   line-height: 45px;
+  text-transform: none;
   color: #4d4d4d;
 }
 .main-navigation .nav-menu li ul li:hover::before, .main-navigation .nav-menu li ul li:hover:after, .main-navigation .nav-menu li ul li.current-menu-item::before, .main-navigation .nav-menu li ul li.current-menu-item:after, .main-navigation .nav-menu li ul li.current-menu-ancestor::before, .main-navigation .nav-menu li ul li.current-menu-ancestor:after {
@@ -4419,7 +4420,7 @@ a:hover, a:active {
 }
 .main-navigation .nav-menu li ul li:hover > a, .main-navigation .nav-menu li ul li.current-menu-item > a, .main-navigation .nav-menu li ul li.current-menu-ancestor > a {
   color: #1b1f21;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #f4f4f4;
 }
 @media screen and (max-width: 991px) {
   .main-navigation .nav-menu {

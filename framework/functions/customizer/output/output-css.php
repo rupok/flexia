@@ -233,59 +233,131 @@ function flexia_customizer_style() {
 
 	@media screen and (min-width: 992px) {
 		.main-navigation .nav-menu li > a {
-			color: <?php echo $defaults['flexia_nav_menu_link_color']; ?>;
+			color: <?php echo $defaults['flexia_main_nav_menu_link_color']; ?>;
 		}
 
 		.main-navigation .nav-menu li.menu-item-has-children:before,
 		.main-navigation .nav-menu li.menu-item-has-children:after {
-			background-color: <?php echo $defaults['flexia_nav_menu_link_color']; ?>;
+			background-color: <?php echo $defaults['flexia_main_nav_menu_link_color']; ?>;
 		}
 
 		.main-navigation .nav-menu li:hover > a:not(.cart-contents),
-		.main-navigation .nav-menu li.current-menu-item > a:not(.cart-contents) {
-			color: <?php echo $defaults['flexia_nav_menu_link_hover_color']; ?>;
+		.main-navigation .nav-menu li.current-menu-item > a:not(.cart-contents),
+		.main-navigation .nav-menu li.current-menu-ancestor > a:not(.cart-contents) {
+			color: <?php echo $defaults['flexia_main_nav_menu_link_hover_color']; ?>;
 		}
 		
 		.main-navigation .nav-menu li:hover > a:not(.cart-contents),
-		.main-navigation .nav-menu li.current-menu-item > a:not(.cart-contents) {
-			background-color: <?php echo $defaults['flexia_nav_menu_link_hover_bg']; ?>;
+		.main-navigation .nav-menu li.current-menu-item > a:not(.cart-contents),
+		.main-navigation .nav-menu li.current-menu-ancestor > a:not(.cart-contents) {
+			background-color: <?php echo $defaults['flexia_main_nav_menu_link_hover_bg']; ?>;
 		}
 
 		.main-navigation .nav-menu li.menu-item-has-children:hover:before,
 		.main-navigation .nav-menu li.menu-item-has-children:hover:after,
 		.main-navigation .nav-menu li.menu-item-has-children.current-menu-item:before,
-		.main-navigation .nav-menu li.menu-item-has-children.current-menu-item:after {
-			background-color: <?php echo $defaults['flexia_nav_menu_link_hover_color']; ?>;
+		.main-navigation .nav-menu li.menu-item-has-children.current-menu-item:after,
+		.main-navigation .nav-menu li.menu-item-has-children.current-menu-ancestor:before,
+		.main-navigation .nav-menu li.menu-item-has-children.current-menu-ancestor:after {
+			background-color: <?php echo $defaults['flexia_main_nav_menu_link_hover_color']; ?>;
 		}
 
 		.main-navigation .nav-menu li ul {
-			background-color: <?php echo $defaults['flexia_submenu_bg_color']; ?>;
+			background-color: <?php echo $defaults['flexia_main_nav_menu_submenu_bg_color']; ?>;
 		}
 
 		.main-navigation .nav-menu li ul li.menu-item-has-children:before,
 		.main-navigation .nav-menu li ul li.menu-item-has-children:after {
-			background-color: <?php echo $defaults['flexia_submenu_link_color']; ?>;
+			background-color: <?php echo $defaults['flexia_main_nav_menu_submenu_link_color']; ?>;
 		}
 
 		.main-navigation .nav-menu li ul li > a {
-			color: <?php echo $defaults['flexia_submenu_link_color']; ?>;
+			color: <?php echo $defaults['flexia_main_nav_menu_submenu_link_color']; ?>;
 		}
 
 		.main-navigation .nav-menu li ul li:hover > a,
-		.main-navigation .nav-menu li ul li.current-menu-item > a {
-			color: <?php echo $defaults['flexia_submenu_link_hover_color']; ?>;
+		.main-navigation .nav-menu li ul li.current-menu-item > a,
+		.main-navigation .nav-menu li ul li.current-menu-ancestor > a {
+			color: <?php echo $defaults['flexia_main_nav_menu_submenu_link_hover_color']; ?>;
 		}
 		
 		.main-navigation .nav-menu li ul li:hover > a,
-		.main-navigation .nav-menu li ul li.current-menu-item > a {
-			background-color: <?php echo $defaults['flexia_submenu_link_hover_bg']; ?>;
+		.main-navigation .nav-menu li ul li.current-menu-item > a,
+		.main-navigation .nav-menu li ul li.current-menu-ancestor > a {
+			background-color: <?php echo $defaults['flexia_main_nav_menu_submenu_link_hover_bg']; ?>;
 		}
 
 		.main-navigation .nav-menu li ul li.menu-item-has-children:hover:before,
 		.main-navigation .nav-menu li ul li.menu-item-has-children:hover:after,
 		.main-navigation .nav-menu li ul li.menu-item-has-children.current-menu-item:before,
-		.main-navigation .nav-menu li ul li.menu-item-has-children.current-menu-item:after {
-			background-color: <?php echo $defaults['flexia_submenu_link_hover_color']; ?>;
+		.main-navigation .nav-menu li ul li.menu-item-has-children.current-menu-item:after,
+		.main-navigation .nav-menu li ul li.menu-item-has-children.current-menu-ancestor:before,
+		.main-navigation .nav-menu li ul li.menu-item-has-children.current-menu-ancestor:after {
+			background-color: <?php echo $defaults['flexia_main_nav_menu_submenu_link_hover_color']; ?>;
+		}
+
+		.topbar-navigation .nav-menu li > a {
+			color: <?php echo $defaults['flexia_top_nav_menu_link_color']; ?>;
+		}
+
+		.topbar-navigation .nav-menu li.menu-item-has-children:before,
+		.topbar-navigation .nav-menu li.menu-item-has-children:after {
+			background-color: <?php echo $defaults['flexia_top_nav_menu_link_color']; ?>;
+		}
+
+		.topbar-navigation .nav-menu li:hover > a:not(.cart-contents),
+		.topbar-navigation .nav-menu li.current-menu-item > a:not(.cart-contents),
+		.topbar-navigation .nav-menu li.current-menu-ancestor > a:not(.cart-contents) {
+			color: <?php echo $defaults['flexia_top_nav_menu_link_hover_color']; ?>;
+		}
+		
+		.topbar-navigation .nav-menu li:hover > a:not(.cart-contents),
+		.topbar-navigation .nav-menu li.current-menu-item > a:not(.cart-contents),
+		.topbar-navigation .nav-menu li.current-menu-ancestor > a:not(.cart-contents) {
+			background-color: <?php echo $defaults['flexia_top_nav_menu_link_hover_bg']; ?>;
+		}
+
+		.topbar-navigation .nav-menu li.menu-item-has-children:hover:before,
+		.topbar-navigation .nav-menu li.menu-item-has-children:hover:after,
+		.topbar-navigation .nav-menu li.menu-item-has-children.current-menu-item:before,
+		.topbar-navigation .nav-menu li.menu-item-has-children.current-menu-item:after,
+		.topbar-navigation .nav-menu li.menu-item-has-children.current-menu-ancestor:before,
+		.topbar-navigation .nav-menu li.menu-item-has-children.current-menu-ancestor:after {
+			background-color: <?php echo $defaults['flexia_top_nav_menu_link_hover_color']; ?>;
+		}
+
+		.topbar-navigation .nav-menu li ul {
+			background-color: <?php echo $defaults['flexia_top_nav_menu_submenu_bg_color']; ?>;
+		}
+
+		.topbar-navigation .nav-menu li ul li.menu-item-has-children:before,
+		.topbar-navigation .nav-menu li ul li.menu-item-has-children:after {
+			background-color: <?php echo $defaults['flexia_top_nav_menu_submenu_link_color']; ?>;
+		}
+
+		.topbar-navigation .nav-menu li ul li > a {
+			color: <?php echo $defaults['flexia_top_nav_menu_submenu_link_color']; ?>;
+		}
+
+		.topbar-navigation .nav-menu li ul li:hover > a,
+		.topbar-navigation .nav-menu li ul li.current-menu-item > a,
+		.topbar-navigation .nav-menu li ul li.current-menu-ancestor > a {
+			color: <?php echo $defaults['flexia_top_nav_menu_submenu_link_hover_color']; ?>;
+		}
+		
+		.topbar-navigation .nav-menu li ul li:hover > a,
+		.topbar-navigation .nav-menu li ul li.current-menu-item > a,
+		.topbar-navigation .nav-menu li ul li.current-menu-ancestor > a {
+			background-color: <?php echo $defaults['flexia_top_nav_menu_submenu_link_hover_bg']; ?>;
+		}
+
+		.topbar-navigation .nav-menu li ul li.menu-item-has-children:hover:before,
+		.topbar-navigation .nav-menu li ul li.menu-item-has-children:hover:after,
+		.topbar-navigation .nav-menu li ul li.menu-item-has-children.current-menu-item:before,
+		.topbar-navigation .nav-menu li ul li.menu-item-has-children.current-menu-item:after,
+		.topbar-navigation .nav-menu li ul li.menu-item-has-children.current-menu-ancestor:before,
+		.topbar-navigation .nav-menu li ul li.menu-item-has-children.current-menu-ancestor:after {
+			background-color: <?php echo $defaults['flexia_top_nav_menu_submenu_link_hover_color']; ?>;
 		}
 	}
 

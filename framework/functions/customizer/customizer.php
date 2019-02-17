@@ -1626,21 +1626,19 @@ function flexia_customize_register($wp_customize)
             ))
     );
 
-    // Navabr Menu Separator
-
-    $wp_customize->add_setting('navbar_menu_settings_title', array(
+    // Primary Menu Separator
+    $wp_customize->add_setting('main_nav_settings_title', array(
         'default' => '',
         'sanitize_callback' => 'esc_html',
     ));
 
-    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'navbar_menu_settings_title', array(
-        'label' => __('Navbar Menu Settings', 'flexia'),
-        'settings' => 'navbar_menu_settings_title',
+    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'main_nav_settings_title', array(
+        'label' => __('Primary Menu Settings', 'flexia'),
+        'settings' => 'main_nav_settings_title',
         'section' => 'flexia_header_settings',
     )));
 
     // Enable Navmenu Search
-
     $wp_customize->add_setting('flexia_nav_menu_search', array(
         'default' => $defaults['flexia_nav_menu_search'],
         'capability' => 'edit_theme_options',
@@ -1655,7 +1653,6 @@ function flexia_customize_register($wp_customize)
     )));
 
     // Enable Cart in menu
-
     $wp_customize->add_setting('flexia_woo_cart_menu', array(
         'default' => $defaults['flexia_woo_cart_menu'],
         'capability' => 'edit_theme_options',
@@ -1669,8 +1666,8 @@ function flexia_customize_register($wp_customize)
         'type' => 'light', // light, ios, flat
     )));
 
-    $wp_customize->add_setting('flexia_nav_menu_link_color', array(
-        'default' => $defaults['flexia_nav_menu_link_color'],
+    $wp_customize->add_setting('flexia_main_nav_menu_link_color', array(
+        'default' => $defaults['flexia_main_nav_menu_link_color'],
         'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
@@ -1678,16 +1675,16 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_control(
         new WP_Customize_Color_Control(
             $wp_customize,
-            'flexia_nav_menu_link_color',
+            'flexia_main_nav_menu_link_color',
             array(
-                'label' => __('Nav menu links color', 'flexia'),
+                'label' => __('Links color', 'flexia'),
                 'section' => 'flexia_header_settings',
-                'settings' => 'flexia_nav_menu_link_color',
+                'settings' => 'flexia_main_nav_menu_link_color',
             ))
     );
 
-    $wp_customize->add_setting('flexia_nav_menu_link_hover_color', array(
-        'default' => $defaults['flexia_nav_menu_link_hover_color'],
+    $wp_customize->add_setting('flexia_main_nav_menu_link_hover_color', array(
+        'default' => $defaults['flexia_main_nav_menu_link_hover_color'],
         'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
@@ -1695,84 +1692,16 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_control(
         new WP_Customize_Color_Control(
             $wp_customize,
-            'flexia_nav_menu_link_hover_color',
+            'flexia_main_nav_menu_link_hover_color',
             array(
-                'label' => __('Nav menu links hover color', 'flexia'),
+                'label' => __('Links hover color', 'flexia'),
                 'section' => 'flexia_header_settings',
-                'settings' => 'flexia_nav_menu_link_hover_color',
-            ))
-    );
-    
-    $wp_customize->add_setting('flexia_nav_menu_link_hover_bg', array(
-        'default' => $defaults['flexia_nav_menu_link_hover_bg'],
-        'transport' => 'postMessage',
-        'sanitize_callback' => 'sanitize_hex_color',
-    ));
-
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'flexia_nav_menu_link_hover_bg',
-            array(
-                'label' => __('Nav menu links hover background', 'flexia'),
-                'section' => 'flexia_header_settings',
-                'settings' => 'flexia_nav_menu_link_hover_bg',
-            ))
-    );
-
-    $wp_customize->add_setting('flexia_submenu_bg_color', array(
-        'default' => $defaults['flexia_submenu_bg_color'],
-        'transport' => 'postMessage',
-        'sanitize_callback' => 'sanitize_hex_color',
-    ));
-
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'flexia_submenu_bg_color',
-            array(
-                'label' => __('Submenu Background', 'flexia'),
-                'section' => 'flexia_header_settings',
-                'settings' => 'flexia_submenu_bg_color',
-            ))
-    );
-
-    $wp_customize->add_setting('flexia_submenu_link_color', array(
-        'default' => $defaults['flexia_submenu_link_color'],
-        'transport' => 'postMessage',
-        'sanitize_callback' => 'sanitize_hex_color',
-    ));
-
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'flexia_submenu_link_color',
-            array(
-                'label' => __('Submenu links color', 'flexia'),
-                'section' => 'flexia_header_settings',
-                'settings' => 'flexia_submenu_link_color',
-            ))
-    );
-
-    $wp_customize->add_setting('flexia_submenu_link_hover_color', array(
-        'default' => $defaults['flexia_submenu_link_hover_color'],
-        'transport' => 'postMessage',
-        'sanitize_callback' => 'sanitize_hex_color',
-    ));
-
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'flexia_submenu_link_hover_color',
-            array(
-                'label' => __('Submenu links hover color', 'flexia'),
-                'section' => 'flexia_header_settings',
-                'settings' => 'flexia_submenu_link_hover_color',
+                'settings' => 'flexia_main_nav_menu_link_hover_color',
             ))
     );
     
-    $wp_customize->add_setting('flexia_submenu_link_hover_bg', array(
-        'default' => $defaults['flexia_submenu_link_hover_bg'],
+    $wp_customize->add_setting('flexia_main_nav_menu_link_hover_bg', array(
+        'default' => $defaults['flexia_main_nav_menu_link_hover_bg'],
         'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
@@ -1780,23 +1709,91 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_control(
         new WP_Customize_Color_Control(
             $wp_customize,
-            'flexia_submenu_link_hover_bg',
+            'flexia_main_nav_menu_link_hover_bg',
             array(
-                'label' => __('Submenu links hover background', 'flexia'),
+                'label' => __('Links hover background', 'flexia'),
                 'section' => 'flexia_header_settings',
-                'settings' => 'flexia_submenu_link_hover_bg',
+                'settings' => 'flexia_main_nav_menu_link_hover_bg',
             ))
     );
 
-    $wp_customize->add_setting('flexia_nav_menu_dropdown_animation', array(
-        'default' => 'to_top',
+    $wp_customize->add_setting('flexia_main_nav_menu_submenu_bg_color', array(
+        'default' => $defaults['flexia_main_nav_menu_submenu_bg_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_main_nav_menu_submenu_bg_color',
+            array(
+                'label' => __('Dropdown background', 'flexia'),
+                'section' => 'flexia_header_settings',
+                'settings' => 'flexia_main_nav_menu_submenu_bg_color',
+            ))
+    );
+
+    $wp_customize->add_setting('flexia_main_nav_menu_submenu_link_color', array(
+        'default' => $defaults['flexia_main_nav_menu_submenu_link_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_main_nav_menu_submenu_link_color',
+            array(
+                'label' => __('Dropdown links color', 'flexia'),
+                'section' => 'flexia_header_settings',
+                'settings' => 'flexia_main_nav_menu_submenu_link_color',
+            ))
+    );
+
+    $wp_customize->add_setting('flexia_main_nav_menu_submenu_link_hover_color', array(
+        'default' => $defaults['flexia_main_nav_menu_submenu_link_hover_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_main_nav_menu_submenu_link_hover_color',
+            array(
+                'label' => __('Dropdown links hover color', 'flexia'),
+                'section' => 'flexia_header_settings',
+                'settings' => 'flexia_main_nav_menu_submenu_link_hover_color',
+            ))
+    );
+    
+    $wp_customize->add_setting('flexia_main_nav_menu_submenu_link_hover_bg', array(
+        'default' => $defaults['flexia_main_nav_menu_submenu_link_hover_bg'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_main_nav_menu_submenu_link_hover_bg',
+            array(
+                'label' => __('Dropdown links hover background', 'flexia'),
+                'section' => 'flexia_header_settings',
+                'settings' => 'flexia_main_nav_menu_submenu_link_hover_bg',
+            ))
+    );
+
+    $wp_customize->add_setting('flexia_main_nav_menu_dropdown_animation', array(
+        'default' => 'to-top',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control('flexia_nav_menu_dropdown_animation_control', array(
-        'label' => 'Dropdown Animation',
+    $wp_customize->add_control('flexia_main_nav_menu_dropdown_animation_control', array(
+        'label' => 'Dropdown animation',
         'section' => 'flexia_header_settings',
-        'settings' => 'flexia_nav_menu_dropdown_animation',
+        'settings' => 'flexia_main_nav_menu_dropdown_animation',
         'type' => 'select',
         'choices' => array(
             'fade' => 'Fade',
@@ -1819,24 +1816,8 @@ function flexia_customize_register($wp_customize)
     )));
 
     // Enable Topbar
-
     $wp_customize->add_setting('flexia_enable_topbar', array(
         'default' => $defaults['flexia_enable_topbar'],
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'flexia_sanitize_checkbox',
-    ));
-
-    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'flexia_enable_topbar', array(
-        'label' => esc_html__('Enable Topbar?', 'flexia'),
-        'section' => 'flexia_header_settings',
-        'settings' => 'flexia_enable_topbar',
-        'type' => 'light', // light, ios, flat
-    )));
-
-    // Enable Topbar Menu
-
-    $wp_customize->add_setting('flexia_enable_topbar_menu', array(
-        'default' => $defaults['flexia_enable_topbar_menu'],
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'flexia_sanitize_checkbox',
     ));
@@ -1847,6 +1828,20 @@ function flexia_customize_register($wp_customize)
         'settings' => 'flexia_enable_topbar_menu',
         'type' => 'light', // light, ios, flat
     )));
+
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'flexia_enable_topbar', array(
+        'label' => esc_html__('Enable Topbar?', 'flexia'),
+        'section' => 'flexia_header_settings',
+        'settings' => 'flexia_enable_topbar',
+        'type' => 'light', // light, ios, flat
+    )));
+
+    // Enable Topbar Menu
+    $wp_customize->add_setting('flexia_enable_topbar_menu', array(
+        'default' => $defaults['flexia_enable_topbar_menu'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
 
     $wp_customize->add_setting('flexia_topbar_bg_color', array(
         'default' => $defaults['flexia_topbar_bg_color'],
@@ -1883,8 +1878,156 @@ function flexia_customize_register($wp_customize)
         )
     );
 
-    // Header widget area Separator
+    // Topbar Menu Separator
+    $wp_customize->add_setting('top_nav_settings_title', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_html',
+    ));
 
+    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'top_nav_settings_title', array(
+        'label' => __('Topbar Menu Settings', 'flexia'),
+        'settings' => 'top_nav_settings_title',
+        'section' => 'flexia_header_settings',
+    )));
+
+    $wp_customize->add_setting('flexia_top_nav_menu_link_color', array(
+        'default' => $defaults['flexia_top_nav_menu_link_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_top_nav_menu_link_color',
+            array(
+                'label' => __('Links color', 'flexia'),
+                'section' => 'flexia_header_settings',
+                'settings' => 'flexia_top_nav_menu_link_color',
+            ))
+    );
+
+    $wp_customize->add_setting('flexia_top_nav_menu_link_hover_color', array(
+        'default' => $defaults['flexia_top_nav_menu_link_hover_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_top_nav_menu_link_hover_color',
+            array(
+                'label' => __('Links hover color', 'flexia'),
+                'section' => 'flexia_header_settings',
+                'settings' => 'flexia_top_nav_menu_link_hover_color',
+            ))
+    );
+    
+    $wp_customize->add_setting('flexia_top_nav_menu_link_hover_bg', array(
+        'default' => $defaults['flexia_top_nav_menu_link_hover_bg'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_top_nav_menu_link_hover_bg',
+            array(
+                'label' => __('Links hover background', 'flexia'),
+                'section' => 'flexia_header_settings',
+                'settings' => 'flexia_top_nav_menu_link_hover_bg',
+            ))
+    );
+
+    $wp_customize->add_setting('flexia_top_nav_menu_submenu_bg_color', array(
+        'default' => $defaults['flexia_top_nav_menu_submenu_bg_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_top_nav_menu_submenu_bg_color',
+            array(
+                'label' => __('Dropdown background', 'flexia'),
+                'section' => 'flexia_header_settings',
+                'settings' => 'flexia_top_nav_menu_submenu_bg_color',
+            ))
+    );
+
+    $wp_customize->add_setting('flexia_top_nav_menu_submenu_link_color', array(
+        'default' => $defaults['flexia_top_nav_menu_submenu_link_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_top_nav_menu_submenu_link_color',
+            array(
+                'label' => __('Dropdown links color', 'flexia'),
+                'section' => 'flexia_header_settings',
+                'settings' => 'flexia_top_nav_menu_submenu_link_color',
+            ))
+    );
+
+    $wp_customize->add_setting('flexia_top_nav_menu_submenu_link_hover_color', array(
+        'default' => $defaults['flexia_top_nav_menu_submenu_link_hover_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_top_nav_menu_submenu_link_hover_color',
+            array(
+                'label' => __('Dropdown links hover color', 'flexia'),
+                'section' => 'flexia_header_settings',
+                'settings' => 'flexia_top_nav_menu_submenu_link_hover_color',
+            ))
+    );
+    
+    $wp_customize->add_setting('flexia_top_nav_menu_submenu_link_hover_bg', array(
+        'default' => $defaults['flexia_top_nav_menu_submenu_link_hover_bg'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_top_nav_menu_submenu_link_hover_bg',
+            array(
+                'label' => __('Dropdown links hover background', 'flexia'),
+                'section' => 'flexia_header_settings',
+                'settings' => 'flexia_top_nav_menu_submenu_link_hover_bg',
+            ))
+    );
+
+    $wp_customize->add_setting('flexia_top_nav_menu_dropdown_animation', array(
+        'default' => 'to-top',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('flexia_top_nav_menu_dropdown_animation_control', array(
+        'label' => 'Dropdown animation',
+        'section' => 'flexia_header_settings',
+        'settings' => 'flexia_top_nav_menu_dropdown_animation',
+        'type' => 'select',
+        'choices' => array(
+            'fade' => 'Fade',
+            'to-top' => 'To Top',
+            'zoom-in' => 'Zoom In',
+            'zoom-out' => 'Zoom Out',
+        ),
+    ));
+
+    // Header widget area Separator
     $wp_customize->add_setting('header_widget_area_settings_title', array(
         'default' => '',
         'sanitize_callback' => 'esc_html',
@@ -2133,36 +2276,8 @@ function flexia_customize_register($wp_customize)
     $wp_customize->get_section('header_image')->panel = 'flexia_design_settings';
     $wp_customize->get_section('flexia_page_settings')->panel = 'flexia_design_settings';
     $wp_customize->get_section('flexia_overlay_search_settings')->panel = 'flexia_design_settings';
-
 }
 add_action('customize_register', 'flexia_customize_register');
-
-function test__customize_register($wp_customize)
-{
-    // Create our panels
-    $wp_customize->add_panel('test_panel', array(
-        'title' => 'Test Panel',
-    ));
-
-    // Create our sections
-    $wp_customize->add_section('test_section', array(
-        'title' => 'Test Section',
-        'panel' => 'test_panel',
-    ));
-
-    // Create our settings
-    $wp_customize->add_setting('test_setting', array(
-        'type' => 'theme_mod',
-        'transport' => 'refresh',
-    ));
-    $wp_customize->add_control('test_setting_control', array(
-        'label' => 'Test Setting',
-        'section' => 'test_section',
-        'settings' => 'test_setting',
-        'type' => 'text',
-    ));
-}
-add_action('customize_register', 'test__customize_register');
 
 require get_template_directory() . '/framework/functions/customizer/output/header.php';
 require get_template_directory() . '/framework/functions/customizer/output/output-css.php';

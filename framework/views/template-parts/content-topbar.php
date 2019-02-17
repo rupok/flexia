@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @package Flexia
  */
 
+$dropdown_animation = 'flexia-menu-dropdown-animate-' . get_theme_mod('flexia_top_nav_menu_dropdown_animation', 'to-top');
 ?>
 
 <div class="flexia-topbar">
@@ -31,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 					wp_nav_menu( array(
 						'theme_location' => 'topbar-menu',
 						'menu_id'        => 'flexia-topbar-menu',
-						'menu_class'     => 'nav-menu flexia-topbar-menu',
+						'menu_class'     => 'nav-menu flexia-topbar-menu ' . $dropdown_animation,
 						'container'      => false,
 					) );
 				else :
