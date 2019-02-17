@@ -1,3 +1,7 @@
+.flexia-navbar-inner {
+    position: relative;
+}
+
 %ul {
     margin: 0;
     padding: 0;
@@ -20,6 +24,12 @@
             float: left;
             display: inline-block;
 
+            @media screen and (min-width: 992px) {
+                &.flexia-mega-menu {
+                    position: static;
+                }
+            }
+
             > a {
                 display: block;
                 padding: 0 15px;
@@ -27,46 +37,49 @@
             }
 
             &.menu-item-has-children {
-                &:before {
-                    content: "";
-                    position: absolute;
-                    top: 50%;
-                    margin-top: -4px;
-                    right: 18px;
-                    display: block;
-                    width: 2px;
-                    height: 8px;
-                    transition: all 0.25s ease;
+                > a {
+                    position: relative;
+                    padding-right: 28px;
 
-                    @media screen and (max-width: 991px) {
-                        display: none;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        margin-top: -4px;
+                        right: 18px;
+                        display: block;
+                        width: 2px;
+                        height: 8px;
+                        transition: all 0.25s ease;
+
+                        @media screen and (max-width: 991px) {
+                            display: none;
+                        }
                     }
-                }
 
-                &:after {
-                    content: "";
-                    position: absolute;
-                    top: 50%;
-                    margin-top: -1px;
-                    right: 15px;
-                    display: block;
-                    width: 8px;
-                    height: 2px;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        margin-top: -1px;
+                        right: 15px;
+                        display: block;
+                        width: 8px;
+                        height: 2px;
 
-                    @media screen and (max-width: 991px) {
-                        display: none;
+                        @media screen and (max-width: 991px) {
+                            display: none;
+                        }
                     }
                 }
 
                 // removed &.current-menu-item, &.current-menu-ancestor
                 &:hover {
-                    &:before {
-                        height: 0;
+                    > a {
+                        &:before {
+                            height: 0;
+                        }
                     }
-                }
-
-                > a {
-                    padding-right: 28px;
                 }
             }
 
@@ -80,6 +93,20 @@
                 opacity: 0;
                 z-index: 99;
                 box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+
+                @media screen and (min-width: 992px) {
+                    &.flexia-mega-menu-sub {
+                        left: 1em;
+                        right: 1em;
+                        width: unset;
+                        padding: 25px;
+                        box-sizing: border-box;
+
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        grid-column-gap: 25px;
+                    }
+                }
 
                 li {
                     @extend %li;
@@ -98,12 +125,49 @@
                         left: 100%;
                     }
                 }
+
+                @media screen and (min-width: 992px) {
+                    &.flexia-mega-menu-sub {
+                        li {
+                            > a {
+                                &:before,
+                                &:after {
+                                    display: none;
+                                }
+                            }
+
+                            ul {
+                                position: relative;
+                                top: unset;
+                                left: unset;
+                                right: unset;
+                                width: 100%;
+                                visibility: hidden;
+                                opacity: 0;
+                                padding-left: 20px;
+                                transform: none;
+                                box-shadow: none;
+                                transition: none;
+                            }
+                        }
+                    }
+                }
             }
 
             &:hover {
                 > ul {
                     visibility: visible;
                     opacity: 1;
+                }
+
+                > ul.flexia-mega-menu-sub {
+                    visibility: visible;
+                    opacity: 1;
+
+                    ul {
+                        visibility: visible;
+                        opacity: 1;
+                    }
                 }
             }
         }

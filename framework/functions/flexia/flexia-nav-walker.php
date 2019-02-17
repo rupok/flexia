@@ -45,7 +45,7 @@ class Flexia_Nav_Walker extends Walker_Nav_Menu {
         if( is_null( $this->is_megamenu ) ) {
             $output .= "{$n}{$indent}<ul$class_names>{$n}";
         } else {
-            $output .= "{$n}{$indent}<div class='flexia-megamenu-wrapper'><div class='flexia-megamenu-container flexia-container max width'><ul class='flexia-sub-mega-menu'>{$n}";
+            $output .= "{$n}{$indent}<ul class='flexia-mega-menu-sub'>{$n}";
         }
 
     }
@@ -67,12 +67,7 @@ class Flexia_Nav_Walker extends Walker_Nav_Menu {
             $n = "\n";
         }
         $indent = str_repeat( $t, $depth );
-        
-        if( is_null( $this->is_megamenu ) ) {
-            $output .= "$indent</ul>{$n}";
-        } else {
-            $output .= "{$indent}</ul></div></div>{$n}";
-        }
+        $output .= "$indent</ul>{$n}";
     }
 
 

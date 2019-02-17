@@ -10,23 +10,25 @@
             }
 
             &.menu-item-has-children {
-                &:before,
-                &:after {
-                    background-color: #cbced3;
+                > a {
+                    &:before,
+                    &:after {
+                        background-color: #cbced3;
+                    }
                 }
             }
 
             &:hover,
             &.current-menu-item,
             &.current-menu-ancestor {
-                &::before,
-                &:after {
-                    background-color: #ffffff;
-                }
-
                 > a {
                     color: #ffffff;
                     background-color: rgba(0, 0, 0, 0.5);
+
+                    &::before,
+                    &:after {
+                        background-color: #ffffff;
+                    }
                 }
             }
 
@@ -43,14 +45,14 @@
                     &:hover,
                     &.current-menu-item,
                     &.current-menu-ancestor {
-                        &::before,
-                        &:after {
-                            background-color: #ffffff;
-                        }
-
                         > a {
                             color: #ffffff;
                             background-color: rgba(0, 0, 0, 0.5);
+
+                            &::before,
+                            &:after {
+                                background-color: #ffffff;
+                            }
                         }
                     }
                 }

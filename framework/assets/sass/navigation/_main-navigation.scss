@@ -16,23 +16,25 @@
             }
 
             &.menu-item-has-children {
-                &:before,
-                &:after {
-                    background-color: #4d4d4d;
+                > a {
+                    &:before,
+                    &:after {
+                        background-color: #4d4d4d;
+                    }
                 }
             }
 
             &:hover,
             &.current-menu-item,
             &.current-menu-ancestor {
-                &::before,
-                &:after {
-                    background-color: #1b1f21;
-                }
-
                 > a {
                     color: #1b1f21;
                     background-color: #ffffff;
+
+                    &::before,
+                    &:after {
+                        background-color: #1b1f21;
+                    }
                 }
             }
 
@@ -50,14 +52,14 @@
                     &:hover,
                     &.current-menu-item,
                     &.current-menu-ancestor {
-                        &::before,
-                        &:after {
-                            background-color: #1b1f21;
-                        }
-
                         > a {
                             color: #1b1f21;
                             background-color: #f4f4f4;
+
+                            &::before,
+                            &:after {
+                                background-color: #1b1f21;
+                            }
                         }
                     }
                 }

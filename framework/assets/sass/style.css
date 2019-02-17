@@ -4073,6 +4073,10 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+.flexia-navbar-inner {
+  position: relative;
+}
+
 .flexia-menu .nav-menu, .flexia-menu .nav-menu li ul {
   margin: 0;
   padding: 0;
@@ -4091,12 +4095,21 @@ a:hover, a:active {
   float: left;
   display: inline-block;
 }
+@media screen and (min-width: 992px) {
+  .flexia-menu .nav-menu li.flexia-mega-menu {
+    position: static;
+  }
+}
 .flexia-menu .nav-menu li > a {
   display: block;
   padding: 0 15px;
   margin: 0;
 }
-.flexia-menu .nav-menu li.menu-item-has-children:before {
+.flexia-menu .nav-menu li.menu-item-has-children > a {
+  position: relative;
+  padding-right: 28px;
+}
+.flexia-menu .nav-menu li.menu-item-has-children > a:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -4110,11 +4123,11 @@ a:hover, a:active {
   transition: all 0.25s ease;
 }
 @media screen and (max-width: 991px) {
-  .flexia-menu .nav-menu li.menu-item-has-children:before {
+  .flexia-menu .nav-menu li.menu-item-has-children > a:before {
     display: none;
   }
 }
-.flexia-menu .nav-menu li.menu-item-has-children:after {
+.flexia-menu .nav-menu li.menu-item-has-children > a:after {
   content: "";
   position: absolute;
   top: 50%;
@@ -4125,15 +4138,12 @@ a:hover, a:active {
   height: 2px;
 }
 @media screen and (max-width: 991px) {
-  .flexia-menu .nav-menu li.menu-item-has-children:after {
+  .flexia-menu .nav-menu li.menu-item-has-children > a:after {
     display: none;
   }
 }
-.flexia-menu .nav-menu li.menu-item-has-children:hover:before {
+.flexia-menu .nav-menu li.menu-item-has-children:hover > a:before {
   height: 0;
-}
-.flexia-menu .nav-menu li.menu-item-has-children > a {
-  padding-right: 28px;
 }
 .flexia-menu .nav-menu li ul {
   position: absolute;
@@ -4145,6 +4155,19 @@ a:hover, a:active {
   z-index: 99;
   -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
           box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+@media screen and (min-width: 992px) {
+  .flexia-menu .nav-menu li ul.flexia-mega-menu-sub {
+    left: 1em;
+    right: 1em;
+    width: unset;
+    padding: 25px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 25px;
+  }
 }
 .flexia-menu .nav-menu li ul li {
   position: relative;
@@ -4160,7 +4183,38 @@ a:hover, a:active {
   top: 0;
   left: 100%;
 }
+@media screen and (min-width: 992px) {
+  .flexia-menu .nav-menu li ul.flexia-mega-menu-sub li > a:before, .flexia-menu .nav-menu li ul.flexia-mega-menu-sub li > a:after {
+    display: none;
+  }
+  .flexia-menu .nav-menu li ul.flexia-mega-menu-sub li ul {
+    position: relative;
+    top: unset;
+    left: unset;
+    right: unset;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    padding-left: 20px;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+}
 .flexia-menu .nav-menu li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+}
+.flexia-menu .nav-menu li:hover > ul.flexia-mega-menu-sub {
+  visibility: visible;
+  opacity: 1;
+}
+.flexia-menu .nav-menu li:hover > ul.flexia-mega-menu-sub ul {
   visibility: visible;
   opacity: 1;
 }
@@ -4396,15 +4450,15 @@ a:hover, a:active {
   letter-spacing: 1px;
   color: #4d4d4d;
 }
-.main-navigation .nav-menu li.menu-item-has-children:before, .main-navigation .nav-menu li.menu-item-has-children:after {
+.main-navigation .nav-menu li.menu-item-has-children > a:before, .main-navigation .nav-menu li.menu-item-has-children > a:after {
   background-color: #4d4d4d;
-}
-.main-navigation .nav-menu li:hover::before, .main-navigation .nav-menu li:hover:after, .main-navigation .nav-menu li.current-menu-item::before, .main-navigation .nav-menu li.current-menu-item:after, .main-navigation .nav-menu li.current-menu-ancestor::before, .main-navigation .nav-menu li.current-menu-ancestor:after {
-  background-color: #1b1f21;
 }
 .main-navigation .nav-menu li:hover > a, .main-navigation .nav-menu li.current-menu-item > a, .main-navigation .nav-menu li.current-menu-ancestor > a {
   color: #1b1f21;
   background-color: #ffffff;
+}
+.main-navigation .nav-menu li:hover > a::before, .main-navigation .nav-menu li:hover > a:after, .main-navigation .nav-menu li.current-menu-item > a::before, .main-navigation .nav-menu li.current-menu-item > a:after, .main-navigation .nav-menu li.current-menu-ancestor > a::before, .main-navigation .nav-menu li.current-menu-ancestor > a:after {
+  background-color: #1b1f21;
 }
 .main-navigation .nav-menu li ul {
   background-color: #ffffff;
@@ -4415,12 +4469,12 @@ a:hover, a:active {
   text-transform: none;
   color: #4d4d4d;
 }
-.main-navigation .nav-menu li ul li:hover::before, .main-navigation .nav-menu li ul li:hover:after, .main-navigation .nav-menu li ul li.current-menu-item::before, .main-navigation .nav-menu li ul li.current-menu-item:after, .main-navigation .nav-menu li ul li.current-menu-ancestor::before, .main-navigation .nav-menu li ul li.current-menu-ancestor:after {
-  background-color: #1b1f21;
-}
 .main-navigation .nav-menu li ul li:hover > a, .main-navigation .nav-menu li ul li.current-menu-item > a, .main-navigation .nav-menu li ul li.current-menu-ancestor > a {
   color: #1b1f21;
   background-color: #f4f4f4;
+}
+.main-navigation .nav-menu li ul li:hover > a::before, .main-navigation .nav-menu li ul li:hover > a:after, .main-navigation .nav-menu li ul li.current-menu-item > a::before, .main-navigation .nav-menu li ul li.current-menu-item > a:after, .main-navigation .nav-menu li ul li.current-menu-ancestor > a::before, .main-navigation .nav-menu li ul li.current-menu-ancestor > a:after {
+  background-color: #1b1f21;
 }
 @media screen and (max-width: 991px) {
   .main-navigation .nav-menu {
@@ -4486,15 +4540,15 @@ a:hover, a:active {
   line-height: 42px;
   color: #cbced3;
 }
-.topbar-navigation .nav-menu li.menu-item-has-children:before, .topbar-navigation .nav-menu li.menu-item-has-children:after {
+.topbar-navigation .nav-menu li.menu-item-has-children > a:before, .topbar-navigation .nav-menu li.menu-item-has-children > a:after {
   background-color: #cbced3;
-}
-.topbar-navigation .nav-menu li:hover::before, .topbar-navigation .nav-menu li:hover:after, .topbar-navigation .nav-menu li.current-menu-item::before, .topbar-navigation .nav-menu li.current-menu-item:after, .topbar-navigation .nav-menu li.current-menu-ancestor::before, .topbar-navigation .nav-menu li.current-menu-ancestor:after {
-  background-color: #ffffff;
 }
 .topbar-navigation .nav-menu li:hover > a, .topbar-navigation .nav-menu li.current-menu-item > a, .topbar-navigation .nav-menu li.current-menu-ancestor > a {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.5);
+}
+.topbar-navigation .nav-menu li:hover > a::before, .topbar-navigation .nav-menu li:hover > a:after, .topbar-navigation .nav-menu li.current-menu-item > a::before, .topbar-navigation .nav-menu li.current-menu-item > a:after, .topbar-navigation .nav-menu li.current-menu-ancestor > a::before, .topbar-navigation .nav-menu li.current-menu-ancestor > a:after {
+  background-color: #ffffff;
 }
 .topbar-navigation .nav-menu li ul {
   background-color: #262625;
@@ -4504,12 +4558,12 @@ a:hover, a:active {
   line-height: 45px;
   color: #cbced3;
 }
-.topbar-navigation .nav-menu li ul li:hover::before, .topbar-navigation .nav-menu li ul li:hover:after, .topbar-navigation .nav-menu li ul li.current-menu-item::before, .topbar-navigation .nav-menu li ul li.current-menu-item:after, .topbar-navigation .nav-menu li ul li.current-menu-ancestor::before, .topbar-navigation .nav-menu li ul li.current-menu-ancestor:after {
-  background-color: #ffffff;
-}
 .topbar-navigation .nav-menu li ul li:hover > a, .topbar-navigation .nav-menu li ul li.current-menu-item > a, .topbar-navigation .nav-menu li ul li.current-menu-ancestor > a {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.5);
+}
+.topbar-navigation .nav-menu li ul li:hover > a::before, .topbar-navigation .nav-menu li ul li:hover > a:after, .topbar-navigation .nav-menu li ul li.current-menu-item > a::before, .topbar-navigation .nav-menu li ul li.current-menu-item > a:after, .topbar-navigation .nav-menu li ul li.current-menu-ancestor > a::before, .topbar-navigation .nav-menu li ul li.current-menu-ancestor > a:after {
+  background-color: #ffffff;
 }
 @media screen and (max-width: 991px) {
   .topbar-navigation .nav-menu {
