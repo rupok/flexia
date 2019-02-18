@@ -4096,7 +4096,7 @@ a:hover, a:active {
   display: inline-block;
 }
 @media screen and (min-width: 992px) {
-  .flexia-menu .nav-menu li.flexia-mega-menu {
+  .flexia-menu .nav-menu li.flexia-mega-menu-parent {
     position: static;
   }
 }
@@ -4157,7 +4157,7 @@ a:hover, a:active {
           box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
 @media screen and (min-width: 992px) {
-  .flexia-menu .nav-menu li ul.flexia-mega-menu-sub {
+  .flexia-menu .nav-menu li ul.flexia-mega-menu {
     left: 1em;
     right: 1em;
     width: unset;
@@ -4165,8 +4165,19 @@ a:hover, a:active {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 25px;
+  }
+  .flexia-menu .nav-menu li ul.flexia-mega-menu-3-col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .flexia-menu .nav-menu li ul.flexia-mega-menu-4-col {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .flexia-menu .nav-menu li ul.flexia-mega-menu-5-col {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .flexia-menu .nav-menu li ul.flexia-mega-menu-6-col {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 .flexia-menu .nav-menu li ul li {
@@ -4184,10 +4195,10 @@ a:hover, a:active {
   left: 100%;
 }
 @media screen and (min-width: 992px) {
-  .flexia-menu .nav-menu li ul.flexia-mega-menu-sub li > a:before, .flexia-menu .nav-menu li ul.flexia-mega-menu-sub li > a:after {
+  .flexia-menu .nav-menu li ul.flexia-mega-menu li > a:before, .flexia-menu .nav-menu li ul.flexia-mega-menu li > a:after {
     display: none;
   }
-  .flexia-menu .nav-menu li ul.flexia-mega-menu-sub li ul {
+  .flexia-menu .nav-menu li ul.flexia-mega-menu li ul {
     position: relative;
     top: unset;
     left: unset;
@@ -4210,11 +4221,11 @@ a:hover, a:active {
   visibility: visible;
   opacity: 1;
 }
-.flexia-menu .nav-menu li:hover > ul.flexia-mega-menu-sub {
+.flexia-menu .nav-menu li:hover > ul.flexia-mega-menu {
   visibility: visible;
   opacity: 1;
 }
-.flexia-menu .nav-menu li:hover > ul.flexia-mega-menu-sub ul {
+.flexia-menu .nav-menu li:hover > ul.flexia-mega-menu ul {
   visibility: visible;
   opacity: 1;
 }
@@ -4428,6 +4439,8 @@ a:hover, a:active {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  left: 0;
+  right: 0;
 }
 .main-navigation .nav-menu li {
   display: -webkit-box;

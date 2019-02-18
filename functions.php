@@ -172,7 +172,7 @@ require get_template_directory() . '/framework/functions/flexia/widgets.php';
 /**
  * Flexia Nav Walker.
  */
-
+require get_template_directory() . '/framework/functions/flexia/flexia-extra-menu-field.php';
 require get_template_directory() . '/framework/functions/flexia/flexia-nav-walker.php';
 
 /**
