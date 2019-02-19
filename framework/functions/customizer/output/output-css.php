@@ -275,15 +275,15 @@ function flexia_customizer_style() {
 			color: <?php echo $defaults['flexia_main_nav_menu_submenu_link_color']; ?>;
 		}
 
-		.main-navigation .nav-menu li ul li:hover > a,
-		.main-navigation .nav-menu li ul li.current-menu-item > a,
-		.main-navigation .nav-menu li ul li.current-menu-ancestor > a {
+		.main-navigation .nav-menu li ul li:hover > a:not(.cart-contents),
+		.main-navigation .nav-menu li ul li.current-menu-item > a:not(.cart-contents),
+		.main-navigation .nav-menu li ul li.current-menu-ancestor > a:not(.cart-contents) {
 			color: <?php echo $defaults['flexia_main_nav_menu_submenu_link_hover_color']; ?>;
 		}
 		
-		.main-navigation .nav-menu li ul li:hover > a,
-		.main-navigation .nav-menu li ul li.current-menu-item > a,
-		.main-navigation .nav-menu li ul li.current-menu-ancestor > a {
+		.main-navigation .nav-menu li ul li:hover > a:not(.cart-contents),
+		.main-navigation .nav-menu li ul li.current-menu-item > a:not(.cart-contents),
+		.main-navigation .nav-menu li ul li.current-menu-ancestor > a:not(.cart-contents) {
 			background-color: <?php echo $defaults['flexia_main_nav_menu_submenu_link_hover_bg']; ?>;
 		}
 
