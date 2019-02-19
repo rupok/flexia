@@ -58,7 +58,7 @@ class Flexia_Nav_Walker extends Walker_Nav_Menu
         $classes = empty($item->classes) ? array() : (array) $item->classes;
         $classes[] = 'menu-item-' . $item->ID;
 
-        if(!empty($this->mega_menu_classes)) {
+        if (!empty($this->mega_menu_classes)) {
             $classes[] = 'flexia-mega-menu-parent';
         }
 
