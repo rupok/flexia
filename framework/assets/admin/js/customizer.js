@@ -237,56 +237,7 @@
         } );
     });
 
-    // wp.customize( 'flexia_nav_menu_link_color', function( value ) {
-    //     value.bind( function( to ) {
-    //         $( '.main-navigation > ul > li > a' ).css( 'color', to );
-    //     } );
-    // });
-
-    // wp.customize( 'flexia_nav_menu_link_hover_color', function( value ) {
-    //     value.bind( function( to ) {
-    //         var menuLinkColor=$(".main-navigation > ul > li > a").css('color');
-    //         $(".main-navigation > ul > li > a").hover(
-    //         function() {
-    //             //mouse over
-    //             $(this).css('color', to)
-    //         }, function() {
-    //             //mouse out
-    //             $(this).css('color', menuLinkColor)
-    //         });
-
-    //     } );
-    // });
-
-    // wp.customize( 'flexia_submenu_bg_color', function( value ) {
-    //     value.bind( function( to ) {
-    //         $( '.main-navigation ul.sub-menu' ).css( 'background-color', to );
-    //     } );
-    // });
-
-    // wp.customize( 'flexia_submenu_link_color', function( value ) {
-    //     value.bind( function( to ) {
-    //         $( '.main-navigation ul ul li a' ).css( 'color', to );
-    //     } );
-    // });
-
-    // wp.customize( 'flexia_submenu_link_hover_color', function( value ) {
-    //     value.bind( function( to ) {
-    //         var menuLinkColor=$(".main-navigation ul ul li a").css('color');
-    //         $(".main-navigation ul ul li a").hover(
-    //         function() {
-    //             //mouse over
-    //             $(this).css('color', to)
-    //         }, function() {
-    //             //mouse out
-    //             $(this).css('color', menuLinkColor)
-    //         });
-
-    //     } );
-    // });
-
     // Search Overlay
-
     wp.customize( 'flexia_overlay_search_bg_color', function( value ) {
         value.bind( function( to ) {
             $( '.flexia-search-overlay' ).css( 'background-color', to );
