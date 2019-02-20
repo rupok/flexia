@@ -1822,13 +1822,6 @@ function flexia_customize_register($wp_customize)
         'sanitize_callback' => 'flexia_sanitize_checkbox',
     ));
 
-    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'flexia_enable_topbar_menu', array(
-        'label' => esc_html__('Enable Topbar Menu?', 'flexia'),
-        'section' => 'flexia_header_settings',
-        'settings' => 'flexia_enable_topbar_menu',
-        'type' => 'light', // light, ios, flat
-    )));
-
     $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'flexia_enable_topbar', array(
         'label' => esc_html__('Enable Topbar?', 'flexia'),
         'section' => 'flexia_header_settings',
@@ -1842,6 +1835,13 @@ function flexia_customize_register($wp_customize)
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'flexia_sanitize_checkbox',
     ));
+
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'flexia_enable_topbar_menu', array(
+        'label' => esc_html__('Enable Topbar Menu?', 'flexia'),
+        'section' => 'flexia_header_settings',
+        'settings' => 'flexia_enable_topbar_menu',
+        'type' => 'light', // light, ios, flat
+    )));
 
     $wp_customize->add_setting('flexia_topbar_bg_color', array(
         'default' => $defaults['flexia_topbar_bg_color'],
