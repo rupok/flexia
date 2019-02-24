@@ -46,6 +46,7 @@ function flexia_admin_js() {
 		'ajax_url' => admin_url('admin-ajax.php'),
 		'flexia_blog_content_display' => get_theme_mod( 'flexia_blog_content_display', true ),
 		'flexia_navbar' => get_theme_mod( 'flexia_navbar', true ),
+		'flexia_enable_topbar' => get_theme_mod( 'flexia_enable_topbar', false ),
 		'body_google_font' => get_theme_mod( 'body_font_family', true ),
 		'body_font_variants' => get_theme_mod( 'body_font_variants', true ),
 		'body_font_subsets' => get_theme_mod( 'body_font_subsets', true ),
