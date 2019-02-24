@@ -1668,7 +1668,7 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_setting('flexia_main_nav_menu_link_color', array(
         'default' => $defaults['flexia_main_nav_menu_link_color'],
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -1685,7 +1685,7 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_setting('flexia_main_nav_menu_link_hover_color', array(
         'default' => $defaults['flexia_main_nav_menu_link_hover_color'],
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -1702,7 +1702,7 @@ function flexia_customize_register($wp_customize)
     
     $wp_customize->add_setting('flexia_main_nav_menu_link_hover_bg', array(
         'default' => $defaults['flexia_main_nav_menu_link_hover_bg'],
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -1719,7 +1719,7 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_setting('flexia_main_nav_menu_submenu_bg_color', array(
         'default' => $defaults['flexia_main_nav_menu_submenu_bg_color'],
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -1736,7 +1736,7 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_setting('flexia_main_nav_menu_submenu_link_color', array(
         'default' => $defaults['flexia_main_nav_menu_submenu_link_color'],
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -1753,7 +1753,7 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_setting('flexia_main_nav_menu_submenu_link_hover_color', array(
         'default' => $defaults['flexia_main_nav_menu_submenu_link_hover_color'],
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -1770,7 +1770,7 @@ function flexia_customize_register($wp_customize)
     
     $wp_customize->add_setting('flexia_main_nav_menu_submenu_link_hover_bg', array(
         'default' => $defaults['flexia_main_nav_menu_submenu_link_hover_bg'],
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -1787,7 +1787,7 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_setting('flexia_main_nav_menu_dropdown_animation', array(
         'default' => 'to-top',
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
     ));
 
     $wp_customize->add_control('flexia_main_nav_menu_dropdown_animation_control', array(
@@ -1892,7 +1892,7 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_setting('flexia_top_nav_menu_link_color', array(
         'default' => $defaults['flexia_top_nav_menu_link_color'],
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -1909,7 +1909,7 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_setting('flexia_top_nav_menu_link_hover_color', array(
         'default' => $defaults['flexia_top_nav_menu_link_hover_color'],
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -1926,7 +1926,7 @@ function flexia_customize_register($wp_customize)
     
     $wp_customize->add_setting('flexia_top_nav_menu_link_hover_bg', array(
         'default' => $defaults['flexia_top_nav_menu_link_hover_bg'],
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -1943,7 +1943,7 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_setting('flexia_top_nav_menu_submenu_bg_color', array(
         'default' => $defaults['flexia_top_nav_menu_submenu_bg_color'],
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -1960,7 +1960,7 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_setting('flexia_top_nav_menu_submenu_link_color', array(
         'default' => $defaults['flexia_top_nav_menu_submenu_link_color'],
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -1977,7 +1977,7 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_setting('flexia_top_nav_menu_submenu_link_hover_color', array(
         'default' => $defaults['flexia_top_nav_menu_submenu_link_hover_color'],
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -1994,7 +1994,7 @@ function flexia_customize_register($wp_customize)
     
     $wp_customize->add_setting('flexia_top_nav_menu_submenu_link_hover_bg', array(
         'default' => $defaults['flexia_top_nav_menu_submenu_link_hover_bg'],
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -2011,7 +2011,7 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_setting('flexia_top_nav_menu_dropdown_animation', array(
         'default' => 'to-top',
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
     ));
 
     $wp_customize->add_control('flexia_top_nav_menu_dropdown_animation_control', array(
