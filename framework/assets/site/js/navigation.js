@@ -135,9 +135,11 @@
 
             // insert indicator
             $('.nav-menu > li.menu-item-has-children', $scope).each(function() {
+                $('> a', $(this)).append('<span class="fa fa-angle-down"></span>')
                 $(this).append('<span class="flexia-menu-indicator"></span>')
             })
             $('.nav-menu > li ul li.menu-item-has-children', $scope).each(function() {
+                $('> a', $(this)).append('<span class="fa fa-angle-right"></span>')
                 $(this).append('<span class="flexia-menu-indicator"></span>')
             })
 

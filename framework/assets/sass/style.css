@@ -4105,45 +4105,16 @@ a:hover, a:active {
   padding: 0 15px;
   margin: 0;
 }
+.flexia-menu .nav-menu li > a span {
+  padding-left: 5px;
+}
+@media screen and (max-width: 991px) {
+  .flexia-menu .nav-menu li > a span {
+    display: none;
+  }
+}
 .flexia-menu .nav-menu li.menu-item-has-children > a {
   position: relative;
-  padding-right: 28px;
-}
-.flexia-menu .nav-menu li.menu-item-has-children > a:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  margin-top: -4px;
-  right: 18px;
-  display: block;
-  width: 2px;
-  height: 8px;
-  -webkit-transition: all 0.25s ease;
-  -o-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-}
-@media screen and (max-width: 991px) {
-  .flexia-menu .nav-menu li.menu-item-has-children > a:before {
-    display: none;
-  }
-}
-.flexia-menu .nav-menu li.menu-item-has-children > a:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  margin-top: -1px;
-  right: 15px;
-  display: block;
-  width: 8px;
-  height: 2px;
-}
-@media screen and (max-width: 991px) {
-  .flexia-menu .nav-menu li.menu-item-has-children > a:after {
-    display: none;
-  }
-}
-.flexia-menu .nav-menu li.menu-item-has-children:hover > a:before {
-  height: 0;
 }
 .flexia-menu .nav-menu li ul {
   position: absolute;
@@ -4190,12 +4161,18 @@ a:hover, a:active {
   padding: 0 15px;
   margin: 0;
 }
+.flexia-menu .nav-menu li ul li > a span {
+  position: absolute;
+  right: 12px;
+  top: 0;
+  line-height: 45px;
+}
 .flexia-menu .nav-menu li ul li ul {
   top: 0;
   left: 100%;
 }
 @media screen and (min-width: 992px) {
-  .flexia-menu .nav-menu li ul.flexia-mega-menu li > a:before, .flexia-menu .nav-menu li ul.flexia-mega-menu li > a:after {
+  .flexia-menu .nav-menu li ul.flexia-mega-menu li > a span {
     display: none;
   }
   .flexia-menu .nav-menu li ul.flexia-mega-menu li ul {
@@ -4206,7 +4183,6 @@ a:hover, a:active {
     width: 100%;
     visibility: hidden;
     opacity: 0;
-    padding-left: 20px;
     -webkit-transform: none;
         -ms-transform: none;
             transform: none;
@@ -4215,6 +4191,9 @@ a:hover, a:active {
     -webkit-transition: none;
     -o-transition: none;
     transition: none;
+  }
+  .flexia-menu .nav-menu li ul.flexia-mega-menu > li.menu-item-has-children > a {
+    font-size: 105%;
   }
 }
 .flexia-menu .nav-menu li:hover > ul {
@@ -4463,15 +4442,9 @@ a:hover, a:active {
   letter-spacing: 1px;
   color: #4d4d4d;
 }
-.main-navigation .nav-menu li.menu-item-has-children > a:before, .main-navigation .nav-menu li.menu-item-has-children > a:after {
-  background-color: #4d4d4d;
-}
 .main-navigation .nav-menu li:hover > a, .main-navigation .nav-menu li.current-menu-item > a, .main-navigation .nav-menu li.current-menu-ancestor > a {
   color: #1b1f21;
   background-color: #ffffff;
-}
-.main-navigation .nav-menu li:hover > a::before, .main-navigation .nav-menu li:hover > a:after, .main-navigation .nav-menu li.current-menu-item > a::before, .main-navigation .nav-menu li.current-menu-item > a:after, .main-navigation .nav-menu li.current-menu-ancestor > a::before, .main-navigation .nav-menu li.current-menu-ancestor > a:after {
-  background-color: #1b1f21;
 }
 .main-navigation .nav-menu li ul {
   background-color: #ffffff;
@@ -4485,9 +4458,6 @@ a:hover, a:active {
 .main-navigation .nav-menu li ul li:hover > a, .main-navigation .nav-menu li ul li.current-menu-item > a, .main-navigation .nav-menu li ul li.current-menu-ancestor > a {
   color: #1b1f21;
   background-color: #f4f4f4;
-}
-.main-navigation .nav-menu li ul li:hover > a::before, .main-navigation .nav-menu li ul li:hover > a:after, .main-navigation .nav-menu li ul li.current-menu-item > a::before, .main-navigation .nav-menu li ul li.current-menu-item > a:after, .main-navigation .nav-menu li ul li.current-menu-ancestor > a::before, .main-navigation .nav-menu li ul li.current-menu-ancestor > a:after {
-  background-color: #1b1f21;
 }
 @media screen and (max-width: 991px) {
   .main-navigation .nav-menu {
@@ -4553,15 +4523,9 @@ a:hover, a:active {
   line-height: 42px;
   color: #cbced3;
 }
-.topbar-navigation .nav-menu li.menu-item-has-children > a:before, .topbar-navigation .nav-menu li.menu-item-has-children > a:after {
-  background-color: #cbced3;
-}
 .topbar-navigation .nav-menu li:hover > a, .topbar-navigation .nav-menu li.current-menu-item > a, .topbar-navigation .nav-menu li.current-menu-ancestor > a {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.5);
-}
-.topbar-navigation .nav-menu li:hover > a::before, .topbar-navigation .nav-menu li:hover > a:after, .topbar-navigation .nav-menu li.current-menu-item > a::before, .topbar-navigation .nav-menu li.current-menu-item > a:after, .topbar-navigation .nav-menu li.current-menu-ancestor > a::before, .topbar-navigation .nav-menu li.current-menu-ancestor > a:after {
-  background-color: #ffffff;
 }
 .topbar-navigation .nav-menu li ul {
   background-color: #262625;
@@ -4574,9 +4538,6 @@ a:hover, a:active {
 .topbar-navigation .nav-menu li ul li:hover > a, .topbar-navigation .nav-menu li ul li.current-menu-item > a, .topbar-navigation .nav-menu li ul li.current-menu-ancestor > a {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.5);
-}
-.topbar-navigation .nav-menu li ul li:hover > a::before, .topbar-navigation .nav-menu li ul li:hover > a:after, .topbar-navigation .nav-menu li ul li.current-menu-item > a::before, .topbar-navigation .nav-menu li ul li.current-menu-item > a:after, .topbar-navigation .nav-menu li ul li.current-menu-ancestor > a::before, .topbar-navigation .nav-menu li ul li.current-menu-ancestor > a:after {
-  background-color: #ffffff;
 }
 @media screen and (max-width: 991px) {
   .topbar-navigation .nav-menu {

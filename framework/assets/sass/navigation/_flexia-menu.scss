@@ -34,52 +34,19 @@
                 display: block;
                 padding: 0 15px;
                 margin: 0;
+
+                span {
+                    padding-left: 5px;
+
+                    @media screen and (max-width: 991px) {
+                        display: none;
+                    }
+                }
             }
 
             &.menu-item-has-children {
                 > a {
                     position: relative;
-                    padding-right: 28px;
-
-                    &:before {
-                        content: "";
-                        position: absolute;
-                        top: 50%;
-                        margin-top: -4px;
-                        right: 18px;
-                        display: block;
-                        width: 2px;
-                        height: 8px;
-                        transition: all 0.25s ease;
-
-                        @media screen and (max-width: 991px) {
-                            display: none;
-                        }
-                    }
-
-                    &:after {
-                        content: "";
-                        position: absolute;
-                        top: 50%;
-                        margin-top: -1px;
-                        right: 15px;
-                        display: block;
-                        width: 8px;
-                        height: 2px;
-
-                        @media screen and (max-width: 991px) {
-                            display: none;
-                        }
-                    }
-                }
-
-                // removed &.current-menu-item, &.current-menu-ancestor
-                &:hover {
-                    > a {
-                        &:before {
-                            height: 0;
-                        }
-                    }
                 }
             }
 
@@ -133,6 +100,13 @@
                         display: block;
                         padding: 0 15px;
                         margin: 0;
+
+                        span {
+                            position: absolute;
+                            right: 12px;
+                            top: 0;
+                            line-height: 45px;
+                        }
                     }
 
                     ul {
@@ -145,8 +119,7 @@
                     &.flexia-mega-menu {
                         li {
                             > a {
-                                &:before,
-                                &:after {
+                                span {
                                     display: none;
                                 }
                             }
@@ -159,10 +132,17 @@
                                 width: 100%;
                                 visibility: hidden;
                                 opacity: 0;
-                                padding-left: 20px;
                                 transform: none;
                                 box-shadow: none;
                                 transition: none;
+                            }
+                        }
+
+                        > li {
+                            &.menu-item-has-children {
+                                > a {
+                                    font-size: 105%;
+                                }
                             }
                         }
                     }

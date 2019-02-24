@@ -9,26 +9,12 @@
                 color: #cbced3;
             }
 
-            &.menu-item-has-children {
-                > a {
-                    &:before,
-                    &:after {
-                        background-color: #cbced3;
-                    }
-                }
-            }
-
             &:hover,
             &.current-menu-item,
             &.current-menu-ancestor {
                 > a {
                     color: #ffffff;
                     background-color: rgba(0, 0, 0, 0.5);
-
-                    &::before,
-                    &:after {
-                        background-color: #ffffff;
-                    }
                 }
             }
 
@@ -48,11 +34,6 @@
                         > a {
                             color: #ffffff;
                             background-color: rgba(0, 0, 0, 0.5);
-
-                            &::before,
-                            &:after {
-                                background-color: #ffffff;
-                            }
                         }
                     }
                 }

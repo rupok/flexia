@@ -17,26 +17,12 @@
                 color: #4d4d4d;
             }
 
-            &.menu-item-has-children {
-                > a {
-                    &:before,
-                    &:after {
-                        background-color: #4d4d4d;
-                    }
-                }
-            }
-
             &:hover,
             &.current-menu-item,
             &.current-menu-ancestor {
                 > a {
                     color: #1b1f21;
                     background-color: #ffffff;
-
-                    &::before,
-                    &:after {
-                        background-color: #1b1f21;
-                    }
                 }
             }
 
@@ -57,11 +43,6 @@
                         > a {
                             color: #1b1f21;
                             background-color: #f4f4f4;
-
-                            &::before,
-                            &:after {
-                                background-color: #1b1f21;
-                            }
                         }
                     }
                 }
