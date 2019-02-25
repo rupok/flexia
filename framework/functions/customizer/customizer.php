@@ -1534,7 +1534,7 @@ function flexia_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'flexia_navbar', array(
-        'label' => esc_html__('Disable Navbar?', 'flexia'),
+        'label' => esc_html__('Enable Navbar?', 'flexia'),
         'section' => 'flexia_header_settings',
         'settings' => 'flexia_navbar',
         'type' => 'light', // light, ios, flat

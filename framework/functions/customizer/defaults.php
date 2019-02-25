@@ -104,7 +104,7 @@ function flexia_get_option_defaults() {
 		'post_social_share_gplus' => true,
 		'post_social_share_pinterest' => true,
 		'flexia_blog_excerpt_count' => '60',
-		'flexia_navbar' => false,
+		'flexia_navbar' => true,
 		'flexia_navbar_position' => 'flexia-navbar-static-top',
 		'flexia_logobar_position' => 'flexia-logobar-inline',
 		'flexia_nav_menu_search' => true,
