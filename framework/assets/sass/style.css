@@ -4509,6 +4509,7 @@ a:hover, a:active {
 }
 .main-navigation a.cart-contents span {
   color: #fff !important;
+  padding-left: 0 !important;
 }
 .main-navigation .edd-cart-contents .amount,
 .main-navigation .edd-cart-contents .count {

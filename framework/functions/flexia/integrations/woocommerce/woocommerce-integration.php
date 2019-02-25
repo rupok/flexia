@@ -57,25 +57,22 @@ get_footer();
 }
 
 // Add cart menu  to Navbar
+function add_cart_menu_to_navbar($items, $args)
+{
+    $flexia_woo_cart_menu = get_theme_mod('flexia_woo_cart_menu', false);
 
-$flexia_woo_cart_menu = get_theme_mod('flexia_woo_cart_menu', false);
-
-if( $flexia_woo_cart_menu == true )  {			  
-
-	function add_cart_menu_to_navbar ( $items, $args ) {
-		if( 'primary' === $args -> theme_location ) {
-			$items .= '<li class="menu-item flexia-header-cart">';
-	    	$items .= '<a class="cart-contents wc-cart-contents" href="' . esc_url( wc_get_cart_url() ) . '">';
-	    	$items .= '<span class="flexia-header-cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>';
-			$items .= '<span class="amount"></span> <span class="count"></span>';
-			$items .= '</a>';
-			$items .= '</li>';
-		}
-	return $items;
-	}
-	add_filter('wp_nav_menu_items','add_cart_menu_to_navbar',99,2);
-
+    if ($flexia_woo_cart_menu == true && 'primary' === $args->theme_location) {
+        $items .= '<li class="menu-item flexia-header-cart">';
+        $items .= '<a class="cart-contents wc-cart-contents" href="' . esc_url(wc_get_cart_url()) . '">';
+        $items .= '<span class="flexia-header-cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>';
+        $items .= '<span class="amount"></span> <span class="count"></span>';
+        $items .= '</a>';
+        $items .= '</li>';
+    }
+    return $items;
 }
+add_filter('wp_nav_menu_items', 'add_cart_menu_to_navbar', 99, 2);
+
 
 /**
  * Ensure cart contents update when products are added to the cart via AJAX

@@ -73,20 +73,17 @@ function flexia_setup() {
 	 * Add search box to primary menu
 	 */
 
-	$flexia_nav_menu_search = get_theme_mod('flexia_nav_menu_search', true);
+function flexia_nav_search($items, $args)
+{
+    $flexia_nav_menu_search = get_theme_mod('flexia_nav_menu_search', true);
 
-	if( $flexia_nav_menu_search == true ) :
-
-	function flexia_nav_search($items, $args) {
-	     if( 'primary' === $args -> theme_location ) {
-	     $items .= '<li class="menu-item navbar-search-menu"> <a id="btn-search" href="javascript:void(0);">';
-	     $items .= '<i class="fa fa-search" aria-hidden="true"></i></a></li>';	        }
-		return $items;
-
-	}
-	add_filter('wp_nav_menu_items', 'flexia_nav_search', 98, 2);
-
-	endif;
+		if ($flexia_nav_menu_search == true && 'primary' === $args->theme_location) {
+        $items .= '<li class="menu-item navbar-search-menu"> <a id="btn-search" href="javascript:void(0);">';
+        $items .= '<i class="fa fa-search" aria-hidden="true"></i></a></li>';
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_items', 'flexia_nav_search', 98, 2);
 
 	/**
 	 * Enable support for Post Formats
@@ -188,12 +185,14 @@ require get_template_directory() . '/framework/functions/flexia/breadcrumb.php';
  */
 
 if( class_exists('WooCommerce') )  {
-
 	require get_template_directory() . '/framework/functions/flexia/integrations/woocommerce/woocommerce-integration.php';
 	require get_template_directory() . '/framework/functions/flexia/integrations/woocommerce/class-flexia-woocommerce.php';
 }
 
-require get_template_directory() . '/framework/functions/flexia/integrations/edd/edd-integration.php';
+if (class_exists('Easy_Digital_Downloads')) {
+    require get_template_directory() . '/framework/functions/flexia/integrations/edd/edd-integration.php';
+}
+
 
 /**
  * Customizer additions.
