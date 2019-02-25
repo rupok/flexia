@@ -75,6 +75,7 @@
             $('#customize-control-flexia_logobar_position').hide();
             $('#customize-control-flexia_logobar_bg_color').hide();
             $('#customize-control-flexia_navbar_bg_color').hide();
+            $("#customize-control-main_nav_settings_title, #customize-control-main_nav_settings_title, #customize-control-flexia_nav_menu_search, #customize-control-flexia_woo_cart_menu, #customize-control-flexia_main_nav_menu_link_color, #customize-control-flexia_main_nav_menu_link_hover_color, #customize-control-flexia_main_nav_menu_link_hover_bg, #customize-control-flexia_main_nav_menu_submenu_bg_color, #customize-control-flexia_main_nav_menu_submenu_link_color, #customize-control-flexia_main_nav_menu_submenu_link_color, #customize-control-flexia_main_nav_menu_submenu_link_hover_color, #customize-control-flexia_main_nav_menu_submenu_link_hover_bg, #customize-control-flexia_main_nav_menu_dropdown_animation_control").hide()
         }
 
         function flexia_blog_cotnent_show_controls() {
@@ -82,6 +83,7 @@
             $('#customize-control-flexia_logobar_position').show();
             $('#customize-control-flexia_logobar_bg_color').show();
             $('#customize-control-flexia_navbar_bg_color').show();
+            $("#customize-control-main_nav_settings_title, #customize-control-main_nav_settings_title, #customize-control-flexia_nav_menu_search, #customize-control-flexia_woo_cart_menu, #customize-control-flexia_main_nav_menu_link_color, #customize-control-flexia_main_nav_menu_link_hover_color, #customize-control-flexia_main_nav_menu_link_hover_bg, #customize-control-flexia_main_nav_menu_submenu_bg_color, #customize-control-flexia_main_nav_menu_submenu_link_color, #customize-control-flexia_main_nav_menu_submenu_link_color, #customize-control-flexia_main_nav_menu_submenu_link_hover_color, #customize-control-flexia_main_nav_menu_submenu_link_hover_bg, #customize-control-flexia_main_nav_menu_dropdown_animation_control").show()
         }
     });
 
@@ -107,12 +109,14 @@
             $('#customize-control-flexia_enable_topbar_menu').hide();
             $('#customize-control-flexia_topbar_bg_color').hide();
             $('#customize-control-flexia_topbar_content').hide();
+            $("#customize-control-top_nav_settings_title, #customize-control-top_nav_settings_title, #customize-control-flexia_nav_menu_search, #customize-control-flexia_woo_cart_menu, #customize-control-flexia_top_nav_menu_link_color, #customize-control-flexia_top_nav_menu_link_hover_color, #customize-control-flexia_top_nav_menu_link_hover_bg, #customize-control-flexia_top_nav_menu_submenu_bg_color, #customize-control-flexia_top_nav_menu_submenu_link_color, #customize-control-flexia_top_nav_menu_submenu_link_color, #customize-control-flexia_top_nav_menu_submenu_link_hover_color, #customize-control-flexia_top_nav_menu_submenu_link_hover_bg, #customize-control-flexia_top_nav_menu_dropdown_animation_control").hide()
         }
 
         function flexia_blog_cotnent_show_controls() {
             $('#customize-control-flexia_enable_topbar_menu').show();
             $('#customize-control-flexia_topbar_bg_color').show();
             $('#customize-control-flexia_topbar_content').show();
+            $("#customize-control-top_nav_settings_title, #customize-control-top_nav_settings_title, #customize-control-flexia_nav_menu_search, #customize-control-flexia_woo_cart_menu, #customize-control-flexia_top_nav_menu_link_color, #customize-control-flexia_top_nav_menu_link_hover_color, #customize-control-flexia_top_nav_menu_link_hover_bg, #customize-control-flexia_top_nav_menu_submenu_bg_color, #customize-control-flexia_top_nav_menu_submenu_link_color, #customize-control-flexia_top_nav_menu_submenu_link_color, #customize-control-flexia_top_nav_menu_submenu_link_hover_color, #customize-control-flexia_top_nav_menu_submenu_link_hover_bg, #customize-control-flexia_top_nav_menu_dropdown_animation_control").show()
         }
     });
 
