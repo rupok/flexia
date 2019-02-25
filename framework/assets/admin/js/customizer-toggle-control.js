@@ -102,7 +102,7 @@
 
     // Topbar Settings Show/Hide
     wp.customize.bind("ready", function() {
-        if (lexia_settings.flexia_enable_topbar) {
+        if (flexia_settings.flexia_enable_topbar) {
             flexia_blog_cotnent_show_controls();
         } else {
             flexia_blog_cotnent_hide_controls();
