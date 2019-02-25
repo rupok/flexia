@@ -1,7 +1,7 @@
 <?php
 
 $fields = array(
-    'mega-menu' => __('Mega Menu', 'flexia'),
+    'mega-menu' => __('Flexia Mega Menu', 'flexia'),
 );
 
 function flexia_nav_item_inject_fields($id, $item, $depth, $args)
