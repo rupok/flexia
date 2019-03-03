@@ -15,7 +15,7 @@ if ( ! function_exists( 'flexia_customizer_style' ) ) :
 function flexia_customizer_style() {
 
 	// Get default customizer values
-	$defaults = flexia_generate_defaults();
+	$defaults = flexia_get_option();
 	$header_text_color = get_header_textcolor();
 	
 	?>
