@@ -141,7 +141,6 @@ if (!function_exists('flexia_get_option_defaults')) {
  *  Get default customizer option
  */
 if (!function_exists('flexia_get_option')) {
-
     /**
      * Get default customizer option
      * @param string $key Option key.

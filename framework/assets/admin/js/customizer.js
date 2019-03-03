@@ -6,17 +6,14 @@
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
 
-function generateCSS($dom, $prop, $val) {
-    var $plain_css = $("#flexia-header-style").html();
-    var $esc_dom = $dom.replace(/\(/g, "\\(").replace(/\)/g, "\\)");
-    var $regex = new RegExp($esc_dom + " { " + $prop + ":(.*?)}", "g");
-
-    $plain_css = $plain_css.replace(
-        $regex,
-        "" + $dom + " { " + $prop + ": " + $val + "; }"
-    );
-
-    $("#flexia-header-style").html($plain_css);
+function generateCSS() {
+    $.get(object.ajax_url + '?action=generate_css', {
+        'security': object.nonce
+    }).done(function(response) {
+        $('#flexia-dynamic-css').html(response)
+    }).fail(function() {
+        alert('Failed to load response!')
+    })
 }
 
 (function($) {
@@ -258,63 +255,39 @@ function generateCSS($dom, $prop, $val) {
     // Main nav
     wp.customize("flexia_main_nav_menu_link_color", function(value) {
         value.bind(function(to) {
-            generateCSS(".main-navigation .nav-menu li > a", "color", to);
+            generateCSS();
         });
     });
 
     wp.customize("flexia_main_nav_menu_link_hover_color", function(value) {
         value.bind(function(to) {
-            generateCSS(
-                ".main-navigation .nav-menu li:hover > a:not(.cart-contents), .main-navigation .nav-menu li.current-menu-item > a:not(.cart-contents), .main-navigation .nav-menu li.current-menu-ancestor > a:not(.cart-contents)",
-                "color",
-                to
-            );
+            generateCSS();
         });
     });
 
     wp.customize("flexia_main_nav_menu_link_hover_bg", function(value) {
         value.bind(function(to) {
-            generateCSS(
-                ".main-navigation .nav-menu li:hover > a:not(.cart-contents), .main-navigation .nav-menu li.current-menu-item > a:not(.cart-contents), .main-navigation .nav-menu li.current-menu-ancestor > a:not(.cart-contents)",
-                "background-color",
-                to
-            );
+            generateCSS();
         });
     });
     wp.customize("flexia_main_nav_menu_submenu_bg_color", function(value) {
         value.bind(function(to) {
-            generateCSS(
-                ".main-navigation .nav-menu li ul",
-                "background-color",
-                to
-            );
+            generateCSS();
         });
     });
     wp.customize("flexia_main_nav_menu_submenu_link_color", function(value) {
         value.bind(function(to) {
-            generateCSS(
-                ".main-navigation .nav-menu li ul li > a, .main-navigation .nav-menu li ul.flexia-mega-menu li:hover > a:not(.cart-contents)",
-                "color",
-                to
-            );
+            generateCSS();
         });
     });
     wp.customize("flexia_main_nav_menu_submenu_link_hover_color", function(value) {
         value.bind(function(to) {
-            generateCSS(
-                ".main-navigation .nav-menu li ul li:hover > a:not(.cart-contents), .main-navigation .nav-menu li ul li.current-menu-item > a:not(.cart-contents), .main-navigation .nav-menu li ul li.current-menu-ancestor > a:not(.cart-contents), .main-navigation .nav-menu li ul.flexia-mega-menu li > a:not(.cart-contents):hover",
-                "color",
-                to
-            );
+            generateCSS();
         });
     });
     wp.customize("flexia_main_nav_menu_submenu_link_hover_bg", function(value) {
         value.bind(function(to) {
-            generateCSS(
-                ".main-navigation .nav-menu li ul li:hover > a:not(.cart-contents), .main-navigation .nav-menu li ul li.current-menu-item > a:not(.cart-contents), .main-navigation .nav-menu li ul li.current-menu-ancestor > a:not(.cart-contents), .main-navigation .nav-menu li ul.flexia-mega-menu li > a:not(.cart-contents):hover",
-                "background-color",
-                to
-            );
+            generateCSS();
         });
     });
     
@@ -327,63 +300,39 @@ function generateCSS($dom, $prop, $val) {
     // Topbar nav
     wp.customize("flexia_top_nav_menu_link_color", function(value) {
         value.bind(function(to) {
-            generateCSS(".topbar-navigation .nav-menu li > a", "color", to);
+            generateCSS();
         });
     });
 
     wp.customize("flexia_top_nav_menu_link_hover_color", function(value) {
         value.bind(function(to) {
-            generateCSS(
-                ".topbar-navigation .nav-menu li:hover > a, .topbar-navigation .nav-menu li.current-menu-item > a, .topbar-navigation .nav-menu li.current-menu-ancestor > a",
-                "color",
-                to
-            );
+            generateCSS();
         });
     });
 
     wp.customize("flexia_top_nav_menu_link_hover_bg", function(value) {
         value.bind(function(to) {
-            generateCSS(
-                ".topbar-navigation .nav-menu li:hover > a, .topbar-navigation .nav-menu li.current-menu-item > a, .topbar-navigation .nav-menu li.current-menu-ancestor > a",
-                "background-color",
-                to
-            );
+            generateCSS();
         });
     });
     wp.customize("flexia_top_nav_menu_submenu_bg_color", function(value) {
         value.bind(function(to) {
-            generateCSS(
-                ".topbar-navigation .nav-menu li ul",
-                "background-color",
-                to
-            );
+            generateCSS();
         });
     });
     wp.customize("flexia_top_nav_menu_submenu_link_color", function(value) {
         value.bind(function(to) {
-            generateCSS(
-                ".topbar-navigation .nav-menu li ul li > a",
-                "color",
-                to
-            );
+            generateCSS();
         });
     });
     wp.customize("flexia_top_nav_menu_submenu_link_hover_color", function(value) {
         value.bind(function(to) {
-            generateCSS(
-                ".topbar-navigation .nav-menu li ul li:hover > a, .topbar-navigation .nav-menu li ul li.current-menu-item > a, .topbar-navigation .nav-menu li ul li.current-menu-ancestor > a",
-                "color",
-                to
-            );
+            generateCSS();
         });
     });
     wp.customize("flexia_top_nav_menu_submenu_link_hover_bg", function(value) {
         value.bind(function(to) {
-            generateCSS(
-                ".topbar-navigation .nav-menu li ul li:hover > a, .topbar-navigation .nav-menu li ul li.current-menu-item > a, .topbar-navigation .nav-menu li ul li.current-menu-ancestor > a",
-                "background-color",
-                to
-            );
+            generateCSS();
         });
     });
     
