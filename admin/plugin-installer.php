@@ -239,6 +239,15 @@ if (!class_exists('Flexia_Plugin_Installer')) {
                     'banner' => get_template_directory_uri() . '/admin/img/eael-pro-banner.png',
                     'doc_url' => 'https://essential-addons.com/elementor',
                 ),
+                array(
+                    'name' => 'Flexia - Pro',
+                    'url' => 'https://wpdeveloper.net/themes/flexia/',
+                    'desc' => 'Adds premium features for the theme Flexia.',
+                    'author' => 'Codetic',
+                    'author_url' => 'https://flexia.pro/',
+                    'banner' => get_template_directory_uri() . '/admin/img/flexia-banner.png',
+                    'doc_url' => 'https://flexia.pro/docs/',
+                ),
             );
 
             foreach ($this->pro_plugins as $plugin) {
