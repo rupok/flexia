@@ -7,14 +7,16 @@
 class Flexia_Admin
 {
     protected $theme;
+    protected $installer;
 
     public function __construct()
     {
-        // init vars
-        $this->theme = wp_get_theme();
-
         // load files
-        $this->load_files();
+		$this->load_files();
+		
+        // init vars
+		$this->theme = wp_get_theme();
+		$this->installer = new Flexia_Plugin_Installer();
 
         // actions
         add_action('admin_menu', array($this, 'flexia_admin_menu'));
@@ -191,17 +193,15 @@ class Flexia_Admin
 			</div>
 
 			<div class="flexia-plugins-wrapper">';
-        if (class_exists('Flexia_Plugin_Installer')) {
-            $installer = new Flexia_Plugin_Installer();
-
-            if (@fsockopen('www.wordpress.org', 80)) {
-                $installer->free_plugins();
-                $installer->premium_plugins();
-            } else {
-                $installer->premium_plugins();
-            }
-        }
-        echo '</div>
+			if (class_exists('Flexia_Plugin_Installer')) {
+				if (@fsockopen('www.wordpress.org', 80)) {
+					$this->installer->free_plugins();
+					$this->installer->premium_plugins();
+				} else {
+					$this->installer->premium_plugins();
+				}
+			}
+			echo '</div>
 		</div>';
     }
 }
