@@ -26,7 +26,7 @@ class Flexia_Admin
     /**
      * Load required files.
      *
-     * @since     1.0.0
+     * @since     1.0.4
      */
     protected function load_files()
     {
@@ -36,7 +36,7 @@ class Flexia_Admin
     /**
      * Register the stylesheets for the admin area.
      *
-     * @since    1.0.0
+     * @since    1.0.4
      */
     public function flexia_admin_enqueue_scripts()
     {
@@ -46,28 +46,29 @@ class Flexia_Admin
     /**
      * Create Dashboard Pages
      *
-     * @since     1.0.0
+     * @since     1.0.4
      */
     public function flexia_admin_menu()
     {
-        add_menu_page(
-            'flexia',
-            'flexia',
-            'manage_options',
-            'flexia',
-            array($this, 'flexia_dashboard_page'),
-            get_template_directory_uri() . '/admin/img/flexia-logo-white.svg',
-            199
-        );
-
-        add_submenu_page(
-            'flexia',
-            'Rec. Plugins',
-            'Rec. Plugins',
-            'manage_options',
-            'flexia-recommended-plugins',
-            array($this, 'flexia_rec_plugins_page')
-        );
+		if(class_exists('Flexia_Core')) {
+			do_action('flexia_admin_menu', $this);
+		} else {
+			add_theme_page(
+				'Flexia',
+				'Flexia',
+				'manage_options',
+				'flexia',
+				array($this, 'flexia_dashboard_page')
+			);
+		
+			add_theme_page(
+				'Rec. Plugins',
+				'Rec. Plugins',
+				'manage_options',
+				'flexia-recommended-plugins',
+				array($this, 'flexia_rec_plugins_page')
+			);
+		}
     }
 
     public function flexia_dashboard_page()

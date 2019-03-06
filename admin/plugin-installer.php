@@ -5,7 +5,7 @@ if (!class_exists('Flexia_Plugin_Installer')) {
     /**
      * Flexia Plugin Installer Class
      *
-     * @since     1.0.0
+     * @since     1.0.4
      */
     class Flexia_Plugin_Installer
     {
@@ -21,7 +21,7 @@ if (!class_exists('Flexia_Plugin_Installer')) {
         /**
          * Fail if plugin install/activation fails
          *
-         * @since   1.0.0
+         * @since   1.0.4
          */
         public function fail_on_error($thing)
         {
@@ -33,7 +33,7 @@ if (!class_exists('Flexia_Plugin_Installer')) {
         /**
          * Generates all free plugins
          *
-         * @since   1.0.0
+         * @since   1.0.4
          */
         public function free_plugins()
         {
@@ -106,7 +106,7 @@ if (!class_exists('Flexia_Plugin_Installer')) {
         /**
          * A method to get the main plugin file
          *
-         * @since   1.0.0
+         * @since   1.0.4
          */
         public function get_plugin_file($plugin_slug)
         {
@@ -128,7 +128,7 @@ if (!class_exists('Flexia_Plugin_Installer')) {
         /**
          * Plugin Activation Script
          *
-         * @since   1.0.0
+         * @since   1.0.4
          */
         public function free_plugins_activation_script()
         {
@@ -173,7 +173,7 @@ if (!class_exists('Flexia_Plugin_Installer')) {
         /**
          * Install \ Activate a plugin
          *
-         * @since   1.0.0
+         * @since   1.0.4
          */
         public function free_plugins_installer()
         {
@@ -195,7 +195,7 @@ if (!class_exists('Flexia_Plugin_Installer')) {
         /**
          * Install a free plugin
          *
-         * @since   1.0.0
+         * @since   1.0.4
          */
         public function install_a_free_plugin($slug, $file)
         {
@@ -225,20 +225,11 @@ if (!class_exists('Flexia_Plugin_Installer')) {
         /**
          * Generates all premium plugins
          *
-         * @since   1.0.0
+         * @since   1.0.4
          */
         public function premium_plugins()
         {
             $this->pro_plugins = array(
-                array(
-                    'name' => 'Essential Addons for Elementor - Pro',
-                    'url' => 'https://wpdeveloper.net/flexia-essential-addons-elementor',
-                    'desc' => 'Ultimate elements  library for Elementor WordPress Page Builder. 30+ stunning elements for Elementor.',
-                    'author' => 'Codetic',
-                    'author_url' => 'https://essential-addons.com',
-                    'banner' => get_template_directory_uri() . '/admin/img/eael-pro-banner.png',
-                    'doc_url' => 'https://essential-addons.com/elementor',
-                ),
                 array(
                     'name' => 'Flexia - Pro',
                     'url' => 'https://wpdeveloper.net/themes/flexia/',
@@ -247,6 +238,15 @@ if (!class_exists('Flexia_Plugin_Installer')) {
                     'author_url' => 'https://flexia.pro/',
                     'banner' => get_template_directory_uri() . '/admin/img/flexia-banner.png',
                     'doc_url' => 'https://flexia.pro/docs/',
+                ),
+                array(
+                    'name' => 'Essential Addons for Elementor - Pro',
+                    'url' => 'https://wpdeveloper.net/flexia-essential-addons-elementor',
+                    'desc' => 'Ultimate elements  library for Elementor WordPress Page Builder. 30+ stunning elements for Elementor.',
+                    'author' => 'Codetic',
+                    'author_url' => 'https://essential-addons.com',
+                    'banner' => get_template_directory_uri() . '/admin/img/eael-pro-banner.png',
+                    'doc_url' => 'https://essential-addons.com/elementor',
                 ),
             );
 
@@ -266,7 +266,7 @@ if (!class_exists('Flexia_Plugin_Installer')) {
         /**
          * This method will render recomended plugin block
          *
-         * @since   1.0.0
+         * @since   1.0.4
          */
         public function render_free_template($plugin, $api, $slug_name, $file_name, $btn_class, $btn_text)
         {
@@ -298,7 +298,7 @@ if (!class_exists('Flexia_Plugin_Installer')) {
         /**
          * This method will render premium plugin block
          *
-         * @since   1.0.0
+         * @since   1.0.4
          */
         public function render_premium_template($name, $url, $desc, $author, $author_url, $banner, $doc_url)
         {
@@ -307,7 +307,7 @@ if (!class_exists('Flexia_Plugin_Installer')) {
 					<img src="' . esc_url($banner) . '" alt="' . esc_attr($name) . '">
 				</div>
 				<div class="content">
-					<h4 class="title">' . __($name, 'felxia-core') . '</h4>
+					<h4 class="title">' . $name . '</h4>
 					<p>' . esc_html($desc, 'flexia') . '</p>
 					<span class="by-author">' . __('By:', 'flexia') . ' <a href="' . esc_url($author_url) . '">' . esc_html($author, 'flexia') . '</a></span>
 				</div>
