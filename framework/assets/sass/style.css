@@ -3334,10 +3334,11 @@ big {
 /* Site Footer */
 .flexia-site-footer {
   background-color: #262625;
+  padding: 0.8em 0;
 }
 .flexia-site-footer .site-info {
-  color: #fff;
-  font-size: .85em;
+  color: #9a9a9a;
+  font-size: .8em;
   margin-top: .5em;
 }
 
@@ -3371,10 +3372,24 @@ big {
           flex: 1 1 auto;
   min-width: 250px;
   margin: 1em;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.flexia-colophon-inner .widget .widget-title {
+  color: #fff;
+}
+.flexia-colophon-inner .widget a {
+  color: #cbced3;
 }
 
 .flexia-footer-widget-area {
   padding: .5em;
+}
+.flexia-footer-widget-area .fleixa-footer-widget-area-wrap {
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
 }
 
 .flexia-back-to-top {
@@ -4451,9 +4466,10 @@ a:hover, a:active {
 }
 .main-navigation .nav-menu li ul li > a {
   font-size: 13px;
-  line-height: 45px;
+  line-height: 21px;
   text-transform: none;
   color: #4d4d4d;
+  padding: 12px 15px;
 }
 .main-navigation .nav-menu li ul li:hover > a, .main-navigation .nav-menu li ul li.current-menu-item > a, .main-navigation .nav-menu li ul li.current-menu-ancestor > a {
   color: #1b1f21;
@@ -4483,7 +4499,7 @@ a:hover, a:active {
     background-color: #ffffff;
   }
   .main-navigation .nav-menu li ul li > a {
-    line-height: 42px;
+    line-height: 18px;
     color: #4d4d4d;
     background-color: #ffffff;
     border: 1px solid #dddddd;
@@ -4533,8 +4549,9 @@ a:hover, a:active {
 }
 .topbar-navigation .nav-menu li ul li > a {
   font-size: 12px;
-  line-height: 45px;
+  line-height: 21px;
   color: #cbced3;
+  padding: 12px 15px;
 }
 .topbar-navigation .nav-menu li ul li:hover > a, .topbar-navigation .nav-menu li ul li.current-menu-item > a, .topbar-navigation .nav-menu li ul li.current-menu-ancestor > a {
   color: #ffffff;
@@ -4559,7 +4576,7 @@ a:hover, a:active {
     background-color: transparent;
   }
   .topbar-navigation .nav-menu li ul li > a {
-    line-height: 42px;
+    line-height: 18px;
     color: #cbced3;
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -4606,7 +4623,6 @@ a:hover, a:active {
 /* Footer Menu */
 .footer-navigation {
   width: 100%;
-  margin: 1em auto 0;
 }
 
 .flexia-footer-menu {
@@ -4658,7 +4674,6 @@ a:hover, a:active {
 .flexia-footer-menu li a {
   font-size: 13px;
   text-align: center;
-  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -5117,7 +5132,7 @@ body.transparent .flexia-wrapper > .content-area {
   font-size: 1em;
   font-weight: 300;
   line-height: 1.5;
-  padding: 2em;
+  padding: 1.5em;
   position: relative;
   text-align: left;
   word-wrap: break-word;
@@ -5789,7 +5804,7 @@ body.transparent .flexia-wrapper > .content-area {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
       transform: scale(1.25);
-  margin-right: .5em;
+  margin-right: .3em;
 }
 
 .header-overlay {
@@ -5869,7 +5884,7 @@ body.blog .flexia-wrapper > .content-area {
 }
 body.blog .flexia-wrapper > .content-area article.post {
   background-color: #fff;
-  padding: 2.5em;
+  padding: 2em;
 }
 
 body.archive .flexia-wrapper > .content-area {
@@ -5878,7 +5893,7 @@ body.archive .flexia-wrapper > .content-area {
 }
 body.archive .flexia-wrapper > .content-area article.post {
   background-color: #fff;
-  padding: 2.5em;
+  padding: 2em;
 }
 
 .flexia-wrapper.flexia-container {
@@ -6274,9 +6289,6 @@ body.archive .flexia-wrapper > .content-area article.post {
   display: none;
 }
 
-body:not(.single-post) .flexia-wrapper > .content-area {
-  padding: 2.5em;
-}
 body .flexia-wrapper.flexia-blank-container > .content-area {
   padding: 0;
 }

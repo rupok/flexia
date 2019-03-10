@@ -32,9 +32,10 @@
                 li {
                     > a {
                         font-size: 13px;
-                        line-height: 45px;
+                        line-height: 21px;
                         text-transform: none;
                         color: #4d4d4d;
+                        padding: 12px 15px;
                     }
 
                     &:hover,
@@ -80,7 +81,7 @@
 
                     li {
                         > a {
-                            line-height: 42px;
+                            line-height: 18px;
                             color: #4d4d4d;
                             background-color: #ffffff;
                             border: 1px solid #dddddd;
