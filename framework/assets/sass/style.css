@@ -3338,8 +3338,8 @@ big {
 }
 .flexia-site-footer .site-info {
   color: #9a9a9a;
-  font-size: .8em;
-  margin-top: .5em;
+  font-size: 0.8em;
+  margin-top: 0.5em;
 }
 
 .flexia-colophon-inner {
@@ -3347,30 +3347,9 @@ big {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-align-content: center;
-      -ms-flex-line-pack: center;
-          align-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  padding: .5em 0;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  padding: 0.5em 0;
 }
 .flexia-colophon-inner .widget {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  min-width: 250px;
   margin: 1em;
   background-color: transparent;
   -webkit-box-shadow: none;
@@ -3384,12 +3363,14 @@ big {
 }
 
 .flexia-footer-widget-area {
-  padding: .5em;
+  padding: 0.5em;
 }
 .flexia-footer-widget-area .fleixa-footer-widget-area-wrap {
-  -webkit-flex-basis: 100%;
-      -ms-flex-preferred-size: 100%;
-          flex-basis: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow: hidden;
 }
 
 .flexia-back-to-top {
@@ -3405,9 +3386,9 @@ big {
   width: 40px;
   text-align: center;
   z-index: 10;
-  -webkit-transition: opacity .3s ease-in-out;
-  -o-transition: opacity .3s ease-in-out;
-  transition: opacity .3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 .flexia-back-to-top:visited {
   font-size: 20px;
@@ -3422,9 +3403,9 @@ big {
   width: 40px;
   text-align: center;
   z-index: 10;
-  -webkit-transition: opacity .3s ease-in-out;
-  -o-transition: opacity .3s ease-in-out;
-  transition: opacity .3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 .flexia-back-to-top:focus {
   background: rgba(0, 0, 0, 0.75);
@@ -3435,20 +3416,24 @@ big {
   color: #fff;
 }
 
-@media all and (min-width: 768px) {
-  .flexia-colophon-inner .widget {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 1 30%;
-        -ms-flex: 1 1 30%;
-            flex: 1 1 30%;
+@media all and (max-width: 960px) {
+  .flexia-colophon-inner {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+
+  .fleixa-footer-widget-area-wrap {
+    -webkit-flex-basis: 50% !important;
+        -ms-flex-preferred-size: 50% !important;
+            flex-basis: 50% !important;
   }
 }
-@media all and (min-width: 960px) {
-  .flexia-colophon-inner .widget {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 1 20%;
-        -ms-flex: 1 1 20%;
-            flex: 1 1 20%;
+@media all and (max-width: 768px) {
+  .fleixa-footer-widget-area-wrap {
+    -webkit-flex-basis: 100% !important;
+        -ms-flex-preferred-size: 100% !important;
+            flex-basis: 100% !important;
   }
 }
 .flexia-sidebar {
