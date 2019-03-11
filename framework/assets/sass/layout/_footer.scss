@@ -1,19 +1,23 @@
 /* Site Footer */
 .flexia-site-footer {
-    background-color: $color__dark;
+    background-color: $color__footer-background;
     padding: 0.8em 0;
+    
     .site-info {
-        color: $color__footer_copyright;
+        color: $color__footer-copyright;
         font-size: 0.8em;
         margin-top: 0.5em;
     }
 }
 .flexia-colophon-inner {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 0.5em 0;
 
     .widget {
         margin: 1em;
+        color: $color__footer-widget-text;
         background-color: transparent;
         box-shadow: none;
 
@@ -27,6 +31,7 @@
     }
 }
 .flexia-footer-widget-area {
+    background-color: $color__footer-widget-background;
     padding: 0.5em;
 
     .fleixa-footer-widget-area-wrap {
@@ -74,9 +79,6 @@
     }
 }
 @media all and (max-width: 960px) {
-    .flexia-colophon-inner {
-        flex-wrap: wrap;
-    }
     .fleixa-footer-widget-area-wrap {
         flex-basis: 50% !important;
     }

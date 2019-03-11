@@ -3347,10 +3347,18 @@ big {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0.5em 0;
 }
 .flexia-colophon-inner .widget {
   margin: 1em;
+  color: #cfcfcf;
   background-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -3363,6 +3371,7 @@ big {
 }
 
 .flexia-footer-widget-area {
+  background-color: #313131;
   padding: 0.5em;
 }
 .flexia-footer-widget-area .fleixa-footer-widget-area-wrap {
@@ -3417,12 +3426,6 @@ big {
 }
 
 @media all and (max-width: 960px) {
-  .flexia-colophon-inner {
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-  }
-
   .fleixa-footer-widget-area-wrap {
     -webkit-flex-basis: 50% !important;
         -ms-flex-preferred-size: 50% !important;
