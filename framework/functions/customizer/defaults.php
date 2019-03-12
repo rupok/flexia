@@ -76,6 +76,9 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_top_nav_menu_submenu_link_hover_bg' => 'rgba(0, 0, 0, 0.5)',
             'flexia_top_nav_menu_dropdown_animation' => 'to-top',
             'footer_widget_area_bg_color' => '#313131',
+            'footer_widget_area_content_color' => '#cfcfcf',
+            'footer_widget_area_link_color' => '#cbced3',
+            'footer_widget_area_link_hover_color' => '#ff5544',
             'flexia_footer_bg_color' => '#262625',
             'flexia_footer_content_color' => '#9a9a9a',
             'flexia_footer_link_color' => '#ffffff',
@@ -126,8 +129,8 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_overlay_search_label_font_color' => '#fff',
             'header_widget_area' => false,
             'footer_widget_area' => false,
-            'footer_bottom' => false,
-            'flexia_enable_footer_menu' => false,
+            'footer_bottom' => true,
+            'flexia_enable_footer_menu' => true,
             'flexia_scroll_to_top' => false,
             'flexia_footer_content' => '&copy; Flexia 2019. All right reserved by Codetic.',
 
@@ -151,7 +154,7 @@ if (!function_exists('flexia_get_option')) {
         $default_options = flexia_get_option_defaults();
 
         if (isset($key)) {
-            return get_theme_mod($key, ($default_options[$key] ?: null));
+            return get_theme_mod($key, ($default_options[$key] ? $default_options[$key] : null));
         }
 
         foreach ($default_options as $key => $val) {

@@ -2055,7 +2055,6 @@ function flexia_customize_register($wp_customize)
     )));
 
     // Header widget area background
-
     $wp_customize->add_setting('header_widget_area_bg_color', array(
         'default' => $defaults['header_widget_area_bg_color'],
         'transport' => 'postMessage',
@@ -2073,60 +2072,13 @@ function flexia_customize_register($wp_customize)
             ))
     );
 
-    // s Settings
-
+    // Footer Settings
     $wp_customize->add_section('flexia_footer_settings', array(
         'title' => __('Footer', 'flexia'),
         'priority' => 60,
     ));
 
-    // Enable Footer widget area
-
-    $wp_customize->add_setting('footer_widget_area', array(
-        'default' => $defaults['footer_widget_area'],
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'flexia_sanitize_checkbox',
-    ));
-
-    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'footer_widget_area', array(
-        'label' => esc_html__('Enable Footer Widget Area?', 'flexia'),
-        'section' => 'flexia_footer_settings',
-        'settings' => 'footer_widget_area',
-        'type' => 'light', // light, ios, flat
-    )));
-
-    // Enable Bottom Footer
-
-    $wp_customize->add_setting('footer_bottom', array(
-        'default' => $defaults['footer_bottom'],
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'flexia_sanitize_checkbox',
-    ));
-
-    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'footer_bottom', array(
-        'label' => esc_html__('Disable Bottom Footer?', 'flexia'),
-        'section' => 'flexia_footer_settings',
-        'settings' => 'footer_bottom',
-        'type' => 'light', // light, ios, flat
-    )));
-
-    // Enable footer menu
-
-    $wp_customize->add_setting('flexia_enable_footer_menu', array(
-        'default' => $defaults['flexia_enable_footer_menu'],
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'flexia_sanitize_checkbox',
-    ));
-
-    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'flexia_enable_footer_menu', array(
-        'label' => esc_html__('Enable Footer Menu?', 'flexia'),
-        'section' => 'flexia_footer_settings',
-        'settings' => 'flexia_enable_footer_menu',
-        'type' => 'light', // light, ios, flat
-    )));
-
     // Enable Scrol to Top
-
     $wp_customize->add_setting('flexia_scroll_to_top', array(
         'default' => $defaults['flexia_scroll_to_top'],
         'capability' => 'edit_theme_options',
@@ -2137,6 +2089,31 @@ function flexia_customize_register($wp_customize)
         'label' => esc_html__('Enable Scrol to top?', 'flexia'),
         'section' => 'flexia_footer_settings',
         'settings' => 'flexia_scroll_to_top',
+        'type' => 'light', // light, ios, flat
+    )));
+
+    $wp_customize->add_setting('footer_widget_settings_title', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_html',
+    ));
+
+    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'footer_widget_settings_title', array(
+        'label' => __('Footer Widget', 'flexia'),
+        'settings' => 'footer_widget_settings_title',
+        'section' => 'flexia_footer_settings',
+    )));
+
+    // Enable Footer widget area
+    $wp_customize->add_setting('footer_widget_area', array(
+        'default' => $defaults['footer_widget_area'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'footer_widget_area', array(
+        'label' => esc_html__('Enable Footer Widget Area?', 'flexia'),
+        'section' => 'flexia_footer_settings',
+        'settings' => 'footer_widget_area',
         'type' => 'light', // light, ios, flat
     )));
 
@@ -2157,11 +2134,101 @@ function flexia_customize_register($wp_customize)
             ))
     );
 
+    $wp_customize->add_setting('footer_widget_area_content_color', array(
+        'default' => $defaults['footer_widget_area_content_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'footer_widget_area_content_color',
+            array(
+                'label' => __('Footer Widget Content Color', 'flexia'),
+                'section' => 'flexia_footer_settings',
+                'settings' => 'footer_widget_area_content_color',
+            ))
+    );
+
+    $wp_customize->add_setting('footer_widget_area_link_color', array(
+        'default' => $defaults['footer_widget_area_link_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'footer_widget_area_link_color',
+            array(
+                'label' => __('Footer Widget Link Color', 'flexia'),
+                'section' => 'flexia_footer_settings',
+                'settings' => 'footer_widget_area_link_color',
+            ))
+    );
+
+    $wp_customize->add_setting('footer_widget_area_link_hover_color', array(
+        'default' => $defaults['footer_widget_area_link_hover_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'footer_widget_area_link_hover_color',
+            array(
+                'label' => __('Footer Widget Link Hover Color', 'flexia'),
+                'section' => 'flexia_footer_settings',
+                'settings' => 'footer_widget_area_link_hover_color',
+            ))
+    );
+    
+    $wp_customize->add_setting('footer_copyright_settings_title', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_html',
+    ));
+
+    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'footer_copyright_settings_title', array(
+        'label' => __('Copyright Area', 'flexia'),
+        'settings' => 'footer_copyright_settings_title',
+        'section' => 'flexia_footer_settings',
+    )));
+
     $wp_customize->add_setting('flexia_footer_bg_color', array(
         'default' => $defaults['flexia_footer_bg_color'],
         'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
+
+    // Enable Bottom Footer
+    $wp_customize->add_setting('footer_bottom', array(
+        'default' => $defaults['footer_bottom'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'footer_bottom', array(
+        'label' => esc_html__('Enable Bottom Footer?', 'flexia'),
+        'section' => 'flexia_footer_settings',
+        'settings' => 'footer_bottom',
+        'type' => 'light', // light, ios, flat
+    )));
+
+    // Enable footer menu
+    $wp_customize->add_setting('flexia_enable_footer_menu', array(
+        'default' => $defaults['flexia_enable_footer_menu'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'flexia_enable_footer_menu', array(
+        'label' => esc_html__('Enable Footer Menu?', 'flexia'),
+        'section' => 'flexia_footer_settings',
+        'settings' => 'flexia_enable_footer_menu',
+        'type' => 'light', // light, ios, flat
+    )));
 
     $wp_customize->add_control(
         new WP_Customize_Color_Control(

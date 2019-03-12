@@ -27,6 +27,10 @@
 
         a {
             color: $color__footer-widget-link;
+
+            &:hover {
+                color: $color__footer-widget-link-hover;
+            }
         }
     }
 }

@@ -393,48 +393,49 @@ function generateCSS() {
     // Footer Area
     wp.customize("footer_widget_area_bg_color", function(value) {
         value.bind(function(to) {
-            $(".flexia-footer-widget-area").css("background-color", to);
+            generateCSS();
+        });
+    });
+    
+    wp.customize("footer_widget_area_content_color", function(value) {
+        value.bind(function(to) {
+            generateCSS();
+        });
+    });
+    
+    wp.customize("footer_widget_area_link_color", function(value) {
+        value.bind(function(to) {
+            generateCSS();
+        });
+    });
+    
+    wp.customize("footer_widget_area_link_hover_color", function(value) {
+        value.bind(function(to) {
+            generateCSS();
         });
     });
 
     wp.customize("flexia_footer_bg_color", function(value) {
         value.bind(function(to) {
-            $(".flexia-site-footer").css("background-color", to);
+            generateCSS();
         });
     });
 
     wp.customize("flexia_footer_content_color", function(value) {
         value.bind(function(to) {
-            $(".flexia-site-footer .site-info").css("color", to);
+            generateCSS();
         });
     });
 
     wp.customize("flexia_footer_link_color", function(value) {
         value.bind(function(to) {
-            $(".flexia-site-footer .site-info a, .flexia-footer-menu li a").css(
-                "color",
-                to
-            );
+            generateCSS();
         });
     });
 
     wp.customize("flexia_footer_link_hover_color", function(value) {
         value.bind(function(to) {
-            var colorLink = $(
-                ".flexia-site-footer .site-info a, .flexia-footer-menu li a"
-            ).css("color");
-            $(
-                ".flexia-site-footer .site-info a, .flexia-footer-menu li a"
-            ).hover(
-                function() {
-                    //mouse over
-                    $(this).css("color", to);
-                },
-                function() {
-                    //mouse out
-                    $(this).css("color", colorLink);
-                }
-            );
+            generateCSS();
         });
     });
 })(jQuery);
