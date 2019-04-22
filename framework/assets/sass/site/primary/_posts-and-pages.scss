@@ -9,7 +9,7 @@ body.blog {
     >.content-area {
       article.post {
         background-color: $color__light;
-        padding: 2.5em;
+        padding: 2em;
       }
       background-color: transparent;
       padding: 0;
@@ -21,7 +21,7 @@ body.archive {
     >.content-area {
       article.post {
         background-color: $color__light;
-        padding: 2.5em;
+        padding: 2em;
       }
       background-color: transparent;
       padding: 0;
@@ -433,13 +433,13 @@ body.archive {
   }
 }
 body {
-  &:not(.single-post) {
-    .flexia-wrapper {
-      >.content-area {
-        padding: 2.5em;
-      }
-    }
-  }
+  // &:not(.single-post) {
+  //   .flexia-wrapper {
+  //     >.content-area {
+  //       padding: 2.5em;
+  //     }
+  //   }
+  // }
   .flexia-wrapper.flexia-blank-container {
     >.content-area {
       padding: 0;

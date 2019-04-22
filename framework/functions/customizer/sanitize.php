@@ -53,7 +53,7 @@ if ( ! function_exists( 'flexia_sanitize_checkbox' ) ) :
  */
 function flexia_sanitize_checkbox( $input ) {
 	if ( $input ) {
-		$output = '1';
+		$output = true;
 	} else {
 		$output = false;
 	}

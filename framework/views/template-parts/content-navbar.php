@@ -15,6 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 
 $navbar_class = get_theme_mod('flexia_navbar_position', 'flexia-navbar-static-top');
+$dropdown_animation = 'flexia-menu-dropdown-animate-' . get_theme_mod('flexia_main_nav_menu_dropdown_animation', 'to-top');
 $flexia_logobar_position = get_theme_mod('flexia_logobar_position', 'flexia-logobar-inline');
 $flexia_custom_logo_id = get_theme_mod( 'custom_logo' );
 $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'full' );
@@ -55,18 +56,15 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 			<?php endif; ?>
 
 			<nav id="site-navigation" class="flexia-menu main-navigation">
-				<a class="flexia-nav-btn"></a>
-
 				<?php
 
 					if ( has_nav_menu( 'primary' ) ) :
-					wp_nav_menu( array(
-						'theme_location' => 'primary',
-						'menu_id'        => 'flexia-primary-menu',
-						'menu_class'     => 'nav-menu flexia-primary-menu',
-						'container'      => false,
-					) );
-
+						wp_nav_menu( array(
+							'theme_location' => 'primary',
+							'menu_id'        => 'flexia-primary-menu',
+							'menu_class'     => 'nav-menu flexia-primary-menu ' . $dropdown_animation,
+							'container'      => false,
+						) );
 					else :
 
 					  echo '<ul class="flexia-primary-menu"><li><a href="' . home_url( '/' ) . 'wp-admin/nav-menus.php">Assign a Menu</a></li></ul>';

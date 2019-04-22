@@ -13,8 +13,7 @@ if ( ! function_exists( 'flexia_widgets_init' ) ) :
  * Register widgetized area and update sidebar with default widgets
  */
 add_action( 'widgets_init', 'flexia_widgets_init' );
-function flexia_widgets_init() 
-{
+function flexia_widgets_init() {
 	// Set up our array of widgets	
 	$widgets = array(
 		'sidebar-left' => __( 'Sidebar Left', 'flexia' ),

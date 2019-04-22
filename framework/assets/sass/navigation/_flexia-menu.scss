@@ -1,201 +1,393 @@
-.nav-menu, .nav-menu ul {
-	margin: 0;
-	padding: 0;
+.flexia-navbar-inner {
+    position: relative;
 }
 
-.nav-menu li a {
-    cursor: pointer;
-    -moz-transition: ease-out 0.3s 0.1s;
-    -o-transition: ease-out 0.3s 0.1s;
-    -webkit-transition: ease-out 0.3s;
-    -webkit-transition-delay: 0.1s;
-    transition: ease-out 0.3s 0.1s;
-}
-
-.flexia-menu ul {
-    z-index: 9999;
+%ul {
     margin: 0;
     padding: 0;
-    flex-wrap: wrap;
-}
-
-.flexia-menu ul,
-.flexia-menu ul li,
-.flexia-menu ul li a {
     list-style: none;
-    line-height: 1;
-    display: flex;
-    position: relative;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box
 }
 
-.flexia-menu.topbar-navigation ul, .flexia-menu.topbar-navigation ul li, .flexia-menu.topbar-navigation ul li a {
-    display: block;
+%li {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
 }
 
-.flexia-menu > ul:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0
-}
+.flexia-menu {
+    .nav-menu {
+        @extend %ul;
 
-.flexia-menu > ul > li {
-    float: left
-}
+        li {
+            @extend %li;
+            position: relative;
+            float: left;
+            display: inline-block;
 
-.flexia-menu ul ul {
-    position: absolute;
-    left: -9999px
-}
-.flexia-menu ul ul li {
-    height: 0;
-    -webkit-transition: all .25s ease;
-    -ms-transition: all .25s ease;
-    transition: all .25s ease
-}
-.flexia-menu li:hover > ul {
-    left: auto
-}
+            @media screen and (min-width: 992px) {
+                &.flexia-mega-menu-parent {
+                    position: static;
+                }
+            }
 
-.flexia-menu > ul > li:hover > ul.sub-menu {
-    top: 100%;
+            > a {
+                display: block;
+                padding: 0 15px;
+                margin: 0;
 
-}
+                span {
+                    padding-left: 5px;
 
-.flexia-menu ul ul ul {
-    margin-left: 100%;
-    top: 0
-}
+                    @media screen and (max-width: 991px) {
+                        display: none;
+                    }
+                }
+            }
 
-.flexia-nav-btn {
-    width: 55px;
-    height: 46px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    cursor: pointer;
-    z-index: 9999;
-}
-.flexia-nav-btn:after {
-    position: absolute;
-    top: 22px;
-    right: 20px;
-    display: block;
-    height: 8px;
-    width: 20px;
-    content: ''
-}
-.flexia-nav-btn:before {
-    -webkit-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    transition: all .3s ease;
-    position: absolute;
-    top: 16px;
-    right: 20px;
-    display: block;
-    height: 2px;
-    width: 20px;
-    content: ''
-}
-.flexia-nav-btn.menu-opened:after {
-    -webkit-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    transition: all .3s ease;
-    top: 23px;
-    border: 0;
-    height: 2px;
-    width: 19px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg)
-}
-.flexia-nav-btn.menu-opened:before {
-    top: 23px;
-    width: 19px;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg)
-}
+            &.menu-item-has-children {
+                > a {
+                    position: relative;
+                }
+            }
 
-.flexia-nav-btn {
-	display: none;
-}
-@media screen and (max-width: 767px) {
+            ul {
+                @extend %ul;
+                position: absolute;
+                top: 100%;
+                left: auto;
+                width: 220px;
+                visibility: hidden;
+                opacity: 0;
+                z-index: 100;
+                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 
-	.flexia-nav-btn {
-		display: block;
-	}
+                @media screen and (min-width: 992px) {
+                    &.flexia-mega-menu {
+                        left: 1em;
+                        right: 1em;
+                        width: unset;
+                        padding: 25px;
+                        box-sizing: border-box;
 
-    .flexia-menu {
-        width: 100%
+                        display: grid;
+                        grid-column-gap: 25px;
+                    }
+
+                    &.flexia-mega-menu-3-col {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+
+                    &.flexia-mega-menu-4-col {
+                        grid-template-columns: repeat(4, 1fr);
+                    }
+
+                    &.flexia-mega-menu-5-col {
+                        grid-template-columns: repeat(5, 1fr);
+                    }
+
+                    &.flexia-mega-menu-6-col {
+                        grid-template-columns: repeat(6, 1fr);
+                    }
+                }
+
+                li {
+                    @extend %li;
+                    position: relative;
+                    float: none;
+                    display: block;
+
+                    > a {
+                        display: block;
+                        padding: 0 15px;
+                        margin: 0;
+
+                        span {
+                            position: absolute;
+                            right: 12px;
+                            top: 0;
+                            line-height: 45px;
+                        }
+                    }
+
+                    ul {
+                        top: 0;
+                        left: 100%;
+                    }
+                }
+
+                @media screen and (min-width: 992px) {
+                    &.flexia-mega-menu {
+                        li {
+                            > a {
+                                span {
+                                    display: none;
+                                }
+                            }
+
+                            ul {
+                                position: relative;
+                                top: unset;
+                                left: unset;
+                                right: unset;
+                                width: 100%;
+                                visibility: hidden;
+                                opacity: 0;
+                                transform: none;
+                                box-shadow: none;
+                                transition: none;
+                            }
+                        }
+
+                        > li {
+                            &.menu-item-has-children {
+                                > a {
+                                    font-size: 105%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                > ul {
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                > ul.flexia-mega-menu {
+                    visibility: visible;
+                    opacity: 1;
+
+                    ul {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        // Responsive menu
+        @media screen and (max-width: 991px) {
+            position: absolute;
+            top: 100%;
+            left: 5%;
+            right: 5%;
+            z-index: 100;
+            display: none;
+            padding: 20px 20px 10px;
+
+            li {
+                position: relative;
+                float: none;
+                display: block;
+
+                > a {
+                    display: block;
+                    text-align: inherit;
+                    margin-bottom: 10px;
+                }
+
+                ul {
+                    position: relative;
+                    top: unset;
+                    left: unset;
+                    width: 100%;
+                    box-shadow: none;
+                    visibility: visible;
+                    opacity: 1;
+                    display: none;
+                    padding-left: 30px;
+
+                    li {
+                        position: relative;
+                        display: block;
+
+                        > a {
+                            padding: 0 15px;
+                            margin-bottom: 10px;
+                        }
+
+                        ul {
+                            position: relative;
+                            width: 100%;
+                            top: unset;
+                            left: unset;
+                        }
+                    }
+                }
+            }
+        }
+
+        // animation
+        @media screen and (min-width: 992px) {
+            &.flexia-menu-dropdown-animate-fade {
+                li {
+                    ul {
+                        transition: all 200ms;
+                    }
+                }
+            }
+
+            &.flexia-menu-dropdown-animate-to-top {
+                li {
+                    ul {
+                        transform: translateY(20px);
+                        transition: all 200ms;
+                    }
+
+                    &:hover {
+                        > ul {
+                            transform: translateY(0);
+                        }
+                    }
+                }
+            }
+
+            &.flexia-menu-dropdown-animate-zoom-in {
+                li {
+                    ul {
+                        transform: scale(0.8);
+                        transition: all 200ms;
+                    }
+
+                    &:hover {
+                        > ul {
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+
+            &.flexia-menu-dropdown-animate-zoom-out {
+                li {
+                    ul {
+                        transform: scale(1.2);
+                        transition: all 200ms;
+                    }
+
+                    &:hover {
+                        > ul {
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+        }
     }
-    .flexia-menu ul {
-        width: 100%;
-        display: none
+
+    // responsive menu
+    .flexia-menu-toggle {
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        outline: none;
+
+        &:before {
+            content: "";
+            position: relative;
+            top: -2px;
+            right: 0;
+            display: block;
+            height: 2px;
+            width: 20px;
+            background-color: #1b1f21;
+            transition: all 0.3s ease;
+        }
+
+        &:after {
+            content: "";
+            position: relative;
+            top: 2px;
+            right: 0;
+            display: block;
+            height: 8px;
+            width: 20px;
+            border-top: 2px solid #1b1f21;
+            border-bottom: 2px solid #1b1f21;
+            transition: all 0.3s ease;
+        }
+
+        &.flexia-menu-toggle-open {
+            &::before {
+                top: 0;
+                transform: rotate(-45deg);
+            }
+
+            &:after {
+                top: -1px;
+                border: 0;
+                height: 2px;
+                width: 20px;
+                background-color: #1b1f21;
+                transform: rotate(45deg);
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            display: none;
+        }
     }
-    .flexia-menu ul li, .flexia-menu ul li a {
-        display: block;
-    }
-    .flexia-menu ul li {
-        width: 100%;
-    }
-    .flexia-menu ul ul li,
-    .flexia-menu li:hover > ul > li {
-        height: auto
-    }
-    .flexia-menu ul li a,
-    .flexia-menu ul ul li a {
-        width: 100%;
-        border-bottom: 0
-    }
-    .flexia-menu > ul > li {
-        float: none
-    }
-    .flexia-menu ul ul,
-    .flexia-menu ul ul ul {
-        position: relative;
-        left: 0;
-        width: 100%;
-        margin: 0;
-        text-align: left
-    }
-    .flexia-menu > ul > li.has-sub:after,
-    .flexia-menu > ul > li.has-sub:before,
-    .flexia-menu ul ul > li.has-sub:after,
-    .flexia-menu ul ul > li.has-sub:before {
-        display: none!important;
-    }
-    .flexia-menu .submenu-button {
+
+    .flexia-menu-indicator {
         position: absolute;
-        z-index: 99;
-        right: 0;
         top: 0;
+        right: 0;
+        width: 42px;
+        height: 42px;
         display: block;
-        cursor: pointer
-    }
-    .flexia-menu .submenu-button:before, .flexia-menu .submenu-button:after {
-        position: absolute;
-        display: block;
-        content: ''
-    }
+        background-color: #ffffff;
+        border: 1px solid #dddddd;
+        box-sizing: content-box;
+        cursor: pointer;
 
-    .flexia-menu .submenu-button.submenu-opened:before {
-        display: none
-    }
-    .flexia-menu ul ul ul li.current-menu-item a {
-        border-left: none
-    }
-    .flexia-menu > ul > li.has-sub > ul > li.current-menu-item > a,
-    .flexia-menu > ul ul > li.has-sub > ul > li.current-menu-item > a {
-        border-top: none
+        @media screen and (min-width: 992px) {
+            display: none;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 19px;
+            right: 19px;
+            width: 2px;
+            height: 8px;
+            background: #dddddd;
+            transition: all 0.25s ease;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 22px;
+            right: 16px;
+            width: 8px;
+            height: 2px;
+            background: #dddddd;
+        }
+
+        &:hover {
+            background-color: #262625;
+            border-color: #262625;
+
+            &:before,
+            &:after {
+                background: #ffffff;
+            }
+        }
+
+        &.flexia-menu-indicator-open {
+            background-color: #262625;
+            border-color: #262625;
+
+            &:before,
+            &:after {
+                background: #ffffff;
+            }
+
+            &:before {
+                height: 0;
+            }
+        }
     }
 }

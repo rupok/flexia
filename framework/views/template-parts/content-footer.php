@@ -1,7 +1,9 @@
 <?php
 
 // No direct access, please
-if ( ! defined( 'ABSPATH' ) ) exit;
+if (!defined('ABSPATH')) {
+    exit;
+}
 
 /**
  * The bottom footer area
@@ -11,22 +13,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @package Flexia
  */
 
+if (flexia_get_option('footer_widget_area') == true) {
+    get_template_part('framework/views/template-parts/content', 'footer-widgets');
+}
 
-$footer_widget_area = get_theme_mod('footer_widget_area', false);
-
-$footer_bottom = get_theme_mod('footer_bottom', false);
-
-
-
-?>
-
-<?php if( $footer_widget_area == true ) : 
-	get_template_part( 'framework/views/template-parts/content', 'footer-widgets' );
-endif; ?>
-
-
-<?php if( $footer_bottom == false ) : 
-	get_template_part( 'framework/views/template-parts/content', 'footer-bottom' );
-endif; ?>
-
-
+if (flexia_get_option('footer_bottom') == true) {
+    get_template_part('framework/views/template-parts/content', 'footer-bottom');
+}

@@ -104,7 +104,7 @@
 .slideInDown {
 	animation-name: slideInDown;
 }
-@keyframes "slideInDown" {
+@keyframes slideInDown {
 	from {
 		transform: translate3d(0, -100%, 0);
 		visibility: visible;

@@ -41,7 +41,7 @@ $flexia_navbar = get_theme_mod('flexia_navbar', false);
 		get_template_part( 'framework/views/template-parts/content', 'logobar' );  
 	endif; ?>
 
-	<?php if( $flexia_navbar == false ) : 
+	<?php if( $flexia_navbar == true ) : 
 		get_template_part( 'framework/views/template-parts/content', 'navbar' );
 	endif; ?>
 
