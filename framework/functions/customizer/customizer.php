@@ -1280,6 +1280,7 @@ function flexia_customize_register($wp_customize)
                 'choices' => array(
                     'flexia_single_posts_layout_large' => __('Large Header (Featured Image Background)', 'flexia'),
                     'flexia_single_posts_layout_simple' => __('Simple Header', 'flexia'),
+                    'flexia_single_posts_layout_simple_no_container' => __('Simple Header No Container', 'flexia'),
                     'flexia_single_posts_layout_no_header' => __('No Header', 'flexia'),
                 ),
             )

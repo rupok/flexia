@@ -311,6 +311,43 @@ function flexia_post_simple_title_markup() {
 
 }
 
+/**
+ * This function will generate simple post no container title markup
+ *
+ * @since  v0.0.5
+ */
+function flexia_post_simple_no_container_title_markup() {
+		global $post;
+		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
+	?>
+
+	<?php if ( '' !== get_the_post_thumbnail()) : ?>
+        <div class="post-thumbnail">
+			<?php the_post_thumbnail( 'flexia-featured-image' ); ?>
+        </div><!-- .post-thumbnail -->
+	<?php endif; ?>
+
+	<header class="entry-header single-blog-meta single-post-meta-simple">
+		<?php if ( 'post' === get_post_type() ) :
+            if ( is_singular() ) :
+			    the_title( '<h1 class="entry-title">', '</h1>' );
+			else :
+			    the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			endif;
+
+			if( $post_title_header_meta == 'yes' || $post_title_header_meta == NULL ) { ?>
+                <div class="entry-meta">
+					<?php flexia_posted_on(); ?>
+                </div>
+                <!-- .entry-meta -->
+			<?php } endif;
+		?>
+	</header>
+
+	<?php
+
+}
+
 
 
 /**
@@ -326,15 +363,21 @@ function flexia_post_simple_title() {
 		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
 		if( $post_title == 'simple' ) {
 			flexia_post_simple_title_markup();
-		}elseif( $post_title == 'default' || $post_title == NULL ) {
+		}elseif( $post_title == 'simple_no_container' ) {
+			flexia_post_simple_no_container_title_markup();
+        }elseif( $post_title == 'default' || $post_title == NULL ) {
 			if( $flexia_single_posts_layout == 'flexia_single_posts_layout_simple' ) {
 				flexia_post_simple_title_markup();
-			}
+			}elseif( $flexia_single_posts_layout == 'flexia_single_posts_layout_simple_no_container' ){
+			    flexia_post_simple_no_container_title_markup();
+		    }
 		}else {
 			return false;
 		}
 	}elseif( $flexia_single_posts_layout == 'flexia_single_posts_layout_simple' ) {
 		flexia_post_simple_title_markup();
+	}elseif( $flexia_single_posts_layout == 'flexia_single_posts_layout_simple_no_container' ) {
+		flexia_post_simple_no_container_title_markup();
 	}else {
 		return false;
 	}
