@@ -35,7 +35,7 @@ body.archive {
     margin: 0 1em 1.5em;
   }
 }
-.single-post {
+.single {
   .flexia-wrapper.flexia-container {
     padding-top: 0;
   }
@@ -433,13 +433,13 @@ body.archive {
   }
 }
 body {
-  // &:not(.single-post) {
-  //   .flexia-wrapper {
-  //     >.content-area {
-  //       padding: 2.5em;
-  //     }
-  //   }
-  // }
+   &:not(.single-post) {
+     .flexia-wrapper {
+       >.content-area {
+         padding: 1.5em 2.5em;
+       }
+     }
+   }
   .flexia-wrapper.flexia-blank-container {
     >.content-area {
       padding: 0;

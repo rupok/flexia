@@ -83,7 +83,7 @@ function flexia_generate_css()
 		max-width: ' . $defaults['container_max_width'] . 'px;
 	  }
 
-	  .single-post .entry-content-wrapper {
+	  .single .entry-content-wrapper {
 		width: ' . $defaults['post_width'] . '%;
 		max-width: ' . $defaults['post_max_width'] . 'px;
 	  }

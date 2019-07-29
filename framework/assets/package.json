@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/rupok/flexia#readme",
   "devDependencies": {
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-clean-css": "^4.0.0",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean-css": "^4.2.0",
     "gulp-compass": "^2.1.0",
     "gulp-notify": "^3.2.0"
   },
