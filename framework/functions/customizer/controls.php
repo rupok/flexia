@@ -192,8 +192,8 @@ class Customizer_Select2_Google_Fonts extends WP_Customize_Control {
 			</select>
 		</label>
 		<script>
-			$(document).ready(function() {
-			    $('.js-select2-font-select').select2();
+			jQuery(document).ready(function() {
+			    jQuery('.js-select2-font-select').select2();
 			});
 		</script>
 		<?php
