@@ -180,7 +180,7 @@ if (!class_exists('Flexia_Plugin_Installer')) {
             check_ajax_referer('flexia_free_plugin_installer');
 
             if (!current_user_can('manage_options')) {
-                wp_send_json_error(__('You don\'t have permission to install the plugins'));
+                wp_send_json_error(__('You don\'t have permission to install the plugins', 'flexia'));
             }
 
             $slug_name = $_POST['slug'];

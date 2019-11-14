@@ -1789,6 +1789,7 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_setting('flexia_main_nav_menu_dropdown_animation', array(
         'default' => 'to-top',
         'transport' => 'postMessage',
+        'sanitize_callback' => 'esc_html',
     ));
 
     $wp_customize->add_control('flexia_main_nav_menu_dropdown_animation_control', array(
@@ -2013,6 +2014,7 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_setting('flexia_top_nav_menu_dropdown_animation', array(
         'default' => 'to-top',
         'transport' => 'postMessage',
+        'sanitize_callback' => 'esc_html',
     ));
 
     $wp_customize->add_control('flexia_top_nav_menu_dropdown_animation_control', array(

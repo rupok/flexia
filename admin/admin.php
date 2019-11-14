@@ -61,13 +61,6 @@ class Flexia_Admin
 				array($this, 'flexia_dashboard_page')
 			);
 		
-			add_theme_page(
-				'Rec. Plugins',
-				'Rec. Plugins',
-				'manage_options',
-				'flexia-recommended-plugins',
-				array($this, 'flexia_rec_plugins_page')
-			);
 		}
     }
 
@@ -163,7 +156,7 @@ class Flexia_Admin
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 207.82 45.6"><defs><style>.flexia-logo-text{fill:#4d4d4f;}</style></defs><title>Flexia logo text</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="flexia-logo-text" d="M11.3,29.15V45H.5V.56H2.79V42.74H9V26.86H23.88v-2.1H9.08V22.48H26.16v6.67ZM7,2.85V41H4.76V.56H29.28v10.8H13.39V9.08H27V2.85ZM26.16,18.22v2.35H9V4.69H25V7H11.3V18.22Z"/><path class="flexia-logo-text" d="M60.4,34.36V45H34.92V.5h6.54V40.84H39.12v-38H37.21v40h20.9v-6.1H47.76V34.36Zm-4.32,4.13v2.35H43.56V.5h2.29v38Z"/><path class="flexia-logo-text" d="M94.12,34.1V45H65.22V.69h2.29V42.74H91.84V36.39H73.92v-6.1h2.29V34.1Zm-7.5-12.77v2.29H69.54V.69H93.8V11.55H78.56V9.27h13V3H71.83V21.34Zm3,17.15v2.29H69.54V25.65H88.85V19.3H73.92V4.88H89.29V7.17H76.21V17H91.14V27.94H71.83V38.49Z"/><path class="flexia-logo-text" d="M132,41.28h-2.73l-9.4-14.74L134.9,2.91h-2.29L105.68,45l-7.56.06,14.29-22.55L98.44.63h2.73l14,21.85L102.31,42.74h2.16L131.4.63h7.69L122.51,26.54ZM116.29,20.7,103.14.56H111l6.61,10.29L116.29,13,109.74,2.85h-2.41l9,13.66,2.41-3.75.06-.13L126.39.56h2.73ZM126.7,45l-8.07-12.39-8,12.39H107.9l10.67-16.58L128,42.74h7.24l-10.35-16,1.4-2.16.19.32,13,20.14Z"/><path class="flexia-logo-text" d="M158.65.56V45h-11V.56h6.67V40.77H152V2.85h-2.1V42.74h6.42V.56Z"/><path class="flexia-logo-text" d="M203.43,42.74l-17.66-40h-1.52l-17.6,40h7.56l2-5h13.09l1,2.16H177.64L175.48,45H163.09L183,.56H187l20,44.4L195.36,45l-4.07-9.21-16.58-.06-2.22,5.34h-2.8l3.24-7.43h19.69l4.07,9.08ZM180.18,28.07,185,16.44l7,15.44H173.57L185,6.22,200.64,41H198l-13-29.6-7.75,18.49H188.5L185,22.29l-2.35,5.78Z"/></g></g></svg>
 						</div>
 						<div class="flexia-admin-sidebar-cta">
-							' . sprintf(__('<a href="%s" target="_blank">Manage License</a>', 'flexia-core'), 'https://wpdeveloper.net/account/') . '
+							' . sprintf(__('<a href="%s" target="_blank">Manage License</a>', 'flexia'), 'https://wpdeveloper.net/account/') . '
 						</div>';
 					} else {
 						echo '<div class="flexia-admin-sidebar-logo">
@@ -173,36 +166,12 @@ class Flexia_Admin
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 207.82 45.6"><defs><style>.flexia-logo-text{fill:#4d4d4f;}</style></defs><title>Flexia logo text</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="flexia-logo-text" d="M11.3,29.15V45H.5V.56H2.79V42.74H9V26.86H23.88v-2.1H9.08V22.48H26.16v6.67ZM7,2.85V41H4.76V.56H29.28v10.8H13.39V9.08H27V2.85ZM26.16,18.22v2.35H9V4.69H25V7H11.3V18.22Z"/><path class="flexia-logo-text" d="M60.4,34.36V45H34.92V.5h6.54V40.84H39.12v-38H37.21v40h20.9v-6.1H47.76V34.36Zm-4.32,4.13v2.35H43.56V.5h2.29v38Z"/><path class="flexia-logo-text" d="M94.12,34.1V45H65.22V.69h2.29V42.74H91.84V36.39H73.92v-6.1h2.29V34.1Zm-7.5-12.77v2.29H69.54V.69H93.8V11.55H78.56V9.27h13V3H71.83V21.34Zm3,17.15v2.29H69.54V25.65H88.85V19.3H73.92V4.88H89.29V7.17H76.21V17H91.14V27.94H71.83V38.49Z"/><path class="flexia-logo-text" d="M132,41.28h-2.73l-9.4-14.74L134.9,2.91h-2.29L105.68,45l-7.56.06,14.29-22.55L98.44.63h2.73l14,21.85L102.31,42.74h2.16L131.4.63h7.69L122.51,26.54ZM116.29,20.7,103.14.56H111l6.61,10.29L116.29,13,109.74,2.85h-2.41l9,13.66,2.41-3.75.06-.13L126.39.56h2.73ZM126.7,45l-8.07-12.39-8,12.39H107.9l10.67-16.58L128,42.74h7.24l-10.35-16,1.4-2.16.19.32,13,20.14Z"/><path class="flexia-logo-text" d="M158.65.56V45h-11V.56h6.67V40.77H152V2.85h-2.1V42.74h6.42V.56Z"/><path class="flexia-logo-text" d="M203.43,42.74l-17.66-40h-1.52l-17.6,40h7.56l2-5h13.09l1,2.16H177.64L175.48,45H163.09L183,.56H187l20,44.4L195.36,45l-4.07-9.21-16.58-.06-2.22,5.34h-2.8l3.24-7.43h19.69l4.07,9.08ZM180.18,28.07,185,16.44l7,15.44H173.57L185,6.22,200.64,41H198l-13-29.6-7.75,18.49H188.5L185,22.29l-2.35,5.78Z"/></g></g></svg>
 						</div>
 						<div class="flexia-admin-sidebar-cta">
-							' . sprintf(__('<a href="%s" target="_blank">Upgrade to Pro</a>', 'flexia-core'), 'https://flexia.pro/pricing') . '
+							' . sprintf(__('<a href="%s" target="_blank">Upgrade to Pro</a>', 'flexia'), 'https://flexia.pro/pricing') . '
 						</div>';
 					}
         			echo '</div>
 				</div>
 			</div>
-		</div>';
-    }
-
-    public function flexia_rec_plugins_page()
-    {
-        echo '<div class="flexia-core-admin-wrapper flexia-rec-plugins">
-			<div class="flexia-core-admin-header">
-				<div class="flexia-logo-inline">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.27 88.23"><defs><style>.cls-1{fill:#4d4d4f;}</style></defs><title>Flexia Logo</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M70.55,14.31,44.24,1.41a13.82,13.82,0,0,0-13.79.94L6.12,18.68A13.82,13.82,0,0,0,0,31.1L2,60.33A13.82,13.82,0,0,0,9.72,71.81L43.2,88.23l.07,0L14.74,45.69a9.66,9.66,0,0,1,2.64-13.41L37.32,18.9a6.69,6.69,0,0,1,10.37,4.67h0A6.69,6.69,0,0,1,44.78,30L28.28,41.09l6.3,9.38.27.41L42.31,62,43,63,54.73,80.48l19.42-13A13.82,13.82,0,0,0,80.24,55l-2-29.24A13.82,13.82,0,0,0,70.55,14.31Zm-19,41.48-5.46,3.66L38.63,48.34l5.46-3.66a6.69,6.69,0,0,1,10.37,4.67h0A6.69,6.69,0,0,1,51.55,55.79Z"/></g></g></svg>
-				</div>
-				<h2 class="title flexia-rec-plugins-title">Recommended Plugins</h2>
-				<p class="flexia-rec-plugins-sub">If you want extra functionality, you can add the below plugins. None of these plugins are required for the theme to work, they simply add additional functionality.</p>
-			</div>
-
-			<div class="flexia-plugins-wrapper">';
-			if (class_exists('Flexia_Plugin_Installer')) {
-				if (@fsockopen('www.wordpress.org', 80)) {
-					$this->installer->free_plugins();
-					$this->installer->premium_plugins();
-				} else {
-					$this->installer->premium_plugins();
-				}
-			}
-			echo '</div>
 		</div>';
     }
 }
