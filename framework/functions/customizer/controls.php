@@ -151,8 +151,8 @@ class Customizer_Select2_Multiselect extends WP_Customize_Control {
 			</select>
 		</label>
 		<script>
-			$(document).ready(function() {
-			    $('.js-select2-multiselect').select2();
+			jQuery(document).ready(function() {
+			    jQuery('.js-select2-multiselect').select2();
 			});
 		</script>
 		<?php
