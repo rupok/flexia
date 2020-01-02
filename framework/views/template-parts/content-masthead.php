@@ -22,7 +22,7 @@ $flexia_enable_topbar = get_theme_mod('flexia_enable_topbar', false);
 
 $flexia_logobar_position = get_theme_mod('flexia_logobar_position', 'flexia-logobar-inline');
 
-$flexia_navbar = get_theme_mod('flexia_navbar', false);
+$flexia_navbar = get_theme_mod('flexia_navbar', true);
 
 
 ?>

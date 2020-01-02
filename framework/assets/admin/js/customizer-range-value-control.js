@@ -4,6 +4,18 @@
 (function($) {
     wp.customize.bind('ready', function() {
         rangeSlider();
+        var rangeValReset  = jQuery('.flexia-customizer-reset');
+        rangeValReset.each(function() {
+            $(rangeValReset).on( 'click', function (e) {
+                e.preventDefault();
+                var nextRangeselector = $(this).next('.range-slider');
+                var nextRangeDefaultVal = $(this).next('.range-slider').data('default-val');
+                var suffix = nextRangeselector.find('.range-slider__range').attr('suffix');
+                nextRangeselector.find('.range-slider__range').val(nextRangeDefaultVal).trigger('change');
+                nextRangeselector.find('.range-slider__value').html(nextRangeDefaultVal + suffix);
+                
+            });
+        });
     });
 
     var rangeSlider = function() {
