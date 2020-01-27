@@ -3831,10 +3831,10 @@ table th {
   color: #000;
 }
 table td {
-  border-top: 1px solid #efefef;
+  border: 1px solid #efefef;
   font-size: 16px;
   line-height: 20px;
-  padding: 8px;
+  padding: 10px;
   text-align: left;
   vertical-align: top;
 }
@@ -3859,12 +3859,12 @@ table thead:first-child tr:first-child td {
 table tbody + tbody {
   border-top: 2px solid #efefef;
 }
-table tbody > tr:nth-child(2n+1) > td {
+/* table tbody > tr:nth-child(2n+1) > td {
   background-color: #f9f9f9;
 }
 table tbody > tr:nth-child(2n+1) > th {
   background-color: #f9f9f9;
-}
+} */
 table table table {
   background-color: #fff;
 }
