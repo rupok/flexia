@@ -31,7 +31,7 @@ function flexia_generate_css()
 	  }
 
 	  body, button, input, select, optgroup, textarea {
-		color: ' . $defaults['body_font_color'] . ';
+		color: ' . $defaults['default_text_color'] . ';
 	  }
 
 	  body {

@@ -65,13 +65,17 @@ function flexia_customize_register($wp_customize)
         ));
     }
 
-    // Layout Settings
+    /**
+     * Add Options to General Settings
+     * @flexia_general_settings
+     */
 
+    //Add "Layout Settings" Section to General Settings
     $wp_customize->add_section('flexia_layout_settings', array(
-        'title' => __('Layout', 'flexia'),
-        'priority' => 20,
-    ));
-
+        'title' => __('Layout Settings', 'flexia'),
+        'priority' => 100,
+    ));        
+    
     $wp_customize->add_setting(
         'container_max_width',
         array(
@@ -186,6 +190,234 @@ function flexia_customize_register($wp_customize)
             'suffix' => 'px', //optional suffix
         ),
     )));
+
+    /**
+     * Add "Default Color" Section to General Settings
+     * @flexia_default_colors_settings
+     * Parent: @flexia_general_settings
+     */
+    $wp_customize->add_section('flexia_default_colors_settings', array(
+        'title' => __('Default Colors', 'flexia'),
+        'priority' => 120,
+    ));
+
+    /**
+     * Default Color Section: Primary Color
+     * @site_primary_color
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
+    $wp_customize->add_setting('site_primary_color', array(
+        'default' => $defaults['site_primary_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'site_primary_color',
+            array(
+                'label' => __('Primary Color', 'flexia'),
+                'section' => 'flexia_default_colors_settings',
+                'settings' => 'site_primary_color',
+            ))
+    );
+
+    /**
+     * Default Color Section: Secondary Color
+     * @site_secondary_color
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
+    $wp_customize->add_setting('site_secondary_color', array(
+        'default' => $defaults['site_secondary_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'site_secondary_color',
+            array(
+                'label' => __('Secondary Color', 'flexia'),
+                'section' => 'flexia_default_colors_settings',
+                'settings' => 'site_secondary_color',
+            ))
+    );
+
+    /**
+     * Default Color Section: Text Color
+     * @default_text_color
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
+    $wp_customize->add_setting('default_text_color', array(
+        'default' => $defaults['default_text_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'default_text_color',
+            array(
+                'label' => __('Default Text Color', 'flexia'),
+                'section' => 'flexia_default_colors_settings',
+                'settings' => 'default_text_color',
+            ))
+    );
+    
+    /**
+     * Default Color Section: Heading Color
+     * @default_heading_color
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
+    $wp_customize->add_setting('default_heading_color', array(
+        'default' => $defaults['default_heading_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'default_heading_color',
+            array(
+                'label' => __('Heading Color', 'flexia'),
+                'section' => 'flexia_default_colors_settings',
+                'settings' => 'default_heading_color',
+            ))
+    );
+
+    /**
+     * Default Color Section: Site Link Separator Label
+     * @link_separator_label
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
+    $wp_customize->add_setting('link_separator_label', array(
+        'default' => $defaults['link_separator_label'],
+        'sanitize_callback' => 'esc_html',
+    ));
+
+    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'link_separator_label', array(
+        'label' => __('Site Links', 'flexia'),
+        'settings' => 'link_separator_label',
+        'section' => 'flexia_default_colors_settings',
+    )));
+
+    /**
+     * Default Color Section: Link Color
+     * @site_link_color
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
+    $wp_customize->add_setting('site_link_color', array(
+        'default' => $defaults['site_link_color'],
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'site_link_color',
+            array(
+                'label' => __('Site Link Color', 'flexia'),
+                'section' => 'flexia_default_colors_settings',
+                'settings' => 'site_link_color',
+            ))
+    );    
+
+    /**
+     * Default Color Section: Link Hover Color
+     * @site_link_hover_color
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
+    $wp_customize->add_setting('site_link_hover_color', array(
+        'default' => $defaults['site_link_hover_color'],
+        // 'transport'   => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'site_link_hover_color',
+            array(
+                'label' => __('Site Link Hover Color', 'flexia'),
+                'section' => 'flexia_default_colors_settings',
+                'settings' => 'site_link_hover_color',
+            ))
+    );
+
+    /**
+     * Default Color Section: Site Background Separator Label
+     * @background_separator_label
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
+    $wp_customize->add_setting('background_separator_label', array(
+        'default' => $defaults['background_separator_label'],
+        'sanitize_callback' => 'esc_html',
+    ));
+
+    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'background_separator_label', array(
+        'label' => __('Site Background', 'flexia'),
+        'settings' => 'background_separator_label',
+        'section' => 'flexia_default_colors_settings',
+    )));
+
+    /**
+     * Default Color Section: Site Background Color
+     * @site_background_color
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
+    $wp_customize->add_setting('site_background_color', array(
+        'default' => $defaults['site_background_color'],
+        // 'transport'   => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'site_background_color',
+            array(
+                'label' => __('Site Background Color', 'flexia'),
+                'section' => 'flexia_default_colors_settings',
+                'settings' => 'site_background_color',
+            ))
+    );
+
+    /**
+     * Default Color Section: Background Gradiant Color
+     * @default_heading_color
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
+
+    /**
+     * Default Color Section: Site Background Image
+     * @default_heading_color
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
+
+    /**
+     * If Background Image set:
+     */
+
+    //Default Color Section: Background Image Size
+
+    //Default Color Section: Background Image Position
+
+    //Default Color Section: Background Image Repeat
+
+    /**
+     * If Background Color Overlay set:
+     */
+
+    //Default Color Section: Overlay Color
+
+    //Default Color Section: Overlay Opacity
+
+
+    
 
     // Design Settings : Background colors
 
@@ -676,23 +908,6 @@ function flexia_customize_register($wp_customize)
         'section' => 'flexia_typography_settings',
     )));
 
-    $wp_customize->add_setting('body_font_color', array(
-        'default' => $defaults['body_font_color'],
-        'transport' => 'postMessage',
-        'sanitize_callback' => 'sanitize_hex_color',
-    ));
-
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'body_font_color',
-            array(
-                'label' => __('Body Font Color', 'flexia'),
-                'section' => 'flexia_typography_settings',
-                'settings' => 'body_font_color',
-            ))
-    );
-
     $wp_customize->add_setting('body_font_size', array(
         'default' => $defaults['body_font_size'],
         'capability' => 'edit_theme_options',
@@ -967,53 +1182,7 @@ function flexia_customize_register($wp_customize)
             'step' => .01,
             'suffix' => 'em', //optional suffix
         ),
-    )));
-
-    // Site Links separator
-
-    $wp_customize->add_setting('typography_settings_title_links', array(
-        'default' => $defaults['typography_settings_title_links'],
-        'sanitize_callback' => 'esc_html',
-    ));
-
-    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'typography_settings_title_links', array(
-        'label' => __('Site Links', 'flexia'),
-        'settings' => 'typography_settings_title_links',
-        'section' => 'flexia_typography_settings',
-    )));
-
-    $wp_customize->add_setting('site_link_color', array(
-        'default' => $defaults['site_link_color'],
-        'sanitize_callback' => 'sanitize_hex_color',
-    ));
-
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'site_link_color',
-            array(
-                'label' => __('Site Link Color', 'flexia'),
-                'section' => 'flexia_typography_settings',
-                'settings' => 'site_link_color',
-            ))
-    );
-
-    $wp_customize->add_setting('site_link_hover_color', array(
-        'default' => $defaults['site_link_hover_color'],
-        // 'transport'   => 'postMessage',
-        'sanitize_callback' => 'sanitize_hex_color',
-    ));
-
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'site_link_hover_color',
-            array(
-                'label' => __('Site Link Hover Color', 'flexia'),
-                'section' => 'flexia_typography_settings',
-                'settings' => 'site_link_hover_color',
-            ))
-    );
+    )));    
 
     // Blog Settings
 
@@ -2338,6 +2507,8 @@ function flexia_customize_register($wp_customize)
     // Assign sections to panels
     $wp_customize->get_section('title_tagline')->panel = 'flexia_general_settings';
     $wp_customize->get_section('static_front_page')->panel = 'flexia_general_settings';
+    $wp_customize->get_section('flexia_layout_settings')->panel = 'flexia_general_settings';
+    $wp_customize->get_section('flexia_default_colors_settings')->panel = 'flexia_general_settings';
     $wp_customize->get_section('background_image')->panel = 'flexia_design_settings';
     $wp_customize->get_section('background_image')->priority = 1000;
     $wp_customize->get_section('flexia_blog_content_settings')->panel = 'flexia_blog_settings';

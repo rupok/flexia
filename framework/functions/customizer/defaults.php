@@ -16,9 +16,16 @@ if (!function_exists('flexia_get_option_defaults')) {
     function flexia_get_option_defaults()
     {
         $flexia_defaults = array(
-            'body_font_color' => '#4d4d4d',
+            'site_primary_color' => '#262625',
+            'site_secondary_color' => '#333333',
+            'default_text_color' => '#4d4d4d',
+            'default_heading_color' => '#333333',
+            'link_separator_label' => '',
             'site_link_color' => '#F56A6A',
             'site_link_hover_color' => '#ff5544',
+            'background_separator_label' => '',
+            'site_background_color' => '#fff',
+            
             'body_font_family' => 'Open Sans',
             'body_font_variants' => 'Open Sans',
             'body_font_subsets' => 'Open Sans',
@@ -87,7 +94,6 @@ if (!function_exists('flexia_get_option_defaults')) {
             'typography_settings_title_body' => '',
             'body_font_size' => '16',
             'typography_settings_title_heading' => '',
-            'typography_settings_title_links' => '',
             'post_navigation' => false,
             'post_author' => false,
             'post_social_share' => false,
