@@ -43,6 +43,18 @@ function flexia_customize_preview_js()
 add_action('customize_preview_init', 'flexia_customize_preview_js');
 
 /**
+ * Conditional Logic on Customizer Preview
+ */
+function flexia_customizer_condition() {
+    wp_enqueue_script( 'flexia-customize-condition',
+    get_template_directory_uri() . '/framework/assets/admin/js/customizer-condition.js',
+        array(),
+        true
+    );
+}
+add_action( 'customize_controls_enqueue_scripts', 'flexia_customizer_condition' );
+
+/**
  * Admin Script
  */
 function flexia_admin_js()

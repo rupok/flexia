@@ -34,7 +34,7 @@ function flexia_customize_register($wp_customize)
     require_once get_template_directory() . '/framework/functions/customizer/sanitize.php';
 
     // Customize title and tagline sections and labels
-    $wp_customize->get_section('title_tagline')->title = __('Site Name and Description', 'flexia');
+    $wp_customize->get_section('title_tagline')->title = __('Site Info', 'flexia');
     $wp_customize->get_control('blogname')->label = __('Site Name', 'flexia');
     $wp_customize->get_control('blogdescription')->label = __('Site Description', 'flexia');
     $wp_customize->get_setting('blogname')->transport = 'postMessage';
@@ -50,8 +50,8 @@ function flexia_customize_register($wp_customize)
     $wp_customize->get_control('page_for_posts')->label = __('Select Blog Homepage', 'flexia');
 
     // Customize Background Settings
-    $wp_customize->get_section('background_image')->title = __('Background Styles', 'flexia');
-    $wp_customize->get_control('background_color')->section = 'background_image';
+    // $wp_customize->get_section('background_image')->title = __('Background Styles', 'flexia');
+    // $wp_customize->get_control('background_color')->section = 'background_image';
     $wp_customize->get_control('header_textcolor')->section = 'flexia_header_settings';
 
     if (isset($wp_customize->selective_refresh)) {
@@ -70,7 +70,12 @@ function flexia_customize_register($wp_customize)
      * @flexia_general_settings
      */
 
-    //Add "Layout Settings" Section to General Settings
+    
+    /**
+     * Add "Layout Settings" Section to General Settings
+     * @flexia_layout_settings
+     * Parent: @flexia_general_settings
+     */
     $wp_customize->add_section('flexia_layout_settings', array(
         'title' => __('Layout Settings', 'flexia'),
         'priority' => 100,
@@ -265,7 +270,7 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'default_text_color',
             ))
-    );
+    ); 
     
     /**
      * Default Color Section: Heading Color
@@ -312,6 +317,7 @@ function flexia_customize_register($wp_customize)
      */
     $wp_customize->add_setting('site_link_color', array(
         'default' => $defaults['site_link_color'],
+        'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -333,7 +339,7 @@ function flexia_customize_register($wp_customize)
      */
     $wp_customize->add_setting('site_link_hover_color', array(
         'default' => $defaults['site_link_hover_color'],
-        // 'transport'   => 'postMessage',
+        'transport'   => 'reload',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -371,7 +377,7 @@ function flexia_customize_register($wp_customize)
      */
     $wp_customize->add_setting('site_background_color', array(
         'default' => $defaults['site_background_color'],
-        // 'transport'   => 'postMessage',
+        'transport'   => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
 
@@ -387,26 +393,164 @@ function flexia_customize_register($wp_customize)
     );
 
     /**
-     * Default Color Section: Background Gradiant Color
-     * @default_heading_color
+     * Default Color Section: Background Image Enable/Disable
+     * @site_background_image_enable_button
      * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
+    $wp_customize->add_setting('site_background_image_enable_button', array(
+        'default' => $defaults['site_background_image_enable_button'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(
+        new Customizer_Toggle_Control(
+            $wp_customize, 
+            'site_background_image_enable_button', array(
+            'label' => esc_html__('Enable Background Image?', 'flexia'),
+            'section' => 'flexia_default_colors_settings',
+            'settings' => 'site_background_image_enable_button',
+            'type' => 'light', // light, ios, flat
+    )));
+
+    /**
+     * If Background Image Enabled:
      */
 
     /**
      * Default Color Section: Site Background Image
-     * @default_heading_color
+     * @site_background_image
      * Parent: @flexia_general_settings -> @flexia_default_colors_settings
      */
+    $wp_customize->add_setting('site_background_image', array(
+        'default' => $defaults['site_background_image'],
+        // 'transport'   => 'postMessage',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'site_background_image',
+            array(
+                'label' => __('Upload an Image for Background', 'flexia'),
+                'section' => 'flexia_default_colors_settings',
+                'settings' => 'site_background_image',
+                // 'context' => 'flexia_blog_logo',
+            )
+        )
+    );
+    
+    /**
+     * Default Color Section: Background Image Size
+     * @site_background_image_size
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
+    $wp_customize->add_setting(
+        'site_background_image_size',
+        array(
+            'default' => $defaults['site_background_image_size'],
+            'transport'   => 'postMessage',
+            'sanitize_callback' => 'flexia_sanitize_choices',
+        ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'site_background_image_size',
+            array(
+                'label' => __('Background Image Size', 'flexia'),
+                'section' => 'flexia_default_colors_settings',
+                'settings' => 'site_background_image_size',
+                'description' => '',
+                'type' => 'radio',
+                'priority' => 10,
+                'choices' => array(
+                    'auto' => __('Auto', 'flexia'),
+                    'cover' => __('Cover', 'flexia'),
+                    'contain' => __('Contain', 'flexia'),
+                    'initial' => __('Initial', 'flexia'),
+                    'inherit' => __('Inherit', 'flexia'),
+                ),
+            )
+        )
+    );
+
+    
+    /**
+     * Default Color Section: Background Image Position
+     * @site_background_image_position
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
+    $wp_customize->add_setting(
+        'site_background_image_position',
+        array(
+            'default' => $defaults['site_background_image_position'],
+            'transport'   => 'postMessage',
+            'sanitize_callback' => 'flexia_sanitize_choices',
+        ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'site_background_image_position',
+            array(
+                'label' => __('Background Image Position', 'flexia'),
+                'section' => 'flexia_default_colors_settings',
+                'settings' => 'site_background_image_position',
+                'description' => '',
+                'type' => 'radio',
+                'priority' => 10,
+                'choices' => array(
+                    'left top' => __('left top', 'flexia'),
+                    'left center' => __('left center', 'flexia'),
+                    'left bottom' => __('left bottom', 'flexia'),
+                    'right top' => __('right top', 'flexia'),
+                    'right center' => __('right center', 'flexia'),
+                    'right bottom' => __('right bottom', 'flexia'),
+                    'center top' => __('center top', 'flexia'),
+                    'center center' => __('center center', 'flexia'),
+                    'center bottom' => __('center bottom', 'flexia'),
+                ),
+            )
+        )
+    );
 
     /**
-     * If Background Image set:
+     * Default Color Section: Background Image Repeat
+     * @site_background_image_repeat
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
      */
+    $wp_customize->add_setting(
+        'site_background_image_repeat',
+        array(
+            'default' => $defaults['site_background_image_repeat'],
+            'transport'   => 'postMessage',
+            'sanitize_callback' => 'flexia_sanitize_choices',
+        ));
 
-    //Default Color Section: Background Image Size
-
-    //Default Color Section: Background Image Position
-
-    //Default Color Section: Background Image Repeat
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'site_background_image_repeat',
+            array(
+                'label' => __('Background Image Size', 'flexia'),
+                'section' => 'flexia_default_colors_settings',
+                'settings' => 'site_background_image_repeat',
+                'description' => '',
+                'type' => 'radio',
+                'priority' => 10,
+                'choices' => array(
+                    'repeat' => __('repeat', 'flexia'),
+                    'repeat-x' => __('repeat-x', 'flexia'),
+                    'repeat-y' => __('repeat-y', 'flexia'),
+                    'no-repeat' => __('no-repeat', 'flexia'),
+                    'space' => __('space', 'flexia'),
+                    'round' => __('round', 'flexia'),
+                ),
+            )
+        )
+    );
 
     /**
      * If Background Color Overlay set:
@@ -419,8 +563,11 @@ function flexia_customize_register($wp_customize)
 
     
 
-    // Design Settings : Background colors
-
+    /**
+     * Default Color Section: Blog Heading Background Color
+     * @flexia_blog_bg_heading
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
     $wp_customize->add_setting('flexia_blog_bg_heading', array(
         'default' => $defaults['flexia_blog_bg_heading'],
         'sanitize_callback' => 'esc_html',
@@ -429,9 +576,14 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'flexia_blog_bg_heading', array(
         'label' => __('Page & Posts Backgrounds', 'flexia'),
         'settings' => 'flexia_blog_bg_heading',
-        'section' => 'background_image',
+        'section' => 'flexia_default_colors_settings',
     )));
 
+    /**
+     * Default Color Section: Blog Background Color
+     * @blog_bg_color
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
     $wp_customize->add_setting('blog_bg_color', array(
         'default' => $defaults['blog_bg_color'],
         'transport' => 'postMessage',
@@ -444,11 +596,16 @@ function flexia_customize_register($wp_customize)
             'blog_bg_color',
             array(
                 'label' => __('Blog Body Background', 'flexia'),
-                'section' => 'background_image',
+                'section' => 'flexia_default_colors_settings',
                 'settings' => 'blog_bg_color',
             ))
     );
 
+    /**
+     * Default Color Section: Post Content Background Color
+     * @post_content_bg_color
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
     $wp_customize->add_setting('post_content_bg_color', array(
         'default' => $defaults['post_content_bg_color'],
         'transport' => 'postMessage',
@@ -461,11 +618,17 @@ function flexia_customize_register($wp_customize)
             'post_content_bg_color',
             array(
                 'label' => __('Page/Post Content Background', 'flexia'),
-                'section' => 'background_image',
+                'section' => 'flexia_default_colors_settings',
+                // 'section' => 'background_image',
                 'settings' => 'post_content_bg_color',
             ))
     );
 
+    /**
+     * Default Color Section: Sidebar WIdget Background Color
+     * @sidebar_widget_bg_color
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
     $wp_customize->add_setting('sidebar_widget_bg_color', array(
         'default' => $defaults['sidebar_widget_bg_color'],
         'transport' => 'postMessage',
@@ -478,7 +641,7 @@ function flexia_customize_register($wp_customize)
             'sidebar_widget_bg_color',
             array(
                 'label' => __('Sidebar Widget Background', 'flexia'),
-                'section' => 'background_image',
+                'section' => 'flexia_default_colors_settings',
                 'settings' => 'sidebar_widget_bg_color',
             ))
     );
@@ -2486,7 +2649,7 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_panel('flexia_general_settings', array(
         'priority' => 10,
         'theme_supports' => '',
-        'title' => __('General Settings', 'flexia'),
+        'title' => __('Global', 'flexia'),
         'description' => __('Controls the basic settings for the theme.', 'flexia'),
     ));
 
@@ -2508,9 +2671,10 @@ function flexia_customize_register($wp_customize)
     $wp_customize->get_section('title_tagline')->panel = 'flexia_general_settings';
     $wp_customize->get_section('static_front_page')->panel = 'flexia_general_settings';
     $wp_customize->get_section('flexia_layout_settings')->panel = 'flexia_general_settings';
-    $wp_customize->get_section('flexia_default_colors_settings')->panel = 'flexia_general_settings';
-    $wp_customize->get_section('background_image')->panel = 'flexia_design_settings';
-    $wp_customize->get_section('background_image')->priority = 1000;
+    $wp_customize->get_section('flexia_default_colors_settings')->panel = 'flexia_design_settings';
+    $wp_customize->get_section('flexia_default_colors_settings')->priority = 100;
+    // $wp_customize->get_section('background_image')->panel = 'flexia_design_settings';
+    // $wp_customize->get_section('background_image')->priority = 1000;
     $wp_customize->get_section('flexia_blog_content_settings')->panel = 'flexia_blog_settings';
     $wp_customize->get_section('flexia_blog_header_settings')->panel = 'flexia_blog_settings';
     $wp_customize->get_section('flexia_single_posts_settings')->panel = 'flexia_blog_settings';

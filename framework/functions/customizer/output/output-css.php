@@ -20,7 +20,14 @@ if (!function_exists('flexia_customizer_style')) {
 function flexia_generate_css()
 {
     $defaults = flexia_get_option();
-    $header_text_color = get_header_textcolor();
+	$header_text_color = get_header_textcolor();
+
+	if ((get_theme_mod('site_background_image_enable_button'))) {
+		$site_background_image =  "url(" . get_theme_mod('site_background_image') . ")";
+	}
+	else {
+		$site_background_image = "none";
+	}
 
     $css = '.flexia-primary-menu .customize-partial-edit-shortcut button {
 		margin-left: 50px;
@@ -37,10 +44,16 @@ function flexia_generate_css()
 	  body {
 		font-family: "' . $defaults['body_font_family'] . '", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
 		font-size: ' . $defaults['body_font_size'] . 'px;
+		background-color: ' . $defaults['site_background_color'] . ';
+		background-image: ' .$site_background_image. ';
+		background-size: ' . $defaults['site_background_image_size'] . ';
+		background-position: ' . $defaults['site_background_image_position'] . ';
+		background-repeat: ' . $defaults['site_background_image_repeat'] . ';
 	  }
 
 	  h1, h2, h3, h4, h5, h6 {
 		font-family: "' . $defaults['heading_font_family'] . '", "Helvetica Neue",sans-serif;
+		color: ' . $defaults['default_heading_color'] . ';
 	  }
 
 	  h1 {

@@ -49,8 +49,13 @@ function generateCSS() {
         });
     });
 
-    // Typography
-    wp.customize("body_font_color", function(value) {
+    
+    /**
+     * Defeault Colors from Global Settings
+     */
+
+    // Default Text Colors
+    wp.customize("default_text_color", function(value) {
         value.bind(function(to) {
             $("body, button, input, select, optgroup, textarea").css(
                 "color",
@@ -58,6 +63,88 @@ function generateCSS() {
             );
         });
     });
+
+    // Default Heading Colors
+    wp.customize("default_heading_color", function(value) {
+        value.bind(function(to) {
+            $("h1, h2, h3, h4, h5, h6").css(
+                "color",
+                to
+            );
+        });
+    });
+
+    // Site Link Colors
+    wp.customize("site_link_color", function(value) {
+        value.bind(function(to) {
+            $("a").css(
+                "color",
+                to
+            );
+        });
+    });
+
+    // Site Link Hover Colors
+    wp.customize("site_link_hover_color", function(value) {
+        value.bind(function(to) {
+            $("a:hover, a:focus, a:active").css(
+                "color",
+                to
+            );
+        });
+    });
+
+    // Site Background Colors
+    wp.customize("site_background_color", function(value) {
+        value.bind(function(to) {
+            $("body").css(
+                "background-color",
+                to
+            );
+        });
+    });
+
+    // Site Background Image
+    wp.customize("site_background_image", function(value) {
+        value.bind(function(to) {
+            $("body").css(
+                "background-image",
+                "url('"+to+"')"
+            );
+        });
+    });
+
+    // Site Background Image Size
+    wp.customize("site_background_image_size", function(value) {
+        value.bind(function(to) {
+            $("body").css(
+                "background-size",
+                to
+            );
+        });
+    });
+
+    // Site Background Image Position
+    wp.customize("site_background_image_position", function(value) {
+        value.bind(function(to) {
+            $("body").css(
+                "background-position",
+                to
+            );
+        });
+    });
+
+    // Site Background Image Repeat
+    wp.customize("site_background_image_repeat", function(value) {
+        value.bind(function(to) {
+            $("body").css(
+                "background-repeat",
+                to
+            );
+        });
+    });
+
+
 
     // Container width
     wp.customize("container_width", function(value) {

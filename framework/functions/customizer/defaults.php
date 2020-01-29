@@ -25,6 +25,11 @@ if (!function_exists('flexia_get_option_defaults')) {
             'site_link_hover_color' => '#ff5544',
             'background_separator_label' => '',
             'site_background_color' => '#fff',
+            'site_background_image_enable_button' => '',
+            'site_background_image' => '',
+            'site_background_image_size' => 'auto',
+            'site_background_image_position' => 'center center',
+            'site_background_image_repeat' => 'repeat',
             
             'body_font_family' => 'Open Sans',
             'body_font_variants' => 'Open Sans',
