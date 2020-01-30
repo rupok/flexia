@@ -144,6 +144,263 @@ function generateCSS() {
         });
     });
 
+    /**
+     * Defeault Colors from Global Settings
+     */
+
+    //Body Font Size
+    wp.customize("body_font_size", function(value) {
+        value.bind(function(to) {
+            $("body").css(
+                "font-size",
+                to+"px"
+            );
+        });
+    });
+
+    //Body Font Line Height
+    wp.customize("body_font_line_height", function(value) {
+        value.bind(function(to) {
+            $("body").css(
+                "line-height",
+                to
+            );
+        });
+    });
+
+    //Body Font text-transform
+    wp.customize("body_font_text_transform", function(value) {
+        value.bind(function(to) {
+            $("body").css(
+                "text-transform",
+                to
+            );
+        });
+    });
+
+    //Body Font Family
+    wp.customize("body_font_family", function(value) {
+        value.bind(function(to) {
+            $("body").css(
+                "font-family",
+                '"'+to+'+'+'-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;'
+            );
+        });
+    });
+
+    //Paragraph Font Size
+    wp.customize("paragraph_font_size", function(value) {
+        value.bind(function(to) {
+            $("p").css(
+                "font-size",
+                to+"em"
+            );
+        });
+    });
+
+    //Paragraph Font Line Height
+    wp.customize("paragraph_font_line_height", function(value) {
+        value.bind(function(to) {
+            $("p").css(
+                "line-height",
+                to
+            );
+        });
+    });
+
+    //Paragraph Font text-transform
+    wp.customize("paragraph_font_text_transform", function(value) {
+        value.bind(function(to) {
+            $("p").css(
+                "text-transform",
+                to
+            );
+        });
+    });
+
+    //Paragraph Font Family
+    wp.customize("paragraph_font_family", function(value) {
+        value.bind(function(to) {
+            $("p").css(
+                "font-family",
+                '"'+to+'+'+'-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;'
+            );
+        });
+    });
+
+    //Heading 1 Font Size
+    wp.customize("heading1_font_size", function(value) {
+        value.bind(function(to) {
+            $("h1").css(
+                "font-size",
+                to+"em"
+            );
+        });
+    });
+
+    //Heading 2 Font Size
+    wp.customize("heading2_font_size", function(value) {
+        value.bind(function(to) {
+            $("h2").css(
+                "font-size",
+                to+"em"
+            );
+        });
+    });
+
+    //Heading 3 Font Size
+    wp.customize("heading3_font_size", function(value) {
+        value.bind(function(to) {
+            $("h3").css(
+                "font-size",
+                to+"em"
+            );
+        });
+    });
+
+    //Heading 4 Font Size
+    wp.customize("heading4_font_size", function(value) {
+        value.bind(function(to) {
+            $("h4").css(
+                "font-size",
+                to+"em"
+            );
+        });
+    });
+
+    //Heading 5 Font Size
+    wp.customize("heading5_font_size", function(value) {
+        value.bind(function(to) {
+            $("h5").css(
+                "font-size",
+                to+"em"
+            );
+        });
+    });
+
+    //Heading 6 Font Size
+    wp.customize("heading6_font_size", function(value) {
+        value.bind(function(to) {
+            $("h6").css(
+                "font-size",
+                to+"em"
+            );
+        });
+    });
+
+    //Heading Font Line Height
+    wp.customize("heading_font_line_height", function(value) {
+        value.bind(function(to) {
+            $("h1, h2, h3, h4, h5, h6").css(
+                "line-height",
+                to
+            );
+        });
+    });
+
+    //Heading Font text-transform
+    wp.customize("heading_font_text_transform", function(value) {
+        value.bind(function(to) {
+            $("h1, h2, h3, h4, h5, h6").css(
+                "text-transform",
+                to
+            );
+        });
+    });
+
+    //Heading Font Family
+    wp.customize("heading_font_family", function(value) {
+        value.bind(function(to) {
+            $("h1, h2, h3, h4, h5, h6").css(
+                "font-family",
+                '"'+to+'+'+'-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;'
+            );
+        });
+    });
+
+    //Link Font Size
+    wp.customize("link_font_size", function(value) {
+        value.bind(function(to) {
+            $("a").css(
+                "font-size",
+                to+"em"
+            );
+        });
+    });
+
+    //Link Font Line Height
+    wp.customize("link_font_line_height", function(value) {
+        value.bind(function(to) {
+            $("a").css(
+                "line-height",
+                to
+            );
+        });
+    });
+
+    //Link Font text-transform
+    wp.customize("link_font_text_transform", function(value) {
+        value.bind(function(to) {
+            $("a").css(
+                "text-transform",
+                to
+            );
+        });
+    });
+
+    //Link Font Family
+    wp.customize("link_font_family", function(value) {
+        value.bind(function(to) {
+            $("a").css(
+                "font-family",
+                '"'+to+'+'+'-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;'
+            );
+        });
+    });
+
+    //Button Font Size
+    wp.customize("button_font_size", function(value) {
+        value.bind(function(to) {
+            $("input[type=button], button").css(
+                "font-size",
+                to+"em"
+            );
+        });
+    });
+
+    //Button Font Line Height
+    wp.customize("button_font_line_height", function(value) {
+        value.bind(function(to) {
+            $("input[type=button], button").css(
+                "line-height",
+                to
+            );
+        });
+    });
+
+    //Button Font text-transform
+    wp.customize("button_font_text_transform", function(value) {
+        value.bind(function(to) {
+            $("input[type=button], button").css(
+                "text-transform",
+                to
+            );
+        });
+    });
+
+    //Button Font Family
+    wp.customize("button_font_family", function(value) {
+        value.bind(function(to) {
+            $("input[type=button], button").css(
+                "font-family",
+                '"'+to+'+'+'-apple-system,BbuttonMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;'
+            );
+        });
+    });
+
+    /**
+     * ......................................
+     */
 
 
     // Container width

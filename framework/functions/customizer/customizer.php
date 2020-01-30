@@ -1076,14 +1076,13 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Body Font Size
      * @body_font_size
      * Parent: @flexia_typography_settings -> @flexia_typography_body
-     */  
+     */
     $wp_customize->add_setting('body_font_size', array(
         'default' => $defaults['body_font_size'],
         'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
         'sanitize_callback' => 'flexia_sanitize_integer',
     ));
-
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
             $wp_customize, 
@@ -1103,6 +1102,35 @@ function flexia_customize_register($wp_customize)
     );
 
     /**
+     * Typography Section: Body Font Line Height
+     * @body_font_line_height
+     * Parent: @flexia_typography_settings -> @flexia_typography_body
+     */
+    $wp_customize->add_setting('body_font_line_height', array(
+        'default' => $defaults['body_font_line_height'],
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'flexia_sanitize_integer',
+    ));
+    $wp_customize->add_control(
+        new Customizer_Range_Value_Control(
+            $wp_customize, 
+            'body_font_line_height', array(
+                'type' => 'range-value',
+                'section' => 'flexia_typography_body',
+                'settings' => 'body_font_line_height',
+                'label' => __('Line Height', 'flexia'),
+                'input_attrs' => array(
+                    'min' => 0,
+                    'max' => 10,
+                    'step' => 0.1,
+                    'suffix' => '', //optional suffix
+                ),
+            )
+        )
+    );
+
+    /**
      * Typography Section: Body Font Family
      * @body_font_family
      * Parent: @flexia_typography_settings -> @flexia_typography_body
@@ -1111,7 +1139,6 @@ function flexia_customize_register($wp_customize)
         'default' => $defaults['body_font_family'],
         'sanitize_callback' => 'sanitize_text_field',
     ));
-
     $wp_customize->add_control(
         new Customizer_Select2_Google_Fonts(
             $wp_customize,
@@ -1135,7 +1162,6 @@ function flexia_customize_register($wp_customize)
         'default' => '',
         'sanitize_callback' => 'sanitize_text_field',
     ));
-
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -1175,24 +1201,210 @@ function flexia_customize_register($wp_customize)
         )
     );
 
-
+    /**
+     * Typography Section: Body Font Text Transform
+     * @body_font_text_transform
+     * Parent: @flexia_typography_settings -> @flexia_typography_body
+     */ 
+    $wp_customize->add_setting( 'body_font_text_transform', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'themeslug_sanitize_select',
+        'default' => $defaults['body_font_text_transform'],
+        'transport' => 'postMessage',
+    ));
+      
+    $wp_customize->add_control(
+        'body_font_text_transform', 
+        array(
+            'type' => 'select',
+            'section' => 'flexia_typography_body', // Add a default or your own section
+            'label' => __( 'Text Transform' ),
+            'choices' => array(
+                'none' => __( 'None' ),
+                'capitalize' => __( 'Capitalize' ),
+                'uppercase' => __( 'Uppercase' ),
+                'lowercase' => __( 'Lowercase' ),
+            ),
+        )
+    );
     /**
      * ..............................................................
      */
 
 
     /**
+     * ..............................................................
      * Typography Section: Add Section: Paragraph
      * @flexia_typography_paragraph
      * Parent: @flexia_typography_settings
-     */    
+     */
     $wp_customize->add_section('flexia_typography_paragraph', array(
         'title' => __('Paragraph', 'flexia'),
         'priority' => 10,
     ));
 
+    /**
+     * Typography Section: Paragraph Font Size
+     * @paragraph_font_size
+     * Parent: @flexia_typography_settings -> @flexia_typography_paragraph
+     */
+    $wp_customize->add_setting('paragraph_font_size', array(
+        'default' => $defaults['paragraph_font_size'],
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'flexia_sanitize_integer',
+    ));
+    $wp_customize->add_control(
+        new Customizer_Range_Value_Control(
+            $wp_customize, 
+            'paragraph_font_size', array(
+                'type' => 'range-value',
+                'section' => 'flexia_typography_paragraph',
+                'settings' => 'paragraph_font_size',
+                'label' => __('Paragraph Font Size (px)', 'flexia'),
+                'input_attrs' => array(
+                    'min' => 0,
+                    'max' => 5,
+                    'step' => 0.001,
+                    'suffix' => 'em', //optional suffix
+                ),
+            )
+        )
+    );
 
     /**
+     * Typography Section: Paragraph Font Line Height
+     * @paragraph_font_line_height
+     * Parent: @flexia_typography_settings -> @flexia_typography_paragraph
+     */
+    $wp_customize->add_setting('paragraph_font_line_height', array(
+        'default' => $defaults['paragraph_font_line_height'],
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'flexia_sanitize_integer',
+    ));
+    $wp_customize->add_control(
+        new Customizer_Range_Value_Control(
+            $wp_customize, 
+            'paragraph_font_line_height', array(
+                'type' => 'range-value',
+                'section' => 'flexia_typography_paragraph',
+                'settings' => 'paragraph_font_line_height',
+                'label' => __('Line Height', 'flexia'),
+                'input_attrs' => array(
+                    'min' => 0,
+                    'max' => 10,
+                    'step' => 0.1,
+                    'suffix' => '', //optional suffix
+                ),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Paragraph Font Family
+     * @paragraph_font_family
+     * Parent: @flexia_typography_settings -> @flexia_typography_paragraph
+     */  
+    $wp_customize->add_setting('paragraph_font_family', array(
+        'default' => $defaults['paragraph_font_family'],
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control(
+        new Customizer_Select2_Google_Fonts(
+            $wp_customize,
+            'paragraph_font_family',
+            array(
+                'label' => esc_html__('Paragraph Font', 'flexia'),
+                'section' => 'flexia_typography_paragraph',
+                'settings' => 'paragraph_font_family',
+                'type' => 'select2_google_fonts',
+                'choices' => flexia_google_fonts(),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Paragraph Font Variants
+     * @paragraph_font_variants
+     * Parent: @flexia_typography_settings -> @flexia_typography_paragraph
+     */ 
+    $wp_customize->add_setting('paragraph_font_variants', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'paragraph_font_variants',
+            array(
+                'label' => __('Paragraph Font Variants', 'flexia'),
+                'section' => 'flexia_typography_paragraph',
+                'settings' => 'paragraph_font_variants',
+                'description' => '',
+                'type' => 'select',
+                'choices' => array(),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Paragraph Font Subsets
+     * @paragraph_font_subsets
+     * Parent: @flexia_typography_settings -> @flexia_typography_paragraph
+     */ 
+    $wp_customize->add_setting('paragraph_font_subsets', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'paragraph_font_subsets',
+            array(
+                'label' => __('Paragraph Font Subsets', 'flexia'),
+                'section' => 'flexia_typography_paragraph',
+                'settings' => 'paragraph_font_subsets',
+                'description' => '',
+                'type' => 'select',
+                'choices' => array(),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Paragraph Font Text Transform
+     * @paragraph_font_text_transform
+     * Parent: @flexia_typography_settings -> @flexia_typography_paragraph
+     */ 
+    $wp_customize->add_setting( 'paragraph_font_text_transform', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'themeslug_sanitize_select',
+        'default' => $defaults['paragraph_font_text_transform'],
+        'transport' => 'postMessage',
+    ));
+      
+    $wp_customize->add_control(
+        'paragraph_font_text_transform', 
+        array(
+            'type' => 'select',
+            'section' => 'flexia_typography_paragraph', // Add a default or your own section
+            'label' => __( 'Text Transform' ),
+            'choices' => array(
+                'none' => __( 'None' ),
+                'capitalize' => __( 'Capitalize' ),
+                'uppercase' => __( 'Uppercase' ),
+                'lowercase' => __( 'Lowercase' ),
+            ),
+        )
+    );
+    /**
+     * ..............................................................
+     */
+
+
+    /**
+     * ..............................................................
      * Typography Section: Add Section: Heading
      * @flexia_typography_heading
      * Parent: @flexia_typography_settings
@@ -1202,116 +1414,11 @@ function flexia_customize_register($wp_customize)
         'priority' => 10,
     ));
 
-
     /**
-     * Typography Section: Add Section: Link
-     * @flexia_typography_link
-     * Parent: @flexia_typography_settings
-     */    
-    $wp_customize->add_section('flexia_typography_link', array(
-        'title' => __('Link', 'flexia'),
-        'priority' => 10,
-    ));
-
-
-    /**
-     * Typography Section: Add Section: Button
-     * @flexia_typography_button
-     * Parent: @flexia_typography_settings
-     */    
-    $wp_customize->add_section('flexia_typography_button', array(
-        'title' => __('Button', 'flexia'),
-        'priority' => 10,
-    ));
-
-
-    /**
-     * Typography Section: Add Section: Form
-     * @flexia_typography_form
-     * Parent: @flexia_typography_settings
-     */    
-    $wp_customize->add_section('flexia_typography_form', array(
-        'title' => __('Form', 'flexia'),
-        'priority' => 10,
-    ));    
-
-    
-
-    //-----------------------------------
-
-    
-    // Heading separator
-
-    $wp_customize->add_setting('typography_settings_title_heading', array(
-        'default' => $defaults['typography_settings_title_heading'],
-        'sanitize_callback' => 'esc_html',
-    ));
-
-    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'typography_settings_title_heading', array(
-        'label' => __('Headings', 'flexia'),
-        'settings' => 'typography_settings_title_heading',
-        'section' => 'flexia_typography_settings',
-    )));
-
-    // Heading Font Setting
-
-    $wp_customize->add_setting('heading_font_family', array(
-        'default' => $defaults['body_font_family'],
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-
-    $wp_customize->add_control(new Customizer_Select2_Google_Fonts(
-        $wp_customize,
-        'heading_font_family',
-        array(
-            'label' => esc_html__('Heading Font', 'flexia'),
-            'section' => 'flexia_typography_settings',
-            'settings' => 'heading_font_family',
-            'type' => 'select2_google_fonts',
-            'choices' => flexia_google_fonts(),
-        ))
-    );
-
-    $wp_customize->add_setting('heading_font_variants', array(
-        'default' => '',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'heading_font_variants',
-            array(
-                'label' => __('Heading Font Variants', 'flexia'),
-                'section' => 'flexia_typography_settings',
-                'settings' => 'heading_font_variants',
-                'description' => '',
-                'type' => 'select',
-                'choices' => array(),
-            )
-        )
-    );
-
-    $wp_customize->add_setting('heading_font_subsets', array(
-        'default' => '',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'heading_font_subsets',
-            array(
-                'label' => __('Heading Font Subsets', 'flexia'),
-                'section' => 'flexia_typography_settings',
-                'settings' => 'heading_font_subsets',
-                'description' => '',
-                'type' => 'select',
-                'choices' => array(),
-            )
-        )
-    );
-
+     * Typography Section: Heading 1 Font Size
+     * @heading1_font_size
+     * Parent: @flexia_typography_settings -> @flexia_typography_heading
+     */
     $wp_customize->add_setting('heading1_font_size', array(
         'default' => $defaults['heading1_font_size'],
         'capability' => 'edit_theme_options',
@@ -1319,10 +1426,9 @@ function flexia_customize_register($wp_customize)
         'sanitize_callback' => 'flexia_sanitize_float',
 
     ));
-
     $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'heading1_font_size', array(
         'type' => 'range-value',
-        'section' => 'flexia_typography_settings',
+        'section' => 'flexia_typography_heading',
         'settings' => 'heading1_font_size',
         'label' => __('H1 Font Size (em)', 'flexia'),
         'input_attrs' => array(
@@ -1333,6 +1439,11 @@ function flexia_customize_register($wp_customize)
         ),
     )));
 
+    /**
+     * Typography Section: Heading 2 Font Size
+     * @heading2_font_size
+     * Parent: @flexia_typography_settings -> @flexia_typography_heading
+     */
     $wp_customize->add_setting('heading2_font_size', array(
         'default' => $defaults['heading2_font_size'],
         'capability' => 'edit_theme_options',
@@ -1340,10 +1451,9 @@ function flexia_customize_register($wp_customize)
         'sanitize_callback' => 'flexia_sanitize_float',
 
     ));
-
     $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'heading2_font_size', array(
         'type' => 'range-value',
-        'section' => 'flexia_typography_settings',
+        'section' => 'flexia_typography_heading',
         'settings' => 'heading2_font_size',
         'label' => __('H2 Font Size (em)', 'flexia'),
         'input_attrs' => array(
@@ -1354,6 +1464,11 @@ function flexia_customize_register($wp_customize)
         ),
     )));
 
+    /**
+     * Typography Section: Heading 3 Font Size
+     * @heading3_font_size
+     * Parent: @flexia_typography_settings -> @flexia_typography_heading
+     */
     $wp_customize->add_setting('heading3_font_size', array(
         'default' => $defaults['heading3_font_size'],
         'capability' => 'edit_theme_options',
@@ -1361,10 +1476,9 @@ function flexia_customize_register($wp_customize)
         'sanitize_callback' => 'flexia_sanitize_float',
 
     ));
-
     $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'heading3_font_size', array(
         'type' => 'range-value',
-        'section' => 'flexia_typography_settings',
+        'section' => 'flexia_typography_heading',
         'settings' => 'heading3_font_size',
         'label' => __('H3 Font Size (em)', 'flexia'),
         'input_attrs' => array(
@@ -1375,17 +1489,21 @@ function flexia_customize_register($wp_customize)
         ),
     )));
 
+    /**
+     * Typography Section: Heading 4 Font Size
+     * @heading4_font_size
+     * Parent: @flexia_typography_settings -> @flexia_typography_heading
+     */
     $wp_customize->add_setting('heading4_font_size', array(
-        'default' => $defaults['heading1_font_size'],
+        'default' => $defaults['heading4_font_size'],
         'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
         'sanitize_callback' => 'flexia_sanitize_float',
 
     ));
-
     $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'heading4_font_size', array(
         'type' => 'range-value',
-        'section' => 'flexia_typography_settings',
+        'section' => 'flexia_typography_heading',
         'settings' => 'heading4_font_size',
         'label' => __('H4 Font Size (em)', 'flexia'),
         'input_attrs' => array(
@@ -1396,6 +1514,11 @@ function flexia_customize_register($wp_customize)
         ),
     )));
 
+    /**
+     * Typography Section: Heading 5 Font Size
+     * @heading5_font_size
+     * Parent: @flexia_typography_settings -> @flexia_typography_heading
+     */
     $wp_customize->add_setting('heading5_font_size', array(
         'default' => $defaults['heading5_font_size'],
         'capability' => 'edit_theme_options',
@@ -1403,10 +1526,9 @@ function flexia_customize_register($wp_customize)
         'sanitize_callback' => 'flexia_sanitize_float',
 
     ));
-
     $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'heading5_font_size', array(
         'type' => 'range-value',
-        'section' => 'flexia_typography_settings',
+        'section' => 'flexia_typography_heading',
         'settings' => 'heading5_font_size',
         'label' => __('H5 Font Size (em)', 'flexia'),
         'input_attrs' => array(
@@ -1417,6 +1539,11 @@ function flexia_customize_register($wp_customize)
         ),
     )));
 
+    /**
+     * Typography Section: Heading 6 Font Size
+     * @heading6_font_size
+     * Parent: @flexia_typography_settings -> @flexia_typography_heading
+     */
     $wp_customize->add_setting('heading6_font_size', array(
         'default' => $defaults['heading6_font_size'],
         'capability' => 'edit_theme_options',
@@ -1424,10 +1551,9 @@ function flexia_customize_register($wp_customize)
         'sanitize_callback' => 'flexia_sanitize_float',
 
     ));
-
     $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'heading6_font_size', array(
         'type' => 'range-value',
-        'section' => 'flexia_typography_settings',
+        'section' => 'flexia_typography_heading',
         'settings' => 'heading6_font_size',
         'label' => __('H6 Font Size (em)', 'flexia'),
         'input_attrs' => array(
@@ -1436,7 +1562,478 @@ function flexia_customize_register($wp_customize)
             'step' => .01,
             'suffix' => 'em', //optional suffix
         ),
-    )));    
+    )));
+
+    /**
+     * Typography Section: Heading Font Line Height
+     * @heading_font_line_height
+     * Parent: @flexia_typography_settings -> @flexia_typography_heading
+     */
+    $wp_customize->add_setting('heading_font_line_height', array(
+        'default' => $defaults['heading_font_line_height'],
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'flexia_sanitize_integer',
+    ));
+    $wp_customize->add_control(
+        new Customizer_Range_Value_Control(
+            $wp_customize, 
+            'heading_font_line_height', array(
+                'type' => 'range-value',
+                'section' => 'flexia_typography_heading',
+                'settings' => 'heading_font_line_height',
+                'label' => __('Line Height', 'flexia'),
+                'input_attrs' => array(
+                    'min' => 0,
+                    'max' => 10,
+                    'step' => 0.1,
+                    'suffix' => '', //optional suffix
+                ),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Heading Font Family
+     * @heading_font_family
+     * Parent: @flexia_typography_settings -> @flexia_typography_heading
+     */  
+    $wp_customize->add_setting('heading_font_family', array(
+        'default' => $defaults['heading_font_family'],
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control(
+        new Customizer_Select2_Google_Fonts(
+            $wp_customize,
+            'heading_font_family',
+            array(
+                'label' => esc_html__('Heading Font', 'flexia'),
+                'section' => 'flexia_typography_heading',
+                'settings' => 'heading_font_family',
+                'type' => 'select2_google_fonts',
+                'choices' => flexia_google_fonts(),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Heading Font Variants
+     * @heading_font_variants
+     * Parent: @flexia_typography_settings -> @flexia_typography_heading
+     */ 
+    $wp_customize->add_setting('heading_font_variants', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'heading_font_variants',
+            array(
+                'label' => __('Heading Font Variants', 'flexia'),
+                'section' => 'flexia_typography_heading',
+                'settings' => 'heading_font_variants',
+                'description' => '',
+                'type' => 'select',
+                'choices' => array(),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Heading Font Subsets
+     * @heading_font_subsets
+     * Parent: @flexia_typography_settings -> @flexia_typography_heading
+     */ 
+    $wp_customize->add_setting('heading_font_subsets', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'heading_font_subsets',
+            array(
+                'label' => __('Heading Font Subsets', 'flexia'),
+                'section' => 'flexia_typography_heading',
+                'settings' => 'heading_font_subsets',
+                'description' => '',
+                'type' => 'select',
+                'choices' => array(),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Heading Font Text Transform
+     * @heading_font_text_transform
+     * Parent: @flexia_typography_settings -> @flexia_typography_heading
+     */ 
+    $wp_customize->add_setting( 'heading_font_text_transform', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'themeslug_sanitize_select',
+        'default' => $defaults['heading_font_text_transform'],
+        'transport' => 'postMessage',
+    ));
+      
+    $wp_customize->add_control(
+        'heading_font_text_transform', 
+        array(
+            'type' => 'select',
+            'section' => 'flexia_typography_heading', // Add a default or your own section
+            'label' => __( 'Text Transform' ),
+            'choices' => array(
+                'none' => __( 'None' ),
+                'capitalize' => __( 'Capitalize' ),
+                'uppercase' => __( 'Uppercase' ),
+                'lowercase' => __( 'Lowercase' ),
+            ),
+        )
+    );
+    /**
+     * ..............................................................
+     */
+
+
+    /**
+     * ..............................................................
+     * Typography Section: Add Section: Link
+     * @flexia_typography_link
+     * Parent: @flexia_typography_settings
+     */    
+    $wp_customize->add_section('flexia_typography_link', array(
+        'title' => __('Link', 'flexia'),
+        'priority' => 10,
+    ));
+    /**
+     * Typography Section: Link Font Size
+     * @link_font_size
+     * Parent: @flexia_typography_settings -> @flexia_typography_link
+     */
+    $wp_customize->add_setting('link_font_size', array(
+        'default' => $defaults['link_font_size'],
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'flexia_sanitize_integer',
+    ));
+    $wp_customize->add_control(
+        new Customizer_Range_Value_Control(
+            $wp_customize, 
+            'link_font_size', array(
+                'type' => 'range-value',
+                'section' => 'flexia_typography_link',
+                'settings' => 'link_font_size',
+                'label' => __('Link Font Size (px)', 'flexia'),
+                'input_attrs' => array(
+                    'min' => 0,
+                    'max' => 5,
+                    'step' => 0.001,
+                    'suffix' => 'em', //optional suffix
+                ),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Link Font Line Height
+     * @link_font_line_height
+     * Parent: @flexia_typography_settings -> @flexia_typography_link
+     */
+    $wp_customize->add_setting('link_font_line_height', array(
+        'default' => $defaults['link_font_line_height'],
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'flexia_sanitize_integer',
+    ));
+    $wp_customize->add_control(
+        new Customizer_Range_Value_Control(
+            $wp_customize, 
+            'link_font_line_height', array(
+                'type' => 'range-value',
+                'section' => 'flexia_typography_link',
+                'settings' => 'link_font_line_height',
+                'label' => __('Line Height', 'flexia'),
+                'input_attrs' => array(
+                    'min' => 0,
+                    'max' => 10,
+                    'step' => 0.1,
+                    'suffix' => '', //optional suffix
+                ),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Link Font Family
+     * @link_font_family
+     * Parent: @flexia_typography_settings -> @flexia_typography_link
+     */  
+    $wp_customize->add_setting('link_font_family', array(
+        'default' => $defaults['link_font_family'],
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control(
+        new Customizer_Select2_Google_Fonts(
+            $wp_customize,
+            'link_font_family',
+            array(
+                'label' => esc_html__('Link Font', 'flexia'),
+                'section' => 'flexia_typography_link',
+                'settings' => 'link_font_family',
+                'type' => 'select2_google_fonts',
+                'choices' => flexia_google_fonts(),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Link Font Variants
+     * @link_font_variants
+     * Parent: @flexia_typography_settings -> @flexia_typography_link
+     */ 
+    $wp_customize->add_setting('link_font_variants', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'link_font_variants',
+            array(
+                'label' => __('Link Font Variants', 'flexia'),
+                'section' => 'flexia_typography_link',
+                'settings' => 'link_font_variants',
+                'description' => '',
+                'type' => 'select',
+                'choices' => array(),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Link Font Subsets
+     * @link_font_subsets
+     * Parent: @flexia_typography_settings -> @flexia_typography_link
+     */ 
+    $wp_customize->add_setting('link_font_subsets', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'link_font_subsets',
+            array(
+                'label' => __('Link Font Subsets', 'flexia'),
+                'section' => 'flexia_typography_link',
+                'settings' => 'link_font_subsets',
+                'description' => '',
+                'type' => 'select',
+                'choices' => array(),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Link Font Text Transform
+     * @link_font_text_transform
+     * Parent: @flexia_typography_settings -> @flexia_typography_link
+     */ 
+    $wp_customize->add_setting( 'link_font_text_transform', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'themeslug_sanitize_select',
+        'default' => $defaults['link_font_text_transform'],
+        'transport' => 'postMessage',
+    ));
+      
+    $wp_customize->add_control(
+        'link_font_text_transform', 
+        array(
+            'type' => 'select',
+            'section' => 'flexia_typography_link', // Add a default or your own section
+            'label' => __( 'Text Transform' ),
+            'choices' => array(
+                'none' => __( 'None' ),
+                'capitalize' => __( 'Capitalize' ),
+                'uppercase' => __( 'Uppercase' ),
+                'lowercase' => __( 'Lowercase' ),
+            ),
+        )
+    );
+    /**
+     * ..............................................................
+     */
+
+
+    /**
+     * ..............................................................
+     * Typography Section: Add Section: Button
+     * @flexia_typography_button
+     * Parent: @flexia_typography_settings
+     */    
+    $wp_customize->add_section('flexia_typography_button', array(
+        'title' => __('Button', 'flexia'),
+        'priority' => 10,
+    ));
+    /**
+     * Typography Section: Button Font Size
+     * @button_font_size
+     * Parent: @flexia_typography_settings -> @flexia_typography_button
+     */
+    $wp_customize->add_setting('button_font_size', array(
+        'default' => $defaults['button_font_size'],
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'flexia_sanitize_integer',
+    ));
+    $wp_customize->add_control(
+        new Customizer_Range_Value_Control(
+            $wp_customize, 
+            'button_font_size', array(
+                'type' => 'range-value',
+                'section' => 'flexia_typography_button',
+                'settings' => 'button_font_size',
+                'label' => __('Button Font Size (px)', 'flexia'),
+                'input_attrs' => array(
+                    'min' => 0,
+                    'max' => 5,
+                    'step' => 0.01,
+                    'suffix' => 'em', //optional suffix
+                ),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Button Font Line Height
+     * @button_font_line_height
+     * Parent: @flexia_typography_settings -> @flexia_typography_button
+     */
+    $wp_customize->add_setting('button_font_line_height', array(
+        'default' => $defaults['button_font_line_height'],
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'flexia_sanitize_integer',
+    ));
+    $wp_customize->add_control(
+        new Customizer_Range_Value_Control(
+            $wp_customize, 
+            'button_font_line_height', array(
+                'type' => 'range-value',
+                'section' => 'flexia_typography_button',
+                'settings' => 'button_font_line_height',
+                'label' => __('Line Height', 'flexia'),
+                'input_attrs' => array(
+                    'min' => 0,
+                    'max' => 10,
+                    'step' => 0.1,
+                    'suffix' => '', //optional suffix
+                ),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Button Font Family
+     * @button_font_family
+     * Parent: @flexia_typography_settings -> @flexia_typography_button
+     */  
+    $wp_customize->add_setting('button_font_family', array(
+        'default' => $defaults['button_font_family'],
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control(
+        new Customizer_Select2_Google_Fonts(
+            $wp_customize,
+            'button_font_family',
+            array(
+                'label' => esc_html__('Button Font', 'flexia'),
+                'section' => 'flexia_typography_button',
+                'settings' => 'button_font_family',
+                'type' => 'select2_google_fonts',
+                'choices' => flexia_google_fonts(),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Button Font Variants
+     * @button_font_variants
+     * Parent: @flexia_typography_settings -> @flexia_typography_button
+     */ 
+    $wp_customize->add_setting('button_font_variants', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'button_font_variants',
+            array(
+                'label' => __('Button Font Variants', 'flexia'),
+                'section' => 'flexia_typography_button',
+                'settings' => 'button_font_variants',
+                'description' => '',
+                'type' => 'select',
+                'choices' => array(),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Button Font Subsets
+     * @button_font_subsets
+     * Parent: @flexia_typography_settings -> @flexia_typography_button
+     */ 
+    $wp_customize->add_setting('button_font_subsets', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'button_font_subsets',
+            array(
+                'label' => __('Button Font Subsets', 'flexia'),
+                'section' => 'flexia_typography_button',
+                'settings' => 'button_font_subsets',
+                'description' => '',
+                'type' => 'select',
+                'choices' => array(),
+            )
+        )
+    );
+
+    /**
+     * Typography Section: Button Font Text Transform
+     * @button_font_text_transform
+     * Parent: @flexia_typography_settings -> @flexia_typography_button
+     */ 
+    $wp_customize->add_setting( 'button_font_text_transform', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'themeslug_sanitize_select',
+        'default' => $defaults['button_font_text_transform'],
+        'transport' => 'postMessage',
+    ));
+      
+    $wp_customize->add_control(
+        'button_font_text_transform', 
+        array(
+            'type' => 'select',
+            'section' => 'flexia_typography_button', // Add a default or your own section
+            'label' => __( 'Text Transform' ),
+            'choices' => array(
+                'none' => __( 'None' ),
+                'capitalize' => __( 'Capitalize' ),
+                'uppercase' => __( 'Uppercase' ),
+                'lowercase' => __( 'Lowercase' ),
+            ),
+        )
+    );
+    /**
+     * ..............................................................
+     */
+        
 
     // Blog Settings
 
@@ -2778,7 +3375,6 @@ function flexia_customize_register($wp_customize)
     $wp_customize->get_section('flexia_typography_heading')->panel = 'flexia_typography_settings';
     $wp_customize->get_section('flexia_typography_link')->panel = 'flexia_typography_settings';
     $wp_customize->get_section('flexia_typography_button')->panel = 'flexia_typography_settings';
-    $wp_customize->get_section('flexia_typography_form')->panel = 'flexia_typography_settings';
 }
 add_action('customize_register', 'flexia_customize_register');
 

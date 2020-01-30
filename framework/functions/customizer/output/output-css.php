@@ -44,6 +44,8 @@ function flexia_generate_css()
 	  body {
 		font-family: "' . $defaults['body_font_family'] . '", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
 		font-size: ' . $defaults['body_font_size'] . 'px;
+		line-height: ' . $defaults['body_font_line_height'] . ';
+		text-transform: ' . $defaults['body_font_text_transform'] . ';
 		background-color: ' . $defaults['site_background_color'] . ';
 		background-image: ' .$site_background_image. ';
 		background-size: ' . $defaults['site_background_image_size'] . ';
@@ -51,9 +53,18 @@ function flexia_generate_css()
 		background-repeat: ' . $defaults['site_background_image_repeat'] . ';
 	  }
 
+	  p {
+		font-family: "' . $defaults['paragraph_font_family'] . '", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+		font-size: ' . $defaults['paragraph_font_size'] . 'em;
+		line-height: ' . $defaults['paragraph_font_line_height'] . ';
+		text-transform: ' . $defaults['paragraph_font_text_transform'] . ';
+	  }
+
 	  h1, h2, h3, h4, h5, h6 {
 		font-family: "' . $defaults['heading_font_family'] . '", "Helvetica Neue",sans-serif;
 		color: ' . $defaults['default_heading_color'] . ';
+		line-height: ' . $defaults['heading_font_line_height'] . ';
+		text-transform: ' . $defaults['heading_font_text_transform'] . ';
 	  }
 
 	  h1 {
@@ -82,10 +93,22 @@ function flexia_generate_css()
 
 	  a {
 		color: ' . $defaults['site_link_color'] . ';
+		font-family: "' . $defaults['link_font_family'] . '", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+		font-size: ' . $defaults['link_font_size'] . 'em;
+		line-height: ' . $defaults['link_font_line_height'] . ';
+		text-transform: ' . $defaults['link_font_text_transform'] . ';
 	  }
 
 	  a:hover, a:focus, a:active {
 		color: ' . $defaults['site_link_hover_color'] . ';
+	  }
+
+	  input[type=button], button {
+		color: ' . $defaults['button_text_color'] . ';
+		font-family: "' . $defaults['button_font_family'] . '", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+		font-size: ' . $defaults['button_font_size'] . 'em;
+		line-height: ' . $defaults['button_font_line_height'] . ';
+		text-transform: ' . $defaults['button_font_text_transform'] . ';
 	  }
 
 	  .flexia-container.width {
