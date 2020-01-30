@@ -1051,77 +1051,98 @@ function flexia_customize_register($wp_customize)
         ),
     )));
 
-    // Typography Settings
-
-    $wp_customize->add_section('flexia_typography_settings', array(
-        'title' => __('Color & Typography', 'flexia'),
-        'priority' => 30,
+    /**
+     * Typography Section: Add Panel
+     * @flexia_typography_settings
+     */
+    $wp_customize->add_panel('flexia_typography_settings',array(
+        'title'=>'Default Typography',
+        'description'=> 'Default Typography Settings',
+        'priority'=> 40,
     ));
 
-    // Typograhpy Separator
-
-    $wp_customize->add_setting('typography_settings_title_body', array(
-        'default' => $defaults['typography_settings_title_body'],
-        'sanitize_callback' => 'esc_html',
+    /**
+     * ......................................................
+     * Typography Section: Add Section
+     * @flexia_typography_body
+     * Parent: @flexia_typography_settings
+     */    
+    $wp_customize->add_section('flexia_typography_body', array(
+        'title' => __('Body', 'flexia'),
+        'priority' => 10,
     ));
 
-    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'typography_settings_title_body', array(
-        'label' => __('Body & Content', 'flexia'),
-        'settings' => 'typography_settings_title_body',
-        'section' => 'flexia_typography_settings',
-    )));
-
+    /**
+     * Typography Section: Body Font Size
+     * @body_font_size
+     * Parent: @flexia_typography_settings -> @flexia_typography_body
+     */  
     $wp_customize->add_setting('body_font_size', array(
         'default' => $defaults['body_font_size'],
         'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
         'sanitize_callback' => 'flexia_sanitize_integer',
-
     ));
 
-    $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'body_font_size', array(
-        'type' => 'range-value',
-        'section' => 'flexia_typography_settings',
-        'settings' => 'body_font_size',
-        'label' => __('Body Font Size (px)', 'flexia'),
-        'input_attrs' => array(
-            'min' => 1,
-            'max' => 100,
-            'step' => 1,
-            'suffix' => 'px', //optional suffix
-        ),
-    )));
+    $wp_customize->add_control(
+        new Customizer_Range_Value_Control(
+            $wp_customize, 
+            'body_font_size', array(
+                'type' => 'range-value',
+                'section' => 'flexia_typography_body',
+                'settings' => 'body_font_size',
+                'label' => __('Body Font Size (px)', 'flexia'),
+                'input_attrs' => array(
+                    'min' => 1,
+                    'max' => 100,
+                    'step' => 1,
+                    'suffix' => 'px', //optional suffix
+                ),
+            )
+        )
+    );
 
-    // Body Font Setting
-
+    /**
+     * Typography Section: Body Font Family
+     * @body_font_family
+     * Parent: @flexia_typography_settings -> @flexia_typography_body
+     */  
     $wp_customize->add_setting('body_font_family', array(
         'default' => $defaults['body_font_family'],
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
-    $wp_customize->add_control(new Customizer_Select2_Google_Fonts(
-        $wp_customize,
-        'body_font_family',
-        array(
-            'label' => esc_html__('Body Font', 'flexia'),
-            'section' => 'flexia_typography_settings',
-            'settings' => 'body_font_family',
-            'type' => 'select2_google_fonts',
-            'choices' => flexia_google_fonts(),
-        ))
+    $wp_customize->add_control(
+        new Customizer_Select2_Google_Fonts(
+            $wp_customize,
+            'body_font_family',
+            array(
+                'label' => esc_html__('Body Font', 'flexia'),
+                'section' => 'flexia_typography_body',
+                'settings' => 'body_font_family',
+                'type' => 'select2_google_fonts',
+                'choices' => flexia_google_fonts(),
+            )
+        )
     );
 
+    /**
+     * Typography Section: Body Font Variants
+     * @body_font_variants
+     * Parent: @flexia_typography_settings -> @flexia_typography_body
+     */ 
     $wp_customize->add_setting('body_font_variants', array(
         'default' => '',
         'sanitize_callback' => 'sanitize_text_field',
     ));
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
             'body_font_variants',
             array(
                 'label' => __('Body Font Variants', 'flexia'),
-                'section' => 'flexia_typography_settings',
+                'section' => 'flexia_typography_body',
                 'settings' => 'body_font_variants',
                 'description' => '',
                 'type' => 'select',
@@ -1130,6 +1151,11 @@ function flexia_customize_register($wp_customize)
         )
     );
 
+    /**
+     * Typography Section: Body Font Subsets
+     * @body_font_subsets
+     * Parent: @flexia_typography_settings -> @flexia_typography_body
+     */ 
     $wp_customize->add_setting('body_font_subsets', array(
         'default' => '',
         'sanitize_callback' => 'sanitize_text_field',
@@ -1140,7 +1166,7 @@ function flexia_customize_register($wp_customize)
             'body_font_subsets',
             array(
                 'label' => __('Body Font Subsets', 'flexia'),
-                'section' => 'flexia_typography_settings',
+                'section' => 'flexia_typography_body',
                 'settings' => 'body_font_subsets',
                 'description' => '',
                 'type' => 'select',
@@ -1149,6 +1175,71 @@ function flexia_customize_register($wp_customize)
         )
     );
 
+
+    /**
+     * ..............................................................
+     */
+
+
+    /**
+     * Typography Section: Add Section: Paragraph
+     * @flexia_typography_paragraph
+     * Parent: @flexia_typography_settings
+     */    
+    $wp_customize->add_section('flexia_typography_paragraph', array(
+        'title' => __('Paragraph', 'flexia'),
+        'priority' => 10,
+    ));
+
+
+    /**
+     * Typography Section: Add Section: Heading
+     * @flexia_typography_heading
+     * Parent: @flexia_typography_settings
+     */    
+    $wp_customize->add_section('flexia_typography_heading', array(
+        'title' => __('Heading', 'flexia'),
+        'priority' => 10,
+    ));
+
+
+    /**
+     * Typography Section: Add Section: Link
+     * @flexia_typography_link
+     * Parent: @flexia_typography_settings
+     */    
+    $wp_customize->add_section('flexia_typography_link', array(
+        'title' => __('Link', 'flexia'),
+        'priority' => 10,
+    ));
+
+
+    /**
+     * Typography Section: Add Section: Button
+     * @flexia_typography_button
+     * Parent: @flexia_typography_settings
+     */    
+    $wp_customize->add_section('flexia_typography_button', array(
+        'title' => __('Button', 'flexia'),
+        'priority' => 10,
+    ));
+
+
+    /**
+     * Typography Section: Add Section: Form
+     * @flexia_typography_form
+     * Parent: @flexia_typography_settings
+     */    
+    $wp_customize->add_section('flexia_typography_form', array(
+        'title' => __('Form', 'flexia'),
+        'priority' => 10,
+    ));    
+
+    
+
+    //-----------------------------------
+
+    
     // Heading separator
 
     $wp_customize->add_setting('typography_settings_title_heading', array(
@@ -2681,6 +2772,13 @@ function flexia_customize_register($wp_customize)
     $wp_customize->get_section('header_image')->panel = 'flexia_design_settings';
     $wp_customize->get_section('flexia_page_settings')->panel = 'flexia_design_settings';
     $wp_customize->get_section('flexia_overlay_search_settings')->panel = 'flexia_design_settings';
+    //Add Sections to Typography Panel
+    $wp_customize->get_section('flexia_typography_body')->panel = 'flexia_typography_settings';
+    $wp_customize->get_section('flexia_typography_paragraph')->panel = 'flexia_typography_settings';
+    $wp_customize->get_section('flexia_typography_heading')->panel = 'flexia_typography_settings';
+    $wp_customize->get_section('flexia_typography_link')->panel = 'flexia_typography_settings';
+    $wp_customize->get_section('flexia_typography_button')->panel = 'flexia_typography_settings';
+    $wp_customize->get_section('flexia_typography_form')->panel = 'flexia_typography_settings';
 }
 add_action('customize_register', 'flexia_customize_register');
 
