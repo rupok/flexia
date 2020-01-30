@@ -7,7 +7,7 @@
 body.blog {
   .flexia-wrapper {
     >.content-area {
-      article.post {
+      article {
         background-color: $color__light;
         padding: 2em;
       }
@@ -371,7 +371,7 @@ body.archive {
 }
 .entry-content.single-post-entry {
   margin: 0 1.5em 4em;
-  padding: 1.5em 4em;
+  padding: 1.5em 1.5em;
   background-color: $color__light;
 }
 .entry-title {
@@ -433,7 +433,7 @@ body.archive {
   }
 }
 body {
-   &:not(.single-post) {
+   &.page {
      .flexia-wrapper {
        >.content-area {
          padding: 1.5em 2.5em;
