@@ -17,6 +17,71 @@ if (!function_exists('flexia_customizer_style')) {
     }
 }
 
+/**
+ * This function adds some styles to the WordPress Customizer
+ */
+function flexia_customizer_custom_styles() { ?>
+	<style type="text/css">
+		.customize-control-flexia-title .flexia-select,
+		.customize-control-flexia-title .flexia-dimension{
+			display: flex;
+		}
+		.customize-control-flexia-range-value {
+			display: flex;
+		}
+		.customize-control-flexia-range-value .customize-control-title,
+		.customize-control-flexia-number .customize-control-title {
+			float: left;
+		}
+		.flexia-customize-control-separator {
+			display: block;
+			margin: 0 -12px;
+			border: 1px solid #ddd;
+			border-left: 0;
+			border-right: 0;
+			padding: 15px;
+			font-size: 11px;
+			font-weight: 600;
+			letter-spacing: 2px;
+			line-height: 1;
+			text-transform: uppercase;
+			color: #555;
+			background-color: #fff;
+		}
+		.customize-control.customize-control-flexia-dimension,
+		.customize-control-flexia-select {
+			width: 25%;
+			float: left !important;
+			clear: none !important;
+			margin-top: 0;
+			margin-bottom: 12px;
+		}
+		.customize-control.customize-control-flexia-dimension .customize-control-title,
+		.customize-control-flexia-select .customize-control-title{
+			font-size: 11px;
+			font-weight: normal;
+			color: #888b8c;
+			margin-top: 0;
+		}
+		.flexia-customizer-reset {
+			font-size: 22px;
+    		line-height: 26px;
+    		margin-left: 5px;
+			transition: unset;
+		}
+		.flexia-customizer-reset svg {
+			width: 16px;
+			fill: #FE1F4A;
+		}
+		.customize-control-title .customize-control-title {
+			margin-bottom: 0;
+		}
+	</style>
+	<?php
+
+}
+add_action( 'customize_controls_print_styles', 'flexia_customizer_custom_styles', 999 );
+
 function flexia_generate_css()
 {
     $defaults = flexia_get_option();
