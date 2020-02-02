@@ -477,7 +477,7 @@ function flexia_customize_register($wp_customize)
         array(
             'default' => $defaults['site_background_image_size'],
             'transport'   => 'postMessage',
-            'sanitize_callback' => 'flexia_sanitize_choices',
+            'sanitize_callback' => 'flexia_sanitize_select',
         ));
 
     $wp_customize->add_control(
@@ -516,7 +516,7 @@ function flexia_customize_register($wp_customize)
         array(
             'default' => $defaults['site_background_image_position'],
             'transport'   => 'postMessage',
-            'sanitize_callback' => 'flexia_sanitize_choices',
+            'sanitize_callback' => 'flexia_sanitize_select',
         ));
 
     $wp_customize->add_control(
@@ -558,7 +558,7 @@ function flexia_customize_register($wp_customize)
         array(
             'default' => $defaults['site_background_image_repeat'],
             'transport'   => 'postMessage',
-            'sanitize_callback' => 'flexia_sanitize_choices',
+            'sanitize_callback' => 'flexia_sanitize_select',
         ));
 
     $wp_customize->add_control(
