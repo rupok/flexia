@@ -28,9 +28,11 @@ if (!function_exists('flexia_get_option_defaults')) {
             'site_background_color' => '#fff',
             'site_background_image_enable_button' => '',
             'site_background_image' => '',
+            'site_background_property' => '',
             'site_background_image_size' => 'auto',
             'site_background_image_position' => 'center center',
-            'site_background_image_repeat' => 'repeat',            
+            'site_background_image_repeat' => 'no-repeat',          
+            'site_background_image_attachment' => 'inherit',            
 
             'body_font_size' => '16',
             'body_font_line_height' => '1.4',

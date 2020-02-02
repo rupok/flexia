@@ -440,6 +440,32 @@ function flexia_customize_register($wp_customize)
             )
         )
     );
+
+    /**
+     * Default Color Section: Background Image Property
+     * @site_background_image_size
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
+
+    $wp_customize->add_setting( 'site_background_property', array(
+		'default'       => $defaults['site_background_property'],
+		'capability'    => 'edit_theme_options',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'flexia_sanitize_select'
+
+	) );
+
+	$wp_customize->add_control( new Flexia_Title_Custom_Control(
+		$wp_customize, 'site_background_property', array(
+		'type'     => 'flexia-title',
+		'section'  => 'flexia_default_colors_settings',
+		'settings' => 'site_background_property',
+		'label'    => __( 'Background Property', 'flexia' ),
+		'input_attrs' => array(
+			'id' => 'site_background_property',
+			'class' => 'flexia-select',
+		),
+	) ) );
     
     /**
      * Default Color Section: Background Image Size
@@ -451,20 +477,23 @@ function flexia_customize_register($wp_customize)
         array(
             'default' => $defaults['site_background_image_size'],
             'transport'   => 'postMessage',
-            'sanitize_callback' => 'flexia_sanitize_choices',
+            'sanitize_callback' => 'flexia_sanitize_select',
         ));
 
     $wp_customize->add_control(
-        new WP_Customize_Control(
+        new Flexia_Select_Control(
             $wp_customize,
             'site_background_image_size',
             array(
-                'label' => __('Background Image Size', 'flexia'),
+                'label' => __('Size', 'flexia'),
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'site_background_image_size',
                 'description' => '',
-                'type' => 'radio',
+                'type' => 'flexia-select',
                 'priority' => 10,
+                'input_attrs' => array(
+                    'class' => 'site_background_property flexia-select',
+                ),
                 'choices' => array(
                     'auto' => __('Auto', 'flexia'),
                     'cover' => __('Cover', 'flexia'),
@@ -487,20 +516,23 @@ function flexia_customize_register($wp_customize)
         array(
             'default' => $defaults['site_background_image_position'],
             'transport'   => 'postMessage',
-            'sanitize_callback' => 'flexia_sanitize_choices',
+            'sanitize_callback' => 'flexia_sanitize_select',
         ));
 
     $wp_customize->add_control(
-        new WP_Customize_Control(
+        new Flexia_Select_Control(
             $wp_customize,
             'site_background_image_position',
             array(
-                'label' => __('Background Image Position', 'flexia'),
+                'label' => __('Position', 'flexia'),
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'site_background_image_position',
                 'description' => '',
-                'type' => 'radio',
+                'type' => 'flexia-select',
                 'priority' => 10,
+                'input_attrs' => array(
+                    'class' => 'site_background_property flexia-select',
+                ),
                 'choices' => array(
                     'left top' => __('left top', 'flexia'),
                     'left center' => __('left center', 'flexia'),
@@ -526,20 +558,23 @@ function flexia_customize_register($wp_customize)
         array(
             'default' => $defaults['site_background_image_repeat'],
             'transport'   => 'postMessage',
-            'sanitize_callback' => 'flexia_sanitize_choices',
+            'sanitize_callback' => 'flexia_sanitize_select',
         ));
 
     $wp_customize->add_control(
-        new WP_Customize_Control(
+        new Flexia_Select_Control(
             $wp_customize,
             'site_background_image_repeat',
             array(
-                'label' => __('Background Image Size', 'flexia'),
+                'label' => __('Repeat', 'flexia'),
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'site_background_image_repeat',
                 'description' => '',
-                'type' => 'radio',
+                'type' => 'flexia-select',
                 'priority' => 10,
+                'input_attrs' => array(
+                    'class' => 'site_background_property flexia-select',
+                ),
                 'choices' => array(
                     'repeat' => __('repeat', 'flexia'),
                     'repeat-x' => __('repeat-x', 'flexia'),
@@ -551,6 +586,38 @@ function flexia_customize_register($wp_customize)
             )
         )
     );
+
+    /**
+     * Default Color Section: Background Image Attachment
+     * @site_background_image_repeat
+     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
+     */
+
+    $wp_customize->add_setting( 'site_background_image_attachment', array(
+		'default'       => $defaults['site_background_image_attachment'],
+		'capability'    => 'edit_theme_options',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'flexia_sanitize_select'
+
+	) );
+
+	$wp_customize->add_control( new Flexia_Select_Control(
+		$wp_customize, 'site_background_image_attachment', array(
+		'type'     => 'flexia-select',
+		'section'  => 'flexia_default_colors_settings',
+		'settings' => 'site_background_image_attachment',
+        'label'    => __( 'Attachment', 'flexia' ),
+        'input_attrs' => array(
+            'class' => 'site_background_property flexia-select',
+        ),
+		'choices'  => array(
+			'initial' 	=> __( 'initial', 'flexia' ),
+			'inherit'   => __( 'inherit', 'flexia' ),
+			'scroll'   	=> __( 'scroll', 'flexia' ),
+			'fixed'  	 => __( 'fixed', 'flexia' ),
+			'local'  	=> __( 'local', 'flexia' ),
+		)
+	) ) );
 
     /**
      * If Background Color Overlay set:
