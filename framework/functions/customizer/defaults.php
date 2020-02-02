@@ -9,6 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+
 if (!function_exists('flexia_get_option_defaults')) {
 /**
  * Set default options
@@ -72,6 +73,18 @@ if (!function_exists('flexia_get_option_defaults')) {
             'button_font_variants' => 'Regular 400',
             'button_font_subsets' => 'Open Sans',
             'button_font_text_transform' => 'none',
+
+
+            'header_layout_type' => 'boxed',
+            'flexia_navbar_position' => 'flexia-navbar-static-top',
+            'header_layouts' => 'layout1',
+            'header_mobile_layouts' => 'layout1',
+            
+            'primary_logo_label' => '',
+            'sticky_logo_label' => '',
+            'custom_sticky_logo' => '',
+            'flexia_header_logo_width' => '150',
+            'flexia_sticky_header_logo_width' => '120',
             
             'container_width' => '90',
             'flexia_page_header_layout' => 'flexia_page_header_default',
@@ -92,7 +105,6 @@ if (!function_exists('flexia_get_option_defaults')) {
             'post_content_bg_color' => '#fff',
             'post_meta_bg_color' => '#fff',
             'sidebar_widget_bg_color' => '#fff',
-            'flexia_header_logo_width' => '150',
             'flexia_blog_bg_heading' => '',
             'blog_logo_width' => '150',
             'blog_title_font_size' => '54',
@@ -149,7 +161,6 @@ if (!function_exists('flexia_get_option_defaults')) {
             'post_social_share_pinterest' => true,
             'flexia_blog_excerpt_count' => '60',
             'flexia_navbar' => true,
-            'flexia_navbar_position' => 'flexia-navbar-static-top',
             'flexia_logobar_position' => 'flexia-logobar-inline',
             'flexia_nav_menu_search' => true,
             'flexia_woo_cart_menu' => false,

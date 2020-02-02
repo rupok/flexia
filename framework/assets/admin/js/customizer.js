@@ -472,6 +472,13 @@ function generateCSS() {
         });
     });
 
+    // Sticky Header logo width
+    wp.customize("flexia_sticky_header_logo_width", function(value) {
+        value.bind(function(to) {
+            $(".flexia-sticky-navbar .flexia-header-logo").css("width", to + "px");
+        });
+    });
+
     // Blog logo width
     wp.customize("blog_logo_width", function(value) {
         value.bind(function(to) {
