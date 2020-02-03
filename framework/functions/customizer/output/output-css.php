@@ -69,6 +69,9 @@ function flexia_customizer_custom_styles() { ?>
     		margin-left: 5px;
 			transition: unset;
 		}
+		.flexia-customizer-reset:focus {
+			box-shadow: none;
+		}		
 		.flexia-customizer-reset svg {
 			width: 16px;
 			fill: #FE1F4A;

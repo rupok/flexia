@@ -131,6 +131,9 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_top_nav_menu_submenu_link_hover_color' => '#ffffff',
             'flexia_top_nav_menu_submenu_link_hover_bg' => 'rgba(0, 0, 0, 0.5)',
             'flexia_top_nav_menu_dropdown_animation' => 'to-top',
+
+            'footer_widget_area' => false,
+            'footer_widget_column' => 'four-column',
             'footer_widget_area_bg_color' => '#313131',
             'footer_widget_area_content_color' => '#cfcfcf',
             'footer_widget_area_link_color' => '#cbced3',
@@ -181,7 +184,6 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_overlay_search_label_font_size' => '16',
             'flexia_overlay_search_label_font_color' => '#fff',
             'header_widget_area' => false,
-            'footer_widget_area' => false,
             'footer_bottom' => true,
             'flexia_enable_footer_menu' => true,
             'flexia_scroll_to_top' => false,

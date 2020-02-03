@@ -39,8 +39,6 @@ function flexia_customize_register($wp_customize)
     $wp_customize->get_control('blogdescription')->label = __('Site Description', 'flexia');
     $wp_customize->get_setting('blogname')->transport = 'postMessage';
     $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
-    $wp_customize->get_control('header_textcolor')->label = __('Logo Text Color (if no logo image)', 'flexia');
-    $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
 
     // Customize the Front Page Settings
     $wp_customize->get_section('static_front_page')->title = __('Homepage Preferences', 'flexia');
@@ -49,10 +47,11 @@ function flexia_customize_register($wp_customize)
     $wp_customize->get_control('page_on_front')->label = __('Select Homepage', 'flexia');
     $wp_customize->get_control('page_for_posts')->label = __('Select Blog Homepage', 'flexia');
 
-    // Customize Background Settings
-    // $wp_customize->get_section('background_image')->title = __('Background Styles', 'flexia');
-    // $wp_customize->get_control('background_color')->section = 'background_image';
-    $wp_customize->get_control('header_textcolor')->section = 'flexia_header_settings';
+    // Remove some core control
+	$wp_customize->remove_control( 'header_textcolor' );
+	$wp_customize->remove_control( 'background_color' );
+	$wp_customize->remove_section( 'background_image' );
+	$wp_customize->remove_control( 'background_image' );
 
     if (isset($wp_customize->selective_refresh)) {
         $wp_customize->selective_refresh->add_partial('blogname', array(
@@ -1123,7 +1122,7 @@ function flexia_customize_register($wp_customize)
      * @flexia_typography_settings
      */
     $wp_customize->add_panel('flexia_typography_settings',array(
-        'title'=>'Default Typography',
+        'title'=>'Typography',
         'description'=> 'Default Typography Settings',
         'priority'=> 40,
     ));
@@ -1328,7 +1327,7 @@ function flexia_customize_register($wp_customize)
                 'type' => 'range-value',
                 'section' => 'flexia_typography_paragraph',
                 'settings' => 'paragraph_font_size',
-                'label' => __('Paragraph Font Size (px)', 'flexia'),
+                'label' => __('Paragraph Font Size (em)', 'flexia'),
                 'input_attrs' => array(
                     'min' => 0,
                     'max' => 5,
@@ -1390,12 +1389,12 @@ function flexia_customize_register($wp_customize)
             )
         )
     );
-
+    
     /**
      * Typography Section: Paragraph Font Variants
      * @paragraph_font_variants
      * Parent: @flexia_typography_settings -> @flexia_typography_paragraph
-     */ 
+     */
     $wp_customize->add_setting('paragraph_font_variants', array(
         'default' => '',
         'sanitize_callback' => 'sanitize_text_field',
@@ -2580,7 +2579,7 @@ function flexia_customize_register($wp_customize)
      * @flexia_header_panel
      */
     $wp_customize->add_panel('flexia_header_panel',array(
-        'title'=>'Header Panel',
+        'title'=>'Header',
         'description'=> 'Header Settings',
         'priority'=> 50,
     ));
@@ -3424,12 +3423,6 @@ function flexia_customize_register($wp_customize)
      * ......................................................
      */
 
-
-    $wp_customize->add_section('flexia_header_settings', array(
-        'title' => __('Header', 'flexia'),
-        'priority' => 50,
-    ));   
-
     
 
     // Footer Settings
@@ -3476,6 +3469,35 @@ function flexia_customize_register($wp_customize)
         'settings' => 'footer_widget_area',
         'type' => 'light', // light, ios, flat
     )));
+
+    /**
+     * Footer Layout Section: Widget Number of Columns
+     * @footer_widget_column
+     * Parent: @flexia_footer_settings
+     */
+    $wp_customize->add_setting('footer_widget_column', array(
+        'default' => $defaults['footer_widget_column'],
+        'sanitize_callback' => 'flexia_sanitize_choices',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'footer_widget_column',
+            array(
+                'label' => __('Widget Columns', 'flexia'),
+                'section' => 'flexia_footer_settings',
+                'settings' => 'footer_widget_column',
+                'type' => 'radio',
+                'choices' => array(
+                    'one-column' => __('One Column', 'flexia'),
+                    'two-column' => __('Two Columns', 'flexia'),
+                    'three-column' => __('Three Columns', 'flexia'),
+                    'four-column' => __('Four Columns', 'flexia'),
+                ),
+            )
+        )
+    );
 
     $wp_customize->add_setting('footer_widget_area_bg_color', array(
         'default' => $defaults['footer_widget_area_bg_color'],

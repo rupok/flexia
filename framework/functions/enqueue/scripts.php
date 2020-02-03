@@ -69,9 +69,18 @@ function flexia_admin_js()
         'body_google_font' => get_theme_mod('body_font_family', true),
         'body_font_variants' => get_theme_mod('body_font_variants', true),
         'body_font_subsets' => get_theme_mod('body_font_subsets', true),
+        'paragraph_google_font' => get_theme_mod('paragraph_font_family', true),
+        'paragraph_font_variants' => get_theme_mod('paragraph_font_variants', true),
+        'paragraph_font_subsets' => get_theme_mod('paragraph_font_subsets', true),
         'heading_google_font' => get_theme_mod('heading_font_family', true),
         'heading_font_variants' => get_theme_mod('heading_font_variants', true),
         'heading_font_subsets' => get_theme_mod('heading_font_subsets', true),
+        'link_google_font' => get_theme_mod('link_font_family', true),
+        'link_font_variants' => get_theme_mod('link_font_variants', true),
+        'link_font_subsets' => get_theme_mod('link_font_subsets', true),
+        'button_google_font' => get_theme_mod('button_font_family', true),
+        'button_font_variants' => get_theme_mod('button_font_variants', true),
+        'button_font_subsets' => get_theme_mod('button_font_subsets', true),
     );
 
     wp_localize_script('flexia-admin', 'flexia_settings', $flexia_settings);

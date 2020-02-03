@@ -2461,55 +2461,42 @@ table {
   box-sizing: border-box;
   margin: 1.6em 0;
   max-width: 100%;
-  width: 100%;
-}
-table th {
-  border-top: 1px solid #efefef;
-  font-size: 16px;
-  line-height: 20px;
-  padding: 8px;
-  text-align: left;
-  vertical-align: top;
-  color: #000;
-}
-table td {
-  border: 1px solid #efefef;
-  font-size: 16px;
-  line-height: 20px;
-  padding: 10px;
-  text-align: left;
-  vertical-align: top;
-}
-table caption + thead tr:first-child th {
-  border-top: 0 none;
-}
-table caption + thead tr:first-child td {
-  border-top: 0 none;
-}
-table colgroup + thead tr:first-child th {
-  border-top: 0 none;
-}
-table colgroup + thead tr:first-child td {
-  border-top: 0 none;
-}
-table thead:first-child tr:first-child th {
-  border-top: 0 none;
-}
-table thead:first-child tr:first-child td {
-  border-top: 0 none;
-}
-table tbody + tbody {
-  border-top: 2px solid #efefef;
-}
-/* table tbody > tr:nth-child(2n+1) > td {
-  background-color: #f9f9f9;
-}
-table tbody > tr:nth-child(2n+1) > th {
-  background-color: #f9f9f9;
-} */
-table table table {
-  background-color: #fff;
-}
+  width: 100%; }
+  table th {
+    border-top: 1px solid #efefef;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+    color: #000; }
+  table td {
+    border-top: 1px solid #efefef;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top; }
+  table caption + thead tr:first-child th {
+    border-top: 0 none; }
+  table caption + thead tr:first-child td {
+    border-top: 0 none; }
+  table colgroup + thead tr:first-child th {
+    border-top: 0 none; }
+  table colgroup + thead tr:first-child td {
+    border-top: 0 none; }
+  table thead:first-child tr:first-child th {
+    border-top: 0 none; }
+  table thead:first-child tr:first-child td {
+    border-top: 0 none; }
+  table tbody + tbody {
+    border-top: 2px solid #efefef; }
+  table tbody > tr:nth-child(2n+1) > td {
+    background-color: #f9f9f9; }
+  table tbody > tr:nth-child(2n+1) > th {
+    background-color: #f9f9f9; }
+  table table table {
+    background-color: #fff; }
 
 @-ms-viewport {
   width: device-width; }

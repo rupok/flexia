@@ -149,6 +149,15 @@
         );
 
         flexia_customizer_font_variants_generator(
+            "paragraph_font_family",
+            "#customize-control-paragraph_font_variants",
+            "#customize-control-paragraph_font_subsets",
+            "paragraph_google_font",
+            "paragraph_font_variants",
+            "paragraph_font_subsets"
+        );
+
+        flexia_customizer_font_variants_generator(
             "heading_font_family",
             "#customize-control-heading_font_variants",
             "#customize-control-heading_font_subsets",
@@ -156,6 +165,25 @@
             "heading_font_variants",
             "heading_font_subsets"
         );
+        
+        flexia_customizer_font_variants_generator(
+            "link_font_family",
+            "#customize-control-link_font_variants",
+            "#customize-control-link_font_subsets",
+            "link_google_font",
+            "link_font_variants",
+            "link_font_subsets"
+        );
+        
+        flexia_customizer_font_variants_generator(
+            "button_font_family",
+            "#customize-control-button_font_variants",
+            "#customize-control-button_font_subsets",
+            "button_google_font",
+            "button_font_variants",
+            "button_font_subsets"
+        );
+
     });
     function flexia_customizer_font_variants_generator(
         font_field_name,
