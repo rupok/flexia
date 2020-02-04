@@ -2491,10 +2491,6 @@ table {
     border-top: 0 none; }
   table tbody + tbody {
     border-top: 2px solid #efefef; }
-  table tbody > tr:nth-child(2n+1) > td {
-    background-color: #f9f9f9; }
-  table tbody > tr:nth-child(2n+1) > th {
-    background-color: #f9f9f9; }
   table table table {
     background-color: #fff; }
 

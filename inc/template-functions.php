@@ -98,13 +98,17 @@ function flexia_page_header() {
 
 		elseif( $flexia_core_page_header == 'flexia_core_page_header_default' || empty( $flexia_core_page_header ) ) :
 
-			if( $flexia_page_header_layout == 'flexia_page_header_large' ) :
+			if (get_theme_mod( 'flexia_page_header', 'flexia' )) : 
 
-				flexia_page_header_partial( 'entry-header-large entry-header-center' );
+				if( $flexia_page_header_layout == 'flexia_page_header_large' ) :
 
-			elseif( $flexia_page_header_layout == 'flexia_page_header_mini' ) :
+					flexia_page_header_partial( 'entry-header-large entry-header-center' );
 
-				flexia_page_header_partial( 'entry-header-mini', 'max width' );
+				elseif( $flexia_page_header_layout == 'flexia_page_header_mini' ) :
+
+					flexia_page_header_partial( 'entry-header-mini', 'max width' );
+
+				endif;
 
 			endif;
 

@@ -67,16 +67,16 @@ table {
         &+tbody {
             border-top: 2px solid #efefef;
         }
-        >tr {
-            &:nth-child(2n+1) {
-                >td {
-                    background-color: $color__background-body;
-                }
-                >th {
-                    background-color: $color__background-body;
-                }
-            }
-        }
+        // >tr {
+        //     &:nth-child(2n+1) {
+        //         >td {
+        //             background-color: $color__background-body;
+        //         }
+        //         >th {
+        //             background-color: $color__background-body;
+        //         }
+        //     }
+        // }
     }
     table {
         table {

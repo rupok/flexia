@@ -315,5 +315,61 @@ class Flexia_Number_Control extends WP_Customize_Control {
 	}
 }
 
+class Flexia_Radio_Image_Control extends WP_Customize_Control {
+	/**
+	 * Declare the control type.
+	 */
+	public $type = 'flexia-radio-image';
+	
+	/**
+	 * Enqueue scripts/styles.	 *
+	 */
+	public function enqueue() {
+		wp_enqueue_script( 'jquery-ui-button' );
+		wp_enqueue_style(
+			'flexia-customizer-radio-image-select',
+			get_template_directory_uri() . '/framework/assets/admin/css/customizer-radio-image-select.css',
+			array(),
+			rand()
+		);
+	}
+	
+	/**
+	 * Render the control's content.
+	 */
+	public function render_content() {
+		if ( empty( $this->choices ) ) {
+			return;
+		}			
+		
+		$name = '_customize-radio-' . $this->id;
+		?>
+		<?php if ( ! empty( $this->label ) ) : ?>
+		<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+		<?php endif; ?>
+		<?php if ( ! empty( $this->description ) ) : ?>
+			<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+		<?php endif; ?>
+		<div id="input_<?php echo $this->id; ?>" class="image">
+			<?php 
+			foreach ( $this->choices as $value => $label ) :
+				if(isset( $label['pro'] ) && $label['pro'] === true){ ?>
+				<label class="image-select" id="<?php echo $this->id . $value ?>">
+				<a target="_blank" href="<?php echo esc_url($label['url']) ?>"><img src="<?php echo esc_url( $label['image'] ) ?>" alt=""></a>
+				<span class="go-pro"><?php esc_html_e('Go Pro','flexia') ?></span>
+				</label>
+				<?php } else { ?>
+				<input class="image-select" type="radio" value="<?php echo esc_attr( $value ) ?>" id="<?php echo $this->id . $value; ?>" name="<?php echo esc_attr( $name ) ?>" <?php $this->link(); checked( $this->value(), $value ); ?>>
+					<label for="<?php echo $this->id . $value; ?>">
+						<img src="<?php echo esc_url( $label['image'] ) ?>" alt="<?php echo esc_attr( $value ) ?>" title="<?php echo esc_attr( $value ) ?>">
+					</label>
+				</input>
+			<?php } endforeach; ?>
+		</div>
+		<script>jQuery(document).ready(function($) { $( '[id="input_<?php echo $this->id; ?>"]' ).buttonset(); });</script>
+		<?php
+	}
+}
+
 
 ?>

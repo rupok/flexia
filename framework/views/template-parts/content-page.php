@@ -15,11 +15,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php 
-		$flexia_page_header_layout 	= get_theme_mod( 'flexia_page_header_layout', 'flexia_page_header_default' );
-		if( $flexia_page_header_layout == 'flexia_page_header_default' || $flexia_page_header_layout == NULL  ){
-			flexia_page_title(); 
-	}?>
+	<?php
+		if (get_theme_mod( 'flexia_page_header', 'flexia' )) {
+			$flexia_page_header_layout 	= get_theme_mod( 'flexia_page_header_layout', 'flexia_page_header_default' );
+			if( $flexia_page_header_layout == 'flexia_page_header_default' || $flexia_page_header_layout == NULL  ){
+				flexia_page_title();
+			}
+		}		
+	?>
 
 	<div class="entry-content">
 		<?php
