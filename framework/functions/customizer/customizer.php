@@ -3480,6 +3480,81 @@ function flexia_customize_register($wp_customize)
         'priority' => 10,
     ));
 
+    /**
+     * Header Social: Enable Topbar?
+     * @flexia_enable_header_social
+     * Parent: @flexia_header_panel -> @flexia_header_social
+     */    
+    $wp_customize->add_setting(
+        'flexia_enable_header_social', 
+        array(
+            'default' => $defaults['flexia_enable_header_social'],
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'flexia_sanitize_checkbox',
+        )
+    );
+
+    $wp_customize->add_control(
+        new Customizer_Toggle_Control(
+            $wp_customize, 
+            'flexia_enable_header_social', 
+            array(
+                'label' => esc_html__('Enable Header Social?', 'flexia'),
+                'section' => 'flexia_header_social',
+                'settings' => 'flexia_enable_header_social',
+                'type' => 'light', // light, ios, flat
+            )
+        )
+    );
+
+    /**
+     * Header Social: Header Social Position
+     * @flexia_header_social_position
+     * Parent: @flexia_header_panel -> @flexia_header_social
+     */  
+    $wp_customize->add_setting( 'flexia_header_social_position', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'themeslug_sanitize_select',
+        'default' => $defaults['flexia_header_social_position'],
+    ));
+      
+    $wp_customize->add_control(
+        'flexia_header_social_position',
+        array(
+            'type' => 'select',
+            'section' => 'flexia_header_social', // Add a default or your own section
+            'label' => __( 'Social Links Position' ),
+            'choices' => array(
+                'topbar' => __( 'Top Bar' ),
+                'header_main' => __( 'Header Main' ),
+            ),
+        )
+    );
+
+    /**
+     * Header Social: Header Social Link Facebook
+     * @flexia_header_social_link_facebook
+     * Parent: @flexia_header_panel -> @flexia_header_social
+     */  
+    $wp_customize->add_setting( 'flexia_header_social_link_facebook', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'themeslug_sanitize_select',
+        'default' => $defaults['flexia_header_social_link_facebook'],
+    ));
+      
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_header_social_link_facebook',
+            array(
+                'label' => __('URL', 'flexia'),
+                'section' => 'flexia_header_social',
+                'settings' => 'flexia_header_social_link_facebook',
+                'type' => 'text',
+            )
+        )
+    );
+
 
     /**
      * ......................................................

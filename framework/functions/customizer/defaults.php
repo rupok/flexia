@@ -86,6 +86,14 @@ if (!function_exists('flexia_get_option_defaults')) {
             'custom_sticky_logo' => '',
             'flexia_header_logo_width' => '150',
             'flexia_sticky_header_logo_width' => '120',
+
+            'flexia_enable_header_social' => false,
+            'flexia_header_social' => '',
+            'flexia_header_social_link_facebook' => '',
+            'flexia_header_social_position' => 'topbar',
+            'flexia_header_social_alignment' => 'topbar',
+            'flexia_header_social_color' => 'topbar',
+            'flexia_header_social_open_tab' => 'topbar',
             
             'container_width' => '90',
             'flexia_page_header_layout' => 'flexia_page_header_default',
