@@ -55,6 +55,14 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 			</div>
 			<?php endif; ?>
 
+			<!-- Header Main Social Start -->
+			<?php
+				if (flexia_get_option('flexia_enable_header_social') == true && flexia_get_option('flexia_header_social_position') == "header_main") {
+					get_template_part('framework/views/template-parts/content', 'social-links');
+				}
+			?>
+			<!-- Header Main Social End -->
+
 			<nav id="site-navigation" class="flexia-menu main-navigation">
 				<?php
 
@@ -73,7 +81,6 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 				?>
 
 			</nav><!-- #site-navigation -->
-
 
 		</div><!-- #flexia-container -->
 	</div><!-- #flexia-navbar-container -->

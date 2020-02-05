@@ -382,6 +382,72 @@ function generateCSS() {
      * ......................................
      */
 
+     /**
+      * Social Media Links
+      */
+     //Social Media Icon Size
+    wp.customize("flexia_header_social_icon_size", function(value) {
+        value.bind(function(to) {
+            $(".flexia-social-links li a").css(
+                "font-size",
+                to+"em"
+            );
+        });
+    });
+
+     //Social Media Icon Color
+     wp.customize("flexia_header_social_icon_color", function(value) {
+        value.bind(function(to) {
+            $(".flexia-social-links li a").css(
+                "color",
+                to
+            );
+        });
+    });
+
+     //Social Media Icon Hover Color
+     wp.customize("flexia_header_social_icon_hover_color", function(value) {
+        value.bind(function(to) {
+            $(".flexia-social-links li a:hover").css(
+                "color",
+                to
+            );
+        });
+    });
+
+    /**
+      * Header Top Contact Link
+      */
+     //Contact Info Font Size
+     wp.customize("flexia_header_top_contact_font_size", function(value) {
+        value.bind(function(to) {
+            $(".flexia-topbar_contact a").css(
+                "font-size",
+                to+"em"
+            );
+        });
+    });
+
+     //Contact Info Font Color
+     wp.customize("flexia_header_top_contact_font_color", function(value) {
+        value.bind(function(to) {
+            $(".flexia-topbar_contact a").css(
+                "color",
+                to
+            );
+        });
+    });
+
+     //Contact Info Font Hover Color
+     wp.customize("flexia_header_top_contact_font_hover_color", function(value) {
+        value.bind(function(to) {
+            $(".flexia-topbar_contact a:hover").css(
+                "color",
+                to
+            );
+        });
+    });
+
 
     // Container width
     wp.customize("container_width", function(value) {

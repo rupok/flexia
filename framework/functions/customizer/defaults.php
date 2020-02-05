@@ -16,13 +16,15 @@ if (!function_exists('flexia_get_option_defaults')) {
  */
     function flexia_get_option_defaults()
     {
+        $primary_color = '#F56A6A';
+        $secondary_color = '#333333';
         $flexia_defaults = array(
-            'site_primary_color' => '#F56A6A',
-            'site_secondary_color' => '#333333',
+            'site_primary_color' => $primary_color,
+            'site_secondary_color' => $secondary_color,
             'default_text_color' => '#4d4d4d',
             'default_heading_color' => '#333333',
             'link_separator_label' => '',
-            'site_link_color' => '#F56A6A',
+            'site_link_color' => $primary_color,
             'site_link_hover_color' => '#ff5544',
             'background_separator_label' => '',
             'site_background_color' => '#fff',
@@ -89,11 +91,21 @@ if (!function_exists('flexia_get_option_defaults')) {
 
             'flexia_enable_header_social' => false,
             'flexia_header_social' => '',
-            'flexia_header_social_link_facebook' => '',
             'flexia_header_social_position' => 'topbar',
-            'flexia_header_social_alignment' => 'topbar',
-            'flexia_header_social_color' => 'topbar',
-            'flexia_header_social_open_tab' => 'topbar',
+            'flexia_header_social_alignment' => 'right',
+            'flexia_header_social_icon_size' => '1',
+            'flexia_header_social_icon_color' => $primary_color,
+            'flexia_header_social_icon_hover_color' => $secondary_color,
+            'flexia_header_social_open_tab' => '_blank',
+            'flexia_header_social_link_separator' => '',
+            'flexia_header_social_link_facebook' => '',
+            'flexia_header_social_link_instagram' => '',
+            'flexia_header_social_link_twitter' => '',
+            'flexia_header_social_link_linkedin' => '',
+            'flexia_header_social_link_youtube' => '',
+            'flexia_header_social_link_pinterest' => '',
+            'flexia_header_social_link_reddit' => '',
+            'flexia_header_social_link_rss' => '',
             
             'container_width' => '90',
             'flexia_page_header_layout' => 'flexia_page_header_default',
@@ -177,8 +189,17 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_logobar_position' => 'flexia-logobar-inline',
             'flexia_nav_menu_search' => true,
             'flexia_woo_cart_menu' => false,
+
             'flexia_enable_topbar' => false,
             'flexia_enable_topbar_menu' => false,
+            'flexia_header_top_phone' => '',
+            'flexia_header_top_email' => '',
+            'flexia_header_top_location' => '',
+            'flexia_header_top_location_link' => '',
+            'flexia_header_top_contact_font_size' => '.8',
+            'flexia_header_top_contact_font_color' => '#ffffff',
+            'flexia_header_top_contact_font_hover_color' => '#eeeeee',
+
             'flexia_overlay_search_bg_color' => '#121738',
             'flexia_overlay_search_border_color' => '#121738',
             'flexia_overlay_search_border_width' => '10',

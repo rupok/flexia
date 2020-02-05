@@ -301,6 +301,24 @@ function flexia_generate_css()
 		font-size: ' . $defaults['flexia_overlay_search_label_font_size'] . 'px;
 	  }
 
+	  .flexia-topbar_contact a {
+		color: ' . $defaults['flexia_header_top_contact_font_color'] . ';
+		font-size: ' . $defaults['flexia_header_top_contact_font_size'] . 'em;
+	  }
+
+	  .flexia-topbar_contact a:hover {
+		color: ' . $defaults['flexia_header_top_contact_font_hover_color'] . ';
+	  }
+
+	  .flexia-social-links li a {
+		color: ' . $defaults['flexia_header_social_icon_color'] . ';
+		font-size: ' . $defaults['flexia_header_social_icon_size'] . 'em;
+	  }
+
+	  .flexia-social-links li a:hover {
+		color: ' . $defaults['flexia_header_social_icon_hover_color'] . ';
+	  }
+
 	  @media all and (max-width: 959px) {
 			.blog-header .header-content > .page-title, .archive-header .header-content > .page-title {
 				font-size: calc(' . $defaults['blog_title_font_size'] . 'px * .75);

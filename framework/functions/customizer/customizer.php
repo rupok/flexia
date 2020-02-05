@@ -1297,7 +1297,7 @@ function flexia_customize_register($wp_customize)
      */ 
     $wp_customize->add_setting( 'body_font_text_transform', array(              
         'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'themeslug_sanitize_select',
+        'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['body_font_text_transform'],
         'transport' => 'postMessage',
     ));
@@ -1468,7 +1468,7 @@ function flexia_customize_register($wp_customize)
      */ 
     $wp_customize->add_setting( 'paragraph_font_text_transform', array(              
         'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'themeslug_sanitize_select',
+        'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['paragraph_font_text_transform'],
         'transport' => 'postMessage',
     ));
@@ -1760,7 +1760,7 @@ function flexia_customize_register($wp_customize)
      */ 
     $wp_customize->add_setting( 'heading_font_text_transform', array(              
         'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'themeslug_sanitize_select',
+        'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['heading_font_text_transform'],
         'transport' => 'postMessage',
     ));
@@ -1930,7 +1930,7 @@ function flexia_customize_register($wp_customize)
      */ 
     $wp_customize->add_setting( 'link_font_text_transform', array(              
         'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'themeslug_sanitize_select',
+        'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['link_font_text_transform'],
         'transport' => 'postMessage',
     ));
@@ -2100,7 +2100,7 @@ function flexia_customize_register($wp_customize)
      */ 
     $wp_customize->add_setting( 'button_font_text_transform', array(              
         'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'themeslug_sanitize_select',
+        'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['button_font_text_transform'],
         'transport' => 'postMessage',
     ));
@@ -3265,20 +3265,6 @@ function flexia_customize_register($wp_customize)
         'type' => 'light', // light, ios, flat
     )));
 
-    // Enable Topbar Menu
-    $wp_customize->add_setting('flexia_enable_topbar_menu', array(
-        'default' => $defaults['flexia_enable_topbar_menu'],
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'flexia_sanitize_checkbox',
-    ));
-
-    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'flexia_enable_topbar_menu', array(
-        'label' => esc_html__('Enable Topbar Menu?', 'flexia'),
-        'section' => 'flexia_header_top',
-        'settings' => 'flexia_enable_topbar_menu',
-        'type' => 'light', // light, ios, flat
-    )));
-
     $wp_customize->add_setting('flexia_topbar_bg_color', array(
         'default' => $defaults['flexia_topbar_bg_color'],
         'transport' => 'postMessage',
@@ -3313,6 +3299,199 @@ function flexia_customize_register($wp_customize)
             )
         )
     );
+     
+    /**
+     * Topbar Contact Info Separator
+     * @top_contact_settings_title
+     * Parent: @flexia_header_top
+     */  
+    $wp_customize->add_setting('top_contact_settings_title', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_html',
+    ));
+
+    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'top_contact_settings_title', array(
+        'label' => __('Topbar Contact Info Settings', 'flexia'),
+        'settings' => 'top_contact_settings_title',
+        'section' => 'flexia_header_top',
+    )));
+
+    /**
+     * Header Top: Topbar Phone Number
+     * @flexia_header_top_phone
+     * Parent: @flexia_header_top
+     */  
+    $wp_customize->add_setting( 'flexia_header_top_phone', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => $defaults['flexia_header_top_phone'],
+    ));
+      
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_header_top_phone',
+            array(
+                'label' => __('Phone Number', 'flexia'),
+                'section' => 'flexia_header_top',
+                'settings' => 'flexia_header_top_phone',
+                'type' => 'text',
+                'input_attrs' => array(
+                    'placeholder' => __( 'XXX XXX XXXX', 'flexia' ),
+                )
+            )
+        )
+    );
+
+    /**
+     * Header Top: Topbar Email Address
+     * @flexia_header_top_email
+     * Parent: @flexia_header_top
+     */  
+    $wp_customize->add_setting( 'flexia_header_top_email', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => $defaults['flexia_header_top_email'],
+    ));
+      
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_header_top_email',
+            array(
+                'label' => __('Email Address', 'flexia'),
+                'section' => 'flexia_header_top',
+                'settings' => 'flexia_header_top_email',
+                'type' => 'text',
+                'input_attrs' => array(
+                    'placeholder' => __( 'info@wpdeveloper.net', 'flexia' ),
+                )
+            )
+        )
+    );
+
+    /**
+     * Header Top: Topbar Location
+     * @flexia_header_top_location
+     * Parent: @flexia_header_top
+     */  
+    $wp_customize->add_setting( 'flexia_header_top_location', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => $defaults['flexia_header_top_location'],
+    ));
+      
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_header_top_location',
+            array(
+                'label' => __('Location', 'flexia'),
+                'section' => 'flexia_header_top',
+                'settings' => 'flexia_header_top_location',
+                'type' => 'text',
+                'input_attrs' => array(
+                    'placeholder' => __( 'Display name of your location', 'flexia' ),
+                )
+            )
+        )
+    );
+
+    /**
+     * Header Top: Topbar Location Link
+     * @flexia_header_top_location_link
+     * Parent: @flexia_header_top
+     */  
+    $wp_customize->add_setting( 'flexia_header_top_location_link', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => $defaults['flexia_header_top_location_link'],
+    ));
+      
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_header_top_location_link',
+            array(
+                'label' => __('Location Link', 'flexia'),
+                'section' => 'flexia_header_top',
+                'settings' => 'flexia_header_top_location_link',
+                'type' => 'text',
+                'input_attrs' => array(
+                    'placeholder' => __( 'Link of your Google Map Location', 'flexia' ),
+                )
+            )
+        )
+    );
+
+    /**
+     * Header Top: Topbar Contact Text Size
+     * @flexia_header_top_contact_font_size
+     * Parent: @flexia_header_top
+     */  
+    $wp_customize->add_setting('flexia_header_top_contact_font_size', array(
+        'default' => $defaults['flexia_header_top_contact_font_size'],
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'flexia_sanitize_float',
+
+    ));
+    $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'flexia_header_top_contact_font_size', array(
+        'type' => 'range-value',
+        'section' => 'flexia_header_top',
+        'settings' => 'flexia_header_top_contact_font_size',
+        'label' => __('Font Size', 'flexia'),
+        'input_attrs' => array(
+            'min' => .5,
+            'max' => 3,
+            'step' => .1,
+            'suffix' => 'em', //optional suffix
+        ),
+    )));
+
+    /**
+     * Header Top: Topbar Contact Text Color
+     * @flexia_header_top_contact_font_color
+     * Parent: @flexia_header_top
+     */  
+    $wp_customize->add_setting('flexia_header_top_contact_font_color', array(
+        'default' => $defaults['flexia_header_top_contact_font_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_header_top_contact_font_color',
+            array(
+                'label' => __('Text Color', 'flexia'),
+                'section' => 'flexia_header_top',
+                'settings' => 'flexia_header_top_contact_font_color',
+            ))
+    );
+
+    /**
+     * Header Top: Topbar Contact Text Hover Color
+     * @flexia_header_top_contact_font_hover_color
+     * Parent: @flexia_header_top
+     */  
+    $wp_customize->add_setting('flexia_header_top_contact_font_hover_color', array(
+        'default' => $defaults['flexia_header_top_contact_font_hover_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_header_top_contact_font_hover_color',
+            array(
+                'label' => __('Hover Color', 'flexia'),
+                'section' => 'flexia_header_top',
+                'settings' => 'flexia_header_top_contact_font_hover_color',
+            ))
+    );
 
     // Topbar Menu Separator
     $wp_customize->add_setting('top_nav_settings_title', array(
@@ -3324,6 +3503,20 @@ function flexia_customize_register($wp_customize)
         'label' => __('Topbar Menu Settings', 'flexia'),
         'settings' => 'top_nav_settings_title',
         'section' => 'flexia_header_top',
+    )));
+
+    // Enable Topbar Menu
+    $wp_customize->add_setting('flexia_enable_topbar_menu', array(
+        'default' => $defaults['flexia_enable_topbar_menu'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'flexia_enable_topbar_menu', array(
+        'label' => esc_html__('Enable Topbar Menu?', 'flexia'),
+        'section' => 'flexia_header_top',
+        'settings' => 'flexia_enable_topbar_menu',
+        'type' => 'light', // light, ios, flat
     )));
 
     $wp_customize->add_setting('flexia_top_nav_menu_link_color', array(
@@ -3514,7 +3707,7 @@ function flexia_customize_register($wp_customize)
      */  
     $wp_customize->add_setting( 'flexia_header_social_position', array(              
         'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'themeslug_sanitize_select',
+        'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['flexia_header_social_position'],
     ));
       
@@ -3532,13 +3725,157 @@ function flexia_customize_register($wp_customize)
     );
 
     /**
+     * Header Social: Header Social Alighnment
+     * @flexia_header_social_alignment
+     * Parent: @flexia_header_panel -> @flexia_header_social
+     */  
+    $wp_customize->add_setting( 'flexia_header_social_alignment', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_select',
+        'default' => $defaults['flexia_header_social_alignment'],
+    ));
+      
+    $wp_customize->add_control(
+        'flexia_header_social_alignment',
+        array(
+            'type' => 'select',
+            'section' => 'flexia_header_social', // Add a default or your own section
+            'label' => __( 'Social Links Alignment' ),
+            'choices' => array(
+                'left' => __( 'Left' ),
+                'right' => __( 'Right' ),
+                'center' => __( 'Center' ),
+            ),
+        )
+    );
+
+    /**
+     * Header Social: Header Social Icon Size
+     * @flexia_header_social_icon_size
+     * Parent: @flexia_header_panel -> @flexia_header_social
+     */  
+    $wp_customize->add_setting('flexia_header_social_icon_size', array(
+        'default' => $defaults['flexia_header_social_icon_size'],
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'flexia_sanitize_float',
+
+    ));
+    $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'flexia_header_social_icon_size', array(
+        'type' => 'range-value',
+        'section' => 'flexia_header_social',
+        'settings' => 'flexia_header_social_icon_size',
+        'label' => __('Icon Size', 'flexia'),
+        'input_attrs' => array(
+            'min' => .5,
+            'max' => 3,
+            'step' => .1,
+            'suffix' => 'em', //optional suffix
+        ),
+    )));
+
+    /**
+     * Header Social: Header Social Icon Color
+     * @flexia_header_social_icon_color
+     * Parent: @flexia_header_panel -> @flexia_header_social
+     */  
+    $wp_customize->add_setting('flexia_header_social_icon_color', array(
+        'default' => $defaults['flexia_header_social_icon_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_header_social_icon_color',
+            array(
+                'label' => __('Icon Color', 'flexia'),
+                'section' => 'flexia_header_social',
+                'settings' => 'flexia_header_social_icon_color',
+            ))
+    );
+
+    /**
+     * Header Social: Header Social Icon Hover Color
+     * @flexia_header_social_icon_hover_color
+     * Parent: @flexia_header_panel -> @flexia_header_social
+     */  
+    $wp_customize->add_setting('flexia_header_social_icon_hover_color', array(
+        'default' => $defaults['flexia_header_social_icon_hover_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_header_social_icon_hover_color',
+            array(
+                'label' => __('Icon Hover Color', 'flexia'),
+                'section' => 'flexia_header_social',
+                'settings' => 'flexia_header_social_icon_hover_color',
+            ))
+    );
+
+    /**
+     * Header Social: Header Social Link Open
+     * @flexia_header_social_open_tab
+     * Parent: @flexia_header_panel -> @flexia_header_social
+     */  
+    $wp_customize->add_setting( 'flexia_header_social_open_tab', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_select',
+        'default' => $defaults['flexia_header_social_open_tab'],
+    ));
+      
+    $wp_customize->add_control(
+        'flexia_header_social_open_tab',
+        array(
+            'type' => 'select',
+            'section' => 'flexia_header_social', // Add a default or your own section
+            'label' => __( 'Social Links Open in?' ),
+            'choices' => array(
+                '_blank' => __( 'Open in New Tab' ),
+                'header_main' => __( 'Open in same Tab' ),
+            ),
+        )
+    );
+
+    /**
+     * Header Social: Header Social Link Separator
+     * @flexia_header_social_link_separator
+     * Parent: @flexia_header_panel -> @flexia_header_social
+     */  
+    $wp_customize->add_setting(
+        'flexia_header_social_link_separator', 
+        array(
+            'default' => '',
+            'sanitize_callback' => 'esc_html',
+        )
+    );
+
+    $wp_customize->add_control(
+        new Separator_Custom_control(
+            $wp_customize, 
+            'flexia_header_social_link_separator', 
+            array(
+                'label' => __('Social Media Links', 'flexia'),
+                'description' => __('Leave Empty to hide any social media', 'flexia'),
+                'settings' => 'flexia_header_social_link_separator',
+                'section' => 'flexia_header_social',
+            )
+        )
+    );
+
+    /**
      * Header Social: Header Social Link Facebook
      * @flexia_header_social_link_facebook
      * Parent: @flexia_header_panel -> @flexia_header_social
      */  
     $wp_customize->add_setting( 'flexia_header_social_link_facebook', array(              
         'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'themeslug_sanitize_select',
+        'sanitize_callback' => 'sanitize_text_field',
         'default' => $defaults['flexia_header_social_link_facebook'],
     ));
       
@@ -3547,10 +3884,202 @@ function flexia_customize_register($wp_customize)
             $wp_customize,
             'flexia_header_social_link_facebook',
             array(
-                'label' => __('URL', 'flexia'),
+                'label' => __('Facebook URL', 'flexia'),
                 'section' => 'flexia_header_social',
                 'settings' => 'flexia_header_social_link_facebook',
                 'type' => 'text',
+                'input_attrs' => array(
+                    'placeholder' => __( 'https://www.facebook.com/', 'flexia' ),
+                )
+            )
+        )
+    );
+
+    /**
+     * Header Social: Header Social Link Instagram
+     * @flexia_header_social_link_instagram
+     * Parent: @flexia_header_panel -> @flexia_header_social
+     */  
+    $wp_customize->add_setting( 'flexia_header_social_link_instagram', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => $defaults['flexia_header_social_link_instagram'],
+    ));
+      
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_header_social_link_instagram',
+            array(
+                'label' => __('Instagram URL', 'flexia'),
+                'section' => 'flexia_header_social',
+                'settings' => 'flexia_header_social_link_instagram',
+                'type' => 'text',
+                'input_attrs' => array(
+                    'placeholder' => __( 'https://www.instagram.com/', 'flexia' ),
+                )
+            )
+        )
+    );
+
+    /**
+     * Header Social: Header Social Link Twitter
+     * @flexia_header_social_link_twitter
+     * Parent: @flexia_header_panel -> @flexia_header_social
+     */  
+    $wp_customize->add_setting( 'flexia_header_social_link_twitter', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => $defaults['flexia_header_social_link_twitter'],
+    ));
+      
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_header_social_link_twitter',
+            array(
+                'label' => __('Twitter URL', 'flexia'),
+                'section' => 'flexia_header_social',
+                'settings' => 'flexia_header_social_link_twitter',
+                'type' => 'text',
+                'input_attrs' => array(
+                    'placeholder' => __( 'https://www.twitter.com/', 'flexia' ),
+                )
+            )
+        )
+    );
+
+    /**
+     * Header Social: Header Social Link Linkedin
+     * @flexia_header_social_link_linkedin
+     * Parent: @flexia_header_panel -> @flexia_header_social
+     */  
+    $wp_customize->add_setting( 'flexia_header_social_link_linkedin', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => $defaults['flexia_header_social_link_linkedin'],
+    ));
+      
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_header_social_link_linkedin',
+            array(
+                'label' => __('Linkedin URL', 'flexia'),
+                'section' => 'flexia_header_social',
+                'settings' => 'flexia_header_social_link_linkedin',
+                'type' => 'text',
+                'input_attrs' => array(
+                    'placeholder' => __( 'https://www.linkedin.com/', 'flexia' ),
+                )
+            )
+        )
+    );
+
+    /**
+     * Header Social: Header Social Link YouTube
+     * @flexia_header_social_link_youtube
+     * Parent: @flexia_header_panel -> @flexia_header_social
+     */  
+    $wp_customize->add_setting( 'flexia_header_social_link_youtube', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => $defaults['flexia_header_social_link_youtube'],
+    ));
+      
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_header_social_link_youtube',
+            array(
+                'label' => __('YouTube URL', 'flexia'),
+                'section' => 'flexia_header_social',
+                'settings' => 'flexia_header_social_link_youtube',
+                'type' => 'text',
+                'input_attrs' => array(
+                    'placeholder' => __( 'https://www.youtube.com/', 'flexia' ),
+                )
+            )
+        )
+    );
+
+    /**
+     * Header Social: Header Social Link Pinterest
+     * @flexia_header_social_link_pinterest
+     * Parent: @flexia_header_panel -> @flexia_header_social
+     */  
+    $wp_customize->add_setting( 'flexia_header_social_link_pinterest', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => $defaults['flexia_header_social_link_pinterest'],
+    ));
+      
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_header_social_link_pinterest',
+            array(
+                'label' => __('Pinterest URL', 'flexia'),
+                'section' => 'flexia_header_social',
+                'settings' => 'flexia_header_social_link_pinterest',
+                'type' => 'text',
+                'input_attrs' => array(
+                    'placeholder' => __( 'https://www.pinterest.com/', 'flexia' ),
+                )
+            )
+        )
+    );
+
+    /**
+     * Header Social: Header Social Link Reddit
+     * @flexia_header_social_link_reddit
+     * Parent: @flexia_header_panel -> @flexia_header_social
+     */  
+    $wp_customize->add_setting( 'flexia_header_social_link_reddit', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => $defaults['flexia_header_social_link_reddit'],
+    ));
+      
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_header_social_link_reddit',
+            array(
+                'label' => __('Reddit URL', 'flexia'),
+                'section' => 'flexia_header_social',
+                'settings' => 'flexia_header_social_link_reddit',
+                'type' => 'text',
+                'input_attrs' => array(
+                    'placeholder' => __( 'https://www.reddit.com/', 'flexia' ),
+                )
+            )
+        )
+    );
+
+    /**
+     * Header Social: Header Social Link RSS
+     * @flexia_header_social_link_rss
+     * Parent: @flexia_header_panel -> @flexia_header_social
+     */  
+    $wp_customize->add_setting( 'flexia_header_social_link_rss', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => $defaults['flexia_header_social_link_rss'],
+    ));
+      
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_header_social_link_rss',
+            array(
+                'label' => __('RSS URL', 'flexia'),
+                'section' => 'flexia_header_social',
+                'settings' => 'flexia_header_social_link_rss',
+                'type' => 'text',
+                'input_attrs' => array(
+                    'placeholder' => __( 'Your RSS Feed Link', 'flexia' ),
+                )
             )
         )
     );

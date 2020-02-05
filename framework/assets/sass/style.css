@@ -1992,6 +1992,27 @@ big {
   .flexia-topbar-content p {
     margin: 0; }
 
+.flexia-topbar_contact {
+  padding: 0;
+  margin: 0; }
+  .flexia-topbar_contact a {
+    display: inline-block;
+    margin-right: 20px; }
+    .flexia-topbar_contact a i {
+      margin-right: 3px; }
+
+.flexia-social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-self: center; }
+  .flexia-social-links li {
+    display: inline-block;
+    margin: 0px 5px 0px 0; }
+    .flexia-social-links li a {
+      padding: 5px;
+      display: block; }
+
 @media all and (min-width: 768px) {
   .flexia-header-widget-inner .widget {
     flex: 1 1 30%; } }
