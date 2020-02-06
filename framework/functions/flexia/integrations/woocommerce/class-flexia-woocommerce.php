@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'Flexia_WooCommerce' ) ) :
 
 	/**
-	 * The Storefront WooCommerce Integration class
+	 * Flexia WooCommerce Integration class
 	 */
 	class Flexia_WooCommerce {
 

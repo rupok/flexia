@@ -2994,6 +2994,53 @@ a {
   .main-navigation a.cart-contents .count {
     font-size: .8em;
     margin-top: -15px; }
+.main-navigation ul.flexia-menu-cart-items {
+  padding: 10px !important;
+  width: 240px !important;
+  box-shadow: 2px 2px 5x #c8c8c8 !important; }
+  .main-navigation ul.flexia-menu-cart-items li.flexia-cart-item {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eae9e9;
+    margin-bottom: 10px;
+    font-size: .9em; }
+    .main-navigation ul.flexia-menu-cart-items li.flexia-cart-item:last-child {
+      padding-bottom: 0px;
+      border-bottom: 0; }
+    .main-navigation ul.flexia-menu-cart-items li.flexia-cart-item .flexia-cart-product-img img {
+      max-height: 50px;
+      max-width: 80px; }
+    .main-navigation ul.flexia-menu-cart-items li.flexia-cart-item .flexia-cart-product-meta span {
+      display: block; }
+    .main-navigation ul.flexia-menu-cart-items li.flexia-cart-item .flexia-cart-product-action {
+      color: #ee1f1f;
+      font-size: 1.2em; }
+  .main-navigation ul.flexia-menu-cart-items .flexia-cart-total {
+    display: flex !important;
+    justify-content: end;
+    font-size: .9em; }
+    .main-navigation ul.flexia-menu-cart-items .flexia-cart-total span {
+      margin-left: 5px;
+      color: #ff613a; }
+  .main-navigation ul.flexia-menu-cart-items .flexia-cart-links {
+    display: flex !important;
+    justify-content: space-between;
+    margin-top: 10px; }
+    .main-navigation ul.flexia-menu-cart-items .flexia-cart-links a {
+      background-color: #239b12;
+      color: #fff;
+      margin: 0px 5px;
+      padding: 10px;
+      letter-spacing: 0;
+      border-radius: 4px;
+      line-height: 1;
+      text-align: center;
+      font-weight: 700; }
+    .main-navigation ul.flexia-menu-cart-items .flexia-cart-links::hover {
+      background-color: #318c08;
+      color: #fff; }
 .main-navigation .edd-cart-contents .amount,
 .main-navigation .edd-cart-contents .count {
   padding-left: 5px; }
