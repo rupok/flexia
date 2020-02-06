@@ -17,7 +17,7 @@ $dropdown_animation = 'flexia-menu-dropdown-animate-' . get_theme_mod('flexia_to
 ?>
 
 <div class="flexia-topbar">
-	<div class="flexia-topbar-inner flexia-container max width">
+	<div class="flexia-topbar-inner flexia-container <?php echo (get_theme_mod( 'header_layout_type' ) == "full-width") ? "full-width" : "width max" ?>">
 
 		<!-- Header Top Contact Start -->		
 		<?php

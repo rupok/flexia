@@ -2623,25 +2623,23 @@ function flexia_customize_register($wp_customize)
      * @header_layout_type
      * Parent: @flexia_header_panel -> flexia_header_layout
      */
-    $wp_customize->add_setting('header_layout_type', array(
+    
+    $wp_customize->add_setting( 'header_layout_type', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['header_layout_type'],
-        'sanitize_callback' => 'flexia_sanitize_choices',
     ));
-
+      
     $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'header_layout_type',
-            array(
-                'label' => __('Layout Type', 'flexia'),
-                'section' => 'flexia_header_layout',
-                'settings' => 'header_layout_type',
-                'type' => 'radio',
-                'choices' => array(
-                    'boxed' => __('Boxed/ Container', 'flexia'),
-                    'full-width' => __('Full Width', 'flexia'),
-                ),
-            )
+        'header_layout_type',
+        array(
+            'type' => 'select',
+            'section' => 'flexia_header_layout', // Add a default or your own section
+            'label' => __( 'Header Layout Type' ),
+            'choices' => array(
+                'boxed' => __('Boxed/ Container', 'flexia'),
+                'full-width' => __('Full Width', 'flexia'),
+            ),
         )
     );
 
@@ -2652,7 +2650,7 @@ function flexia_customize_register($wp_customize)
      */
     $wp_customize->add_setting('flexia_navbar_position', array(
         'default' => $defaults['flexia_navbar_position'],
-        'sanitize_callback' => 'flexia_sanitize_choices',
+        'sanitize_callback' => 'flexia_sanitize_select',
     ));
 
     $wp_customize->add_control(
@@ -2663,11 +2661,11 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Navbar Position', 'flexia'),
                 'section' => 'flexia_header_layout',
                 'settings' => 'flexia_navbar_position',
-                'type' => 'radio',
+                'type' => 'select',
                 'choices' => array(
-                    'flexia-navbar-static-top' => __('Static Top', 'flexia'),
+                    'flexia-navbar-static-top' => __('Default Top', 'flexia'),
                     'flexia-navbar-fixed-top' => __('Sticky Top', 'flexia'),
-                    'flexia-navbar-transparent-top' => __('Transparent Static Top', 'flexia'),
+                    'flexia-navbar-transparent-top' => __('Transparent Default Top', 'flexia'),
                     'flexia-navbar-transparent-sticky-top' => __('Transparent Sticky Top', 'flexia'),
                 ),
             )
@@ -2684,7 +2682,6 @@ function flexia_customize_register($wp_customize)
         'sanitize_callback' => 'flexia_sanitize_choices',
     ));
 
-
     $wp_customize->add_control(
 		new Flexia_Radio_Image_Control(
 		$wp_customize,
@@ -2693,41 +2690,39 @@ function flexia_customize_register($wp_customize)
 			'type'          => 'flexia-radio-image',
 			'settings'		=> 'header_layouts',
 			'section'		=> 'flexia_header_layout',
-			'label'			=> __('Page Header', 'flexia'),
-			'priority'      => 1,
-			'choices'		=> apply_filters('header_layouts', array(
-				'layout1' 	=> array(
-					'image' => get_template_directory_uri() . '/admin/img/flexia-banner.png',
-				),
-				'layout2' 	=> array(
-					'image' => get_template_directory_uri() . '/admin/img/flexia-banner.png',
-				),
-				'layout3' 	=> array(
-					'image' => get_template_directory_uri() . '/admin/img/flexia-banner.png',
-					'pro'   => true,
-					'url'   => 'https://flexia.pro/pricing/',
-				),
-			))
-		) )
+			'label'			=> __('Header Styles', 'flexia'),
+            'choices'		=> apply_filters(
+                'header_layouts', 
+                array(
+                    'layout1' 	=> array(
+                        'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-01.png',
+                    ),
+                    'layout2' 	=> array(
+                        'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-02.png',
+                    ),
+                    'layout3' 	=> array(
+                        'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-03.png',
+                    ),
+                    'layout4' 	=> array(
+                        'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-04.png',
+                    ),
+                    'layout5' 	=> array(
+                        'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-05.png',
+                    ),
+                    'layout6' 	=> array(
+                        'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-06.png',
+                        'pro'   => true,
+                        'url'   => 'https://flexia.pro/pricing/',
+                    ),
+                    'layout7' 	=> array(
+                        'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-07.png',
+                        'pro'   => true,
+                        'url'   => 'https://flexia.pro/pricing/',
+                    ),
+                )
+            )) 
+        )
 	);
-
-    // $wp_customize->add_control(
-    //     new WP_Customize_Control(
-    //         $wp_customize,
-    //         'header_layouts',
-    //         array(
-    //             'label' => __('Header Layouts', 'flexia'),
-    //             'section' => 'flexia_header_layout',
-    //             'settings' => 'header_layouts',
-    //             'type' => 'radio',
-    //             'choices' => array(
-    //                 'layout1' => __('Layout 1', 'flexia'),
-    //                 'layout2' => __('Layout 2', 'flexia'),
-    //                 'layout3' => __('Layout 3', 'flexia'),
-    //             ),
-    //         )
-    //     )
-    // );
 
     /**
      * Header Layout Section: Mobile Layouts
@@ -2740,19 +2735,33 @@ function flexia_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control(
-        new WP_Customize_Control(
+        new Flexia_Radio_Image_Control(
             $wp_customize,
             'header_mobile_layouts',
             array(
                 'label' => __('Mobile Layouts', 'flexia'),
                 'section' => 'flexia_header_layout',
                 'settings' => 'header_mobile_layouts',
-                'type' => 'radio',
-                'choices' => array(
-                    'layout1' => __('Layout 1', 'flexia'),
-                    'layout2' => __('Layout 2', 'flexia'),
-                    'layout3' => __('Layout 3', 'flexia'),
-                ),
+                'type'          => 'flexia-radio-image',
+                'choices'		=> apply_filters(
+                    'header_layouts', 
+                    array(
+                        'layout1' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/mobile-1.png',
+                        ),
+                        'layout2' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/mobile-2.png',
+                        ),
+                        'layout3' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/mobile-3.png',
+                        ),
+                        'layout4' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/mobile-4.png',
+                            'pro'   => true,
+                            'url'   => 'https://flexia.pro/pricing/',
+                        ),
+                    )
+                )
             )
         )
     );
@@ -2827,6 +2836,7 @@ function flexia_customize_register($wp_customize)
             'flexia_header_logo_width',
             array(
                 'label' => __('Logo width (px)', 'flexia'),
+                'priority' => 20,
                 'section' => 'flexia_header_logo',
                 'settings' => 'flexia_header_logo_width',
                 'type' => 'text',
@@ -2846,6 +2856,7 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'sticky_logo_label', array(
         'label' => __('Sticky Logo', 'flexia'),
+        'priority' => 25,
         'settings' => 'sticky_logo_label',
         'section' => 'flexia_header_logo',
     )));
@@ -2866,6 +2877,7 @@ function flexia_customize_register($wp_customize)
             'custom_sticky_logo',
             array(
                 'label'      => __( 'Upload Sticky Logo', 'flexia' ),
+                'priority' => 30,
                 'section'    => 'flexia_header_logo',
                 'settings'   => 'custom_sticky_logo',
                 'context'    => 'flexia_custom_sticky_logo'
@@ -2890,6 +2902,7 @@ function flexia_customize_register($wp_customize)
             'flexia_sticky_header_logo_width',
             array(
                 'label' => __('Sticky Header Logo width (px)', 'flexia'),
+                'priority' => 35,
                 'section' => 'flexia_header_logo',
                 'settings' => 'flexia_sticky_header_logo_width',
                 'type' => 'text',
