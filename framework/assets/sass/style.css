@@ -2985,16 +2985,15 @@ a {
         .main-navigation .nav-menu li.flexia-header-cart {
           display: none; } }
 .main-navigation a.cart-contents {
-  background-color: rgba(0, 0, 0, 0.75);
-  color: #fff;
   -webkit-transition: all 0.15s linear;
   transition: all 0.15s linear; }
   .main-navigation a.cart-contents:hover {
-    background-color: #262625 !important;
-    color: #fff !important; }
+    background-color: transparent !important; }
   .main-navigation a.cart-contents span {
-    color: #fff !important;
     padding-left: 0 !important; }
+  .main-navigation a.cart-contents .count {
+    font-size: .8em;
+    margin-top: -15px; }
 .main-navigation .edd-cart-contents .amount,
 .main-navigation .edd-cart-contents .count {
   padding-left: 5px; }

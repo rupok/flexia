@@ -107,19 +107,19 @@
 
     // 3rd party & others
     a.cart-contents {
-        background-color: rgba(0, 0, 0, 0.75);
-        color: #fff;
         -webkit-transition: all 0.15s linear;
         transition: all 0.15s linear;
 
         &:hover {
-            background-color: #262625 !important;
-            color: #fff !important;
+            background-color: transparent !important;
         }
 
         span {
-            color: #fff !important;
             padding-left: 0 !important;
+        }
+        .count {
+            font-size: .8em;
+            margin-top: -15px;
         }
     }
 
