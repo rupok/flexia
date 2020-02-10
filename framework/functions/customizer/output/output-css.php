@@ -87,7 +87,7 @@ add_action( 'customize_controls_print_styles', 'flexia_customizer_custom_styles'
 
 function flexia_generate_css()
 {
-    $defaults = flexia_get_option();
+    $defaults = flexia_generate_defaults();
 	$header_text_color = get_header_textcolor();
 
 	if ((get_theme_mod('site_background_image_enable_button'))) {

@@ -22,4 +22,4 @@ function add_edd_cart_menu_to_navbar($items, $args)
 
     return $items;
 }
-add_filter('wp_nav_menu_items', 'add_edd_cart_menu_to_navbar', 99, 2);
+// add_filter('wp_nav_menu_items', 'add_edd_cart_menu_to_navbar', 99, 2);

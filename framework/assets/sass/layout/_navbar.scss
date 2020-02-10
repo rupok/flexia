@@ -19,6 +19,9 @@
 	align-items: stretch;
 	min-height: 40px;
 }
+.flexia-header-2 .flexia-navbar-inner {
+	justify-content: flex-start;	
+}
 .flexia-logobar-inline {
 	flex: 0 0 auto;
 	margin: 0 1em;

@@ -24,6 +24,7 @@ $flexia_logobar_position = get_theme_mod('flexia_logobar_position', 'flexia-logo
 
 $flexia_navbar = get_theme_mod('flexia_navbar', true);
 
+$header_layouts = get_theme_mod('header_layouts', 1);
 
 ?>
 
@@ -42,7 +43,7 @@ $flexia_navbar = get_theme_mod('flexia_navbar', true);
 	endif; ?>
 
 	<?php if( $flexia_navbar == true ) : 
-		get_template_part( 'framework/views/template-parts/content', 'navbar' );
+		get_template_part( 'framework/views/template-parts/headers/header', $header_layouts );
 	endif; ?>
 
 

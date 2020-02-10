@@ -80,7 +80,7 @@ if (!function_exists('flexia_get_option_defaults')) {
 
             'header_layout_type' => 'boxed',
             'flexia_navbar_position' => 'flexia-navbar-static-top',
-            'header_layouts' => 'layout1',
+            'header_layouts' => '1',
             'header_mobile_layouts' => 'layout1',            
 
             'primary_logo_label' => '',
@@ -225,26 +225,65 @@ if (!function_exists('flexia_get_option_defaults')) {
 }
 
 /**
- *  Get default customizer option
- */
-if (!function_exists('flexia_get_option')) {
-    /**
-     * Get default customizer option
-     * @param string $key Option key.
-     * @return mixed Option value.
-     */
-    function flexia_get_option($key = null)
-    {
-        $default_options = flexia_get_option_defaults();
+*  Get default customizer option
+*/
+if ( ! function_exists( 'flexia_get_option' ) ) :
 
-        if (isset($key)) {
-            return get_theme_mod($key, ($default_options[$key] ? $default_options[$key] : null));
-        }
+	/**
+	 * Get default customizer option
+	 * @param string $key Option key.
+	 * @return mixed Option value.
+	 */
+	function flexia_get_option( $key ) {
 
-        foreach ($default_options as $key => $val) {
-            $default_options[$key] = get_theme_mod($key, ($default_options[$key] ?: null));
-        }
+		$default_options = flexia_get_option_defaults();
 
-        return $default_options;
-    }
-}
+		if ( empty( $key ) ) {
+			return;
+		}
+
+		$theme_options = (array)get_theme_mod( 'theme_options' );
+		$theme_options = wp_parse_args( $theme_options, $default_options );
+
+		$value = null;
+
+		if ( isset( $theme_options[ $key ] ) ) {
+			$value = $theme_options[ $key ];
+		}
+
+		return $value;
+	}
+
+endif;
+
+
+if( ! function_exists( 'flexia_generate_defaults' ) ) : 
+
+	function flexia_generate_defaults(){
+
+		$default_options = flexia_get_option_defaults();
+		$saved_options = get_theme_mods();
+
+		$returned = [];
+
+		if( ! $saved_options ) {
+			return;
+		}
+
+		foreach( $default_options as $key => $option ) {
+			if( array_key_exists( $key, $saved_options ) ) {
+				$returned[ $key ] = get_theme_mod( $key );				
+			} else {
+				switch ( $key ) {
+					default:
+						$returned[ $key ] = $default_options[ $key ];
+						break;
+				}
+			}
+		}
+
+		return $returned;
+
+	}
+
+endif;
