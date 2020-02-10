@@ -85,7 +85,7 @@ if (!function_exists('flexia_setup')) {
             }
             return $items;
         }
-        add_filter('wp_nav_menu_items', 'flexia_nav_search', 98, 2);
+        // add_filter('wp_nav_menu_items', 'flexia_nav_search', 98, 2);
 
         /**
          * Enable support for Post Formats

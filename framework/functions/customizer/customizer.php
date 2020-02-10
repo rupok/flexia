@@ -2694,27 +2694,27 @@ function flexia_customize_register($wp_customize)
             'choices'		=> apply_filters(
                 'header_layouts', 
                 array(
-                    'layout1' 	=> array(
+                    '1' 	=> array(
                         'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-01.png',
                     ),
-                    'layout2' 	=> array(
+                    '2' 	=> array(
                         'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-02.png',
                     ),
-                    'layout3' 	=> array(
+                    '3' 	=> array(
                         'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-03.png',
                     ),
-                    'layout4' 	=> array(
+                    '4' 	=> array(
                         'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-04.png',
                     ),
-                    'layout5' 	=> array(
+                    '5' 	=> array(
                         'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-05.png',
                     ),
-                    'layout6' 	=> array(
+                    '6' 	=> array(
                         'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-06.png',
                         'pro'   => true,
                         'url'   => 'https://flexia.pro/pricing/',
                     ),
-                    'layout7' 	=> array(
+                    '7' 	=> array(
                         'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-07.png',
                         'pro'   => true,
                         'url'   => 'https://flexia.pro/pricing/',
@@ -2744,18 +2744,18 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'header_mobile_layouts',
                 'type'          => 'flexia-radio-image',
                 'choices'		=> apply_filters(
-                    'header_layouts', 
+                    'mobile_header_layouts', 
                     array(
-                        'layout1' 	=> array(
+                        '1' 	=> array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/mobile-1.png',
                         ),
-                        'layout2' 	=> array(
+                        '2' 	=> array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/mobile-2.png',
                         ),
-                        'layout3' 	=> array(
+                        '3' 	=> array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/mobile-3.png',
                         ),
-                        'layout4' 	=> array(
+                        '4' 	=> array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/mobile-4.png',
                             'pro'   => true,
                             'url'   => 'https://flexia.pro/pricing/',
