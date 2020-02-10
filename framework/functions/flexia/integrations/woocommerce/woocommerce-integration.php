@@ -71,7 +71,7 @@ function add_cart_menu_to_navbar($items, $args)
         $items .= '<span class="amount"></span> <span class="count">'. WC()->cart->get_cart_contents_count().'</span>';
 		$items .= '</a>';
 		if (WC()->cart->get_cart_contents_count() > 0 ) {
-			$items .= '<ul class="flexia-menu-cart-items">';
+			$items .= '<ul class="flexia-cart-submenu flexia-menu-cart-items">';
 			foreach($cartitems as $cartitem => $values) {
 				$product_id = $values['data']->get_id();
 				$product =  wc_get_product( $product_id );
@@ -92,7 +92,7 @@ function add_cart_menu_to_navbar($items, $args)
 					$items .= '<div class="flexia-cart-product-action"> <i data-id="'.$product_id.'" class="fa fa-trash"></i> </div>';
 				$items .= '</li>';
 			}
-			$items .= '<li class="flexia-cart-total">Cart Total: <span>'.$woocommerce->cart->get_cart_total().'</span></li>';
+			$items .= '<li class="flexia-cart-total">Cart Total: <span><strong>'.$woocommerce->cart->get_cart_total().'</strong></span></li>';
 			$items .= '<li class="flexia-cart-links">';
 				$items .= '<a class="button" href=" '.esc_url( wc_get_cart_url()).' ">View Cart</a>';
 				$items .= '<a class="button" href=" '.esc_url( wc_get_checkout_url()).' ">View Checkout</a>';
