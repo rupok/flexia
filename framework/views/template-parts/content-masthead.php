@@ -24,11 +24,11 @@ $flexia_logobar_position = get_theme_mod('flexia_logobar_position', 'flexia-logo
 
 $flexia_navbar = get_theme_mod('flexia_navbar', true);
 
-$header_layouts = get_theme_mod('header_layouts');
+$header_layouts = get_theme_mod('header_layouts', '1');
 
 ?>
 
-<header id="masthead" class="site-header">
+<header id="masthead" class="site-header flexia-header-<?php echo $header_layouts; ?>">
 
 	<?php if( $header_widget_area == true ) : 
 		get_template_part( 'framework/views/template-parts/content', 'header-widgets' ); 

@@ -236,22 +236,16 @@ if ( ! function_exists( 'flexia_get_option' ) ) :
 	 */
 	function flexia_get_option( $key ) {
 
-		$default_options = flexia_get_option_defaults();
-
-		if ( empty( $key ) ) {
+        if ( empty( $key ) ) {
 			return;
-		}
+        }
 
-		$theme_options = (array)get_theme_mod( 'theme_options' );
-		$theme_options = wp_parse_args( $theme_options, $default_options );
+        $value = null;
+        $default = flexia_get_option_defaults();
+        $default_value = $default[$key];
+        $theme_options = get_theme_mod( $key, $default_value );
 
-		$value = null;
-
-		if ( isset( $theme_options[ $key ] ) ) {
-			$value = $theme_options[ $key ];
-		}
-
-		return $value;
+		return $theme_options;
 	}
 
 endif;

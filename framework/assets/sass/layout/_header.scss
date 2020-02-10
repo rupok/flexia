@@ -130,51 +130,220 @@
 	}
 }
 .flexia-topbar {
+
 	position: relative;
 	background-color: $color__dark;
-}
-.flexia-topbar-inner {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-	align-items: center;
-}
-.flexia-topbar-content {
-	font-size: .8em;
-	color: $color__light;
-	font-size: .8em;
-	color: $color__light;
-	padding: .5em 0;
-	text-align: center;
-	p {
-		margin: 0;
-	}
-}
-.flexia-topbar_contact {
-    padding: 0;
-	margin: 0;
-	a {
-		display: inline-block;
-		margin-right: 20px;
-		i {
-			margin-right: 3px;
+
+	.flexia-topbar-inner {
+
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: stretch;
+		height: 40px;
+
+		.flexia-topbar_contact {
+
+			align-self: center;
+			padding: 0;
+			margin: 0;
+
+			a {
+
+				margin-right: 20px;
+
+				i {
+					margin-right: 3px;
+				}
+			}
 		}
-	}
-}
-.flexia-social-links {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	align-self: center;
-	li {
-		display: inline-block;
-		margin: 0px 5px 0px 0;
-		a {
-			padding: 5px;
-			display: block;
+
+		.flexia-topbar-content {
+
+			align-self: center;
+
+			p {
+
+				margin: 0;
+			}
 		}
+
+		.flexia-social-links {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			align-self: center;
+
+			li {
+
+				display: inline-block;
+				margin: 0px 5px 0px 0;
+
+				a {
+
+					padding: 5px;
+					display: block;
+				}
+			}
+		}
+
+		//Topbar Navigation
+		.topbar-navigation {
+			margin: 0 1em;
+			height: 100%;
+			display: flex;
+			align-items: center;
+		
+			.nav-menu {
+
+				height: 100%;
+				display: flex;
+				align-items: center;
+
+				li {
+
+					height: 100%;
+					display: flex;
+					align-items: center;
+
+					> a {
+						font-size: 12px;
+						color: #cbced3;
+						height: 100%;
+						display: flex;
+						align-items: center;
+					}
+		
+					&:hover,
+					&.current-menu-item,
+					&.current-menu-ancestor {
+						> a {
+							color: #ffffff;
+							background-color: rgba(0, 0, 0, 0.5);
+						}
+					}
+		
+					ul {
+						background-color: #262625;
+		
+						li {
+							> a {
+								font-size: 12px;
+								line-height: 21px;
+								color: #cbced3;
+								padding: 12px 15px;
+								width: 100%;
+							}
+		
+							&:hover,
+							&.current-menu-item,
+							&.current-menu-ancestor {
+								> a {
+									color: #ffffff;
+									background-color: rgba(0, 0, 0, 0.5);
+								}
+							}
+						}
+					}
+				}
+		
+				// Responsive menu
+				@media screen and (max-width: 991px) {
+					margin: 0;
+					background-color: #262625;
+		
+					li {
+						> a {
+							line-height: 42px;
+							color: #cbced3;
+							background-color: transparent;
+							border: 1px solid rgba(255, 255, 255, 0.15);
+						}
+		
+						&:hover,
+						&.current-menu-item,
+						&.current-menu-ancestor {
+							> a {
+								color: #cbced3;
+								background-color: transparent;
+							}
+						}
+		
+						ul {
+							background-color: transparent;
+		
+							li {
+								> a {
+									line-height: 18px;
+									color: #cbced3;
+									background-color: transparent;
+									border: 1px solid rgba(255, 255, 255, 0.15);
+								}
+		
+								&:hover,
+								&.current-menu-item,
+								&.current-menu-ancestor {
+									> a {
+										color: #cbced3;
+										background-color: transparent;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		
+			// responsive menu
+			.flexia-menu-toggle {
+				min-height: 32px;
+		
+				&:before,
+				&.flexia-menu-toggle-open:after {
+					background-color: #cbced3;
+				}
+				&:after {
+					border-color: #cbced3;
+				}
+			}
+		
+			.flexia-menu-indicator {
+				background-color: #262625;
+				border: 1px solid rgba(255, 255, 255, 0.15);
+		
+				&:before {
+					background: #dddddd;
+				}
+		
+				&:after {
+					background: #dddddd;
+				}
+		
+				&:hover {
+					background-color: rgba(0, 0, 0, 0.5);
+					border-color: rgba(255, 255, 255, 0.15);
+		
+					&:before,
+					&:after {
+						background: #ffffff;
+					}
+				}
+		
+				&.flexia-menu-indicator-open {
+					background-color: rgba(0, 0, 0, 0.5);
+					border-color: rgba(255, 255, 255, 0.15);
+		
+					&:before,
+					&:after {
+						background: #ffffff;
+					}
+				}
+			}
+		}
+		
 	}
 }
+
 @media all and (min-width: 768px) {
 	.flexia-header-widget-inner {
 		.widget {

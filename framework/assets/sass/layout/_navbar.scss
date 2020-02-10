@@ -22,7 +22,15 @@
 .flexia-header-2 .flexia-navbar-inner {
 	justify-content: flex-start;	
 }
+.flexia-header-3 .flexia-navbar-inner {
+	justify-content: flex-start;
+	.flexia-social-links {
+		margin: 0 0 0 auto;
+	}
+}
 .flexia-logobar-inline {
+	display: flex;
+	align-items: center;
 	flex: 0 0 auto;
 	margin: 0 1em;
 	max-width: 450px;

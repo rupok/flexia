@@ -421,7 +421,7 @@ function generateCSS() {
      //Contact Info Font Size
      wp.customize("flexia_header_top_contact_font_size", function(value) {
         value.bind(function(to) {
-            $(".flexia-topbar_contact a").css(
+            $(".flexia-topbar_contact a, .flexia-topbar-content").css(
                 "font-size",
                 to+"em"
             );
@@ -431,7 +431,7 @@ function generateCSS() {
      //Contact Info Font Color
      wp.customize("flexia_header_top_contact_font_color", function(value) {
         value.bind(function(to) {
-            $(".flexia-topbar_contact a").css(
+            $(".flexia-topbar_contact a, .flexia-topbar-content").css(
                 "color",
                 to
             );

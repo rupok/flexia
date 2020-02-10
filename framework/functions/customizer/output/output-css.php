@@ -301,6 +301,11 @@ function flexia_generate_css()
 		font-size: ' . $defaults['flexia_overlay_search_label_font_size'] . 'px;
 	  }
 
+	  .flexia-topbar-content{
+		color: ' . $defaults['flexia_header_top_contact_font_color'] . ';
+		font-size: ' . $defaults['flexia_header_top_contact_font_size'] . 'em;
+	  }
+
 	  .flexia-topbar_contact a {
 		color: ' . $defaults['flexia_header_top_contact_font_color'] . ';
 		font-size: ' . $defaults['flexia_header_top_contact_font_size'] . 'em;
