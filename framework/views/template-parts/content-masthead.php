@@ -24,7 +24,7 @@ $flexia_logobar_position = get_theme_mod('flexia_logobar_position', 'flexia-logo
 
 $flexia_navbar = get_theme_mod('flexia_navbar', true);
 
-$header_layouts = get_theme_mod('header_layouts', 1);
+$header_layouts = get_theme_mod('header_layouts', '1');
 
 ?>
 

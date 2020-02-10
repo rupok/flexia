@@ -104,8 +104,10 @@ function add_cart_menu_to_navbar($items, $args)
     }
     return $items;
 }
-// add_filter('wp_nav_menu_items', 'add_cart_menu_to_navbar', 99, 2);
-
+$header_layouts = get_theme_mod('header_layouts', '1');
+if($header_layouts == '1') {
+add_filter('wp_nav_menu_items', 'add_cart_menu_to_navbar', 99, 2);
+}
 
 /**
  * Ensure cart contents update when products are added to the cart via AJAX
