@@ -17,7 +17,10 @@ $dropdown_animation = 'flexia-menu-dropdown-animate-' . get_theme_mod('flexia_to
 ?>
 
 <div class="flexia-topbar">
-	<div class="flexia-topbar-inner flexia-container <?php echo (get_theme_mod( 'header_layout_type' ) == "full-width") ? "full-width" : "width max" ?>">
+	<div class="flexia-topbar-inner flexia-container 
+		<?php echo (get_theme_mod( 'header_layout_type' ) == "full-width") ? "full-width" : "width max" ?>
+		<?php echo (get_theme_mod( 'flexia_enable_topbar_on_mobile' )) ? "show-mobile" : "hide-mobile" ?>
+	">
 
 		<!-- Header Top Contact Start -->		
 		<?php
@@ -48,11 +51,15 @@ $dropdown_animation = 'flexia-menu-dropdown-animate-' . get_theme_mod('flexia_to
 				echo $output;
 			}
 		?>
-		<!-- Header Top Contact Start -->
+		<!-- Header Top Contact End -->
 
-		<div class="flexia-topbar-content">
-			<?php echo get_theme_mod('flexia_topbar_content'); ?>
-		</div>
+		<!-- Header Top Content Start -->
+		<?php if ( !empty(get_theme_mod('flexia_topbar_content'))) : ?>
+			<div class="flexia-topbar-content">
+				<?php echo get_theme_mod('flexia_topbar_content'); ?>
+			</div>
+		<?php endif ?>
+		<!-- Header Top Content End -->
 
 		<!-- Header Top Social Start -->
 		<?php

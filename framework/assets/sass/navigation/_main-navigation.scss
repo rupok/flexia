@@ -102,6 +102,71 @@
                 }
             }
         }
+    }    
+}
+
+//Main Navigation Active/ Hover styles
+.flexia-header-2 .main-navigation .nav-menu {
+    @media all and (min-width: 992px) {
+
+        > li.current-menu-item > a::after, > &:hover {
+            content: "";
+            height: 2px;
+            width: 40px;
+            position: absolute;
+            top: 100%;
+            left: 15px;
+            background-color: #1b1f21;
+        }
+    }
+}
+
+
+.flexia-menu.header-icons {
+
+    display: flex;
+    justify-items: center;
+
+    ul {
+
+        li {
+
+            display: flex;
+            height: 100%;
+            
+            a {
+                display: flex;
+                align-self: center;
+                font-size: .9em;
+                text-transform: uppercase;
+            }
+        }
+
+        //Media Query
+        @media all and (max-width: 991px) {
+            position: relative;
+            display: flex;
+            top: unset;
+            left: unset;
+            right: unset;
+            padding: 0;
+            opacity: unset;
+            visibility: visible;
+
+            li a {
+
+                margin-bottom: 0;
+                padding: 0 10px;
+
+                span {
+                    display: block;
+                }
+
+                .amount {
+                    display: none;
+                }
+            }           
+        }
     }
 
     // 3rd party & others
@@ -115,6 +180,9 @@
 
         span {
             padding-left: 0 !important;
+        }
+        .flexia-header-cart-icon {
+            margin-right: 5px;
         }
         .count {
             font-size: .8em;
@@ -206,4 +274,6 @@
             padding-left: 5px;
         }
     }
+
+    
 }

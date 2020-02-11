@@ -191,6 +191,7 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_woo_cart_menu' => false,
 
             'flexia_enable_topbar' => false,
+            'flexia_enable_topbar_on_mobile' => false,
             'flexia_enable_topbar_menu' => false,
             'flexia_header_top_phone' => '',
             'flexia_header_top_email' => '',

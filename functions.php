@@ -75,19 +75,22 @@ if (!function_exists('flexia_setup')) {
          * Add search box to primary menu
          */
 
-        function flexia_nav_search($items, $args)
+        function flexia_nav_search($items)
         {
             $flexia_nav_menu_search = get_theme_mod('flexia_nav_menu_search', true);
 
-            if ($flexia_nav_menu_search == true && 'primary' === $args->theme_location) {
+            if ($flexia_nav_menu_search == true ) {
                 $items .= '<li class="menu-item navbar-search-menu"> <a id="btn-search" href="javascript:void(0);">';
                 $items .= '<i class="fa fa-search" aria-hidden="true"></i></a></li>';
             }
             return $items;
         }
         $header_layouts = get_theme_mod('header_layouts');
-        if($header_layouts == '1'){
+        if( in_array($header_layouts, array(3 ) ) ){
             add_filter('wp_nav_menu_items', 'flexia_nav_search', 98, 2);
+        }
+        if( in_array($header_layouts, array(1, 2, 5) ) ){
+            add_filter('flexia_header_icon_items', 'flexia_nav_search', 98, 1);
         }
 
         /**

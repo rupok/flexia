@@ -22,7 +22,7 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 
 ?>
 
-<div class="flexia-header-2 flexia-navbar <?php echo $navbar_class;?>">
+<div class="flexia-navbar <?php echo $navbar_class;?>">
 	<div class="flexia-navbar-container">
 		<div class="flexia-container flexia-navbar-inner <?php echo (get_theme_mod( 'header_layout_type' ) == "full-width") ? "full-width" : "width max" ?>">
 			
@@ -82,64 +82,15 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 
 			</nav><!-- #site-navigation -->
 
-			<div class="nav-icons">
-				<ul>
+			<div class="flexia-menu header-icons icon-menu">
+				<ul class="nav-menu <?php echo $dropdown_animation; ?>">
 					<?php
-					// haeder search
-					$flexia_nav_menu_search = get_theme_mod('flexia_nav_menu_search', true);
-					if ($flexia_nav_menu_search == true && 'primary' === $args->theme_location) {
-						$items .= '<li class="menu-item navbar-search-menu"> <a id="btn-search" href="javascript:void(0);">';
-						$items .= '<i class="fa fa-search" aria-hidden="true"></i></a></li>';
-					}
-
-					// header WooCommerce cart
-					$flexia_woo_cart_menu = get_theme_mod('flexia_woo_cart_menu', false);
-					global $woocommerce;
-					$cartitems = $woocommerce->cart->get_cart();
-
-					if ($flexia_woo_cart_menu == true && 'primary' === $args->theme_location) {
-						$items .= '<li class="menu-item flexia-header-cart">';
-						$items .= '<a class="cart-contents wc-cart-contents" href="' . esc_url(wc_get_cart_url()) . '">';
-						$items .= '<span class="flexia-header-cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>';
-						$items .= '<span class="amount"></span> <span class="count">'. WC()->cart->get_cart_contents_count().'</span>';
-						$items .= '</a>';
-						if (WC()->cart->get_cart_contents_count() > 0 ) {
-							$items .= '<ul class="flexia-menu-cart-items">';
-							foreach($cartitems as $cartitem => $values) {
-								$product_id = $values['data']->get_id();
-								$product =  wc_get_product( $product_id );
-								$image = wp_get_attachment_image_src( get_post_thumbnail_id( $values['data']->get_id() ), 'thumbnail' );
-								$price = get_post_meta($values['product_id'] , '_price', true);
-
-								$items .= '<li class="flexia-cart-item">';
-									$items .= '<div class="flexia-cart-product-img">';
-										$items .= '<img src="'.$image[0].'" data-id="'. $product_id.'">';
-									$items .= '</div>';
-									$items .= '<div class="flexia-cart-product-meta">';
-										$items .= '<span class="flexia-cart-product-title">';
-										$items .= '<a href="'.get_permalink($product_id).'">' .$product->get_title() . '</a>';
-										$items .= '</span>';
-										$items .= '<span class="flexia-cart-product-qty">'.$values['quantity'].' x '.get_woocommerce_currency_symbol().''.$price.'</span>';
-										$items .= '<span class="flexia-cart-product-price"></span>';
-									$items .= '</div>';
-									$items .= '<div class="flexia-cart-product-action"> <i data-id="'.$product_id.'" class="fa fa-trash"></i> </div>';
-								$items .= '</li>';
-							}
-							$items .= '<li class="flexia-cart-total">Cart Total: <span>'.$woocommerce->cart->get_cart_total().'</span></li>';
-							$items .= '<li class="flexia-cart-links">';
-								$items .= '<a class="button" href=" '.esc_url( wc_get_cart_url()).' ">View Cart</a>';
-								$items .= '<a class="button" href=" '.esc_url( wc_get_checkout_url()).' ">View Checkout</a>';
-							$items .= '</li>';
-							$items .= '</ul>';
-						}
-						
-						$items .= '</li>';
-					}
-
-					echo $items;
+						$items = '';
+						$items = apply_filters( 'flexia_header_icon_items', $items ); 
+						echo $items; 
 					?>
 				</ul>
-			</div>
+			</div><!-- #header-icons -->
 
 		</div><!-- #flexia-container -->
 	</div><!-- #flexia-navbar-container -->

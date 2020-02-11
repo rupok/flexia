@@ -57,14 +57,14 @@ get_footer();
 }
 
 // Add cart menu  to Navbar
-function add_cart_menu_to_navbar($items, $args)
+function add_cart_menu_to_navbar($items)
 {
 	$flexia_woo_cart_menu = get_theme_mod('flexia_woo_cart_menu', false);
 	
 	global $woocommerce;
 	$cartitems = $woocommerce->cart->get_cart();
 
-    if ($flexia_woo_cart_menu == true && 'primary' === $args->theme_location) {
+    if ($flexia_woo_cart_menu == true ) {
         $items .= '<li class="menu-item flexia-header-cart">';
         $items .= '<a class="cart-contents wc-cart-contents" href="' . esc_url(wc_get_cart_url()) . '">';
         $items .= '<span class="flexia-header-cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>';
@@ -104,10 +104,7 @@ function add_cart_menu_to_navbar($items, $args)
     }
     return $items;
 }
-$header_layouts = get_theme_mod('header_layouts', '1');
-if($header_layouts == '1') {
-add_filter('wp_nav_menu_items', 'add_cart_menu_to_navbar', 99, 2);
-}
+add_filter('flexia_header_icon_items', 'add_cart_menu_to_navbar', 99, 2);
 
 /**
  * Ensure cart contents update when products are added to the cart via AJAX

@@ -81,6 +81,17 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 				?>
 
 			</nav><!-- #site-navigation -->
+
+			<div class="flexia-menu header-icons icon-menu">
+				<ul class="nav-menu <?php echo $dropdown_animation; ?>">
+					<?php
+						$items = '';
+						$items = apply_filters( 'flexia_header_icon_items', $items ); 
+						echo $items; 
+					?>
+				</ul>
+			</div><!-- #header-icons -->
+
 		</div><!-- #flexia-container -->
 	</div><!-- #flexia-navbar-container -->
 </div>

@@ -91,3 +91,9 @@ figure {
     color: $color__light;
   }
 }
+
+@media all and (max-width: 767px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
