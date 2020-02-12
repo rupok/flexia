@@ -28,40 +28,32 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 			
 			<?php if( $flexia_logobar_position == 'flexia-logobar-inline' ) : ?>
 
-			<div class="flexia-logobar-inline">
-				<div class="site-branding">
+				<div class="flexia-logobar-inline">
+					<div class="site-branding">
 
-					<?php if( $flexia_header_logo[0] !== NULL ) :  ?>
+						<?php if( $flexia_header_logo[0] !== NULL ) :  ?>
 
-				       	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="flexia-header-logo"><img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo $flexia_header_logo[0]; ?>"></a>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="flexia-header-logo"><img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo $flexia_header_logo[0]; ?>"></a>
 
-				    <?php else : ?>
-
-						<?php if ( is_front_page() && is_home() ) : ?>
-							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php else : ?>
-							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-						<?php
-						endif;
 
-						$description = get_bloginfo( 'description', 'display' );
-						if ( $description || is_customize_preview() ) : ?>
-							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-						<?php
-						endif; ?>
-					<?php endif; ?>
+							<?php if ( is_front_page() && is_home() ) : ?>
+								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+							<?php else : ?>
+								<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+							<?php
+							endif;
 
-				</div><!-- .site-branding -->
-			</div>
+							$description = get_bloginfo( 'description', 'display' );
+							if ( $description || is_customize_preview() ) : ?>
+								<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+							<?php
+							endif; ?>
+						<?php endif; ?>
+
+					</div><!-- .site-branding -->
+				</div>
 			<?php endif; ?>
-
-			<!-- Header Main Social Start -->
-			<?php
-				if (flexia_get_option('flexia_enable_header_social') == true && flexia_get_option('flexia_header_social_position') == "header_main") {
-					get_template_part('framework/views/template-parts/content', 'social-links');
-				}
-			?>
-			<!-- Header Main Social End -->
 
 			<nav id="site-navigation" class="flexia-menu main-navigation">
 				<?php
@@ -90,7 +82,15 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 						echo $items; 
 					?>
 				</ul>
-			</div><!-- #header-icons -->
+			</div><!-- #header-icons -->		
+
+			<!-- Header Main Social Start -->
+			<?php
+				if (flexia_get_option('flexia_enable_header_social') == true && flexia_get_option('flexia_header_social_position') == "header_main") {
+					get_template_part('framework/views/template-parts/content', 'social-links');
+				}
+			?>
+			<!-- Header Main Social End -->
 
 		</div><!-- #flexia-container -->
 	</div><!-- #flexia-navbar-container -->

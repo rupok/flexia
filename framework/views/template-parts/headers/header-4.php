@@ -52,10 +52,6 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 						<?php endif; ?>
 
 					</div><!-- .site-branding -->
-
-					<!-- Header Search Box -->
-					<?php get_search_form(); ?>
-					<!-- Header Search Box End -->
 				</div>
 			<?php endif; ?>
 
@@ -86,7 +82,6 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 						echo $items; 
 					?>
 				</ul>
-			</div><!-- #header-icons -->
 
 			<!-- Header Main Social Start -->
 			<?php
@@ -95,6 +90,7 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 				}
 			?>
 			<!-- Header Main Social End -->
+			</div><!-- #header-icons -->		
 
 		</div><!-- #flexia-container -->
 	</div><!-- #flexia-navbar-container -->

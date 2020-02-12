@@ -72,7 +72,7 @@ if (!function_exists('flexia_setup')) {
         ));
 
         /**
-         * Add search box to primary menu
+         * Add search box to header navigation
          */
 
         function flexia_nav_search($items)
@@ -85,12 +85,10 @@ if (!function_exists('flexia_setup')) {
             }
             return $items;
         }
+        add_filter('flexia_header_icon_items', 'flexia_nav_search', 98, 1);
         $header_layouts = get_theme_mod('header_layouts');
-        if( in_array($header_layouts, array(3 ) ) ){
+        if( in_array($header_layouts, array(4 ) ) ){
             add_filter('wp_nav_menu_items', 'flexia_nav_search', 98, 2);
-        }
-        if( in_array($header_layouts, array(1, 2, 5) ) ){
-            add_filter('flexia_header_icon_items', 'flexia_nav_search', 98, 1);
         }
 
         /**

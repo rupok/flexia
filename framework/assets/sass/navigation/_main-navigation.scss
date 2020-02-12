@@ -106,18 +106,46 @@
 }
 
 //Main Navigation Active/ Hover styles
-.flexia-header-2 .main-navigation .nav-menu {
-    @media all and (min-width: 992px) {
+@media all and (min-width: 992px) {
+    .flexia-header-2 .main-navigation .nav-menu > li.current-menu-item > a:after,
+    .flexia-header-2 .main-navigation .nav-menu > li:hover > a:after {
+        content: "";
+        height: 2px;
+        width: 40px;
+        position: absolute;
+        top: 100%;
+        left: 15px;
+        background-color: #1b1f21;
+    }
 
-        > li.current-menu-item > a::after, > &:hover {
-            content: "";
-            height: 2px;
-            width: 40px;
-            position: absolute;
-            top: 100%;
-            left: 15px;
-            background-color: #1b1f21;
-        }
+    .flexia-header-3 .main-navigation .nav-menu > li.current-menu-item > a:after,
+    .flexia-header-3 .main-navigation .nav-menu > li:hover > a:after {
+        content: "";
+        height: 2px;
+        width: 40px;
+        position: absolute;
+        top: 0;
+        left: 15px;
+        background-color: #1b1f21;
+    }
+
+    .flexia-header-4 .main-navigation .nav-menu > li.current-menu-item > a:after,
+    .flexia-header-4 .main-navigation .nav-menu > li:hover > a:after {
+        content: ". . .";
+        height: 2px;
+        width: 40px;
+        position: absolute;
+        top: auto;
+        left: 15px;
+        background-color:
+        transparent;
+        bottom: 40%;
+        color: inherit;
+        font-weight: 700;
+    }
+
+    .main-navigation .nav-menu > li.navbar-search-menu:hover > a:after {
+        content: unset !important;
     }
 }
 

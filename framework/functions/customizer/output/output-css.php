@@ -360,6 +360,10 @@ function flexia_generate_css()
 		background-color: ' . $defaults['flexia_navbar_bg_color'] . ';
 	  }
 
+	.flexia-menu.header-icons .nav-menu li > a {
+		color: ' . $defaults['flexia_main_nav_menu_link_color'] . ';
+	}
+
 	  @media screen and (min-width: 992px) {
 			.main-navigation .nav-menu li > a, .flexia-menu.header-icons .nav-menu li > a {
 				color: ' . $defaults['flexia_main_nav_menu_link_color'] . ';
