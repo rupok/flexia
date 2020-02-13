@@ -22,7 +22,7 @@ function add_edd_cart_menu_to_navbar($items, $args)
 
     return $items;
 }
-$header_layouts = get_theme_mod('header_layouts', '1');
+$header_layouts = get_theme_mod('flexia_header_layouts', '1');
 if($header_layouts == '1') {
 add_filter('wp_nav_menu_items', 'add_edd_cart_menu_to_navbar', 99, 2);
 }

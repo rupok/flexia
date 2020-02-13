@@ -74,13 +74,13 @@
 				});
 			});
 
-			wp.customize( 'site_background_image_enable_button', function( setting ) {
-				customizer_conditional_setting_return_toggle(setting,'site_background_image',true);
-				customizer_conditional_setting_return_toggle(setting,'site_background_property',true);
-				customizer_conditional_setting_return_toggle(setting,'site_background_image_size',true);
-				customizer_conditional_setting_return_toggle(setting,'site_background_image_position',true);
-				customizer_conditional_setting_return_toggle(setting,'site_background_image_repeat',true);
-				customizer_conditional_setting_return_toggle(setting,'site_background_image_attachment',true);
+			wp.customize( 'flexia_background_image_enable_button', function( setting ) {
+				customizer_conditional_setting_return_toggle(setting,'flexia_background_image',true);
+				customizer_conditional_setting_return_toggle(setting,'flexia_background_property',true);
+				customizer_conditional_setting_return_toggle(setting,'flexia_background_image_size',true);
+				customizer_conditional_setting_return_toggle(setting,'flexia_background_image_position',true);
+				customizer_conditional_setting_return_toggle(setting,'flexia_background_image_repeat',true);
+				customizer_conditional_setting_return_toggle(setting,'flexia_background_image_attachment',true);
 			});			
 		});
 	});

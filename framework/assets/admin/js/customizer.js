@@ -35,7 +35,7 @@ function generateCSS() {
      */
 
     // Default Text Colors
-    wp.customize("default_text_color", function(value) {
+    wp.customize("flexia_default_text_color", function(value) {
         value.bind(function(to) {
             $("body, button, input, select, optgroup, textarea").css(
                 "color",
@@ -45,7 +45,7 @@ function generateCSS() {
     });
 
     // Default Heading Colors
-    wp.customize("default_heading_color", function(value) {
+    wp.customize("flexia_default_heading_color", function(value) {
         value.bind(function(to) {
             $("h1, h2, h3, h4, h5, h6").css(
                 "color",
@@ -55,7 +55,7 @@ function generateCSS() {
     });
 
     // Site Link Colors
-    wp.customize("site_link_color", function(value) {
+    wp.customize("flexia_link_color", function(value) {
         value.bind(function(to) {
             $("a").css(
                 "color",
@@ -65,7 +65,7 @@ function generateCSS() {
     });
 
     // Site Link Hover Colors
-    wp.customize("site_link_hover_color", function(value) {
+    wp.customize("flexia_link_hover_color", function(value) {
         value.bind(function(to) {
             $("a:hover, a:focus, a:active").css(
                 "color",
@@ -75,7 +75,7 @@ function generateCSS() {
     });
 
     // Site Background Colors
-    wp.customize("site_background_color", function(value) {
+    wp.customize("flexia_background_color", function(value) {
         value.bind(function(to) {
             $("body").css(
                 "background-color",
@@ -85,7 +85,7 @@ function generateCSS() {
     });
 
     // Site Background Image
-    wp.customize("site_background_image", function(value) {
+    wp.customize("flexia_background_image", function(value) {
         value.bind(function(to) {
             $("body").css(
                 "background-image",
@@ -95,7 +95,7 @@ function generateCSS() {
     });
 
     // Site Background Image Size
-    wp.customize("site_background_image_size", function(value) {
+    wp.customize("flexia_background_image_size", function(value) {
         value.bind(function(to) {
             $("body").css(
                 "background-size",
@@ -105,7 +105,7 @@ function generateCSS() {
     });
 
     // Site Background Image Position
-    wp.customize("site_background_image_position", function(value) {
+    wp.customize("flexia_background_image_position", function(value) {
         value.bind(function(to) {
             $("body").css(
                 "background-position",
@@ -115,7 +115,7 @@ function generateCSS() {
     });
 
     // Site Background Image Repeat
-    wp.customize("site_background_image_repeat", function(value) {
+    wp.customize("flexia_background_image_repeat", function(value) {
         value.bind(function(to) {
             $("body").css(
                 "background-repeat",
@@ -129,7 +129,7 @@ function generateCSS() {
      */
 
     //Body Font Size
-    wp.customize("body_font_size", function(value) {
+    wp.customize("flexia_body_font_size", function(value) {
         value.bind(function(to) {
             $("body").css(
                 "font-size",
@@ -139,7 +139,7 @@ function generateCSS() {
     });
 
     //Body Font Line Height
-    wp.customize("body_font_line_height", function(value) {
+    wp.customize("flexia_body_font_line_height", function(value) {
         value.bind(function(to) {
             $("body").css(
                 "line-height",
@@ -149,7 +149,7 @@ function generateCSS() {
     });
 
     //Body Font text-transform
-    wp.customize("body_font_text_transform", function(value) {
+    wp.customize("flexia_body_font_text_transform", function(value) {
         value.bind(function(to) {
             $("body").css(
                 "text-transform",
@@ -159,7 +159,7 @@ function generateCSS() {
     });
 
     //Body Font Family
-    wp.customize("body_font_family", function(value) {
+    wp.customize("flexia_body_font_family", function(value) {
         value.bind(function(to) {
             $("body").css(
                 "font-family",
@@ -169,7 +169,7 @@ function generateCSS() {
     });
 
     //Paragraph Font Size
-    wp.customize("paragraph_font_size", function(value) {
+    wp.customize("flexia_paragraph_font_size", function(value) {
         value.bind(function(to) {
             $("p").css(
                 "font-size",
@@ -179,7 +179,7 @@ function generateCSS() {
     });
 
     //Paragraph Font Line Height
-    wp.customize("paragraph_font_line_height", function(value) {
+    wp.customize("flexia_paragraph_font_line_height", function(value) {
         value.bind(function(to) {
             $("p").css(
                 "line-height",
@@ -189,7 +189,7 @@ function generateCSS() {
     });
 
     //Paragraph Font text-transform
-    wp.customize("paragraph_font_text_transform", function(value) {
+    wp.customize("flexia_paragraph_font_text_transform", function(value) {
         value.bind(function(to) {
             $("p").css(
                 "text-transform",
@@ -199,7 +199,7 @@ function generateCSS() {
     });
 
     //Paragraph Font Family
-    wp.customize("paragraph_font_family", function(value) {
+    wp.customize("flexia_paragraph_font_family", function(value) {
         value.bind(function(to) {
             $("p").css(
                 "font-family",
@@ -209,7 +209,7 @@ function generateCSS() {
     });
 
     //Heading 1 Font Size
-    wp.customize("heading1_font_size", function(value) {
+    wp.customize("flexia_heading1_font_size", function(value) {
         value.bind(function(to) {
             $("h1").css(
                 "font-size",
@@ -219,7 +219,7 @@ function generateCSS() {
     });
 
     //Heading 2 Font Size
-    wp.customize("heading2_font_size", function(value) {
+    wp.customize("flexia_heading2_font_size", function(value) {
         value.bind(function(to) {
             $("h2").css(
                 "font-size",
@@ -229,7 +229,7 @@ function generateCSS() {
     });
 
     //Heading 3 Font Size
-    wp.customize("heading3_font_size", function(value) {
+    wp.customize("flexia_heading3_font_size", function(value) {
         value.bind(function(to) {
             $("h3").css(
                 "font-size",
@@ -239,7 +239,7 @@ function generateCSS() {
     });
 
     //Heading 4 Font Size
-    wp.customize("heading4_font_size", function(value) {
+    wp.customize("flexia_heading4_font_size", function(value) {
         value.bind(function(to) {
             $("h4").css(
                 "font-size",
@@ -249,7 +249,7 @@ function generateCSS() {
     });
 
     //Heading 5 Font Size
-    wp.customize("heading5_font_size", function(value) {
+    wp.customize("flexia_heading5_font_size", function(value) {
         value.bind(function(to) {
             $("h5").css(
                 "font-size",
@@ -259,7 +259,7 @@ function generateCSS() {
     });
 
     //Heading 6 Font Size
-    wp.customize("heading6_font_size", function(value) {
+    wp.customize("flexia_heading6_font_size", function(value) {
         value.bind(function(to) {
             $("h6").css(
                 "font-size",
@@ -269,7 +269,7 @@ function generateCSS() {
     });
 
     //Heading Font Line Height
-    wp.customize("heading_font_line_height", function(value) {
+    wp.customize("flexia_heading_font_line_height", function(value) {
         value.bind(function(to) {
             $("h1, h2, h3, h4, h5, h6").css(
                 "line-height",
@@ -279,7 +279,7 @@ function generateCSS() {
     });
 
     //Heading Font text-transform
-    wp.customize("heading_font_text_transform", function(value) {
+    wp.customize("flexia_heading_font_text_transform", function(value) {
         value.bind(function(to) {
             $("h1, h2, h3, h4, h5, h6").css(
                 "text-transform",
@@ -289,7 +289,7 @@ function generateCSS() {
     });
 
     //Heading Font Family
-    wp.customize("heading_font_family", function(value) {
+    wp.customize("flexia_heading_font_family", function(value) {
         value.bind(function(to) {
             $("h1, h2, h3, h4, h5, h6").css(
                 "font-family",
@@ -299,7 +299,7 @@ function generateCSS() {
     });
 
     //Link Font Size
-    wp.customize("link_font_size", function(value) {
+    wp.customize("flexia_link_font_size", function(value) {
         value.bind(function(to) {
             $("a").css(
                 "font-size",
@@ -309,7 +309,7 @@ function generateCSS() {
     });
 
     //Link Font Line Height
-    wp.customize("link_font_line_height", function(value) {
+    wp.customize("flexia_link_font_line_height", function(value) {
         value.bind(function(to) {
             $("a").css(
                 "line-height",
@@ -319,7 +319,7 @@ function generateCSS() {
     });
 
     //Link Font text-transform
-    wp.customize("link_font_text_transform", function(value) {
+    wp.customize("flexia_link_font_text_transform", function(value) {
         value.bind(function(to) {
             $("a").css(
                 "text-transform",
@@ -329,7 +329,7 @@ function generateCSS() {
     });
 
     //Link Font Family
-    wp.customize("link_font_family", function(value) {
+    wp.customize("flexia_link_font_family", function(value) {
         value.bind(function(to) {
             $("a").css(
                 "font-family",
@@ -339,7 +339,7 @@ function generateCSS() {
     });
 
     //Button Font Size
-    wp.customize("button_font_size", function(value) {
+    wp.customize("flexia_button_font_size", function(value) {
         value.bind(function(to) {
             $("input[type=button], button").css(
                 "font-size",
@@ -349,7 +349,7 @@ function generateCSS() {
     });
 
     //Button Font Line Height
-    wp.customize("button_font_line_height", function(value) {
+    wp.customize("flexia_button_font_line_height", function(value) {
         value.bind(function(to) {
             $("input[type=button], button").css(
                 "line-height",
@@ -359,7 +359,7 @@ function generateCSS() {
     });
 
     //Button Font text-transform
-    wp.customize("button_font_text_transform", function(value) {
+    wp.customize("flexia_button_font_text_transform", function(value) {
         value.bind(function(to) {
             $("input[type=button], button").css(
                 "text-transform",
@@ -369,7 +369,7 @@ function generateCSS() {
     });
 
     //Button Font Family
-    wp.customize("button_font_family", function(value) {
+    wp.customize("flexia_button_font_family", function(value) {
         value.bind(function(to) {
             $("input[type=button], button").css(
                 "font-family",
@@ -450,26 +450,26 @@ function generateCSS() {
 
 
     // Container width
-    wp.customize("container_width", function(value) {
+    wp.customize("flexia_container_width", function(value) {
         value.bind(function(to) {
             $(".flexia-container.width").css("width", to + "%");
         });
     });
 
-    wp.customize("container_max_width", function(value) {
+    wp.customize("flexia_container_max_width", function(value) {
         value.bind(function(to) {
             $(".flexia-container.max").css("max-width", to + "px");
         });
     });
 
     // Post Container width
-    wp.customize("post_width", function(value) {
+    wp.customize("flexia_post_width", function(value) {
         value.bind(function(to) {
             $(".single-post .entry-content-wrapper").css("width", to + "%");
         });
     });
 
-    wp.customize("post_max_width", function(value) {
+    wp.customize("flexia_post_max_width", function(value) {
         value.bind(function(to) {
             $(".single-post .entry-content-wrapper").css(
                 "max-width",
@@ -478,7 +478,7 @@ function generateCSS() {
         });
     });
 
-    wp.customize("blog_bg_color", function(value) {
+    wp.customize("flexia_blog_bg_color", function(value) {
         value.bind(function(to) {
             $("body.blog, body.archive, body.single-post").css(
                 "background-color",
@@ -487,7 +487,7 @@ function generateCSS() {
         });
     });
 
-    wp.customize("post_content_bg_color", function(value) {
+    wp.customize("flexia_post_content_bg_color", function(value) {
         value.bind(function(to) {
             $("body:not(.single-post) .flexia-wrapper > .content-area").css(
                 "background-color",
@@ -497,7 +497,7 @@ function generateCSS() {
         });
     });
 
-    wp.customize("post_meta_bg_color", function(value) {
+    wp.customize("flexia_post_meta_bg_color", function(value) {
         value.bind(function(to) {
             $(
                 ".single-post .entry-header.single-blog-meta.single-blog-meta-large"
@@ -505,7 +505,7 @@ function generateCSS() {
         });
     });
 
-    wp.customize("sidebar_widget_bg_color", function(value) {
+    wp.customize("flexia_sidebar_widget_bg_color", function(value) {
         value.bind(function(to) {
             $(".flexia-sidebar .widget").css("background-color", to);
         });
@@ -526,7 +526,7 @@ function generateCSS() {
     });
 
     // Blog logo width
-    wp.customize("blog_logo_width", function(value) {
+    wp.customize("flexia_blog_logo_width", function(value) {
         value.bind(function(to) {
             $(".header-content .flexia-blog-logo").css("width", to + "px");
         });
@@ -585,7 +585,7 @@ function generateCSS() {
         });
     });
 
-    wp.customize("blog_title_font_size", function(value) {
+    wp.customize("flexia_blog_title_font_size", function(value) {
         value.bind(function(to) {
             $(".blog-header .header-content > .page-title").css(
                 "font-size",
@@ -601,7 +601,7 @@ function generateCSS() {
         });
     });
 
-    wp.customize("blog_desc_font_size", function(value) {
+    wp.customize("flexia_blog_desc_font_size", function(value) {
         value.bind(function(to) {
             $(".header-content .blog-desc").css("font-size", to + "px");
             $(".header-content .archive-description > p").css(
@@ -612,20 +612,20 @@ function generateCSS() {
     });
 
     // Sidebars width
-    wp.customize("left_sidebar_width", function(value) {
+    wp.customize("flexia_left_sidebar_width", function(value) {
         value.bind(function(to) {
             $(".flexia-sidebar-left").css("width", to + "px");
         });
     });
 
-    wp.customize("right_sidebar_width", function(value) {
+    wp.customize("flexia_right_sidebar_width", function(value) {
         value.bind(function(to) {
             $(".flexia-sidebar-right").css("width", to + "px");
         });
     });
 
     // Header Area
-    wp.customize("header_widget_area_bg_color", function(value) {
+    wp.customize("flexia_header_widget_area_bg_color", function(value) {
         value.bind(function(to) {
             $(".flexia-header-widget-area").css("background-color", to);
         });
@@ -788,25 +788,25 @@ function generateCSS() {
     });
 
     // Footer Area
-    wp.customize("footer_widget_area_bg_color", function(value) {
+    wp.customize("flexia_footer_widget_area_bg_color", function(value) {
         value.bind(function(to) {
             generateCSS();
         });
     });
     
-    wp.customize("footer_widget_area_content_color", function(value) {
+    wp.customize("flexia_footer_widget_area_content_color", function(value) {
         value.bind(function(to) {
             generateCSS();
         });
     });
     
-    wp.customize("footer_widget_area_link_color", function(value) {
+    wp.customize("flexia_footer_widget_area_link_color", function(value) {
         value.bind(function(to) {
             generateCSS();
         });
     });
     
-    wp.customize("footer_widget_area_link_hover_color", function(value) {
+    wp.customize("flexia_footer_widget_area_link_hover_color", function(value) {
         value.bind(function(to) {
             generateCSS();
         });

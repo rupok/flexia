@@ -11,9 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @package Flexia
  */
 
-
-// flexia_get_option('footer_widget_column')
-
 ?>
 
 <?php

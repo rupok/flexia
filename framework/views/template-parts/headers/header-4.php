@@ -24,7 +24,7 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 
 <div class="flexia-navbar <?php echo $navbar_class;?>">
 	<div class="flexia-navbar-container">
-		<div class="flexia-container flexia-navbar-inner <?php echo (get_theme_mod( 'header_layout_type' ) == "full-width") ? "full-width" : "width max" ?>">
+		<div class="flexia-container flexia-navbar-inner <?php echo (get_theme_mod( 'flexia_header_layout_type' ) == "full-width") ? "full-width" : "width max" ?>">
 			
 			<?php if( $flexia_logobar_position == 'flexia-logobar-inline' ) : ?>
 

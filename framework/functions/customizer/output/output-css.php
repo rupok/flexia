@@ -90,11 +90,11 @@ function flexia_generate_css()
     $defaults = flexia_generate_defaults();
 	$header_text_color = get_header_textcolor();
 
-	if ((get_theme_mod('site_background_image_enable_button'))) {
-		$site_background_image =  "url(" . get_theme_mod('site_background_image') . ")";
+	if ((get_theme_mod('flexia_background_image_enable_button'))) {
+		$flexia_background_image =  "url(" . get_theme_mod('flexia_background_image') . ")";
 	}
 	else {
-		$site_background_image = "none";
+		$flexia_background_image = "none";
 	}
 
     $css = '.flexia-primary-menu .customize-partial-edit-shortcut button {
@@ -106,117 +106,117 @@ function flexia_generate_css()
 	  }
 
 	  body, button, input, select, optgroup, textarea {
-		color: ' . $defaults['default_text_color'] . ';
+		color: ' . $defaults['flexia_default_text_color'] . ';
 	  }
 
 	  body {
-		font-family: "' . $defaults['body_font_family'] . '", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-		font-size: ' . $defaults['body_font_size'] . 'px;
-		line-height: ' . $defaults['body_font_line_height'] . ';
-		text-transform: ' . $defaults['body_font_text_transform'] . ';
-		background-color: ' . $defaults['site_background_color'] . ';
-		background-image: ' .$site_background_image. ';
-		background-size: ' . $defaults['site_background_image_size'] . ';
-		background-position: ' . $defaults['site_background_image_position'] . ';
-		background-repeat: ' . $defaults['site_background_image_repeat'] . ';
+		font-family: "' . $defaults['flexia_body_font_family'] . '", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+		font-size: ' . $defaults['flexia_body_font_size'] . 'px;
+		line-height: ' . $defaults['flexia_body_font_line_height'] . ';
+		text-transform: ' . $defaults['flexia_body_font_text_transform'] . ';
+		background-color: ' . $defaults['flexia_background_color'] . ';
+		background-image: ' .$flexia_background_image. ';
+		background-size: ' . $defaults['flexia_background_image_size'] . ';
+		background-position: ' . $defaults['flexia_background_image_position'] . ';
+		background-repeat: ' . $defaults['flexia_background_image_repeat'] . ';
 	  }
 
 	  p {
-		font-family: "' . $defaults['paragraph_font_family'] . '", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-		font-size: ' . $defaults['paragraph_font_size'] . 'em;
-		line-height: ' . $defaults['paragraph_font_line_height'] . ';
-		text-transform: ' . $defaults['paragraph_font_text_transform'] . ';
+		font-family: "' . $defaults['flexia_paragraph_font_family'] . '", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+		font-size: ' . $defaults['flexia_paragraph_font_size'] . 'em;
+		line-height: ' . $defaults['flexia_paragraph_font_line_height'] . ';
+		text-transform: ' . $defaults['flexia_paragraph_font_text_transform'] . ';
 	  }
 
 	  h1, h2, h3, h4, h5, h6 {
-		font-family: "' . $defaults['heading_font_family'] . '", "Helvetica Neue",sans-serif;
-		color: ' . $defaults['default_heading_color'] . ';
-		line-height: ' . $defaults['heading_font_line_height'] . ';
-		text-transform: ' . $defaults['heading_font_text_transform'] . ';
+		font-family: "' . $defaults['flexia_heading_font_family'] . '", "Helvetica Neue",sans-serif;
+		color: ' . $defaults['flexia_default_heading_color'] . ';
+		line-height: ' . $defaults['flexia_heading_font_line_height'] . ';
+		text-transform: ' . $defaults['flexia_heading_font_text_transform'] . ';
 	  }
 
 	  h1 {
-		font-size: ' . $defaults['heading1_font_size'] . 'em;
+		font-size: ' . $defaults['flexia_heading1_font_size'] . 'em;
 	  }
 
 	  h2 {
-		font-size: ' . $defaults['heading2_font_size'] . 'em;
+		font-size: ' . $defaults['flexia_heading2_font_size'] . 'em;
 	  }
 
 	  h3 {
-		font-size: ' . $defaults['heading3_font_size'] . 'em;
+		font-size: ' . $defaults['flexia_heading3_font_size'] . 'em;
 	  }
 
 	  h4 {
-		font-size: ' . $defaults['heading4_font_size'] . 'em;
+		font-size: ' . $defaults['flexia_heading4_font_size'] . 'em;
 	  }
 
 	  h5 {
-		font-size: ' . $defaults['heading5_font_size'] . 'em;
+		font-size: ' . $defaults['flexia_heading5_font_size'] . 'em;
 	  }
 
 	  h6 {
-		font-size: ' . $defaults['heading6_font_size'] . 'em;
+		font-size: ' . $defaults['flexia_heading6_font_size'] . 'em;
 	  }
 
 	  a {
-		color: ' . $defaults['site_link_color'] . ';
-		font-family: "' . $defaults['link_font_family'] . '", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-		font-size: ' . $defaults['link_font_size'] . 'em;
-		line-height: ' . $defaults['link_font_line_height'] . ';
-		text-transform: ' . $defaults['link_font_text_transform'] . ';
+		color: ' . $defaults['flexia_link_color'] . ';
+		font-family: "' . $defaults['flexia_link_font_family'] . '", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+		font-size: ' . $defaults['flexia_link_font_size'] . 'em;
+		line-height: ' . $defaults['flexia_link_font_line_height'] . ';
+		text-transform: ' . $defaults['flexia_link_font_text_transform'] . ';
 	  }
 
 	  a:hover, a:focus, a:active {
-		color: ' . $defaults['site_link_hover_color'] . ';
+		color: ' . $defaults['flexia_link_hover_color'] . ';
 	  }
 
 	  input[type=button], button {
-		color: ' . $defaults['button_text_color'] . ';
-		font-family: "' . $defaults['button_font_family'] . '", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-		font-size: ' . $defaults['button_font_size'] . 'em;
-		line-height: ' . $defaults['button_font_line_height'] . ';
-		text-transform: ' . $defaults['button_font_text_transform'] . ';
+		color: ' . $defaults['flexia_button_text_color'] . ';
+		font-family: "' . $defaults['flexia_button_font_family'] . '", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+		font-size: ' . $defaults['flexia_button_font_size'] . 'em;
+		line-height: ' . $defaults['flexia_button_font_line_height'] . ';
+		text-transform: ' . $defaults['flexia_button_font_text_transform'] . ';
 	  }
 
 	  .flexia-container.width {
-		width: ' . $defaults['container_width'] . '%;
+		width: ' . $defaults['flexia_container_width'] . '%;
 	  }
 
 	  .flexia-container.max {
-		max-width: ' . $defaults['container_max_width'] . 'px;
+		max-width: ' . $defaults['flexia_container_max_width'] . 'px;
 	  }
 
 	  .single .entry-content-wrapper {
-		width: ' . $defaults['post_width'] . '%;
-		max-width: ' . $defaults['post_max_width'] . 'px;
+		width: ' . $defaults['flexia_post_width'] . '%;
+		max-width: ' . $defaults['flexia_post_max_width'] . 'px;
 	  }
 
 	  .flexia-sidebar-left {
-		width: ' . $defaults['left_sidebar_width'] . 'px;
+		width: ' . $defaults['flexia_left_sidebar_width'] . 'px;
 	  }
 
 	  .flexia-sidebar-right {
-		width: ' . $defaults['right_sidebar_width'] . 'px;
+		width: ' . $defaults['flexia_right_sidebar_width'] . 'px;
 	  }
 
 	  body.blog, body.archive, body.single-post,
 		  body.blog.custom-background, body.archive.custom-background, body.single-post.custom-background {
-		background-color: ' . $defaults['blog_bg_color'] . ';
+		background-color: ' . $defaults['flexia_blog_bg_color'] . ';
 	  }
 
 	  .flexia-wrapper > .content-area, .entry-content.single-post-entry,
 		  body.blog .flexia-wrapper > .content-area article.post,
 		  body.archive .flexia-wrapper > .content-area article.post {
-		background-color: ' . $defaults['post_content_bg_color'] . ';
+		background-color: ' . $defaults['flexia_post_content_bg_color'] . ';
 	  }
 
 	  .single-post .entry-header.single-blog-meta.single-post-meta-large {
-		background-color: ' . $defaults['post_meta_bg_color'] . ';
+		background-color: ' . $defaults['flexia_post_meta_bg_color'] . ';
 	  }
 
 	  .flexia-sidebar .widget {
-		background-color: ' . $defaults['sidebar_widget_bg_color'] . ';
+		background-color: ' . $defaults['flexia_sidebar_widget_bg_color'] . ';
 	  }
 
 	  .flexia-header-logo {
@@ -228,23 +228,23 @@ function flexia_generate_css()
 	  }
 
 	  .header-content .flexia-blog-logo {
-		width: ' . $defaults['blog_logo_width'] . 'px;
+		width: ' . $defaults['flexia_blog_logo_width'] . 'px;
 	  }
 
 	  .blog-header .header-content > .page-title, .archive-header .header-content > .page-title {
-		font-size: ' . $defaults['blog_title_font_size'] . 'px;
+		font-size: ' . $defaults['flexia_blog_title_font_size'] . 'px;
 	  }
 
 	  .paged .blog-header .header-content > .page-title, .paged .archive-header .header-content > .page-title {
-		font-size: calc(' . $defaults['blog_title_font_size'] . 'px / 1.5);
+		font-size: calc(' . $defaults['flexia_blog_title_font_size'] . 'px / 1.5);
 	  }
 
 	  .header-content .blog-desc, .header-content .archive-description > p {
-		font-size: ' . $defaults['blog_desc_font_size'] . 'px;
+		font-size: ' . $defaults['flexia_blog_desc_font_size'] . 'px;
 	  }
 
 	  .paged .header-content .blog-desc, .paged .header-content .archive-description > p {
-		font-size: calc(' . $defaults['blog_desc_font_size'] . 'px / 1.5);
+		font-size: calc(' . $defaults['flexia_blog_desc_font_size'] . 'px / 1.5);
 	  }
 
 	  .page .entry-header.entry-header-large, .page .entry-header.entry-header-mini {
@@ -326,26 +326,26 @@ function flexia_generate_css()
 
 	  @media all and (max-width: 959px) {
 			.blog-header .header-content > .page-title, .archive-header .header-content > .page-title {
-				font-size: calc(' . $defaults['blog_title_font_size'] . 'px * .75);
+				font-size: calc(' . $defaults['flexia_blog_title_font_size'] . 'px * .75);
 			}
 
 			.header-content .blog-desc, .header-content .archive-description > p {
-				font-size: calc(' . $defaults['blog_desc_font_size'] . 'px * .75);
+				font-size: calc(' . $defaults['flexia_blog_desc_font_size'] . 'px * .75);
 			}
 	  }
 
 	  @media all and (max-width: 480px) {
 			.blog-header .header-content > .page-title, .archive-header .header-content > .page-title {
-				font-size: calc(' . $defaults['blog_title_font_size'] . 'px * .5);
+				font-size: calc(' . $defaults['flexia_blog_title_font_size'] . 'px * .5);
 			}
 
 			.header-content .blog-desc, .header-content .archive-description > p {
-				font-size: calc(' . $defaults['blog_desc_font_size'] . 'px * .5);
+				font-size: calc(' . $defaults['flexia_blog_desc_font_size'] . 'px * .5);
 			}
 	  }
 
 	  .flexia-header-widget-area {
-		background-color: ' . $defaults['header_widget_area_bg_color'] . ';
+		background-color: ' . $defaults['flexia_header_widget_area_bg_color'] . ';
 	  }
 
 	  .flexia-topbar {
@@ -432,19 +432,19 @@ function flexia_generate_css()
 	  }
 
 	  .flexia-footer-widget-area {
-			background-color: ' . $defaults['footer_widget_area_bg_color'] . ';
+			background-color: ' . $defaults['flexia_footer_widget_area_bg_color'] . ';
 		}
 		
 		.flexia-colophon-inner .widget {
-			color: ' . $defaults['footer_widget_area_content_color'] . ';
+			color: ' . $defaults['flexia_footer_widget_area_content_color'] . ';
 		}
 		
 		.flexia-colophon-inner .widget a {
-			color: ' . $defaults['footer_widget_area_link_color'] . ';
+			color: ' . $defaults['flexia_footer_widget_area_link_color'] . ';
 		}
 		
 		.flexia-colophon-inner .widget a:hover {
-			color: ' . $defaults['footer_widget_area_link_hover_color'] . ';
+			color: ' . $defaults['flexia_footer_widget_area_link_hover_color'] . ';
 		}
 
 	  .flexia-site-footer {

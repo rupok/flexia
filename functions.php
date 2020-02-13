@@ -86,7 +86,7 @@ if (!function_exists('flexia_setup')) {
             return $items;
         }
         add_filter('flexia_header_icon_items', 'flexia_nav_search', 98, 1);
-        $header_layouts = get_theme_mod('header_layouts');
+        $header_layouts = get_theme_mod('flexia_header_layouts');
         if( in_array($header_layouts, array(4 ) ) ){
             add_filter('wp_nav_menu_items', 'flexia_nav_search', 98, 2);
         }
@@ -227,13 +227,13 @@ if (!function_exists('flexia_fonts_url')) {
     function flexia_fonts_url()
     {
         $fonts_url = '';
-        $content_font = get_theme_mod('body_font_family', '');
-        $content_font_variant = get_theme_mod('body_font_variants', '');
-        $content_font_subset = get_theme_mod('body_font_subsets', '');
+        $content_font = get_theme_mod('flexia_body_font_family', '');
+        $content_font_variant = get_theme_mod('flexia_body_font_variants', '');
+        $content_font_subset = get_theme_mod('flexia_body_font_subsets', '');
 
-        $header_font = get_theme_mod('heading_font_family', '');
-        $header_font_variant = get_theme_mod('heading_font_variants', '');
-        $header_font_subset = get_theme_mod('heading_font_subsets', '');
+        $header_font = get_theme_mod('flexia_heading_font_family', '');
+        $header_font_variant = get_theme_mod('flexia_heading_font_variants', '');
+        $header_font_subset = get_theme_mod('flexia_heading_font_subsets', '');
 
         if ('off' !== $content_font || 'off' !== $header_font) {
             $font_families = array();

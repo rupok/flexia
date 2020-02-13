@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
  * @package Flexia
  */
 
-if (flexia_get_option('footer_widget_area') == true) {
+if (flexia_get_option('flexia_footer_widget_area') == true) {
     get_template_part('framework/views/template-parts/content', 'footer-widgets');
 }
 
