@@ -87,9 +87,24 @@ if (!function_exists('flexia_setup')) {
         }
         add_filter('flexia_header_icon_items', 'flexia_nav_search', 98, 1);
         $header_layouts = get_theme_mod('flexia_header_layouts');
-        if( in_array($header_layouts, array(4 ) ) ){
-            add_filter('wp_nav_menu_items', 'flexia_nav_search', 98, 2);
+
+        /**
+         * Add Login Button header navigation
+         */
+        function flexia_nav_logo_button($items) {
+            $flexia_nav_login = get_theme_mod('flexia_enable_login_button', true);
+            $flexia_nav_login_url = get_theme_mod('flexia_custom_login_url');
+            $login_url = ( empty($flexia_nav_login_url) ? esc_url( wp_login_url( get_permalink() ) ) : $flexia_nav_login_url );
+
+            if ($flexia_nav_login == true ) {
+                $items .= '<li class="menu-item navbar-login-menu">';
+                $items .= '<a class="button" href="'.$login_url.'">';
+                $items .= '<i class="fa fa-user" aria-hidden="true"></i> <span class="button-text">Sign in</span></a></li>';
+            }
+            return $items;
         }
+        add_filter('flexia_header_icon_items', 'flexia_nav_logo_button', 101, 1);
+
 
         /**
          * Enable support for Post Formats

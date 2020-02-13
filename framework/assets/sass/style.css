@@ -2182,19 +2182,24 @@ big {
       order: 2;
       margin: 0 0 0 auto !important; } }
 
-@media all and (min-width: 992px) {
-  .flexia-header-4 .flexia-navbar-inner .flexia-menu.header-icons .navbar-search-menu {
-    display: none; } }
 @media all and (min-width: 600px) {
   .flexia-header-3 .flexia-navbar-inner .flexia-menu.header-icons .navbar-search-menu,
   .flexia-header-6 .flexia-navbar-inner .flexia-menu.header-icons .navbar-search-menu {
     display: none; } }
-@media all and (max-width: 991px) {
-  .flexia-header-4 .flexia-navbar-inner .main-navigation .navbar-search-menu {
-    display: none; } }
 @media all and (max-width: 599px) {
   .flexia-header-3 .flexia-navbar-inner .flexia-logobar-inline .search-form,
   .flexia-header-6 .flexia-navbar-inner .flexia-logobar-inline .search-form {
+    display: none; } }
+@media all and (max-width: 991px) {
+  #masthead .flexia-menu.header-icons ul li.navbar-login-menu a {
+    background-color: transparent !important;
+    padding: 0px 10px !important;
+    border-radius: unset !important;
+    color: inherit !important;
+    text-transform: capitalize !important;
+    border: 0px; }
+
+  #masthead .flexia-menu.header-icons ul li.navbar-login-menu a .button-text {
     display: none; } }
 .flexia-logobar-inline {
   display: flex;
@@ -3211,6 +3216,15 @@ a {
           display: block; }
         .flexia-menu.header-icons ul li a .amount {
           display: none; } }
+  .flexia-menu.header-icons ul li.navbar-login-menu a {
+    background-color: #000;
+    padding: 8px 20px !important;
+    border-radius: 4px;
+    color: #fff !important;
+    text-transform: capitalize !important; }
+    .flexia-menu.header-icons ul li.navbar-login-menu a i {
+      margin-right: 10px;
+      font-size: 1.1em; }
   .flexia-menu.header-icons a.cart-contents {
     -webkit-transition: all 0.15s linear;
     transition: all 0.15s linear; }

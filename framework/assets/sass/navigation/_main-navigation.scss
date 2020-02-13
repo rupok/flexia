@@ -195,6 +195,21 @@
                 }
             }           
         }
+
+        li.navbar-login-menu {
+            a {
+                background-color:#000;
+                padding: 8px 20px !important;
+                border-radius: 4px;
+                color:#fff !important;
+                text-transform: capitalize !important;
+
+                i {
+                    margin-right: 10px;
+                    font-size: 1.1em;
+                }
+            }
+        }
     }
 
     // 3rd party & others

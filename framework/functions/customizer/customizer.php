@@ -3053,6 +3053,45 @@ function flexia_customize_register($wp_customize)
         'type' => 'light', // light, ios, flat
     )));
 
+    // Enable Nav Login Button
+    $wp_customize->add_setting('flexia_enable_login_button', array(
+        'default' => $defaults['flexia_enable_login_button'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'flexia_enable_login_button', array(
+        'label' => esc_html__('Enable Login Button?', 'flexia'),
+        'section' => 'flexia_header_navbar',
+        'settings' => 'flexia_enable_login_button',
+        'type' => 'light', // light, ios, flat
+    )));
+
+    //Custom Login URL
+    $wp_customize->add_setting( 'flexia_custom_login_url', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => $defaults['flexia_custom_login_url'],
+    ));
+      
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_custom_login_url',
+            array(
+                'label' => __('Custom Login URL', 'flexia'),
+                'description' => __('Leave empty to use default login URL', 'flexia'),
+                'section' => 'flexia_header_navbar',
+                'settings' => 'flexia_custom_login_url',
+                'type' => 'text',
+                'input_attrs' => array(
+                    'placeholder' => __( 'Your Login Page URL', 'flexia' ),
+                )
+            )
+        )
+    );
+
+    //Nav menu link color
     $wp_customize->add_setting('flexia_main_nav_menu_link_color', array(
         'default' => $defaults['flexia_main_nav_menu_link_color'],
         'transport' => 'postMessage',

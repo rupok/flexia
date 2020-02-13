@@ -189,6 +189,8 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_logobar_position' => 'flexia-logobar-inline',
             'flexia_nav_menu_search' => true,
             'flexia_woo_cart_menu' => false,
+            'flexia_enable_login_button' => false,
+            'flexia_custom_login_url' => '',
 
             'flexia_enable_topbar' => false,
             'flexia_enable_topbar_on_mobile' => false,
