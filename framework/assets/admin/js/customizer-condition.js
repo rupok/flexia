@@ -74,6 +74,7 @@
 				});
 			});
 
+			//Show relative options when enable site background image
 			wp.customize( 'flexia_background_image_enable_button', function( setting ) {
 				customizer_conditional_setting_return_toggle(setting,'flexia_background_image',true);
 				customizer_conditional_setting_return_toggle(setting,'flexia_background_property',true);
@@ -83,9 +84,15 @@
 				customizer_conditional_setting_return_toggle(setting,'flexia_background_image_attachment',true);
 			});
 			
+			//Show relative options when enable Login Button in Header
 			wp.customize( 'flexia_enable_login_button', function( setting ) {
 				customizer_conditional_setting_return_toggle(setting,'flexia_custom_login_url',true);
-			});		
+			});
+
+			//Change Settings options when Header Layout is selected
+			// wp.customize( 'betterdocs_docs_layout_select', function( setting ) {                  
+			// 	customizer_controls_show(setting,'betterdocs_doc_page_cat_icon_size_layout1','layout-1');
+			// });
 		});
 	});
 })(jQuery);

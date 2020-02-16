@@ -2679,50 +2679,65 @@ function flexia_customize_register($wp_customize)
      */
     $wp_customize->add_setting('flexia_header_layouts', array(
         'default' => $defaults['flexia_header_layouts'],
+        'transport' => 'postMessage',
         'sanitize_callback' => 'flexia_sanitize_choices',
     ));
 
     $wp_customize->add_control(
 		new Flexia_Radio_Image_Control(
-		$wp_customize,
-		'flexia_header_layouts',
-		array(
-			'type'          => 'flexia-radio-image',
-			'settings'		=> 'flexia_header_layouts',
-			'section'		=> 'flexia_header_layout',
-			'label'			=> __('Header Styles', 'flexia'),
-            'choices'		=> apply_filters(
-                'flexia_header_layouts', 
-                array(
-                    '1' 	=> array(
-                        'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-01.png',
-                    ),
-                    '2' 	=> array(
-                        'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-02.png',
-                    ),
-                    '3' 	=> array(
-                        'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-03.png',
-                    ),
-                    '4' 	=> array(
-                        'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-04.png',
-                    ),
-                    '5' 	=> array(
-                        'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-05.png',
-                    ),
-                    '6' 	=> array(
-                        'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-06.png',
-                        'pro'   => true,
-                        'url'   => 'https://flexia.pro/pricing/',
-                    ),
-                    '7' 	=> array(
-                        'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-07.png',
-                        'pro'   => true,
-                        'url'   => 'https://flexia.pro/pricing/',
-                    ),
-                )
-            )) 
+            $wp_customize,
+            'flexia_header_layouts',
+            array(
+                'type'          => 'flexia-radio-image',
+                'settings'		=> 'flexia_header_layouts',
+                'section'		=> 'flexia_header_layout',
+                'label'			=> __('Header Styles', 'flexia'),
+                'choices'		=> apply_filters(
+                    'flexia_header_layouts', 
+                    array(
+                        '1' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-01.png',
+                        ),
+                        '2' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-02.png',
+                        ),
+                        '3' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-03.png',
+                        ),
+                        '4' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-04.png',
+                        ),
+                        '5' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-05.png',
+                        ),
+                        '6' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-06.png',
+                            'pro'   => true,
+                            'url'   => 'https://flexia.pro/pricing/',
+                        ),
+                        '7' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-07.png',
+                            'pro'   => true,
+                            'url'   => 'https://flexia.pro/pricing/',
+                        ),
+                    )
+                ),
+                // 'active_callback' => function($wp_customize){
+                //     return $wp_customize->get_control('flexia_header_layout_type')->label = __( 'Header Layout Type_edited' );
+                //     // return get_theme_mod( 'flexia_primary_color', false );
+                // },
+            ) 
         )
-	);
+    );
+    
+    $wp_customize->selective_refresh->add_partial( "flexia_header_layouts_partial", [
+        'selector'            => "#masthead",
+        'settings'            => [
+            "flexia_header_layouts",
+        ],
+        // 'render_callback'     => 'flexia_header_layouts_change_actions',
+        'container_inclusive' => true,
+    ] );
 
     /**
      * Header Layout Section: Mobile Layouts
