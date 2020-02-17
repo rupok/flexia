@@ -652,39 +652,47 @@ function generateCSS() {
     // Main nav
     wp.customize("flexia_main_nav_menu_link_color", function(value) {
         value.bind(function(to) {
-            generateCSS();
+            // generateCSS();
+            $('.main-navigation .nav-menu li > a, .flexia-menu.header-icons .nav-menu li > a').css('color', to);
         });
     });
 
     wp.customize("flexia_main_nav_menu_link_hover_color", function(value) {
         value.bind(function(to) {
-            generateCSS();
+            // generateCSS();
+            $('.main-navigation .nav-menu li:hover > a:not(.cart-contents), .main-navigation .nav-menu li.current-menu-item > a:not(.cart-contents), .main-navigation .nav-menu li.current-menu-ancestor > a:not(.cart-contents)').css('color', to);
+            $('.main-navigation .nav-menu > li > a:after').css('background-color', to);
         });
     });
 
     wp.customize("flexia_main_nav_menu_link_hover_bg", function(value) {
         value.bind(function(to) {
-            generateCSS();
+            // generateCSS();
+            $('.main-navigation .nav-menu li:hover > a:not(.cart-contents), .main-navigation .nav-menu li.current-menu-item > a:not(.cart-contents), .main-navigation .nav-menu li.current-menu-ancestor > a:not(.cart-contents)').css('background-color', to);
         });
     });
     wp.customize("flexia_main_nav_menu_submenu_bg_color", function(value) {
         value.bind(function(to) {
-            generateCSS();
+            // generateCSS();
+            $('.main-navigation .nav-menu li ul').css('background-color', to);
         });
     });
     wp.customize("flexia_main_nav_menu_submenu_link_color", function(value) {
         value.bind(function(to) {
-            generateCSS();
+            // generateCSS();
+            $('.main-navigation .nav-menu li ul li > a, .main-navigation .nav-menu li ul.flexia-mega-menu li:hover > a:not(.cart-contents)').css('color', to);
         });
     });
     wp.customize("flexia_main_nav_menu_submenu_link_hover_color", function(value) {
         value.bind(function(to) {
-            generateCSS();
+            // generateCSS();
+            $('.main-navigation .nav-menu li ul li:hover > a, .main-navigation .nav-menu li ul li.current-menu-item > a, .main-navigation .nav-menu li ul li.current-menu-ancestor > a, .main-navigation .nav-menu li ul.flexia-mega-menu li > a:hover').css('color', to);
         });
     });
     wp.customize("flexia_main_nav_menu_submenu_link_hover_bg", function(value) {
         value.bind(function(to) {
-            generateCSS();
+            // generateCSS();
+            $('.main-navigation .nav-menu li ul li:hover > a:not(.cart-contents), .main-navigation .nav-menu li ul li.current-menu-item > a:not(.cart-contents), .main-navigation .nav-menu li ul li.current-menu-ancestor > a:not(.cart-contents), .main-navigation .nav-menu li ul.flexia-mega-menu li > a:not(.cart-contents):hover').css('background-color', to);
         });
     });
     

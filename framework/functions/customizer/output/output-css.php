@@ -374,6 +374,10 @@ function flexia_generate_css()
 			.main-navigation .nav-menu li.current-menu-ancestor > a:not(.cart-contents) {
 				color: ' . $defaults['flexia_main_nav_menu_link_hover_color'] . ';
 			}
+			.main-navigation .nav-menu > li > a:after {
+				color: ' . $defaults['flexia_main_nav_menu_link_hover_color'] . ';
+				background-color: ' . $defaults['flexia_main_nav_menu_link_hover_color'] . ';
+			}
 
 			.main-navigation .nav-menu li:hover > a:not(.cart-contents), 
 			.main-navigation .nav-menu li.current-menu-item > a:not(.cart-contents), 
@@ -398,7 +402,10 @@ function flexia_generate_css()
 				color: ' . $defaults['flexia_main_nav_menu_submenu_link_hover_color'] . ';
 			}
 
-			.main-navigation .nav-menu li ul li:hover > a:not(.cart-contents), .main-navigation .nav-menu li ul li.current-menu-item > a:not(.cart-contents), .main-navigation .nav-menu li ul li.current-menu-ancestor > a:not(.cart-contents), .main-navigation .nav-menu li ul.flexia-mega-menu li > a:not(.cart-contents):hover {
+			.main-navigation .nav-menu li ul li:hover > a:not(.cart-contents), 
+			.main-navigation .nav-menu li ul li.current-menu-item > a:not(.cart-contents), 
+			.main-navigation .nav-menu li ul li.current-menu-ancestor > a:not(.cart-contents), 
+			.main-navigation .nav-menu li ul.flexia-mega-menu li > a:not(.cart-contents):hover {
 				background-color: ' . $defaults['flexia_main_nav_menu_submenu_link_hover_bg'] . ';
 			}
 
