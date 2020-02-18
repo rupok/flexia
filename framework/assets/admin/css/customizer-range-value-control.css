@@ -35,11 +35,11 @@
 }
 
 .range-slider__range::-webkit-slider-thumb:hover {
-    background: #2c3e50;
+    background: #EE3560;
 }
 
 .range-slider__range:active::-webkit-slider-thumb {
-    background: #2c3e50;
+    background: #EE3560;
 }
 
 .range-slider__range::-moz-range-thumb {
@@ -47,7 +47,7 @@
     height: 20px;
     border: 0;
     border-radius: 50%;
-    background: #2c3e50;
+    background: #EE3560;
     cursor: pointer;
     -webkit-transition: background .15s ease-in-out;
     transition: background .15s ease-in-out;
@@ -69,7 +69,7 @@
     line-height: 20px;
     text-align: center;
     border-radius: 3px;
-    background: #2c3e50;
+    background: #EE3560;
     padding: 5px 10px;
     margin-left: 8px;
 }
@@ -81,7 +81,7 @@
     width: 0;
     height: 0;
     border-top: 7px solid transparent;
-    border-right: 7px solid #2c3e50;
+    border-right: 7px solid #EE3560;
     border-bottom: 7px solid transparent;
     content: '';
 }

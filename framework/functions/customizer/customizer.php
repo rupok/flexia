@@ -2836,28 +2836,33 @@ function flexia_customize_register($wp_customize)
 
     /**
      * Header Logo Section: Default Logo Width
-     * @flexia_header_logo_width
+     * @flexia_header_logo_height
      * Parent: @flexia_header_panel -> flexia_header_logo
      */
-    $wp_customize->add_setting('flexia_header_logo_width', array(
-        'default' => $defaults['flexia_header_logo_width'],
+    $wp_customize->add_setting('flexia_header_logo_height', array(
+        'default' => $defaults['flexia_header_logo_height'],
         'transport' => 'postMessage',
         'sanitize_callback' => 'flexia_sanitize_integer',
     ));
 
     $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'flexia_header_logo_width',
-            array(
-                'label' => __('Logo width (px)', 'flexia'),
+        new Customizer_Range_Value_Control(
+            $wp_customize, 
+            'flexia_header_logo_height', array(
                 'priority' => 20,
+                'type' => 'range-value',
                 'section' => 'flexia_header_logo',
-                'settings' => 'flexia_header_logo_width',
-                'type' => 'text',
+                'settings' => 'flexia_header_logo_height',
+                'label' => __('Logo Height (px)', 'flexia'),
+                'input_attrs' => array(
+                    'min' => 20,
+                    'max' => 400,
+                    'step' => 1,
+                    'suffix' => 'px', //optional suffix
+                ),
             )
         )
-    );    
+    );
 
     /**
      * Header Logo Section: Sticky Logo Label
@@ -2902,25 +2907,30 @@ function flexia_customize_register($wp_customize)
 
     /**
      * Header Logo Section: Sticky Logo Width
-     * @flexia_sticky_header_logo_width
+     * @flexia_sticky_header_logo_height
      * Parent: @flexia_header_panel -> flexia_header_logo
      */
-    $wp_customize->add_setting('flexia_sticky_header_logo_width', array(
-        'default' => $defaults['flexia_sticky_header_logo_width'],
-        // 'transport' => 'postMessage',
+    $wp_customize->add_setting('flexia_sticky_header_logo_height', array(
+        'default' => $defaults['flexia_sticky_header_logo_height'],
+        'transport' => 'postMessage',
         'sanitize_callback' => 'flexia_sanitize_integer',
     ));
 
     $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'flexia_sticky_header_logo_width',
-            array(
-                'label' => __('Sticky Header Logo width (px)', 'flexia'),
-                'priority' => 35,
+        new Customizer_Range_Value_Control(
+            $wp_customize, 
+            'flexia_sticky_header_logo_height', array(
+                'priority' => 40,
+                'type' => 'range-value',
                 'section' => 'flexia_header_logo',
-                'settings' => 'flexia_sticky_header_logo_width',
-                'type' => 'text',
+                'settings' => 'flexia_sticky_header_logo_height',
+                'label' => __('Sticky Header Logo Height (px)', 'flexia'),
+                'input_attrs' => array(
+                    'min' => 20,
+                    'max' => 400,
+                    'step' => 1,
+                    'suffix' => 'px', //optional suffix
+                ),
             )
         )
     );

@@ -220,11 +220,11 @@ function flexia_generate_css()
 	  }
 
 	  .flexia-header-logo {
-		width: ' . $defaults['flexia_header_logo_width'] . 'px;
+		height: ' . $defaults['flexia_header_logo_height'] . 'px;
 	  }
 
 	  .flexia-sticky-navbar .flexia-header-logo {
-		width: ' . $defaults['flexia_sticky_header_logo_width'] . 'px;
+		height: ' . $defaults['flexia_sticky_header_logo_height'] . 'px;
 	  }
 
 	  .header-content .flexia-blog-logo {

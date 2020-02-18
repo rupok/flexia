@@ -59,8 +59,8 @@ input[type=checkbox].tgl:checked + .tgl-btn:after {
   left: 50%;
 }
 
-input[type=checkbox].tgl-light + .tgl-btn {
-  background: #f0f0f0;
+#customize-theme-controls input[type=checkbox].tgl-light + .tgl-btn {
+  background: #a6a6a6;
   border-radius: 2em;
   padding: 2px;
   -webkit-transition: all .4s ease;
@@ -72,8 +72,8 @@ input[type=checkbox].tgl-light + .tgl-btn:after {
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
 }
-input[type=checkbox].tgl-light:checked + .tgl-btn {
-  background: #9FD6AE;
+#customize-theme-controls input[type=checkbox].tgl-light:checked + .tgl-btn {
+  background: #EE3560;
 }
 
 input[type=checkbox].tgl-ios + .tgl-btn {

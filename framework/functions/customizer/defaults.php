@@ -86,8 +86,8 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_primary_logo_label' => '',
             'flexia_sticky_logo_label' => '',
             'flexia_custom_sticky_logo' => '',
-            'flexia_header_logo_width' => '150',
-            'flexia_sticky_header_logo_width' => '120',
+            'flexia_header_logo_height' => '80',
+            'flexia_sticky_header_logo_height' => '60',
 
             'flexia_enable_header_social' => false,
             'flexia_header_social' => '',

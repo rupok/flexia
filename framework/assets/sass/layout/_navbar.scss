@@ -321,8 +321,9 @@
 	}
 	.flexia-header-logo {
 		>img {
+			width: auto;
+			max-height: 100%;
 			max-width: 100%;
-			width: 100%;
 		}
 
 		@media all and (max-width: 767px) {
@@ -343,7 +344,7 @@
 }
 .flexia-header-logo {
 	display: block;
-	padding: .5em;
+	padding: 0;
 }
 .flexia-logobar-stacked {
 	.flexia-header-logo {
