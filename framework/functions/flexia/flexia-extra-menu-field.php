@@ -34,6 +34,42 @@ function flexia_nav_item_inject_fields($id, $item, $depth, $args)
 }
 add_action('flexia_nav_menu_item_extra_fields', 'flexia_nav_item_inject_fields', 10, 4);
 
+/**
+ * Add Option to Select Widget in Mega Menu
+ */
+function flexia_megamenu_inject_widget_select_option($id, $item, $depth, $args)
+{
+    if ($depth == 1) {
+        $fields = array(
+            'mega-menu-widget' => __('Select Widget for Mega Menu', 'flexia'),
+        );
+
+        foreach ($fields as $_key => $label) {
+            $key = esc_attr(sprintf('flexia-%s', $_key));
+            $id = esc_attr(sprintf('edit-%s-%s', $key, $item->ID));
+            $name = esc_attr(sprintf('%s[%s]', $key, $item->ID));
+            $value = esc_attr(get_post_meta($item->ID, $key, true));
+            $class = esc_attr(sprintf('field-%s', $_key));
+
+            echo "Value: ".$value;
+
+            $output = '<p class="description description-wide ' . $class . '">';
+            $output .= '<label for="' . $id . '">' . esc_html($label) . '<br />';
+            $output .= '<select id="' . $id . '" class="widefat ' . $id . '" name="' . $name . '" value="' . $value . '">';
+            $output .= '<option value="" ' . ($value == '' ? 'selected' : '') . '>Disable</option>';
+            foreach ( $GLOBALS['wp_registered_sidebars'] as $sidebar ) {
+                $output .= '<option value="'.ucwords( $sidebar['id'] ).'" '. ($value == ucwords( $sidebar['id'] ) ? 'selected' : '') . '>'.ucwords( $sidebar['name'] ).'</option>';
+            }            
+            $output .= '</select>';
+            $output .= '</label>';
+            $output .= ' </p>';
+
+            echo $output;
+        }
+    }   
+}
+add_action('flexia_nav_menu_item_extra_fields', 'flexia_megamenu_inject_widget_select_option', 10, 4);
+
 function flexia_nav_menu_item_update($menu_id, $menu_item_db_id, $menu_item_args)
 {
     if (defined('DOING_AJAX') && DOING_AJAX) {
