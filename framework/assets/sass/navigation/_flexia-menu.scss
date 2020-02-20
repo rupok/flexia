@@ -165,6 +165,88 @@
                     }
                 }
             }
+            ul.flexia-mega-menu {
+                li {
+                    ul.sub-menu {
+                        li {
+                            .widget {
+                                background-color: transparent;
+                                color: inherit;
+                                border: 0;
+                                padding: 12px 15px;
+                                margin: 0;
+                                box-shadow: unset;
+
+                                ul {
+                                    li {
+                                        list-style: none;
+
+                                        a {
+                                            list-style: 1em;
+                                            padding: 10px 15px;
+                                            background-color: transparent;
+                                        }
+
+                                        &:before {
+                                            content: "";
+                                            display: none;
+                                        }
+                                    }
+                                }
+
+                                .product_list_widget {
+                                    li {
+                                        margin-bottom: 1em;
+                                        a {
+                                            display: block;
+                                            padding: 0;
+                                            img {
+                                                width: auto;
+                                                height: auto;
+                                            }
+                                            .product-title {
+                                                display: none !important;
+                                                position: absolute;
+                                                background-color:#8c8c8c;
+                                                left: 0;
+                                                right: auto;
+                                                width: 100%;
+                                                top: 0;
+                                                padding: 10px 15px;
+                                                line-height: 1.4;
+                                                font-weight: 400;
+                                                font-size: 1em;
+                                                color:#fff;
+                                            }
+                                        }
+
+                                        .woocommerce-Price-amount.amount {
+                                            position: absolute;
+                                            bottom: 0;
+                                            color: #fff;
+                                            background-color: #ff613a;
+                                            width: 100%;
+                                            font-size: 1.2em;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+
+                                .product-categories {
+                                    li {
+                                        a {
+                                            display: inline-block;
+                                            font-size: 1em;
+                                            color: inherit;
+                                            padding: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         // Responsive menu

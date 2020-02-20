@@ -301,18 +301,3 @@ function flexia_admin_notices()
     }
 }
 add_action('admin_notices', 'flexia_admin_notices');
-
-
-//
-add_filter( 'wp_nav_menu_items', 'your_custom_menu_item', 10, 2 );
-function your_custom_menu_item ( $items, $args ) {
-    if ( $args->theme_location == 'primary') {
-        $items .= '<li>';
-        $items .= 'Custom';
-        // ob_start();
-        // dynamic_sidebar( 'header-1' ); 
-        // $items .=  ob_get_clean();
-        $items .= '</li>';
-    }
-    return $items;
-}

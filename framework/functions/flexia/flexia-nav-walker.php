@@ -37,13 +37,21 @@ class Flexia_Nav_Walker extends Walker_Nav_Menu
     {
 
         if ($depth == 0) {
-            if (($is_mega_menu = get_post_meta($item->ID, 'menu-item-mega-menu', true)) != '') {
+            if (($is_mega_menu = get_post_meta($item->ID, 'flexia-menu-item-mega-menu', true)) != '') {
                 $this->mega_menu_classes = 'flexia-mega-menu flexia-mega-menu-' . $is_mega_menu;
             } else {
                 $this->mega_menu_classes = '';
             }
         } else {
             $this->mega_menu_classes = '';
+        }
+
+        $is_megamenu_has_widget = false;
+        if ($depth == 1) {
+            $widget_id = esc_attr(get_post_meta($item->ID, 'flexia-menu-item-mega-menu-widget', true));
+            if ( !empty($widget_id) && !is_array($widget_id) ) {
+                $is_megamenu_has_widget = true;
+            }
         }
 
         if (isset($args->item_spacing) && 'discard' === $args->item_spacing) {
@@ -85,8 +93,8 @@ class Flexia_Nav_Walker extends Walker_Nav_Menu
          * @param int      $depth   Depth of menu item. Used for padding.
          */
         $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
+        $class_names = ($is_megamenu_has_widget ? $class_names . ' menu-item-has-children' : $class_names);
         $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
-
         /**
          * Filters the ID applied to a menu item's list item element.
          *
@@ -157,6 +165,20 @@ class Flexia_Nav_Walker extends Walker_Nav_Menu
         $item_output .= $args->link_before . $title . $args->link_after;
         $item_output .= '</a>';
         $item_output .= $args->after;
+
+        if ($is_megamenu_has_widget) {
+            $item_output .= '<ul class="sub-menu">';
+            $item_output .= '<li>';
+            ob_start();
+            dynamic_sidebar( $widget_id ); 
+            $item_output .=  ob_get_clean();
+            $item_output .= '</li>';
+            $item_output .= '</ul>';
+        }
+
+        
+
+        
 
         /**
          * Filters a menu item's starting output.
