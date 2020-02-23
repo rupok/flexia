@@ -29,6 +29,41 @@ function generateCSS() {
         });
     });
 
+
+    wp.customize( 'flexia_primary_color', function( value ) {
+        value.bind(function(color) {
+            //Set primary color of Button Background Color
+            let button_bg_color= '';
+            wp.customize( 'flexia_button_background_color', function( value ) {
+                button_bg_color = value();
+            });
+            if (!button_bg_color || button_bg_color == color) {
+                $("button, input[type=button]")
+                .css("background-color", color);
+            }
+
+            //Set primary color of Topbar Background
+            let topbar_bg_color= '';
+            wp.customize( 'flexia_topbar_bg_color', function( value ) {
+                topbar_bg_color = value();
+            });
+            if (!topbar_bg_color || topbar_bg_color == color) {
+                $(".flexia-topbar")
+                .css("background-color", color);
+            }
+
+            //Set primary color of Link Color
+            let topbar_bg_color= '';
+            wp.customize( 'flexia_link_color', function( value ) {
+                topbar_bg_color = value();
+            });
+            if (!topbar_bg_color || topbar_bg_color == color) {
+                $(".a")
+                .css("color", color);
+            }
+        });
+    });
+
     
     /**
      * Defeault Colors from Global Settings

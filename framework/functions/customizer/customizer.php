@@ -213,6 +213,7 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_setting('flexia_primary_color', array(
         'default' => $defaults['flexia_primary_color'],
         'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'postMessage'
     ));
 
     $wp_customize->add_control(

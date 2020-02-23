@@ -173,6 +173,7 @@ function flexia_generate_css()
 
 	  input[type=button], button {
 		color: ' . $defaults['flexia_button_text_color'] . ';
+		background-color: ' . $defaults['flexia_button_background_color'] . ';
 		font-family: "' . $defaults['flexia_button_font_family'] . '", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
 		font-size: ' . $defaults['flexia_button_font_size'] . 'em;
 		line-height: ' . $defaults['flexia_button_font_line_height'] . ';

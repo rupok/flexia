@@ -9,6 +9,23 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+if (!function_exists('flexia_site_primary_color')) {
+    function flexia_site_primary_color() {
+        $primary_color = '#F56A6A';
+        $primary_color = get_theme_mod( 'flexia_primary_color', $primary_color );
+        return $primary_color;
+    }
+}
+
+if (!function_exists('flexia_site_secondary_color')) {
+    function flexia_site_secondary_color() {
+        $secondary_color = '#333333';
+        $secondary_color = get_theme_mod( 'flexia_secondary_color', $secondary_color );
+        return $secondary_color;
+    }
+}
+
+
 
 if (!function_exists('flexia_get_option_defaults')) {
 /**
@@ -16,8 +33,8 @@ if (!function_exists('flexia_get_option_defaults')) {
  */
     function flexia_get_option_defaults()
     {
-        $primary_color = '#F56A6A';
-        $secondary_color = '#333333';
+        $primary_color = flexia_site_primary_color();
+        $secondary_color = flexia_site_secondary_color();
         $flexia_defaults = array(
             'flexia_primary_color' => $primary_color,
             'flexia_secondary_color' => $secondary_color,
@@ -70,7 +87,7 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_link_font_text_transform' => 'none',
 
             'flexia_button_text_color' => '#fff',
-            'button_background_color' => '#333',
+            'flexia_button_background_color' => $primary_color,
             'flexia_button_font_size' => '1',
             'flexia_button_font_line_height' => '1.4',
             'flexia_button_font_family' => 'Open Sans',
@@ -94,7 +111,7 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_header_social_position' => 'topbar',
             'flexia_header_social_alignment' => 'right',
             'flexia_header_social_icon_size' => '1',
-            'flexia_header_social_icon_color' => $primary_color,
+            'flexia_header_social_icon_color' => $secondary_color,
             'flexia_header_social_icon_hover_color' => $secondary_color,
             'flexia_header_social_open_tab' => '_blank',
             'flexia_header_social_link_separator' => '',
@@ -132,7 +149,7 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_blog_title_font_size' => '54',
             'flexia_blog_desc_font_size' => '18',
             'flexia_header_widget_area_bg_color' => '#262625',
-            'flexia_topbar_bg_color' => '#262625',
+            'flexia_topbar_bg_color' => $primary_color,
             'flexia_logobar_bg_color' => '#fff',
             'flexia_navbar_bg_color' => '#fff',
             'flexia_main_nav_menu_link_color' => '#4d4d4d',
@@ -243,7 +260,6 @@ if ( ! function_exists( 'flexia_get_option' ) ) :
 			return;
         }
 
-        $value = null;
         $default = flexia_get_option_defaults();
         $default_value = $default[$key];
         $theme_options = get_theme_mod( $key, $default_value );
@@ -259,24 +275,14 @@ if( ! function_exists( 'flexia_generate_defaults' ) ) :
 	function flexia_generate_defaults(){
 
 		$default_options = flexia_get_option_defaults();
-		$saved_options = get_theme_mods();
 
 		$returned = [];
 
-		if( ! $saved_options ) {
-			return;
-		}
-
 		foreach( $default_options as $key => $option ) {
-			if( array_key_exists( $key, $saved_options ) ) {
-				$returned[ $key ] = get_theme_mod( $key );				
-			} else {
-				switch ( $key ) {
-					default:
-						$returned[ $key ] = $default_options[ $key ];
-						break;
-				}
-			}
+            $returned[ $key ] = get_theme_mod($key, $default_options[ $key ]);
+            if (empty($returned[ $key ])) {
+                $returned[ $key ] = $default_options[ $key ];
+            }
 		}
 
 		return $returned;
