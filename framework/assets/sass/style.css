@@ -3152,7 +3152,8 @@ a {
   left: 0;
   right: 0; }
   .main-navigation .nav-menu li {
-    display: flex; }
+    display: flex;
+    align-items: center; }
     .main-navigation .nav-menu li > a {
       display: flex;
       align-items: center;
@@ -3277,13 +3278,13 @@ a {
           display: block; }
         .flexia-menu.header-icons ul li a .amount {
           display: none; } }
-  .flexia-menu.header-icons ul li.navbar-login-menu a {
-    background-color: #000;
+  .flexia-menu.header-icons ul li.navbar-login-menu a button {
     padding: 8px 20px !important;
     border-radius: 4px;
-    color: #fff !important;
-    text-transform: capitalize !important; }
-    .flexia-menu.header-icons ul li.navbar-login-menu a i {
+    text-transform: capitalize !important;
+    border: 0px;
+    font-weight: 600; }
+    .flexia-menu.header-icons ul li.navbar-login-menu a button i {
       margin-right: 10px;
       font-size: 1.1em; }
   .flexia-menu.header-icons a.cart-contents {

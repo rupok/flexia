@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 
 
-$header_widget_area = get_theme_mod('header_widget_area', false);
+$header_widget_area = get_theme_mod('flexia_header_widget_area', false);
 
 $flexia_enable_topbar = get_theme_mod('flexia_enable_topbar', false);
 

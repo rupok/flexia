@@ -92,14 +92,15 @@ if (!function_exists('flexia_setup')) {
          * Add Login Button header navigation
          */
         function flexia_nav_logo_button($items) {
-            $flexia_nav_login = get_theme_mod('flexia_enable_login_button', true);
+            $flexia_nav_login = get_theme_mod('flexia_enable_login_button', false);
             $flexia_nav_login_url = get_theme_mod('flexia_custom_login_url');
             $login_url = ( empty($flexia_nav_login_url) ? esc_url( wp_login_url( get_permalink() ) ) : $flexia_nav_login_url );
 
             if ($flexia_nav_login == true ) {
                 $items .= '<li class="menu-item navbar-login-menu">';
-                $items .= '<a class="button" href="'.$login_url.'">';
-                $items .= '<i class="fa fa-user" aria-hidden="true"></i> <span class="button-text">Sign in</span></a></li>';
+                $items .= '<a href="'.$login_url.'">';
+                $items .= '<button><i class="fa fa-user" aria-hidden="true"></i> <span class="button-text">Sign in</span></button>';
+                $items .= '</a></li>';
             }
             return $items;
         }

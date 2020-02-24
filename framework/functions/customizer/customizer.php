@@ -228,27 +228,6 @@ function flexia_customize_register($wp_customize)
     );
 
     /**
-     * Default Color Section: Secondary Color
-     * @flexia_secondary_color
-     * Parent: @flexia_general_settings -> @flexia_default_colors_settings
-     */
-    $wp_customize->add_setting('flexia_secondary_color', array(
-        'default' => $defaults['flexia_secondary_color'],
-        'sanitize_callback' => 'sanitize_hex_color',
-    ));
-
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'flexia_secondary_color',
-            array(
-                'label' => __('Secondary Color', 'flexia'),
-                'section' => 'flexia_default_colors_settings',
-                'settings' => 'flexia_secondary_color',
-            ))
-    );
-
-    /**
      * Default Color Section: Text Color
      * @flexia_default_text_color
      * Parent: @flexia_general_settings -> @flexia_default_colors_settings
@@ -2707,26 +2686,19 @@ function flexia_customize_register($wp_customize)
                         ),
                         '4' 	=> array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-04.png',
-                        ),
+                        ),                        
                         '5' 	=> array(
-                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-05.png',
-                        ),
-                        '6' 	=> array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-06.png',
                             'pro'   => true,
                             'url'   => 'https://flexia.pro/pricing/',
                         ),
-                        '7' 	=> array(
+                        '6' 	=> array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-07.png',
                             'pro'   => true,
                             'url'   => 'https://flexia.pro/pricing/',
                         ),
                     )
                 ),
-                // 'active_callback' => function($wp_customize){
-                //     return $wp_customize->get_control('flexia_header_layout_type')->label = __( 'Header Layout Type_edited' );
-                //     // return get_theme_mod( 'flexia_primary_color', false );
-                // },
             ) 
         )
     );
@@ -2736,7 +2708,6 @@ function flexia_customize_register($wp_customize)
         'settings'            => [
             "flexia_header_layouts",
         ],
-        // 'render_callback'     => 'flexia_header_layouts_change_actions',
         'container_inclusive' => true,
     ] );
 
@@ -3257,29 +3228,28 @@ function flexia_customize_register($wp_customize)
     ));
 
     // Header widget area Separator
-    $wp_customize->add_setting('header_widget_area_settings_title', array(
+    $wp_customize->add_setting('flexia_header_widget_area_settings_title', array(
         'default' => '',
         'sanitize_callback' => 'esc_html',
     ));
 
-    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'header_widget_area_settings_title', array(
+    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'flexia_header_widget_area_settings_title', array(
         'label' => __('Header Widget Area', 'flexia'),
-        'settings' => 'header_widget_area_settings_title',
+        'settings' => 'flexia_header_widget_area_settings_title',
         'section' => 'flexia_header_navbar',
     )));
 
     // Enable Header widget area
-
-    $wp_customize->add_setting('header_widget_area', array(
-        'default' => $defaults['header_widget_area'],
+    $wp_customize->add_setting('flexia_header_widget_area', array(
+        'default' => $defaults['flexia_header_widget_area'],
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'flexia_sanitize_checkbox',
     ));
 
-    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'header_widget_area', array(
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'flexia_header_widget_area', array(
         'label' => esc_html__('Enable Header Widget Area?', 'flexia'),
         'section' => 'flexia_header_navbar',
-        'settings' => 'header_widget_area',
+        'settings' => 'flexia_header_widget_area',
         'type' => 'light', // light, ios, flat
     )));
 
@@ -3368,7 +3338,7 @@ function flexia_customize_register($wp_customize)
             $wp_customize,
             'flexia_topbar_bg_color',
             array(
-                'label' => __('Topbar Background', 'flexia'),
+                'label' => __('Topbar Background Color', 'flexia'),
                 'section' => 'flexia_header_top',
                 'settings' => 'flexia_topbar_bg_color',
             ))

@@ -180,6 +180,10 @@ function flexia_generate_css()
 		text-transform: ' . $defaults['flexia_button_font_text_transform'] . ';
 	  }
 
+	  input:focus, textarea:focus, select:focus {
+		  border-color: ' . $defaults['flexia_primary_color'] . ';
+	  }
+
 	  .flexia-container.width {
 		width: ' . $defaults['flexia_container_width'] . '%;
 	  }
@@ -307,7 +311,7 @@ function flexia_generate_css()
 		font-size: ' . $defaults['flexia_header_top_contact_font_size'] . 'em;
 	  }
 
-	  .flexia-topbar_contact a {
+	  .flexia-topbar a, .flexia-topbar_contact a {
 		color: ' . $defaults['flexia_header_top_contact_font_color'] . ';
 		font-size: ' . $defaults['flexia_header_top_contact_font_size'] . 'em;
 	  }

@@ -32,6 +32,7 @@ function generateCSS() {
 
     wp.customize( 'flexia_primary_color', function( value ) {
         value.bind(function(color) {
+            $("input:focus, textarea:focus, select:focus").css("border-color", color);
             //Set primary color of Button Background Color
             let button_bg_color= '';
             wp.customize( 'flexia_button_background_color', function( value ) {
@@ -53,11 +54,11 @@ function generateCSS() {
             }
 
             //Set primary color of Link Color
-            let topbar_bg_color= '';
+            let link_color= '';
             wp.customize( 'flexia_link_color', function( value ) {
-                topbar_bg_color = value();
+                link_color = value();
             });
-            if (!topbar_bg_color || topbar_bg_color == color) {
+            if (!link_color || link_color == color) {
                 $(".a")
                 .css("color", color);
             }

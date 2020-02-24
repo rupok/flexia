@@ -6,6 +6,7 @@
 
         li {
             display: flex;
+            align-items: center;
 
             > a {
                 display: flex;
@@ -207,12 +208,12 @@
         }
 
         li.navbar-login-menu {
-            a {
-                background-color:#000;
+            a button {
                 padding: 8px 20px !important;
                 border-radius: 4px;
-                color:#fff !important;
                 text-transform: capitalize !important;
+                border: 0px;
+                font-weight: 600;
 
                 i {
                     margin-right: 10px;

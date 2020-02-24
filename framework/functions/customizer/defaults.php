@@ -17,14 +17,6 @@ if (!function_exists('flexia_site_primary_color')) {
     }
 }
 
-if (!function_exists('flexia_site_secondary_color')) {
-    function flexia_site_secondary_color() {
-        $secondary_color = '#333333';
-        $secondary_color = get_theme_mod( 'flexia_secondary_color', $secondary_color );
-        return $secondary_color;
-    }
-}
-
 
 
 if (!function_exists('flexia_get_option_defaults')) {
@@ -34,10 +26,8 @@ if (!function_exists('flexia_get_option_defaults')) {
     function flexia_get_option_defaults()
     {
         $primary_color = flexia_site_primary_color();
-        $secondary_color = flexia_site_secondary_color();
         $flexia_defaults = array(
             'flexia_primary_color' => $primary_color,
-            'flexia_secondary_color' => $secondary_color,
             'flexia_default_text_color' => '#4d4d4d',
             'flexia_default_heading_color' => '#333333',
             'flexia_link_separator_label' => '',
@@ -111,8 +101,8 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_header_social_position' => 'topbar',
             'flexia_header_social_alignment' => 'right',
             'flexia_header_social_icon_size' => '1',
-            'flexia_header_social_icon_color' => $secondary_color,
-            'flexia_header_social_icon_hover_color' => $secondary_color,
+            'flexia_header_social_icon_color' => 'inherit',
+            'flexia_header_social_icon_hover_color' => 'inherit',
             'flexia_header_social_open_tab' => '_blank',
             'flexia_header_social_link_separator' => '',
             'flexia_header_social_link_facebook' => '',
@@ -232,7 +222,7 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_overlay_search_field_font_color' => '#fff',
             'flexia_overlay_search_label_font_size' => '16',
             'flexia_overlay_search_label_font_color' => '#fff',
-            'header_widget_area' => false,
+            'flexia_header_widget_area' => false,
             'footer_bottom' => true,
             'flexia_enable_footer_menu' => true,
             'flexia_scroll_to_top' => false,
