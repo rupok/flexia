@@ -198,11 +198,11 @@ function flexia_generate_css()
 	  }
 
 	  .flexia-sidebar-left {
-		width: ' . $defaults['flexia_left_sidebar_width'] . 'px;
+		width: ' . $defaults['flexia_sidebar_width_left'] . '%;
 	  }
 
 	  .flexia-sidebar-right {
-		width: ' . $defaults['flexia_right_sidebar_width'] . 'px;
+		width: ' . $defaults['flexia_sidebar_width_right'] . '%;
 	  }
 
 	  body.blog, body.archive, body.single-post,

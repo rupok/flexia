@@ -151,47 +151,49 @@ function flexia_customize_register($wp_customize)
         )
     );
 
-    $wp_customize->add_setting('flexia_left_sidebar_width', array(
-        'default' => $defaults['flexia_left_sidebar_width'],
+    //Left Sidebr Width Set
+    $wp_customize->add_setting('flexia_sidebar_width_left', array(
+        'default' => $defaults['flexia_sidebar_width_left'],
         'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
         'sanitize_callback' => 'flexia_sanitize_integer',
 
     ));
 
-    $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'flexia_left_sidebar_width', array(
+    $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'flexia_sidebar_width_left', array(
         'type' => 'range-value',
         'section' => 'flexia_layout_settings',
-        'settings' => 'flexia_left_sidebar_width',
+        'settings' => 'flexia_sidebar_width_left',
         'default' => '300',
         'label' => __('Left Sidebar Width (px)', 'flexia'),
         'input_attrs' => array(
-            'min' => 100,
-            'max' => 500,
-            'step' => 5,
-            'suffix' => 'px', //optional suffix
+            'min' => 0,
+            'max' => 100,
+            'step' => 1,
+            'suffix' => '%', //optional suffix
         ),
     )));
 
-    $wp_customize->add_setting('flexia_right_sidebar_width', array(
-        'default' => $defaults['flexia_right_sidebar_width'],
+    //Right Sidbar Width Set
+    $wp_customize->add_setting('flexia_sidebar_width_right', array(
+        'default' => $defaults['flexia_sidebar_width_right'],
         'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
         'sanitize_callback' => 'flexia_sanitize_integer',
 
     ));
 
-    $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'flexia_right_sidebar_width', array(
+    $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'flexia_sidebar_width_right', array(
         'type' => 'range-value',
         'section' => 'flexia_layout_settings',
-        'settings' => 'flexia_right_sidebar_width',
+        'settings' => 'flexia_sidebar_width_right',
         'default' => '300',
         'label' => __('Right Sidebar Width (px)', 'flexia'),
         'input_attrs' => array(
-            'min' => 100,
-            'max' => 500,
-            'step' => 5,
-            'suffix' => 'px', //optional suffix
+            'min' => 0,
+            'max' => 100,
+            'step' => 1,
+            'suffix' => '%', //optional suffix
         ),
     )));
 
@@ -4420,6 +4422,7 @@ function flexia_customize_register($wp_customize)
         )
     );
 
+
     // Create custom panels
     $wp_customize->add_panel('flexia_general_settings', array(
         'priority' => 10,
@@ -4462,14 +4465,16 @@ function flexia_customize_register($wp_customize)
     $wp_customize->get_section('flexia_typography_link')->panel = 'flexia_typography_settings';
     $wp_customize->get_section('flexia_typography_button')->panel = 'flexia_typography_settings';
     //Add Sections to Header Section
-    $wp_customize->get_section('header_image')->panel = 'flexia_header_panel';
+    $wp_customize->get_section('header_image')->panel = 'flexia_blog_settings';
     $wp_customize->get_section('header_image')->priority = '1';
     $wp_customize->get_section('flexia_header_layout')->panel = 'flexia_header_panel';
     $wp_customize->get_section('flexia_header_logo')->panel = 'flexia_header_panel';
     $wp_customize->get_section('flexia_header_navbar')->panel = 'flexia_header_panel';
     $wp_customize->get_section('flexia_header_top')->panel = 'flexia_header_panel';
     $wp_customize->get_section('flexia_header_social')->panel = 'flexia_header_panel';
-    
+    //Add Section to Blog Styles
+    $wp_customize->get_section('header_image')->panel = 'flexia_blog_settings';
+    $wp_customize->get_section('header_image')->label = __('Blog Page Header Image', 'flexia');    
 }
 add_action('customize_register', 'flexia_customize_register');
 

@@ -648,15 +648,15 @@ function generateCSS() {
     });
 
     // Sidebars width
-    wp.customize("flexia_left_sidebar_width", function(value) {
+    wp.customize("flexia_sidebar_width_left", function(value) {
         value.bind(function(to) {
-            $(".flexia-sidebar-left").css("width", to + "px");
+            $(".flexia-sidebar-left").css("width", to + "%");
         });
     });
 
-    wp.customize("flexia_right_sidebar_width", function(value) {
+    wp.customize("flexia_sidebar_width_right", function(value) {
         value.bind(function(to) {
-            $(".flexia-sidebar-right").css("width", to + "px");
+            $(".flexia-sidebar-right").css("width", to + "%");
         });
     });
 

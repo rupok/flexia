@@ -128,8 +128,8 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_post_width' => '90',
             'flexia_container_max_width' => '1200',
             'flexia_post_max_width' => '1200',
-            'flexia_left_sidebar_width' => '300',
-            'flexia_right_sidebar_width' => '300',
+            'flexia_sidebar_width_left' => '30',
+            'flexia_sidebar_width_right' => '30',
             'flexia_blog_bg_color' => '#f9f9f9',
             'flexia_post_content_bg_color' => '#fff',
             'flexia_post_meta_bg_color' => '#fff',
@@ -227,6 +227,7 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_enable_footer_menu' => true,
             'flexia_scroll_to_top' => false,
             'flexia_footer_content' => '&copy; Flexia 2019. All right reserved by Codetic.',
+            'flexia_create_sidebar_name' => ''
 
         );
 
