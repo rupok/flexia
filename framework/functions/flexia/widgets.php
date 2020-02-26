@@ -28,6 +28,10 @@ function flexia_widgets_init() {
 		'footer-4' => __( 'Footer 4', 'flexia' ),
 
 	);
+
+	if ( class_exists( 'WooCommerce' ) ) {
+		$widgets['woo-sidebar'] = __( 'WooCommerce Sidebar', 'flexia' );
+	}
 	
 	// Loop through them to create our widget areas
 	foreach ( $widgets as $id => $name ) {

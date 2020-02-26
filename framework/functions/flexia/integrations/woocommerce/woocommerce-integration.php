@@ -32,28 +32,30 @@ function flexia_setup_woocommerce() {
 
 
 function flexia_woo_wrapper_start() {
-get_header(); ?>
+	get_header(); ?>
 
-<div id="page" class="site">
+	<div id="page" class="site">
 
-	<?php get_template_part( 'framework/views/template-parts/content', 'masthead' ); ?>
+		<?php get_template_part( 'framework/views/template-parts/content', 'masthead' ); ?>
 
-	<div id="content" class="site-content">
-		<div class="flexia-wrapper flexia-container max width">
-			<div id="primary" class="content-area">
-				<main id="main" class="site-main flexia-woocommerce-wrapper flexia-container">
+		<div id="content" class="site-content">
+			<div class="flexia-wrapper flexia-container max width">
+				<div id="primary" class="content-area">
+					<main id="main" class="site-main flexia-woocommerce-wrapper flexia-container">
 <?php } ?>
+
 <?php function flexia_woo_wrapper_end() { ?>
-				</main><!-- #main -->
-			</div><!-- #primary -->
+					</main><!-- #main -->
+				</div><!-- #primary -->
 
-		</div><!-- #flexia-wrapper -->
-	</div><!-- #content --> 
-</div><!-- #page -->
-<?php
-get_template_part( 'framework/views/template-parts/content', 'footer' );
-get_footer();
+				<?php echo flexia_woocommerce_sidebar(); ?>
 
+			</div><!-- #flexia-wrapper -->
+		</div><!-- #content --> 
+	</div><!-- #page -->
+	<?php
+	get_template_part( 'framework/views/template-parts/content', 'footer' );
+	get_footer();
 }
 
 // Add cart menu  to Navbar
@@ -162,4 +164,26 @@ function product_remove() {
 		$cart->set_quantity($cart_item_id,0);
 	}
 	wp_die();
+}
+
+function flexia_woocommerce_sidebar() {
+	$flexia_sidebar_id = get_theme_mod('flexia_woo_sidebar_default', 'woo-sidebar');
+	$position_left = 'flexia-sidebar-left';
+	$position_right = 'flexia-sidebar-right';
+
+	if ( is_shop() ) {
+		return flexia_woocommerce_sidebar_content($flexia_sidebar_id, $position_left);
+	}
+}
+
+function flexia_woocommerce_sidebar_content($sidebar_id, $sidebar_position) {
+	ob_start();
+	dynamic_sidebar( $sidebar_id ); 
+	$sidebar =  ob_get_clean();
+	return '
+	<aside id="flexia-sidebar-left" class="flexia-sidebar '.$sidebar_position.'">
+		<div class="flexia-sidebar-inner">
+			' . $sidebar . '
+		</div>
+	</aside>';
 }

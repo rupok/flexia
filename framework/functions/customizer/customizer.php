@@ -4422,6 +4422,150 @@ function flexia_customize_register($wp_customize)
         )
     );
 
+    /**
+     * Add Sidebar Area Settings in WooCommerce Panel
+     * @flexia_woo_sidebar_section
+     * Parent: @woocommerce
+     */
+    $wp_customize->add_section('flexia_woo_sidebar_section', array(
+        'title' => __('WooCommerce Sidebar', 'flexia')
+    ));
+
+    /**
+     * WooCommerce Default Widget Selection
+     * @flexia_woo_sidebar_default
+     * Parent: @woocommerce -> @flexia_woo_sidebar_section
+     */
+    $wp_customize->add_setting( 'flexia_woo_sidebar_default', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_select',
+        'default' => $defaults['flexia_woo_sidebar_default'],
+        'transport' => 'postMessage',
+    ));
+
+    $widget_list = array();
+    foreach ( $GLOBALS['wp_registered_sidebars'] as $sidebar ) {
+        $widget_list[$sidebar['id']] = ucwords( $sidebar['name'] );
+    }
+      
+    $wp_customize->add_control(
+        'flexia_woo_sidebar_default', 
+        array(
+            'type' => 'select',
+            'section' => 'flexia_woo_sidebar_section',
+            'label' => __( 'Default Sidebar for WooCommerce', 'flexia' ),
+            'choices' => $widget_list,
+        )
+    );
+
+    /**
+     * Enable Sidebar in Shop Page
+     * @flexia_woo_sidebar_shop_page
+     * Parent: @woocommerce -> @flexia_woo_sidebar_section
+     */
+    $wp_customize->add_setting('flexia_woo_sidebar_shop_page', array(
+        'default' => $defaults['flexia_woo_sidebar_shop_page'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(
+        new Customizer_Toggle_Control(
+            $wp_customize, 
+            'flexia_woo_sidebar_shop_page', array(
+            'label' => esc_html__('Enable Sidebar in Shop Page?', 'flexia'),
+            'section' => 'flexia_woo_sidebar_section',
+            'settings' => 'flexia_woo_sidebar_shop_page',
+            'type' => 'light', // light, ios, flat
+    )));
+
+    /**
+     * Enable Sidebar in Product Single
+     * @flexia_woo_sidebar_product_single
+     * Parent: @woocommerce -> @flexia_woo_sidebar_section
+     */
+    $wp_customize->add_setting('flexia_woo_sidebar_product_single', array(
+        'default' => $defaults['flexia_woo_sidebar_product_single'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(
+        new Customizer_Toggle_Control(
+            $wp_customize, 
+            'flexia_woo_sidebar_product_single', array(
+            'label' => esc_html__('Enable Sidebar in Single Product Page?', 'flexia'),
+            'section' => 'flexia_woo_sidebar_section',
+            'settings' => 'flexia_woo_sidebar_product_single',
+            'type' => 'light', // light, ios, flat
+    )));
+
+    /**
+     * Enable Sidebar in Cart Page
+     * @flexia_woo_sidebar_cart_page
+     * Parent: @woocommerce -> @flexia_woo_sidebar_section
+     */
+    $wp_customize->add_setting('flexia_woo_sidebar_cart_page', array(
+        'default' => $defaults['flexia_woo_sidebar_cart_page'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(
+        new Customizer_Toggle_Control(
+            $wp_customize, 
+            'flexia_woo_sidebar_cart_page', array(
+            'label' => esc_html__('Enable Sidebar in Cart Page?', 'flexia'),
+            'section' => 'flexia_woo_sidebar_section',
+            'settings' => 'flexia_woo_sidebar_cart_page',
+            'type' => 'light', // light, ios, flat
+    )));
+
+    /**
+     * Enable Sidebar in Checkout Page
+     * @flexia_woo_sidebar_checkout_page
+     * Parent: @woocommerce -> @flexia_woo_sidebar_section
+     */
+    $wp_customize->add_setting('flexia_woo_sidebar_checkout_page', array(
+        'default' => $defaults['flexia_woo_sidebar_checkout_page'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(
+        new Customizer_Toggle_Control(
+            $wp_customize, 
+            'flexia_woo_sidebar_checkout_page', array(
+            'label' => esc_html__('Enable Sidebar in Checkout Page?', 'flexia'),
+            'section' => 'flexia_woo_sidebar_section',
+            'settings' => 'flexia_woo_sidebar_checkout_page',
+            'type' => 'light', // light, ios, flat
+    )));
+
+    /**
+     * Enable Sidebar in Product Arcive Page
+     * @flexia_woo_sidebar_archive_page
+     * Parent: @woocommerce -> @flexia_woo_sidebar_section
+     */
+    $wp_customize->add_setting('flexia_woo_sidebar_archive_page', array(
+        'default' => $defaults['flexia_woo_sidebar_archive_page'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(
+        new Customizer_Toggle_Control(
+            $wp_customize, 
+            'flexia_woo_sidebar_archive_page', array(
+            'label' => esc_html__('Enable Sidebar in Product Archive Page?', 'flexia'),
+            'section' => 'flexia_woo_sidebar_section',
+            'settings' => 'flexia_woo_sidebar_archive_page',
+            'type' => 'light', // light, ios, flat
+    )));
+
+
+
+
 
     // Create custom panels
     $wp_customize->add_panel('flexia_general_settings', array(
@@ -4475,6 +4619,8 @@ function flexia_customize_register($wp_customize)
     //Add Section to Blog Styles
     $wp_customize->get_section('header_image')->panel = 'flexia_blog_settings';
     $wp_customize->get_section('header_image')->label = __('Blog Page Header Image', 'flexia');    
+    //Add Section to WooCommerce
+    $wp_customize->get_section('flexia_woo_sidebar_section')->panel = 'woocommerce';
 }
 add_action('customize_register', 'flexia_customize_register');
 
