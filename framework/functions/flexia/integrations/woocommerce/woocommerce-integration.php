@@ -30,6 +30,25 @@ function flexia_setup_woocommerce() {
 
 }
 
+//3 Column Per row in Shop Page
+add_filter('loop_shop_columns', 'loop_columns', 999);
+if (!function_exists('loop_columns')) {
+	function loop_columns() {
+		return 3; // 3 products per row
+	}
+}
+
+//Add Discount text in HTML
+function show_discount_with_product_price_display( $price ) {
+	if (is_shop()) {
+		global $product;
+		echo "<pre>";var_dump($product['price']);die;
+		$price .= '<span class="discunt_amount">Save $100</span>';
+	}    
+    return $price;
+}
+// add_filter( 'woocommerce_get_price_html', 'show_discount_with_product_price_display' );
+
 
 function flexia_woo_wrapper_start() {
 	get_header(); ?>
@@ -171,14 +190,18 @@ function flexia_woocommerce_sidebar() {
 	$position_left = 'flexia-sidebar-left';
 	$position_right = 'flexia-sidebar-right';
 
-	if ( is_shop() ) {
+	if ( is_shop() && get_theme_mod('flexia_woo_sidebar_shop_page', true) ) {
 		return flexia_woocommerce_sidebar_content($flexia_sidebar_id, $position_left);
+	}
+
+	if ( is_product() && get_theme_mod('flexia_woo_sidebar_product_single', false) ) {
+		return flexia_woocommerce_sidebar_content($flexia_sidebar_id, $position_right);
 	}
 }
 
 function flexia_woocommerce_sidebar_content($sidebar_id, $sidebar_position) {
 	ob_start();
-	dynamic_sidebar( $sidebar_id ); 
+	dynamic_sidebar( $sidebar_id );
 	$sidebar =  ob_get_clean();
 	return '
 	<aside id="flexia-sidebar-left" class="flexia-sidebar '.$sidebar_position.'">
