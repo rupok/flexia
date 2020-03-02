@@ -4,6 +4,10 @@
         left: 0;
         right: 0;
 
+        > li > a {
+            height: 100%;
+        }
+
         li {
             display: flex;
             align-items: center;
@@ -138,6 +142,10 @@
         left: 15px;
         visibility: visible;
         opacity: 1;
+    }
+
+    .flexia-header-4 .main-navigation .nav-menu > li.menu-item-has-children > a:after{
+        bottom: 30%;
     }
 
     .flexia-header-4 .main-navigation .nav-menu > li > a:after{

@@ -47,7 +47,7 @@
 	text-align: left;
 	display: flex;
 	justify-content: left;
-	align-items: center;
+	align-items: baseline;
 	margin-bottom: 1em;
 
 	ins {
@@ -65,7 +65,7 @@
 	}
 	.discunt_amount {
 		order: 3;
-		color:red;
+		color:#ff6e6e;
 		font-size: .9em;
 		margin-left: 1em;
 	}
@@ -85,8 +85,8 @@
 	font-size: 1em !important;
 	text-transform: uppercase;
 	text-align: center;
-	background-color: #333333;
-	color: #fff;
+	background-color: #ffffff;
+	color: #707070;
 	border: 0;
 	padding: 12px 15px;
 	font-size: 14px;
@@ -95,31 +95,34 @@
 	white-space: nowrap;
 	line-height: 1.5;
 	font-weight: 400;
-	-webkit-transition: all 0.15s linear;
-	transition: all 0.15s linear;
-	display: none;
+	-webkit-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	z-index: 999;
+	margin: 0px auto 0 !important;
+	opacity: 0;
+	visibility: hidden;
 }
 
 .woocommerce ul.products li.product {
 	&:hover {
 
-		.woocommerce-LoopProduct-link img {
-			transform: scale(2);
-		}
+		// .woocommerce-LoopProduct-link img {
+		// 	transform: scale(2);
+		// }
 
-		.woocommerce-loop-product__title, .price, .star-rating {
-			opacity: 0;
-			visibility: hidden;
-		}
+		// .woocommerce-loop-product__title, .price, .star-rating {
+		// 	opacity: 0;
+		// 	visibility: hidden;
+		// }
 		
 		.add_to_cart_button {
-			display: block;
-			position: absolute;
-			left: 0;
-			right: 0;
 			top: 50%;
-			z-index: 999;
-			margin: -25px auto 0 !important;
+			opacity: 1;
+			visibility: visible;
 		}
 	}
 }
@@ -477,4 +480,87 @@ body.woocommerce:not(.single-product) ul.products li.product-has-gallery a.wooco
 
 .woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1, .woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2, .woocommerce .cart-collaterals .shipping_calculator .col2-set .col-1,.woocommerce .cart-collaterals .shipping_calculator .col2-set .col-2,.woocommerce-page .cart-collaterals .shipping_calculator .col2-set .col-1,.woocommerce-page .cart-collaterals .shipping_calculator .col2-set .col-2 {
 	max-width: none;
+}
+
+#flexia-woo-sidebar {
+	.widget {
+		.widget-title {
+			color: #404040;
+			font-weight: 700;
+		}
+		ul {
+			li {
+				list-style: none;
+				color: #707070;
+				font-weight: 500;
+				a {
+					color: #707070;
+				}
+				&:before {
+					content: "";
+					padding: 0;
+				}
+			}
+		}
+	}
+	.widget_price_filter .price_slider_amount {
+		.button {
+			font-size: 1em;
+			border-radius: 4px;
+		}
+		.price_label {
+			color: #707070;
+		}
+	}
+	.widget_products {
+		.product_list_widget {
+			li {
+				margin-bottom: 1em;
+				> a {
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+
+					img {
+						margin-right: 15px;
+						width: 40px;
+					}
+					.product-title {
+						font-size: 1em;
+						color: #404040;
+						font-weight: 500;
+					}
+				}
+				del {
+					margin-right: 10px;
+				}
+				ins {
+					margin-right: 10px;
+					float: left;
+					margin-left: 55px;
+					font-size: 1.2em;
+					font-weight: 700;
+					color: #404040;
+					background-color: transparent;
+				}
+				.discunt_amount {
+					display: none;
+				}
+				.star-rating {
+					margin-left: 55px;
+					margin-bottom: 10px;
+				}
+				> .woocommerce-Price-amount.amount {
+					margin-right: 10px;
+					float: left;
+					margin-left: 55px;
+					font-size: 1.2em;
+					font-weight: 700;
+					color: #404040;
+					background-color: transparent;
+				}
+			}
+		}
+	}
+		
 }

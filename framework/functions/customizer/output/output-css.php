@@ -329,6 +329,13 @@ function flexia_generate_css()
 		color: ' . $defaults['flexia_header_social_icon_hover_color'] . ';
 	  }
 
+	  #flexia-woo-sidebar .widget_price_filter .ui-slider .ui-slider-range,
+	  #flexia-woo-sidebar .widget_price_filter .ui-slider .ui-slider-handle,
+	  #flexia-woo-sidebar .widget_price_filter .price_slider_amount .button {
+		background-color: ' . $defaults['flexia_primary_color'] . ';
+	  }
+	  }
+
 	  @media all and (max-width: 959px) {
 			.blog-header .header-content > .page-title, .archive-header .header-content > .page-title {
 				font-size: calc(' . $defaults['flexia_blog_title_font_size'] . 'px * .75);

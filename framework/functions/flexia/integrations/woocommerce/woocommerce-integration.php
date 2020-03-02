@@ -40,14 +40,16 @@ if (!function_exists('loop_columns')) {
 
 //Add Discount text in HTML
 function show_discount_with_product_price_display( $price ) {
+	global $product;
 	if (is_shop()) {
-		global $product;
-		echo "<pre>";var_dump($product['price']);die;
-		$price .= '<span class="discunt_amount">Save $100</span>';
-	}    
+		if ( $product->get_regular_price() > 0 && $product->get_price() > 0 && $product->get_regular_price()!=$product->get_price() ) {
+			$save_amount = $product->get_regular_price() - $product->get_price();
+			$price .= '<span class="discunt_amount">Save '.get_woocommerce_currency_symbol().'' . $save_amount . '</span>';
+		}
+	}
     return $price;
 }
-// add_filter( 'woocommerce_get_price_html', 'show_discount_with_product_price_display' );
+add_filter( 'woocommerce_get_price_html', 'show_discount_with_product_price_display' );
 
 
 function flexia_woo_wrapper_start() {
@@ -204,7 +206,7 @@ function flexia_woocommerce_sidebar_content($sidebar_id, $sidebar_position) {
 	dynamic_sidebar( $sidebar_id );
 	$sidebar =  ob_get_clean();
 	return '
-	<aside id="flexia-sidebar-left" class="flexia-sidebar '.$sidebar_position.'">
+	<aside id="flexia-woo-sidebar" class="flexia-sidebar '.$sidebar_position.'">
 		<div class="flexia-sidebar-inner">
 			' . $sidebar . '
 		</div>
