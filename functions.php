@@ -269,7 +269,7 @@ function flexia_admin_notices() {
             $flexia_admin_notice_text = __('Thanks for using <strong>Flexia!</strong> We have added lots of cool features through <strong>Flexia Core</strong> and we recommend to keep the plugin active for maximum features.<a href="%1$s" style="text-decoration: none;"><span class="dashicons dashicons-admin-plugins" style="margin-top: -1px;margin-left: 10px;"></span> Install Plugin</a><a href="%2$s" style="text-decoration: none; margin-left: 10px;"><span class="dashicons dashicons-dismiss"></span> Dismiss</a>', 'flexia');
             
             //Create Dismiss URL
-            $dismiss_notice_url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."&flexia_nag_ignore=0";
+            $dismiss_notice_url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             $query = parse_url($dismiss_notice_url, PHP_URL_QUERY);
             if ($query) {
                 $dismiss_notice_url .= '&flexia_nag_ignore=0';
