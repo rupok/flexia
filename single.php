@@ -39,4 +39,3 @@ get_header(); ?>
 <?php
 get_template_part( 'framework/views/template-parts/content', 'footer' );
 get_footer();
-
