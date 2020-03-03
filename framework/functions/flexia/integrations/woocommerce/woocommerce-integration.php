@@ -51,6 +51,17 @@ function show_discount_with_product_price_display( $price ) {
 }
 add_filter( 'woocommerce_get_price_html', 'show_discount_with_product_price_display' );
 
+//Add Plus Minus Button to WooCommerce Quantity in single page
+add_action( 'woocommerce_before_add_to_cart_quantity', 'bbloomer_display_quantity_plus' );  
+function bbloomer_display_quantity_plus() {
+   echo '<div class="product-single-quantity"><button type="button" class="plus" >+</button>';
+}
+  
+add_action( 'woocommerce_after_add_to_cart_quantity', 'bbloomer_display_quantity_minus' );  
+function bbloomer_display_quantity_minus() {
+   echo '<button type="button" class="minus" >-</button></div>';
+}
+
 
 function flexia_woo_wrapper_start() {
 	get_header(); ?>

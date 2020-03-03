@@ -5151,6 +5151,26 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
 .single-product.woocommerce .product .product_title {
   font-size: 1.5em;
   font-weight: 700; }
+.single-product.woocommerce .product .woocommerce-product-rating {
+  font-size: .85em; }
+.single-product.woocommerce .product .single_add_to_cart_button {
+  padding: 1em 3em;
+  margin-left: 1em; }
+.single-product.woocommerce .product .product-single-quantity {
+  float: left;
+  height: 48px; }
+  .single-product.woocommerce .product .product-single-quantity > * {
+    float: left;
+    height: 48px; }
+  .single-product.woocommerce .product .product-single-quantity .quantity input {
+    padding: 10px 20px;
+    width: auto;
+    max-width: 70px;
+    border: 0px;
+    -moz-appearance: textfield; }
+    .single-product.woocommerce .product .product-single-quantity .quantity input:-webkit-outer-spin-button, .single-product.woocommerce .product .product-single-quantity .quantity input:-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
 
 .woocommerce div.product div.summary {
   margin: 0 0 2em; }

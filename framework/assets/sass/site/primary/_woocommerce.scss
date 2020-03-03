@@ -32,6 +32,42 @@
 		font-size: 1.5em;
 		font-weight: 700;
 	}
+
+	.woocommerce-product-rating {
+		font-size: .85em;
+	}
+
+	.single_add_to_cart_button {
+		padding: 1em 3em;
+		margin-left: 1em;
+	}
+
+	.product-single-quantity {
+		float: left;
+		height: 48px;
+
+		> * {
+			float: left;
+			height: 48px;
+		}
+
+		.quantity {
+
+			input {
+				padding: 10px 20px;
+				width: auto;
+				max-width: 70px;
+				border: 0px;
+				-moz-appearance: textfield;
+
+				&:-webkit-outer-spin-button, &:-webkit-inner-spin-button {
+					-webkit-appearance: none;
+					margin: 0;
+				}
+			}
+		}
+	}
+	
 }
 
 .woocommerce div.product div.summary {
