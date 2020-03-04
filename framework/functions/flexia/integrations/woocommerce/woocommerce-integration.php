@@ -61,47 +61,6 @@ add_action( 'woocommerce_after_add_to_cart_quantity', 'bbloomer_display_quantity
 function bbloomer_display_quantity_minus() {
    echo '<button type="button" class="minus" >-</button></div>';
 }
-add_action( 'wp_footer', 'bbloomer_add_cart_quantity_plus_minus' );
-  
-function bbloomer_add_cart_quantity_plus_minus() {
-   // Only run this on the single product page
-   if ( ! is_product() ) return;
-   ?>
-      <script type="text/javascript">
-           
-      jQuery(document).ready(function($){   
-           
-         $('form.cart').on( 'click', 'button.plus, button.minus', function() {
-  
-            // Get current quantity values
-            var qty = $( this ).closest( 'form.cart' ).find( '.qty' );
-            var val   = parseFloat(qty.val());
-            var max = parseFloat(qty.attr( 'max' ));
-            var min = parseFloat(qty.attr( 'min' ));
-            var step = parseFloat(qty.attr( 'step' ));
-  
-            // Change the value if plus or minus
-            if ( $( this ).is( '.plus' ) ) {
-               if ( max && ( max <= val ) ) {
-                  qty.val( max );
-               } else {
-                  qty.val( val + step );
-               }
-            } else {
-               if ( min && ( min >= val ) ) {
-                  qty.val( min );
-               } else if ( val > 1 ) {
-                  qty.val( val - step );
-               }
-            }
-              
-         });
-           
-      });
-           
-      </script>
-   <?php
-}
 
 
 function flexia_woo_wrapper_start() {
@@ -131,6 +90,39 @@ function flexia_woo_wrapper_start() {
 	get_footer();
 }
 
+function menu_cart_items_html() {
+	global $woocommerce;
+	$cartitems = $woocommerce->cart->get_cart();
+	$items = "";
+	foreach($cartitems as $cartitem => $values) {
+		$product_id = $values['data']->get_id();
+		$product =  wc_get_product( $product_id );
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $values['data']->get_id() ), 'thumbnail' );
+		$price = get_post_meta($values['product_id'] , '_price', true);
+
+		$items .= '<li class="flexia-cart-item">';
+			$items .= '<div class="flexia-cart-product-img">';
+				$items .= '<img src="'.$image[0].'" data-id="'. $product_id.'">';
+			$items .= '</div>';
+			$items .= '<div class="flexia-cart-product-meta">';
+				$items .= '<span class="flexia-cart-product-title">';
+				$items .= '<a href="'.get_permalink($product_id).'">' .$product->get_title() . '</a>';
+				$items .= '</span>';
+				$items .= '<span class="flexia-cart-product-qty">'.$values['quantity'].' x '.get_woocommerce_currency_symbol().''.$price.'</span>';
+				$items .= '<span class="flexia-cart-product-price"></span>';
+			$items .= '</div>';
+			$items .= '<div class="flexia-cart-product-action"> <i data-id="'.$product_id.'" class="fa fa-trash"></i> </div>';
+		$items .= '</li>';
+	}
+	$items .= '<li class="flexia-cart-total">Cart Total: <span><strong>'.$woocommerce->cart->get_cart_total().'</strong></span></li>';
+	$items .= '<li class="flexia-cart-links">';
+		$items .= '<a class="button" href=" '.esc_url( wc_get_cart_url()).' ">View Cart</a>';
+		$items .= '<a class="button" href=" '.esc_url( wc_get_checkout_url()).' ">View Checkout</a>';
+	$items .= '</li>';
+
+	return $items;
+}
+
 // Add cart menu  to Navbar
 function add_cart_menu_to_navbar($items)
 {
@@ -147,31 +139,7 @@ function add_cart_menu_to_navbar($items)
 		$items .= '</a>';
 		if (WC()->cart->get_cart_contents_count() > 0 ) {
 			$items .= '<ul id="menu-cart-items" class="flexia-cart-submenu flexia-menu-cart-items">';
-			foreach($cartitems as $cartitem => $values) {
-				$product_id = $values['data']->get_id();
-				$product =  wc_get_product( $product_id );
-				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $values['data']->get_id() ), 'thumbnail' );
-				$price = get_post_meta($values['product_id'] , '_price', true);
-
-				$items .= '<li class="flexia-cart-item">';
-					$items .= '<div class="flexia-cart-product-img">';
-						$items .= '<img src="'.$image[0].'" data-id="'. $product_id.'">';
-					$items .= '</div>';
-					$items .= '<div class="flexia-cart-product-meta">';
-						$items .= '<span class="flexia-cart-product-title">';
-						$items .= '<a href="'.get_permalink($product_id).'">' .$product->get_title() . '</a>';
-						$items .= '</span>';
-						$items .= '<span class="flexia-cart-product-qty">'.$values['quantity'].' x '.get_woocommerce_currency_symbol().''.$price.'</span>';
-						$items .= '<span class="flexia-cart-product-price"></span>';
-					$items .= '</div>';
-					$items .= '<div class="flexia-cart-product-action"> <i data-id="'.$product_id.'" class="fa fa-trash"></i> </div>';
-				$items .= '</li>';
-			}
-			$items .= '<li class="flexia-cart-total">Cart Total: <span><strong>'.$woocommerce->cart->get_cart_total().'</strong></span></li>';
-			$items .= '<li class="flexia-cart-links">';
-				$items .= '<a class="button" href=" '.esc_url( wc_get_cart_url()).' ">View Cart</a>';
-				$items .= '<a class="button" href=" '.esc_url( wc_get_checkout_url()).' ">View Checkout</a>';
-			$items .= '</li>';
+			$items .= menu_cart_items_html();
 			$items .= '</ul>';
 		}
 		
@@ -205,26 +173,7 @@ function flexia_add_to_cart_fragment( $fragments ) {
 add_filter( 'woocommerce_add_to_cart_fragments', 'flexia_add_to_cart_fragment' );
 
 
-add_action( 'wp_footer', 'add_js_to_wp_wcommerce');
-function add_js_to_wp_wcommerce(){ ?>
-    <script type="text/javascript">
-    jQuery('.flexia-cart-product-action i').click(function(){
-        var product_id = jQuery(this).attr("data-id");
-        jQuery.ajax({
-            type: 'POST',
-            dataType: 'json',
-            url: "<?php echo admin_url('admin-ajax.php'); ?>",
-            data: { action: "product_remove", 
-                    product_id: product_id
-            },success: function(data){
-                console.log(data);
-            }
-        });
-        return false;
-    });
-    </script>
-<?php }
-
+//Remove Product from Cart WP Ajax function
 add_action( 'wp_ajax_product_remove', 'product_remove' );
 add_action( 'wp_ajax_nopriv_product_remove', 'product_remove');
 function product_remove() {
@@ -235,7 +184,17 @@ function product_remove() {
 
 	if($cart_item_id){
 		$cart->set_quantity($cart_item_id,0);
+		echo menu_cart_items_html();
 	}
+	wp_die();
+}
+
+
+//Return Cart HTML WP Ajax function
+add_action( 'wp_ajax_cart_items_html', 'cart_items_html' );
+add_action( 'wp_ajax_nopriv_cart_items_html', 'cart_items_html');
+function cart_items_html() {
+	echo menu_cart_items_html();
 	wp_die();
 }
 
@@ -263,4 +222,73 @@ function flexia_woocommerce_sidebar_content($sidebar_id, $sidebar_position) {
 			' . $sidebar . '
 		</div>
 	</aside>';
+}
+
+
+add_action( 'wp_footer', 'bbloomer_add_cart_quantity_plus_minus' );  
+function bbloomer_add_cart_quantity_plus_minus() {
+	//Delete Cart item ajax
+	?>
+		<script type="text/javascript">
+			jQuery('.flexia-cart-product-action i').click(function(){
+				var product_id = jQuery(this).attr("data-id");
+				var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+				
+				var data = {
+					'action' : 'product_remove',
+					'product_id': product_id
+				};
+
+				jQuery.post( ajaxurl, data, function( response ) {
+					jQuery('#menu-cart-items').html(response);
+				} );
+				return false;
+			});
+
+			jQuery('body').bind('added_to_cart', function(event, fragments, cart_hash) {
+
+				var data = {
+					'action' : 'cart_items_html',
+				};
+
+				jQuery.post( ajaxurl, data, function( response ) {
+					jQuery('#menu-cart-items').html(response);
+				} );
+				return false;
+			});
+		</script>
+	<?php
+
+   	// Only run this on the single product page
+   	if ( is_product() ) {
+		?>
+			<script type="text/javascript">				
+				jQuery(document).ready(function($){           
+					$('form.cart').on( 'click', 'button.plus, button.minus', function() {  
+					// Get current quantity values
+					var qty = $( this ).closest( 'form.cart' ).find( '.qty' );
+					var val   = parseFloat(qty.val());
+					var max = parseFloat(qty.attr( 'max' ));
+					var min = parseFloat(qty.attr( 'min' ));
+					var step = parseFloat(qty.attr( 'step' ));  
+					// Change the value if plus or minus
+					if ( $( this ).is( '.plus' ) ) {
+						if ( max && ( max <= val ) ) {
+							qty.val( max );
+						} else {
+							qty.val( val + step );
+						}
+					} else {
+						if ( min && ( min >= val ) ) {
+							qty.val( min );
+						} else if ( val > 1 ) {
+							qty.val( val - step );
+						}
+					}              
+					});           
+				});
+				
+			</script>
+		<?php
+   	}
 }

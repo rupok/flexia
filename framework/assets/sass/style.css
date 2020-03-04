@@ -3334,10 +3334,11 @@ a {
   .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items {
     padding: 1em !important;
     width: 300px !important;
-    box-shadow: 0px 5px 5px 0px #acacac; }
+    background-color: #ffffff;
+    box-shadow: 0px 3px 5px 0px #acacac; }
     .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items li.flexia-cart-item {
       display: flex !important;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       padding-bottom: 10px;
       border-bottom: 1px solid #eae9e9;
@@ -3349,35 +3350,42 @@ a {
       .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items li.flexia-cart-item .flexia-cart-product-img img {
         max-height: 50px;
         max-width: 80px; }
-      .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items li.flexia-cart-item .flexia-cart-product-meta span {
-        display: block; }
+      .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items li.flexia-cart-item .flexia-cart-product-meta {
+        margin: 0 1em; }
+        .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items li.flexia-cart-item .flexia-cart-product-meta span {
+          display: block; }
       .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items li.flexia-cart-item .flexia-cart-product-action {
         color: #ee1f1f;
-        font-size: 1.2em; }
+        font-size: 1.2em;
+        margin: 0 0 0 auto; }
     .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items .flexia-cart-total {
       display: flex !important;
       justify-content: end;
-      font-size: .9em; }
+      align-items: baseline;
+      font-size: .9em;
+      color: #707070;
+      text-transform: uppercase; }
       .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items .flexia-cart-total span {
         margin-left: 5px;
-        color: #ff613a; }
+        font-size: 1.1em; }
     .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items .flexia-cart-links {
       display: flex !important;
       justify-content: space-between;
       margin-top: 10px; }
       .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items .flexia-cart-links a {
-        background-color: #239b12;
+        background-color: #555;
         color: #fff;
         margin: 0px 5px;
-        padding: 10px;
+        padding: 1em 1.5em;
         letter-spacing: 0;
         border-radius: 4px;
         line-height: 1;
         text-align: center;
-        font-weight: 700; }
-      .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items .flexia-cart-links:hover {
-        background-color: #318c08;
-        color: #fff; }
+        border: 0;
+        font-size: .8em;
+        font-weight: 500; }
+        .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items .flexia-cart-links a:hover {
+          background-color: #707070; }
   .flexia-menu.header-icons .edd-cart-contents .amount,
   .flexia-menu.header-icons .edd-cart-contents .count {
     padding-left: 5px; }
@@ -5360,7 +5368,7 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
   width: 80%;
   max-width: 200px;
   font-weight: 700 !important;
-  font-size: 1em !important;
+  font-size: .9em !important;
   text-transform: uppercase;
   text-align: center;
   background-color: #ffffff;

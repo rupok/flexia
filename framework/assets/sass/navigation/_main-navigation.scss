@@ -259,11 +259,12 @@
 
             padding: 1em !important;
             width: 300px !important;
-            box-shadow: 0px 5px 5px 0px #acacac;
+            background-color: #ffffff;
+            box-shadow: 0px 3px 5px 0px #acacac;
 
             li.flexia-cart-item {
                 display: flex !important;
-                justify-content: space-between;
+                justify-content: flex-start;
                 align-items: center;            
                 padding-bottom: 10px;
                 border-bottom: 1px solid #eae9e9;
@@ -285,6 +286,8 @@
 
                 .flexia-cart-product-meta {
 
+                    margin: 0 1em;
+
                     span {
                         display: block;
                     }
@@ -294,6 +297,7 @@
 
                     color: #ee1f1f;
                     font-size: 1.2em;
+                    margin: 0 0 0 auto;
 
                 }
             }
@@ -301,11 +305,14 @@
             .flexia-cart-total {
                 display: flex !important;
                 justify-content: end;
+                align-items: baseline;
                 font-size: .9em;
+                color: #707070;
+                text-transform: uppercase;
 
                 span {
                     margin-left: 5px;
-                    color: #ff613a;
+                    font-size: 1.1em;
                 }
             }
 
@@ -315,19 +322,21 @@
                 margin-top: 10px;
 
                 a {
-                    background-color:#239b12;
-                    color:#fff;
+                    background-color: #555;
+                    color: #fff;
                     margin: 0px 5px;
-                    padding: 10px;
+                    padding: 1em 1.5em;
                     letter-spacing: 0;
                     border-radius: 4px;
                     line-height: 1;
                     text-align: center;
-                    font-weight: 700;
-                }
-                &:hover {
-                    background-color: #318c08;
-                    color: #fff;
+                    border: 0;
+                    font-size: .8em;
+                    font-weight: 500;
+
+                    &:hover {
+                        background-color: #707070;
+                    }
                 }
             }
         }
