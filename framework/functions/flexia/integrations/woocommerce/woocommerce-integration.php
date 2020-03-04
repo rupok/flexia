@@ -111,7 +111,7 @@ function menu_cart_items_html() {
 				$items .= '<span class="flexia-cart-product-qty">'.$values['quantity'].' x '.get_woocommerce_currency_symbol().''.$price.'</span>';
 				$items .= '<span class="flexia-cart-product-price"></span>';
 			$items .= '</div>';
-			$items .= '<div class="flexia-cart-product-action"> <i data-id="'.$product_id.'" class="fa fa-trash"></i> </div>';
+			// $items .= '<div class="flexia-cart-product-action"> <i data-id="'.$product_id.'" class="fa fa-trash"></i> </div>';
 		$items .= '</li>';
 	}
 	$items .= '<li class="flexia-cart-total">Cart Total: <span><strong>'.$woocommerce->cart->get_cart_total().'</strong></span></li>';
@@ -230,9 +230,11 @@ function bbloomer_add_cart_quantity_plus_minus() {
 	//Delete Cart item ajax
 	?>
 		<script type="text/javascript">
+
+			var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
 			jQuery('.flexia-cart-product-action i').click(function(){
+				console.log('Remove Click');
 				var product_id = jQuery(this).attr("data-id");
-				var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
 				
 				var data = {
 					'action' : 'product_remove',
