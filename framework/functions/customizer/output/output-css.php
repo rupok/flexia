@@ -328,15 +328,17 @@ function flexia_generate_css()
 	.flexia-social-links li a:hover {
 		color: ' . $defaults['flexia_header_social_icon_hover_color'] . ';
 	}
-
+	
+	#flexia-woo-sidebar .widget_price_filter .ui-slider .ui-slider-range,
+	#flexia-woo-sidebar .widget_price_filter .ui-slider .ui-slider-handle,
+	.single-product.woocommerce .product .cart .single_add_to_cart_button,
 	aside .widget button, 
 	#flexia-woo-sidebar .widget button {
 		background-color: ' . $defaults['flexia_primary_color'] . ';
 	}
-	
-	#flexia-woo-sidebar .widget_price_filter .ui-slider .ui-slider-range,
-	#flexia-woo-sidebar .widget_price_filter .ui-slider .ui-slider-handle {
-		background-color: ' . $defaults['flexia_primary_color'] . ';
+
+	.single-product.woocommerce .product .woocommerce-tabs ul.wc-tabs > li.active::before {
+		border-color: ' . $defaults['flexia_primary_color'] . ';
 	}
 	
 	@media all and (max-width: 959px) {

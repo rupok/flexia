@@ -232,103 +232,107 @@
     }
 
     // 3rd party & others
-    a.cart-contents {
-        -webkit-transition: all 0.15s linear;
-        transition: all 0.15s linear;
+    .flexia-header-cart {
 
-        &:hover {
-            background-color: transparent !important;
-        }
-
-        span {
-            padding-left: 0 !important;
-        }
-        .flexia-header-cart-icon {
-            margin-right: 5px;
-        }
-        .count {
-            font-size: .8em;
-            margin-top: -15px;
-        }
-    }
-
-
-    ul.flexia-menu-cart-items {
-
-        padding: 10px !important;
-        width: 240px !important;
-        box-shadow: 2px 2px 5x #c8c8c8 !important;
-
-        li.flexia-cart-item {
-            display: flex !important;
-            justify-content: space-between;
-            align-items: center;            
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eae9e9;
-            margin-bottom: 10px;
-            font-size: .9em;
-
-            &:last-child {
-                padding-bottom: 0px;
-                border-bottom: 0;
+        a.cart-contents {
+            -webkit-transition: all 0.15s linear;
+            transition: all 0.15s linear;
+    
+            &:hover {
+                background-color: transparent !important;
             }
+    
+            span {
+                padding-left: 0 !important;
+            }
+            .flexia-header-cart-icon {
+                margin-right: 5px;
+            }
+            .count {
+                font-size: .8em;
+                margin-top: -15px;
+            }
+        }
 
-            .flexia-cart-product-img {
 
-                img {
-                    max-height: 50px;
-                    max-width: 80px;
+        ul.flexia-menu-cart-items {
+
+            padding: 1em !important;
+            width: 300px !important;
+            box-shadow: 0px 5px 5px 0px #acacac;
+
+            li.flexia-cart-item {
+                display: flex !important;
+                justify-content: space-between;
+                align-items: center;            
+                padding-bottom: 10px;
+                border-bottom: 1px solid #eae9e9;
+                margin-bottom: 10px;
+                font-size: .9em;
+
+                &:last-child {
+                    padding-bottom: 0px;
+                    border-bottom: 0;
+                }
+
+                .flexia-cart-product-img {
+
+                    img {
+                        max-height: 50px;
+                        max-width: 80px;
+                    }
+                }
+
+                .flexia-cart-product-meta {
+
+                    span {
+                        display: block;
+                    }
+                }
+
+                .flexia-cart-product-action {
+
+                    color: #ee1f1f;
+                    font-size: 1.2em;
+
                 }
             }
 
-            .flexia-cart-product-meta {
+            .flexia-cart-total {
+                display: flex !important;
+                justify-content: end;
+                font-size: .9em;
 
                 span {
-                    display: block;
+                    margin-left: 5px;
+                    color: #ff613a;
                 }
             }
 
-            .flexia-cart-product-action {
+            .flexia-cart-links {
+                display: flex !important;
+                justify-content: space-between;
+                margin-top: 10px;
 
-                color: #ee1f1f;
-                font-size: 1.2em;
-
-            }
-        }
-
-        .flexia-cart-total {
-            display: flex !important;
-            justify-content: end;
-            font-size: .9em;
-
-            span {
-                margin-left: 5px;
-                color: #ff613a;
-            }
-        }
-
-        .flexia-cart-links {
-            display: flex !important;
-            justify-content: space-between;
-            margin-top: 10px;
-
-            a {
-                background-color:#239b12;
-                color:#fff;
-                margin: 0px 5px;
-                padding: 10px;
-                letter-spacing: 0;
-                border-radius: 4px;
-                line-height: 1;
-                text-align: center;
-                font-weight: 700;
-            }
-            &::hover {
-                background-color: #318c08;
-                color: #fff;
+                a {
+                    background-color:#239b12;
+                    color:#fff;
+                    margin: 0px 5px;
+                    padding: 10px;
+                    letter-spacing: 0;
+                    border-radius: 4px;
+                    line-height: 1;
+                    text-align: center;
+                    font-weight: 700;
+                }
+                &:hover {
+                    background-color: #318c08;
+                    color: #fff;
+                }
             }
         }
     }
+
 
     .edd-cart-contents {
         .amount,

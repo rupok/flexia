@@ -61,6 +61,47 @@ add_action( 'woocommerce_after_add_to_cart_quantity', 'bbloomer_display_quantity
 function bbloomer_display_quantity_minus() {
    echo '<button type="button" class="minus" >-</button></div>';
 }
+add_action( 'wp_footer', 'bbloomer_add_cart_quantity_plus_minus' );
+  
+function bbloomer_add_cart_quantity_plus_minus() {
+   // Only run this on the single product page
+   if ( ! is_product() ) return;
+   ?>
+      <script type="text/javascript">
+           
+      jQuery(document).ready(function($){   
+           
+         $('form.cart').on( 'click', 'button.plus, button.minus', function() {
+  
+            // Get current quantity values
+            var qty = $( this ).closest( 'form.cart' ).find( '.qty' );
+            var val   = parseFloat(qty.val());
+            var max = parseFloat(qty.attr( 'max' ));
+            var min = parseFloat(qty.attr( 'min' ));
+            var step = parseFloat(qty.attr( 'step' ));
+  
+            // Change the value if plus or minus
+            if ( $( this ).is( '.plus' ) ) {
+               if ( max && ( max <= val ) ) {
+                  qty.val( max );
+               } else {
+                  qty.val( val + step );
+               }
+            } else {
+               if ( min && ( min >= val ) ) {
+                  qty.val( min );
+               } else if ( val > 1 ) {
+                  qty.val( val - step );
+               }
+            }
+              
+         });
+           
+      });
+           
+      </script>
+   <?php
+}
 
 
 function flexia_woo_wrapper_start() {
@@ -105,7 +146,7 @@ function add_cart_menu_to_navbar($items)
         $items .= '<span class="amount"></span> <span class="count">'. WC()->cart->get_cart_contents_count().'</span>';
 		$items .= '</a>';
 		if (WC()->cart->get_cart_contents_count() > 0 ) {
-			$items .= '<ul class="flexia-cart-submenu flexia-menu-cart-items">';
+			$items .= '<ul id="menu-cart-items" class="flexia-cart-submenu flexia-menu-cart-items">';
 			foreach($cartitems as $cartitem => $values) {
 				$product_id = $values['data']->get_id();
 				$product =  wc_get_product( $product_id );
