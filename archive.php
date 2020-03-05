@@ -12,9 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 
 get_header(); ?>
-<div id="page" class="site">
-
-	<?php get_template_part( 'framework/views/template-parts/content', 'masthead' ); ?>
 	
 	<header class="page-header archive-header" style="background-image: url('<?php echo esc_attr(header_image()); ?>');">
         <div class="header-inner">
@@ -73,5 +70,4 @@ get_header(); ?>
 </div><!-- #page -->
 
 <?php
-get_template_part( 'framework/views/template-parts/content', 'footer' );
 get_footer();

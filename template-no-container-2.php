@@ -39,5 +39,4 @@ get_header(); ?>
 	</div><!-- #content --> 
 </div><!-- #page -->
 <?php
-get_template_part( 'framework/views/template-parts/content', 'footer' );
 get_footer();

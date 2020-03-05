@@ -15,6 +15,23 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 ?>
 
+<?php
+
+	$no_footer_template = array(
+		'template-blank-container-2.php', 
+		'template-blank-container-3.php',
+		'template-no-container-3.php',
+		'template-no-container-4.php'
+	);
+	$current_template = basename( get_page_template() ) ;
+
+	if ( !in_array($current_template, $no_footer_template) ) {
+
+		get_template_part( 'framework/views/template-parts/content', 'footer' );
+
+	}
+?>
+
 <?php if(get_theme_mod('flexia_nav_menu_search', true) == true): ?>
 	<div class="flexia-search-overlay">
 		<svg class="hidden">

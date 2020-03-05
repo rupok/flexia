@@ -23,10 +23,6 @@ $blog_desc 				= get_theme_mod('blog_desc', '');
 $flexia_blog_layout 	= get_theme_mod( 'flexia_blog_content_layout', 'flexia_blog_content_layout_standard' );
 ?>
 
-<div id="page" class="site">
-
-	<?php get_template_part( 'framework/views/template-parts/content', 'masthead' ); ?>
-
 	<header class="page-header blog-header" <?php if ( has_header_image() ) { ?> style="background-image: url('<?php echo( get_header_image() ); ?>'); <?php } ?>">
         <div class="header-inner">
             <div class="header-content">
@@ -140,5 +136,4 @@ $flexia_blog_layout 	= get_theme_mod( 'flexia_blog_content_layout', 'flexia_blog
 </div><!-- #page -->
 
 <?php
-get_template_part( 'framework/views/template-parts/content', 'footer' );
 get_footer();

@@ -13,9 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 get_header(); ?>
 
-<div id="page" class="site">
-<?php get_template_part( 'framework/views/template-parts/content', 'masthead' ); ?>
-
 	<div id="content" class="site-content">
 		<div class="flexia-wrapper flexia-container">
 			<div id="primary" class="content-area">
@@ -37,6 +34,4 @@ get_header(); ?>
 	</div><!-- #content -->
 </div><!-- #page -->
 <?php
-get_template_part( 'framework/views/template-parts/content', 'footer' );
 get_footer();
-
