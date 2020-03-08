@@ -630,6 +630,16 @@ function generateCSS() {
         });
     });
 
+    //Blog title font color
+    wp.customize("flexia_blog_title_font_color", function(value) {
+        value.bind(function(to) {
+            $(".blog-header .header-content > .page-title").css(
+                "color",
+                to
+            );
+        });
+    });
+
     // Blog description and font size
     wp.customize("blog_desc", function(value) {
         value.bind(function(to) {
@@ -643,6 +653,16 @@ function generateCSS() {
             $(".header-content .archive-description > p").css(
                 "font-size",
                 to + "px"
+            );
+        });
+    });
+
+    //Blog Description font color
+    wp.customize("flexia_blog_desc_font_color", function(value) {
+        value.bind(function(to) {
+            $(".header-content .blog-desc, .header-content .archive-description > p").css(
+                "color",
+                to
             );
         });
     });

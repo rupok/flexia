@@ -2285,6 +2285,7 @@ function flexia_customize_register($wp_customize)
         )
     );
 
+    //Flexia Blog Title Font Size
     $wp_customize->add_setting('flexia_blog_title_font_size', array(
         'default' => $defaults['flexia_blog_title_font_size'],
         'capability' => 'edit_theme_options',
@@ -2306,6 +2307,25 @@ function flexia_customize_register($wp_customize)
         ),
     )));
 
+    //Flexia Blog Title Font Color
+    $wp_customize->add_setting('flexia_blog_title_font_color', array(
+        'default' => $defaults['flexia_blog_title_font_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_blog_title_font_color',
+            array(
+                'label' => __('Blog Title Font Color', 'flexia'),
+                'section' => 'flexia_blog_header_settings',
+                'settings' => 'flexia_blog_title_font_color',
+            ))
+    );
+
+
     $wp_customize->add_setting('blog_desc', array(
         'default' => $defaults['blog_desc'],
         'transport' => 'postMessage',
@@ -2325,6 +2345,7 @@ function flexia_customize_register($wp_customize)
         )
     );
 
+    //Flexia Blog Description Font Size
     $wp_customize->add_setting('flexia_blog_desc_font_size', array(
         'default' => $defaults['flexia_blog_desc_font_size'],
         'capability' => 'edit_theme_options',
@@ -2345,6 +2366,24 @@ function flexia_customize_register($wp_customize)
             'suffix' => 'px', //optional suffix
         ),
     )));
+
+    //Flexia Blog Title Font Color
+    $wp_customize->add_setting('flexia_blog_desc_font_color', array(
+        'default' => $defaults['flexia_blog_desc_font_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_blog_desc_font_color',
+            array(
+                'label' => __('Blog Description Font Color', 'flexia'),
+                'section' => 'flexia_blog_header_settings',
+                'settings' => 'flexia_blog_desc_font_color',
+            ))
+    );
 
     $wp_customize->add_section('flexia_single_posts_settings', array(
         'title' => __('Single Posts Settings', 'flexia'),
