@@ -61,3 +61,30 @@
 .image-select:hover .go-pro {
     display: block;
 }
+
+.customize-control-flexia-radio-image .image label {
+    position: relative;
+}
+.customize-control-flexia-radio-image .image label .show_label {
+    position: absolute;
+    left: auto;
+    right: auto;
+    top: 100%;
+    width: 101%;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: rgba(238, 53, 96, .8);
+    font-weight: 700;
+    color: #fff;
+    padding: 10px 0;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.customize-control-flexia-radio-image .image label:hover .show_label {
+    visibility: visible;
+    opacity: 1;
+    top: 40%;
+}

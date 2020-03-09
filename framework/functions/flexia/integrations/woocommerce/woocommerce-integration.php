@@ -30,6 +30,29 @@ function flexia_setup_woocommerce() {
 
 }
 
+//Add Flexia Wrapper Classes
+function flexia_woo_wrapper_start() {
+	get_header(); ?>
+
+		<div id="content" class="site-content">
+			<div class="flexia-wrapper flexia-container max width">
+				<div id="primary" class="content-area">
+					<main id="main" class="site-main flexia-woocommerce-wrapper flexia-container">
+<?php } ?>
+
+<?php function flexia_woo_wrapper_end() { ?>
+					</main><!-- #main -->
+				</div><!-- #primary -->
+
+				<?php echo flexia_woocommerce_sidebar(); ?>
+
+			</div><!-- #flexia-wrapper -->
+		</div><!-- #content --> 
+	</div><!-- #page -->
+	<?php
+	get_footer();
+}
+
 //3 Column Per row in Shop Page
 add_filter('loop_shop_columns', 'loop_columns', 999);
 if (!function_exists('loop_columns')) {
@@ -62,29 +85,7 @@ function bbloomer_display_quantity_minus() {
    echo '<button type="button" class="minus" >-</button></div>';
 }
 
-
-function flexia_woo_wrapper_start() {
-	get_header(); ?>
-
-		<div id="content" class="site-content">
-			<div class="flexia-wrapper flexia-container max width">
-				<div id="primary" class="content-area">
-					<main id="main" class="site-main flexia-woocommerce-wrapper flexia-container">
-<?php } ?>
-
-<?php function flexia_woo_wrapper_end() { ?>
-					</main><!-- #main -->
-				</div><!-- #primary -->
-
-				<?php echo flexia_woocommerce_sidebar(); ?>
-
-			</div><!-- #flexia-wrapper -->
-		</div><!-- #content --> 
-	</div><!-- #page -->
-	<?php
-	get_footer();
-}
-
+//Menu Cart Item display
 function menu_cart_items_html() {
 	global $woocommerce;
 	$cartitems = $woocommerce->cart->get_cart();
@@ -121,7 +122,7 @@ function menu_cart_items_html() {
 // Add cart menu  to Navbar
 function add_cart_menu_to_navbar($items)
 {
-	$flexia_woo_cart_menu = get_theme_mod('flexia_woo_cart_menu', false);
+	$flexia_woo_cart_menu = flexia_get_option('flexia_woo_cart_menu');
 	
 	global $woocommerce;
 	$cartitems = $woocommerce->cart->get_cart();
@@ -194,15 +195,19 @@ function cart_items_html() {
 }
 
 function flexia_woocommerce_sidebar() {
-	$flexia_sidebar_id = get_theme_mod('flexia_woo_sidebar_default', 'woo-sidebar');
+	$flexia_sidebar_id = flexia_get_option('flexia_woo_sidebar_default');
 	$position_left = 'flexia-sidebar-left';
 	$position_right = 'flexia-sidebar-right';
 
-	if ( is_shop() && get_theme_mod('flexia_woo_sidebar_shop_page', true) ) {
+	if ( is_shop() && flexia_get_option('flexia_woo_sidebar_shop_page') ) {
 		return flexia_woocommerce_sidebar_content($flexia_sidebar_id, $position_left);
 	}
 
-	if ( is_product() && get_theme_mod('flexia_woo_sidebar_product_single', false) ) {
+	if ( is_product() && flexia_get_option('flexia_woo_sidebar_product_single') ) {
+		return flexia_woocommerce_sidebar_content($flexia_sidebar_id, $position_right);
+	}
+	
+	if ( is_product_category() && flexia_get_option('flexia_woo_sidebar_archive_page') ) {
 		return flexia_woocommerce_sidebar_content($flexia_sidebar_id, $position_right);
 	}
 }

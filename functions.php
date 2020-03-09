@@ -243,13 +243,13 @@ if (!function_exists('flexia_fonts_url')) {
     function flexia_fonts_url()
     {
         $fonts_url = '';
-        $content_font = get_theme_mod('flexia_body_font_family', '');
-        $content_font_variant = get_theme_mod('flexia_body_font_variants', '');
-        $content_font_subset = get_theme_mod('flexia_body_font_subsets', '');
+        $content_font = flexia_get_option('flexia_body_font_family');
+        $content_font_variant = flexia_get_option('flexia_body_font_variants');
+        $content_font_subset = flexia_get_option('flexia_body_font_subsets');
 
-        $header_font = get_theme_mod('flexia_heading_font_family', '');
-        $header_font_variant = get_theme_mod('flexia_heading_font_variants', '');
-        $header_font_subset = get_theme_mod('flexia_heading_font_subsets', '');
+        $header_font = flexia_get_option('flexia_heading_font_family');
+        $header_font_variant = flexia_get_option('flexia_heading_font_variants');
+        $header_font_subset = flexia_get_option('flexia_heading_font_subsets');
 
         if ('off' !== $content_font || 'off' !== $header_font) {
             $font_families = array();
@@ -270,7 +270,9 @@ if (!function_exists('flexia_fonts_url')) {
         }
 
         return esc_url_raw($fonts_url);
+        // echo esc_url_raw($fonts_url);die;
     }
+    add_action('init', 'flexia_fonts_url');
 }
 
 // Mute admin notice

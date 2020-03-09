@@ -124,32 +124,53 @@ function flexia_customize_register($wp_customize)
         ),
     )));
 
-    $wp_customize->add_setting(
-        'content_layout',
-        array(
-            'default' => $defaults['content_layout'],
-            'sanitize_callback' => 'flexia_sanitize_choices',
-        ));
+    //Default Page Layot Settings
+    $wp_customize->add_setting('content_layout', array(
+        'default' => $defaults['content_layout'],
+        'sanitize_callback' => 'flexia_sanitize_choices',
+    ));
 
     $wp_customize->add_control(
-        new WP_Customize_Control(
+		new Flexia_Radio_Image_Control(
             $wp_customize,
             'content_layout',
             array(
                 'label' => __('Content Layout', 'flexia'),
-                'section' => 'flexia_layout_settings',
-                'settings' => 'content_layout',
-                'description' => 'This settings will be reflected on blog page, single posts and archives. For pages, you can use page templates.',
-                'type' => 'radio',
-                'choices' => array(
-                    'content_layout1' => __('Sidebar | Content | Sidebar', 'flexia'),
-                    'content_layout2' => __('Sidebar | Content', 'flexia'),
-                    'content_layout3' => __('Content | Sidebar', 'flexia'),
-                    'content_layout4' => __('Content Only', 'flexia'),
+                'type'          => 'flexia-radio-image',
+                'settings'		=> 'content_layout',
+                'section'		=> 'flexia_layout_settings',
+                'choices'		=> apply_filters(
+                    'content_layout', 
+                    array(
+                        'content_layout1' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/content-layouts/content-sidebar-both.jpg',
+                            'label'   => 'Sidebar | Content | Sidebar',
+                        ),
+                        'content_layout2' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/content-layouts/content-sidebar-left.jpg',
+                            'label'   => 'Sidebar | Content',
+                        ),
+                        'content_layout3' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/content-layouts/content-sidebar-right.jpg',
+                            'label'   => 'Content | Sidebar',
+                        ),
+                        'content_layout4' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/content-layouts/content-no-sidebar.jpg',
+                            'label'   => 'No Sidebar',
+                        )
+                    )
                 ),
-            )
+            ) 
         )
     );
+    
+    $wp_customize->selective_refresh->add_partial( "content_layout_partial", [
+        'selector'            => "#content",
+        'settings'            => [
+            "content_layout",
+        ],
+        'container_inclusive' => true,
+    ] );
 
     //Left Sidebr Width Set
     $wp_customize->add_setting('flexia_sidebar_width_left', array(
@@ -2700,7 +2721,6 @@ function flexia_customize_register($wp_customize)
      */
     $wp_customize->add_setting('flexia_header_layouts', array(
         'default' => $defaults['flexia_header_layouts'],
-        'transport' => 'postMessage',
         'sanitize_callback' => 'flexia_sanitize_choices',
     ));
 
@@ -2728,16 +2748,16 @@ function flexia_customize_register($wp_customize)
                         '4' 	=> array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-04.png',
                         ),                        
-                        '5' 	=> array(
-                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-06.png',
-                            'pro'   => true,
-                            'url'   => 'https://flexia.pro/pricing/',
-                        ),
-                        '6' 	=> array(
-                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-07.png',
-                            'pro'   => true,
-                            'url'   => 'https://flexia.pro/pricing/',
-                        ),
+                        // '5' 	=> array(
+                        //     'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-06.png',
+                        //     'pro'   => true,
+                        //     'url'   => 'https://flexia.pro/pricing/',
+                        // ),
+                        // '6' 	=> array(
+                        //     'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-07.png',
+                        //     'pro'   => true,
+                        //     'url'   => 'https://flexia.pro/pricing/',
+                        // ),
                     )
                 ),
             ) 
@@ -4544,42 +4564,42 @@ function flexia_customize_register($wp_customize)
      * @flexia_woo_sidebar_cart_page
      * Parent: @woocommerce -> @flexia_woo_sidebar_section
      */
-    $wp_customize->add_setting('flexia_woo_sidebar_cart_page', array(
-        'default' => $defaults['flexia_woo_sidebar_cart_page'],
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'flexia_sanitize_checkbox',
-    ));
+    // $wp_customize->add_setting('flexia_woo_sidebar_cart_page', array(
+    //     'default' => $defaults['flexia_woo_sidebar_cart_page'],
+    //     'capability' => 'edit_theme_options',
+    //     'sanitize_callback' => 'flexia_sanitize_checkbox',
+    // ));
 
-    $wp_customize->add_control(
-        new Customizer_Toggle_Control(
-            $wp_customize, 
-            'flexia_woo_sidebar_cart_page', array(
-            'label' => esc_html__('Enable Sidebar in Cart Page?', 'flexia'),
-            'section' => 'flexia_woo_sidebar_section',
-            'settings' => 'flexia_woo_sidebar_cart_page',
-            'type' => 'light', // light, ios, flat
-    )));
+    // $wp_customize->add_control(
+    //     new Customizer_Toggle_Control(
+    //         $wp_customize, 
+    //         'flexia_woo_sidebar_cart_page', array(
+    //         'label' => esc_html__('Enable Sidebar in Cart Page?', 'flexia'),
+    //         'section' => 'flexia_woo_sidebar_section',
+    //         'settings' => 'flexia_woo_sidebar_cart_page',
+    //         'type' => 'light', // light, ios, flat
+    // )));
 
     /**
      * Enable Sidebar in Checkout Page
      * @flexia_woo_sidebar_checkout_page
      * Parent: @woocommerce -> @flexia_woo_sidebar_section
      */
-    $wp_customize->add_setting('flexia_woo_sidebar_checkout_page', array(
-        'default' => $defaults['flexia_woo_sidebar_checkout_page'],
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'flexia_sanitize_checkbox',
-    ));
+    // $wp_customize->add_setting('flexia_woo_sidebar_checkout_page', array(
+    //     'default' => $defaults['flexia_woo_sidebar_checkout_page'],
+    //     'capability' => 'edit_theme_options',
+    //     'sanitize_callback' => 'flexia_sanitize_checkbox',
+    // ));
 
-    $wp_customize->add_control(
-        new Customizer_Toggle_Control(
-            $wp_customize, 
-            'flexia_woo_sidebar_checkout_page', array(
-            'label' => esc_html__('Enable Sidebar in Checkout Page?', 'flexia'),
-            'section' => 'flexia_woo_sidebar_section',
-            'settings' => 'flexia_woo_sidebar_checkout_page',
-            'type' => 'light', // light, ios, flat
-    )));
+    // $wp_customize->add_control(
+    //     new Customizer_Toggle_Control(
+    //         $wp_customize, 
+    //         'flexia_woo_sidebar_checkout_page', array(
+    //         'label' => esc_html__('Enable Sidebar in Checkout Page?', 'flexia'),
+    //         'section' => 'flexia_woo_sidebar_section',
+    //         'settings' => 'flexia_woo_sidebar_checkout_page',
+    //         'type' => 'light', // light, ios, flat
+    // )));
 
     /**
      * Enable Sidebar in Product Arcive Page

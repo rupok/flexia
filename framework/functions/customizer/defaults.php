@@ -234,8 +234,8 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_woo_sidebar_default' => 'woo-sidebar',
             'flexia_woo_sidebar_shop_page' => true,
             'flexia_woo_sidebar_product_single' => false,
-            'flexia_woo_sidebar_cart_page' => false,
-            'flexia_woo_sidebar_checkout_page' => false,
+            // 'flexia_woo_sidebar_cart_page' => false,
+            // 'flexia_woo_sidebar_checkout_page' => false,
             'flexia_woo_sidebar_archive_page' => true,
 
         );

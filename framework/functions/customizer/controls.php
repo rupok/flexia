@@ -353,15 +353,25 @@ class Flexia_Radio_Image_Control extends WP_Customize_Control {
 		<div id="input_<?php echo $this->id; ?>" class="image">
 			<?php 
 			foreach ( $this->choices as $value => $label ) :
-				if(isset( $label['pro'] ) && $label['pro'] === true){ ?>
-				<label class="image-select" id="<?php echo $this->id . $value ?>">
-				<a target="_blank" href="<?php echo esc_url($label['url']) ?>"><img src="<?php echo esc_url( $label['image'] ) ?>" alt=""></a>
-				<span class="go-pro"><?php esc_html_e('Go Pro','flexia') ?></span>
-				</label>
-				<?php } else { ?>
+				if(isset( $label['pro'] ) && $label['pro'] === true) { 
+			?>
+					<label class="image-select" id="<?php echo $this->id . $value ?>">
+					<a target="_blank" href="<?php echo esc_url($label['url']) ?>">
+						<img src="<?php echo esc_url( $label['image'] ) ?>" alt="<?php echo esc_attr( $value ) ?>" title="<?php echo esc_attr( $value ) ?>">
+					</a>
+					<span class="go-pro"><?php esc_html_e('Go Pro','flexia') ?></span>
+					</label>
+			<?php 
+				} 
+				else { 
+			?>
 				<input class="image-select" type="radio" value="<?php echo esc_attr( $value ) ?>" id="<?php echo $this->id . $value; ?>" name="<?php echo esc_attr( $name ) ?>" <?php $this->link(); checked( $this->value(), $value ); ?>>
 					<label for="<?php echo $this->id . $value; ?>">
 						<img src="<?php echo esc_url( $label['image'] ) ?>" alt="<?php echo esc_attr( $value ) ?>" title="<?php echo esc_attr( $value ) ?>">
+						<?php
+						if(isset( $label['label'] ) && !empty($label['label']) ) { ?>
+							<span class="show_label"><?php esc_html_e($label['label'],'flexia') ?></span>
+						<?php } ?>
 					</label>
 				</input>
 			<?php } endforeach; ?>
