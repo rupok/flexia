@@ -270,7 +270,6 @@ if (!function_exists('flexia_fonts_url')) {
         }
 
         return esc_url_raw($fonts_url);
-        // echo esc_url_raw($fonts_url);die;
     }
     add_action('init', 'flexia_fonts_url');
 }

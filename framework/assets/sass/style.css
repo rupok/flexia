@@ -4352,7 +4352,7 @@ body.transparent .flexia-wrapper > .content-area {
   opacity: 0; }
 
 .scroll-down {
-  background: url("../../img/icons/icon-arrow-down.svg") no-repeat center center/100% auto;
+  background: url("../../assets/img/icons/icon-arrow-down.svg") no-repeat center center/100% auto;
   bottom: 40px;
   display: block;
   height: 44px;
@@ -4636,12 +4636,11 @@ body.archive .flexia-wrapper > .content-area {
 
 .entry-meta {
   color: #4d4d4d;
-  font-size: 13px; }
+  font-size: .9em;
+  margin: 0 0 20px; }
   .entry-meta a {
     color: #4d4d4d;
-    font-size: 13px; }
-    .entry-meta a:hover {
-      color: #F56A6A; }
+    font-size: .9em; }
 
 .page-content {
   margin: 0; }
@@ -4686,12 +4685,11 @@ body.archive .flexia-wrapper > .content-area {
 
 .entry-title {
   color: #202021;
-  font-size: 2.5em;
+  font-size: 1.5em;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.4;
   letter-spacing: 1;
-  margin: 10px auto;
-  padding-bottom: 50px;
+  margin: 0 0 15px;
   position: relative;
   text-align: left;
   text-transform: uppercase;
@@ -4705,14 +4703,6 @@ body.archive .flexia-wrapper > .content-area {
     transition: all 0.3s; }
     .entry-title a:hover {
       color: #50626c; }
-  .entry-title:after {
-    background-color: rgba(0, 0, 0, 0.15);
-    bottom: 20px;
-    content: "";
-    height: 3px;
-    left: 0;
-    position: absolute;
-    width: 80px; }
 
 .single-blog-header .entry-title {
   color: #fff;
@@ -4740,10 +4730,10 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 0;
   color: #3f3f46;
-  font-size: 12px;
+  font-size: .9em;
   letter-spacing: 2px;
   margin: 15px auto;
-  padding: 5px 50px;
+  padding: 15px 50px;
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
@@ -4764,7 +4754,7 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
     position: absolute;
     font-family: 'FontAwesome';
     font-weight: 400;
-    right: -3em;
+    right: 0;
     -webkit-transition: .4s;
     -moz-transition: .4s;
     transition: .4s;

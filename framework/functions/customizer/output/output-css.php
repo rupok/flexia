@@ -180,10 +180,6 @@ function flexia_generate_css()
 		text-transform: ' . $defaults['flexia_button_font_text_transform'] . ';
 	}
 	
-	input:focus, textarea:focus, select:focus {
-		border-color: ' . $defaults['flexia_primary_color'] . ';
-	}
-	
 	.flexia-container.width {
 		width: ' . $defaults['flexia_container_width'] . '%;
 	}
@@ -339,8 +335,13 @@ function flexia_generate_css()
 		background-color: ' . $defaults['flexia_primary_color'] . ';
 	}
 
-	.single-product.woocommerce .product .woocommerce-tabs ul.wc-tabs > li.active::before {
+	.single-product.woocommerce .product .woocommerce-tabs ul.wc-tabs > li.active::before,
+	input:focus, textarea:focus, select:focus {
 		border-color: ' . $defaults['flexia_primary_color'] . ';
+	}
+
+	.single-blog-meta .entry-meta i {
+		color: ' . $defaults['flexia_primary_color'] . ';
 	}
 	
 	@media all and (max-width: 959px) {

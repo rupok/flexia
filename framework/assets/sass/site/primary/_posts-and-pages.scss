@@ -322,13 +322,11 @@ body.archive {
 }
 .entry-meta {
   color: $color__text-main;
-  font-size: 13px;
+  font-size: .9em;
+  margin: 0 0 20px;
   a {
     color: $color__text-main;
-    font-size: 13px;
-    &:hover {
-      color: $color__link;
-    }
+    font-size: .9em;
   }
 }
 .page-content {
@@ -376,12 +374,12 @@ body.archive {
 }
 .entry-title {
   color: #202021;
-  font-size: 2.5em;
+  font-size: 1.5em;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.4;
   letter-spacing: 1;
-  margin: 10px auto;
-  padding-bottom: 50px;
+  margin: 0 0 15px;
+  // padding-bottom: 50px;
   position: relative;
   text-align: left;
   text-transform: uppercase;
@@ -398,13 +396,13 @@ body.archive {
     }
   }
   &:after {
-    background-color: rgba(0,0,0, .15);
-    bottom: 20px;
-    content: "";
-    height: 3px;
-    left: 0;
-    position: absolute;
-    width: 80px;
+    // background-color: rgba(0,0,0, .15);
+    // bottom: 20px;
+    // content: "";
+    // height: 3px;
+    // left: 0;
+    // position: absolute;
+    // width: 80px;
   }
 }
 .single-blog-header {
@@ -450,10 +448,10 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 0;
   color: #3f3f46;
-  font-size: 12px;
+  font-size: .9em;
   letter-spacing: 2px;
   margin: 15px auto;
-  padding: 5px 50px;
+  padding: 15px 50px;
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
@@ -476,7 +474,7 @@ body {
     position: absolute;
     font-family: 'FontAwesome';
     font-weight: 400;
-    right: -3em;
+    right: 0;
     -webkit-transition: .4s;
     -moz-transition: .4s;
     transition: .4s;
