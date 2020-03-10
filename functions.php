@@ -251,6 +251,18 @@ if (!function_exists('flexia_fonts_url')) {
         $header_font_variant = flexia_get_option('flexia_heading_font_variants');
         $header_font_subset = flexia_get_option('flexia_heading_font_subsets');
 
+        $paragraph_font = flexia_get_option('flexia_paragraph_font_family');
+        $paragraph_font_variant = flexia_get_option('flexia_paragraph_font_variants');
+        $paragraph_font_subset = flexia_get_option('flexia_paragraph_font_subsets');
+
+        $link_font = flexia_get_option('flexia_link_font_family');
+        $link_font_variant = flexia_get_option('flexia_link_font_variants');
+        $link_font_subset = flexia_get_option('flexia_link_font_subsets');
+
+        $button_font = flexia_get_option('flexia_button_font_family');
+        $button_font_variant = flexia_get_option('flexia_button_font_variants');
+        $button_font_subset = flexia_get_option('flexia_button_font_subsets');
+
         if ('off' !== $content_font || 'off' !== $header_font) {
             $font_families = array();
 
@@ -260,6 +272,18 @@ if (!function_exists('flexia_fonts_url')) {
 
             if ('off' !== $header_font) {
                 $font_families[] = $header_font . ':' . $header_font_variant . '&amp;' . $header_font_subset;
+            }
+
+            if ('off' !== $paragraph_font) {
+                $font_families[] = $paragraph_font . ':' . $paragraph_font_variant . '&amp;' . $paragraph_font_subset;
+            }
+
+            if ('off' !== $link_font) {
+                $font_families[] = $link_font . ':' . $link_font_variant . '&amp;' . $link_font_subset;
+            }
+
+            if ('off' !== $button_font) {
+                $font_families[] = $button_font . ':' . $button_font_variant . '&amp;' . $button_font_subset;
             }
 
             $query_args = array(
@@ -273,6 +297,7 @@ if (!function_exists('flexia_fonts_url')) {
     }
     add_action('init', 'flexia_fonts_url');
 }
+
 
 // Mute admin notice
 function flexia_nag_ignore()
