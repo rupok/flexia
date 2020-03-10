@@ -3174,63 +3174,65 @@ a {
     .flexia-menu .flexia-menu-indicator.flexia-menu-indicator-open:before {
       height: 0; }
 
-.main-navigation .nav-menu {
+.main-navigation .flexia-primary-menu {
   display: flex;
   left: 0;
-  right: 0; }
-  .main-navigation .nav-menu > li > a {
+  right: 0;
+  margin: 0;
+  padding: 0; }
+  .main-navigation .flexia-primary-menu > li > a {
     height: 100%; }
-  .main-navigation .nav-menu li {
+  .main-navigation .flexia-primary-menu li {
     display: flex;
     align-items: center; }
-    .main-navigation .nav-menu li > a {
+    .main-navigation .flexia-primary-menu li > a {
       display: flex;
       align-items: center;
       font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 1px;
       color: #4d4d4d; }
-    .main-navigation .nav-menu li:hover > a, .main-navigation .nav-menu li.current-menu-item > a, .main-navigation .nav-menu li.current-menu-ancestor > a {
+    .main-navigation .flexia-primary-menu li:hover > a, .main-navigation .flexia-primary-menu li.current-menu-item > a, .main-navigation .flexia-primary-menu li.current-menu-ancestor > a {
       color: #1b1f21;
       background-color: #ffffff; }
-    .main-navigation .nav-menu li ul {
+    .main-navigation .flexia-primary-menu li ul {
       background-color: #ffffff; }
-      .main-navigation .nav-menu li ul li > a {
+      .main-navigation .flexia-primary-menu li ul li > a {
         font-size: 13px;
         line-height: 21px;
         text-transform: none;
         color: #4d4d4d;
         padding: 12px 15px; }
-      .main-navigation .nav-menu li ul li:hover > a, .main-navigation .nav-menu li ul li.current-menu-item > a, .main-navigation .nav-menu li ul li.current-menu-ancestor > a {
+      .main-navigation .flexia-primary-menu li ul li:hover > a, .main-navigation .flexia-primary-menu li ul li.current-menu-item > a, .main-navigation .flexia-primary-menu li ul li.current-menu-ancestor > a {
         color: #1b1f21;
         background-color: #f4f4f4; }
   @media screen and (max-width: 991px) {
-    .main-navigation .nav-menu {
+    .main-navigation .flexia-primary-menu {
       display: none;
       background-color: #ffffff; }
-      .main-navigation .nav-menu li {
+      .main-navigation .flexia-primary-menu li {
         float: none;
         display: block; }
-        .main-navigation .nav-menu li > a {
+        .main-navigation .flexia-primary-menu li > a {
           display: block;
           line-height: 42px;
           color: #4d4d4d;
           background-color: #ffffff;
           border: 1px solid #dddddd; }
-        .main-navigation .nav-menu li:hover > a, .main-navigation .nav-menu li.current-menu-item > a, .main-navigation .nav-menu li.current-menu-ancestor > a {
+        .main-navigation .flexia-primary-menu li:hover > a, .main-navigation .flexia-primary-menu li.current-menu-item > a, .main-navigation .flexia-primary-menu li.current-menu-ancestor > a {
           color: #1b1f21;
           background-color: #ffffff; }
-        .main-navigation .nav-menu li ul {
+        .main-navigation .flexia-primary-menu li ul {
           background-color: #ffffff; }
-          .main-navigation .nav-menu li ul li > a {
+          .main-navigation .flexia-primary-menu li ul li > a {
             line-height: 18px;
             color: #4d4d4d;
             background-color: #ffffff;
             border: 1px solid #dddddd; }
-          .main-navigation .nav-menu li ul li:hover > a, .main-navigation .nav-menu li ul li.current-menu-item > a, .main-navigation .nav-menu li ul li.current-menu-ancestor > a {
+          .main-navigation .flexia-primary-menu li ul li:hover > a, .main-navigation .flexia-primary-menu li ul li.current-menu-item > a, .main-navigation .flexia-primary-menu li ul li.current-menu-ancestor > a {
             color: #1b1f21;
             background-color: #ffffff; }
-        .main-navigation .nav-menu li.flexia-header-cart {
+        .main-navigation .flexia-primary-menu li.flexia-header-cart {
           display: none; } }
 
 @media all and (min-width: 992px) {

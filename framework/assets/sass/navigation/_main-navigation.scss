@@ -1,8 +1,10 @@
 .main-navigation {
-    .nav-menu {
+    .flexia-primary-menu {
         display: flex;
         left: 0;
         right: 0;
+        margin: 0;
+        padding: 0;
 
         > li > a {
             height: 100%;
