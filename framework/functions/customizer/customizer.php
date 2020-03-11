@@ -188,7 +188,7 @@ function flexia_customize_register($wp_customize)
         'default' => '300',
         'label' => __('Left Sidebar Width (px)', 'flexia'),
         'input_attrs' => array(
-            'min' => 0,
+            'min' => 15,
             'max' => 100,
             'step' => 1,
             'suffix' => '%', //optional suffix
@@ -211,7 +211,7 @@ function flexia_customize_register($wp_customize)
         'default' => '300',
         'label' => __('Right Sidebar Width (px)', 'flexia'),
         'input_attrs' => array(
-            'min' => 0,
+            'min' => 15,
             'max' => 100,
             'step' => 1,
             'suffix' => '%', //optional suffix
@@ -1183,6 +1183,7 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_typography_body',
                 'settings' => 'flexia_body_font_size',
                 'label' => __('Body Font Size (px)', 'flexia'),
+                'description' => __('Other font size are relative to Body Font Size. ', 'flexia'),
                 'input_attrs' => array(
                     'min' => 1,
                     'max' => 100,

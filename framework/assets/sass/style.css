@@ -3999,7 +3999,7 @@ body.transparent .flexia-wrapper > .content-area {
   width: 100%;
   font-size: 12px;
   font-weight: 300;
-  border-collapse: separate;
+  border-collapse: collapse;
   border-spacing: 5px;
   margin-left: -2px; }
 
