@@ -20,6 +20,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <?php 
 if( class_exists('Flexia_Pro') ) {
 	$flexia_under_construction = get_option( 'flexia-under-construction' );

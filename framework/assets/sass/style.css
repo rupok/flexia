@@ -2232,7 +2232,8 @@ big {
 .site-branding .flexia-header-logo > img {
   width: auto;
   max-height: 100%;
-  max-width: 100%; }
+  max-width: 100%;
+  margin-right: 1em; }
 @media all and (max-width: 767px) {
   .site-branding .flexia-header-logo {
     padding: 0; }
