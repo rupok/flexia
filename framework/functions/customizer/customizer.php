@@ -1311,12 +1311,12 @@ function flexia_customize_register($wp_customize)
         array(
             'type' => 'select',
             'section' => 'flexia_typography_body', // Add a default or your own section
-            'label' => __( 'Text Transform' ),
+            'label' => __( 'Text Transform', 'flexia' ),
             'choices' => array(
-                'none' => __( 'None' ),
-                'capitalize' => __( 'Capitalize' ),
-                'uppercase' => __( 'Uppercase' ),
-                'lowercase' => __( 'Lowercase' ),
+                'none' => __( 'None', 'flexia' ),
+                'capitalize' => __( 'Capitalize', 'flexia' ),
+                'uppercase' => __( 'Uppercase', 'flexia' ),
+                'lowercase' => __( 'Lowercase', 'flexia' ),
             ),
         )
     );
@@ -1482,12 +1482,12 @@ function flexia_customize_register($wp_customize)
         array(
             'type' => 'select',
             'section' => 'flexia_typography_paragraph', // Add a default or your own section
-            'label' => __( 'Text Transform' ),
+            'label' => __( 'Text Transform', 'flexia' ),
             'choices' => array(
-                'none' => __( 'None' ),
-                'capitalize' => __( 'Capitalize' ),
-                'uppercase' => __( 'Uppercase' ),
-                'lowercase' => __( 'Lowercase' ),
+                'none' => __( 'None', 'flexia' ),
+                'capitalize' => __( 'Capitalize', 'flexia' ),
+                'uppercase' => __( 'Uppercase', 'flexia' ),
+                'lowercase' => __( 'Lowercase', 'flexia' ),
             ),
         )
     );
@@ -1774,12 +1774,12 @@ function flexia_customize_register($wp_customize)
         array(
             'type' => 'select',
             'section' => 'flexia_typography_heading', // Add a default or your own section
-            'label' => __( 'Text Transform' ),
+            'label' => __( 'Text Transform', 'flexia' ),
             'choices' => array(
-                'none' => __( 'None' ),
-                'capitalize' => __( 'Capitalize' ),
-                'uppercase' => __( 'Uppercase' ),
-                'lowercase' => __( 'Lowercase' ),
+                'none' => __( 'None', 'flexia' ),
+                'capitalize' => __( 'Capitalize', 'flexia' ),
+                'uppercase' => __( 'Uppercase', 'flexia' ),
+                'lowercase' => __( 'Lowercase', 'flexia' ),
             ),
         )
     );
@@ -1944,12 +1944,12 @@ function flexia_customize_register($wp_customize)
         array(
             'type' => 'select',
             'section' => 'flexia_typography_link', // Add a default or your own section
-            'label' => __( 'Text Transform' ),
+            'label' => __( 'Text Transform', 'flexia' ),
             'choices' => array(
-                'none' => __( 'None' ),
-                'capitalize' => __( 'Capitalize' ),
-                'uppercase' => __( 'Uppercase' ),
-                'lowercase' => __( 'Lowercase' ),
+                'none' => __( 'None', 'flexia' ),
+                'capitalize' => __( 'Capitalize', 'flexia' ),
+                'uppercase' => __( 'Uppercase', 'flexia' ),
+                'lowercase' => __( 'Lowercase', 'flexia' ),
             ),
         )
     );
@@ -2114,12 +2114,12 @@ function flexia_customize_register($wp_customize)
         array(
             'type' => 'select',
             'section' => 'flexia_typography_button', // Add a default or your own section
-            'label' => __( 'Text Transform' ),
+            'label' => __( 'Text Transform', 'flexia' ),
             'choices' => array(
-                'none' => __( 'None' ),
-                'capitalize' => __( 'Capitalize' ),
-                'uppercase' => __( 'Uppercase' ),
-                'lowercase' => __( 'Lowercase' ),
+                'none' => __( 'None', 'flexia' ),
+                'capitalize' => __( 'Capitalize', 'flexia' ),
+                'uppercase' => __( 'Uppercase', 'flexia' ),
+                'lowercase' => __( 'Lowercase', 'flexia' ),
             ),
         )
     );
@@ -2678,7 +2678,7 @@ function flexia_customize_register($wp_customize)
         array(
             'type' => 'select',
             'section' => 'flexia_header_layout', // Add a default or your own section
-            'label' => __( 'Header Layout Type' ),
+            'label' => __( 'Header Layout Type', 'flexia' ),
             'choices' => array(
                 'boxed' => __('Boxed/ Container', 'flexia'),
                 'full-width' => __('Full Width', 'flexia'),
@@ -3840,10 +3840,10 @@ function flexia_customize_register($wp_customize)
         array(
             'type' => 'select',
             'section' => 'flexia_header_social', // Add a default or your own section
-            'label' => __( 'Social Links Position' ),
+            'label' => __( 'Social Links Position', 'flexia' ),
             'choices' => array(
-                'topbar' => __( 'Top Bar' ),
-                'header_main' => __( 'Header Main' ),
+                'topbar' => __( 'Top Bar', 'flexia' ),
+                'header_main' => __( 'Header Main', 'flexia' ),
             ),
         )
     );
@@ -3864,11 +3864,11 @@ function flexia_customize_register($wp_customize)
         array(
             'type' => 'select',
             'section' => 'flexia_header_social', // Add a default or your own section
-            'label' => __( 'Social Links Alignment' ),
+            'label' => __( 'Social Links Alignment', 'flexia' ),
             'choices' => array(
-                'left' => __( 'Left' ),
-                'right' => __( 'Right' ),
-                'center' => __( 'Center' ),
+                'left' => __( 'Left', 'flexia' ),
+                'right' => __( 'Right', 'flexia' ),
+                'center' => __( 'Center', 'flexia' ),
             ),
         )
     );
@@ -3958,10 +3958,10 @@ function flexia_customize_register($wp_customize)
         array(
             'type' => 'select',
             'section' => 'flexia_header_social', // Add a default or your own section
-            'label' => __( 'Social Links Open in?' ),
+            'label' => __( 'Social Links Open in?', 'flexia' ),
             'choices' => array(
-                '_blank' => __( 'Open in New Tab' ),
-                'header_main' => __( 'Open in same Tab' ),
+                '_blank' => __( 'Open in New Tab', 'flexia' ),
+                'header_main' => __( 'Open in same Tab', 'flexia' ),
             ),
         )
     );

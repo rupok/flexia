@@ -48,7 +48,7 @@ $dropdown_animation = 'flexia-menu-dropdown-animate-' . get_theme_mod('flexia_to
 
 			if ($show) {
 				$output = '<div class="flexia-topbar_contact">' . $html . '</div>';
-				echo $output;
+				echo wp_kses_post($output);
 			}
 		?>
 		<!-- Header Top Contact End -->

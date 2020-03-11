@@ -28,7 +28,7 @@ $header_layouts = get_theme_mod('flexia_header_layouts', '1');
 
 ?>
 
-<header id="masthead" class="site-header flexia-header-<?php echo $header_layouts; ?>">
+<header id="masthead" class="site-header flexia-header-<?php echo esc_attr($header_layouts); ?>">
 
 	<?php if( $header_widget_area == true ) : 
 		get_template_part( 'framework/views/template-parts/content', 'header-widgets' ); 

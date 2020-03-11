@@ -22,7 +22,7 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 
 ?>
 
-<div class="flexia-navbar <?php echo $navbar_class;?>">
+<div class="flexia-navbar <?php echo esc_attr($navbar_class);?>">
 	<div class="flexia-navbar-container">
 		<div class="flexia-container flexia-navbar-inner <?php echo (get_theme_mod( 'flexia_header_layout_type' ) == "full-width") ? "full-width" : "width max" ?>">
 			
@@ -33,7 +33,9 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 
 					<?php if( $flexia_header_logo[0] !== NULL ) :  ?>
 
-				       	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="flexia-header-logo"><img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo $flexia_header_logo[0]; ?>"></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="flexia-header-logo">
+							<img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo esc_url($flexia_header_logo[0]); ?>">
+						</a>
 
 				    <?php else : ?>
 
@@ -46,7 +48,7 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 
 						$description = get_bloginfo( 'description', 'display' );
 						if ( $description || is_customize_preview() ) : ?>
-							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+							<p class="site-description"><?php echo wp_kses_post($description); /* WPCS: xss ok. */ ?></p>
 						<?php
 						endif; ?>
 					<?php endif; ?>

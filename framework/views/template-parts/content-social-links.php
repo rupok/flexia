@@ -43,7 +43,7 @@ array_push($media_links, array("icon" => "fa-rss", "title" => "RSS Feed", "link"
                     $html .= '</li>';
                 }
             }
-            echo $html;
+            echo wp_kses_post($html);
         }
     ?>
 </ul>

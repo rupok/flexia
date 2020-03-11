@@ -49,7 +49,7 @@ $flexia_blog_excerpt_count = get_theme_mod('flexia_blog_excerpt_count', '60');
        <?php
             $content = get_the_content();
             $trimmed_content = wp_trim_words( $content, $flexia_blog_excerpt_count);
-            echo $trimmed_content;
+            echo wp_kses_post($trimmed_content);
         ?>
         <p><a href="<?php the_permalink() ?>" class="more-link"> <?php echo esc_attr( sprintf( __( 'Continue Reading', 'flexia' )))  ?></a></p>
     </div>

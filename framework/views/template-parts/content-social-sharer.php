@@ -26,7 +26,7 @@ $pinterest_sharing = get_theme_mod('post_social_share_pinterest', true);
 
 <div class="flexia-social-share">
 	<div class="flexia-social-share-heading">
-        <h5><?php echo $social_sharing_text; ?></h5>
+        <h5><?php echo wp_kses_post($social_sharing_text); ?></h5>
 	</div>
 	<ul class="flexia-social-share-links">
 		<?php if( $facebook_sharing == true ) : ?>
@@ -46,7 +46,7 @@ $pinterest_sharing = get_theme_mod('post_social_share_pinterest', true);
 		<?php endif; ?>
 
 		<?php if( $pinterest_sharing == true ) : ?>
-		<li><a href="https://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $thumbnail; ?>&description=" target="_blank"><i class="fa fa-2x fa-fw fa-pinterest"></i></a></li>
+		<li><a href="https://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo esc_attr($thumbnail); ?>&description=" target="_blank"><i class="fa fa-2x fa-fw fa-pinterest"></i></a></li>
 		<?php endif; ?>
 	</ul>
 </div> <!-- Social Share end-->
