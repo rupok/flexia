@@ -1358,7 +1358,7 @@ function flexia_customize_register($wp_customize)
                 'input_attrs' => array(
                     'min' => 0,
                     'max' => 5,
-                    'step' => 0.001,
+                    'step' => 0.01,
                     'suffix' => 'em', //optional suffix
                 ),
             )
@@ -1807,7 +1807,7 @@ function flexia_customize_register($wp_customize)
         'default' => $defaults['flexia_link_font_size'],
         'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
-        'sanitize_callback' => 'flexia_sanitize_integer',
+        'sanitize_callback' => 'flexia_sanitize_float',
     ));
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
@@ -1820,7 +1820,7 @@ function flexia_customize_register($wp_customize)
                 'input_attrs' => array(
                     'min' => 0,
                     'max' => 5,
-                    'step' => 0.001,
+                    'step' => 0.1,
                     'suffix' => 'em', //optional suffix
                 ),
             )
@@ -1836,7 +1836,7 @@ function flexia_customize_register($wp_customize)
         'default' => $defaults['flexia_link_font_line_height'],
         'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
-        'sanitize_callback' => 'flexia_sanitize_integer',
+        'sanitize_callback' => 'flexia_sanitize_float',
     ));
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
@@ -1977,7 +1977,7 @@ function flexia_customize_register($wp_customize)
         'default' => $defaults['flexia_button_font_size'],
         'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
-        'sanitize_callback' => 'flexia_sanitize_integer',
+        'sanitize_callback' => 'flexia_sanitize_float',
     ));
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
@@ -2006,7 +2006,7 @@ function flexia_customize_register($wp_customize)
         'default' => $defaults['flexia_button_font_line_height'],
         'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
-        'sanitize_callback' => 'flexia_sanitize_integer',
+        'sanitize_callback' => 'flexia_sanitize_float',
     ));
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(

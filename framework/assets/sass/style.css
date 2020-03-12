@@ -3189,7 +3189,7 @@ a {
     .main-navigation .flexia-primary-menu li > a {
       display: flex;
       align-items: center;
-      font-size: 13px;
+      font-size: .9em;
       text-transform: uppercase;
       letter-spacing: 1px;
       color: #4d4d4d; }

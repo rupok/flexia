@@ -341,7 +341,7 @@ function generateCSS() {
     //Link Font Size
     wp.customize("flexia_link_font_size", function(value) {
         value.bind(function(to) {
-            $("a").css(
+            $("#content a").css(
                 "font-size",
                 to+"em"
             );

@@ -158,11 +158,14 @@ function flexia_generate_css()
 	h6 {
 		font-size: ' . $defaults['flexia_heading6_font_size'] . 'em;
 	}
+
+	#content a {
+		font-size: ' . $defaults['flexia_link_font_size'] . 'em;
+	}
 	
 	a {
 		color: ' . $defaults['flexia_link_color'] . ';
 		font-family: "' . $defaults['flexia_link_font_family'] . '", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-		font-size: ' . $defaults['flexia_link_font_size'] . 'em;
 		line-height: ' . $defaults['flexia_link_font_line_height'] . ';
 		text-transform: ' . $defaults['flexia_link_font_text_transform'] . ';
 	}
