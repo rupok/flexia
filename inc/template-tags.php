@@ -279,7 +279,34 @@ function flexia_get_google_fonts() {
  * Return All fonts
  */
 function flexia_google_fonts() {
-	return $fonts = flexia_get_google_fonts();
+	$fonts = flexia_get_google_fonts();
+	$processed_fonts = array();
+
+    foreach ($fonts as $font) {
+        $name = strtolower( str_replace(' ', '-', $font['family']));
+        $family = '' . $font['family'] . ', ' . $font['category'] . '';
+
+        $subsets_array = array();
+        foreach( $font['subsets'] as $subsets ) {
+            $subsets_array[$subsets] = $subsets;
+        }
+
+        $variants_array = array();
+        foreach( $font['variants'] as $variants ) {
+            $variants_array[$variants] = $variants;
+        }
+
+        $processed_fonts[$name] = array(
+            'id'       => $name,
+            'name'     => $font['family'],
+            'label'    => $family,
+            'family'   => $family,
+            'category' => $font['category'],
+            'subsets'  => $subsets_array,
+            'variants'  => $variants_array,
+        );
+    }
+	return $processed_fonts;
 }
 
 /**
