@@ -1203,7 +1203,7 @@ function flexia_customize_register($wp_customize)
         'default' => $defaults['flexia_body_font_line_height'],
         'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
-        'sanitize_callback' => 'flexia_sanitize_integer',
+        'sanitize_callback' => 'flexia_sanitize_float',
     ));
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
@@ -1374,7 +1374,7 @@ function flexia_customize_register($wp_customize)
         'default' => $defaults['flexia_paragraph_font_line_height'],
         'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
-        'sanitize_callback' => 'flexia_sanitize_integer',
+        'sanitize_callback' => 'flexia_sanitize_float',
     ));
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
@@ -1666,7 +1666,7 @@ function flexia_customize_register($wp_customize)
         'default' => $defaults['flexia_heading_font_line_height'],
         'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
-        'sanitize_callback' => 'flexia_sanitize_integer',
+        'sanitize_callback' => 'flexia_sanitize_float',
     ));
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
@@ -2824,20 +2824,20 @@ function flexia_customize_register($wp_customize)
      * ......................................................
      * Header Panel: Add Section - Logo
      * @flexia_header_logo
-     * Parent: @flexia_header_panel
+     * Parent: @flexia_general_settings
      */    
-    $wp_customize->add_section('flexia_header_logo', array(
-        'title' => __('Logo', 'flexia'),
-        'priority' => 10,
-    ));
+    // $wp_customize->add_section('flexia_header_logo', array(
+    //     'title' => __('Logo', 'flexia'),
+    //     'priority' => 10,
+    // ));
 
     /**
      * Header Logo Section: Text Logo Color
      * @header_textcolor
-     * Parent: @flexia_header_panel -> flexia_header_logo
+     * Parent: @flexia_general_settings -> title_tagline
      */
     $wp_customize->get_control('header_textcolor')->default = ($defaults['flexia_primary_color']);
-    $wp_customize->get_control('header_textcolor')->section = ('flexia_header_logo');
+    $wp_customize->get_control('header_textcolor')->section = ('title_tagline');
     $wp_customize->get_control('header_textcolor')->label = __('Logo Text Color (if no logo image)', 'flexia');
     $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
     $wp_customize->get_setting('header_textcolor')->priority = '5';
@@ -2845,7 +2845,7 @@ function flexia_customize_register($wp_customize)
     /**
      * Header Logo Section: Primary Logo Label
      * @flexia_primary_logo_label
-     * Parent: @flexia_header_panel -> flexia_header_logo
+     * Parent: @flexia_general_settings -> title_tagline
      */
     $wp_customize->add_setting('flexia_primary_logo_label', array(
         'default' => $defaults['flexia_primary_logo_label'],
@@ -2856,22 +2856,22 @@ function flexia_customize_register($wp_customize)
         'priority' => 10,
         'label' => __('Primary Logo', 'flexia'),
         'settings' => 'flexia_primary_logo_label',
-        'section' => 'flexia_header_logo',
+        'section' => 'title_tagline',
     )));
 
     /**
      * Header Logo Section: Default Logo
      * @custom_logo
-     * Parent: @flexia_header_panel -> flexia_header_logo
+     * Parent: @flexia_general_settings -> title_tagline
      */
-    $wp_customize->get_control( 'custom_logo' )->section = 'flexia_header_logo';
+    $wp_customize->get_control( 'custom_logo' )->section = 'title_tagline';
     $wp_customize->get_control( 'custom_logo' )->priority = '15';
     $wp_customize->get_control( 'custom_logo' )->label = 'Upload Primary Logo';
 
     /**
      * Header Logo Section: Default Logo Width
      * @flexia_header_logo_height
-     * Parent: @flexia_header_panel -> flexia_header_logo
+     * Parent: @flexia_general_settings -> title_tagline
      */
     $wp_customize->add_setting('flexia_header_logo_height', array(
         'default' => $defaults['flexia_header_logo_height'],
@@ -2885,7 +2885,7 @@ function flexia_customize_register($wp_customize)
             'flexia_header_logo_height', array(
                 'priority' => 20,
                 'type' => 'range-value',
-                'section' => 'flexia_header_logo',
+                'section' => 'title_tagline',
                 'settings' => 'flexia_header_logo_height',
                 'label' => __('Logo Height (px)', 'flexia'),
                 'input_attrs' => array(
@@ -2901,7 +2901,7 @@ function flexia_customize_register($wp_customize)
     /**
      * Header Logo Section: Sticky Logo Label
      * @flexia_sticky_logo_label
-     * Parent: @flexia_header_panel -> flexia_header_logo
+     * Parent: @flexia_general_settings -> title_tagline
      */
     $wp_customize->add_setting('flexia_sticky_logo_label', array(
         'default' => $defaults['flexia_sticky_logo_label'],
@@ -2912,13 +2912,13 @@ function flexia_customize_register($wp_customize)
         'label' => __('Sticky Logo', 'flexia'),
         'priority' => 25,
         'settings' => 'flexia_sticky_logo_label',
-        'section' => 'flexia_header_logo',
+        'section' => 'title_tagline',
     )));
 
     /**
      * Header Logo Section: Sticky Logo
      * @flexia_custom_sticky_logo
-     * Parent: @flexia_header_panel -> flexia_header_logo
+     * Parent: @flexia_general_settings -> title_tagline
      */
 
     $wp_customize->add_setting('flexia_custom_sticky_logo', array(
@@ -2932,7 +2932,7 @@ function flexia_customize_register($wp_customize)
             array(
                 'label'      => __( 'Upload Sticky Logo', 'flexia' ),
                 'priority' => 30,
-                'section'    => 'flexia_header_logo',
+                'section'    => 'title_tagline',
                 'settings'   => 'flexia_custom_sticky_logo',
                 'context'    => 'flexia_flexia_custom_sticky_logo'
             )
@@ -2942,7 +2942,7 @@ function flexia_customize_register($wp_customize)
     /**
      * Header Logo Section: Sticky Logo Width
      * @flexia_sticky_header_logo_height
-     * Parent: @flexia_header_panel -> flexia_header_logo
+     * Parent: @flexia_general_settings -> title_tagline
      */
     $wp_customize->add_setting('flexia_sticky_header_logo_height', array(
         'default' => $defaults['flexia_sticky_header_logo_height'],
@@ -2956,7 +2956,7 @@ function flexia_customize_register($wp_customize)
             'flexia_sticky_header_logo_height', array(
                 'priority' => 40,
                 'type' => 'range-value',
-                'section' => 'flexia_header_logo',
+                'section' => 'title_tagline',
                 'settings' => 'flexia_sticky_header_logo_height',
                 'label' => __('Sticky Header Logo Height (px)', 'flexia'),
                 'input_attrs' => array(

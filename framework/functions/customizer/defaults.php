@@ -171,7 +171,7 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_footer_content_color' => '#9a9a9a',
             'flexia_footer_link_color' => '#ffffff',
             'flexia_footer_link_hover_color' => '#E65A50',
-            'content_layout' => 'content_layout1',
+            'content_layout' => 'content_layout3',
             'typography_settings_title_body' => '',
             'typography_settings_title_heading' => '',
             'post_navigation' => false,
