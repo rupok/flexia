@@ -4672,7 +4672,7 @@ function flexia_customize_register($wp_customize)
     $wp_customize->get_section('header_image')->panel = 'flexia_blog_settings';
     $wp_customize->get_section('header_image')->priority = '1';
     $wp_customize->get_section('flexia_header_layout')->panel = 'flexia_header_panel';
-    $wp_customize->get_section('flexia_header_logo')->panel = 'flexia_header_panel';
+    // $wp_customize->get_section('flexia_header_logo')->panel = 'flexia_header_panel';
     $wp_customize->get_section('flexia_header_navbar')->panel = 'flexia_header_panel';
     $wp_customize->get_section('flexia_header_top')->panel = 'flexia_header_panel';
     $wp_customize->get_section('flexia_header_social')->panel = 'flexia_header_panel';

@@ -79,7 +79,7 @@ if (!function_exists('flexia_setup')) {
         {
             $flexia_nav_menu_search = get_theme_mod('flexia_nav_menu_search', true);
 
-            if ($flexia_nav_menu_search == true ) {
+            if ($flexia_nav_menu_search == true) {
                 $items .= '<li class="menu-item navbar-search-menu"> <a id="btn-search" href="javascript:void(0);">';
                 $items .= '<i class="fa fa-search" aria-hidden="true"></i></a></li>';
             }
@@ -91,14 +91,15 @@ if (!function_exists('flexia_setup')) {
         /**
          * Add Login Button header navigation
          */
-        function flexia_nav_logo_button($items) {
+        function flexia_nav_logo_button($items)
+        {
             $flexia_nav_login = get_theme_mod('flexia_enable_login_button', false);
             $flexia_nav_login_url = get_theme_mod('flexia_custom_login_url');
-            $login_url = ( empty($flexia_nav_login_url) ? esc_url( wp_login_url( get_permalink() ) ) : $flexia_nav_login_url );
+            $login_url = (empty($flexia_nav_login_url) ? esc_url(wp_login_url(get_permalink())) : $flexia_nav_login_url);
 
-            if ($flexia_nav_login == true ) {
+            if ($flexia_nav_login == true) {
                 $items .= '<li class="menu-item navbar-login-menu">';
-                $items .= '<a href="'.$login_url.'">';
+                $items .= '<a href="' . $login_url . '">';
                 $items .= '<button><i class="fa fa-user" aria-hidden="true"></i> <span class="button-text">Sign in</span></button>';
                 $items .= '</a></li>';
             }
@@ -148,7 +149,6 @@ if (!function_exists('flexia_setup')) {
             'flex-width' => true,
             'flex-height' => true,
         ));
-
     }
 }
 add_action('after_setup_theme', 'flexia_setup');
@@ -226,7 +226,7 @@ require get_template_directory() . '/framework/functions/customizer/customizer.p
 // Admin functionalities
 if (is_admin()) {
     require_once get_template_directory() . '/admin/admin.php';
-    
+
     new Flexia_Admin();
 }
 
@@ -309,13 +309,14 @@ function flexia_nag_ignore()
 add_action('admin_init', 'flexia_nag_ignore');
 
 // Flexia admin notices
-function flexia_admin_notices() {
+function flexia_admin_notices()
+{
     if (!class_exists('Flexia_Core')) {
         if (current_user_can('install_plugins')) {
             $flexia_admin_notice_text = __('Thanks for using <strong>Flexia!</strong> We have added lots of cool features through <strong>Flexia Core</strong> and we recommend to keep the plugin active for maximum features.<a href="%1$s" style="text-decoration: none;"><span class="dashicons dashicons-admin-plugins" style="margin-top: -1px;margin-left: 10px;"></span> Install Plugin</a><a href="%2$s" style="text-decoration: none; margin-left: 10px;"><span class="dashicons dashicons-dismiss"></span> Dismiss</a>', 'flexia');
-            
+
             //Create Dismiss URL
-            $dismiss_notice_url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+            $dismiss_notice_url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             $query = parse_url($dismiss_notice_url, PHP_URL_QUERY);
             if ($query) {
                 $dismiss_notice_url .= '&flexia_nag_ignore=0';
@@ -325,7 +326,7 @@ function flexia_admin_notices() {
 
             //Create Install URL
             $pathpluginurl = WP_PLUGIN_DIR . '/flexia-core/flexia-core.php';
-            if (!file_exists( $pathpluginurl )) {
+            if (!file_exists($pathpluginurl)) {
                 $action = 'install-plugin';
                 $slug = 'flexia-core';
                 $install_url = wp_nonce_url(
@@ -334,22 +335,21 @@ function flexia_admin_notices() {
                             'action' => $action,
                             'plugin' => $slug
                         ),
-                        admin_url( 'update.php' )
+                        admin_url('update.php')
                     ),
-                    $action.'_'.$slug
+                    $action . '_' . $slug
                 );
                 if (!get_user_meta(get_current_user_id(), 'flexia_ignore_notice006', true)) {
-                    if( $GLOBALS['pagenow'] == "update.php" && isset($_GET['plugin']) && $_GET['plugin'] == 'flexia-core') {
+                    if ($GLOBALS['pagenow'] == "update.php" && isset($_GET['plugin']) && $_GET['plugin'] == 'flexia-core') {
                         //No message to show
-                    }
-                    else {
+                    } else {
                         echo '<div class="flexia-admin-notice updated"><p>'
-                        . sprintf(
-                            $flexia_admin_notice_text,
-                            $install_url,
-                            $dismiss_notice_url
-                        ) .
-                        '</p></div>';
+                            . sprintf(
+                                $flexia_admin_notice_text,
+                                $install_url,
+                                $dismiss_notice_url
+                            ) .
+                            '</p></div>';
                     }
                 }
             }
