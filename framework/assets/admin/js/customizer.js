@@ -333,6 +333,7 @@ function generateCSS() {
         value.bind(function(to) {
             $("h1, h2, h3, h4, h5, h6").css(
                 "font-family",
+                "font-family",
                 '"'+to+'+'+'-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;'
             );
         });
@@ -539,9 +540,7 @@ function generateCSS() {
 
     wp.customize("flexia_post_meta_bg_color", function(value) {
         value.bind(function(to) {
-            $(
-                ".single-post .entry-header.single-blog-meta.single-blog-meta-large"
-            ).css("background-color", to);
+            $(".single-post .entry-header.single-blog-meta.single-post-meta-large").css("background-color", to);
         });
     });
 
@@ -858,49 +857,49 @@ function generateCSS() {
     // Footer Area
     wp.customize("flexia_footer_widget_area_bg_color", function(value) {
         value.bind(function(to) {
-            generateCSS();
+            $(".flexia-footer-widget-area").css("background-color", to );
         });
     });
     
     wp.customize("flexia_footer_widget_area_content_color", function(value) {
         value.bind(function(to) {
-            generateCSS();
+            $(".flexia-colophon-inner .widget").css("color", to );
         });
     });
     
     wp.customize("flexia_footer_widget_area_link_color", function(value) {
         value.bind(function(to) {
-            generateCSS();
+            $(".flexia-colophon-inner .widget a").css("color", to );
         });
     });
     
     wp.customize("flexia_footer_widget_area_link_hover_color", function(value) {
         value.bind(function(to) {
-            generateCSS();
+            $(".flexia-colophon-inner .widget a:hover").css("color", to );
         });
     });
 
     wp.customize("flexia_footer_bg_color", function(value) {
         value.bind(function(to) {
-            generateCSS();
+            $(".flexia-site-footer").css("background-color", to );
         });
     });
 
     wp.customize("flexia_footer_content_color", function(value) {
         value.bind(function(to) {
-            generateCSS();
+            $(".flexia-site-footer .site-info").css("color", to );
         });
     });
 
     wp.customize("flexia_footer_link_color", function(value) {
         value.bind(function(to) {
-            generateCSS();
+            $(".flexia-site-footer .site-info a, .flexia-footer-menu li a").css("color", to );
         });
     });
 
     wp.customize("flexia_footer_link_hover_color", function(value) {
         value.bind(function(to) {
-            generateCSS();
+            $(".flexia-site-footer .site-info a:hover, .flexia-footer-menu li a:hover").css("color", to );
         });
     });
 })(jQuery);

@@ -4465,7 +4465,7 @@ function flexia_customize_register($wp_customize)
     );
 
     $wp_customize->add_setting('flexia_footer_content', array(
-        'default' => __('Copyright 2017 | Flexia by Codetic', 'flexia'),
+        'default' => __('Copyright '.date("Y").' | Flexia by Codetic', 'flexia'),
         'sanitize_callback' => 'wp_kses_post',
     ));
 

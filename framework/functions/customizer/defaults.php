@@ -183,7 +183,7 @@ if (!function_exists('flexia_get_option_defaults')) {
             'blog_logo' => '',
             'blog_title' => '',
             'blog_desc' => '',
-            'flexia_blog_content_display' => 'flexia_blog_content_display_full',
+            'flexia_blog_content_display' => 'flexia_blog_content_display_excerpt',
             'flexia_single_posts_layout' => 'flexia_single_posts_layout_large',
             'single_post_settings_title_heading' => '',
             'flexia_single_posts_settings' => '',

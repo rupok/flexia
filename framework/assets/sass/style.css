@@ -4076,7 +4076,10 @@ body.transparent .flexia-wrapper > .content-area {
   padding: 0 20px; }
 
 .widget .search-form .search-submit {
-  max-width: 60px; }
+  max-width: 60px;
+  margin-bottom: 1em;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0; }
 
 .search-field, .search-field:focus {
   background-color: #f1f1f1;

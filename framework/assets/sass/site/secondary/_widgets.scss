@@ -281,6 +281,9 @@
 
 .widget .search-form .search-submit {
   max-width: 60px;
+  margin-bottom: 1em;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .search-field, .search-field:focus {

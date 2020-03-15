@@ -28,7 +28,9 @@ if (!defined('ABSPATH')) {
 						'depth' => 1,
 					));
 				else:
-					printf('<ul class="flexia-footer-menu"><li><a href="%s">%s</a></li></ul>', esc_url(admin_url('nav-menus.php')), esc_html__('Assign Footer Menu', 'flexia'));
+					if( is_user_logged_in() && (current_user_can('editor') || current_user_can('administrator')) ) {
+						printf('<ul class="flexia-footer-menu"><li><a href="%s">%s</a></li></ul>', esc_url(admin_url('nav-menus.php')), esc_html__('Assign Footer Menu', 'flexia'));
+					}
 				endif;
 				?>
 			</nav><!-- #site-navigation -->
