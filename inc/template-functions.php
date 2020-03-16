@@ -468,3 +468,46 @@ function flexia_post_navigation() {
 	}
 
 }
+
+/**
+ * Return Flexia Logo
+ *
+ * @since  v1.2.0
+*/
+function flexia_main_logo() {
+    $html = "";
+	ob_start();
+	$flexia_custom_logo_id = get_theme_mod( 'custom_logo' );
+    $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'full' );
+    if( $flexia_header_logo[0] !== NULL ) {
+        $html .= '<a href=" '. esc_url( home_url( '/' ) ) . '" rel="home" class="flexia-header-logo">';
+		$html .= '<img alt="' . esc_html(bloginfo('name')) . '" src="' . esc_url($flexia_header_logo[0]) .'">';
+		$html .= '</a>';
+
+		if ( flexia_get_option( 'flexia_navbar_position' ) == 'flexia-navbar-fixed-top' || flexia_get_option( 'flexia_navbar_position' ) == 'flexia-navbar-transparent-sticky-top') {
+			$flexia_sticky_logo = flexia_get_option( 'flexia_custom_sticky_logo' );
+			if (empty($flexia_sticky_logo)) {
+				$flexia_sticky_logo = $flexia_header_logo[0];
+			}
+			$html .= '<a href=" '. esc_url( home_url( '/' ) ) . '" rel="home" class="flexia-header-sticky-logo">';
+			$html .= '<img alt="' . esc_html(bloginfo('name')) . '" src="' . esc_url($flexia_sticky_logo) .'">';
+			$html .= '</a>';
+		}
+	}
+	else {
+		if ( is_front_page() && is_home() ) {
+			$html .= '<h1 class="site-title"><a href="'. esc_url( home_url( '/' ) ) .'" rel="home">'. get_bloginfo( 'name' ).'</a></h1>';
+		}
+			
+		else {
+			$html .= '<p class="site-title"><a href="' . esc_url( home_url( '/' ) ) .'" rel="home">'. get_bloginfo( 'name' ).'</a></p>';
+		}
+		$description = get_bloginfo( 'description', 'display' );
+		if ( $description || is_customize_preview() ) {
+			$html .= '<p class="site-description">'. wp_kses_post($description) .'</p>';
+		}
+	}
+
+	ob_get_clean();
+	return $html;
+}

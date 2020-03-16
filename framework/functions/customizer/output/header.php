@@ -43,6 +43,3 @@ function flexia_customize_partial_blogname() {
 function flexia_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
-
-
-?>

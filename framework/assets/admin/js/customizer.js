@@ -69,6 +69,16 @@ function generateCSS() {
         });
     });
 
+    // Header Logo Text Colors
+    wp.customize("header_textcolor", function(value) {
+        value.bind(function(to) {
+            $(".site-title a, .site-description").css(
+                "color",
+                to
+            );
+        });
+    });
+
     
     /**
      * Defeault Colors from Global Settings

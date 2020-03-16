@@ -2923,7 +2923,6 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_setting('flexia_custom_sticky_logo', array(
         'default' => $defaults['flexia_custom_sticky_logo'],
-        'sanitize_callback' => 'flexia_sanitize_choices',
     ));
     $wp_customize->add_control(
         new WP_Customize_Image_Control(

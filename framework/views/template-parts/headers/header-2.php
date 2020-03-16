@@ -17,8 +17,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 $navbar_class = get_theme_mod('flexia_navbar_position', 'flexia-navbar-static-top');
 $dropdown_animation = 'flexia-menu-dropdown-animate-' . get_theme_mod('flexia_main_nav_menu_dropdown_animation', 'to-top');
 $flexia_logobar_position = get_theme_mod('flexia_logobar_position', 'flexia-logobar-inline');
-$flexia_custom_logo_id = get_theme_mod( 'custom_logo' );
-$flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'full' );
 
 ?>
 
@@ -31,27 +29,7 @@ $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'ful
 				<div class="flexia-logobar-inline">
 					<div class="site-branding">
 
-						<?php if( $flexia_header_logo[0] !== NULL ) :  ?>
-
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="flexia-header-logo">
-								<img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo esc_url($flexia_header_logo[0]); ?>">
-							</a>
-
-						<?php else : ?>
-
-							<?php if ( is_front_page() && is_home() ) : ?>
-								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<?php else : ?>
-								<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-							<?php
-							endif;
-
-							$description = get_bloginfo( 'description', 'display' );
-							if ( $description || is_customize_preview() ) : ?>
-								<p class="site-description"><?php echo wp_kses_post($description); /* WPCS: xss ok. */ ?></p>
-							<?php
-							endif; ?>
-						<?php endif; ?>
+						<?php echo flexia_main_logo(); ?>
 
 					</div><!-- .site-branding -->
 				</div>

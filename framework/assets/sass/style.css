@@ -2240,6 +2240,19 @@ big {
     .site-branding .flexia-header-logo > img {
       max-height: 80px;
       width: auto; } }
+.site-branding .flexia-header-sticky-logo {
+  display: none; }
+  .site-branding .flexia-header-sticky-logo > img {
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+    margin-right: 1em; }
+  @media all and (max-width: 767px) {
+    .site-branding .flexia-header-sticky-logo {
+      padding: 0; }
+      .site-branding .flexia-header-sticky-logo > img {
+        max-height: 60px;
+        width: auto; } }
 
 .site-description {
   font-size: 1em;
@@ -2268,6 +2281,10 @@ big {
   z-index: 99;
   animation-duration: 0.5s;
   animation-name: slideInDown; }
+  .flexia-navbar.flexia-sticky-navbar .flexia-header-logo {
+    display: none; }
+  .flexia-navbar.flexia-sticky-navbar .flexia-header-sticky-logo {
+    display: block; }
 
 .flexia-navbar.flexia-navbar-transparent-top {
   background-color: transparent;

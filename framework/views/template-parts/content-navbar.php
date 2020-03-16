@@ -17,8 +17,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 $navbar_class = get_theme_mod('flexia_navbar_position', 'flexia-navbar-static-top');
 $dropdown_animation = 'flexia-menu-dropdown-animate-' . get_theme_mod('flexia_main_nav_menu_dropdown_animation', 'to-top');
 $flexia_logobar_position = get_theme_mod('flexia_logobar_position', 'flexia-logobar-inline');
-$flexia_custom_logo_id = get_theme_mod( 'custom_logo' );
-$flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'full' );
 
 ?>
 

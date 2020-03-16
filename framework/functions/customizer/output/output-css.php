@@ -226,6 +226,10 @@ function flexia_generate_css()
 	.flexia-header-logo {
 		height: ' . $defaults['flexia_header_logo_height'] . 'px;
 	}
+
+	.flexia-header-sticky-logo {
+		height: ' . $defaults['flexia_sticky_header_logo_height'] . 'px;
+	}
 	
 	.flexia-sticky-navbar .flexia-header-logo {
 		height: ' . $defaults['flexia_sticky_header_logo_height'] . 'px;
