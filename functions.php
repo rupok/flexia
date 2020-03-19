@@ -80,8 +80,8 @@ if (!function_exists('flexia_setup')) {
             $flexia_nav_menu_search = get_theme_mod('flexia_nav_menu_search', true);
 
             if ($flexia_nav_menu_search == true) {
-                $items .= '<li class="menu-item navbar-search-menu"> <a id="btn-search" href="javascript:void(0);">';
-                $items .= '<i class="fa fa-search" aria-hidden="true"></i></a></li>';
+                $items .= '<li class="menu-item navbar-search-menu"> <span id="btn-search">';
+                $items .= '<i class="fa fa-search" aria-hidden="true"></i></span></li>';
             }
             return $items;
         }

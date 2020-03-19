@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 
 
-$content_layout = get_theme_mod('content_layout', 'content_layout1');
+$content_layout = flexia_get_option('content_layout');
 
 
 ?>

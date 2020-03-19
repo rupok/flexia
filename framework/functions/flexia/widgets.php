@@ -92,7 +92,7 @@ function flexia_pre_set_widget($sidebar, $name, $args = array())
 
 function flexia_setup_woo_sidebar()
 {
-	if ( is_dynamic_sidebar('woo-sidebar') && is_plugin_active('woocommerce/woocommerce.php') ) {
+	if ( is_dynamic_sidebar('woo-sidebar') ) {
 		$content = wp_get_sidebars_widgets();
 		if (empty($content['woo-sidebar'])) {
 			flexia_pre_set_widget(

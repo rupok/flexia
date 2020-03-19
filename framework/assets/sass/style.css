@@ -3206,7 +3206,7 @@ a {
     .main-navigation .flexia-primary-menu li > a {
       display: flex;
       align-items: center;
-      font-size: .9em;
+      font-size: 0.9em;
       text-transform: uppercase;
       letter-spacing: 1px;
       color: #4d4d4d; }
@@ -3283,7 +3283,11 @@ a {
     visibility: visible;
     opacity: 1; }
 
-  .flexia-header-4 .main-navigation .nav-menu > li.menu-item-has-children > a:after {
+  .flexia-header-4
+  .main-navigation
+  .nav-menu
+  > li.menu-item-has-children
+  > a:after {
     bottom: 30%; }
 
   .flexia-header-4 .main-navigation .nav-menu > li > a:after {
@@ -3311,8 +3315,17 @@ a {
     .flexia-menu.header-icons ul li a {
       display: flex;
       align-self: center;
-      font-size: .9em;
+      font-size: 0.9em;
       text-transform: uppercase; }
+    .flexia-menu.header-icons ul li #btn-search {
+      display: flex;
+      align-self: center;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      padding: 0 15px;
+      margin: 0; }
+      .flexia-menu.header-icons ul li #btn-search:hover {
+        cursor: pointer; }
   @media all and (max-width: 991px) {
     .flexia-menu.header-icons ul {
       position: relative;
@@ -3349,7 +3362,7 @@ a {
     .flexia-menu.header-icons .flexia-header-cart a.cart-contents .flexia-header-cart-icon {
       margin-right: 5px; }
     .flexia-menu.header-icons .flexia-header-cart a.cart-contents .count {
-      font-size: .8em;
+      font-size: 0.8em;
       margin-top: -15px; }
   .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items {
     padding: 1em !important;
@@ -3363,7 +3376,7 @@ a {
       padding-bottom: 10px;
       border-bottom: 1px solid #eae9e9;
       margin-bottom: 10px;
-      font-size: .9em; }
+      font-size: 0.9em; }
       .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items li.flexia-cart-item:last-child {
         padding-bottom: 0px;
         border-bottom: 0; }
@@ -3382,7 +3395,7 @@ a {
       display: flex !important;
       justify-content: end;
       align-items: baseline;
-      font-size: .9em;
+      font-size: 0.9em;
       color: #707070;
       text-transform: uppercase; }
       .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items .flexia-cart-total span {
@@ -3402,7 +3415,7 @@ a {
         line-height: 1;
         text-align: center;
         border: 0;
-        font-size: .8em;
+        font-size: 0.8em;
         font-weight: 500; }
         .flexia-menu.header-icons .flexia-header-cart ul.flexia-menu-cart-items .flexia-cart-links a:hover {
           background-color: #707070; }
