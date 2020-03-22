@@ -338,12 +338,14 @@ function flexia_generate_css()
 	#flexia-woo-sidebar .widget_price_filter .ui-slider .ui-slider-handle,
 	.single-product.woocommerce .product .cart .single_add_to_cart_button,
 	aside .widget button, 
-	#flexia-woo-sidebar .widget button {
+	#flexia-woo-sidebar .widget button,
+	.widget .search-form .search-submit {
 		background-color: ' . $defaults['flexia_primary_color'] . ';
 	}
 
 	.single-product.woocommerce .product .woocommerce-tabs ul.wc-tabs > li.active::before,
-	input:focus, textarea:focus, select:focus {
+	input:focus, textarea:focus, select:focus,
+	.widget .search-form .search-submit {
 		border-color: ' . $defaults['flexia_primary_color'] . ';
 	}
 
