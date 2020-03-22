@@ -34,8 +34,8 @@ function generateCSS() {
         value.bind(function(color) {
             $("input:focus, textarea:focus, select:focus").css("border-color", color);
             $(".single-product.woocommerce .product .woocommerce-tabs ul.wc-tabs > li.active::before").css("border-color", color);
-            $("#flexia-woo-sidebar .widget_price_filter .ui-slider .ui-slider-range, #flexia-woo-sidebar .widget_price_filter .ui-slider .ui-slider-handle").css("background-color", color);
-            $(".single-product.woocommerce .product .cart .single_add_to_cart_button, aside .widget button, #flexia-woo-sidebar .widget button").css("background-color", color);
+            $(".flexia-woo-sidebar .widget_price_filter .ui-slider .ui-slider-range, .flexia-woo-sidebar .widget_price_filter .ui-slider .ui-slider-handle").css("background-color", color);
+            $(".single-product.woocommerce .product .cart .single_add_to_cart_button, aside .widget button, .flexia-woo-sidebar .widget button").css("background-color", color);
             $(".single-blog-meta .entry-meta i").css("color", color);
             //Set primary color of Button Background Color
             let button_bg_color= '';

@@ -53,6 +53,29 @@ function flexia_woo_wrapper_start() {
 	get_footer();
 }
 
+//Sidebar for Cart, Checkout
+function page_sidebar_control($content_layout) {
+
+	if ( is_page( 'cart' ) || is_cart() ) {
+		$content_layout = "";
+		if ( flexia_get_option('flexia_woo_sidebar_cart_page') ) {
+			echo flexia_sidebar_content('woo-sidebar', 'flexia-sidebar-right', 'flexia-woo-sidebar');
+		}
+		
+	}
+
+	if ( is_page( 'checkout' ) || is_checkout() ) {
+		$content_layout = "";
+		if ( flexia_get_option('flexia_woo_sidebar_checkout_page') ) {
+			echo flexia_sidebar_content('woo-sidebar', 'flexia-sidebar-right', 'flexia-woo-sidebar');
+		}
+		
+	}
+
+	return $content_layout;
+}
+add_filter('flexia_sidebar_content_layout', 'page_sidebar_control');
+
 //3 Column Per row in Shop Page
 add_filter('loop_shop_columns', 'loop_columns', 999);
 if (!function_exists('loop_columns')) {
@@ -196,19 +219,17 @@ function cart_items_html() {
 
 function flexia_woocommerce_sidebar() {
 	$flexia_sidebar_id = flexia_get_option('flexia_woo_sidebar_default');
-	$position_left = 'flexia-sidebar-left';
-	$position_right = 'flexia-sidebar-right';
 
 	if ( is_shop() && flexia_get_option('flexia_woo_sidebar_shop_page') ) {
-		return flexia_woocommerce_sidebar_content($flexia_sidebar_id, $position_left);
+		return flexia_sidebar_content($flexia_sidebar_id, 'flexia-sidebar-left', 'flexia-woo-sidebar');
 	}
 
 	if ( is_product() && flexia_get_option('flexia_woo_sidebar_product_single') ) {
-		return flexia_woocommerce_sidebar_content($flexia_sidebar_id, $position_right);
+		return flexia_sidebar_content($flexia_sidebar_id, 'flexia-sidebar-right', 'flexia-woo-sidebar');
 	}
 	
 	if ( is_product_category() && flexia_get_option('flexia_woo_sidebar_archive_page') ) {
-		return flexia_woocommerce_sidebar_content($flexia_sidebar_id, $position_right);
+		return flexia_sidebar_content($flexia_sidebar_id, 'flexia-sidebar-right', 'flexia-woo-sidebar');
 	}
 }
 
@@ -287,7 +308,7 @@ function bbloomer_add_cart_quantity_plus_minus() {
 							qty.val( val - step );
 						}
 					}              
-					});           
+					});
 				});
 				
 			</script>

@@ -357,3 +357,20 @@ function flexia_admin_notices()
     }
 }
 add_action('admin_notices', 'flexia_admin_notices');
+
+
+/** 
+ * This Function will be used for Showig Sidebar in page templates
+ * @return HTML
+*/
+function flexia_sidebar_content($sidebar_id, $sidebar_position, $classes) {
+	ob_start();
+	dynamic_sidebar( $sidebar_id );
+	$sidebar =  ob_get_clean();
+	return '
+	<aside id="'.$sidebar_position.'" class="flexia-sidebar '.$sidebar_position.' '.$classes.'">
+		<div class="flexia-sidebar-inner">
+			' . $sidebar . '
+		</div>
+	</aside>';
+}

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Flexia Theme Customizer outout for layout settings
  *
@@ -6,33 +7,37 @@
  */
 
 if (!function_exists('flexia_customizer_style')) {
-    /**
-     * Styles the header image and text displayed on the blog.
-     *
-     * @see flexia_custom_header_setup().
-     */
-    function flexia_customizer_style()
-    {
-        echo '<style type="text/css" id="flexia-dynamic-css">' . flexia_generate_css() . '</style>';
-    }
+	/**
+	 * Styles the header image and text displayed on the blog.
+	 *
+	 * @see flexia_custom_header_setup().
+	 */
+	function flexia_customizer_style()
+	{
+		echo '<style type="text/css" id="flexia-dynamic-css">' . flexia_generate_css() . '</style>';
+	}
 }
 
 /**
  * This function adds some styles to the WordPress Customizer
  */
-function flexia_customizer_custom_styles() { ?>
+function flexia_customizer_custom_styles()
+{ ?>
 	<style type="text/css">
 		.customize-control-flexia-title .flexia-select,
-		.customize-control-flexia-title .flexia-dimension{
+		.customize-control-flexia-title .flexia-dimension {
 			display: flex;
 		}
+
 		.customize-control-flexia-range-value {
 			display: flex;
 		}
+
 		.customize-control-flexia-range-value .customize-control-title,
 		.customize-control-flexia-number .customize-control-title {
 			float: left;
 		}
+
 		.flexia-customize-control-separator {
 			display: block;
 			margin: 0 -12px;
@@ -48,6 +53,7 @@ function flexia_customizer_custom_styles() { ?>
 			color: #555;
 			background-color: #fff;
 		}
+
 		.customize-control.customize-control-flexia-dimension,
 		.customize-control-flexia-select {
 			width: 25%;
@@ -56,34 +62,39 @@ function flexia_customizer_custom_styles() { ?>
 			margin-top: 0;
 			margin-bottom: 12px;
 		}
+
 		.customize-control.customize-control-flexia-dimension .customize-control-title,
-		.customize-control-flexia-select .customize-control-title{
+		.customize-control-flexia-select .customize-control-title {
 			font-size: 11px;
 			font-weight: normal;
 			color: #888b8c;
 			margin-top: 0;
 		}
+
 		.flexia-customizer-reset {
 			font-size: 22px;
-    		line-height: 26px;
-    		margin-left: 5px;
+			line-height: 26px;
+			margin-left: 5px;
 			transition: unset;
 		}
+
 		.flexia-customizer-reset:focus {
 			box-shadow: none;
-		}		
+		}
+
 		.flexia-customizer-reset svg {
 			width: 16px;
 			fill: #FE1F4A;
 		}
+
 		.customize-control-title .customize-control-title {
 			margin-bottom: 0;
 		}
 	</style>
-	<?php
+<?php
 
 }
-add_action( 'customize_controls_print_styles', 'flexia_customizer_custom_styles', 999 );
+add_action('customize_controls_print_styles', 'flexia_customizer_custom_styles', 999);
 
 function flexia_generate_css()
 {
@@ -92,12 +103,11 @@ function flexia_generate_css()
 
 	if ((get_theme_mod('flexia_background_image_enable_button'))) {
 		$flexia_background_image =  "url(" . get_theme_mod('flexia_background_image') . ")";
-	}
-	else {
+	} else {
 		$flexia_background_image = "none";
 	}
 
-    $css = '.flexia-primary-menu .customize-partial-edit-shortcut button {
+	$css = '.flexia-primary-menu .customize-partial-edit-shortcut button {
 		margin-left: 50px;
 	}
 	
@@ -115,7 +125,7 @@ function flexia_generate_css()
 		line-height: ' . $defaults['flexia_body_font_line_height'] . ';
 		text-transform: ' . $defaults['flexia_body_font_text_transform'] . ';
 		background-color: ' . $defaults['flexia_background_color'] . ';
-		background-image: ' .$flexia_background_image. ';
+		background-image: ' . $flexia_background_image . ';
 		background-size: ' . $defaults['flexia_background_image_size'] . ';
 		background-position: ' . $defaults['flexia_background_image_position'] . ';
 		background-repeat: ' . $defaults['flexia_background_image_repeat'] . ';
@@ -334,11 +344,11 @@ function flexia_generate_css()
 		color: ' . $defaults['flexia_header_social_icon_hover_color'] . ';
 	}
 	
-	#flexia-woo-sidebar .widget_price_filter .ui-slider .ui-slider-range,
-	#flexia-woo-sidebar .widget_price_filter .ui-slider .ui-slider-handle,
+	.flexia-woo-sidebar .widget_price_filter .ui-slider .ui-slider-range,
+	.flexia-woo-sidebar .widget_price_filter .ui-slider .ui-slider-handle,
 	.single-product.woocommerce .product .cart .single_add_to_cart_button,
 	aside .widget button, 
-	#flexia-woo-sidebar .widget button,
+	.flexia-woo-sidebar .widget button,
 	.widget .search-form .search-submit {
 		background-color: ' . $defaults['flexia_primary_color'] . ';
 	}
@@ -498,14 +508,21 @@ function flexia_generate_css()
 	
 	.flexia-site-footer .site-info a:hover, .flexia-footer-menu li a:hover {
 		color: ' . $defaults['flexia_footer_link_hover_color'] . ';
+	}
+	
+	.customize-partial-edit-shortcut-button {
+		padding: 3px !important;
+		border-radius: 50% !important;
+		border: 2px solid #fff !important;
 	}';
 
-    return $css;
+
+	return $css;
 }
 
 function ajax_dynamic_css()
 {
-    check_ajax_referer('flexia-customizer', 'security');
-    wp_send_json(flexia_generate_css());
+	check_ajax_referer('flexia-customizer', 'security');
+	wp_send_json(flexia_generate_css());
 }
 add_action('wp_ajax_generate_css', 'ajax_dynamic_css');

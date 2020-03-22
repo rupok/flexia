@@ -14,25 +14,27 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 $content_layout = flexia_get_option('content_layout');
 
+do_action('flexia_sidebar_content');
 
-?>
-<?php
+$content_layout = apply_filters('flexia_sidebar_content_layout', $content_layout);
 
-if( $content_layout == 'content_layout1' ) : 
 
-	get_template_part( 'framework/views/template-parts/content', 'sidebar-left' );
-	get_template_part( 'framework/views/template-parts/content', 'sidebar-right' );
+if( $content_layout == 'content_layout1' ) :
+
+	echo flexia_sidebar_content('sidebar-left', 'flexia-sidebar-left', '');
+	echo flexia_sidebar_content('sidebar-right', 'flexia-sidebar-right', '');
 
 elseif( $content_layout == 'content_layout2' ) : 
 
-	get_template_part( 'framework/views/template-parts/content', 'sidebar-left' );
+	echo flexia_sidebar_content('sidebar-left', 'flexia-sidebar-left', '');
 
 elseif( $content_layout == 'content_layout3' ) : 
 
-	get_template_part( 'framework/views/template-parts/content', 'sidebar-right' );
+	echo flexia_sidebar_content('sidebar-right', 'flexia-sidebar-right', '');
 
 else:
-// content only
+
+	// content only
 
 endif; 
 

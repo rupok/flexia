@@ -2393,7 +2393,7 @@ big {
   width: 300px; }
 
 aside .widget button,
-#flexia-woo-sidebar .widget button {
+.flexia-woo-sidebar .widget button {
   font-size: 14px;
   border-radius: 4px;
   padding: 10px 15px;
@@ -2407,7 +2407,7 @@ aside .widget button,
   -o-transition: all .2s;
   transition: all .2s; }
   aside .widget button:hover,
-  #flexia-woo-sidebar .widget button:hover {
+  .flexia-woo-sidebar .widget button:hover {
     opacity: .8; }
 
 aside .widget input,
@@ -5709,40 +5709,40 @@ body.woocommerce:not(.single-product) ul.products li.product-has-gallery a.wooco
 .woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1, .woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2, .woocommerce .cart-collaterals .shipping_calculator .col2-set .col-1, .woocommerce .cart-collaterals .shipping_calculator .col2-set .col-2, .woocommerce-page .cart-collaterals .shipping_calculator .col2-set .col-1, .woocommerce-page .cart-collaterals .shipping_calculator .col2-set .col-2 {
   max-width: none; }
 
-#flexia-woo-sidebar .widget .widget-title {
+.flexia-woo-sidebar .widget .widget-title {
   color: #404040;
   font-weight: 700; }
-#flexia-woo-sidebar .widget ul li {
+.flexia-woo-sidebar .widget ul li {
   list-style: none;
   color: #707070;
   font-weight: 500; }
-  #flexia-woo-sidebar .widget ul li a {
+  .flexia-woo-sidebar .widget ul li a {
     color: #707070; }
-  #flexia-woo-sidebar .widget ul li:before {
+  .flexia-woo-sidebar .widget ul li:before {
     content: "";
     padding: 0; }
-#flexia-woo-sidebar .widget .product_list_widget li {
+.flexia-woo-sidebar .widget .product_list_widget li {
   margin-bottom: 1em; }
-  #flexia-woo-sidebar .widget .product_list_widget li > a {
+  .flexia-woo-sidebar .widget .product_list_widget li > a {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     position: relative;
     margin-bottom: .5em; }
-    #flexia-woo-sidebar .widget .product_list_widget li > a img {
+    .flexia-woo-sidebar .widget .product_list_widget li > a img {
       margin-right: 15px;
       width: 50px;
       position: absolute;
       left: 0;
       top: 0; }
-    #flexia-woo-sidebar .widget .product_list_widget li > a .product-title {
+    .flexia-woo-sidebar .widget .product_list_widget li > a .product-title {
       font-size: 1em;
       color: #404040;
       font-weight: 500;
       margin-left: 70px; }
-  #flexia-woo-sidebar .widget .product_list_widget li del {
+  .flexia-woo-sidebar .widget .product_list_widget li del {
     margin-right: 10px; }
-  #flexia-woo-sidebar .widget .product_list_widget li ins {
+  .flexia-woo-sidebar .widget .product_list_widget li ins {
     margin-right: 10px;
     float: left;
     margin-left: 70px;
@@ -5750,13 +5750,13 @@ body.woocommerce:not(.single-product) ul.products li.product-has-gallery a.wooco
     font-weight: 700;
     color: #404040;
     background-color: transparent; }
-  #flexia-woo-sidebar .widget .product_list_widget li .discunt_amount {
+  .flexia-woo-sidebar .widget .product_list_widget li .discunt_amount {
     display: none; }
-  #flexia-woo-sidebar .widget .product_list_widget li .star-rating {
+  .flexia-woo-sidebar .widget .product_list_widget li .star-rating {
     display: none;
     margin-left: 70px;
     margin-bottom: 10px; }
-  #flexia-woo-sidebar .widget .product_list_widget li > .woocommerce-Price-amount {
+  .flexia-woo-sidebar .widget .product_list_widget li > .woocommerce-Price-amount {
     margin-right: 10px;
     float: left;
     margin-left: 70px;
@@ -5764,10 +5764,10 @@ body.woocommerce:not(.single-product) ul.products li.product-has-gallery a.wooco
     font-weight: 700;
     color: #404040;
     background-color: transparent; }
-  #flexia-woo-sidebar .widget .product_list_widget li > .woocommerce-Price-amount:nth-of-type(2) {
+  .flexia-woo-sidebar .widget .product_list_widget li > .woocommerce-Price-amount:nth-of-type(2) {
     margin-left: 10px;
     float: none; }
-#flexia-woo-sidebar .widget_price_filter .price_slider_amount .price_label {
+.flexia-woo-sidebar .widget_price_filter .price_slider_amount .price_label {
   color: #707070; }
 
 /*--------------------------------------------------------------

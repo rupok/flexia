@@ -4564,42 +4564,42 @@ function flexia_customize_register($wp_customize)
      * @flexia_woo_sidebar_cart_page
      * Parent: @woocommerce -> @flexia_woo_sidebar_section
      */
-    // $wp_customize->add_setting('flexia_woo_sidebar_cart_page', array(
-    //     'default' => $defaults['flexia_woo_sidebar_cart_page'],
-    //     'capability' => 'edit_theme_options',
-    //     'sanitize_callback' => 'flexia_sanitize_checkbox',
-    // ));
+    $wp_customize->add_setting('flexia_woo_sidebar_cart_page', array(
+        'default' => $defaults['flexia_woo_sidebar_cart_page'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
 
-    // $wp_customize->add_control(
-    //     new Customizer_Toggle_Control(
-    //         $wp_customize, 
-    //         'flexia_woo_sidebar_cart_page', array(
-    //         'label' => esc_html__('Enable Sidebar in Cart Page?', 'flexia'),
-    //         'section' => 'flexia_woo_sidebar_section',
-    //         'settings' => 'flexia_woo_sidebar_cart_page',
-    //         'type' => 'light', // light, ios, flat
-    // )));
+    $wp_customize->add_control(
+        new Customizer_Toggle_Control(
+            $wp_customize, 
+            'flexia_woo_sidebar_cart_page', array(
+            'label' => esc_html__('Enable Sidebar in Cart Page?', 'flexia'),
+            'section' => 'flexia_woo_sidebar_section',
+            'settings' => 'flexia_woo_sidebar_cart_page',
+            'type' => 'light', // light, ios, flat
+    )));
 
     /**
      * Enable Sidebar in Checkout Page
      * @flexia_woo_sidebar_checkout_page
      * Parent: @woocommerce -> @flexia_woo_sidebar_section
      */
-    // $wp_customize->add_setting('flexia_woo_sidebar_checkout_page', array(
-    //     'default' => $defaults['flexia_woo_sidebar_checkout_page'],
-    //     'capability' => 'edit_theme_options',
-    //     'sanitize_callback' => 'flexia_sanitize_checkbox',
-    // ));
+    $wp_customize->add_setting('flexia_woo_sidebar_checkout_page', array(
+        'default' => $defaults['flexia_woo_sidebar_checkout_page'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
 
-    // $wp_customize->add_control(
-    //     new Customizer_Toggle_Control(
-    //         $wp_customize, 
-    //         'flexia_woo_sidebar_checkout_page', array(
-    //         'label' => esc_html__('Enable Sidebar in Checkout Page?', 'flexia'),
-    //         'section' => 'flexia_woo_sidebar_section',
-    //         'settings' => 'flexia_woo_sidebar_checkout_page',
-    //         'type' => 'light', // light, ios, flat
-    // )));
+    $wp_customize->add_control(
+        new Customizer_Toggle_Control(
+            $wp_customize, 
+            'flexia_woo_sidebar_checkout_page', array(
+            'label' => esc_html__('Enable Sidebar in Checkout Page?', 'flexia'),
+            'section' => 'flexia_woo_sidebar_section',
+            'settings' => 'flexia_woo_sidebar_checkout_page',
+            'type' => 'light', // light, ios, flat
+    )));
 
     /**
      * Enable Sidebar in Product Arcive Page
