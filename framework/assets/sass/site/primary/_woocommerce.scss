@@ -644,7 +644,15 @@
 	color: #fff;
 	border-radius: 0;
 	font-weight: 400;
-	padding: 10px 15px;
+	padding: 15px;
+}
+
+.woocommerce #coupon_code {
+    min-width: 250px;
+}
+
+#content .woocommerce .button {
+    padding: 15px;
 }
 
 .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover {
