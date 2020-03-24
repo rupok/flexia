@@ -150,8 +150,15 @@ if (!function_exists('flexia_setup')) {
             'flex-height' => true,
         ));
     }
+
+    /**
+     * Register support for Gutenberg wide images in your theme
+     */
+    function mytheme_setup() {
+        add_theme_support('align-wide');
+    }
+    add_action('after_setup_theme', 'mytheme_setup');
 }
-add_action('after_setup_theme', 'flexia_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -362,13 +369,14 @@ add_action('admin_notices', 'flexia_admin_notices');
 /** 
  * This Function will be used for Showig Sidebar in page templates
  * @return HTML
-*/
-function flexia_sidebar_content($sidebar_id, $sidebar_position, $classes) {
-	ob_start();
-	dynamic_sidebar( $sidebar_id );
-	$sidebar =  ob_get_clean();
-	return '
-	<aside id="'.$sidebar_position.'" class="flexia-sidebar '.$sidebar_position.' '.$classes.'">
+ */
+function flexia_sidebar_content($sidebar_id, $sidebar_position, $classes)
+{
+    ob_start();
+    dynamic_sidebar($sidebar_id);
+    $sidebar =  ob_get_clean();
+    return '
+	<aside id="' . $sidebar_position . '" class="flexia-sidebar ' . $sidebar_position . ' ' . $classes . '">
 		<div class="flexia-sidebar-inner">
 			' . $sidebar . '
 		</div>
