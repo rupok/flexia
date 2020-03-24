@@ -2842,7 +2842,7 @@ input[type="submit"] {
     border-color: #aaa #bbb #bbb; }
 
 header .search-submit {
-  border: 0; }
+  border: 0 !important; }
 
 input[type="text"],
 input[type="email"],

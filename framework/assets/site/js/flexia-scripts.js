@@ -106,7 +106,7 @@ jQuery( document ).ready( function($) {
 
 
 	// smooth scroll for anchors
-   $('.nav-menu a[href^="#"]:not([href="#"])').on('click',function (e) {
+   $('.nav-menu a[href^=#]:not([href=#])').on('click',function (e) {
 	    e.preventDefault();
 
 	    var target = this.hash,
