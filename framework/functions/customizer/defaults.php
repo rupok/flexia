@@ -228,14 +228,14 @@ if (!function_exists('flexia_get_option_defaults')) {
             'footer_bottom' => true,
             'flexia_enable_footer_menu' => true,
             'flexia_scroll_to_top' => false,
-            'flexia_footer_content' => '&copy; Flexia 2019. All right reserved by Codetic.',
+            'flexia_footer_content' => '&copy; Flexia ' . date('Y') . '. All right reserved by Codetic.',
             'flexia_create_sidebar_name' => '',
 
             'flexia_woo_sidebar_default' => 'woo-sidebar',
             'flexia_woo_sidebar_shop_page' => true,
             'flexia_woo_sidebar_product_single' => false,
-            // 'flexia_woo_sidebar_cart_page' => false,
-            // 'flexia_woo_sidebar_checkout_page' => false,
+            'flexia_woo_sidebar_cart_page' => false,
+            'flexia_woo_sidebar_checkout_page' => false,
             'flexia_woo_sidebar_archive_page' => true,
 
         );
