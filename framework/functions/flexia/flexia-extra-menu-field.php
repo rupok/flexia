@@ -66,7 +66,7 @@ function flexia_megamenu_inject_widget_select_option($id, $item, $depth, $args)
             $output .= '</label>';
             $output .= ' </p>';
 
-            echo wp_kses_post($output);
+            echo $output;
         }  
     }   
 }
