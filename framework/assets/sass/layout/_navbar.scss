@@ -390,7 +390,8 @@
 	}
 	
 	.flexia-header-sticky-logo {
-		display: block;
+		display: flex;
+		align-items: center;
 	}
 }
 .flexia-navbar.flexia-navbar-transparent-top {

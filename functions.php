@@ -149,16 +149,14 @@ if (!function_exists('flexia_setup')) {
             'flex-width' => true,
             'flex-height' => true,
         ));
-    }
 
-    /**
-     * Register support for Gutenberg wide images in your theme
-     */
-    function mytheme_setup() {
+        /**
+         * Register support for Gutenberg wide images in your theme
+         */
         add_theme_support('align-wide');
     }
-    add_action('after_setup_theme', 'mytheme_setup');
 }
+add_action('after_setup_theme', 'flexia_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

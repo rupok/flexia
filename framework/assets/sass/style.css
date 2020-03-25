@@ -2284,7 +2284,8 @@ big {
   .flexia-navbar.flexia-sticky-navbar .flexia-header-logo {
     display: none; }
   .flexia-navbar.flexia-sticky-navbar .flexia-header-sticky-logo {
-    display: block; }
+    display: flex;
+    align-items: center; }
 
 .flexia-navbar.flexia-navbar-transparent-top {
   background-color: transparent;

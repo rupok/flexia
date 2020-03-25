@@ -2860,6 +2860,13 @@ function flexia_customize_register($wp_customize)
     )));
 
     /**
+     * Header Logo Section: Display Site Title and Tagline
+     * @display_header_text
+     * Parent: @flexia_general_settings -> title_tagline
+     */
+    $wp_customize->get_control( 'display_header_text' )->priority = '9';
+
+    /**
      * Header Logo Section: Default Logo
      * @custom_logo
      * Parent: @flexia_general_settings -> title_tagline
@@ -2923,6 +2930,7 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_setting('flexia_custom_sticky_logo', array(
         'default' => $defaults['flexia_custom_sticky_logo'],
+        'sanitize_callback' => 'esc_url_raw'
     ));
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
@@ -4463,8 +4471,9 @@ function flexia_customize_register($wp_customize)
             ))
     );
 
-    $wp_customize->add_setting('flexia_footer_content', array(
-        'default' => __('Copyright '.date("Y").' | Flexia by Codetic', 'flexia'),
+    $wp_customize->add_setting('flexia_footer_content', 
+    array(
+        'default' => $defaults['flexia_footer_content'],
         'sanitize_callback' => 'wp_kses_post',
     ));
 
