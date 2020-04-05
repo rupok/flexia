@@ -105,12 +105,12 @@ if ( ! class_exists( 'Flexia_Elementor_Pro' ) ) :
 		 * @since 2.0.1
 		 * @return void
 		 */
-		// public function do_footer() { 
-		// 	$did_location = Module::instance()->get_locations_manager()->do_location( 'footer' );
-		// 	if ( $did_location ) {
-		// 		remove_action( 'astra_footer', 'astra_footer_markup' );
-		// 	}
-		// }
+		public function do_footer() { 
+			$did_location = Module::instance()->get_locations_manager()->do_location( 'footer' );
+			if ( $did_location ) {
+				remove_action( 'flexia_footer', 'flexia_add_footer' );
+			}
+		}
 
 	}
 
