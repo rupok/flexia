@@ -79,7 +79,8 @@ function flexia_page_title() {
  *
  * @since  v1.0.0
  */
-function flexia_page_header() {
+add_action('flexia_page_header_breadcrumb', 'flexia_page_header_markup'); // @since v2.0.1
+function flexia_page_header_markup() {
 
 	$flexia_page_header_layout 	= get_theme_mod( 'flexia_page_header_layout', 'flexia_page_header_default' );
 	// If CMB2 installed

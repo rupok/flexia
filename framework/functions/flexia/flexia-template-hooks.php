@@ -43,4 +43,10 @@ if (!function_exists('flexia_add_footer')) {
     }
 }
 
+if (!function_exists('flexia_page_header')) {
+    function flexia_page_header() {
+        do_action('flexia_page_header_breadcrumb');
+    }
+}
+
 ?>

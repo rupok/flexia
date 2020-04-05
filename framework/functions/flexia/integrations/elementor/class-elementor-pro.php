@@ -96,6 +96,7 @@ if ( ! class_exists( 'Flexia_Elementor_Pro' ) ) :
 			$did_location = Module::instance()->get_locations_manager()->do_location( 'header' );
 			if ( $did_location ) {
 				remove_action( 'flexia_header', 'flexia_add_header' );
+				remove_action( 'flexia_page_header_breadcrumb', 'flexia_page_header_markup' );
 			}
 		}
 
