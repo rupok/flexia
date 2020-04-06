@@ -8,11 +8,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Flexia
+ * @package Flexia 
  */
 
 
 $content_layout = flexia_get_option('content_layout');
+
+if ( is_single() ) {
+	$content_layout = flexia_get_option('flexia_single_content_layout');
+}
 
 do_action('flexia_sidebar_content');
 

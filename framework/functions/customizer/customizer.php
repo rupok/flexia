@@ -2424,7 +2424,7 @@ function flexia_customize_register($wp_customize)
             $wp_customize,
             'flexia_single_posts_layout',
             array(
-                'label' => __('Post Layout', 'flexia'),
+                'label' => __('Post Header Layout', 'flexia'),
                 'section' => 'flexia_single_posts_settings',
                 'settings' => 'flexia_single_posts_layout',
                 'description' => 'Set the default post layout (global). You can control for individual posts from Flexia Post Settings.',
@@ -2434,6 +2434,33 @@ function flexia_customize_register($wp_customize)
                     'flexia_single_posts_layout_simple' => __('Simple Header', 'flexia'),
                     'flexia_single_posts_layout_simple_no_container' => __('Simple Header No Container', 'flexia'),
                     'flexia_single_posts_layout_no_header' => __('No Header', 'flexia'),
+                ),
+            )
+        )
+    );
+    
+    //Blog Single Sidebar Control
+    $wp_customize->add_setting(
+        'flexia_single_content_layout',
+        array(
+            'default' => $defaults['flexia_single_content_layout'],
+            'sanitize_callback' => 'flexia_sanitize_choices',
+        ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_single_content_layout',
+            array(
+                'label' => __('Post Sidebar', 'flexia'),
+                'section' => 'flexia_single_posts_settings',
+                'settings' => 'flexia_single_content_layout',
+                'description' => 'Set the default Sidebar for Single blog posts and other Single post types.',
+                'type' => 'radio',
+                'choices' => array(
+                    'content_layout2' => __('Left Sidebar', 'flexia'),
+                    'content_layout3' => __('Right Sidebar', 'flexia'),
+                    'content_layout4' => __('No Sidebar', 'flexia'),
                 ),
             )
         )
