@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 $content_layout = flexia_get_option('content_layout');
 
-if ( is_single() ) {
+if ( is_single() ) { //For all Single and Post Type Single
 	$content_layout = flexia_get_option('flexia_single_content_layout');
 }
 
