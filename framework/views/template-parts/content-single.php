@@ -90,7 +90,7 @@ $post_social_share = get_theme_mod('post_social_share', false);
 
         </div>
 
-        <?php get_sidebar(); ?>
+        <?php get_sidebar(); ?> 
 
     </div><!-- .entry-content -->
 

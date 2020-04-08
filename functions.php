@@ -209,6 +209,12 @@ require get_template_directory() . '/framework/functions/flexia/flexia-nav-walke
 require get_template_directory() . '/framework/functions/flexia/breadcrumb.php';
 
 /**
+ * Functions to Add Templates throgh Hooks file
+ */
+
+require get_template_directory() . '/framework/functions/flexia/flexia-template-hooks.php';
+
+/**
  * Integrations.
  */
 
@@ -219,6 +225,10 @@ if (class_exists('WooCommerce')) {
 
 if (class_exists('Easy_Digital_Downloads')) {
     require get_template_directory() . '/framework/functions/flexia/integrations/edd/edd-integration.php';
+}
+
+if (class_exists('\Elementor\Plugin')) {
+    require get_template_directory() . '/framework/functions/flexia/integrations/elementor/class-elementor-pro.php';
 }
 
 /**
