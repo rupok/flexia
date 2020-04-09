@@ -4,8 +4,8 @@ Contributors: re_enter_rupok, Codetic, wpdevteam
 Theme URI: https://flexia.pro/
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.0
-Tested up to: 5.3.2
-Stable tag: 2.0
+Tested up to: 5.4
+Stable tag: 2.0.1
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -47,6 +47,19 @@ Source: https://picjumbo.com/entrepreneur-working-on-his-macbook/
 
 
 == Changelog ==
+
+= 2.0.1 =
+* Released: April 9, 2020
+
+* Fixed: Breadcrumb Show with HTML tags as text
+* Fixed: Header not showing when Elementor Pro Footer use
+* Fixed: Footer not showing when Elementor Pro Header use
+* Added: Sidebar Control for Single post 
+* Hook Added: `flexia_header` 
+* Hook Added: `flexia_footer`
+* Hook Added: `flexia_page_header_breadcrumb`
+
+* Check Changelog here - https://flexia.pro/changelog/
 
 = 2.0 =
 * Released: March 26, 2020
