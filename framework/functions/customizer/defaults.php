@@ -291,3 +291,14 @@ if( ! function_exists( 'flexia_generate_defaults' ) ) :
 	}
 
 endif;
+
+//CSS replace "Dash" with "Space"
+if( ! function_exists( 'flexia_replae_dash_with_space' ) ) : 
+
+	function flexia_replae_dash_with_space($value){
+        $value = ucwords(str_replace("-"," ",$value));
+        
+		return $value;
+	}
+
+endif;

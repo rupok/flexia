@@ -738,6 +738,7 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_page_header',
                 'description' => '',
                 'type' => 'light', // light, ios, flat
+                'priority' => 10,
             )
         )
     );
@@ -759,6 +760,7 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_page_breadcrumb',
                 'description' => 'Breadcrumb works on "Large Header" and "Mini Header"',
                 'type' => 'light', // light, ios, flat
+                'priority' => 20,
             )
         )
     );
@@ -783,7 +785,7 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_page_header_layout',
                 'description' => 'Set the default page header layout (global). You can control for individual posts from Flexia Page Settings.',
                 'type' => 'radio',
-                'priority' => 10,
+                'priority' => 30,
                 'choices' => array(
                     'flexia_page_header_default' => __('Default Header', 'flexia'),
                     'flexia_page_header_large' => __('Large Header', 'flexia'),
@@ -805,7 +807,7 @@ function flexia_customize_register($wp_customize)
         'label' => esc_html__('Color & Typography', 'flexia'),
         'settings' => 'flexia_page_title_heading',
         'section' => 'flexia_page_settings',
-        'priority' => 30,
+        'priority' => 40,
     )));
 
     $wp_customize->add_setting('flexia_page_title_bg', array(
@@ -822,7 +824,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Page Title Background Color', 'flexia'),
                 'section' => 'flexia_page_settings',
                 'settings' => 'flexia_page_title_bg',
-                'priority' => 40,
+                'priority' => 50,
             ))
     );
 
@@ -840,7 +842,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Page Title Font Color', 'flexia'),
                 'section' => 'flexia_page_settings',
                 'settings' => 'flexia_page_title_font_color',
-                'priority' => 50,
+                'priority' => 60,
             ))
     );
 
@@ -856,7 +858,7 @@ function flexia_customize_register($wp_customize)
         'type' => 'range-value',
         'section' => 'flexia_page_settings',
         'settings' => 'flexia_page_title_font_size',
-        'priority' => 60,
+        'priority' => 70,
         'label' => __('Page Title Font Size (px)', 'flexia'),
         'input_attrs' => array(
             'min' => 15,
@@ -878,7 +880,7 @@ function flexia_customize_register($wp_customize)
         'type' => 'range-value',
         'section' => 'flexia_page_settings',
         'settings' => 'flexia_breadcrumb_font_size',
-        'priority' => 70,
+        'priority' => 80,
         'label' => __('Breadcrumb Font Size (px)', 'flexia'),
         'input_attrs' => array(
             'min' => 1,
@@ -902,7 +904,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Breadcrumb Font Color', 'flexia'),
                 'section' => 'flexia_page_settings',
                 'settings' => 'flexia_breadcrumb_font_color',
-                'priority' => 80,
+                'priority' => 90,
             ))
     );
 
@@ -920,7 +922,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Breadcrumb Active Font Color', 'flexia'),
                 'section' => 'flexia_page_settings',
                 'settings' => 'flexia_breadcrumb_active_font_color',
-                'priority' => 90,
+                'priority' => 100,
             ))
     );
 
