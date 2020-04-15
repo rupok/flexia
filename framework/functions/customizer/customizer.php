@@ -3031,6 +3031,7 @@ function flexia_customize_register($wp_customize)
         'label' => __('Navbar Settings', 'flexia'),
         'settings' => 'navbar_settings_title',
         'section' => 'flexia_header_navbar',
+        'priority' => 10,
     )));
 
     // Enable Navbar
@@ -3046,6 +3047,7 @@ function flexia_customize_register($wp_customize)
         'section' => 'flexia_header_navbar',
         'settings' => 'flexia_navbar',
         'type' => 'light', // light, ios, flat
+        'priority' => 20,
     )));    
 
     // Logobar position
@@ -3068,6 +3070,7 @@ function flexia_customize_register($wp_customize)
                     'flexia-logobar-inline' => __('Inline', 'flexia'),
                     'flexia-logobar-stacked' => __('Stacked', 'flexia'),
                 ),
+                'priority' => 30,
             )
         )
     );
@@ -3088,6 +3091,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Logobar Background', 'flexia'),
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_logobar_bg_color',
+                'priority' => 40,
             ))
     );
 
@@ -3102,9 +3106,10 @@ function flexia_customize_register($wp_customize)
             $wp_customize,
             'flexia_navbar_bg_color',
             array(
-                'label' => __('Navbar Background', 'flexia'),
+                'label' => __('Navbar Background Color', 'flexia'),
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_navbar_bg_color',
+                'priority' => 50,
             ))
     );
 
@@ -3118,6 +3123,7 @@ function flexia_customize_register($wp_customize)
         'label' => __('Primary Menu Settings', 'flexia'),
         'settings' => 'main_nav_settings_title',
         'section' => 'flexia_header_navbar',
+        'priority' => 60,
     )));
 
     // Enable Navmenu Search
@@ -3132,6 +3138,7 @@ function flexia_customize_register($wp_customize)
         'section' => 'flexia_header_navbar',
         'settings' => 'flexia_nav_menu_search',
         'type' => 'light', // light, ios, flat
+        'priority' => 70,
     )));
 
     // Enable Cart in menu
@@ -3146,6 +3153,7 @@ function flexia_customize_register($wp_customize)
         'section' => 'flexia_header_navbar',
         'settings' => 'flexia_woo_cart_menu',
         'type' => 'light', // light, ios, flat
+        'priority' => 80,
     )));
 
     // Enable Nav Login Button
@@ -3160,6 +3168,7 @@ function flexia_customize_register($wp_customize)
         'section' => 'flexia_header_navbar',
         'settings' => 'flexia_enable_login_button',
         'type' => 'light', // light, ios, flat
+        'priority' => 90,
     )));
 
     //Custom Login URL
@@ -3181,7 +3190,8 @@ function flexia_customize_register($wp_customize)
                 'type' => 'text',
                 'input_attrs' => array(
                     'placeholder' => __( 'Your Login Page URL', 'flexia' ),
-                )
+                ),
+                'priority' => 100,
             )
         )
     );
@@ -3201,6 +3211,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Links color', 'flexia'),
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_main_nav_menu_link_color',
+                'priority' => 110,
             ))
     );
 
@@ -3218,6 +3229,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Links hover color', 'flexia'),
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_main_nav_menu_link_hover_color',
+                'priority' => 120,
             ))
     );
     
@@ -3235,6 +3247,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Links hover background', 'flexia'),
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_main_nav_menu_link_hover_bg',
+                'priority' => 130,
             ))
     );
 
@@ -3252,6 +3265,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Dropdown background', 'flexia'),
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_main_nav_menu_submenu_bg_color',
+                'priority' => 140,
             ))
     );
 
@@ -3269,6 +3283,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Dropdown links color', 'flexia'),
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_main_nav_menu_submenu_link_color',
+                'priority' => 150,
             ))
     );
 
@@ -3286,6 +3301,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Dropdown links hover color', 'flexia'),
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_main_nav_menu_submenu_link_hover_color',
+                'priority' => 150,
             ))
     );
     
@@ -3303,6 +3319,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Dropdown links hover background', 'flexia'),
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_main_nav_menu_submenu_link_hover_bg',
+                'priority' => 160,
             ))
     );
 
@@ -3323,6 +3340,7 @@ function flexia_customize_register($wp_customize)
             'zoom-in' => 'Zoom In',
             'zoom-out' => 'Zoom Out',
         ),
+        'priority' => 170,
     ));
 
     // Header widget area Separator
@@ -3335,6 +3353,7 @@ function flexia_customize_register($wp_customize)
         'label' => __('Header Widget Area', 'flexia'),
         'settings' => 'flexia_header_widget_area_settings_title',
         'section' => 'flexia_header_navbar',
+        'priority' => 180,
     )));
 
     // Enable Header widget area
@@ -3349,6 +3368,7 @@ function flexia_customize_register($wp_customize)
         'section' => 'flexia_header_navbar',
         'settings' => 'flexia_header_widget_area',
         'type' => 'light', // light, ios, flat
+        'priority' => 190,
     )));
 
     // Header widget area background
@@ -3366,6 +3386,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Header Widget Area Background', 'flexia'),
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_header_widget_area_bg_color',
+                'priority' => 200,
             ))
     );
 
@@ -4269,6 +4290,7 @@ function flexia_customize_register($wp_customize)
         'section' => 'flexia_footer_settings',
         'settings' => 'flexia_scroll_to_top',
         'type' => 'light', // light, ios, flat
+        'priority' => 10,
     )));
 
     $wp_customize->add_setting('flexia_footer_widget_settings_title', array(
@@ -4280,6 +4302,7 @@ function flexia_customize_register($wp_customize)
         'label' => __('Footer Widget', 'flexia'),
         'settings' => 'flexia_footer_widget_settings_title',
         'section' => 'flexia_footer_settings',
+        'priority' => 20,
     )));
 
     // Enable Footer widget area
@@ -4294,6 +4317,7 @@ function flexia_customize_register($wp_customize)
         'section' => 'flexia_footer_settings',
         'settings' => 'flexia_footer_widget_area',
         'type' => 'light', // light, ios, flat
+        'priority' => 30,
     )));
 
     /**
@@ -4321,6 +4345,7 @@ function flexia_customize_register($wp_customize)
                     'three-column' => __('Three Columns', 'flexia'),
                     'four-column' => __('Four Columns', 'flexia'),
                 ),
+                'priority' => 40,
             )
         )
     );
@@ -4336,9 +4361,10 @@ function flexia_customize_register($wp_customize)
             $wp_customize,
             'flexia_footer_widget_area_bg_color',
             array(
-                'label' => __('Footer Widget Area Background', 'flexia'),
+                'label' => __('Footer Widget Area Background Color', 'flexia'),
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_widget_area_bg_color',
+                'priority' => 50,
             ))
     );
 
@@ -4356,6 +4382,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Footer Widget Content Color', 'flexia'),
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_widget_area_content_color',
+                'priority' => 60,
             ))
     );
 
@@ -4373,6 +4400,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Footer Widget Link Color', 'flexia'),
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_widget_area_link_color',
+                'priority' => 70,
             ))
     );
 
@@ -4390,6 +4418,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Footer Widget Link Hover Color', 'flexia'),
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_widget_area_link_hover_color',
+                'priority' => 80,
             ))
     );
     
@@ -4402,13 +4431,8 @@ function flexia_customize_register($wp_customize)
         'label' => __('Copyright Area', 'flexia'),
         'settings' => 'footer_copyright_settings_title',
         'section' => 'flexia_footer_settings',
+        'priority' => 90,
     )));
-
-    $wp_customize->add_setting('flexia_footer_bg_color', array(
-        'default' => $defaults['flexia_footer_bg_color'],
-        'transport' => 'postMessage',
-        'sanitize_callback' => 'sanitize_hex_color',
-    ));
 
     // Enable Bottom Footer
     $wp_customize->add_setting('footer_bottom', array(
@@ -4422,6 +4446,7 @@ function flexia_customize_register($wp_customize)
         'section' => 'flexia_footer_settings',
         'settings' => 'footer_bottom',
         'type' => 'light', // light, ios, flat
+        'priority' => 100,
     )));
 
     // Enable footer menu
@@ -4436,7 +4461,14 @@ function flexia_customize_register($wp_customize)
         'section' => 'flexia_footer_settings',
         'settings' => 'flexia_enable_footer_menu',
         'type' => 'light', // light, ios, flat
+        'priority' => 120,
     )));
+
+    $wp_customize->add_setting('flexia_footer_bg_color', array(
+        'default' => $defaults['flexia_footer_bg_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
 
     $wp_customize->add_control(
         new WP_Customize_Color_Control(
@@ -4446,6 +4478,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Footer Background', 'flexia'),
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_bg_color',
+                'priority' => 130,
             ))
     );
 
@@ -4463,6 +4496,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Footer Content Color', 'flexia'),
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_content_color',
+                'priority' => 140,
             ))
     );
 
@@ -4480,6 +4514,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Footer Links Color', 'flexia'),
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_link_color',
+                'priority' => 150,
             ))
     );
 
@@ -4497,6 +4532,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Footer Links Hover Color', 'flexia'),
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_link_hover_color',
+                'priority' => 160,
             ))
     );
 
@@ -4515,6 +4551,7 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_content',
                 'type' => 'textarea',
+                'priority' => 170,
             )
         )
     );
