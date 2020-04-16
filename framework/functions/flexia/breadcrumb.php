@@ -74,7 +74,7 @@ function flexia_breadcrumbs(){
 				$post_type = get_post_type_object(get_post_type());
 				$slug = $post_type->rewrite;
 				printf($link, $homeLink . '/' . $slug['slug'] . '/', $post_type->labels->singular_name);
-				if ($showCurrent == 1) echo esc_attr($delimiter) . $before . get_the_title() . $after;
+				if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
 			} else {
 				$cat = get_the_category(); $cat = $cat[0];
 				$cats = get_category_parents($cat, TRUE, $delimiter);
@@ -97,7 +97,7 @@ function flexia_breadcrumbs(){
 			$cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
 			echo wp_kses_post($cats);
 			printf($link, get_permalink($parent), $parent->post_title);
-			if ($showCurrent == 1) echo esc_attr($delimiter) . $before . get_the_title() . $after;
+			if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
 
 		} elseif ( is_page() && !$post->post_parent ) {
 			if ($showCurrent == 1) echo wp_kses_post($before) . get_the_title() . $after;
@@ -112,10 +112,10 @@ function flexia_breadcrumbs(){
 			}
 			$breadcrumbs = array_reverse($breadcrumbs);
 			for ($i = 0; $i < count($breadcrumbs); $i++) {
-				echo esc_attr($breadcrumbs[$i]);
-				if ($i != count($breadcrumbs)-1) echo esc_attr($delimiter);
+				echo $breadcrumbs[$i];
+				if ($i != count($breadcrumbs)-1) echo $delimiter;
 			}
-			if ($showCurrent == 1) echo esc_attr($delimiter) . $before . get_the_title() . $after;
+			if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
 
 		} elseif ( is_tag() ) {
 			echo wp_kses_post($before) . sprintf($text['tag'], single_tag_title('', false)) . $after;

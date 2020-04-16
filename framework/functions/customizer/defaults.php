@@ -185,6 +185,7 @@ if (!function_exists('flexia_get_option_defaults')) {
             'blog_desc' => '',
             'flexia_blog_content_display' => 'flexia_blog_content_display_excerpt',
             'flexia_single_posts_layout' => 'flexia_single_posts_layout_large',
+            'flexia_single_content_layout' => 'content_layout4',
             'single_post_settings_title_heading' => '',
             'flexia_single_posts_settings' => '',
             'flexia_social_sharing_text' => 'Share This Story',
@@ -287,6 +288,17 @@ if( ! function_exists( 'flexia_generate_defaults' ) ) :
 
 		return $returned;
 
+	}
+
+endif;
+
+//CSS replace "Dash" with "Space"
+if( ! function_exists( 'flexia_replae_dash_with_space' ) ) : 
+
+	function flexia_replae_dash_with_space($value){
+        $value = ucwords(str_replace("-"," ",$value));
+        
+		return $value;
 	}
 
 endif;
