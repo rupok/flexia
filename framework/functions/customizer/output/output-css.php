@@ -399,7 +399,9 @@ function flexia_generate_css()
 		background-color: ' . $defaults['flexia_navbar_bg_color'] . ';
 	}
 	
-	.flexia-menu.header-icons .nav-menu li > a {
+	.flexia-menu.header-icons .nav-menu li > a,
+	.flexia-navbar .flexia-navbar-container .flexia-navbar-inner .search-form .search-submit,
+	.flexia-navbar .flexia-navbar-container .flexia-navbar-inner .search-form .search-field {
 		color: ' . $defaults['flexia_main_nav_menu_link_color'] . ';
 	}
 	
@@ -409,8 +411,8 @@ function flexia_generate_css()
 		}
 	
 		.main-navigation .nav-menu li:hover > a:not(.cart-contents), 
-				.main-navigation .nav-menu li.current-menu-item > a:not(.cart-contents), 
-				.main-navigation .nav-menu li.current-menu-ancestor > a:not(.cart-contents) {
+		.main-navigation .nav-menu li.current-menu-item > a:not(.cart-contents), 
+		.main-navigation .nav-menu li.current-menu-ancestor > a:not(.cart-contents) {
 			color: ' . $defaults['flexia_main_nav_menu_link_hover_color'] . ';
 		}
 	
@@ -420,8 +422,8 @@ function flexia_generate_css()
 		}
 	
 		.main-navigation .nav-menu li:hover > a:not(.cart-contents), 
-				.main-navigation .nav-menu li.current-menu-item > a:not(.cart-contents), 
-				.main-navigation .nav-menu li.current-menu-ancestor > a:not(.cart-contents) {
+		.main-navigation .nav-menu li.current-menu-item > a:not(.cart-contents), 
+		.main-navigation .nav-menu li.current-menu-ancestor > a:not(.cart-contents) {
 			background-color: ' . $defaults['flexia_main_nav_menu_link_hover_bg'] . ';
 		}
 	
@@ -430,7 +432,7 @@ function flexia_generate_css()
 		}
 	
 		.main-navigation .nav-menu li ul li > a, 
-				.main-navigation .nav-menu li ul.flexia-mega-menu li:hover > a:not(.cart-contents) {
+		.main-navigation .nav-menu li ul.flexia-mega-menu li:hover > a:not(.cart-contents) {
 			color: ' . $defaults['flexia_main_nav_menu_submenu_link_color'] . ';
 		}
 	
@@ -438,7 +440,10 @@ function flexia_generate_css()
 			background-color: initial;
 		}
 	
-		.main-navigation .nav-menu li ul li:hover > a:not(.cart-contents), .main-navigation .nav-menu li ul li.current-menu-item > a:not(.cart-contents), .main-navigation .nav-menu li ul li.current-menu-ancestor > a:not(.cart-contents), .main-navigation .nav-menu li ul.flexia-mega-menu li > a:not(.cart-contents):hover {
+		.main-navigation .nav-menu li ul li:hover > a:not(.cart-contents), 
+		.main-navigation .nav-menu li ul li.current-menu-item > a:not(.cart-contents), 
+		.main-navigation .nav-menu li ul li.current-menu-ancestor > a:not(.cart-contents), 
+		.main-navigation .nav-menu li ul.flexia-mega-menu li > a:not(.cart-contents):hover {
 			color: ' . $defaults['flexia_main_nav_menu_submenu_link_hover_color'] . ';
 		}
 	
