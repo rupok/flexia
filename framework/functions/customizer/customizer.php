@@ -3189,6 +3189,7 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_custom_login_url',
                 'type' => 'text',
+                'priority' => 10,
                 'input_attrs' => array(
                     'placeholder' => __( 'Your Login Page URL', 'flexia' ),
                 ),
@@ -3335,6 +3336,7 @@ function flexia_customize_register($wp_customize)
         'section' => 'flexia_header_navbar',
         'settings' => 'flexia_main_nav_menu_dropdown_animation',
         'type' => 'select',
+        'priority' => 18,
         'choices' => array(
             'fade' => 'Fade',
             'to-top' => 'To Top',
