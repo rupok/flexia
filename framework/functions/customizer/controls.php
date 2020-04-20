@@ -289,7 +289,7 @@ class Flexia_Gradient_Direction_Control extends WP_Customize_Control {
 /**
  * Dimension Customizer Control
  * 
- * Class FlexiaDimension_Control
+ * Class Flexia_Dimension_Control
  *
  * @since 1.0.0
  */

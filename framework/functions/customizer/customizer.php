@@ -2934,6 +2934,7 @@ function flexia_customize_register($wp_customize)
         )
     );
 
+
     /**
      * Header Logo Section: Sticky Logo Label
      * @flexia_sticky_logo_label
@@ -2946,7 +2947,7 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'flexia_sticky_logo_label', array(
         'label' => __('Sticky Logo', 'flexia'),
-        'priority' => 25,
+        'priority' => 29,
         'settings' => 'flexia_sticky_logo_label',
         'section' => 'title_tagline',
     )));
