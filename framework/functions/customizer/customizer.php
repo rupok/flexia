@@ -247,6 +247,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Primary Color', 'flexia'),
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_primary_color',
+                'priority' => 1
             ))
     );
 
@@ -269,6 +270,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Default Text Color', 'flexia'),
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_default_text_color',
+                'priority' => 1
             ))
     ); 
     
@@ -291,6 +293,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Heading Color', 'flexia'),
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_default_heading_color',
+                'priority' => 1
             ))
     );
 
@@ -308,6 +311,7 @@ function flexia_customize_register($wp_customize)
         'label' => __('Site Links', 'flexia'),
         'settings' => 'flexia_link_separator_label',
         'section' => 'flexia_default_colors_settings',
+        'priority' => 4
     )));
 
     /**
@@ -329,6 +333,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Site Link Color', 'flexia'),
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_link_color',
+                'priority' => 4
             ))
     );    
 
@@ -351,6 +356,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Site Link Hover Color', 'flexia'),
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_link_hover_color',
+                'priority' => 2
             ))
     );
 
@@ -368,6 +374,7 @@ function flexia_customize_register($wp_customize)
         'label' => __('Site Background', 'flexia'),
         'settings' => 'flexia_background_separator_label',
         'section' => 'flexia_default_colors_settings',
+        'priority' => 7
     )));
 
     /**
@@ -389,8 +396,11 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Site Background Color', 'flexia'),
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_background_color',
+                'priority' => 7
             ))
     );
+
+
 
     /**
      * Default Color Section: Background Image Enable/Disable
@@ -411,6 +421,7 @@ function flexia_customize_register($wp_customize)
             'section' => 'flexia_default_colors_settings',
             'settings' => 'flexia_background_image_enable_button',
             'type' => 'light', // light, ios, flat
+            'priority' => 10,
     )));
 
     /**
@@ -436,6 +447,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Upload an Image for Background', 'flexia'),
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_background_image',
+                'priority' => 10,
                 // 'context' => 'flexia_blog_logo',
             )
         )
@@ -460,7 +472,8 @@ function flexia_customize_register($wp_customize)
 		'type'     => 'flexia-title',
 		'section'  => 'flexia_default_colors_settings',
 		'settings' => 'flexia_background_property',
-		'label'    => __( 'Background Property', 'flexia' ),
+        'label'    => __( 'Background Property', 'flexia' ),
+        'priority' => 10,
 		'input_attrs' => array(
 			'id' => 'flexia_background_property',
 			'class' => 'flexia-select',
@@ -607,6 +620,7 @@ function flexia_customize_register($wp_customize)
 		'section'  => 'flexia_default_colors_settings',
 		'settings' => 'flexia_background_image_attachment',
         'label'    => __( 'Attachment', 'flexia' ),
+        'priority' => 10,
         'input_attrs' => array(
             'class' => 'flexia_background_property flexia-select',
         ),
@@ -665,6 +679,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Blog Body Background', 'flexia'),
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_blog_bg_color',
+                'priority' => 20,
             ))
     );
 
@@ -688,6 +703,7 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_default_colors_settings',
                 // 'section' => 'background_image',
                 'settings' => 'flexia_post_content_bg_color',
+                'priority' => 25,
             ))
     );
 
@@ -710,6 +726,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Sidebar Widget Background', 'flexia'),
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_sidebar_widget_bg_color',
+                'priority' => 30,
             ))
     );
 
