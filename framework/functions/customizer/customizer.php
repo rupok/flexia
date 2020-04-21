@@ -4742,6 +4742,179 @@ function flexia_customize_register($wp_customize)
 
 
 
+    /**
+     * Call To Action
+     * @flexia_call_to_action
+     * Parent: Main
+     */
+    $wp_customize->add_section('flexia_call_to_action', array(
+        'priority' => 75,
+        'theme_supports' => '',
+        'title' => __('Call to Action', 'flexia'),
+    ));
+
+    // Enable Call to Action
+    $wp_customize->add_setting('flexia_call_to_action_enable', array(
+        'default' => $defaults['flexia_call_to_action_enable'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(
+        new Customizer_Toggle_Control(
+            $wp_customize, 
+            'flexia_call_to_action_enable', array(
+            'label' => esc_html__('Enable Call to Action?', 'flexia'),
+            'section' => 'flexia_call_to_action',
+            'settings' => 'flexia_call_to_action_enable',
+            'description' => __('Call to Action fullwidth section will be displayed before the Footer Section', 'flexia'),
+            'type' => 'light', // light, ios, flat
+            'priority' =>  10,
+    )));
+
+    //Call To Action Layout
+    $wp_customize->add_setting('flexia_call_to_action_layout', array(
+        'default' => $defaults['flexia_call_to_action_layout'],
+        'sanitize_callback' => 'flexia_sanitize_choices',
+    ));
+
+    $wp_customize->add_control(
+		new Flexia_Radio_Image_Control(
+            $wp_customize,
+            'flexia_call_to_action_layout',
+            array(
+                'label' => __('Select Layout', 'flexia'),
+                'type'          => 'flexia-radio-image',
+                'settings'		=> 'flexia_call_to_action_layout',
+                'section'		=> 'flexia_call_to_action',
+                'priority'      =>  20,
+                'choices'		=> apply_filters(
+                    'flexia_call_to_action_layout', 
+                    array(
+                        'cta_1' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/cta/cta-1.jpg',
+                        ),
+                        'cta_2' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/cta/cta-2.jpg',
+                            'pro'   => true,
+                            'url'   => 'https://flexia.pro/pricing/',
+                        ),
+                        'cta_3' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/cta/cta-3.jpg',
+                            'pro'   => true,
+                            'url'   => 'https://flexia.pro/pricing/',
+                        ),
+                        'cta_4' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/cta/cta-4.jpg',
+                            'pro'   => true,
+                            'url'   => 'https://flexia.pro/pricing/',
+                        ),
+                    )
+                ),
+            ) 
+        )
+    );
+    
+    $wp_customize->selective_refresh->add_partial( "flexia_call_to_action_layout_partial", [
+        'selector'            => "#flexia-cta",
+        'settings'            => [
+            "flexia_call_to_action_layout",
+        ],
+        'container_inclusive' => true,
+    ] );
+
+    // Call to Action Title
+    $wp_customize->add_setting('flexia_call_to_action_title', 
+    array(
+        'default' => $defaults['flexia_call_to_action_title'],
+        'sanitize_callback' => 'wp_kses_post',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_call_to_action_title',
+            array(
+                'label' => __('Title', 'flexia'),
+                'section' => 'flexia_call_to_action',
+                'settings' => 'flexia_call_to_action_title',
+                'type' => 'textarea',
+                'priority' => 30,
+            )
+        )
+    );
+
+    // Call to Action Sub Title
+    $wp_customize->add_setting('flexia_call_to_action_subtitle', 
+    array(
+        'default' => $defaults['flexia_call_to_action_subtitle'],
+        'sanitize_callback' => 'wp_kses_post',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_call_to_action_subtitle',
+            array(
+                'label' => __('Sub-Title', 'flexia'),
+                'section' => 'flexia_call_to_action',
+                'settings' => 'flexia_call_to_action_subtitle',
+                'type' => 'textarea',
+                'priority' => 40,
+            )
+        )
+    );
+
+    //Call to Action Button Text
+    $wp_customize->add_setting( 'flexia_call_to_action_button_text', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => $defaults['flexia_call_to_action_button_text'],
+    ));
+      
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_call_to_action_button_text',
+            array(
+                'label' => __('Button Text', 'flexia'),
+                'section' => 'flexia_call_to_action',
+                'settings' => 'flexia_call_to_action_button_text',
+                'type' => 'text',
+                'priority' => 50,
+                'input_attrs' => array(
+                    'placeholder' => __( 'Your Login Page URL', 'flexia' ),
+                ),
+            )
+        )
+    );
+
+
+
+    //Call to Action URL
+    $wp_customize->add_setting( 'flexia_call_to_action_url', array(              
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => $defaults['flexia_call_to_action_url'],
+    ));
+      
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_call_to_action_url',
+            array(
+                'label' => __('Destination URL', 'flexia'),
+                'section' => 'flexia_call_to_action',
+                'settings' => 'flexia_call_to_action_url',
+                'type' => 'text',
+                'priority' => 60,
+                'description' => __( 'Call to Action Destination URL', 'flexia' ),
+            )
+        )
+    );
+
+
+
 
 
     // Create custom panels
@@ -4764,7 +4937,8 @@ function flexia_customize_register($wp_customize)
         'theme_supports' => '',
         'title' => __('Blog Styles', 'flexia'),
         'description' => __('Controls the blog settings for the theme.', 'flexia'),
-    ));
+    ));    
+    
 
     // Assign sections to panels
     $wp_customize->get_section('title_tagline')->panel = 'flexia_general_settings';

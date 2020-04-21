@@ -19,6 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 get_header(); ?>
 
+<?php do_action('flexia_before_page_content'); //Hook for Add Content Before Page Content ?>
+
 	<div id="content" class="site-content">
 
 	<?php flexia_page_header(); ?>
@@ -49,4 +51,7 @@ get_header(); ?>
 	</div><!-- #content -->
 </div><!-- #page -->
 <?php
+
+do_action('flexia_after_page_content'); //Hook for Add Content After Page Content
+
 get_footer();
