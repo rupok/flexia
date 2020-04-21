@@ -3436,6 +3436,7 @@ function flexia_customize_register($wp_customize)
         'label' => __('Topbar Settings', 'flexia'),
         'settings' => 'topbar_settings_title',
         'section' => 'flexia_header_top',
+        'priority' => 1,
     )));
 
     // Enable Topbar
@@ -3450,6 +3451,7 @@ function flexia_customize_register($wp_customize)
         'section' => 'flexia_header_top',
         'settings' => 'flexia_enable_topbar',
         'type' => 'light', // light, ios, flat
+        'priority' => 2,
     )));
 
     // Enable Topbar On Mobile
@@ -3464,6 +3466,7 @@ function flexia_customize_register($wp_customize)
         'section' => 'flexia_header_top',
         'settings' => 'flexia_enable_topbar_on_mobile',
         'type' => 'light', // light, ios, flat
+        'priority' => 3,
     )));
 
     $wp_customize->add_setting('flexia_topbar_bg_color', array(
@@ -3480,6 +3483,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Topbar Background Color', 'flexia'),
                 'section' => 'flexia_header_top',
                 'settings' => 'flexia_topbar_bg_color',
+                'priority' => 4,
             ))
     );
 
@@ -3497,6 +3501,7 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_top',
                 'settings' => 'flexia_topbar_content',
                 'type' => 'textarea',
+                'priority' => 8,
             )
         )
     );
@@ -3515,6 +3520,7 @@ function flexia_customize_register($wp_customize)
         'label' => __('Topbar Contact Info Settings', 'flexia'),
         'settings' => 'top_contact_settings_title',
         'section' => 'flexia_header_top',
+        'priority' => 10,
     )));
 
     /**
@@ -3535,6 +3541,7 @@ function flexia_customize_register($wp_customize)
             array(
                 'label' => __('Phone Number', 'flexia'),
                 'section' => 'flexia_header_top',
+                'priority' => 11,
                 'settings' => 'flexia_header_top_phone',
                 'type' => 'text',
                 'input_attrs' => array(
@@ -3562,6 +3569,7 @@ function flexia_customize_register($wp_customize)
             array(
                 'label' => __('Email Address', 'flexia'),
                 'section' => 'flexia_header_top',
+                'priority' => 12,
                 'settings' => 'flexia_header_top_email',
                 'type' => 'text',
                 'input_attrs' => array(
@@ -3589,6 +3597,7 @@ function flexia_customize_register($wp_customize)
             array(
                 'label' => __('Location', 'flexia'),
                 'section' => 'flexia_header_top',
+                'priority' => 13,
                 'settings' => 'flexia_header_top_location',
                 'type' => 'text',
                 'input_attrs' => array(
@@ -3616,6 +3625,7 @@ function flexia_customize_register($wp_customize)
             array(
                 'label' => __('Location Link', 'flexia'),
                 'section' => 'flexia_header_top',
+                'priority' => 14,
                 'settings' => 'flexia_header_top_location_link',
                 'type' => 'text',
                 'input_attrs' => array(
@@ -3640,6 +3650,7 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'flexia_header_top_contact_font_size', array(
         'type' => 'range-value',
         'section' => 'flexia_header_top',
+        'priority' => 15,
         'settings' => 'flexia_header_top_contact_font_size',
         'label' => __('Font Size', 'flexia'),
         'input_attrs' => array(
@@ -3668,6 +3679,7 @@ function flexia_customize_register($wp_customize)
             array(
                 'label' => __('Text Color', 'flexia'),
                 'section' => 'flexia_header_top',
+                'priority' => 16,
                 'settings' => 'flexia_header_top_contact_font_color',
             ))
     );
@@ -3690,6 +3702,7 @@ function flexia_customize_register($wp_customize)
             array(
                 'label' => __('Hover Color', 'flexia'),
                 'section' => 'flexia_header_top',
+                'priority' => 17,
                 'settings' => 'flexia_header_top_contact_font_hover_color',
             ))
     );
@@ -3704,6 +3717,7 @@ function flexia_customize_register($wp_customize)
         'label' => __('Topbar Menu Settings', 'flexia'),
         'settings' => 'top_nav_settings_title',
         'section' => 'flexia_header_top',
+        'priority' => 18,
     )));
 
     // Enable Topbar Menu
@@ -3717,6 +3731,7 @@ function flexia_customize_register($wp_customize)
         'label' => esc_html__('Enable Topbar Menu?', 'flexia'),
         'section' => 'flexia_header_top',
         'settings' => 'flexia_enable_topbar_menu',
+        'priority' => 19,
         'type' => 'light', // light, ios, flat
     )));
 
@@ -3733,6 +3748,7 @@ function flexia_customize_register($wp_customize)
             array(
                 'label' => __('Links color', 'flexia'),
                 'section' => 'flexia_header_top',
+                'priority' => 20,
                 'settings' => 'flexia_top_nav_menu_link_color',
             ))
     );
@@ -3750,6 +3766,7 @@ function flexia_customize_register($wp_customize)
             array(
                 'label' => __('Links hover color', 'flexia'),
                 'section' => 'flexia_header_top',
+                'priority' => 21,
                 'settings' => 'flexia_top_nav_menu_link_hover_color',
             ))
     );
@@ -3767,6 +3784,7 @@ function flexia_customize_register($wp_customize)
             array(
                 'label' => __('Links hover background', 'flexia'),
                 'section' => 'flexia_header_top',
+                'priority' => 22,
                 'settings' => 'flexia_top_nav_menu_link_hover_bg',
             ))
     );
@@ -3784,6 +3802,7 @@ function flexia_customize_register($wp_customize)
             array(
                 'label' => __('Dropdown background', 'flexia'),
                 'section' => 'flexia_header_top',
+                'priority' => 23,
                 'settings' => 'flexia_top_nav_menu_submenu_bg_color',
             ))
     );
@@ -3801,6 +3820,7 @@ function flexia_customize_register($wp_customize)
             array(
                 'label' => __('Dropdown links color', 'flexia'),
                 'section' => 'flexia_header_top',
+                'priority' => 28,
                 'settings' => 'flexia_top_nav_menu_submenu_link_color',
             ))
     );
@@ -3818,6 +3838,7 @@ function flexia_customize_register($wp_customize)
             array(
                 'label' => __('Dropdown links hover color', 'flexia'),
                 'section' => 'flexia_header_top',
+                'priority' => 29,
                 'settings' => 'flexia_top_nav_menu_submenu_link_hover_color',
             ))
     );
@@ -3835,6 +3856,7 @@ function flexia_customize_register($wp_customize)
             array(
                 'label' => __('Dropdown links hover background', 'flexia'),
                 'section' => 'flexia_header_top',
+                'priority' => 30,
                 'settings' => 'flexia_top_nav_menu_submenu_link_hover_bg',
             ))
     );
@@ -3848,6 +3870,7 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_control('flexia_top_nav_menu_dropdown_animation_control', array(
         'label' => 'Dropdown animation',
         'section' => 'flexia_header_top',
+        'priority' => 31,
         'settings' => 'flexia_top_nav_menu_dropdown_animation',
         'type' => 'select',
         'choices' => array(
