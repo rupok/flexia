@@ -5165,6 +5165,27 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
 .not-found .search-form .search-field {
   border: 1px solid #f1f1f1; }
 
+/*Call to Action Style*/
+.flexia-cta-1 {
+  padding: 5em 15px;
+  background-color: #f2f2f2; }
+  .flexia-cta-1 .cta-1-container {
+    text-align: center; }
+    .flexia-cta-1 .cta-1-container .cta-title {
+      color: #222;
+      margin: 0 0 .75em 0; }
+    .flexia-cta-1 .cta-1-container .cta-subtitle {
+      color: #999;
+      margin: 0 0 1.5em 0; }
+    .flexia-cta-1 .cta-1-container .cta-target button {
+      padding: 1em 3em;
+      border-radius: 30px;
+      border: 0;
+      font-size: 1.1em;
+      font-weight: 700; }
+    .flexia-cta-1 .cta-1-container .cta-target:hover button {
+      opacity: .85; }
+
 /*--------------------------------------------------------------
 ## WooCommerce
 --------------------------------------------------------------*/

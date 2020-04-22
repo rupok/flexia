@@ -4791,20 +4791,20 @@ function flexia_customize_register($wp_customize)
                 'choices'		=> apply_filters(
                     'flexia_call_to_action_layout', 
                     array(
-                        'cta_1' 	=> array(
+                        '1' 	=> array(
                             'image' => get_template_directory_uri() . '/admin/img/cta/cta-1.jpg',
                         ),
-                        'cta_2' 	=> array(
+                        '2' 	=> array(
                             'image' => get_template_directory_uri() . '/admin/img/cta/cta-2.jpg',
                             'pro'   => true,
                             'url'   => 'https://flexia.pro/pricing/',
                         ),
-                        'cta_3' 	=> array(
+                        '3' 	=> array(
                             'image' => get_template_directory_uri() . '/admin/img/cta/cta-3.jpg',
                             'pro'   => true,
                             'url'   => 'https://flexia.pro/pricing/',
                         ),
-                        'cta_4' 	=> array(
+                        '4' 	=> array(
                             'image' => get_template_directory_uri() . '/admin/img/cta/cta-4.jpg',
                             'pro'   => true,
                             'url'   => 'https://flexia.pro/pricing/',

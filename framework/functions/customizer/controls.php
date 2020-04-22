@@ -384,6 +384,9 @@ class Flexia_Radio_Image_Control extends WP_Customize_Control {
 		<div id="input_<?php echo esc_attr($this->id); ?>" class="image">
 			<?php 
 			foreach ( $this->choices as $value => $label ) :
+				if(isset( $label['pro'] ) && class_exists('Flexia_Pro')) {
+					$label['pro'] = false;
+				}
 				if(isset( $label['pro'] ) && $label['pro'] === true) { 
 			?>
 					<label class="image-select" id="<?php echo esc_attr($this->id) . $value ?>">
