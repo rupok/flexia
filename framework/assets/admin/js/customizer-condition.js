@@ -4,13 +4,12 @@
 	 * Run function when customizer is ready.
 	 */
 	function customizer_controls_show(setting,controler_name,controler_val){
-		wp.customize.control( controler_name, function( control ) { 
-			var controler_array = controler_val.split(',');
+		wp.customize.control( controler_name, function( control ) {
 			var visibility = function() {
-				if ( $.inArray(setting.get(), controler_array) > -1 ) {
-					control.container.slideDown( 180 );
-				} else {
+				if ( setting.get() == controler_val ) {
 					control.container.slideUp( 180 );
+				} else {
+					control.container.slideDown( 180 );
 				}
 			};           
 			visibility();         
@@ -20,12 +19,11 @@
 
 	function customizer_controls_hide(setting,controler_name,controler_val){
 		wp.customize.control( controler_name, function( control ) {
-			var controler_array = controler_val.split(',');
 			var visibility = function() {
-				if ( $.inArray(setting.get(), controler_array) > -1 ) {
-					control.container.slideUp( 180 );
-				} else {
+				if ( setting.get() == controler_val ) {
 					control.container.slideDown( 180 );
+				} else {
+					control.container.slideUp( 180 );
 				}
 			};   
 			visibility();   
@@ -33,7 +31,7 @@
 		});	
 	}
 
-	function customizer_conditional_setting_return_toggle(setting,controler_name,controler_val){
+	function customizer_conditional_setting_return_toggle( setting, controler_name, controler_val ) {
 		wp.customize.control( controler_name, function( control ) { 
 			var visibility = function() {
 				if ( setting.get() == true ) { 
@@ -74,7 +72,7 @@
 				});
 			});
 
-			//Show relative options when enable site background image
+			// Show relative options when enable site background image
 			wp.customize( 'flexia_background_image_enable_button', function( setting ) {
 				customizer_conditional_setting_return_toggle(setting,'flexia_background_image',true);
 				customizer_conditional_setting_return_toggle(setting,'flexia_background_property',true);
@@ -84,15 +82,23 @@
 				customizer_conditional_setting_return_toggle(setting,'flexia_background_image_attachment',true);
 			});
 			
-			//Show relative options when enable Login Button in Header
+			// Show relative options when enable Login Button in Header
 			wp.customize( 'flexia_enable_login_button', function( setting ) {
 				customizer_conditional_setting_return_toggle(setting,'flexia_custom_login_url',true);
 			});
 
-			//Change Settings options when Header Layout is selected
-			// wp.customize( 'betterdocs_docs_layout_select', function( setting ) {                  
-			// 	customizer_controls_show(setting,'betterdocs_doc_page_cat_icon_size_layout1','layout-1');
-			// });
+			// Show relative options when Logobar Position is Stacked
+			wp.customize( 'flexia_logobar_position', function( setting ) {
+				customizer_controls_hide(setting,'flexia_logobar_bg_color', 'flexia-logobar-stacked');				
+			});
+
+			// Show relative options when enable navbar gradient background
+			wp.customize( 'flexia_pro_navbar_gradient_switch', function( setting ) {
+				customizer_conditional_setting_return_toggle(setting,'flexia_pro_navbar_gradient_color1',true);
+				customizer_conditional_setting_return_toggle(setting,'flexia_pro_navbar_gradient_color2',true);
+				customizer_conditional_setting_return_toggle(setting,'flexia_pro_navbar_gradient_direction',true);
+				customizer_conditional_setting_return_toggle(setting,'flexia_pro_navbar_gradient_angle',true);
+			});
 		});
 	});
 })(jQuery);

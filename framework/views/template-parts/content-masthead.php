@@ -44,7 +44,6 @@ $header_layouts = get_theme_mod('flexia_header_layouts', '1');
 
 	<?php if( $flexia_navbar == true ) :
 		get_template_part( 'framework/views/template-parts/headers/header', $header_layouts );
-		// get_template_part( 'framework/views/template-parts/headers/header', 1 );
 	endif; ?>
 
 
