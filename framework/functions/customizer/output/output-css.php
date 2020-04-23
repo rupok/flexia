@@ -169,7 +169,7 @@ function flexia_generate_css()
 		font-size: ' . $defaults['flexia_heading6_font_size'] . 'em;
 	}
 
-	#content a {
+	.site-content a {
 		font-size: ' . $defaults['flexia_link_font_size'] . 'em;
 	}
 	
