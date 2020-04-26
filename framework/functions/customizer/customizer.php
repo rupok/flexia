@@ -4915,8 +4915,6 @@ function flexia_customize_register($wp_customize)
 
 
 
-
-
     // Create custom panels
     $wp_customize->add_panel('flexia_general_settings', array(
         'priority' => 10,
