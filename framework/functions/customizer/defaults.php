@@ -239,7 +239,7 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_woo_sidebar_checkout_page' => false,
             'flexia_woo_sidebar_archive_page' => true,
 
-            'flexia_call_to_action_enable' => false,
+            'flexia_call_to_action_enable' => false, 
             'flexia_call_to_action_layout' => '1',
             'flexia_call_to_action_title' => 'Write Your Title here',
             'flexia_call_to_action_subtitle' => 'Write Your Subtitle here. Leave empty for not showing',
