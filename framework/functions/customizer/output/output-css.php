@@ -401,8 +401,16 @@ function flexia_generate_css()
 	
 	.flexia-menu.header-icons .nav-menu li > a,
 	.flexia-navbar .flexia-navbar-container .flexia-navbar-inner .search-form .search-submit,
-	.flexia-navbar .flexia-navbar-container .flexia-navbar-inner .search-form .search-field {
+	.flexia-navbar .flexia-navbar-container .flexia-navbar-inner .search-form .search-field,
+	.flexia-menu.header-icons {
 		color: ' . $defaults['flexia_main_nav_menu_link_color'] . ';
+	}
+
+	.flexia-menu .flexia-menu-toggle:after {
+		border-color: ' . $defaults['flexia_main_nav_menu_link_color'] . ';
+	}
+	.flexia-menu .flexia-menu-toggle:before {
+		background-color: ' . $defaults['flexia_main_nav_menu_link_color'] . ';
 	}
 	
 	@media screen and (min-width: 992px) {
