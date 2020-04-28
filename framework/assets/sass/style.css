@@ -2217,7 +2217,8 @@ big {
     word-wrap: normal !important; }
   @media all and (max-width: 480px) {
     .flexia-logobar-inline {
-      margin: 0; } }
+      margin: 0;
+      max-width: 60%; } }
 
 .site-branding .site-title {
   font-size: 1.5rem;
@@ -2229,17 +2230,20 @@ big {
     text-transform: uppercase;
     margin: 1em 0;
     font-weight: 700; }
-.site-branding .flexia-header-logo > img {
-  width: auto;
-  max-height: 100%;
-  max-width: 100%;
-  margin-right: 1em; }
-@media all and (max-width: 767px) {
-  .site-branding .flexia-header-logo {
-    padding: 0; }
-    .site-branding .flexia-header-logo > img {
-      max-height: 80px;
-      width: auto; } }
+.site-branding .flexia-header-logo {
+  display: flex;
+  align-items: center; }
+  .site-branding .flexia-header-logo > img {
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+    margin-right: 1em; }
+  @media all and (max-width: 767px) {
+    .site-branding .flexia-header-logo {
+      padding: 0; }
+      .site-branding .flexia-header-logo > img {
+        max-height: 80px;
+        width: auto; } }
 .site-branding .flexia-header-sticky-logo {
   display: none; }
   .site-branding .flexia-header-sticky-logo > img {

@@ -304,6 +304,7 @@
 
 	@media all and (max-width: 480px) {
 		margin: 0;
+		max-width: 60%;
 	}
 }
 .site-branding {
@@ -320,6 +321,9 @@
 		}
 	}
 	.flexia-header-logo {
+		display: flex;
+		align-items: center;
+
 		>img {
 			width: auto;
 			max-height: 100%;
