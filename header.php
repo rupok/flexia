@@ -37,4 +37,6 @@ if( class_exists('Flexia_Pro') ) {
 
 	do_action('flexia_header');
 
+	do_action('flexia_after_header'); //Hook for Add Content After Header 
+
 ?>
