@@ -53,7 +53,7 @@ if (!function_exists('flexia_page_header')) {
 
 //Flexia Call To Action File Include using Hook
 if (!function_exists('flexia_cta_template')) {
-    add_action('flexia_after_page_content', 'flexia_cta_template');
+    add_action('flexia_before_footer', 'flexia_cta_template');
     function flexia_cta_template() {
         do_action('flexia_call_to_action_before');
 

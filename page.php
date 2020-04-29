@@ -52,6 +52,6 @@ get_header(); ?>
 </div><!-- #page -->
 <?php
 
-do_action('flexia_after_page_content'); //Hook for Add Content After Page Content
+do_action('flexia_after_page_content'); //Hook for Add Content After Page Content 
 
 get_footer();

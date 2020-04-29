@@ -17,6 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 <?php
 
+	do_action('flexia_before_footer'); //Hook for Add Content Before Footer 
+
 	do_action('flexia_footer');
 	
 ?>
