@@ -4804,11 +4804,6 @@ function flexia_customize_register($wp_customize)
                             'pro'   => true,
                             'url'   => 'https://flexia.pro/pricing/',
                         ),
-                        '4' 	=> array(
-                            'image' => get_template_directory_uri() . '/admin/img/cta/cta-4.jpg',
-                            'pro'   => true,
-                            'url'   => 'https://flexia.pro/pricing/',
-                        ),
                     )
                 ),
             ) 
