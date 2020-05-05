@@ -13,6 +13,11 @@ jQuery(document).ready(function($) {
         let direction = $(this).find('.gradient-control-direction');
         let angle = $(this).find('.gradient-control-angle');
 
+        let containerColor1 = $(this).find('.customize-control-gradient-color-1');
+        let containerColor2 = $(this).find('.customize-control-gradient-color-2');
+        let containerColor3 = $(this).find('.customize-control-gradient-color-3');
+        let containerColor4 = $(this).find('.customize-control-gradient-color-4');
+
         let gradient_result = {
             color1: color1.val(),
             color1_percent: color1_percent.val(),
@@ -61,6 +66,26 @@ jQuery(document).ready(function($) {
             }
         }
         color4.wpColorPicker( color4PickerOptions );
+
+        $(containerColor1).find( '.button.wp-picker-clear' ).on('click', function () {
+            gradient_result.color1 = 'transparent';
+            gradient_color.val(JSON.stringify(gradient_result)).change();
+        })
+
+        $(containerColor2).find( '.button.wp-picker-clear' ).on('click', function () {
+            gradient_result.color2 = 'transparent';
+            gradient_color.val(JSON.stringify(gradient_result)).change();
+        })
+
+        $(containerColor3).find( '.button.wp-picker-clear' ).on('click', function () {
+            gradient_result.color3 = 'transparent';
+            gradient_color.val(JSON.stringify(gradient_result)).change();
+        })
+
+        $(containerColor4).find( '.button.wp-picker-clear' ).on('click', function () {
+            gradient_result.color4 = 'transparent';
+            gradient_color.val(JSON.stringify(gradient_result)).change();
+        })
 
         $(color1_percent).bind('change onkeyup', function () {
             let color1_percent_val = color1_percent.val();

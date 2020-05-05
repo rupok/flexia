@@ -607,9 +607,9 @@ class Flexia_Customizer_Gradient_Color_Control extends WP_Customize_Control {
 			$gradient_val = $this->defaults;
 		}
 		?>
-		<input type="hidden" data-default-val="<?php echo $this->settings[ 'default' ]->value(); ?>" value="<?php echo $this->value() ?>" class="flexia-gradient-color <?php echo esc_attr($this->id) ?>" value="" data-customize-setting-link="<?php echo esc_attr($this->id); ?>">
+		<input type="hidden" value="" class="flexia-gradient-color <?php echo esc_attr($this->id) ?>" value="" data-customize-setting-link="<?php echo esc_attr($this->id); ?>">
 		<ul>
-			<li class="customize-control customize-control-gradient">
+			<li class="customize-control customize-control-gradient customize-control-gradient-color-1">
 				 <div class="gradient-color-plate color-plate-left">
 					<label class="gradient-control-label"><?php esc_html_e('Color 1','flexia') ?></label>
 					<input class="flexia-alpha-color-control gradient-control-field gradient-control-color-1" type="text" data-show-opacity="<?php echo esc_attr( $show_opacity ); ?>" data-palette="<?php echo esc_attr( $palette ); ?>" value="<?php echo $gradient_val['color1'] ?>" />
@@ -619,7 +619,7 @@ class Flexia_Customizer_Gradient_Color_Control extends WP_Customize_Control {
 					<input type="number" class="gradient-control-color-1-percent" value="<?php echo $gradient_val['color1_percent'] ?>">	
 				</div>
 			</li>
-			<li class="customize-control customize-control-gradient">
+			<li class="customize-control customize-control-gradient customize-control-gradient-color-2">
 				 <div class="gradient-color-plate color-plate-left">
 					<label class="gradient-control-label"><?php esc_html_e('Color 2','flexia') ?></label>
 					<input class="flexia-alpha-color-control gradient-control-field gradient-control-color-2" type="text" data-show-opacity="<?php echo esc_attr( $show_opacity ); ?>" data-palette="<?php echo esc_attr( $palette ); ?>" value="<?php echo $gradient_val['color2'] ?>" />	
@@ -629,7 +629,7 @@ class Flexia_Customizer_Gradient_Color_Control extends WP_Customize_Control {
 					<input type="number" class="gradient-control-color-2-percent" value="<?php echo $gradient_val['color2_percent'] ?>">	
 				</div>
 			</li>
-			<li class="customize-control customize-control-gradient">
+			<li class="customize-control customize-control-gradient customize-control-gradient-color-3">
 				 <div class="gradient-color-plate color-plate-left">
 					<label class="gradient-control-label"><?php esc_html_e('Color 3','flexia') ?></label>
 					<input class="flexia-alpha-color-control gradient-control-field gradient-control-color-3" type="text" data-show-opacity="<?php echo esc_attr( $show_opacity ); ?>" data-palette="<?php echo esc_attr( $palette ); ?>" value="<?php echo $gradient_val['color3'] ?>" />
@@ -639,7 +639,7 @@ class Flexia_Customizer_Gradient_Color_Control extends WP_Customize_Control {
 					<input type="number" class="gradient-control-color-3-percent" value="<?php echo $gradient_val['color3_percent'] ?>">	
 				</div>
 			</li>
-			<li class="customize-control customize-control-gradient">
+			<li class="customize-control customize-control-gradient customize-control-gradient-color-4">
 				 <div class="gradient-color-plate color-plate-left">
 					<label class="gradient-control-label"><?php esc_html_e('Color 4','flexia') ?></label>
 					<input class="flexia-alpha-color-control gradient-control-field gradient-control-color-4" type="text" data-show-opacity="<?php echo esc_attr( $show_opacity ); ?>" data-palette="<?php echo esc_attr( $palette ); ?>" value="<?php echo $gradient_val['color4'] ?>" />
