@@ -244,7 +244,7 @@ jQuery( document ).ready(
 
 							// The #fff color is delibrate here. This sets the color picker to white instead of the
 							// defult black, which puts the color picker in a better place to visually represent empty.
-							$control.wpColorPicker( 'color', '#ffffff' );
+							$control.wpColorPicker( 'color', '' );
 
 							// Set the actual option value to empty string.
 							wp.customize(
