@@ -30,9 +30,13 @@ $cta_layout = flexia_get_option('flexia_call_to_action_layout');
 
 			if (class_exists('Flexia_Pro')) :
 
-				if( $cta_layout == 2 ) : 
+				if( $cta_layout == 2 ) {
 					include( FLEXIA_PRO_DIR_PATH . 'public/template-parts/cta/cta-2.php' );
-				endif;
+				}					
+
+				elseif ( $cta_layout == 3 ) {
+					include( FLEXIA_PRO_DIR_PATH . 'public/template-parts/cta/cta-3.php' );
+				}
 				
 			endif;
 		?>
