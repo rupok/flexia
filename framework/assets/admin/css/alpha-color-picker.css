@@ -1,6 +1,11 @@
 /**
  * Alpha Color Picker CSS
  */
+ .gradient-control-label {
+    width: 100%;
+    display: block;
+    margin-bottom: 5px;
+}
 
  .customize-control-alpha-color .wp-picker-container .iris-picker {
 	border-bottom:none;
@@ -33,7 +38,7 @@
 	border-top: none;
 	display: none;
 	background: #FFF;
-	padding: 0 11px 10px;
+	padding: 10px 11px 10px;
 	position: relative;
 }
 
@@ -104,7 +109,7 @@
 	height: 24px;
 	width: 100%;
 	background-color: #FFF;
-	background-image: url(../img/transparency-grid.png);
+	background-image: url(../../img/transparency-grid.png);
 	box-shadow: 0 0 5px rgba(0,0,0,0.4) inset;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -134,4 +139,20 @@
 		width: 172px;
 		height: 33px;
 	}
+}
+
+.gradient-color-plate {
+	float: left;
+}
+.color-plate-left {
+	width: 80%;
+}
+.color-plate-right {
+	width: 20%;
+}
+.gradient-color-plate .wp-picker-active .wp-color-result-text {
+	display: none;
+}
+.gradient-color-plate .button.button-small.wp-picker-clear {
+	margin-left: 2px !important;
 }

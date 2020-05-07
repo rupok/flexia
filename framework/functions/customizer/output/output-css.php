@@ -90,6 +90,10 @@ function flexia_customizer_custom_styles()
 		.customize-control-title .customize-control-title {
 			margin-bottom: 0;
 		}
+
+		.betterdocs-gradient-color-control .gradient-control-label {
+			width: 100%;
+		}
 	</style>
 <?php
 
