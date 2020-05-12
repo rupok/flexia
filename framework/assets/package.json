@@ -23,5 +23,11 @@
     "gulp-compass": "^2.1.0",
     "gulp-notify": "^3.2.0"
   },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "not IE_Mob 11",
+    "maintained node versions"
+  ],
   "dependencies": {}
 }
