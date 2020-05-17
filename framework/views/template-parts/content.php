@@ -15,6 +15,15 @@ $flexia_blog_content_display = get_theme_mod('flexia_blog_content_display', 'fle
 $flexia_blog_excerpt_count = get_theme_mod('flexia_blog_excerpt_count', '60');
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
+		<div class="post-thumbnail">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail( 'flexia-featured-image' ); ?>
+			</a>
+		</div><!-- .post-thumbnail -->
+	<?php endif; ?>
+
 	<header class="entry-header single-blog-meta">
 		<?php	
 
@@ -34,15 +43,7 @@ $flexia_blog_excerpt_count = get_theme_mod('flexia_blog_excerpt_count', '60');
 		endif;
 		?>
 
-	</header><!-- .entry-header -->
-
-	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
-		<div class="post-thumbnail">
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'flexia-featured-image' ); ?>
-			</a>
-		</div><!-- .post-thumbnail -->
-	<?php endif; ?>
+	</header><!-- .entry-header -->	
 
 	<?php if( $flexia_blog_content_display == 'flexia_blog_content_display_excerpt' ) :  ?>
     <div class="entry-content excerpt-only">

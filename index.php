@@ -21,60 +21,65 @@ $scroll_bottom_arrow 	= get_theme_mod('scroll_bottom_arrow', false);
 $blog_title 			= get_theme_mod('blog_title', '');
 $blog_desc 				= get_theme_mod('blog_desc', '');
 $flexia_blog_layout 	= get_theme_mod( 'flexia_blog_content_layout', 'flexia_blog_content_layout_standard' );
+$flexia_blog_show 	= flexia_get_option( 'show_blog_header' );
 ?>
 
-	<header class="page-header blog-header" <?php if ( has_header_image() ) { ?> style="background-image: url('<?php echo( get_header_image() ); ?>'); <?php } ?>">
-        <div class="header-inner">
-            <div class="header-content">
+	<?php if ($flexia_blog_show) : ?>
 
-            	<?php if( get_theme_mod('show_blog_logo') == 'blog_icon' ) :  ?>
+		<header class="page-header blog-header" <?php if ( has_header_image() ) { ?> style="background-image: url('<?php echo( get_header_image() ); ?>'); <?php } ?>">
+			<div class="header-inner">
+				<div class="header-content">
 
-               		<span><i class="fa fa-3x <?php echo esc_attr($icon_class); ?>"></i></span>
+					<?php if( get_theme_mod('show_blog_logo') == 'blog_icon' ) :  ?>
 
-               	<?php elseif( get_theme_mod('show_blog_logo') == 'blog_logo_image' ) :  ?>
+						<span><i class="fa fa-3x <?php echo esc_attr($icon_class); ?>"></i></span>
 
-               		<?php if( get_theme_mod('blog_logo') !== '' ) :  ?>
+					<?php elseif( get_theme_mod('show_blog_logo') == 'blog_logo_image' ) :  ?>
 
-               			<img class="flexia-blog-logo" src="<?php echo esc_url(get_theme_mod('blog_logo')); ?>">
+						<?php if( get_theme_mod('blog_logo') !== '' ) :  ?>
 
-               		<?php endif; ?>
+							<img class="flexia-blog-logo" src="<?php echo esc_url(get_theme_mod('blog_logo')); ?>">
 
-                <?php endif; ?>
+						<?php endif; ?>
 
-                <h2 class="page-title"><?php
+					<?php endif; ?>
 
-                	if( $blog_title !== '' ) :
+					<h2 class="page-title"><?php
 
-                		echo esc_html($blog_title);
+						if( $blog_title !== '' ) :
 
-                	else:
+							echo esc_html($blog_title);
 
-                		bloginfo( 'name' );
+						else:
 
-                	endif;?></h2>
+							bloginfo( 'name' );
 
-                <h3 class="blog-desc"><?php
+						endif;?></h2>
 
-                	if( $blog_desc !== '' ) :
+					<h3 class="blog-desc"><?php
 
-                		echo esc_html($blog_desc);
+						if( $blog_desc !== '' ) :
 
-                	else:
+							echo esc_html($blog_desc);
 
-                        echo wp_kses_post( get_bloginfo ( 'description' ) );
+						else:
+
+							echo wp_kses_post( get_bloginfo ( 'description' ) );
 
 
-                	endif;?></h3>
-            </div>
+						endif;?></h3>
+				</div>
 
-            <?php if( $scroll_bottom_arrow == false ) :
+				<?php if( $scroll_bottom_arrow == false ) :
 
-           		echo '<a href="#content" class="scroll-down"></a>';
+					echo '<a href="#content" class="scroll-down"></a>';
 
-            endif; ?>
-        </div>
-        <div class="header-overlay"></div>
-    </header>
+				endif; ?>
+			</div>
+			<div class="header-overlay"></div>
+		</header>
+
+	<?php endif; ?>
 
 	<div id="content" class="site-content">
 		<div class="flexia-wrapper flexia-container max width">
@@ -116,6 +121,7 @@ $flexia_blog_layout 	= get_theme_mod( 'flexia_blog_content_layout', 'flexia_blog
 								 * @since   v1.0.1
 								 */
 								do_action( 'flexia_blog_layout' );
+								get_template_part( 'framework/views/template-parts/content', 'pagination' );
 							endif;
 
 					else :

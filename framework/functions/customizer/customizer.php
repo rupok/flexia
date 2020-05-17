@@ -2210,6 +2210,21 @@ function flexia_customize_register($wp_customize)
         'section' => 'flexia_blog_header_settings',
     )));
 
+    // Show Blog Header Option
+
+    $wp_customize->add_setting('show_blog_header', array(
+        'default' => $defaults['show_blog_header'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'show_blog_header', array(
+        'label' => esc_html__('Show Blog Header?', 'flexia'),
+        'section' => 'flexia_blog_header_settings',
+        'settings' => 'show_blog_header',
+        'type' => 'light', // light, ios, flat
+    )));
+
     // Show scroll bottom anchor
 
     $wp_customize->add_setting('scroll_bottom_arrow', array(

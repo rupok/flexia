@@ -1,9 +1,8 @@
-var gulp = require('gulp'),
-	compass = require("gulp-compass"),
-	notify = require("gulp-notify"),
-	autoprefixer = require('gulp-autoprefixer');
- 	cleanCSS = require('gulp-clean-css');
-
+const { src, dest, series, watch } = require('gulp');
+const compass = require('gulp-compass');
+const notify = require('gulp-notify');
+const autoprefixer = require('gulp-autoprefixer');
+const cleanCSS = require('gulp-clean-css');
 
 /**
  * Primary Compass Configurations
@@ -32,37 +31,27 @@ var files = {
 
 // Compile SASS
 
-gulp.task('compassBuild', function() {
-	return gulp.src(files.sass.toCompile)
-		.pipe(
-			compass(compassConfig)
-			.on('error', notify.onError({
-				message: 'Sass/Compass failed. Check console for errors.'
-			}))
-			.on('error', function(error) {
-				console.log(error); // find the error about
-				this.emit('end');
-			})
-		)
-		.pipe(autoprefixer({
-			browsers: ['last 10 versions']
-		}))
-		.pipe(gulp.dest('./' + compassConfig.css))
-		.pipe(notify('Sass/Compass successfully compiled'));
-});
+function compassBuild() {
+	return src( files.sass.toCompile ).pipe( 
+		compass(compassConfig).on( 'error', notify.onError({
+			message: 'Sass/Compass failed. Check console for errors.'
+		}) ).on('error', function(error) {
+			console.log(error); // find the error about
+			this.emit('end');
+		})
+	)
+	.pipe(autoprefixer())
+	.pipe( dest( './' + compassConfig.css ) )
+	.pipe( notify( 'Sass/Compass successfully compiled' ) );
+}
 
 // Minify CSS
-
-gulp.task('minify-css', () => {
-  return gulp.src('sass/style.css')
-	.pipe( cleanCSS() ) // minify the css 
-    .pipe(gulp.dest('site/css/'));
-});
-
-
-// Default task (one-time build).
-gulp.task('default', ['compassBuild', 'minify-css']);
-
-
-// Gulp Watcher if there is any change on SCSS file.
-gulp.watch(files.sass.toCompile, ['default']);
+function minifyCSS() {
+	return src('sass/style.css')
+		.pipe( cleanCSS() ) // minify the css 
+		.pipe( dest( 'site/css/' ) );
+}
+exports.default = function(){
+	watch(files.sass.toCompile, series( minifyCSS, compassBuild ) )
+};
+exports.build = series( compassBuild, minifyCSS );
