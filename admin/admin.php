@@ -50,18 +50,19 @@ class Flexia_Admin
      */
     public function flexia_admin_menu()
     {
-		if(class_exists('Flexia_Core')) {
-			do_action('flexia_admin_menu', $this);
-		} else {
-			add_theme_page(
-				'Flexia',
-				'Flexia',
-				'manage_options',
-				'flexia',
-				array($this, 'flexia_dashboard_page')
-			);
-		
-		}
+		// if(class_exists('Flexia_Core')) {
+		// 	do_action('flexia_admin_menu', $this);
+		// } else {			
+    				
+		// }
+		add_menu_page(
+			'Flexia', 
+			'Flexia', 
+			'manage_options', 
+			'flexia-options', 
+			array($this, 'flexia_dashboard_page')
+		);
+		do_action('flexia_admin_menu', $this);
     }
 
     public function flexia_dashboard_page()

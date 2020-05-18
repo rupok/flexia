@@ -215,6 +215,11 @@ require get_template_directory() . '/framework/functions/flexia/breadcrumb.php';
 require get_template_directory() . '/framework/functions/flexia/flexia-template-hooks.php';
 
 /**
+ * Functions to Add Helper Fuctions file
+ */
+require get_template_directory() . '/framework/functions/flexia/flexia-helper.php';
+
+/**
  * Integrations.
  */
 
