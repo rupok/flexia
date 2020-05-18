@@ -62,7 +62,7 @@ class Flexia_Admin
 			'flexia-options', 
 			array($this, 'flexia_dashboard_page')
 		);
-		do_action('flexia_admin_menu', $this);
+		do_action('flexia_theme_admin_menu', $this);
     }
 
     public function flexia_dashboard_page()
