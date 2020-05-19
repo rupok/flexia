@@ -339,13 +339,14 @@ function flexia_generate_css()
 		color: ' . $defaults['flexia_header_top_contact_font_hover_color'] . ';
 	}
 	
-	.flexia-social-links li a {
-		color: ' . $defaults['flexia_header_social_icon_color'] . ';
-		font-size: ' . $defaults['flexia_header_social_icon_size'] . 'em;
+	.flexia-social-links li a svg {
+		fill: ' . $defaults['flexia_header_social_icon_color'] . ';
+		height: ' . $defaults['flexia_header_social_icon_size'] . 'em;
+		width: auto;
 	}
 	
-	.flexia-social-links li a:hover {
-		color: ' . $defaults['flexia_header_social_icon_hover_color'] . ';
+	.flexia-social-links li a:hover svg {
+		fill: ' . $defaults['flexia_header_social_icon_hover_color'] . ';
 	}
 	
 	.flexia-woo-sidebar .widget_price_filter .ui-slider .ui-slider-range,
@@ -363,8 +364,11 @@ function flexia_generate_css()
 		border-color: ' . $defaults['flexia_primary_color'] . ';
 	}
 
-	.single-blog-meta .entry-meta i {
-		color: ' . $defaults['flexia_primary_color'] . ';
+	.single-blog-meta .entry-meta svg {
+		fill: ' . $defaults['flexia_primary_color'] . ';
+		width: auto;
+		height: 1em;
+		margin-right: 3px;
 	}
 	
 	@media all and (max-width: 959px) {
@@ -404,10 +408,30 @@ function flexia_generate_css()
 	}
 	
 	.flexia-menu.header-icons .nav-menu li > a,
-	.flexia-navbar .flexia-navbar-container .flexia-navbar-inner .search-form .search-submit,
 	.flexia-navbar .flexia-navbar-container .flexia-navbar-inner .search-form .search-field,
 	.flexia-menu.header-icons {
 		color: ' . $defaults['flexia_main_nav_menu_link_color'] . ';
+	}
+
+	.flexia-navbar .flexia-navbar-container .flexia-navbar-inner .search-form .search-submit svg,
+	.flexia-menu.header-icons ul li #btn-search svg,
+	.widget .search-form .search-submit svg {
+		fill: ' . $defaults['flexia_main_nav_menu_link_color'] . ';
+		height: .9em;
+		width: auto;
+	}
+
+	.main-navigation .nav-menu li a svg {
+		fill: ' . $defaults['flexia_main_nav_menu_link_color'] . ';
+		height: .7em;
+		width: auto;
+		margin-left: 5px;
+	}
+
+	.flexia-menu.header-icons .flexia-header-cart a.cart-contents .flexia-header-cart-icon svg {
+		fill: ' . $defaults['flexia_main_nav_menu_link_color'] . ';
+		height: 1em;
+		width: auto;
 	}
 
 	.flexia-menu .flexia-menu-toggle:after {
@@ -415,6 +439,12 @@ function flexia_generate_css()
 	}
 	.flexia-menu .flexia-menu-toggle:before {
 		background-color: ' . $defaults['flexia_main_nav_menu_link_color'] . ';
+	}
+
+	.flexia-social-share-links li a svg {
+		height: 2em;
+		width: auto;
+		fill: ' . $defaults['flexia_primary_color'] . ';
 	}
 	
 	@media screen and (min-width: 992px) {

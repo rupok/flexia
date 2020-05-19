@@ -70,7 +70,7 @@ function flexia_posted_on() {
 				__( '<span class="screen-reader-text">Posted on</span> %s', 'flexia' ),
 				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 			);
-			echo '<span class="posted-on"> <i class="fa fa-clock-o fa-fw"></i>' . $posted_on . '</span>'; // WPCS: XSS OK.
+			echo '<span class="posted-on"> <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g> <g> <path d="M256,0C114.841,0,0,114.841,0,256s114.841,256,256,256s256-114.841,256-256S397.159,0,256,0z M256,468.732 c-117.301,0-212.732-95.431-212.732-212.732S138.699,43.268,256,43.268S468.732,138.699,468.732,256S373.301,468.732,256,468.732z "/> </g> </g> <g> <g> <path d="M372.101,248.068H271.144V97.176c0-11.948-9.686-21.634-21.634-21.634c-11.948,0-21.634,9.686-21.634,21.634v172.525 c0,11.948,9.686,21.634,21.634,21.634c0.244,0,0.48-0.029,0.721-0.036c0.241,0.009,0.477,0.036,0.721,0.036h121.149 c11.948,0,21.634-9.686,21.634-21.634S384.049,248.068,372.101,248.068z"/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>' . $posted_on . '</span>'; // WPCS: XSS OK.
 		}
 
 		// Post Title Post Author
@@ -78,7 +78,7 @@ function flexia_posted_on() {
 			$byline = sprintf(
 				/* translators: %s: post author. */
 				__( '<span class="screen-reader-text">Posted by</span> %s', 'flexia' ),
-				'<span class="author vcard"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+				'<span class="author vcard"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <path d="M437,75C388.7,26.6,324.4,0,256,0C187.6,0,123.3,26.6,75,75S0,187.6,0,256c0,68.4,26.6,132.7,75,181 c48.4,48.4,112.6,75,181,75c68.4,0,132.7-26.6,181-75c48.4-48.4,75-112.6,75-181C512,187.6,485.4,123.3,437,75z M184.8,224.8 c0-39.2,31.9-71.2,71.2-71.2c39.2,0,71.2,31.9,71.2,71.2c0,39.2-31.9,71.2-71.2,71.2C216.8,296,184.8,264.1,184.8,224.8z M256,340.6 c55.8,0,103.5,38.6,115.2,92.5c-34.3,22.4-74,34.2-115.2,34.2c-41.1,0-80.9-11.8-115.2-34.2C152.5,379.2,200.2,340.6,256,340.6z M365,338c-10.6-9.6-22.4-17.7-35-24.2c26.4-21.9,41.8-54.3,41.8-89c0-63.8-51.9-115.8-115.8-115.8c-63.8,0-115.8,51.9-115.8,115.8 c0,34.7,15.4,67.1,41.8,89c-12.7,6.5-24.4,14.6-35,24.2c-19.6,17.7-34.4,39.7-43.5,64.2C65.9,363,44.6,310.4,44.6,256 c0-116.6,94.8-211.4,211.4-211.4c116.6,0,211.4,94.8,211.4,211.4c0,54.4-21.3,107-58.9,146.2C399.4,377.7,384.6,355.7,365,338z"/> </svg><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 			);
 			echo '<span class="byline"> ' . $byline . '</span>';
 
@@ -89,7 +89,7 @@ function flexia_posted_on() {
 			$categories_list = get_the_category_list( esc_html__( ', ', 'flexia' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links"> <i class="fa fa-folder-o fa-fw" aria-hidden="true"></i>' . __( '<span class="screen-reader-text">Categories</span> %s', 'flexia' ) . '</span>
+				printf( '<span class="cat-links"> <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g> <path d="M23.5,244.3c-31.3,31.3-31.3,82.1,0,113.4l130.8,130.8c0,0,0,0,0,0c31.3,31.3,82.1,31.3,113.4,0l237.1-237.1 c4.8-4.8,7.4-11.3,7.2-18l-4.1-174.8c-0.5-29.9-24.6-54-54.5-54.5L278.6,0c-6.7-0.2-13.2,2.5-18,7.2L23.5,244.3z M58.6,279.2 L287.8,49.4l164.6,3.8c3.4,0,6.2,2.8,6.2,6.2l3.8,164.6L232.8,453.4c-12,12-31.6,12-43.6,0L58.6,322.8 C46.5,310.8,46.5,291.2,58.6,279.2z"/> <path d="M293.7,113.6c-28.9,29-28.8,75.8,0.2,104.7c28.9,28.8,75.6,28.8,104.5,0c29-28.9,29-75.7,0.2-104.7 c-28.9-29-75.7-29-104.7-0.2C293.8,113.4,293.7,113.5,293.7,113.6z M328.8,183.2c-9.6-9.6-9.6-25.3,0-34.9c9.6-9.6,25.2-9.6,34.9,0 c9.6,9.6,9.7,25.3,0,34.9C354,192.8,338.4,192.8,328.8,183.2C328.8,183.2,328.8,183.2,328.8,183.2z"/> </g> </svg>' . __( '<span class="screen-reader-text">Categories</span> %s', 'flexia' ) . '</span>
 				', $categories_list ); // WPCS: XSS OK.
 			}
 		}
@@ -104,15 +104,15 @@ function flexia_posted_on() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			__( '<span class="screen-reader-text">Posted by</span> %s', 'flexia' ),
-			'<span class="author vcard"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			'<span class="author vcard"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <path d="M437,75C388.7,26.6,324.4,0,256,0C187.6,0,123.3,26.6,75,75S0,187.6,0,256c0,68.4,26.6,132.7,75,181 c48.4,48.4,112.6,75,181,75c68.4,0,132.7-26.6,181-75c48.4-48.4,75-112.6,75-181C512,187.6,485.4,123.3,437,75z M184.8,224.8 c0-39.2,31.9-71.2,71.2-71.2c39.2,0,71.2,31.9,71.2,71.2c0,39.2-31.9,71.2-71.2,71.2C216.8,296,184.8,264.1,184.8,224.8z M256,340.6 c55.8,0,103.5,38.6,115.2,92.5c-34.3,22.4-74,34.2-115.2,34.2c-41.1,0-80.9-11.8-115.2-34.2C152.5,379.2,200.2,340.6,256,340.6z M365,338c-10.6-9.6-22.4-17.7-35-24.2c26.4-21.9,41.8-54.3,41.8-89c0-63.8-51.9-115.8-115.8-115.8c-63.8,0-115.8,51.9-115.8,115.8 c0,34.7,15.4,67.1,41.8,89c-12.7,6.5-24.4,14.6-35,24.2c-19.6,17.7-34.4,39.7-43.5,64.2C65.9,363,44.6,310.4,44.6,256 c0-116.6,94.8-211.4,211.4-211.4c116.6,0,211.4,94.8,211.4,211.4c0,54.4-21.3,107-58.9,146.2C399.4,377.7,384.6,355.7,365,338z"/> </svg><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="posted-on"> <i class="fa fa-clock-o fa-fw"></i>' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+		echo '<span class="posted-on"> <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g> <g> <path d="M256,0C114.841,0,0,114.841,0,256s114.841,256,256,256s256-114.841,256-256S397.159,0,256,0z M256,468.732 c-117.301,0-212.732-95.431-212.732-212.732S138.699,43.268,256,43.268S468.732,138.699,468.732,256S373.301,468.732,256,468.732z "/> </g> </g> <g> <g> <path d="M372.101,248.068H271.144V97.176c0-11.948-9.686-21.634-21.634-21.634c-11.948,0-21.634,9.686-21.634,21.634v172.525 c0,11.948,9.686,21.634,21.634,21.634c0.244,0,0.48-0.029,0.721-0.036c0.241,0.009,0.477,0.036,0.721,0.036h121.149 c11.948,0,21.634-9.686,21.634-21.634S384.049,248.068,372.101,248.068z"/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 		$categories_list = get_the_category_list( esc_html__( ', ', 'flexia' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
-			printf( '<span class="cat-links"> <i class="fa fa-folder-o fa-fw" aria-hidden="true"></i>' . __( '<span class="screen-reader-text">Categories</span> %s', 'flexia' ) . '</span>
+			printf( '<span class="cat-links"> <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g> <path d="M23.5,244.3c-31.3,31.3-31.3,82.1,0,113.4l130.8,130.8c0,0,0,0,0,0c31.3,31.3,82.1,31.3,113.4,0l237.1-237.1 c4.8-4.8,7.4-11.3,7.2-18l-4.1-174.8c-0.5-29.9-24.6-54-54.5-54.5L278.6,0c-6.7-0.2-13.2,2.5-18,7.2L23.5,244.3z M58.6,279.2 L287.8,49.4l164.6,3.8c3.4,0,6.2,2.8,6.2,6.2l3.8,164.6L232.8,453.4c-12,12-31.6,12-43.6,0L58.6,322.8 C46.5,310.8,46.5,291.2,58.6,279.2z"/> <path d="M293.7,113.6c-28.9,29-28.8,75.8,0.2,104.7c28.9,28.8,75.6,28.8,104.5,0c29-28.9,29-75.7,0.2-104.7 c-28.9-29-75.7-29-104.7-0.2C293.8,113.4,293.7,113.5,293.7,113.6z M328.8,183.2c-9.6-9.6-9.6-25.3,0-34.9c9.6-9.6,25.2-9.6,34.9,0 c9.6,9.6,9.7,25.3,0,34.9C354,192.8,338.4,192.8,328.8,183.2C328.8,183.2,328.8,183.2,328.8,183.2z"/> </g> </svg>' . __( '<span class="screen-reader-text">Categories</span> %s', 'flexia' ) . '</span>
 			', $categories_list ); // WPCS: XSS OK.
 		}
 	}
@@ -146,7 +146,7 @@ function flexia_updated_on() {
 				esc_html_x( 'Updated on %s', 'post date', 'flexia' ),
 				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 			);
-			echo '<span class="updated-on"> <i class="fa fa-clock-o fa-fw"></i>' . $updated_on . '</span>'; // WPCS: XSS OK. // WPCS: XSS OK.
+			echo '<span class="updated-on"> <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g> <g> <path d="M256,0C114.841,0,0,114.841,0,256s114.841,256,256,256s256-114.841,256-256S397.159,0,256,0z M256,468.732 c-117.301,0-212.732-95.431-212.732-212.732S138.699,43.268,256,43.268S468.732,138.699,468.732,256S373.301,468.732,256,468.732z "/> </g> </g> <g> <g> <path d="M372.101,248.068H271.144V97.176c0-11.948-9.686-21.634-21.634-21.634c-11.948,0-21.634,9.686-21.634,21.634v172.525 c0,11.948,9.686,21.634,21.634,21.634c0.244,0,0.48-0.029,0.721-0.036c0.241,0.009,0.477,0.036,0.721,0.036h121.149 c11.948,0,21.634-9.686,21.634-21.634S384.049,248.068,372.101,248.068z"/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>' . $updated_on . '</span>'; // WPCS: XSS OK. // WPCS: XSS OK.
 		}
 
 		// Post Title Header Post Category
@@ -154,7 +154,7 @@ function flexia_updated_on() {
 			$categories_list = get_the_category_list( esc_html__( ', ', 'flexia' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links"> <i class="fa fa-folder-o fa-fw" aria-hidden="true"></i>' . __( '<span class="screen-reader-text">Categories</span> %s', 'flexia' ) . '</span>
+				printf( '<span class="cat-links"> <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g> <path d="M23.5,244.3c-31.3,31.3-31.3,82.1,0,113.4l130.8,130.8c0,0,0,0,0,0c31.3,31.3,82.1,31.3,113.4,0l237.1-237.1 c4.8-4.8,7.4-11.3,7.2-18l-4.1-174.8c-0.5-29.9-24.6-54-54.5-54.5L278.6,0c-6.7-0.2-13.2,2.5-18,7.2L23.5,244.3z M58.6,279.2 L287.8,49.4l164.6,3.8c3.4,0,6.2,2.8,6.2,6.2l3.8,164.6L232.8,453.4c-12,12-31.6,12-43.6,0L58.6,322.8 C46.5,310.8,46.5,291.2,58.6,279.2z"/> <path d="M293.7,113.6c-28.9,29-28.8,75.8,0.2,104.7c28.9,28.8,75.6,28.8,104.5,0c29-28.9,29-75.7,0.2-104.7 c-28.9-29-75.7-29-104.7-0.2C293.8,113.4,293.7,113.5,293.7,113.6z M328.8,183.2c-9.6-9.6-9.6-25.3,0-34.9c9.6-9.6,25.2-9.6,34.9,0 c9.6,9.6,9.7,25.3,0,34.9C354,192.8,338.4,192.8,328.8,183.2C328.8,183.2,328.8,183.2,328.8,183.2z"/> </g> </svg>' . __( '<span class="screen-reader-text">Categories</span> %s', 'flexia' ) . '</span>
 				', $categories_list ); // WPCS: XSS OK.
 			}
 		}
@@ -173,12 +173,12 @@ function flexia_updated_on() {
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="updated-on"> <i class="fa fa-clock-o fa-fw"></i>' . $updated_on . '</span>'; // WPCS: XSS OK. // WPCS: XSS OK.
+		echo '<span class="updated-on"> <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g> <g> <path d="M256,0C114.841,0,0,114.841,0,256s114.841,256,256,256s256-114.841,256-256S397.159,0,256,0z M256,468.732 c-117.301,0-212.732-95.431-212.732-212.732S138.699,43.268,256,43.268S468.732,138.699,468.732,256S373.301,468.732,256,468.732z "/> </g> </g> <g> <g> <path d="M372.101,248.068H271.144V97.176c0-11.948-9.686-21.634-21.634-21.634c-11.948,0-21.634,9.686-21.634,21.634v172.525 c0,11.948,9.686,21.634,21.634,21.634c0.244,0,0.48-0.029,0.721-0.036c0.241,0.009,0.477,0.036,0.721,0.036h121.149 c11.948,0,21.634-9.686,21.634-21.634S384.049,248.068,372.101,248.068z"/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>' . $updated_on . '</span>'; // WPCS: XSS OK. // WPCS: XSS OK.
 
 			$categories_list = get_the_category_list( esc_html__( ', ', 'flexia' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links"> <i class="fa fa-folder-o fa-fw" aria-hidden="true"></i>' . __( '<span class="screen-reader-text">Categories</span> %s', 'flexia' ) . '</span>
+				printf( '<span class="cat-links"> <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g> <path d="M23.5,244.3c-31.3,31.3-31.3,82.1,0,113.4l130.8,130.8c0,0,0,0,0,0c31.3,31.3,82.1,31.3,113.4,0l237.1-237.1 c4.8-4.8,7.4-11.3,7.2-18l-4.1-174.8c-0.5-29.9-24.6-54-54.5-54.5L278.6,0c-6.7-0.2-13.2,2.5-18,7.2L23.5,244.3z M58.6,279.2 L287.8,49.4l164.6,3.8c3.4,0,6.2,2.8,6.2,6.2l3.8,164.6L232.8,453.4c-12,12-31.6,12-43.6,0L58.6,322.8 C46.5,310.8,46.5,291.2,58.6,279.2z"/> <path d="M293.7,113.6c-28.9,29-28.8,75.8,0.2,104.7c28.9,28.8,75.6,28.8,104.5,0c29-28.9,29-75.7,0.2-104.7 c-28.9-29-75.7-29-104.7-0.2C293.8,113.4,293.7,113.5,293.7,113.6z M328.8,183.2c-9.6-9.6-9.6-25.3,0-34.9c9.6-9.6,25.2-9.6,34.9,0 c9.6,9.6,9.7,25.3,0,34.9C354,192.8,338.4,192.8,328.8,183.2C328.8,183.2,328.8,183.2,328.8,183.2z"/> </g> </svg>' . __( '<span class="screen-reader-text">Categories</span> %s', 'flexia' ) . '</span>
 		', $categories_list ); // WPCS: XSS OK.
 			}
 

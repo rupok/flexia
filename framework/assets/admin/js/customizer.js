@@ -439,8 +439,8 @@ function generateCSS() {
      //Social Media Icon Size
     wp.customize("flexia_header_social_icon_size", function(value) {
         value.bind(function(to) {
-            $(".flexia-social-links li a").css(
-                "font-size",
+            $(".flexia-social-links li a svg").css(
+                "height",
                 to+"em"
             );
         });
@@ -449,8 +449,8 @@ function generateCSS() {
      //Social Media Icon Color
      wp.customize("flexia_header_social_icon_color", function(value) {
         value.bind(function(to) {
-            $(".flexia-social-links li a").css(
-                "color",
+            $(".flexia-social-links li a svg").css(
+                "fill",
                 to
             );
         });
@@ -459,8 +459,8 @@ function generateCSS() {
      //Social Media Icon Hover Color
      wp.customize("flexia_header_social_icon_hover_color", function(value) {
         value.bind(function(to) {
-            $(".flexia-social-links li a:hover").css(
-                "color",
+            $(".flexia-social-links li a:hover svg").css(
+                "fill",
                 to
             );
         });

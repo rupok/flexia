@@ -4564,7 +4564,12 @@ body.transparent .flexia-wrapper > .content-area {
 }
 
 .widget.widget_categories ul > li:before {
-  content: "\f114";
+  content: "";
+  background-image: url(../img/icons/Category.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  padding-right: 15px;
 }
 
 .widget.widget_pages ul > li:before {
@@ -5229,7 +5234,8 @@ body.archive .flexia-wrapper > .content-area article.post {
 }
 
 .post.format-standard {
-  box-shadow: 1px 5px 10px 0px #d2d2d2;
+  box-shadow: 3px 5px 10px 0px #e2e2e2;
+  margin-bottom: 30px;
 }
 
 .post-content button {
