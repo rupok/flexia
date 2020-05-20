@@ -162,7 +162,7 @@ function flexia_updated_on() {
 		// Post Title Post Comments
 		if( $post_title_header_post_comments == 'yes' || $post_title_header_post_comments == NULL ) {
 			?>
-			<span class="comments-count"><i class="fa fa-comments fa-fw"></i><a class="scroll-to-comments" href="#comments"><?php comments_number( 'No Responses', '1 Comment', '% Comments' ); ?></a></span>
+			<span class="comments-count"><svg height="682pt" viewBox="-21 -47 682.66669 682" width="682pt" xmlns="http://www.w3.org/2000/svg"><path d="m552.011719-1.332031h-464.023438c-48.515625 0-87.988281 39.464843-87.988281 87.988281v283.972656c0 48.414063 39.300781 87.816406 87.675781 87.988282v128.863281l185.191407-128.863281h279.144531c48.515625 0 87.988281-39.472657 87.988281-87.988282v-283.972656c0-48.523438-39.472656-87.988281-87.988281-87.988281zm50.488281 371.960937c0 27.835938-22.648438 50.488282-50.488281 50.488282h-290.910157l-135.925781 94.585937v-94.585937h-37.1875c-27.839843 0-50.488281-22.652344-50.488281-50.488282v-283.972656c0-27.84375 22.648438-50.488281 50.488281-50.488281h464.023438c27.839843 0 50.488281 22.644531 50.488281 50.488281zm0 0"/><path d="m171.292969 131.171875h297.414062v37.5h-297.414062zm0 0"/><path d="m171.292969 211.171875h297.414062v37.5h-297.414062zm0 0"/><path d="m171.292969 291.171875h297.414062v37.5h-297.414062zm0 0"/></svg><a class="scroll-to-comments" href="#comments"><?php comments_number( 'No Responses', '1 Comment', '% Comments' ); ?></a></span>
 			<?php
 		}
 
@@ -184,7 +184,7 @@ function flexia_updated_on() {
 
 		?>
 
-		<span class="comments-count"><i class="fa fa-comments fa-fw"></i><a class="scroll-to-comments" href="#comments"><?php comments_number( 'No Responses', '1 Comment', '% Comments' ); ?></a></span>
+		<span class="comments-count"><svg height="682pt" viewBox="-21 -47 682.66669 682" width="682pt" xmlns="http://www.w3.org/2000/svg"><path d="m552.011719-1.332031h-464.023438c-48.515625 0-87.988281 39.464843-87.988281 87.988281v283.972656c0 48.414063 39.300781 87.816406 87.675781 87.988282v128.863281l185.191407-128.863281h279.144531c48.515625 0 87.988281-39.472657 87.988281-87.988282v-283.972656c0-48.523438-39.472656-87.988281-87.988281-87.988281zm50.488281 371.960937c0 27.835938-22.648438 50.488282-50.488281 50.488282h-290.910157l-135.925781 94.585937v-94.585937h-37.1875c-27.839843 0-50.488281-22.652344-50.488281-50.488282v-283.972656c0-27.84375 22.648438-50.488281 50.488281-50.488281h464.023438c27.839843 0 50.488281 22.644531 50.488281 50.488281zm0 0"/><path d="m171.292969 131.171875h297.414062v37.5h-297.414062zm0 0"/><path d="m171.292969 211.171875h297.414062v37.5h-297.414062zm0 0"/><path d="m171.292969 291.171875h297.414062v37.5h-297.414062zm0 0"/></svg><a class="scroll-to-comments" href="#comments"><?php comments_number( 'No Responses', '1 Comment', '% Comments' ); ?></a></span>
 		<?php
 	}
 
@@ -204,12 +204,12 @@ function flexia_entry_footer() {
 		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'flexia' ) );
 		if ( $tags_list ) {
 			/* translators: 1: list of tags. */
-			printf( '<i class="fa fa-tags fa-fw" aria-hidden="true"></i> <span class="tags-links">' . __( '<span class="screen-reader-text">Tags</span> %s', 'flexia' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g> <path d="M23.5,244.3c-31.3,31.3-31.3,82.1,0,113.4l130.8,130.8c0,0,0,0,0,0c31.3,31.3,82.1,31.3,113.4,0l237.1-237.1 c4.8-4.8,7.4-11.3,7.2-18l-4.1-174.8c-0.5-29.9-24.6-54-54.5-54.5L278.6,0c-6.7-0.2-13.2,2.5-18,7.2L23.5,244.3z M58.6,279.2 L287.8,49.4l164.6,3.8c3.4,0,6.2,2.8,6.2,6.2l3.8,164.6L232.8,453.4c-12,12-31.6,12-43.6,0L58.6,322.8 C46.5,310.8,46.5,291.2,58.6,279.2z"/> <path d="M293.7,113.6c-28.9,29-28.8,75.8,0.2,104.7c28.9,28.8,75.6,28.8,104.5,0c29-28.9,29-75.7,0.2-104.7 c-28.9-29-75.7-29-104.7-0.2C293.8,113.4,293.7,113.5,293.7,113.6z M328.8,183.2c-9.6-9.6-9.6-25.3,0-34.9c9.6-9.6,25.2-9.6,34.9,0 c9.6,9.6,9.7,25.3,0,34.9C354,192.8,338.4,192.8,328.8,183.2C328.8,183.2,328.8,183.2,328.8,183.2z"/> </g> </svg> <span class="tags-links">' . __( '<span class="screen-reader-text">Tags</span> %s', 'flexia' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<i class="fa fa-comment-o fa-fw" aria-hidden="true"></i> <span class="comments-link">';
+		echo '<svg height="682pt" viewBox="-21 -47 682.66669 682" width="682pt" xmlns="http://www.w3.org/2000/svg"><path d="m552.011719-1.332031h-464.023438c-48.515625 0-87.988281 39.464843-87.988281 87.988281v283.972656c0 48.414063 39.300781 87.816406 87.675781 87.988282v128.863281l185.191407-128.863281h279.144531c48.515625 0 87.988281-39.472657 87.988281-87.988282v-283.972656c0-48.523438-39.472656-87.988281-87.988281-87.988281zm50.488281 371.960937c0 27.835938-22.648438 50.488282-50.488281 50.488282h-290.910157l-135.925781 94.585937v-94.585937h-37.1875c-27.839843 0-50.488281-22.652344-50.488281-50.488282v-283.972656c0-27.84375 22.648438-50.488281 50.488281-50.488281h464.023438c27.839843 0 50.488281 22.644531 50.488281 50.488281zm0 0"/><path d="m171.292969 131.171875h297.414062v37.5h-297.414062zm0 0"/><path d="m171.292969 211.171875h297.414062v37.5h-297.414062zm0 0"/><path d="m171.292969 291.171875h297.414062v37.5h-297.414062zm0 0"/></svg> <span class="comments-link">';
 		comments_popup_link(
 			sprintf(
 				wp_kses(

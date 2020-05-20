@@ -284,6 +284,13 @@ function flexia_generate_css()
 		color: ' . $defaults['flexia_breadcrumb_font_color'] . ';
 		font-size: ' . $defaults['flexia_breadcrumb_font_size'] . 'px;
 	}
+
+	.flexia-breadcrumb .flexia-breadcrumb-item, .flexia-breadcrumb .flexia-breadcrumb-item a, .flexia-breadcrumb .breadcrumb-delimiter svg,
+	.woocommerce-breadcrumb .breadcrumb-separator svg {
+		fill: ' . $defaults['flexia_breadcrumb_font_color'] . ';
+		height: ' . ($defaults['flexia_breadcrumb_font_size']*.8) . 'px;
+		width: auto;
+	}
 	
 	.flexia-breadcrumb-item.current span, .breadcrumb li a:hover, .breadcrumb li a:focus {
 		color: ' . $defaults['flexia_breadcrumb_active_font_color'] . ';
@@ -334,6 +341,13 @@ function flexia_generate_css()
 		color: ' . $defaults['flexia_header_top_contact_font_color'] . ';
 		font-size: ' . $defaults['flexia_header_top_contact_font_size'] . 'em;
 	}
+
+	.flexia-topbar_contact a svg {
+		fill: ' . $defaults['flexia_header_top_contact_font_color'] . ';
+		height: ' . ($defaults['flexia_header_top_contact_font_size'] * 1.2) . 'em;
+		width: auto;
+		margin-right: 5px;
+	}
 	
 	.flexia-topbar_contact a:hover {
 		color: ' . $defaults['flexia_header_top_contact_font_hover_color'] . ';
@@ -368,7 +382,14 @@ function flexia_generate_css()
 		fill: ' . $defaults['flexia_primary_color'] . ';
 		width: auto;
 		height: 1em;
-		margin-right: 3px;
+		margin-right: 5px;
+    	margin-bottom: -3px;
+	}
+
+	.flexia-menu.header-icons ul li.navbar-login-menu a button svg {
+		fill: ' . $defaults['flexia_button_text_color'] . ';
+		height: ' . $defaults['flexia_button_font_size'] . 'em;
+		margin-bottom: -3px;
 	}
 	
 	@media all and (max-width: 959px) {

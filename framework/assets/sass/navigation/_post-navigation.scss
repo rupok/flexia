@@ -27,17 +27,13 @@
       padding-right: 50px;
     }
     &:after {
-      background-color: $color__light;
-      color: $color__nav-links;
-      font-family: "FontAwesome";
-      font-size: 36px;
-      height: 60px;
-      width: 40px;
-      position: absolute;
-      top: 0;
-      content: "\f104";
-      padding-left: 13px;
-      right: 0;
+      content: "";
+      background-image: url('../img/icons/left-arrow.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-right: 12px;    
+      padding-right: 20px;
     }
     &:hover {
       transform: translateX(-40px);
@@ -71,17 +67,13 @@
       padding-left: 40px;
     }
     &:before {
-      background-color: $color__light;
-      color: $color__nav-links;
-      font-family: "FontAwesome";
-      font-size: 36px;
-      height: 60px;
-      width: 40px;
-      position: absolute;
-      top: 0;
-      content: "\f105";
-      padding-left: 15px;
-      left: 0;
+      content: "";
+      background-image: url('../img/icons/right-arrow.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-left: 10px;    
+      padding-right: 20px;
     }
     &:hover {
       transform: translateX(40px);

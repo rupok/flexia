@@ -58,6 +58,13 @@
     z-index: 10;
     -webkit-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
+
+    svg {
+        fill: #fff;
+        height: 16px;
+        width: auto;
+    }
+    
     &:visited {
         font-size: 20px;
         background: rgba(0, 0, 0, 0.5);

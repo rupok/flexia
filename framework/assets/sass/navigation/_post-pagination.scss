@@ -32,6 +32,12 @@
         background: $color__link;
         color: $color__light;
       }
+
+      svg {
+        height: 1em;
+        fill: #fff;
+        margin-bottom: -3px;
+      }
     }
     >span {
       position: relative;

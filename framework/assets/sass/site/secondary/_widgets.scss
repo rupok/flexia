@@ -57,42 +57,65 @@
   padding: 0.2em 0.5em;
 }
 
+#flexia-colophon-top .widget ul > li:before {
+  content: unset;
+}
+
 .widget ul > li:before {
-  content: "\f0da";
-  font-family: "FontAwesome";
-  padding-right: 0.8em;
+  content: "";
+  background-image: url('../img/icons/right-arrow.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  padding-right: 10px;
 }
 
 .widget.widget_recent_entries ul > li:before {
-  content: "\f044";
+  content: "";
+  background-image: url('../img/icons/arrow-short.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  padding-right: 10px;
 }
 
 .widget.widget_recent_comments ul > li:before {
-  content: "\f0e6";
-}
-
-.widget.widget_archive ul > li:before {
-  content: "\f133";
-}
-
-.widget.widget_categories ul > li:before {
   content: "";
-  background-image: url(../img/icons/Category.svg);
+  background-image: url('../img/icons/comment.svg');
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 10px;
   padding-right: 15px;
 }
 
-.widget.widget_pages ul > li:before {
-  content: "\f016";
+.widget.widget_archive ul > li:before {
+  content: "";
+  background-image: url('../img/icons/calendar.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  padding-right: 15px;
+}
+
+.widget.widget_categories ul > li:before {
+  content: "";
+  background-image: url('../img/icons/Category.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  padding-right: 15px;
 }
 
 .widget_tag_cloud .tagcloud a:before {
-  content: "\f02b";
-  font-family: "FontAwesome";
-  padding-right: 5px;
-  opacity: 0.8;
+  content: "";
+  background-image: url('../img/icons/Category.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 10px;    
+  padding-right: 10px;
 }
 
 .widget li {

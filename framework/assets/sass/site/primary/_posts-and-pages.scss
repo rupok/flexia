@@ -100,7 +100,7 @@ body.archive {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: absolute;
-    content: "\f08d";
+    // content: "\f08d";
     top: 10px;
     right: 10px;
     width: 28px;
@@ -471,18 +471,6 @@ body {
     &:after {
       right: 2em;
     }
-  }
-  &:after {
-    content: "\f178";
-    color: $color__light;
-    position: absolute;
-    font-family: 'FontAwesome';
-    font-weight: 400;
-    right: 0;
-    -webkit-transition: .4s;
-    -moz-transition: .4s;
-    transition: .4s;
-    color: $color__light;
   }
 }
 @media all and (max-width: 600px) {

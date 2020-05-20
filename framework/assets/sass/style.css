@@ -26,7 +26,6 @@
 /*--------------------------------------------------------------
 # Font Awesome
 --------------------------------------------------------------*/
-@import "https://use.fontawesome.com/c895056382.css";
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -314,11 +313,12 @@ blockquote {
 }
 
 blockquote::before {
-  color: #ccc;
-  content: "\f10d";
-  font-family: "FontAwesome";
-  font-size: 1.5em;
+  content: "";
   margin-right: 0.25em;
+  background-image: url(../../assets/img/icons/backquote.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  padding-right: 30px;
 }
 
 blockquote p {
@@ -2659,6 +2659,11 @@ big {
   z-index: 10;
   transition: opacity 0.3s ease-in-out;
 }
+.flexia-back-to-top svg {
+  fill: #fff;
+  height: 16px;
+  width: auto;
+}
 .flexia-back-to-top:visited {
   font-size: 20px;
   background: rgba(0, 0, 0, 0.5);
@@ -3856,10 +3861,6 @@ a:hover, a:active {
   border: 0px;
   font-weight: 600;
 }
-.flexia-menu.header-icons ul li.navbar-login-menu a button i {
-  margin-right: 10px;
-  font-size: 1.1em;
-}
 .flexia-menu.header-icons .flexia-header-cart a.cart-contents {
   transition: all 0.15s linear;
 }
@@ -4126,6 +4127,11 @@ a:hover, a:active {
   background: #F56A6A;
   color: #fff;
 }
+.post-pagination > li > a svg {
+  height: 1em;
+  fill: #fff;
+  margin-bottom: -3px;
+}
 .post-pagination > li > span {
   position: relative;
   padding: 8px 12px;
@@ -4217,17 +4223,13 @@ a:hover, a:active {
   padding-right: 50px;
 }
 .nav-links .nav-previous:after {
-  background-color: #fff;
-  color: #e9e9ea;
-  font-family: "FontAwesome";
-  font-size: 36px;
-  height: 60px;
-  width: 40px;
-  position: absolute;
-  top: 0;
-  content: "\f104";
-  padding-left: 13px;
-  right: 0;
+  content: "";
+  background-image: url("../img/icons/left-arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 12px;
+  padding-right: 20px;
 }
 .nav-links .nav-previous:hover {
   transform: translateX(-40px);
@@ -4261,17 +4263,13 @@ a:hover, a:active {
   padding-left: 40px;
 }
 .nav-links .nav-next:before {
-  background-color: #fff;
-  color: #e9e9ea;
-  font-family: "FontAwesome";
-  font-size: 36px;
-  height: 60px;
-  width: 40px;
-  position: absolute;
-  top: 0;
-  content: "\f105";
-  padding-left: 15px;
-  left: 0;
+  content: "";
+  background-image: url("../img/icons/right-arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 10px;
+  padding-right: 20px;
 }
 .nav-links .nav-next:hover {
   transform: translateX(40px);
@@ -4545,42 +4543,65 @@ body.transparent .flexia-wrapper > .content-area {
   padding: 0.2em 0.5em;
 }
 
+#flexia-colophon-top .widget ul > li:before {
+  content: unset;
+}
+
 .widget ul > li:before {
-  content: "\f0da";
-  font-family: "FontAwesome";
-  padding-right: 0.8em;
+  content: "";
+  background-image: url("../img/icons/right-arrow.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  padding-right: 10px;
 }
 
 .widget.widget_recent_entries ul > li:before {
-  content: "\f044";
+  content: "";
+  background-image: url("../img/icons/arrow-short.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  padding-right: 10px;
 }
 
 .widget.widget_recent_comments ul > li:before {
-  content: "\f0e6";
-}
-
-.widget.widget_archive ul > li:before {
-  content: "\f133";
-}
-
-.widget.widget_categories ul > li:before {
   content: "";
-  background-image: url(../img/icons/Category.svg);
+  background-image: url("../img/icons/comment.svg");
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 10px;
   padding-right: 15px;
 }
 
-.widget.widget_pages ul > li:before {
-  content: "\f016";
+.widget.widget_archive ul > li:before {
+  content: "";
+  background-image: url("../img/icons/calendar.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  padding-right: 15px;
+}
+
+.widget.widget_categories ul > li:before {
+  content: "";
+  background-image: url("../img/icons/Category.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  padding-right: 15px;
 }
 
 .widget_tag_cloud .tagcloud a:before {
-  content: "\f02b";
-  font-family: "FontAwesome";
-  padding-right: 5px;
-  opacity: 0.8;
+  content: "";
+  background-image: url("../img/icons/Category.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 10px;
+  padding-right: 10px;
 }
 
 .widget li {
@@ -5216,7 +5237,6 @@ body.archive .flexia-wrapper > .content-area article.post {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
-  content: "\f08d";
   top: 10px;
   right: 10px;
   width: 28px;
@@ -5532,16 +5552,6 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
 }
 .more-link:hover:after {
   right: 2em;
-}
-.more-link:after {
-  content: "\f178";
-  color: #fff;
-  position: absolute;
-  font-family: 'FontAwesome';
-  font-weight: 400;
-  right: 0;
-  transition: .4s;
-  color: #fff;
 }
 
 @media all and (max-width: 600px) {
@@ -6345,9 +6355,7 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
 }
 
 .woocommerce ul.products li.product .button.add_to_cart_button::before {
-  content: "\f217";
-  font-family: "FontAwesome";
-  padding-right: 8px;
+  content: "";
 }
 
 .woocommerce ul.products li.product .button:hover {
@@ -6357,12 +6365,11 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
 
 .woocommerce-breadcrumb a:first-of-type::before {
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal normal 14px/1;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "\f015";
   margin-right: .5407911001em;
 }
 
@@ -6378,9 +6385,7 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
 }
 
 .woocommerce a.added_to_cart::after {
-  content: "\f178";
-  font-family: "FontAwesome";
-  padding-left: .5em;
+  content: "";
 }
 
 .woocommerce .products .star-rating {

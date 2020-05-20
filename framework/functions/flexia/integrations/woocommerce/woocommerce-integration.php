@@ -130,7 +130,7 @@ function menu_cart_items_html() {
 				$items .= '<span class="flexia-cart-product-qty">'.$values['quantity'].' x '.get_woocommerce_currency_symbol().''.$price.'</span>';
 				$items .= '<span class="flexia-cart-product-price"></span>';
 			$items .= '</div>';
-			// $items .= '<div class="flexia-cart-product-action"> <i data-id="'.$product_id.'" class="fa fa-trash"></i> </div>';
+			// $items .= '<div class="flexia-cart-product-action"> <span data-id="'.$product_id.'" class="trash"></span> </div>';
 		$items .= '</li>';
 	}
 	$items .= '<li class="flexia-cart-total">Cart Total: <span><strong>'.$woocommerce->cart->get_cart_total().'</strong></span></li>';

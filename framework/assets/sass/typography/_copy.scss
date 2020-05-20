@@ -21,11 +21,12 @@ blockquote {
 }
 
 blockquote::before {
-	color: $color__bq-symbol;
-	content: "\f10d";
-	font-family: "FontAwesome";
-	font-size: 1.5em;
-	margin-right: 0.25em;
+	content: "";
+    margin-right: 0.25em;
+    background-image: url(../../assets/img/icons/backquote.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    padding-right: 30px;
 }
 
 blockquote p {

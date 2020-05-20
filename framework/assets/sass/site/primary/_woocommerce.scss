@@ -404,9 +404,7 @@
 }
 
 .woocommerce ul.products li.product .button.add_to_cart_button::before {
-	content: "\f217";
-	font-family: "FontAwesome";
-	padding-right: 8px;
+	content: "";
 }
 
 .woocommerce ul.products li.product .button:hover {
@@ -416,12 +414,11 @@
 
 .woocommerce-breadcrumb a:first-of-type::before {
 	display: inline-block;
-	font: normal normal normal 14px/1 FontAwesome;
+	font: normal normal normal 14px/1;
 	font-size: inherit;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	content: "\f015";
 	margin-right: .5407911001em;
 }
 
@@ -437,9 +434,7 @@
 }
 
 .woocommerce a.added_to_cart::after {
-	content: "\f178";
-	font-family: "FontAwesome";
-	padding-left: .5em;
+	content: "";
 }
 
 .woocommerce .products .star-rating {
