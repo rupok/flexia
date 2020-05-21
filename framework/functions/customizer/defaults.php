@@ -177,7 +177,7 @@ if (!function_exists('flexia_get_option_defaults')) {
             'post_navigation' => false,
             'post_author' => false,
             'post_social_share' => false,
-            'show_blog_header' => false,
+            'show_blog_header' => true,
             'scroll_bottom_arrow' => false,
             'show_blog_logo' => 'blog_logo_none',
             'blog_icon_class' => 'fa-pencil',
