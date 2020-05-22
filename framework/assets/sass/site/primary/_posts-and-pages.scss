@@ -9,7 +9,16 @@ body.blog {
     >.content-area {
       article {
         background-color: $color__light;
-        padding: 2em;
+        padding: 0;
+
+        .entry-header, .entry-content {
+          padding: 0 2em;
+        }
+
+        .entry-header {
+          padding-top: 1.5em;
+        }
+
       }
       background-color: transparent;
       padding: 0;
@@ -486,7 +495,11 @@ body {
     .flexia-wrapper {
       >.content-area {
         article.post {
-          padding: 1.5em;
+          padding: 0em;
+
+          .entry-header, .entry-content {
+            padding: 0 1em;
+          }
         }
       }
     }

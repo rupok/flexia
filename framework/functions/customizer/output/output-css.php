@@ -391,6 +391,24 @@ function flexia_generate_css()
 		height: ' . $defaults['flexia_button_font_size'] . 'em;
 		margin-bottom: -3px;
 	}
+
+	.single .entry-footer svg {
+		height: 1em;
+		margin: 0 5px -3px 0;
+		fill: ' . $defaults['flexia_default_text_color'] . ';
+	}
+
+	body.blog .flexia-wrapper > .content-area article .entry-content .more-link {
+		color: ' . $defaults['flexia_button_text_color'] . ';
+		background-color: ' . $defaults['flexia_button_background_color'] . ';
+		border: 1px solid transparent;
+    	border-radius: 4px;
+	}
+	body.blog .flexia-wrapper > .content-area article .entry-content .more-link:hover {
+		background: #3f3f46;
+		color: #fff;
+		border: 1px solid #3f3f46;
+	}
 	
 	@media all and (max-width: 959px) {
 		.blog-header .header-content > .page-title, .archive-header .header-content > .page-title {
