@@ -476,7 +476,7 @@ function flexia_generate_css()
 	.flexia-menu .flexia-menu-toggle:after {
 		border-color: ' . $defaults['flexia_main_nav_menu_link_color'] . ';
 	}
-	.flexia-menu .flexia-menu-toggle:before {
+	.flexia-menu .flexia-menu-toggle:before, .flexia-menu .flexia-menu-toggle.flexia-menu-toggle-open::after {
 		background-color: ' . $defaults['flexia_main_nav_menu_link_color'] . ';
 	}
 

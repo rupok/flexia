@@ -3671,7 +3671,7 @@ a:hover, a:active {
   left: 0;
   right: 0;
   margin: 0;
-  padding: 0;
+  padding: 15px;
 }
 .main-navigation .flexia-primary-menu > li > a {
   height: 100%;
