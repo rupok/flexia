@@ -2503,6 +2503,7 @@ big {
   max-height: 100%;
   max-width: 100%;
   margin-right: 1em;
+  padding: .5em;
 }
 @media all and (max-width: 767px) {
   .site-branding .flexia-header-sticky-logo {
