@@ -1,19 +1,19 @@
-.error404 .flexia-wrapper.flexia-container {
+.error404 .flexia-wrapper.flexia-container, .search-no-results .flexia-wrapper.flexia-container {
 	padding: 0;
 }
-.error-404.not-found {
+.error-404.not-found, .search-no-results .not-found  {
 	max-width: 700px;
-	margin: 1em auto 5em;
+	margin: 3em auto 5em;
 	padding: 1em;
 	display: block;
-	.error-404-text {
+	p {
 		text-align: center;
 		font-size: 1.2em;
 		margin: 3em auto;
 	}
 }
-.error-404 {
-	.error-404-image {
+.error-404, .search-no-results .not-found {
+	.error-404-image, .no-result-img {
 		display: flex;
 		justify-content: center;
 		padding: 15px;
@@ -22,12 +22,15 @@
 			max-width: 450px;
 		}
 	}
+	.no-result-img svg {
+	    max-width: 200px;
+	}
 	.search-form {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		.search-field {
-			width: 80%;
+			width: 100%;
 			border: 1px solid #f1f1f1;
 			padding: 1em;
 		}
@@ -48,4 +51,14 @@
 			}
 		}
 	}
+}
+.search-no-results .flexia-sidebar {
+	display: none;
+}
+.search-no-results .not-found .page-content {
+	padding: 15px;
+}
+.search-no-results .not-found .page-content .page-title {
+	text-align: center;
+	font-size: 1.75em;
 }

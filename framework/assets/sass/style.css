@@ -5985,42 +5985,45 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
     display: none;
   }
 }
-.error404 .flexia-wrapper.flexia-container {
+.error404 .flexia-wrapper.flexia-container, .search-no-results .flexia-wrapper.flexia-container {
   padding: 0;
 }
 
-.error-404.not-found {
+.error-404.not-found, .search-no-results .not-found {
   max-width: 700px;
-  margin: 1em auto 5em;
+  margin: 3em auto 5em;
   padding: 1em;
   display: block;
 }
-.error-404.not-found .error-404-text {
+.error-404.not-found p, .search-no-results .not-found p {
   text-align: center;
   font-size: 1.2em;
   margin: 3em auto;
 }
 
-.error-404 .error-404-image {
+.error-404 .error-404-image, .error-404 .no-result-img, .search-no-results .not-found .error-404-image, .search-no-results .not-found .no-result-img {
   display: flex;
   justify-content: center;
   padding: 15px;
 }
-.error-404 .error-404-image svg {
+.error-404 .error-404-image svg, .error-404 .no-result-img svg, .search-no-results .not-found .error-404-image svg, .search-no-results .not-found .no-result-img svg {
   width: 100%;
   max-width: 450px;
 }
-.error-404 .search-form {
+.error-404 .no-result-img svg, .search-no-results .not-found .no-result-img svg {
+  max-width: 200px;
+}
+.error-404 .search-form, .search-no-results .not-found .search-form {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.error-404 .search-form .search-field {
-  width: 80%;
+.error-404 .search-form .search-field, .search-no-results .not-found .search-form .search-field {
+  width: 100%;
   border: 1px solid #f1f1f1;
   padding: 1em;
 }
-.error-404 .search-form .search-submit {
+.error-404 .search-form .search-submit, .search-no-results .not-found .search-form .search-submit {
   background-color: #3c3c3c;
   width: 50px;
   border: none;
@@ -6032,9 +6035,21 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
   align-items: center;
   align-self: stretch;
 }
-.error-404 .search-form .search-submit svg {
+.error-404 .search-form .search-submit svg, .search-no-results .not-found .search-form .search-submit svg {
   width: 28px;
   fill: #fff;
+}
+
+.search-no-results .flexia-sidebar {
+  display: none;
+}
+
+.search-no-results .not-found .page-content {
+  padding: 15px;
+}
+
+.search-no-results .not-found .page-content .page-title {
+  text-align: center;
 }
 
 /*Call to Action Style*/
