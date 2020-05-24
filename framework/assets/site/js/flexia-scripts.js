@@ -6,11 +6,11 @@
 
             // insert indicator
             $('.nav-menu > li.menu-item-has-children', $scope).each(function() {
-                $('> a', $(this)).append('<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"> <g> <g> <path d="M265.2,390.7l218.9-218.9c5.1-5.1,7.9-11.8,7.9-19s-2.8-14-7.9-19L468,117.5c-10.5-10.5-27.6-10.5-38.1,0L246.1,301.4 L62,117.3c-5.1-5.1-11.8-7.9-19-7.9c-7.2,0-14,2.8-19,7.9L7.9,133.5c-5.1,5.1-7.9,11.8-7.9,19s2.8,14,7.9,19L227,390.7 c5.1,5.1,11.9,7.9,19.1,7.8C253.3,398.5,260.1,395.8,265.2,390.7z"/> </g> </g> </svg>')
+                $('> a', $(this)).append('<span class="parent-menu-dropdown-icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"> <g> <g> <path d="M265.2,390.7l218.9-218.9c5.1-5.1,7.9-11.8,7.9-19s-2.8-14-7.9-19L468,117.5c-10.5-10.5-27.6-10.5-38.1,0L246.1,301.4 L62,117.3c-5.1-5.1-11.8-7.9-19-7.9c-7.2,0-14,2.8-19,7.9L7.9,133.5c-5.1,5.1-7.9,11.8-7.9,19s2.8,14,7.9,19L227,390.7 c5.1,5.1,11.9,7.9,19.1,7.8C253.3,398.5,260.1,395.8,265.2,390.7z"/> </g> </g> </svg></span>')
                 $(this).append('<span class="flexia-menu-indicator"></span>')
             })
             $('.nav-menu > li ul li.menu-item-has-children', $scope).each(function() {
-                $('> a', $(this)).append('<span class="fa fa-angle-right"></span>')
+                $('> a', $(this)).append('<span class="submenu-menu-dropdown-icon"><svg version="1.1" viewBox="0 0 290 492" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g transform="translate(145 246) rotate(-90) translate(-246 -145)" fill="#000"><path d="m265.2 281.7 218.9-218.9c5.1-5.1 7.9-11.8 7.9-19s-2.8-14-7.9-19l-16.1-16.3c-10.5-10.5-27.6-10.5-38.1 0l-183.8 183.9-184.1-184.1c-5.1-5.1-11.8-7.9-19-7.9s-14 2.8-19 7.9l-16.1 16.2c-5.1 5.1-7.9 11.8-7.9 19s2.8 14 7.9 19l219.1 219.2c5.1 5.1 11.9 7.9 19.1 7.8 7.2 0 14-2.7 19.1-7.8z"/></g></g></svg></span>')
                 $(this).append('<span class="flexia-menu-indicator"></span>')
             })
 

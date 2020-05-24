@@ -259,7 +259,7 @@ function flexia_generate_css()
 	}
 	
 	.paged .blog-header .header-content > .page-title, .paged .archive-header .header-content > .page-title {
-		font-size: calc(' . $defaults['flexia_blog_title_font_size'] . 'px / 1.5);
+		font-size: calc(' . $defaults['flexia_blog_title_font_size'] . 'px / 1.2);
 	}
 	
 	.header-content .blog-desc, .header-content .archive-description > p {
@@ -268,7 +268,7 @@ function flexia_generate_css()
 	}
 	
 	.paged .header-content .blog-desc, .paged .header-content .archive-description > p {
-		font-size: calc(' . $defaults['flexia_blog_desc_font_size'] . 'px / 1.5);
+		font-size: calc(' . $defaults['flexia_blog_desc_font_size'] . 'px / 1.2);
 	}
 	
 	.page .entry-header.entry-header-large, .page .entry-header.entry-header-mini, .page-header.error-header, .page-header.search-header {
