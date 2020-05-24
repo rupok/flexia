@@ -1,12 +1,32 @@
-.error404 .flexia-wrapper.flexia-container {
+.search-results  .flexia-wrapper.flexia-container > .content-area {
+	background-color: transparent;
+}
+.search-results .flexia-wrapper > .content-area article {
+	background-color: #fff;
+	box-shadow: 3px 5px 10px 0px #e2e2e2;
+	border-radius: 4px;
+	padding: 1.5em;
+	margin: 0 0 1.5em;
+}
+.search-no-results .flexia-wrapper.flexia-container {
 	padding: 0;
 	max-width: none;
 	width: 100%;
 }
-.error404 .flexia-wrapper.flexia-container > .content-area {
+.search.search-no-results .flexia-wrapper.flexia-container > .content-area {
 	margin: 0;
 }
-.error-404.not-found, .search-no-results .not-found  {
+.search-results .flexia-sidebar, .search-no-results .flexia-sidebar {
+	display: none;
+}
+.search-no-results .not-found .page-content {
+	padding: 15px;
+}
+.search-no-results .not-found .page-content .page-title {
+	text-align: center;
+	font-size: 1.75em;
+}
+.search-no-results .not-found  {
 	max-width: 700px;
 	margin: 3em auto 5em;
 	padding: 1em;
@@ -17,14 +37,14 @@
 		margin: 3em auto;
 	}
 }
-.error-404 {
-	.error-404-image{
+.search-no-results  {
+	.no-result-img {
 		display: flex;
 		justify-content: center;
 		padding: 15px;
 		svg{
 			width: 100%;
-			max-width: 450px;
+			max-width: 200px;
 		}
 	}
 	.search-form {

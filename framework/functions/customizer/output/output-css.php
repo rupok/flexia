@@ -219,7 +219,7 @@ function flexia_generate_css()
 	}
 	
 	body.blog, body.archive, body.single-post,
-	body.blog.custom-background, body.archive.custom-background, body.single-post.custom-background {
+	body.blog.custom-background, body.archive.custom-background, body.single-post.custom-background, body.search, body,error404 {
 		background-color: ' . $defaults['flexia_blog_bg_color'] . ';
 	}
 	
