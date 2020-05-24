@@ -9,16 +9,13 @@ body.blog {
     >.content-area {
       article {
         background-color: $color__light;
-        padding: 0;
-
+        padding: 0 0 2em;
         .entry-header, .entry-content {
           padding: 0 2em;
         }
-
         .entry-header {
           padding-top: 1.5em;
         }
-
       }
       background-color: transparent;
       padding: 0;
@@ -137,7 +134,7 @@ body.archive {
   }
 }
 .post.format-standard {
-    box-shadow: 3px 5px 10px 0px #e2e2e2;
+    box-shadow: 0 0 5px 0 #e2e2e2;
     margin-bottom: 30px;
 }
 .post-content {

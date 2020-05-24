@@ -4902,7 +4902,7 @@ body.blog .flexia-wrapper > .content-area {
 }
 body.blog .flexia-wrapper > .content-area article {
   background-color: #fff;
-  padding: 0;
+  padding: 0 0 2em;
 }
 body.blog .flexia-wrapper > .content-area article .entry-header, body.blog .flexia-wrapper > .content-area article .entry-content {
   padding: 0 2em;
@@ -5000,7 +5000,7 @@ body.archive .flexia-wrapper > .content-area article.post {
 }
 
 .post.format-standard {
-  box-shadow: 3px 5px 10px 0px #e2e2e2;
+  box-shadow: 0 0 5px 0 #e2e2e2;
   margin-bottom: 30px;
 }
 
