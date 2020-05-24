@@ -271,11 +271,11 @@ function flexia_generate_css()
 		font-size: calc(' . $defaults['flexia_blog_desc_font_size'] . 'px / 1.5);
 	}
 	
-	.page .entry-header.entry-header-large, .page .entry-header.entry-header-mini {
+	.page .entry-header.entry-header-large, .page .entry-header.entry-header-mini, .page-header.error-header, .page-header.search-header {
 		background-color: ' . $defaults['flexia_page_title_bg'] . ';
 	}
 	
-	.page .entry-header .entry-title {
+	.page .entry-header .entry-title, .page-header.error-header .page-title, .page-header.search-header .page-title {
 		color: ' . $defaults['flexia_page_title_font_color'] . ';
 		font-size: ' . $defaults['flexia_page_title_font_size'] . 'px;
 	}

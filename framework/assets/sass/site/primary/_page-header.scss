@@ -14,7 +14,8 @@
   background-position: center center;
   background-size: cover;
   z-index: 1;
-  &::before {
+}
+.page-header.blog-header::before {
     content: "";
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -22,7 +23,6 @@
     right: 0;
     top: 0;
     bottom: 0;
-  }
 }
 .header-inner {
   flex: 0 0 100%;

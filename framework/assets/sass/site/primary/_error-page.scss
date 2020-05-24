@@ -1,15 +1,27 @@
+.error404 .flexia-wrapper.flexia-container {
+	padding: 0;
+}
 .error-404.not-found {
 	max-width: 700px;
 	margin: 1em auto 5em;
-	padding: 5em 1em;
+	padding: 1em;
 	display: block;
-	p {
+	.error-404-text {
 		text-align: center;
 		font-size: 1.2em;
-		margin: 2em auto 3em;
+		margin: 3em auto;
 	}
 }
 .error-404 {
+	.error-404-image {
+		display: flex;
+		justify-content: center;
+		padding: 15px;
+		svg{
+			width: 100%;
+			max-width: 450px;
+		}
+	}
 	.search-form {
 		display: flex;
 		justify-content: center;
@@ -34,21 +46,6 @@
 				width: 28px;
 				fill: #fff;
 			}
-		}
-	}
-}
-.not-found {
-	.page-header {
-		background-color: $color__light;
-		border: 1px solid rgba(0,0,0, .15);
-		margin-bottom: 2em;
-		&::before {
-			display: none;
-		}
-	}
-	.search-form {
-		.search-field {
-			border: 1px solid #f1f1f1;
 		}
 	}
 }
