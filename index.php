@@ -16,7 +16,6 @@ get_header();
 /**
  * Customizer Values
  */
-$icon_class 			= get_theme_mod('blog_icon_class', 'fa-pencil');
 $scroll_bottom_arrow 	= get_theme_mod('scroll_bottom_arrow', false);
 $blog_title 			= get_theme_mod('blog_title', '');
 $blog_desc 				= get_theme_mod('blog_desc', '');
@@ -28,13 +27,9 @@ $flexia_blog_show 	= flexia_get_option( 'show_blog_header' );
 
 		<header class="page-header blog-header" <?php if ( has_header_image() ) { ?> style="background-image: url('<?php echo( get_header_image() ); ?>'); <?php } ?>">
 			<div class="header-inner">
-				<div class="header-content">
+				<div class="header-content">					
 
-					<?php if( get_theme_mod('show_blog_logo') == 'blog_icon' ) :  ?>
-
-						<span><i class="fa fa-3x <?php echo esc_attr($icon_class); ?>"></i></span>
-
-					<?php elseif( get_theme_mod('show_blog_logo') == 'blog_logo_image' ) :  ?>
+					<?php if( get_theme_mod('show_blog_logo') == 'blog_logo_image' ) :  ?>
 
 						<?php if( get_theme_mod('blog_logo') !== '' ) :  ?>
 

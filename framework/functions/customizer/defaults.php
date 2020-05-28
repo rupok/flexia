@@ -180,7 +180,6 @@ if (!function_exists('flexia_get_option_defaults')) {
             'show_blog_header' => true,
             'scroll_bottom_arrow' => false,
             'show_blog_logo' => 'blog_logo_none',
-            'blog_icon_class' => 'fa-pencil',
             'blog_logo' => '',
             'blog_title' => '',
             'blog_desc' => '',
@@ -196,6 +195,11 @@ if (!function_exists('flexia_get_option_defaults')) {
             'post_social_share_gplus' => true,
             'post_social_share_pinterest' => true,
             'flexia_blog_excerpt_count' => '60',
+
+            'flexia_blog_content_layout' => 'flexia_blog_content_layout_standard',
+            'flexia_blog_grid_column' => '3',
+            'flexia_blog_per_page' => 10,
+            
             'flexia_navbar' => true,
             'flexia_logobar_position' => 'flexia-logobar-inline',
             'flexia_nav_menu_search' => true,

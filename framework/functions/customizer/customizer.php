@@ -2199,6 +2199,95 @@ function flexia_customize_register($wp_customize)
         )
     );
 
+    // Blog Layout Settings
+    $wp_customize->add_setting('flexia_blog_settings_title', array(
+		'default'           => '',
+		'sanitize_callback' => 'esc_html',
+	));
+
+	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'flexia_blog_settings_title', array(
+		'label'      => __( 'Layout Settings', 'flexia' ),
+		'settings'		=> 'flexia_blog_settings_title',
+		'section'  		=> 'flexia_blog_content_settings',
+		'priority' 		=> 30,
+	)));
+
+	$wp_customize->add_setting(
+		'flexia_blog_content_layout' ,
+		array(
+	    'default'   => $defaults['flexia_blog_content_layout'],
+	    'sanitize_callback' => 'flexia_sanitize_choices',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'flexia_blog_content_layout',
+	        array(
+	            'label'          => __( 'Content Layout', 'flexia' ),
+	            'section'        => 'flexia_blog_content_settings',
+	            'settings'       => 'flexia_blog_content_layout',
+	            'priority'   	 => 31,
+	            'description'    => 'Set how you want to arrange your posts on blog page.',
+	            'type'           => 'radio',
+	            'choices'        => array(
+	                'flexia_blog_content_layout_standard'   => __( 'Standard Layout', 'flexia' ),
+	                'flexia_blog_content_layout_grid'   => __( 'Flex Layout', 'flexia' ),
+	                'flexia_blog_content_layout_masonry'   => __( 'Masonry Layout', 'flexia' ),
+	            )
+	        )
+	    )
+	);
+
+	$wp_customize->add_setting( 'flexia_blog_per_page' , array(
+	    'default'   => $defaults['flexia_blog_per_page'],
+	    'sanitize_callback' => 'esc_html',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'flexia_blog_per_page',
+	        array(
+	            'label'          => __( 'Posts Per Page', 'flexia' ),
+	            'section'        => 'flexia_blog_content_settings',
+	            'settings'       => 'flexia_blog_per_page',
+	            'priority'   	 => 32,
+	            'type'           => 'text',
+	        )
+	    )
+	);
+	$wp_customize->add_setting( 'flexia_blog_grid_column' , array(
+	    'default'   => $defaults['flexia_blog_grid_column'],
+	    'sanitize_callback' => 'flexia_sanitize_choices',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'flexia_blog_grid_column',
+	        array(
+	            'label'          => __( 'Grid/Masonry Column', 'flexia' ),
+	            'section'        => 'flexia_blog_content_settings',
+	            'settings'       => 'flexia_blog_grid_column',
+	            'priority'   	 => 33,
+	            'description'    => 'Set the number of columns for grid or masonry layout.',
+	            'type'           => 'select',
+	            'choices'        => array(
+	                '1'		=> __( '1', 'flexia' ),
+	                '2'		=> __( '2', 'flexia' ),
+	                '3'		=> __( '3', 'flexia' ),
+	                '4'		=> __( '4', 'flexia' ),
+	                '5'		=> __( '5', 'flexia' ),
+	                '6'		=> __( '6', 'flexia' )
+	            )
+	        )
+	    )
+	);
+
     $wp_customize->add_section('flexia_blog_header_settings', array(
         'title' => __('Blog Header Settings', 'flexia'),
         'priority' => 10,
@@ -2258,29 +2347,9 @@ function flexia_customize_register($wp_customize)
                 'description' => 'Set an icon or logo for blog home page.',
                 'type' => 'select',
                 'choices' => array(
-                    'blog_icon' => __('Icon', 'flexia'),
                     'blog_logo_image' => __('Image', 'flexia'),
                     'blog_logo_none' => __('None', 'flexia'),
                 ),
-            )
-        )
-    );
-
-    $wp_customize->add_setting('blog_icon_class', array(
-        'default' => $defaults['blog_icon_class'],
-        'sanitize_callback' => 'esc_html',
-    ));
-
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'blog_icon_class',
-            array(
-                'label' => __('Icon Class (Font Awesome)', 'flexia'),
-                'section' => 'flexia_blog_header_settings',
-                'settings' => 'blog_icon_class',
-                'description' => 'Enter font awesome icon class (i.e. fa-pencil)',
-                'type' => 'text',
             )
         )
     );

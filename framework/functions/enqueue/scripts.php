@@ -25,11 +25,6 @@ function flexia_site_scripts()
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
-
-    //Load FontAwesome Resource
-    if( get_theme_mod('show_blog_logo') == 'blog_icon' && is_home() ) :
-        wp_enqueue_script('flexia-FontAwesome', 'https://use.fontawesome.com/d7f99e0c1f.js', array(), '', true);
-	endif;
 }
 add_action('wp_enqueue_scripts', 'flexia_site_scripts');
 
@@ -91,5 +86,11 @@ function flexia_admin_js()
     );
 
     wp_localize_script('flexia-admin', 'flexia_settings', $flexia_settings);
+
+    $settings = array(
+        'ajax_url' => admin_url( 'admin-ajax.php' ),
+        'flexia_blog_content_layout' => get_theme_mod( 'flexia_blog_content_layout', 'flexia_blog_content_layout_standard' ),
+    );
+    wp_localize_script( 'flexia-admin', 'customizer', $settings );
 }
 add_action('admin_enqueue_scripts', 'flexia_admin_js');

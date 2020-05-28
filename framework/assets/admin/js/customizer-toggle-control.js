@@ -4,6 +4,56 @@
  * Enable / disable the control title by toggeling its .disabled-control-title style class on or off.
  */
 (function($) {
+
+    
+    wp.customize.bind( 'ready', function() {
+        console.log('customizer', customizer);
+        if( 'flexia_blog_content_layout_standard' === customizer.flexia_blog_content_layout ) {
+            flexia_blog_cotnent_hide_controls();
+        }else {
+            flexia_blog_cotnent_show_controls();
+        }
+
+        wp.customize( 'flexia_blog_content_layout', function( value ) {
+            value.bind( function( to ) {
+                if('flexia_blog_content_layout_standard' === to) {
+                    flexia_blog_cotnent_hide_controls();
+                }else {
+                    flexia_blog_cotnent_show_controls();
+                }
+            } );
+        } );
+
+        function flexia_blog_cotnent_hide_controls() {
+            jQuery( '#customize-control-flexia_blog_grid_column' ).hide();
+            jQuery( '#customize-control-flexia_blog_filterable' ).hide();
+            jQuery( '#customize-control-flexia_blog_image_popup' ).hide();
+            jQuery( '#customize-control-flexia_blog_load_more' ).hide();
+            jQuery( '#customize-control-flexia_blog_per_page' ).hide();
+            jQuery( '#customize-control-flexia_blog_load_more_text' ).hide();
+            jQuery( '#customize-control-flexia_blog_loading_text' ).hide();
+            jQuery( '#customize-control-flexia_blog_categories' ).hide();
+            jQuery( '#customize-control-flexia_blog_post_meta' ).hide();
+        }
+        function flexia_blog_cotnent_show_controls() {
+            jQuery( '#customize-control-flexia_blog_grid_column' ).show();
+            jQuery( '#customize-control-flexia_blog_filterable' ).show();
+            jQuery( '#customize-control-flexia_blog_image_popup' ).show();
+            jQuery( '#customize-control-flexia_blog_load_more' ).show();
+            jQuery( '#customize-control-flexia_blog_per_page' ).show();
+            jQuery( '#customize-control-flexia_blog_load_more_text' ).show();
+            jQuery( '#customize-control-flexia_blog_loading_text' ).show();
+            jQuery( '#customize-control-flexia_blog_categories' ).show();
+            jQuery( '#customize-control-flexia_blog_post_meta' ).show();
+        }
+
+        /**
+         * Gradient fields 
+         */
+        jQuery('.flexia-gradient').parent().addClass('flexia-gradient-control');
+    });
+
+
     wp.customize.bind("ready", function() {
         // Ready?
 
