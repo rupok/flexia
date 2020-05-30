@@ -3126,7 +3126,7 @@ a:hover, a:active {
   padding: 0 15px;
   margin: 0;
 }
-.flexia-menu .nav-menu li ul li > a span {
+.flexia-menu .nav-menu li ul li > a span.submenu-menu-dropdown-icon {
   position: absolute;
   right: 12px;
   top: 0;
