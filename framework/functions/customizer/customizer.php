@@ -3019,15 +3019,15 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
             $wp_customize, 
-            'flexia_header_logo_height', array(
+            'flexia_header_logo_width', array(
                 'priority' => 20,
                 'type' => 'range-value',
                 'section' => 'title_tagline',
-                'settings' => 'flexia_header_logo_height',
-                'label' => __('Logo Height (px)', 'flexia'),
+                'settings' => 'flexia_header_logo_width',
+                'label' => __('Logo Width (px)', 'flexia'),
                 'input_attrs' => array(
-                    'min' => 20,
-                    'max' => 400,
+                    'min' => 0,
+                    'max' => 600,
                     'step' => 1,
                     'suffix' => 'px', //optional suffix
                 ),
@@ -3091,14 +3091,14 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
             $wp_customize, 
-            'flexia_sticky_header_logo_height', array(
+            'flexia_sticky_header_logo_width', array(
                 'priority' => 40,
                 'type' => 'range-value',
                 'section' => 'title_tagline',
-                'settings' => 'flexia_sticky_header_logo_height',
-                'label' => __('Sticky Header Logo Height (px)', 'flexia'),
+                'settings' => 'flexia_sticky_header_logo_width',
+                'label' => __('Sticky Header Logo Width (px)', 'flexia'),
                 'input_attrs' => array(
-                    'min' => 20,
+                    'min' => 0,
                     'max' => 400,
                     'step' => 1,
                     'suffix' => 'px', //optional suffix

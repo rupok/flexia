@@ -237,12 +237,12 @@ function flexia_generate_css()
 		background-color: ' . $defaults['flexia_sidebar_widget_bg_color'] . ';
 	}
 	
-	.flexia-header-logo {
-		height: ' . $defaults['flexia_header_logo_height'] . 'px;
+	.site-branding .flexia-header-logo > img {
+		width: ' . $defaults['flexia_header_logo_width'] . 'px;
 	}
 
-	.flexia-header-sticky-logo {
-		height: ' . $defaults['flexia_sticky_header_logo_height'] . 'px;
+	.site-branding .flexia-header-sticky-logo  > img {
+		width: ' . $defaults['flexia_sticky_header_logo_width'] . 'px;
 	}
 	
 	.flexia-sticky-navbar .flexia-header-logo {
