@@ -2528,7 +2528,8 @@ big {
 }
 
 .flexia-logobar-stacked .flexia-header-logo {
-  margin: 0 auto;
+  margin: .5em auto;
+  justify-content: center;
 }
 
 .main-navigation {

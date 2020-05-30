@@ -180,6 +180,7 @@
 		.main-navigation {
 			margin: 0 auto !important;
 			order: 2;
+			flex: 1 1 auto;
 		}
 
 		.flexia-menu.header-icons {
@@ -373,7 +374,8 @@
 }
 .flexia-logobar-stacked {
 	.flexia-header-logo {
-		margin: 0 auto;
+		margin: .5em auto;
+		justify-content: center;
 	}
 }
 .main-navigation {
