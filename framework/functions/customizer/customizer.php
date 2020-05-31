@@ -2314,21 +2314,6 @@ function flexia_customize_register($wp_customize)
         'type' => 'light', // light, ios, flat
     )));
 
-    // Show scroll bottom anchor
-
-    $wp_customize->add_setting('scroll_bottom_arrow', array(
-        'default' => $defaults['scroll_bottom_arrow'],
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'flexia_sanitize_checkbox',
-    ));
-
-    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'scroll_bottom_arrow', array(
-        'label' => esc_html__('Hide Scroll to bottom arrow?', 'flexia'),
-        'section' => 'flexia_blog_header_settings',
-        'settings' => 'scroll_bottom_arrow',
-        'type' => 'light', // light, ios, flat
-    )));
-
     // Blog logo/Icon
 
     $wp_customize->add_setting('show_blog_logo', array(
@@ -2372,24 +2357,27 @@ function flexia_customize_register($wp_customize)
         )
     );
 
+    //Flexia Blog Logo Width
     $wp_customize->add_setting('flexia_blog_logo_width', array(
         'default' => $defaults['flexia_blog_logo_width'],
+        'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
         'sanitize_callback' => 'flexia_sanitize_integer',
+
     ));
 
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'flexia_blog_logo_width',
-            array(
-                'label' => __('Blog Logo width (px)', 'flexia'),
-                'section' => 'flexia_blog_header_settings',
-                'settings' => 'flexia_blog_logo_width',
-                'type' => 'text',
-            )
-        )
-    );
+    $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'flexia_blog_logo_width', array(
+        'type' => 'range-value',
+        'section' => 'flexia_blog_header_settings',
+        'settings' => 'flexia_blog_logo_width',
+        'label' => __('Blog Logo width (px)', 'flexia'),
+        'input_attrs' => array(
+            'min' => 1,
+            'max' => 500,
+            'step' => 1,
+            'suffix' => 'px', //optional suffix
+        ),
+    )));
 
     $wp_customize->add_setting('blog_title', array(
         'default' => $defaults['blog_title'],
