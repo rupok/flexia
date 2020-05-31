@@ -245,10 +245,6 @@ function flexia_generate_css()
 		width: ' . $defaults['flexia_sticky_header_logo_width'] . 'px;
 	}
 	
-	.flexia-sticky-navbar .flexia-header-logo {
-		height: ' . $defaults['flexia_sticky_header_logo_height'] . 'px;
-	}
-	
 	.header-content .flexia-blog-logo {
 		width: ' . $defaults['flexia_blog_logo_width'] . 'px;
 	}
