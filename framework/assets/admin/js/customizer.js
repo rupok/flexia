@@ -561,14 +561,14 @@ function generateCSS() {
     });
 
     // Header logo Height
-    wp.customize("flexia_header_logo_height", function(value) {
+    wp.customize("flexia_header_logo_width", function(value) {
         value.bind(function(to) {
             $(".flexia-header-logo").css("height", to + "px");
         });
     });
 
     // Sticky Header logo height
-    wp.customize("flexia_sticky_header_logo_height", function(value) {
+    wp.customize("flexia_sticky_header_logo_width", function(value) {
         value.bind(function(to) {
             $(".flexia-sticky-navbar .flexia-header-logo").css("height", to + "px");
         });
