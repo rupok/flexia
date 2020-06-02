@@ -16,6 +16,56 @@ function generateCSS() {
     })
 }
 
+function genaerateDimemsion (value) {
+        
+    var valueArr = JSON.parse(value);
+
+    const dimensionArr = [];
+    var dimensionAttr, input1, input2, input3, input4 = '';
+
+    if ( valueArr.input1 !== '' ) {
+        var input1 = valueArr.input1 + 'px';
+    } else {
+        var input1 = '0px';
+    }
+    if ( typeof input1 !== 'undefined' ) {
+        dimensionArr.push(input1);
+    }
+    
+    if ( valueArr.input2 !== '' ) {
+        var input2 = valueArr.input2 + 'px';
+    } else {
+        var input2 = '0px';
+    }
+    if ( typeof input2 !== 'undefined' ) {
+        dimensionArr.push(input2);
+    }
+    
+    if ( valueArr.input3 !== '' ) {
+        var input3 = valueArr.input3 + 'px';
+    } else {
+        var input3 = '0px';
+    }
+    if ( typeof input3 !== 'undefined' ) {
+        dimensionArr.push(input3);
+    }
+    
+    if ( valueArr.input4 !== '' ) {
+        var input4 = valueArr.input4 + 'px';
+    } else {
+        var input4 = '0px';
+    }
+    if ( typeof input4 !== 'undefined' ) {
+        dimensionArr.push(input4);
+    }
+
+    if ( dimensionArr.length > 0) {
+        var dimensionAttr = dimensionArr.join(' ');
+    }
+
+    return dimensionAttr;
+}
+
 (function($) {
     // Site title and description.
     wp.customize("blogname", function(value) {
@@ -715,6 +765,12 @@ function generateCSS() {
     wp.customize("flexia_navbar_bg_color", function(value) {
         value.bind(function(to) {
             $(".flexia-navbar").css("background-color", to);
+        });
+    });
+    
+    wp.customize("flexia_navbar_padding", function(value) {
+        value.bind(function(to) {
+            $(".flexia-navbar").css("padding", genaerateDimemsion( to ));
         });
     });
 

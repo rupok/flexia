@@ -3215,6 +3215,35 @@ function flexia_customize_register($wp_customize)
             ))
     );
 
+    $wp_customize->add_setting('flexia_navbar_padding', array(
+        'default' => $defaults['flexia_navbar_padding'],
+        'transport' => 'postMessage'
+    ));
+
+    $wp_customize->add_control(
+        new Flexia_Dimension_Control(
+            $wp_customize,
+            'flexia_navbar_padding',
+            array(
+                'label' => __('Navbar Padding', 'flexia'),
+                'section' => 'flexia_header_navbar',
+                'settings' => 'flexia_navbar_padding',
+                'priority' => 50,
+                'input_fields' => array(
+                    'input1'   	=> __( 'top', 'flexia' ),
+                    'input2'   	=> __( 'right', 'flexia' ),
+                    'input3'   	=> __( 'bottom', 'flexia' ),
+                    'input4'   	=> __( 'left', 'flexia' ),
+                ),
+                'defaults' => array(
+                    'input1'  	=> 0,
+                    'input2'  	=> 0,
+                    'input3'  	=> 0,
+                    'input4'  	=> 0,
+                )
+            ))
+    );
+
     // Primary Menu Separator
     $wp_customize->add_setting('main_nav_settings_title', array(
         'default' => '',

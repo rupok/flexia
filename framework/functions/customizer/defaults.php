@@ -144,6 +144,12 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_topbar_bg_color' => $primary_color,
             'flexia_logobar_bg_color' => '#fff',
             'flexia_navbar_bg_color' => '#fff',
+            'flexia_navbar_padding' => array(
+                'input1'  	=> 0,
+                'input2'  	=> 0,
+                'input3'  	=> 0,
+                'input4'  	=> 0,
+            ),
             'flexia_main_nav_menu_link_color' => '#4d4d4d',
             'flexia_main_nav_menu_link_hover_color' => '#1b1f21',
             'flexia_main_nav_menu_link_hover_bg' => '#ffffff',

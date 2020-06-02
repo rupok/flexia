@@ -47,6 +47,10 @@ add_action('customize_preview_init', 'flexia_customize_preview_js');
  */
 function flexia_customizer_condition()
 {
+    wp_enqueue_style(
+        'flexia-customizer-style',
+        get_template_directory_uri() . '/framework/assets/admin/css/customizer-style.css'
+    );
     wp_enqueue_script(
         'flexia-customize-condition',
         get_template_directory_uri() . '/framework/assets/admin/js/customizer-condition.js',

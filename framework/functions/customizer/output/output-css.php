@@ -18,87 +18,65 @@ if (!function_exists('flexia_customizer_style')) {
 	}
 }
 
-/**
- * This function adds some styles to the WordPress Customizer
- */
-function flexia_customizer_custom_styles()
-{ ?>
-	<style type="text/css">
-		.customize-control-flexia-title .flexia-select,
-		.customize-control-flexia-title .flexia-dimension {
-			display: flex;
-		}
+function flexia_dimension_attr_generator($key) {
+	
+	$saved_options = get_theme_mods();
+	if( array_key_exists( $key, $saved_options ) ) {
+		$valueArr = (array) json_decode(flexia_get_option($key));
+	} else {
+		$default = flexia_get_option_defaults();
+        $valueArr = $default[$key];
+	}
 
-		.customize-control-flexia-range-value {
-			display: flex;
-		}
+	$dimensionArr = [];
+	$dimensionAttr = '';
+	$input1 = '';
+	$input2 = '';
+	$input3 = '';
+	$input4 = '';
+	
+	if ( $valueArr['input1'] !== '' ) {
+		$input1 = $valueArr['input1'] . 'px';
+	} else {
+		$input1 = '0px';
+	}
+	if ( $input1 !== '' ) {
+		$dimensionArr[] = $input1;
+	}
+	
+	if ( $valueArr['input2'] !== '' ) {
+		$input2 = $valueArr['input2'] . 'px';
+	} else {
+		$input2 = '0px';
+	}
+	if ( $input2 !== '' ) {
+		$dimensionArr[] = $input2;
+	}
+	
+	if ( $valueArr['input3'] !== '' ) {
+		$input3 = $valueArr['input3'] . 'px';
+	} else {
+		$input3 = '0px';
+	}
+	if ( $input3 !== '' ) {
+		$dimensionArr[] = $input3;
+	}
+	
+	if ( $valueArr['input4'] !== '' ) {
+		$input3 = $valueArr['input4'] . 'px';
+	} else {
+		$input4 = '0px';
+	}
+	if ( $input4 !== '' ) {
+		$dimensionArr[] = $input4;
+	}
 
-		.customize-control-flexia-range-value .customize-control-title,
-		.customize-control-flexia-number .customize-control-title {
-			float: left;
-		}
-
-		.flexia-customize-control-separator {
-			display: block;
-			margin: 0 -12px;
-			border: 1px solid #ddd;
-			border-left: 0;
-			border-right: 0;
-			padding: 15px;
-			font-size: 11px;
-			font-weight: 600;
-			letter-spacing: 2px;
-			line-height: 1;
-			text-transform: uppercase;
-			color: #555;
-			background-color: #fff;
-		}
-
-		.customize-control.customize-control-flexia-dimension,
-		.customize-control-flexia-select {
-			width: 25%;
-			float: left !important;
-			clear: none !important;
-			margin-top: 0;
-			margin-bottom: 12px;
-		}
-
-		.customize-control.customize-control-flexia-dimension .customize-control-title,
-		.customize-control-flexia-select .customize-control-title {
-			font-size: 11px;
-			font-weight: normal;
-			color: #888b8c;
-			margin-top: 0;
-		}
-
-		.flexia-customizer-reset {
-			font-size: 22px;
-			line-height: 26px;
-			margin-left: 5px;
-			transition: unset;
-		}
-
-		.flexia-customizer-reset:focus {
-			box-shadow: none;
-		}
-
-		.flexia-customizer-reset svg {
-			width: 16px;
-			fill: #FE1F4A;
-		}
-
-		.customize-control-title .customize-control-title {
-			margin-bottom: 0;
-		}
-
-		.betterdocs-gradient-color-control .gradient-control-label {
-			width: 100%;
-		}
-	</style>
-<?php
-
+	if ( count($dimensionArr) > 0 ) {
+		$dimensionAttr = "padding: " . implode(' ', $dimensionArr) . ";";
+	}
+	
+	return $dimensionAttr;
 }
-add_action('customize_controls_print_styles', 'flexia_customizer_custom_styles', 999);
 
 function flexia_generate_css()
 {
@@ -440,6 +418,7 @@ function flexia_generate_css()
 	
 	.flexia-navbar {
 		background-color: ' . $defaults['flexia_navbar_bg_color'] . ';
+		' . flexia_dimension_attr_generator('flexia_navbar_padding') . '
 	}
 	
 	.flexia-menu.header-icons .nav-menu li > a,
