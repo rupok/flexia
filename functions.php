@@ -244,6 +244,11 @@ require get_template_directory() . '/framework/functions/flexia/flexia-template-
 require get_template_directory() . '/framework/functions/flexia/flexia-helper.php';
 
 /**
+ * Functions to Add Blog Template file
+ */
+require get_template_directory() . '/framework/functions/flexia/flexia-blog-templates.php';
+
+/**
  * Integrations.
  */
 

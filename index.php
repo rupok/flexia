@@ -16,11 +16,11 @@ get_header();
 /**
  * Customizer Values
  */
-$scroll_bottom_arrow 	= get_theme_mod('scroll_bottom_arrow', false);
-$blog_title 			= get_theme_mod('blog_title', '');
-$blog_desc 				= get_theme_mod('blog_desc', '');
-$flexia_blog_layout 	= get_theme_mod( 'flexia_blog_content_layout', 'flexia_blog_content_layout_standard' );
-$flexia_blog_show 	= flexia_get_option( 'show_blog_header' );
+$blog_title 			= flexia_get_option('blog_title');
+$blog_desc 				= flexia_get_option('blog_desc');
+$flexia_blog_layout 	= flexia_get_option( 'flexia_blog_content_layout' );
+$flexia_blog_show 		= flexia_get_option( 'show_blog_header' );
+$flexia_custom_logo_id 	= get_theme_mod( 'custom_logo' );
 ?>
 
 	<?php if ($flexia_blog_show) : ?>
@@ -29,11 +29,19 @@ $flexia_blog_show 	= flexia_get_option( 'show_blog_header' );
 			<div class="header-inner">
 				<div class="header-content">					
 
-					<?php if( get_theme_mod('show_blog_logo') == 'blog_logo_image' ) :  ?>
+					<?php if( flexia_get_option('show_blog_logo') == 'blog_logo_image' ) :  ?>
 
-						<?php if( get_theme_mod('blog_logo') !== '' ) :  ?>
+						<?php if( flexia_get_option('blog_logo') !== '' ) :  ?>
 
-							<img class="flexia-blog-logo" src="<?php echo esc_url(get_theme_mod('blog_logo')); ?>">
+							<img class="flexia-blog-logo" src="<?php echo esc_url(flexia_get_option('blog_logo')); ?>">
+
+						<?php  else : ?> <!-- If Image is empty, use default Logo -->
+
+							<?php if( $flexia_custom_logo_id !== '' ) :  ?>
+
+								<img class="flexia-blog-logo" src="<?php echo esc_url(wp_get_attachment_image_src( $flexia_custom_logo_id , 'full' )[0]); ?>">
+
+							<?php endif; ?>
 
 						<?php endif; ?>
 
@@ -64,12 +72,6 @@ $flexia_blog_show 	= flexia_get_option( 'show_blog_header' );
 
 						endif;?></h3>
 				</div>
-
-				<?php if( $scroll_bottom_arrow == false ) :
-
-					echo '<a href="#content" class="scroll-down"></a>';
-
-				endif; ?>
 			</div>
 			<div class="header-overlay"></div>
 		</header>
@@ -92,8 +94,19 @@ $flexia_blog_show 	= flexia_get_option( 'show_blog_header' );
 				<main id="main" class="site-main flexia-container">
 				<?php
 
-					if ( have_posts() ) :
-						if( ! class_exists( 'Flexia_Pro' ) || ! class_exists( 'Flexia_Core' ) || $flexia_blog_layout == 'flexia_blog_content_layout_standard' ) :
+					if ( have_posts() ) :						
+
+						if ($flexia_blog_layout == 'flexia_blog_content_layout_grid' || $flexia_blog_layout == 'flexia_blog_content_layout_masonry') :
+
+							/**
+							 * A flexia hook to add blog layouts
+							 *
+							 * @since   v1.0.1
+							 */
+							do_action( 'flexia_blog_layout' );
+
+						//If Layout is Stadard or Not selected
+						else : 
 
 							/* Start the Loop */
 							while ( have_posts() ) : the_post();
@@ -107,17 +120,9 @@ $flexia_blog_show 	= flexia_get_option( 'show_blog_header' );
 
 							endwhile;
 
-
 							get_template_part( 'framework/views/template-parts/content', 'pagination' );
-							elseif( $flexia_blog_layout == 'flexia_blog_content_layout_grid' || $flexia_blog_layout == 'flexia_blog_content_layout_masonry' ):
-								/**
-								 * A flexia hook to add blog layouts
-								 *
-								 * @since   v1.0.1
-								 */
-								do_action( 'flexia_blog_layout' );
-								get_template_part( 'framework/views/template-parts/content', 'pagination' );
-							endif;
+
+						endif;						
 
 					else :
 

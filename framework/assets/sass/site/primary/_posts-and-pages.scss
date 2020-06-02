@@ -575,3 +575,433 @@ body {
     }
   }
 }
+
+
+
+/**
+ * ============================================================================================
+ * Main stylesheet for Flexia Pro
+ * ============================================================================================
+ */
+/* Post Block */
+
+
+.flexia-post-block-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1170px;
+  margin: 0 auto;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: flex-start;
+}
+.flexia-post-block-item {
+  overflow: hidden;
+  margin: 10px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px 0px rgba(110, 123, 140, 0.3);
+  flex: 1 1 30%;
+  width: 30%;
+}
+
+.flexia-post-block-item-holder {
+  height: 100%;
+  width: 100%;
+}
+
+.flexia-post-block-item-holder-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-flow: column wrap;
+  height: 100%;
+}
+
+.flexia-post-block-item .flexia-entry-thumbnail {
+  background-color: #f0f0f0;
+  position: relative;
+  height: 160px;
+  flex: auto;
+}
+
+.flexia-post-block-item .flexia-entry-thumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.flexia-post-block-item .flexia-entry-wrapper {
+  padding: 15px;
+}
+
+.flexia-post-block-item .flexia-entry-title {
+  margin: 5px 0 5px;
+}
+
+.flexia-post-block-item .flexia-entry-header .flexia-entry-meta .flexia-posted-by {
+  display: inline-block;
+}
+
+.flexia-post-block-item .flexia-entry-meta {
+  line-height: 1;
+}
+
+.flexia-entry-meta > span {
+  font-size: 12px;
+  line-height: 1.2;
+  padding-bottom: 5px;
+}
+
+.flexia-post-block-item .flexia-entry-header .flexia-entry-meta span.flexia-posted-on {
+  padding-left: 5px;
+}
+
+.flexia-post-block-item .flexia-entry-footer .flexia-entry-meta {
+  padding-left: 8px;
+}
+
+.flexia-post-block-item .flexia-entry-footer {
+  padding: 0 15px 15px
+}
+/**
+ * Post Grid
+ */
+
+.page-template-template-portfolio .flexia-wrapper.flexia-container {
+  padding: 0;
+}
+.flexia-grid-post {
+  float: left;
+  padding: 10px;
+}
+body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
+  padding: 0;
+}
+.flexia-grid-post-holder {
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0, .15);
+}
+.flexia-grid-portfolio .flexia-grid-post-holder {
+  border: none;
+}
+.flexia-grid-post-holder-inner {
+  height: 100%;
+}
+.flexia-entry-media {
+  position: relative;
+}
+.flexia-entry-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease-in-out,-webkit-transform .25s cubic-bezier(.19,1,.22,1);
+  -moz-transition: opacity .3s ease-in-out,-moz-transform .25s cubic-bezier(.19,1,.22,1);
+  transition: opacity .3s ease-in-out,transform .25s cubic-bezier(.19,1,.22,1);
+  text-align: center;
+}
+.flexia-entry-overlay:hover {
+  opacity: 1;
+  background-color: rgba(0,0,0, .7);
+}
+.flexia-entry-overlay svg {
+  fill: #fff;
+  height: 2em;
+  top: 50%;
+  position: relative;
+  margin-top: -1em;
+  margin-left: -50px;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -ms-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+}
+.flexia-entry-overlay:hover svg {
+  margin-left: 0;
+}
+.flexia-entry-overlay:not(.flexia-portfolio-overlay) i {
+  color: #fff;
+  width: 60px;
+  text-align: center;
+  line-height: 60px;
+  height: 60px;
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  font-size: 32px;
+  top: 50%;
+  margin-top: -30px;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  opacity: 0;
+  -webkit-transform: translatex(-20px);
+  -moz-transform: translatex(-20px);
+  -ms-transform: translatex(-20px);
+  transform: translatex(-20px);
+  -webkit-transition: opacity .2s ease-in-out,-webkit-transform .25s cubic-bezier(.19,1,.22,1);
+  -moz-transition: opacity .2s ease-in-out,-moz-transform .25s cubic-bezier(.19,1,.22,1);
+  transition: opacity .2s ease-in-out,transform .25s cubic-bezier(.19,1,.22,1);
+}
+.flexia-entry-media:hover .flexia-entry-overlay:not(.flexia-portfolio-overlay) i {
+  -webkit-transform: translatex(0px);
+  -moz-transform: translatex(0px);
+  -ms-transform: translatex(0px);
+  transform: translatex(0px);
+  opacity: 1;
+}
+.flexia-entry-overlay > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.flexia-entry-title, .flexia-entry-title a {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #303133;
+}
+.flexia-entry-thumbnail img {
+  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.flexia-grid-post .flexia-entry-header .flexia-entry-meta {
+  font-size: .8em;
+  margin-bottom: 8px;
+}
+.flexia-grid-post .flexia-entry-header .flexia-entry-meta span.flexia-posted-on {
+  padding-left: 5px;
+}
+
+.flexia-entry-footer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.flexia-entry-footer .flexia-author-avatar {
+  flex: 0 0 auto;
+  width: 50px;
+}
+.flexia-entry-footer .flexia-author-avatar .avatar {
+  border-radius: 50%;
+}
+.flexia-post-grid .flexia-entry-footer  .flexia-entry-meta {
+  padding-left: 8px;
+}
+.flexia-entry-header .flexia-term-name {
+  color: #303133;
+  font-size: 12px;
+}
+.flexia-entry-content .flexia-grid-post-excerpt {
+  font-size: 1em;
+  line-height: 1.5;
+}
+.flexia-entry-meta > div {
+  font-size: 12px;
+  line-height: 1.2;
+  padding-bottom: 5px;
+}
+.flexia-grid-post-excerpt p {
+  margin: 0;
+  font-size: 14px;
+}
+.flexia-entry-meta .flexia-entry-footer  .flexia-posted-by {
+  display: block;
+}
+.flexia-grid-post .flexia-entry-wrapper, .flexia-grid-post .flexia-entry-footer {
+  padding: 15px;
+}
+.flexia-post-grid .flexia-entry-header .flexia-entry-meta span.flexia-posted-on {
+  padding-left: 5px;
+}
+
+.flexia-load-more-button-wrap::before, .flexia-load-more-button-wrap::after,.flexia-post-grid-wrapper::before, .flexia-post-gridwrapper::after {
+  content: " ";
+  clear: both;
+}
+/* Post Grid Column */
+
+.flexia-col-1 .flexia-post-grid-column {
+  float: none;
+  width: 100%;
+}
+.flexia-col-2 .flexia-post-grid-column{
+  float: left;
+  width: 50%;
+}
+.flexia-col-3 .flexia-post-grid-column {
+  float: left;
+  width: 33.3333%;
+}
+.flexia-col-4 .flexia-post-grid-column {
+  float: left;
+  width: 25%;
+}
+.flexia-col-5 .flexia-post-grid-column {
+  float: left;
+  width: 20%;
+}
+.flexia-col-6 .flexia-post-grid-column {
+  float: left;
+  width: 16.6666%;
+}
+
+/* Responsive Styles for Instagram Feed */
+
+@media only screen and (max-width: 979px) {
+.flexia-col-1 .flexia-post-grid-column, .flexia-col-2 .flexia-post-grid-column,
+.flexia-col-3 .flexia-post-grid-column, .flexia-col-4 .flexia-post-grid-column,
+.flexia-col-5 .flexia-post-grid-column, .flexia-col-6 .flexia-post-grid-column {
+  width: 33.3333%;
+}
+}
+
+@media only screen and (max-width: 767px) {
+.flexia-col-1 .flexia-post-grid-column, .flexia-col-2 .flexia-post-grid-column,
+.flexia-col-3 .flexia-post-grid-column, .flexia-col-4 .flexia-post-grid-column,
+.flexia-col-5 .flexia-post-grid-column, .flexia-col-6 .flexia-post-grid-column {
+  width: 50%;
+}
+}
+
+@media only screen and (max-width: 480px) {
+.flexia-col-1 .flexia-post-grid-column, .flexia-col-2 .flexia-post-grid-column,
+.flexia-col-3 .flexia-post-grid-column, .flexia-col-4 .flexia-post-grid-column,
+.flexia-col-5 .flexia-post-grid-column, .flexia-col-6 .flexia-post-grid-column {
+  float: none;
+  width: 100%;
+}
+}
+.btn-load-more {
+  display: block;
+}
+
+/**
+ * Sorting Portfolio / Blog
+ */
+
+.flexia-post-filter-control {
+  text-align: center;
+}
+
+.flexia-post-filter-control button.control {
+  background-color: transparent;
+  color: #444;
+  display: inline-block;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  margin: 0px 10px 10px 0px;
+  border: none;
+  border-radius: 0;
+}
+
+.flexia-post-filter-control button.control:hover, .flexia-post-filter-control button.button.control.is-checked{
+  background-color: #444;
+  color: #fff;
+}
+
+/**
+ * Load More Button
+ */
+.flexia-load-more-button-wrap {
+  width: 100%;
+  display: block;
+  margin: 30px auto;
+  clear: both;
+}
+.flexia-load-more-button {
+  background-color: #444;
+  color: #fff;
+  position: relative;
+  text-transform: uppercase;
+  margin: 0 auto;
+  display: block;
+  border: 0;
+  padding: 15px 30px;
+  z-index: 2;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: .25em;
+  transition: all .5s;
+  overflow: hidden;
+}
+
+.flexia-load-more-button:hover, .button--loading {
+  background: #27bdbd;
+  color: #fff;
+}
+
+.button--hide {
+  opacity: 0;
+}
+
+.flexia-load-more-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexia-load-more-button .button__loader {
+  left: -100%;
+  top: auto;
+  margin-right: 5px;
+  transition: all .2s;
+}
+
+.flexia-load-more-button > span {
+  margin-left: -20px;
+}
+
+.flexia-load-more-button.button--loading > span {
+  margin-left: 0;
+}
+
+.flexia-load-more-button.button--loading .button__loader {
+  left: auto;
+}
+.flexia-btn-loader, .flexia-btn-loader:after {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+.flexia-btn-loader {
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 4px solid rgba(255, 255, 255, 0.2);
+  border-right: 4px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 4px solid rgba(255, 255, 255, 0.2);
+  border-left: 4px solid #ffffff;
+  transform: translateZ(0);
+  animation: loaderSpin 1.1s infinite linear;
+}
+
+@keyframes loaderSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
