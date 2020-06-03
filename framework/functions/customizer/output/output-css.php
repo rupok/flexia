@@ -18,66 +18,6 @@ if (!function_exists('flexia_customizer_style')) {
 	}
 }
 
-function flexia_dimension_attr_generator($key) {
-	
-	$saved_options = get_theme_mods();
-	if( array_key_exists( $key, $saved_options ) ) {
-		$valueArr = (array) json_decode(flexia_get_option($key));
-	} else {
-		$default = flexia_get_option_defaults();
-        $valueArr = $default[$key];
-	}
-
-	$dimensionArr = [];
-	$dimensionAttr = '';
-	$input1 = '';
-	$input2 = '';
-	$input3 = '';
-	$input4 = '';
-	
-	if ( $valueArr['input1'] !== '' ) {
-		$input1 = $valueArr['input1'] . 'px';
-	} else {
-		$input1 = '0px';
-	}
-	if ( $input1 !== '' ) {
-		$dimensionArr[] = $input1;
-	}
-	
-	if ( $valueArr['input2'] !== '' ) {
-		$input2 = $valueArr['input2'] . 'px';
-	} else {
-		$input2 = '0px';
-	}
-	if ( $input2 !== '' ) {
-		$dimensionArr[] = $input2;
-	}
-	
-	if ( $valueArr['input3'] !== '' ) {
-		$input3 = $valueArr['input3'] . 'px';
-	} else {
-		$input3 = '0px';
-	}
-	if ( $input3 !== '' ) {
-		$dimensionArr[] = $input3;
-	}
-	
-	if ( $valueArr['input4'] !== '' ) {
-		$input3 = $valueArr['input4'] . 'px';
-	} else {
-		$input4 = '0px';
-	}
-	if ( $input4 !== '' ) {
-		$dimensionArr[] = $input4;
-	}
-
-	if ( count($dimensionArr) > 0 ) {
-		$dimensionAttr = "padding: " . implode(' ', $dimensionArr) . ";";
-	}
-	
-	return $dimensionAttr;
-}
-
 function flexia_generate_css()
 {
 	$defaults = flexia_generate_defaults();

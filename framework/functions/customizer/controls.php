@@ -721,7 +721,7 @@ class Flexia_Dimension_Control extends WP_Customize_Control {
 				<span class="dimension-title"><?php echo $this->input_fields['input3'] ?></span>
 			</li>
 			<li class="dimension-field">
-				<input type="number" class="flexia-dimension-input flexia-dimension-input-4 disconnected" value="<?php echo esc_attr($dimension_val['input3'] ); ?>" data-element-connect="<?php echo esc_attr($this->id) ?>" data-input="input4">
+				<input type="number" class="flexia-dimension-input flexia-dimension-input-4 disconnected" value="<?php echo esc_attr($dimension_val['input4'] ); ?>" data-element-connect="<?php echo esc_attr($this->id) ?>" data-input="input4">
 				<span class="dimension-title"><?php echo $this->input_fields['input4'] ?></span>
 			</li>
 		</ul>
