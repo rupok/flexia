@@ -14,8 +14,9 @@ function flexia_blog_layout() {
 	$flexia_blog_post_meta 			= get_theme_mod( 'flexia_blog_post_meta', 		'meta-on-bottom' );
 	$flexia_blog_excerpt_count 		= get_theme_mod( 'flexia_blog_excerpt_count', 	30 );
 	$flexia_magnific_popup 			= get_theme_mod( 'flexia_blog_image_popup', 	false );
-	$flexia_show_filter 			= get_theme_mod( 'flexia_blog_filterable', 		true );
+	$flexia_show_filter 			= get_theme_mod( 'flexia_blog_filterable', 		false );
 	$flexia_blog_categories			= get_theme_mod( 'flexia_blog_categories', 		'' );
+	$flexia_show_load_more 			= get_theme_mod( 'flexia_blog_load_more', false );
 ?>	
 
 <?php
@@ -24,7 +25,7 @@ function flexia_blog_layout() {
 	 */
 	if( 'flexia_blog_content_layout_grid' === $flexia_blog_layout ) : ?>
 		<div class="flexia-post-grid flexia-post-block">
-			<?php if ($flexia_show_filter == true && !empty($flexia_blog_categories)): ?>
+			<?php if ( class_exists( 'Flexia_Pro' ) && $flexia_show_filter == true && !empty($flexia_blog_categories)): ?>
 				<div class="flexia-post-filter-control">
 					<?php if( !empty( $flexia_blog_categories ) ) : ?>
 					<button class="button control is-checked" data-filter="*"><?php _e('All', 'flexia-pro');?></button>
@@ -62,16 +63,19 @@ function flexia_blog_layout() {
 					    // Looping through and choose those categories that comes with the post loop.
 						for( $i = 0; $i < count($term_unique_name ); $i++ ) {
 							if( in_array( $term_unique_slug[$i] , (array)$flexia_blog_categories ) ) {
-								echo '<button class="button control" data-filter=".'.$term_unique_slug[$i].'">'.$term_unique_name[$i].'</button>';
+								echo '<button class="button control" data-filter="'.$term_unique_slug[$i].'">'.$term_unique_name[$i].'</button>';
 							}
 						}
 				    ?>
 				</div>
-				<?php endif;?>
+			<?php endif;?>
+
 			<div class="js-flexia-load-post flexia-post-block-grid flexia-col-<?php echo $flexia_blog_grid_cols; ?>">
 				<?php
 				if( !empty( $flexia_blog_categories ) ) {
+					$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1; 
 					$args = [
+						'paged'           => $paged,
 						'post_type' => 'post',
 						'post_status' => 'publish',
 						'posts_per_page' => $flexia_blog_per_page,
@@ -162,10 +166,23 @@ function flexia_blog_layout() {
 					    </div>
 					</article>
 				<?php endwhile; ?>
+				
+				
+				<?php
+					
+					if( ! class_exists( 'Flexia_Pro' ) ) {
+						flexia_pagination( $paged, $loop->max_num_pages);
+					}
+					elseif ( class_exists( 'Flexia_Pro' ) && $flexia_show_load_more == false ) {
+						flexia_pagination( $paged, $loop->max_num_pages);
+					}
+					 
+				?>
+
 			</div>
 		</div>
 	<?php endif; ?>
 
 <?php
 }
-add_action( 'flexia_blog_layout', 'flexia_blog_layout' );
+add_action( 'flexia_blog_layout', 'flexia_blog_layout', 2 );
