@@ -171,7 +171,7 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_footer_content_color' => '#9a9a9a',
             'flexia_footer_link_color' => '#ffffff',
             'flexia_footer_link_hover_color' => '#E65A50',
-            'content_layout' => 'content_layout3',
+            'content_layout' => 'content_layout4',
             'typography_settings_title_body' => '',
             'typography_settings_title_heading' => '',
             'post_navigation' => false,
@@ -196,7 +196,7 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_blog_excerpt_count' => '60',
 
             'flexia_blog_content_layout' => 'flexia_blog_content_layout_grid',
-            'flexia_blog_grid_column' => '2',
+            'flexia_blog_grid_column' => '3',
             'flexia_blog_per_page' => 8,
             
             'flexia_navbar' => true,

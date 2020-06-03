@@ -8,9 +8,9 @@ function flexia_blog_layout() {
 	/**
 	 * Customizer Values
 	 */
-	$flexia_blog_per_page			= get_theme_mod( 'flexia_blog_per_page',		10 );
-	$flexia_blog_layout 			= get_theme_mod( 'flexia_blog_content_layout', 'flexia_blog_content_layout_standard' );
-	$flexia_blog_grid_cols 			= get_theme_mod( 'flexia_blog_grid_column', 	3 );
+	$flexia_blog_per_page			= flexia_get_option( 'flexia_blog_per_page' );
+	$flexia_blog_layout 			= flexia_get_option( 'flexia_blog_content_layout' );
+	$flexia_blog_grid_cols 			= flexia_get_option( 'flexia_blog_grid_column' );
 	$flexia_blog_post_meta 			= get_theme_mod( 'flexia_blog_post_meta', 		'meta-on-bottom' );
 	$flexia_blog_excerpt_count 		= get_theme_mod( 'flexia_blog_excerpt_count', 	30 );
 	$flexia_magnific_popup 			= get_theme_mod( 'flexia_blog_image_popup', 	false );
@@ -166,22 +166,29 @@ function flexia_blog_layout() {
 					    </div>
 					</article>
 				<?php endwhile; ?>
-				
-				
-				<?php
-					
-					if( ! class_exists( 'Flexia_Pro' ) ) {
-						flexia_pagination( $paged, $loop->max_num_pages);
-					}
-					elseif ( class_exists( 'Flexia_Pro' ) && $flexia_show_load_more == false ) {
-						flexia_pagination( $paged, $loop->max_num_pages);
-					}
-					 
-				?>
 
 			</div>
+				
+				
+			<?php
+				
+				if( ! class_exists( 'Flexia_Pro' ) ) {
+					flexia_pagination( $paged, $loop->max_num_pages);
+				}
+				elseif ( class_exists( 'Flexia_Pro' ) && $flexia_show_load_more == false ) {
+					flexia_pagination( $paged, $loop->max_num_pages);
+				}
+					
+			?>
 		</div>
+
+	<?php elseif( 'flexia_blog_content_layout_masonry' === $flexia_blog_layout && !class_exists( 'Flexia_Pro' )) : ?>
+
+		<h2>Masonry Layout is availbale on <a href="https://flexia.pro/">Flexia Pro</a></h2>
+
 	<?php endif; ?>
+
+	
 
 <?php
 }

@@ -104,7 +104,6 @@ $flexia_custom_logo_id 	= get_theme_mod( 'custom_logo' );
 							 * @since   v1.0.1
 							 */
 							do_action( 'flexia_blog_layout' );
-							get_template_part( 'framework/views/template-parts/content', 'pagination' );
 
 						// If Layout is Stadard or Not selected
 						else : 
