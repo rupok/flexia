@@ -4574,7 +4574,7 @@ body.transparent .flexia-wrapper > .content-area {
 ## Posts and pages
 --------------------------------------------------------------*/
 .page-header {
-  background-color: #d43e4f;
+  background-color: #28292e;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4606,10 +4606,8 @@ body.transparent .flexia-wrapper > .content-area {
 .header-content > .page-title {
   font-size: 3em;
   font-weight: 700;
-  letter-spacing: 1px;
   line-height: 1.5em;
   margin: 0 auto;
-  text-transform: uppercase;
 }
 .header-content p {
   display: block;
@@ -4619,11 +4617,9 @@ body.transparent .flexia-wrapper > .content-area {
   padding: 0.5em;
 }
 .header-content .blog-desc {
-  display: block;
   font-size: 1em;
-  font-style: italic;
-  line-height: 1.2;
-  padding: 0.5em;
+  line-height: 1.5;
+  padding: 20px;
 }
 .header-content .author-bio {
   font-size: 1.5em;

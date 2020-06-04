@@ -1,5 +1,5 @@
 .page-header {
-  background-color: #d43e4f;
+  background-color: #28292e;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,10 +28,8 @@
   >.page-title {
     font-size: 3em;
     font-weight: 700;
-    letter-spacing: 1px;
     line-height: 1.5em;
     margin: 0 auto;
-    text-transform: uppercase;
   }
   p {
     display: block;
@@ -41,11 +39,9 @@
     padding: 0.5em;
   }
   .blog-desc {
-    display: block;
     font-size: 1em;
-    font-style: italic;
-    line-height: 1.2;
-    padding: 0.5em;
+    line-height: 1.5;
+    padding: 20px;
   }
   .author-bio {
     font-size: 1.5em;

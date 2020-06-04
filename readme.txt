@@ -5,7 +5,7 @@ Theme URI: https://flexia.pro/
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.0
 Tested up to: 5.4
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -47,6 +47,14 @@ Source: https://picjumbo.com/entrepreneur-working-on-his-macbook/
 
 
 == Changelog ==
+
+= 2.1.1 =
+* Released: June 4, 2020
+
+* Blog page revamped with modern look
+* Blog grid layout added
+* Dropped Font Awesome and used SVG for better performance
+* Dimension control added for padding, margin, border etc.
 
 = 2.1.0 =
 * Released: May 12, 2020
