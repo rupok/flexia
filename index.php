@@ -73,7 +73,7 @@ $flexia_custom_logo_id 	= get_theme_mod( 'custom_logo' );
 						endif;?></h3>
 				</div>
 			</div>
-			<div class="header-overlay"></div>
+			<!-- <div class="header-overlay"></div> -->
 		</header>
 
 	<?php endif; ?>

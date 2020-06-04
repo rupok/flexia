@@ -2455,7 +2455,26 @@ function flexia_customize_register($wp_customize)
             ))
     );
 
+    //Flexia Blog Title Font Family
+    $wp_customize->add_setting('flexia_blog_header_title_font_family', array(
+        'default' => $defaults['flexia_blog_header_title_font_family'],
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control(
+        new Customizer_Select2_Google_Fonts(
+            $wp_customize,
+            'flexia_blog_header_title_font_family',
+            array(
+                'label' => esc_html__('Blog Title Font Family', 'flexia'),
+                'section' => 'flexia_blog_header_settings',
+                'settings' => 'flexia_blog_header_title_font_family',
+                'type' => 'select2_google_fonts',
+                'choices' => flexia_google_fonts(),
+            )
+        )
+    );
 
+    //Blog Description 
     $wp_customize->add_setting('blog_desc', array(
         'default' => $defaults['blog_desc'],
         'transport' => 'postMessage',
@@ -2513,6 +2532,25 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_blog_header_settings',
                 'settings' => 'flexia_blog_desc_font_color',
             ))
+    );
+
+    //Flexia Blog Description Font Family
+    $wp_customize->add_setting('flexia_blog_header_desc_font_family', array(
+        'default' => $defaults['flexia_blog_header_desc_font_family'],
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control(
+        new Customizer_Select2_Google_Fonts(
+            $wp_customize,
+            'flexia_blog_header_desc_font_family',
+            array(
+                'label' => esc_html__('Blog Description Font Family', 'flexia'),
+                'section' => 'flexia_blog_header_settings',
+                'settings' => 'flexia_blog_header_desc_font_family',
+                'type' => 'select2_google_fonts',
+                'choices' => flexia_google_fonts(),
+            )
+        )
     );
 
     $wp_customize->add_section('flexia_single_posts_settings', array(

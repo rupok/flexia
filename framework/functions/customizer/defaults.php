@@ -140,6 +140,8 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_blog_title_font_color' => '#ffffff',
             'flexia_blog_desc_font_size' => '18',
             'flexia_blog_desc_font_color' => '#ffffff',
+            'flexia_blog_header_title_font_family' => 'Poppins',
+            'flexia_blog_header_desc_font_family' => 'Nunito',
             'flexia_header_widget_area_bg_color' => '#262625',
             'flexia_topbar_bg_color' => $primary_color,
             'flexia_logobar_bg_color' => '#fff',

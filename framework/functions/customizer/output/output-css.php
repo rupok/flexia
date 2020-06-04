@@ -174,6 +174,7 @@ function flexia_generate_css()
 	.blog-header .header-content > .page-title, .archive-header .header-content > .page-title {
 		font-size: ' . $defaults['flexia_blog_title_font_size'] . 'px;
 		color: ' . $defaults['flexia_blog_title_font_color'] . ';
+		font-family: ' . $defaults['flexia_blog_header_title_font_family'] . ';
 	}
 	
 	.paged .blog-header .header-content > .page-title, .paged .archive-header .header-content > .page-title {
@@ -183,6 +184,7 @@ function flexia_generate_css()
 	.header-content .blog-desc, .header-content .archive-description > p {
 		font-size: ' . $defaults['flexia_blog_desc_font_size'] . 'px;
 		color: ' . $defaults['flexia_blog_desc_font_color'] . ';
+		font-family: ' . $defaults['flexia_blog_header_desc_font_family'] . ';
 	}
 	
 	.paged .header-content .blog-desc, .paged .header-content .archive-description > p {

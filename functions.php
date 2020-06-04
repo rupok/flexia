@@ -312,6 +312,10 @@ if (!function_exists('flexia_fonts_url')) {
         $button_font_variant = flexia_get_option('flexia_button_font_variants');
         $button_font_subset = flexia_get_option('flexia_button_font_subsets');
 
+        $blogHeader_title_font = flexia_get_option('flexia_blog_header_title_font_family');
+        $blogHeader_desc_font = flexia_get_option('flexia_blog_header_desc_font_family');
+        
+
         if ('off' !== $content_font || 'off' !== $header_font) {
             $font_families = array();
 
@@ -335,13 +339,21 @@ if (!function_exists('flexia_fonts_url')) {
                 $font_families[] = $button_font . ':' . $button_font_variant . '&amp;' . $button_font_subset;
             }
 
+            if ('off' !== $blogHeader_title_font) {
+                $font_families[] = $blogHeader_title_font;
+            }
+
+            if ('off' !== $blogHeader_desc_font) {
+                $font_families[] = $blogHeader_desc_font;
+            }
+
             $query_args = array(
                 'family' => urlencode(implode('|', array_unique($font_families))),
             );
 
             $fonts_url = add_query_arg($query_args, 'https://fonts.googleapis.com/css');
         }
-
+        
         return esc_url_raw($fonts_url);
     }
     add_action('init', 'flexia_fonts_url');
