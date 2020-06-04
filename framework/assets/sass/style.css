@@ -5392,11 +5392,39 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
 
 .flexia-post-block-item {
   overflow: hidden;
-  margin: 10px;
   background-color: #ffffff;
   box-shadow: 0px 0px 10px 0px rgba(110, 123, 140, 0.3);
+}
+
+/* Post Grid Column */
+.flexia-col-1 .flexia-post-block-item {
+  margin: 0 0 30px;
+  flex: 1 1 100%;
+}
+
+.flexia-col-2 .flexia-post-block-item {
+  margin: 2%;
+  flex: 1 1 46%;
+}
+
+.flexia-col-3 .flexia-post-block-item {
+  margin: 1.5%;
   flex: 1 1 30%;
-  width: 30%;
+}
+
+.flexia-col-4 .flexia-post-block-item {
+  margin: 1%;
+  flex: 1 1 23%;
+}
+
+.flexia-col-5 .flexia-post-block-item {
+  margin: 1%;
+  flex: 1 1 18%;
+}
+
+.flexia-col-6 .flexia-post-block-item {
+  margin: .8%;
+  flex: 1 1 15%;
 }
 
 .flexia-post-block-item-holder {
@@ -5461,29 +5489,16 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
 /**
  * Post Grid
  */
-.page-template-template-portfolio .flexia-wrapper.flexia-container {
-  padding: 0;
-}
-
-.flexia-grid-post {
-  float: left;
-  padding: 10px;
-}
-
 body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   padding: 0;
 }
 
-.flexia-grid-post-holder {
+.flexia-post-grid-holder {
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.flexia-grid-portfolio .flexia-grid-post-holder {
-  border: none;
-}
-
-.flexia-grid-post-holder-inner {
+.flexia-post-grid-holder-inner {
   height: 100%;
 }
 
@@ -5522,30 +5537,6 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   margin-left: 0;
 }
 
-.flexia-entry-overlay:not(.flexia-portfolio-overlay) i {
-  color: #fff;
-  width: 60px;
-  text-align: center;
-  line-height: 60px;
-  height: 60px;
-  position: absolute;
-  left: 50%;
-  margin-left: -30px;
-  font-size: 32px;
-  top: 50%;
-  margin-top: -30px;
-  -ms-perspective: 1000;
-  perspective: 1000;
-  opacity: 0;
-  transform: translatex(-20px);
-  transition: opacity 0.2s ease-in-out, transform 0.25s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.flexia-entry-media:hover .flexia-entry-overlay:not(.flexia-portfolio-overlay) i {
-  transform: translatex(0px);
-  opacity: 1;
-}
-
 .flexia-entry-overlay > a {
   position: absolute;
   top: 0;
@@ -5557,7 +5548,7 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
 
 .flexia-entry-title, .flexia-entry-title a {
   font-weight: 600;
-  font-size: 13px;
+  font-size: 1.1em;
   line-height: 1.2;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -5570,12 +5561,12 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   vertical-align: middle;
 }
 
-.flexia-grid-post .flexia-entry-header .flexia-entry-meta {
-  font-size: .8em;
+.flexia-post-grid .flexia-entry-header .flexia-entry-meta {
+  font-size: .9m;
   margin-bottom: 8px;
 }
 
-.flexia-grid-post .flexia-entry-header .flexia-entry-meta span.flexia-posted-on {
+.flexia-post-grid .flexia-entry-header .flexia-entry-meta span.flexia-posted-on {
   padding-left: 5px;
 }
 
@@ -5603,7 +5594,7 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   font-size: 12px;
 }
 
-.flexia-entry-content .flexia-grid-post-excerpt {
+.flexia-entry-content .flexia-post-grid-excerpt {
   font-size: 1em;
   line-height: 1.5;
 }
@@ -5614,7 +5605,7 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   padding-bottom: 5px;
 }
 
-.flexia-grid-post-excerpt p {
+.flexia-post-grid-excerpt p {
   margin: 0;
   font-size: 14px;
 }
@@ -5623,7 +5614,7 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   display: block;
 }
 
-.flexia-grid-post .flexia-entry-wrapper, .flexia-grid-post .flexia-entry-footer {
+.flexia-post-grid .flexia-entry-wrapper, .flexia-post-grid .flexia-entry-footer {
   padding: 15px;
 }
 
@@ -5636,58 +5627,29 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   clear: both;
 }
 
-/* Post Grid Column */
-.flexia-col-1 .flexia-post-grid-column {
-  float: none;
-  width: 100%;
-}
-
-.flexia-col-2 .flexia-post-grid-column {
-  float: left;
-  width: 50%;
-}
-
-.flexia-col-3 .flexia-post-grid-column {
-  float: left;
-  width: 33.3333%;
-}
-
-.flexia-col-4 .flexia-post-grid-column {
-  float: left;
-  width: 25%;
-}
-
-.flexia-col-5 .flexia-post-grid-column {
-  float: left;
-  width: 20%;
-}
-
-.flexia-col-6 .flexia-post-grid-column {
-  float: left;
-  width: 16.6666%;
-}
-
 /* Responsive Styles for Instagram Feed */
 @media only screen and (max-width: 979px) {
-  .flexia-col-1 .flexia-post-grid-column, .flexia-col-2 .flexia-post-grid-column,
-  .flexia-col-3 .flexia-post-grid-column, .flexia-col-4 .flexia-post-grid-column,
-  .flexia-col-5 .flexia-post-grid-column, .flexia-col-6 .flexia-post-grid-column {
-    width: 33.3333%;
+  .flexia-col-1 .flexia-post-block-item, .flexia-col-2 .flexia-post-block-item,
+  .flexia-col-3 .flexia-post-block-item, .flexia-col-4 .flexia-post-block-item,
+  .flexia-col-5 .flexia-post-block-item, .flexia-col-6 .flexia-post-block-item {
+    margin: 2%;
+    flex: 1 1 46%;
   }
 }
 @media only screen and (max-width: 767px) {
-  .flexia-col-1 .flexia-post-grid-column, .flexia-col-2 .flexia-post-grid-column,
-  .flexia-col-3 .flexia-post-grid-column, .flexia-col-4 .flexia-post-grid-column,
-  .flexia-col-5 .flexia-post-grid-column, .flexia-col-6 .flexia-post-grid-column {
-    width: 50%;
+  .flexia-col-1 .flexia-post-block-item, .flexia-col-2 .flexia-post-block-item,
+  .flexia-col-3 .flexia-post-block-item, .flexia-col-4 .flexia-post-block-item,
+  .flexia-col-5 .flexia-post-block-item, .flexia-col-6 .flexia-post-block-item {
+    margin: 2%;
+    flex: 1 1 46%;
   }
 }
 @media only screen and (max-width: 480px) {
-  .flexia-col-1 .flexia-post-grid-column, .flexia-col-2 .flexia-post-grid-column,
-  .flexia-col-3 .flexia-post-grid-column, .flexia-col-4 .flexia-post-grid-column,
-  .flexia-col-5 .flexia-post-grid-column, .flexia-col-6 .flexia-post-grid-column {
-    float: none;
-    width: 100%;
+  .flexia-col-1 .flexia-post-block-item, .flexia-col-2 .flexia-post-block-item,
+  .flexia-col-3 .flexia-post-block-item, .flexia-col-4 .flexia-post-block-item,
+  .flexia-col-5 .flexia-post-block-item, .flexia-col-6 .flexia-post-block-item {
+    margin: 0 0 30px;
+    flex: 1 1 100%;
   }
 }
 .btn-load-more {

@@ -105,7 +105,7 @@ $flexia_custom_logo_id 	= get_theme_mod( 'custom_logo' );
 							 */
 							do_action( 'flexia_blog_layout' );
 
-						//If Layout is Stadard or Not selected
+						// If Layout is Stadard or Not selected
 						else : 
 
 							/* Start the Loop */

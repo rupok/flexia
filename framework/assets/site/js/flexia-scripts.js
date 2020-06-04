@@ -160,17 +160,26 @@ jQuery( document ).ready( function($) {
 
 	// Calculate blog header height
 
-	var topbarHeight = $('.flexia-topbar').height();
-	var logobarHeight = $('.flexia-logobar').height();
-	var navbarHeight = $('.flexia-navbar:not(.flexia-navbar-transparent-top)').height();
-	var transparentNavbarHeight = $('.flexia-navbar-transparent-top').height();
-	var headerHeight = (topbarHeight + logobarHeight + navbarHeight) + 50;
-	var transparentHeaderHeight = (topbarHeight + logobarHeight + transparentNavbarHeight);
+	// var topbarHeight = $('.flexia-topbar').height();
+	// var logobarHeight = $('.flexia-logobar').height();
+	// var navbarHeight = $('.flexia-navbar:not(.flexia-navbar-transparent-top)').height();
+	// var transparentNavbarHeight = $('.flexia-navbar-transparent-top').height();
+	// var headerHeight = (topbarHeight + logobarHeight + navbarHeight);
+	// var transparentHeaderHeight = (topbarHeight + logobarHeight + transparentNavbarHeight);
 
-   $('.blog-header').css({ 'height': $(window).height() - headerHeight });
+	var headerContentHeight = $('.header-content').height()+200;
+	var halfWindowHeight = $(window).height()/2;
+	if (halfWindowHeight < (headerContentHeight)) {
+		var height = headerContentHeight;
+	}
+	else {
+		height = halfWindowHeight;
+	}
+
+   $('.blog-header').css({ 'height': height });
    $(window).on('resize', function() {
 
-        $('.blog-header').css({ 'height': $(window).height() - headerHeight });
+        $('.blog-header').css({ 'height': height });
         $('body').css({ 'width': $(window).width() })
    });
 
