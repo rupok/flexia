@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 function flexia_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'flexia_custom_header_args', array(
-		'default-image' 		 => get_template_directory_uri() . '/framework/assets/img/bg-image.jpg',
+		'default-image' 		 => get_template_directory_uri() . '/framework/assets/img/flexia-blog-header-banner.svg',
 		'default-text-color'     => 'F56A6A',
 		'width'                  => 1000,
 		'height'                 => 250,

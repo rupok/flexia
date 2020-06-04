@@ -2314,8 +2314,25 @@ function flexia_customize_register($wp_customize)
         'type' => 'light', // light, ios, flat
     )));
 
-    // Blog logo/Icon
+    // Blog Header Background Color
+	$wp_customize->add_setting('flexia_blog_header_bg_color', array(
+        'default' => $defaults['flexia_blog_header_bg_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
 
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_blog_header_bg_color',
+            array(
+                'label' => __('Blog Header Background Color', 'flexia'),
+                'section' => 'flexia_blog_header_settings',
+                'settings' => 'flexia_blog_header_bg_color',
+            ))
+    );
+
+    // Blog logo/Icon
     $wp_customize->add_setting('show_blog_logo', array(
         'default' => $defaults['show_blog_logo'],
         'sanitize_callback' => 'flexia_sanitize_choices',

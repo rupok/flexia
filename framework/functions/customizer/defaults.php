@@ -184,6 +184,7 @@ if (!function_exists('flexia_get_option_defaults')) {
             'post_author' => false,
             'post_social_share' => false,
             'show_blog_header' => true,
+            'flexia_blog_header_bg_color' => '#d43e4f',
             'show_blog_logo' => 'blog_logo_image',
             'blog_logo' => '',
             'blog_title' => '',

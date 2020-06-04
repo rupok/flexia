@@ -4574,7 +4574,7 @@ body.transparent .flexia-wrapper > .content-area {
 ## Posts and pages
 --------------------------------------------------------------*/
 .page-header {
-  background-color: #28292e;
+  background-color: #d43e4f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4585,20 +4585,9 @@ body.transparent .flexia-wrapper > .content-area {
   padding: 0;
   border: none;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
-  background-size: cover;
+  background-position: bottom center;
+  background-size: 100% auto;
   z-index: 1;
-}
-
-.page-header.blog-header::before {
-  content: "";
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
 }
 
 .header-inner {

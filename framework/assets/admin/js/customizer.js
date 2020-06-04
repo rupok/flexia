@@ -624,6 +624,13 @@ function genaerateDimemsion (value) {
         });
     });
 
+    // Blog Header Background Color
+    wp.customize("flexia_blog_header_bg_color", function(value) {
+        value.bind(function(to) {
+            $(".page-header.blog-header").css("background-color", to );
+        });
+    });
+
     // Blog logo width
     wp.customize("flexia_blog_logo_width", function(value) {
         value.bind(function(to) {
