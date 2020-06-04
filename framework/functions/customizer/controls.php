@@ -287,32 +287,6 @@ class Flexia_Gradient_Direction_Control extends WP_Customize_Control {
 }
 
 /**
- * Dimension Customizer Control
- * 
- * Class Flexia_Dimension_Control
- *
- * @since 1.0.0
- */
-
-class Flexia_Dimension_Control extends WP_Customize_Control {
-	public $type = 'flexia-dimension';
-
-	/**
-	 * Render the control's content.
-	 *
-	 * @since 1.0.0
-	 */
-	public function render_content() {
-		?>
-		<div class="dimension-field">
-			<input type="number" data-default-val="<?php echo esc_attr($this->settings[ 'default' ]->value()); ?>" value="<?php echo esc_attr($this->value()); ?>" <?php $this->input_attrs(); $this->link(); ?>>
-			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-		</div>
-		<?php
-	}
-}
-
-/**
  * Number Customizer Control
  * 
  * Class FlexiaDimension_Control
@@ -607,7 +581,7 @@ class Flexia_Customizer_Gradient_Color_Control extends WP_Customize_Control {
 			$gradient_val = $this->defaults;
 		}
 		?>
-		<input type="hidden" value="" class="flexia-gradient-color <?php echo esc_attr($this->id) ?>" value="" data-customize-setting-link="<?php echo esc_attr($this->id); ?>">
+		<input type="hidden" value="" class="flexia-gradient-color <?php echo esc_attr($this->id) ?>" data-customize-setting-link="<?php echo esc_attr($this->id); ?>">
 		<ul>
 			<li class="customize-control customize-control-gradient customize-control-gradient-color-1">
 				 <div class="gradient-color-plate color-plate-left">
@@ -678,6 +652,80 @@ class Flexia_Customizer_Gradient_Color_Control extends WP_Customize_Control {
 		<?php endif; ?>
 		<?php
 		echo '</div>';
+	}
+}
+
+/**
+ * Spacing Customizer Control
+ * 
+ * Class Flexia_Dimension_Control
+ */
+
+class Flexia_Dimension_Control extends WP_Customize_Control {
+
+	public $type = 'flexia-dimension';
+
+	public $defaults;
+	public $input_fields;
+
+	public function enqueue() {
+
+		wp_enqueue_script(
+			'flexia-customizer-dimension-control',
+			get_template_directory_uri() . '/framework/assets/admin/js/customizer-dimension-control.js',
+			array( 'jquery' ),
+			rand(),
+			true
+		);
+	}
+
+	/**
+	 * Render the control's content.
+	 */
+	public function render_content() {
+
+		if( $this->value() ) {
+			if ( is_array ($this->value())) {
+				$dimension_val = $this->value();
+			} else {
+				$dimension_val = (array) json_decode($this->value());
+			}
+		} else {
+			$dimension_val = $this->defaults;
+		}
+
+		// Output the label and description if they were passed in.
+		if ( isset( $this->label ) && '' !== $this->label ) {
+			echo '<span class="customize-control-title">' . sanitize_text_field( $this->label ) . '</span>';
+		}
+		if ( isset( $this->description ) && '' !== $this->description ) {
+			echo '<span class="description customize-control-description">' . sanitize_text_field( $this->description ) . '</span>';
+		}
+		?>
+		<input type="hidden" value="" class="flexia-dimension-control <?php echo esc_attr($this->id) ?>" data-customize-setting-link="<?php echo esc_attr($this->id); ?>">
+		<ul class="flexia-dimension-fields ">
+			<li class="flexia-dimension-link">
+				<span class="dashicons dashicons-admin-links flexia-dimension-connected" data-element-connect="<?php echo esc_attr($this->id) ?>" title="Link Values Together"></span>
+				<span class="dashicons dashicons-editor-unlink flexia-dimension-disconnected" data-element-connect="<?php echo esc_attr($this->id) ?>" title="Link Values Together"></span>
+			</li>
+			<li class="dimension-field">
+				<input type="number" class="flexia-dimension-input flexia-dimension-input-1 disconnected" value="<?php echo esc_attr($dimension_val['input1'] ); ?>" data-element-connect="<?php echo esc_attr($this->id) ?>" data-input="input1">
+				<span class="dimension-title"><?php echo $this->input_fields['input1'] ?></span>
+			</li>
+			<li class="dimension-field">
+				<input type="number" class="flexia-dimension-input flexia-dimension-input-2 disconnected" value="<?php echo esc_attr($dimension_val['input2'] ); ?>" data-element-connect="<?php echo esc_attr($this->id) ?>" data-input="input2">
+				<span class="dimension-title"><?php echo $this->input_fields['input2'] ?></span>
+			</li>
+			<li class="dimension-field">
+				<input type="number" class="flexia-dimension-input flexia-dimension-input-3 disconnected" value="<?php echo esc_attr($dimension_val['input3'] ); ?>" data-element-connect="<?php echo esc_attr($this->id) ?>" data-input="input3">
+				<span class="dimension-title"><?php echo $this->input_fields['input3'] ?></span>
+			</li>
+			<li class="dimension-field">
+				<input type="number" class="flexia-dimension-input flexia-dimension-input-4 disconnected" value="<?php echo esc_attr($dimension_val['input4'] ); ?>" data-element-connect="<?php echo esc_attr($this->id) ?>" data-input="input4">
+				<span class="dimension-title"><?php echo $this->input_fields['input4'] ?></span>
+			</li>
+		</ul>
+		<?php
 	}
 }
 ?>
