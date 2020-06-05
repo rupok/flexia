@@ -200,19 +200,6 @@ jQuery( document ).ready( function($) {
 	  $('.page-header.blog-header .header-content').css('margin-top', (0 - (scrollPosition * .8)) + 'px');
 	}
 
-
-	// On scroll blur header
-
-   (function() {
-      $(window).scroll(function() {
-        var oVal;
-        oVal = $(window).scrollTop() / 350;
-        return $(".header-overlay").css("opacity", oVal);
-        });
-
-      }).call(this);
-
-
 });
 
 // Overlay search

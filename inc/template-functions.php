@@ -179,7 +179,6 @@ function flexia_post_large_title_markup() {
 				<?php flexia_post_large_title_author_avatar_markup(); ?>
             </div>
         </div>
-        <div class="header-overlay"></div>
     </header>
 	<?php
 }

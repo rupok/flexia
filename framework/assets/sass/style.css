@@ -4796,6 +4796,7 @@ body.transparent .flexia-wrapper > .content-area {
 }
 
 .author-heading {
+  color: #fff;
   text-transform: uppercase;
   font-size: 1em;
 }
@@ -4819,41 +4820,6 @@ body.transparent .flexia-wrapper > .content-area {
   color: #F54128;
   transform: scale(1.25);
   margin-right: .3em;
-}
-
-.header-overlay {
-  background-color: #161415;
-  background-size: cover !important;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  opacity: 0;
-}
-
-.scroll-down {
-  background: url("../../assets/img/icons/icon-arrow-down.svg") no-repeat center center/100% auto;
-  bottom: 40px;
-  display: block;
-  height: 44px;
-  left: 50%;
-  margin: 0 auto;
-  position: absolute;
-  text-align: center;
-  width: 44px;
-  outline: none;
-  transform: translateX(-50%);
-  -webkit-animation: flexia-translate 1.2s .4s;
-  animation: flexia-translate 1.2s .4s;
-  -webkit-animation-iteration-count: 5;
-  animation-iteration-count: 5;
-}
-.scroll-down:focus {
-  outline: none;
 }
 
 @-webkit-keyframes flexia-translate {
