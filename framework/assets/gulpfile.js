@@ -3,7 +3,7 @@ const compass = require('gulp-compass');
 const notify = require('gulp-notify');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
-
+const minify = require('gulp-minify');
 /**
  * Primary Compass Configurations
  * Note that all settings besides css_dir and sass_dir can just go in config.rb.
@@ -51,7 +51,18 @@ function minifyCSS() {
 		.pipe( cleanCSS() ) // minify the css 
 		.pipe( dest( 'site/css/' ) );
 }
+// Minify JS
+function minifyJS() {
+	return src('site/js/flexia-scripts.js')
+		.pipe(minify({
+	        ext:{
+	            min:'.min.js'
+	        },
+	        ignoreFiles: ['.min.js']
+	    }))
+		.pipe( dest( 'site/js/' ) );
+}
 exports.default = function(){
-	watch(files.sass.toCompile, series( minifyCSS, compassBuild ) )
+	watch(files.sass.toCompile, series( minifyCSS, compassBuild, minifyJS ) )
 };
-exports.build = series( compassBuild, minifyCSS );
+exports.build = series( compassBuild, minifyCSS, minifyJS );

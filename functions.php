@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
 /**
  * Some Definition
  */
-define('FLEXIA_DEV_MODE', true);
+define('FLEXIA_DEV_MODE', false);
 
 /**
  * Flexia functions and definitions
