@@ -28,7 +28,7 @@ function flexia_blog_layout() {
 			<?php if ( class_exists( 'Flexia_Pro' ) && $flexia_show_filter == true && !empty($flexia_blog_categories)): ?>
 				<div class="flexia-post-filter-control">
 					<?php if( !empty( $flexia_blog_categories ) ) : ?>
-					<button class="button control is-checked" data-filter="*"><?php _e('All', 'flexia-pro');?></button>
+					<button class="button control is-checked" data-filter="*"><?php _e('All', 'flexia');?></button>
 					<?php endif ?>
 					<?php
 						// Post Arguments

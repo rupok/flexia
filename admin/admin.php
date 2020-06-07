@@ -60,7 +60,8 @@ class Flexia_Admin
 			'Flexia', 
 			'manage_options', 
 			'flexia-options', 
-			array($this, 'flexia_dashboard_page')
+			array($this, 'flexia_dashboard_page'),
+			get_template_directory_uri().'/admin/img/flexia-logo-white.svg'
 		);
 		do_action('flexia_theme_admin_menu', $this);
     }

@@ -1,9 +1,10 @@
 /**
  * Admin styles
  */
-#adminmenu .toplevel_page_flexia img {
-    width: 18px;
-    margin-top: -1px;
+#adminmenu .toplevel_page_flexia-options .wp-menu-image img {
+    height: 20px;
+    width: auto;
+    padding: 8px 0;
 }
 .flexia-core-admin-wrapper {
     position: relative;
