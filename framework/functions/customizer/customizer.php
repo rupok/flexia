@@ -3260,7 +3260,8 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_setting('flexia_navbar_padding', array(
         'default' => $defaults['flexia_navbar_padding'],
-        'transport' => 'postMessage'
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_text_field'
     ));
 
     $wp_customize->add_control(
