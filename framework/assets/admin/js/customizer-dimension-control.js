@@ -21,7 +21,7 @@
                 var elements 	= $(this).data( 'element-connect' );
                 
                 // Add connected class
-                $(this).parent().parent( '.flexia-dimension-fields' ).find( 'input' ).addClass( 'connected' ).attr( 'data-element-connect', elements );
+                $(this).parent().parent( '.flexia-dimension-fields' ).find( 'input' ).addClass( 'connected' ).removeClass( 'disconnected' ).attr( 'data-element-connect', elements );
 
                 // Add class
                 $(this).parent( '.flexia-dimension-link' ).addClass( 'connected' );
@@ -32,7 +32,7 @@
             $( '.flexia-dimension-connected' ).on( 'click', function() {
 
                 // Remove connected class
-                $(this).parent().parent( '.flexia-dimension-fields' ).find( 'input' ).removeClass( 'connected' ).attr( 'data-element-connect', '' );
+                $(this).parent().parent( '.flexia-dimension-fields' ).find( 'input' ).removeClass( 'connected' ).addClass( 'disconnected' ).attr( 'data-element-connect', '' );
                 
                 // Remove class
                 $(this).parent( '.flexia-dimension-link' ).removeClass( 'connected' );
