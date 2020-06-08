@@ -3281,9 +3281,9 @@ function flexia_customize_register($wp_customize)
                 ),
                 'defaults' => array(
                     'input1'  	=> 0,
-                    'input2'  	=> 0,
+                    'input2'  	=> 15,
                     'input3'  	=> 0,
-                    'input4'  	=> 0,
+                    'input4'  	=> 15,
                 )
             ))
     );
