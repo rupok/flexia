@@ -90,11 +90,11 @@
     display: block;
 }
 
-.flexia-dimension-fields .flexia-dimension-link.disconnected .flexia-dimension-connected {
+.flexia-dimension-fields .flexia-dimension-link.connected .flexia-dimension-connected {
     display: block;
     color: #0073aa;
 }
-.flexia-dimension-fields .flexia-dimension-link.disconnected .flexia-dimension-disconnected {
+.flexia-dimension-fields .flexia-dimension-link.connected .flexia-dimension-disconnected {
     display: none;
 }
 
