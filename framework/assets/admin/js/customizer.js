@@ -16,7 +16,7 @@ function generateCSS() {
     })
 }
 
-function genaerateDimemsion (value) {
+function genaerateDimemsion (value, measure = 'px') {
         
     var valueArr = JSON.parse(value);
 
@@ -24,36 +24,36 @@ function genaerateDimemsion (value) {
     var dimensionAttr, input1, input2, input3, input4 = '';
 
     if ( valueArr.input1 !== '' ) {
-        var input1 = valueArr.input1 + 'px';
+        var input1 = valueArr.input1 + measure;
     } else {
-        var input1 = '0px';
+        var input1 = '0' + measure;
     }
     if ( typeof input1 !== 'undefined' ) {
         dimensionArr.push(input1);
     }
     
     if ( valueArr.input2 !== '' ) {
-        var input2 = valueArr.input2 + 'px';
+        var input2 = valueArr.input2 + measure;
     } else {
-        var input2 = '0px';
+        var input2 = '0' + measure;
     }
     if ( typeof input2 !== 'undefined' ) {
         dimensionArr.push(input2);
     }
     
     if ( valueArr.input3 !== '' ) {
-        var input3 = valueArr.input3 + 'px';
+        var input3 = valueArr.input3 + measure;
     } else {
-        var input3 = '0px';
+        var input3 = '0' + measure;
     }
     if ( typeof input3 !== 'undefined' ) {
         dimensionArr.push(input3);
     }
     
     if ( valueArr.input4 !== '' ) {
-        var input4 = valueArr.input4 + 'px';
+        var input4 = valueArr.input4 + measure;
     } else {
-        var input4 = '0px';
+        var input4 = '0' + measure;
     }
     if ( typeof input4 !== 'undefined' ) {
         dimensionArr.push(input4);

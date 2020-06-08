@@ -313,7 +313,7 @@ if( ! function_exists( 'flexia_generate_defaults' ) ) :
 endif;
 
 if( ! function_exists( 'flexia_dimension_attr_generator' ) ) :
-    function flexia_dimension_attr_generator($key) {
+    function flexia_dimension_attr_generator($key, $measure = 'px') {
         
         $saved_options = get_theme_mods();
         if( array_key_exists( $key, $saved_options ) ) {
@@ -331,7 +331,7 @@ if( ! function_exists( 'flexia_dimension_attr_generator' ) ) :
         $input4 = '';
         
         if ( $valueArr['input1'] !== '' ) {
-            $input1 = $valueArr['input1'] . 'px';
+            $input1 = $valueArr['input1'] . $measure;
         } else {
             $input1 = '0px';
         }
@@ -340,7 +340,7 @@ if( ! function_exists( 'flexia_dimension_attr_generator' ) ) :
         }
         
         if ( $valueArr['input2'] !== '' ) {
-            $input2 = $valueArr['input2'] . 'px';
+            $input2 = $valueArr['input2'] . $measure;
         } else {
             $input2 = '0px';
         }
@@ -349,7 +349,7 @@ if( ! function_exists( 'flexia_dimension_attr_generator' ) ) :
         }
         
         if ( $valueArr['input3'] !== '' ) {
-            $input3 = $valueArr['input3'] . 'px';
+            $input3 = $valueArr['input3'] . $measure;
         } else {
             $input3 = '0px';
         }
@@ -358,7 +358,7 @@ if( ! function_exists( 'flexia_dimension_attr_generator' ) ) :
         }
         
         if ( $valueArr['input4'] !== '' ) {
-            $input3 = $valueArr['input4'] . 'px';
+            $input3 = $valueArr['input4'] . $measure;
         } else {
             $input4 = '0px';
         }
