@@ -3269,7 +3269,7 @@ function flexia_customize_register($wp_customize)
             $wp_customize,
             'flexia_navbar_padding',
             array(
-                'label' => __('Navbar Padding', 'flexia'),
+                'label' => __('Navbar Padding (PX)', 'flexia'),
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_navbar_padding',
                 'priority' => 50,
