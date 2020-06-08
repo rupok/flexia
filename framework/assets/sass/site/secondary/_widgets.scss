@@ -83,7 +83,7 @@
 
 .widget.widget_recent_comments ul > li:before {
   content: "";
-  background-image: url('../img/icons/comment.svg');
+  background-image: url('../../img/icons/comment.svg');
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 10px;
@@ -92,7 +92,7 @@
 
 .widget.widget_archive ul > li:before {
   content: "";
-  background-image: url('../img/icons/calendar.svg');
+  background-image: url('../../img/icons/calendar.svg');
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 10px;
@@ -101,7 +101,7 @@
 
 .widget.widget_categories ul > li:before {
   content: "";
-  background-image: url('../img/icons/Category.svg');
+  background-image: url('../../img/icons/Category.svg');
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 10px;
@@ -110,7 +110,7 @@
 
 .widget_tag_cloud .tagcloud a:before {
   content: "";
-  background-image: url('../img/icons/Category.svg');
+  background-image: url('../../img/icons/Category.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
