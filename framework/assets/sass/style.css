@@ -4285,7 +4285,7 @@ body.transparent .flexia-wrapper > .content-area {
 
 .widget ul > li:before {
   content: "";
-  background-image: url("../img/icons/right-arrow.svg");
+  background-image: url("../../img/icons/right-arrow.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -4295,7 +4295,7 @@ body.transparent .flexia-wrapper > .content-area {
 
 .widget.widget_recent_entries ul > li:before {
   content: "";
-  background-image: url("../img/icons/arrow-short.svg");
+  background-image: url("../../img/icons/arrow-short.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
