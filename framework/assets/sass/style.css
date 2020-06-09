@@ -6254,6 +6254,10 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   padding: 2em;
 }
 
+.single.single-product .flexia-wrapper.flexia-container {
+  padding-top: 4em;
+}
+
 .single-product.woocommerce .product .onsale {
   display: none;
 }
