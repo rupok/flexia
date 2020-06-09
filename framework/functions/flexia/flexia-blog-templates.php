@@ -98,7 +98,7 @@ function flexia_blog_layout() {
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()): $loop->the_post();
 					$terms = get_the_category();
-					$categories_list = get_the_category_list( esc_html__( ', ', 'flexia-pro' ) );
+					$categories_list = get_the_category_list( esc_html__( ', ', 'flexia' ) );
 
 				?>
 					<article class="flexia-post-block-item flexia-post-block-column <?php foreach( $terms as $term ) : echo $term->slug.' '; endforeach; ?>">
