@@ -49,12 +49,16 @@ Source: https://picjumbo.com/entrepreneur-working-on-his-macbook/
 == Changelog ==
 
 = 2.1.1 =
-* Released: June 4, 2020
+* Released: June 9, 2020
 
 * Blog page revamped with modern look
-* Blog grid layout added
-* Dropped Font Awesome and used SVG for better performance
-* Dimension control added for padding, margin, border etc.
+* Added: Blog Layout Controls
+* Added: Blog Grid Layout
+* Added: Font Family Control in Blog Header title and description
+* Added: Dimension control added for padding, margin, border etc.
+* Removed: FontAwesome icons and replaced with SVG icon for better optimization
+* Fixed: Admin Panel Theme settings bug
+
 
 = 2.1.0 =
 * Released: May 12, 2020
