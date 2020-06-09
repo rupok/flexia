@@ -59,8 +59,8 @@ if( ! function_exists( 'flexia_hex2rgba' ) ) :
     }
 endif;
 
-
-function flexia_pagination( $paged = '', $max_page = '' ) {
+//Custom Pagination Function for Flexia Blog
+function flexia_pagination( $paged, $max_page = '' ) {
     echo '<div class="post-pagination-container">';
     echo '<ul class="post-pagination">';
 

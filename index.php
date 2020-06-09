@@ -93,7 +93,7 @@ $flexia_custom_logo_id 	= get_theme_mod( 'custom_logo' );
 				<main id="main" class="site-main flexia-container">
 				<?php
 
-					if ( have_posts() ) :						
+					if ( have_posts() ) :					
 
 						if ($flexia_blog_layout == 'flexia_blog_content_layout_grid' || $flexia_blog_layout == 'flexia_blog_content_layout_masonry') :
 
@@ -128,6 +128,8 @@ $flexia_custom_logo_id 	= get_theme_mod( 'custom_logo' );
 						get_template_part( 'framework/views/template-parts/content', 'none' );
 
 					endif;
+
+					wp_reset_query();
 
 				?>
 
