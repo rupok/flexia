@@ -88,7 +88,9 @@ function flexia_blog_layout() {
 						),
 					];
 				}else {
+					$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1; 
 					$args = [
+						'paged'           => $paged,
 						'post_type' => 'post',
 						'post_status' => 'publish',
 						'posts_per_page' => $flexia_blog_per_page,
