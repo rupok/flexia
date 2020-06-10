@@ -24,7 +24,7 @@
 <?php 
 if( class_exists('Flexia_Pro') ) {
 	$flexia_under_construction = get_option( 'flexia-under-construction' );
-	if( $flexia_under_construction['flexia-under-construction'] == true ) { 
+	if( isset($flexia_under_construction['flexia-under-construction']) && $flexia_under_construction['flexia-under-construction'] == true ) { 
 		do_action('flexia_under_construction');
 	}
 }
