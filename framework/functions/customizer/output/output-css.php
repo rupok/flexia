@@ -167,7 +167,7 @@ function flexia_generate_css()
 		width: ' . $defaults['flexia_blog_logo_width'] . 'px;
 	}
 
-	.page-header.blog-header, .page-header.single-blog-header {
+	.page-header.blog-header, .page-header.single-blog-header, .page-header.archive-header {
 		background-color: ' . $defaults['flexia_blog_header_bg_color'] . ';
 	}
 	

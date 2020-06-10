@@ -4874,7 +4874,7 @@ body.archive .flexia-wrapper > .content-area article.post {
 }
 
 .flexia-wrapper.flexia-container {
-  padding-top: 6em;
+  padding-top: 4em;
   overflow: hidden;
 }
 .flexia-wrapper.flexia-container > .content-area {
@@ -5344,7 +5344,8 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
 .flexia-post-block-item {
   overflow: hidden;
   background-color: #ffffff;
-  box-shadow: 0px 0px 10px 0px rgba(110, 123, 140, 0.3);
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px 0px rgba(110, 123, 140, 0.15);
 }
 
 /* Post Grid Column */
@@ -6111,6 +6112,10 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
 .search-no-results .not-found .page-content .page-title {
   text-align: center;
   font-size: 1.75em;
+}
+
+.search-results article .post-thumbnail {
+  margin-bottom: 1em;
 }
 
 .search-no-results .not-found {
