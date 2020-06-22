@@ -737,6 +737,61 @@ function genaerateDimemsion (value, measure = 'px') {
         });
     });
 
+    //Blog Load More
+    wp.customize( 'flexia_load_more_btn_bg', function( value ) {
+        value.bind( function( to ) {
+            $( '.blog .flexia-load-more-button' ).css( 'background-color', to );
+        } );
+    });
+
+    wp.customize( 'flexia_load_more_font_color', function( value ) {
+        value.bind( function( to ) {
+            $( '.blog .flexia-load-more-button' ).css( 'color', to );
+        } );
+    });
+
+    wp.customize( 'flexia_load_more_btn_font_size', function( value ) {
+        value.bind( function( to ) {
+             $( '.blog .flexia-load-more-button' ).css( 'font-size', to + 'px' );
+        } );
+    });
+
+    wp.customize( 'flexia_load_more_btn_bg_active', function( value ) {
+        value.bind( function( to ) {
+            $( '.blog .flexia-load-more-button.button--loading' ).css( 'background-color', to );
+        } );
+    });
+
+    wp.customize( 'flexia_load_more_btn_bg_active', function( value ) {
+        value.bind( function( to ) {
+            var loadMoreBg=$(".blog .flexia-load-more-button").css('background-color');
+            $(".blog .flexia-load-more-button").hover(
+            function() {
+                //mouse over
+                $(this).css('background-color', to)
+            }, function() {
+                //mouse out
+                $(this).css('background-color', loadMoreBg)
+            });
+
+        } );
+    });
+
+    wp.customize( 'flexia_load_more_font_color_active', function( value ) {
+        value.bind( function( to ) {
+            var loadMoreHovTxt=$(".blog .flexia-load-more-button:hover, .blog .flexia-load-more-button.button--loading").css('color');
+            $(".blog .flexia-load-more-button").hover(
+            function() {
+                //mouse over
+                $(this).css('color', to)
+            }, function() {
+                //mouse out
+                $(this).css('color', loadMoreHovTxt)
+            });
+        } );
+    });
+
+
     // Sidebars width
     wp.customize("flexia_sidebar_width_left", function(value) {
         value.bind(function(to) {

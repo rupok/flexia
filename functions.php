@@ -450,4 +450,4 @@ function flexia_post_per_page( $query ) {
     }
 
 }
-add_action( 'pre_get_posts', 'flexia_post_per_page' );
+// add_action( 'pre_get_posts', 'flexia_post_per_page' );
