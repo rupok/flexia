@@ -2308,7 +2308,8 @@ function flexia_customize_register($wp_customize)
 	));
 
 	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'flexia_blog_load_more_title', array(
-		'label'      => __( 'Load More Options', 'flexia-pro' ),
+		'label'      => __( 'Load More Options', 'flexia' ),
+		'description'      => __( 'This feature will work for Grid and Masonry Layout', 'flexia' ),
 		'settings'		=> 'flexia_blog_load_more_title',
 		'section'  		=> 'flexia_blog_content_settings',
 		'priority' 		=> 58,
@@ -2321,7 +2322,7 @@ function flexia_customize_register($wp_customize)
 	) );
 
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'flexia_blog_load_more', array(
-			'label'	      => esc_html__( 'Show Load More?', 'flexia-pro' ),
+			'label'	      => esc_html__( 'Show Load More?', 'flexia' ),
 			'section'     => 'flexia_blog_content_settings',
 			'settings'    => 'flexia_blog_load_more',
 			'priority'   	 => 59,
@@ -2339,7 +2340,7 @@ function flexia_customize_register($wp_customize)
 	        $wp_customize,
 	        'flexia_blog_load_more_text',
 	        array(
-	            'label'          => __( 'Load More Text', 'flexia-pro' ),
+	            'label'          => __( 'Load More Text', 'flexia' ),
 	            'section'        => 'flexia_blog_content_settings',
 	            'settings'       => 'flexia_blog_load_more_text',
 	            'priority'   	 => 60,
@@ -2359,7 +2360,7 @@ function flexia_customize_register($wp_customize)
 	        $wp_customize,
 	        'flexia_blog_loading_text',
 	        array(
-	            'label'          => __( 'Loading', 'flexia-pro' ),
+	            'label'          => __( 'Loading', 'flexia' ),
 	            'section'        => 'flexia_blog_content_settings',
 	            'settings'       => 'flexia_blog_loading_text',
 	            'priority'   	 => 61,
@@ -2381,7 +2382,7 @@ function flexia_customize_register($wp_customize)
 		'section'  => 'flexia_blog_content_settings',
 		'settings' => 'flexia_load_more_btn_font_size',
 		'priority'    => 512,
-		'label'    => __( 'Button Font Font Size (px)', 'flexia-pro' ),
+		'label'    => __( 'Button Font Font Size (px)', 'flexia' ),
 		'input_attrs' => array(
 			'min'    => 1,
 			'max'    => 100,
@@ -2402,7 +2403,7 @@ function flexia_customize_register($wp_customize)
 		$wp_customize,
 		'flexia_load_more_btn_bg',
 		array(
-			'label'      => __( 'Load More Button Background', 'flexia-pro' ),
+			'label'      => __( 'Load More Button Background', 'flexia' ),
 			'section'    => 'flexia_blog_content_settings',
 			'settings'   => 'flexia_load_more_btn_bg',
 			'priority'    => 513,
@@ -2420,7 +2421,7 @@ function flexia_customize_register($wp_customize)
 		$wp_customize,
 		'flexia_load_more_font_color',
 		array(
-			'label'      => __( 'Load More Button Color', 'flexia-pro' ),
+			'label'      => __( 'Load More Button Color', 'flexia' ),
 			'section'    => 'flexia_blog_content_settings',
 			'settings'   => 'flexia_load_more_font_color',
 			'priority'    => 514,
@@ -2438,7 +2439,7 @@ function flexia_customize_register($wp_customize)
 		$wp_customize,
 		'flexia_load_more_btn_bg_active',
 		array(
-			'label'      => __( 'Load More Hover Button Background', 'flexia-pro' ),
+			'label'      => __( 'Load More Hover Button Background', 'flexia' ),
 			'section'    => 'flexia_blog_content_settings',
 			'settings'   => 'flexia_load_more_btn_bg_active',
 			'priority'    => 515,
@@ -2456,7 +2457,7 @@ function flexia_customize_register($wp_customize)
 		$wp_customize,
 		'flexia_load_more_font_color_active',
 		array(
-			'label'      => __( 'Load More Hover Button Text Color', 'flexia-pro' ),
+			'label'      => __( 'Load More Hover Button Text Color', 'flexia' ),
 			'section'    => 'flexia_blog_content_settings',
 			'settings'   => 'flexia_load_more_font_color_active',
 			'priority'    => 516,
