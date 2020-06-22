@@ -445,7 +445,7 @@ function flexia_post_per_page( $query ) {
 
     $flexia_blog_per_page = flexia_get_option( 'flexia_blog_per_page' );
 
-    if ( $query->is_main_query() ) {
+    if ( $query->is_main_query() && is_home() ) {
         $query->set( 'posts_per_page', $flexia_blog_per_page );
     }
 
