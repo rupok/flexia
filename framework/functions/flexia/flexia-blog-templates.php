@@ -259,7 +259,7 @@ function flexia_pro_load_more_posts() {
 	 */
 	while( $posts->have_posts() ) : $posts->the_post();
 		$terms = get_the_category();
-		$categories_list = get_the_category_list( esc_html__( ', ', 'flexia-pro' ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', 'flexia' ) );
 	?>
 	<?php if( 'flexia_blog_content_layout_masonry' === $flexia_blog_layout ) : ?>
 		<div class="flexia-grid-post flexia-post-grid-column  <?php foreach( $terms as $term ) : echo $term->slug.' '; endforeach; ?>">
