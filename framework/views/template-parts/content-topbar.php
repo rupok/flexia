@@ -54,9 +54,9 @@ $dropdown_animation = 'flexia-menu-dropdown-animate-' . get_theme_mod('flexia_to
 		<!-- Header Top Contact End -->
 
 		<!-- Header Top Content Start -->
-		<?php if ( !empty(get_theme_mod('flexia_topbar_content'))) : ?>
+		<?php if ( !empty(get_theme_mod('flexia_topbar_content', ''))) : ?>
 			<div class="flexia-topbar-content">
-				<?php echo get_theme_mod('flexia_topbar_content'); ?>
+				<?php echo html_entity_decode(get_theme_mod('flexia_topbar_content', '')); ?>
 			</div>
 		<?php endif ?>
 		<!-- Header Top Content End -->
