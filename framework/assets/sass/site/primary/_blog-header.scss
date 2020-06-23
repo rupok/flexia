@@ -44,26 +44,6 @@
   }
 }
 
-.post-thumbnail {
-  height: 300px;
-  margin-bottom: 0;
-  
-  a {
-    img {
-      -webkit-backface-visibility: hidden;
-      -webkit-transition: opacity 0.2s;
-      transition: opacity 0.2s;
-      width: 100%;
-      height: 100%;
-      -o-object-fit: cover;
-      object-fit: cover;
-    }
-    &:hover img, &:focus img {
-      opacity: 0.8;
-    }
-  }
-}
-
 /* Single Posts */
 
 .single-post .entry-header.single-blog-meta.single-post-meta-large {

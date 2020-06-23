@@ -17,22 +17,21 @@
     transition: all 0.5s ease 0s;
     -webkit-transition: all 0.5s ease 0s;
     left: 0;
-    padding-left: 25px;
     transform: translateX(-100%);
     margin-left: 40px;
     a {
       outline: none;
       transition: all .3s;
       -webkit-transition: all .3s;
-      padding-right: 50px;
+      padding-right: 40px;
     }
     &:after {
       content: "";
-      background-image: url('../img/icons/left-arrow.svg');
+      background-image: url('../../img/icons/left-arrow.svg');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      margin-right: 12px;    
+      margin-right: 10px;    
       padding-right: 20px;
     }
     &:hover {
@@ -68,7 +67,7 @@
     }
     &:before {
       content: "";
-      background-image: url('../img/icons/right-arrow.svg');
+      background-image: url('../../img/icons/right-arrow.svg');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;

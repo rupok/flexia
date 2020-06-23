@@ -436,3 +436,18 @@ function flexia_sidebar_content($sidebar_id, $sidebar_position, $classes)
 		</div>
 	</aside>';
 }
+
+
+/** 
+ * This Function will set Post per Page for blog query as Flexia Customizer Value of Post per page
+ */
+function flexia_post_per_page( $query ) {
+
+    $flexia_blog_per_page = flexia_get_option( 'flexia_blog_per_page' );
+
+    if ( $query->is_main_query() && is_home() ) {
+        $query->set( 'posts_per_page', $flexia_blog_per_page );
+    }
+
+}
+// add_action( 'pre_get_posts', 'flexia_post_per_page' );
