@@ -5,7 +5,7 @@ Theme URI: https://flexia.pro/
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.0
 Tested up to: 5.4
-Stable tag: 2.1.1
+Stable tag: 2.1.2
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -47,6 +47,14 @@ Source: https://picjumbo.com/entrepreneur-working-on-his-macbook/
 
 
 == Changelog ==
+
+= 2.1.2 =
+* Released: June 23, 2020
+
+* Load more feature added for Post Block 
+* Fixed : Post Navigation icon issue
+* Fixed : PHP 7.4 compatibility
+* Blog layout and single post layout improved
 
 = 2.1.1 =
 * Released: June 9, 2020

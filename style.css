@@ -4,7 +4,10 @@ Theme URI: https://flexia.pro
 Author: WPDeveloper
 Author URI: https://wpdeveloper.net
 Description: A modern lightweight and versatile Gutenberg ready theme for WordPress with endless customization options. Lightweight and highly extendable with Customizer and Child Theme. True responsiveness with modern Flexbox and mobile first design. WooCommerce and Easy Downloads ready and best multi-purpose theme. Works great with any WordPress Page Builder including Elementor, Cornerstone, DIVI, Beaver Builder, Visual Composer. For more info : https://flexia.pro/
-Version: 2.1.1
+Version: 2.1.2
+Requires at least: 4.0
+Tested up to: 5.4
+Requires PHP: 5.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: flexia
