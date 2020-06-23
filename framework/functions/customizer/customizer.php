@@ -2299,6 +2299,174 @@ function flexia_customize_register($wp_customize)
         'section' => 'flexia_blog_header_settings',
     )));
 
+
+    //*************************************** */
+    //Blog Load More option
+	$wp_customize->add_setting('flexia_blog_load_more_title', array(
+		'default'           => '',
+		'sanitize_callback' => 'esc_html',
+	));
+
+	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'flexia_blog_load_more_title', array(
+		'label'      => __( 'Load More Options', 'flexia' ),
+		'description'      => __( 'This feature will work for Grid and Masonry Layout', 'flexia' ),
+		'settings'		=> 'flexia_blog_load_more_title',
+		'section'  		=> 'flexia_blog_content_settings',
+		'priority' 		=> 58,
+	)));
+
+	$wp_customize->add_setting( 'flexia_blog_load_more', array(
+			'default'     => $defaults['flexia_blog_load_more'],
+			'capability'  => 'edit_theme_options',
+			'sanitize_callback' => 'flexia_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'flexia_blog_load_more', array(
+			'label'	      => esc_html__( 'Show Load More?', 'flexia' ),
+			'section'     => 'flexia_blog_content_settings',
+			'settings'    => 'flexia_blog_load_more',
+			'priority'   	 => 59,
+			'type'        => 'light',// light, ios, flat
+	) ) );
+
+	$wp_customize->add_setting( 'flexia_blog_load_more_text' , array(
+	    'default'   => $defaults['flexia_blog_load_more_text'],
+	    'sanitize_callback' => 'esc_html',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'flexia_blog_load_more_text',
+	        array(
+	            'label'          => __( 'Load More Text', 'flexia' ),
+	            'section'        => 'flexia_blog_content_settings',
+	            'settings'       => 'flexia_blog_load_more_text',
+	            'priority'   	 => 60,
+	            'type'           => 'text',
+	        )
+	    )
+	);
+
+	$wp_customize->add_setting( 'flexia_blog_loading_text' , array(
+	    'default'   => $defaults['flexia_blog_loading_text'],
+	    'sanitize_callback' => 'esc_html',
+	) );
+
+
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'flexia_blog_loading_text',
+	        array(
+	            'label'          => __( 'Loading', 'flexia' ),
+	            'section'        => 'flexia_blog_content_settings',
+	            'settings'       => 'flexia_blog_loading_text',
+	            'priority'   	 => 61,
+	            'type'           => 'text',
+	        )
+	    )
+	);
+
+	$wp_customize->add_setting( 'flexia_load_more_btn_font_size', array(
+			'default'       => $defaults['flexia_load_more_btn_font_size'],
+			'capability'    => 'edit_theme_options',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'flexia_sanitize_integer'
+
+	) );
+
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'flexia_load_more_btn_font_size', array(
+		'type'     => 'range-value',
+		'section'  => 'flexia_blog_content_settings',
+		'settings' => 'flexia_load_more_btn_font_size',
+		'priority'    => 512,
+		'label'    => __( 'Button Font Font Size (px)', 'flexia' ),
+		'input_attrs' => array(
+			'min'    => 1,
+			'max'    => 100,
+			'step'   => 1,
+			'suffix' => 'px', //optional suffix
+	  	),
+	) ) );
+
+
+	$wp_customize->add_setting( 'flexia_load_more_btn_bg' , array(
+	    'default'     => $defaults['flexia_load_more_btn_bg'],
+	    'transport'   => 'postMessage',
+	    'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+		$wp_customize,
+		'flexia_load_more_btn_bg',
+		array(
+			'label'      => __( 'Load More Button Background', 'flexia' ),
+			'section'    => 'flexia_blog_content_settings',
+			'settings'   => 'flexia_load_more_btn_bg',
+			'priority'    => 513,
+		) )
+	);
+
+	$wp_customize->add_setting( 'flexia_load_more_font_color' , array(
+	    'default'     => $defaults['flexia_load_more_font_color'],
+	    'transport'   => 'postMessage',
+	    'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+		$wp_customize,
+		'flexia_load_more_font_color',
+		array(
+			'label'      => __( 'Load More Button Color', 'flexia' ),
+			'section'    => 'flexia_blog_content_settings',
+			'settings'   => 'flexia_load_more_font_color',
+			'priority'    => 514,
+		) )
+	);
+
+	$wp_customize->add_setting( 'flexia_load_more_btn_bg_active' , array(
+	    'default'     => $defaults['flexia_load_more_btn_bg_active'],
+	    'transport'   => 'postMessage',
+	    'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+		$wp_customize,
+		'flexia_load_more_btn_bg_active',
+		array(
+			'label'      => __( 'Load More Hover Button Background', 'flexia' ),
+			'section'    => 'flexia_blog_content_settings',
+			'settings'   => 'flexia_load_more_btn_bg_active',
+			'priority'    => 515,
+		) )
+	);
+
+	$wp_customize->add_setting( 'flexia_load_more_font_color_active' , array(
+	    'default'     => $defaults['flexia_load_more_font_color_active'],
+	    'transport'   => 'postMessage',
+	    'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+		$wp_customize,
+		'flexia_load_more_font_color_active',
+		array(
+			'label'      => __( 'Load More Hover Button Text Color', 'flexia' ),
+			'section'    => 'flexia_blog_content_settings',
+			'settings'   => 'flexia_load_more_font_color_active',
+			'priority'    => 516,
+		) )
+	);
+
+    //*************************************** */
+
+
     // Show Blog Header Option
 
     $wp_customize->add_setting('show_blog_header', array(

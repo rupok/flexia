@@ -5755,8 +5755,7 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   border-radius: 50%;
 }
 .post-author .author-avatar > .author-body {
-  max-width: 600px;
-  flex: 1 1 80%;
+  flex: 1 1;
   color: #4d4d4d;
   padding-top: 10px;
 }
