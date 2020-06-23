@@ -30,10 +30,7 @@ function flexia_site_scripts()
         wp_enqueue_script('comment-reply');
     }
 
-    //Load Blog Scripts
-    wp_enqueue_script('flexia-load-blog', get_template_directory_uri() . '/framework/assets/site/js/flexia-load-blogs.js', array(), '', true);
-
-    //Set localize Script
+    //Set localize Script to 'flexia-navigation'
     $flexia_blog_per_page 			= get_theme_mod( 'flexia_blog_per_page',		10 );
 	$flexia_blog_layout 			= get_theme_mod( 'flexia_blog_content_layout', 'flexia_blog_content_layout_standard' );
 	$flexia_blog_grid_cols 			= get_theme_mod( 'flexia_blog_grid_column', 	3 );
@@ -90,7 +87,7 @@ function flexia_site_scripts()
 		'selected_cats'		=> $flexia_blog_categories,
 		'is_pro_active'		=> $flexia_pro_active,
 	];
-	wp_localize_script( 'flexia-load-blog', 'settings', $settings );
+	wp_localize_script( 'flexia-navigation', 'settings', $settings );
 }
 add_action('wp_enqueue_scripts', 'flexia_site_scripts');
 
