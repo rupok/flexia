@@ -4750,22 +4750,6 @@ body.transparent .flexia-wrapper > .content-area {
   padding-top: 1em;
 }
 
-.post-thumbnail {
-  height: 300px;
-  margin-bottom: 0;
-}
-.post-thumbnail a img {
-  -webkit-backface-visibility: hidden;
-  transition: opacity 0.2s;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-}
-.post-thumbnail a:hover img, .post-thumbnail a:focus img {
-  opacity: 0.8;
-}
-
 /* Single Posts */
 .single-post .entry-header.single-blog-meta.single-post-meta-large {
   background-color: #fff;
@@ -4952,7 +4936,6 @@ body.archive .flexia-wrapper > .content-area article.post {
 }
 
 .post.format-standard {
-  box-shadow: 0 0 5px 0 #e2e2e2;
   margin-bottom: 30px;
 }
 
@@ -5176,16 +5159,20 @@ body.archive .flexia-wrapper > .content-area article.post {
   background-color: #fff;
 }
 
+.entry-content.single-post-entry img, .blog .entry-content img {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 .entry-title {
   color: #202021;
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: 700;
   line-height: 1.4;
   letter-spacing: 1;
   margin: 0 0 15px;
   position: relative;
   text-align: left;
-  text-transform: uppercase;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
 }
@@ -5203,8 +5190,14 @@ body.archive .flexia-wrapper > .content-area article.post {
   padding-bottom: 0;
   text-align: center;
 }
-.single-blog-header .entry-title:after {
-  display: none;
+.single-blog-header:after {
+  background-color: rgba(0, 0, 0, 0.5);
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 .single-page-header .entry-title {
@@ -5344,7 +5337,7 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
   overflow: hidden;
   background-color: #ffffff;
   border-radius: 4px;
-  box-shadow: 0px 0px 10px 0px rgba(110, 123, 140, 0.15);
+  box-shadow: 0px 0px 10px 0px rgba(110, 123, 140, 0.1);
 }
 
 /* Post Grid Column */
@@ -5392,7 +5385,7 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
 .flexia-post-block-item .flexia-entry-thumbnail {
   background-color: #f0f0f0;
   position: relative;
-  height: 160px;
+  height: auto;
   flex: auto;
 }
 
