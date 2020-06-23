@@ -71,7 +71,7 @@ function flexia_site_scripts()
 
 
 	/**
-	 * Passing Localized Values
+	 * Passing Localized Values JS
 	 */
 	$settings = [
 		'ajax_url' 			=> admin_url( 'admin-ajax.php' ),
