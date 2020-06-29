@@ -345,7 +345,7 @@ jQuery(document).ready(function($) {
 				}
 
 				// Magnific Popup Re-Called for Portfolio when load more clicked.
-				if( settings.magnific_popup == true ) {
+				if( settings.is_pro_active === 'true' && settings.magnific_popup == true ) {
 					flexia_magnific_popup('.flexia-magnific-popup');
 				}
 
@@ -369,7 +369,7 @@ jQuery(document).ready(function($) {
 		});
 	}
 	// Magnific Popup Called for Portfolio
-	if( settings.magnific_popup == true ) {
+	if( settings.is_pro_active === 'true' && settings.magnific_popup == true ) {
 		flexia_magnific_popup('.flexia-magnific-popup');
 	}
 

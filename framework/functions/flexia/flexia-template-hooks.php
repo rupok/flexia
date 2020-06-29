@@ -63,4 +63,10 @@ if (!function_exists('flexia_cta_template')) {
     }
 }
 
+//Flexia Template Parts Single Include using Hook
+function add_single_template() {
+    get_template_part( 'framework/views/template-parts/content-single', get_post_format() );
+}
+add_action('flexia_single', 'add_single_template');
+
 ?>

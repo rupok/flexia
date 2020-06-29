@@ -66,13 +66,7 @@ if ( ! class_exists( 'Flexia_Elementor_Pro' ) ) :
 			// Override theme templates.
 			add_action( 'flexia_header', array( $this, 'do_header' ), 0 );
 			add_action( 'flexia_footer', array( $this, 'do_footer' ), 0 );
-			// add_action( 'astra_template_parts_content_top', array( $this, 'do_template_parts' ), 0 );
-
-			// add_action( 'astra_entry_content_404_page', array( $this, 'do_template_part_404' ), 0 );
-
-			// add_filter( 'post_class', array( $this, 'render_post_class' ), 99 );
-			// // Override post meta.
-			// add_action( 'wp', array( $this, 'override_meta' ), 0 );
+			add_action( 'flexia_single', array( $this, 'do_single' ), 0 );
 		}
 
 		/**
@@ -110,6 +104,19 @@ if ( ! class_exists( 'Flexia_Elementor_Pro' ) ) :
 			$did_location = Module::instance()->get_locations_manager()->do_location( 'footer' );
 			if ( $did_location ) {
 				remove_action( 'flexia_footer', 'flexia_add_footer' );
+			}
+		}
+
+		/**
+		 * Single Support
+		 *
+		 * @since 2.0.1
+		 * @return void
+		 */
+		public function do_single() {
+			$did_location = Module::instance()->get_locations_manager()->do_location( 'single' );
+			if ( $did_location ) {
+				remove_action( 'flexia_single', 'add_single_template' );
 			}
 		}
 
