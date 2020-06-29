@@ -1,16 +1,19 @@
 /*
 Theme Name: Flexia
 Theme URI: https://flexia.pro
+Text Domain: flexia
+Version: 2.1.2
 Author: WPDeveloper
 Author URI: https://wpdeveloper.net
+Requires at least: 4.0
+Tested up to: 5.4
+Requires PHP: 5.6
 Description: A modern lightweight and versatile Gutenberg ready theme for WordPress with endless customization options. Lightweight and highly extendable with Customizer and Child Theme. True responsiveness with modern Flexbox and mobile first design. WooCommerce and Easy Downloads ready and best multi-purpose theme. Works great with any WordPress Page Builder including Elementor, Cornerstone, DIVI, Beaver Builder, Visual Composer. For more info : https://flexia.pro/
-Version: 2.1.1
+Tags: blog, custom-background, custom-logo, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, threaded-comments, translation-ready, e-commerce, post-formats, sticky-post, left-sidebar, right-sidebar, footer-widgets, grid-layout, two-columns, three-columns, four-columns
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Text Domain: flexia
-Tags: blog, custom-background, custom-logo, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, threaded-comments, translation-ready, e-commerce, post-formats, sticky-post, left-sidebar, right-sidebar, footer-widgets, grid-layout, two-columns, three-columns, four-columns
 
 Flexia WordPress Theme, Copyright 2020 WPDeveloper.
-Flexia is distributed under the terms of the GNU GPL.
+Flexia is distributed under the terms of the GPL.
 
-/* Note: The CSS files are loaded from framework/assets/site/css/ folder. */
+Note: The CSS files are loaded from framework/assets/site/css/ folder. */
