@@ -21,6 +21,11 @@ get_header(); ?>
 				<?php
 				while ( have_posts() ) : the_post();
 
+					/**
+					 * Flexia hook for Blog Single Content
+					 *
+					 * @since   v2.1.3
+					*/
 					do_action('flexia_single');
 					
 

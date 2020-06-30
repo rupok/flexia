@@ -23,59 +23,17 @@ $flexia_blog_show 		= flexia_get_option( 'show_blog_header' );
 $flexia_custom_logo_id 	= get_theme_mod( 'custom_logo' );
 ?>
 
-	<?php if ($flexia_blog_show) : ?>
+	
+<?php 
+/**
+ * Flexia hook for Blog Header
+ *
+ * @since   v2.1.3
+ */
 
-		<header class="page-header blog-header" <?php if ( has_header_image() ) { ?> style="background-image: url('<?php echo( get_header_image() ); ?>'); <?php } ?>">
-			<div class="header-inner">
-				<div class="header-content">					
-
-					<?php if( flexia_get_option('show_blog_logo') == 'blog_logo_image' ) :  ?>
-
-						<?php if( flexia_get_option('blog_logo') !== '' ) :  ?>
-
-							<img class="flexia-blog-logo" src="<?php echo esc_url(flexia_get_option('blog_logo')); ?>">
-
-						<?php  else : ?> <!-- If Image is empty, use default Logo -->
-
-							<?php if( $flexia_custom_logo_id !== '' ) :  ?>
-
-								<img class="flexia-blog-logo" src="<?php echo esc_url(wp_get_attachment_image_src( $flexia_custom_logo_id , 'full' )[0]); ?>">
-
-							<?php endif; ?>
-
-						<?php endif; ?>
-
-					<?php endif; ?>
-
-					<h2 class="page-title"><?php
-
-						if( $blog_title !== '' ) :
-
-							echo esc_html($blog_title);
-
-						else:
-
-							bloginfo( 'name' );
-
-						endif;?></h2>
-
-					<h3 class="blog-desc"><?php
-
-						if( $blog_desc !== '' ) :
-
-							echo esc_html($blog_desc);
-
-						else:
-
-							echo wp_kses_post( get_bloginfo ( 'description' ) );
-
-
-						endif;?></h3>
-				</div>
-			</div>
-		</header>
-
-	<?php endif; ?>
+do_action( 'flexia_blog_header' );
+?>
+	
 
 	<div id="content" class="site-content">
 		<div class="flexia-wrapper flexia-container max width">
