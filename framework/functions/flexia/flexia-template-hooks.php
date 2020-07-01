@@ -133,4 +133,65 @@ function flexia_blog_header() {
 }
 add_action('flexia_blog_header', 'flexia_blog_header', 2);
 
+
+//Flexia Blog Main Content/ The Loop 
+function flexia_blog_main_content() {
+    $flexia_blog_layout 	= flexia_get_option( 'flexia_blog_content_layout' );
+
+    echo '<main id="main" class="site-main flexia-container">';    
+
+    if ( have_posts() ) :					
+
+        if ($flexia_blog_layout == 'flexia_blog_content_layout_grid' || $flexia_blog_layout == 'flexia_blog_content_layout_masonry') :
+
+            /**
+             * A flexia hook to add blog layouts
+             *
+             * @since   v1.0.1
+             */
+            do_action( 'flexia_blog_layout' );
+
+        // Is Layout is Stadard or Not selected
+        else : 
+
+            /* Start the Loop */
+            while ( have_posts() ) : the_post();
+
+                /*
+                * Include the Post-Format-specific template for the content.
+                * If you want to override this in a child theme, then include a file
+                * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                */
+                get_template_part( 'framework/views/template-parts/content', get_post_format() );
+
+            endwhile;
+
+            get_template_part( 'framework/views/template-parts/content', 'pagination' );
+
+        endif;						
+
+    else :
+
+        get_template_part( 'framework/views/template-parts/content', 'none' );
+
+    endif;
+
+    wp_reset_query();
+
+    echo '</main>';
+}
+add_action('flexia_blog_content', 'flexia_blog_main_content', 2);
+
+
+//Flexia Blog Before Main Content/ The Loop 
+function flexia_blog_before_main_content() {
+    if ( is_home() && ! is_front_page() ) : ?>
+        <header>
+            <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+        </header>
+
+    <?php endif;
+}
+add_action('flexia_blog_before_content', 'flexia_blog_before_main_content', 1);
+
 ?>
