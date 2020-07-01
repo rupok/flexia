@@ -32,7 +32,7 @@ function flexia_site_scripts()
 
     //Set localize Script to 'flexia-navigation'
     $flexia_blog_per_page 			= get_theme_mod( 'flexia_blog_per_page',		10 );
-	$flexia_blog_layout 			= get_theme_mod( 'flexia_blog_content_layout', 'flexia_blog_content_layout_standard' );
+	$flexia_blog_layout 			= flexia_get_option( 'flexia_blog_content_layout' );
 	$flexia_blog_grid_cols 			= get_theme_mod( 'flexia_blog_grid_column', 	3 );
 	$flexia_blog_post_meta 			= get_theme_mod( 'flexia_blog_post_meta', 		'meta-on-bottom' );
 	$flexia_blog_excerpt_count 		= get_theme_mod( 'flexia_blog_excerpt_count', 	30 );
@@ -56,14 +56,15 @@ function flexia_site_scripts()
 		);
 	}
 	$args = array(
-		'post_type' => 'post',
+        'post_type' => 'post',
+        'posts_per_page' => -1,
 		'post_status' => 'publish',
 		'tax_query' => array(
 			$tax_query_args,
          ),
 	);
 
-	$posts = new WP_Query( $args );
+    $posts = new WP_Query( $args );
 	$posts_count = $posts->post_count;
 
 

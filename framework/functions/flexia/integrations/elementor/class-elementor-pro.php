@@ -67,6 +67,7 @@ if ( ! class_exists( 'Flexia_Elementor_Pro' ) ) :
 			add_action( 'flexia_header', array( $this, 'do_header' ), 0 );
 			add_action( 'flexia_footer', array( $this, 'do_footer' ), 0 );
 			add_action( 'flexia_single', array( $this, 'do_single' ), 0 );
+			add_action( 'flexia_blog_content', array( $this, 'do_archive' ), 0 );
 		}
 
 		/**
@@ -108,9 +109,23 @@ if ( ! class_exists( 'Flexia_Elementor_Pro' ) ) :
 		}
 
 		/**
+		 * Archive Support
+		 *
+		 * @since 2.1.3
+		 * @return void
+		 */
+		public function do_archive() {
+			$did_location = Module::instance()->get_locations_manager()->do_location( 'archive' );
+			if ( $did_location ) {
+				remove_action( 'flexia_blog_content', 'flexia_blog_main_content' );
+				remove_action( 'flexia_blog_before_content', 'flexia_blog_before_main_content' );
+			}
+		}
+
+		/**
 		 * Single Support
 		 *
-		 * @since 2.0.1
+		 * @since 2.1.3
 		 * @return void
 		 */
 		public function do_single() {

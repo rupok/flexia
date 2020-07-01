@@ -5326,7 +5326,7 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
   max-width: 1170px;
   margin: 0 auto;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-content: flex-start;
 }
 
@@ -5346,26 +5346,31 @@ body .flexia-wrapper.flexia-blank-container > .content-area {
 .flexia-col-2 .flexia-post-block-item {
   margin: 2%;
   flex: 1 1 46%;
+  max-width: 46%;
 }
 
 .flexia-col-3 .flexia-post-block-item {
   margin: 1.5%;
   flex: 1 1 30%;
+  max-width: 30%;
 }
 
 .flexia-col-4 .flexia-post-block-item {
   margin: 1%;
   flex: 1 1 23%;
+  max-width: 23%;
 }
 
 .flexia-col-5 .flexia-post-block-item {
   margin: 1%;
   flex: 1 1 18%;
+  max-width: 18%;
 }
 
 .flexia-col-6 .flexia-post-block-item {
   margin: .8%;
   flex: 1 1 15%;
+  max-width: 15%;
 }
 
 .flexia-post-block-item-holder {
@@ -5445,6 +5450,7 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
 
 .flexia-entry-media {
   position: relative;
+  overflow: hidden;
 }
 
 .flexia-entry-overlay {
@@ -5575,6 +5581,7 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   .flexia-col-5 .flexia-post-block-item, .flexia-col-6 .flexia-post-block-item {
     margin: 2%;
     flex: 1 1 46%;
+    max-width: 46%;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -5583,6 +5590,7 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   .flexia-col-5 .flexia-post-block-item, .flexia-col-6 .flexia-post-block-item {
     margin: 2%;
     flex: 1 1 46%;
+    max-width: 46%;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -5591,6 +5599,7 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   .flexia-col-5 .flexia-post-block-item, .flexia-col-6 .flexia-post-block-item {
     margin: 0 0 30px;
     flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 .btn-load-more {

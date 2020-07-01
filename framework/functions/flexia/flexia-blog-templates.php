@@ -16,7 +16,6 @@ function flexia_blog_layout() {
 	$flexia_magnific_popup 			= get_theme_mod( 'flexia_blog_image_popup', 	false );
 	$flexia_show_filter 			= get_theme_mod( 'flexia_blog_filterable', 		false );
 	$flexia_blog_categories			= get_theme_mod( 'flexia_blog_categories', 		'' );
-	$flexia_show_load_more 			= get_theme_mod( 'flexia_blog_load_more', false ); 
 ?>	
 
 <?php
@@ -189,9 +188,9 @@ add_action( 'flexia_blog_layout', 'flexia_blog_layout', 2 );
 //Show Load More Button
 function flexia_load_more_button() {
 	$flexia_show_load_more 			= flexia_get_option( 'flexia_blog_load_more' );
-	$flexia_load_more_text 			= flexia_get_option( 'flexia_blog_load_more_text' );
+	$flexia_load_more_text 			= flexia_get_option( 'flexia_blog_load_more_text' );	
 
-	if ($flexia_show_load_more == true): ?>
+	if ($flexia_show_load_more): ?>
 		<div class="flexia-load-more-button-wrap">
 			<button id="load-more-post" class="flexia-load-more-button">
 				<div class="flexia-btn-loader button__loader"></div>
@@ -327,6 +326,7 @@ function flexia_pro_load_more_posts() {
 			</div>
 		</div>
 	<?php endif; ?>
+
 	<?php if( 'flexia_blog_content_layout_grid' === $flexia_blog_layout ) : ?>
 		<article class="flexia-post-block-item flexia-post-block-column <?php foreach( $terms as $term ) : echo $term->slug.' '; endforeach; ?>">
 		    <div class="flexia-post-block-item-holder">

@@ -206,7 +206,7 @@ if (!function_exists('flexia_get_option_defaults')) {
 
             'flexia_blog_content_layout' => 'flexia_blog_content_layout_grid',
             'flexia_blog_grid_column' => '3',
-            'flexia_blog_per_page' => 8,
+            'flexia_blog_per_page' => 10,
             'flexia_blog_load_more' => true,
             'flexia_blog_load_more_text' => 'Load More',
             'flexia_blog_loading_text' => 'Loading...',
