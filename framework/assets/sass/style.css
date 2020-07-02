@@ -6472,40 +6472,13 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   margin-top: 5em;
 }
 
-.woocommerce div.product div.summary {
-  margin: 0 0 5em;
-}
-
-.woocommerce div.product .product_title {
-  text-transform: none;
-  font-size: 2em;
-  line-height: 1.5;
-  font-weight: 400;
-  color: #484c51;
-}
-
-.woocommerce div.product .product_title::after {
-  display: none;
-}
-
 .woocommerce ul.products li.product,
 .woocommerce-page ul.products li.product {
   position: relative;
   overflow: hidden;
 }
 
-.woocommerce ul.products li.product .woocommerce-loop-category__title,
-.woocommerce ul.products li.product .woocommerce-loop-product__title,
-.woocommerce ul.products li.product h3 {
-  color: #333;
-  text-align: left;
-  font-size: 1.1em;
-  font-weight: 400;
-  padding: 0;
-  margin-bottom: .75em;
-}
-
-.woocommerce ul.products li.product .price {
+.woocommerce .flexia-wrapper ul.products li.product .price {
   color: #404040;
   font-weight: 400;
   font-size: 1em;
@@ -6515,34 +6488,43 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   align-items: baseline;
   margin-bottom: 1em;
 }
-.woocommerce ul.products li.product .price ins {
+.woocommerce .flexia-wrapper ul.products li.product .price ins {
   font-size: 1.4rem;
   order: 1;
   margin-right: 1rem;
 }
-.woocommerce ul.products li.product .price del {
+.woocommerce .flexia-wrapper ul.products li.product .price del {
   order: 2;
   color: #707070;
 }
-.woocommerce ul.products li.product .price del .amount {
+.woocommerce .flexia-wrapper ul.products li.product .price del .amount {
   font-size: 1em;
 }
-.woocommerce ul.products li.product .price .discunt_amount {
+.woocommerce .flexia-wrapper ul.products li.product .price .discunt_amount {
   order: 3;
   color: #ff6e6e;
   font-size: .9em;
   margin-left: 1em;
 }
-.woocommerce ul.products li.product .price > .woocommerce-Price-amount.amount {
+.woocommerce .flexia-wrapper ul.products li.product .price > .woocommerce-Price-amount.amount {
   font-size: 1.4rem;
   margin-right: 1em;
   font-weight: 700;
 }
-.woocommerce ul.products li.product .price > .woocommerce-Price-amount.amount:nth-child(2) {
+.woocommerce .flexia-wrapper ul.products li.product .price > .woocommerce-Price-amount.amount:nth-child(2) {
   margin-left: 1em;
 }
-
-.woocommerce ul.products li.product .add_to_cart_button {
+.woocommerce .flexia-wrapper ul.products li.product .woocommerce-loop-category__title,
+.woocommerce .flexia-wrapper ul.products li.product .woocommerce-loop-product__title,
+.woocommerce .flexia-wrapper ul.products li.product h3 {
+  color: #333;
+  text-align: left;
+  font-size: 1.1em;
+  font-weight: 400;
+  padding: 0;
+  margin-bottom: .75em;
+}
+.woocommerce .flexia-wrapper ul.products li.product .add_to_cart_button {
   margin: 1em auto;
   width: 80%;
   max-width: 200px;
@@ -6570,15 +6552,30 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   opacity: 0;
   visibility: hidden;
 }
-
-.woocommerce ul.products li.product:hover .add_to_cart_button {
+.woocommerce .flexia-wrapper ul.products li.product .add_to_cart_button:before {
+  content: "";
+}
+.woocommerce .flexia-wrapper ul.products li.product:hover .add_to_cart_button {
   top: 50%;
   opacity: 1;
   visibility: visible;
 }
-
-.woocommerce ul.products li.product .button.add_to_cart_button::before {
-  content: "";
+.woocommerce .flexia-wrapper ul.products li.product .button:hover {
+  background-color: #484c51;
+  color: #fff;
+}
+.woocommerce .flexia-wrapper div.product div.summary {
+  margin: 0 0 5em;
+}
+.woocommerce .flexia-wrapper div.product .product_title {
+  text-transform: none;
+  font-size: 2em;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #484c51;
+}
+.woocommerce .flexia-wrapper div.product .product_title::after {
+  display: none;
 }
 
 .woocommerce ul.products li.product .button:hover {
@@ -6693,7 +6690,7 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   order: 9;
 }
 
-.woocommerce span.onsale {
+.woocommerce .flexia-woocommerce-wrapper span.onsale {
   background-color: #ffc09b;
   border-radius: 0;
   box-shadow: none;
@@ -6719,7 +6716,7 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   line-height: 25px;
 }
 
-.woocommerce ul.products li.product .onsale {
+.woocommerce .flexia-woocommerce-wrapper ul.products li.product .onsale {
   top: 15% !important;
 }
 
