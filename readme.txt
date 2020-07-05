@@ -5,7 +5,7 @@ Theme URI: https://flexia.pro/
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.0
 Tested up to: 5.4
-Stable tag: 2.1.2
+Stable tag: 2.1.3
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -47,6 +47,18 @@ Source: https://picjumbo.com/entrepreneur-working-on-his-macbook/
 
 
 == Changelog ==
+
+= 2.1.3 =
+* Released: July 5, 2020
+
+* Fixed: Single template conflict with elementor single template builder issue fixed
+* Fixed: Flexia Blog grid width issue
+* Fixed: WooCommerce shop page design conflict with Elementor widget
+* Hook Added: `flexia_single `
+* Hook Added: `lexia_blog_header`
+* Hook Added: `flexia_blog_before_content`
+* Hook Added: `flexia_blog_content`
+* Hook Added: `flexia_blog_after_content`
 
 = 2.1.2 =
 * Released: June 23, 2020
