@@ -9,9 +9,10 @@ function flexia_register_page_metaboxs() {
      * Flexia Post Metaboxes
      */
     $cmb_post = new_cmb2_box(array(
-        'id' 			=> $prefix . 'metaboxs',
-        'title' 		=> esc_html__('Flexia Pages Settings', 'flexia'),
+        'id' 			=> $prefix . 'flexia-metaboxs',
+        'title' 		=> esc_html__('Flexia Settings', 'flexia'),
         'object_types' 	=> array( 'page' ), // Post type
+        'context'       => 'side',
         'priority' 		=> 'high',
     ));
     /**
