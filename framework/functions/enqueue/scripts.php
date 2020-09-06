@@ -36,8 +36,8 @@ function flexia_site_scripts()
 	$flexia_blog_grid_cols 			= get_theme_mod( 'flexia_blog_grid_column', 	3 );
 	$flexia_blog_post_meta 			= get_theme_mod( 'flexia_blog_post_meta', 		'meta-on-bottom' );
 	$flexia_blog_excerpt_count 		= get_theme_mod( 'flexia_blog_excerpt_count', 	30 );
-	$flexia_magnific_popup 			= get_theme_mod( 'flexia_blog_image_popup', 	true );
-	$flexia_show_filter 			= get_theme_mod( 'flexia_blog_filterable', 		true );
+	$flexia_magnific_popup 			= get_theme_mod( 'flexia_blog_image_popup', 	false );
+	$flexia_show_filter 			= get_theme_mod( 'flexia_blog_filterable', 		false );
 	$flexia_show_load_more 			= get_theme_mod( 'flexia_blog_load_more', 		true );
 	$flexia_load_more_text 			= get_theme_mod( 'flexia_blog_load_more_text', 	'Load More' );
 	$flexia_loading_text 			= get_theme_mod( 'flexia_blog_loading_text', 	'Loading...' );
