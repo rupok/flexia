@@ -272,6 +272,17 @@ if (class_exists('\Elementor\Plugin')) {
 require get_template_directory() . '/framework/functions/customizer/defaults.php';
 require get_template_directory() . '/framework/functions/customizer/customizer.php';
 
+/**
+ * Requiring CMB2
+ */
+require_once get_template_directory() . '/inc/cmb2/init.php';
+
+/**
+ * Requiring flexia metaboxes
+ */
+require_once get_template_directory() . '/admin/metabox/class-flexia-metaboxes-installer.php';
+require_once get_template_directory() . '/admin/metabox/class-flexia-post-metaboxes-installer.php';
+
 // Admin functionalities
 if (is_admin()) {
     require_once get_template_directory() . '/admin/admin.php';
@@ -436,18 +447,3 @@ function flexia_sidebar_content($sidebar_id, $sidebar_position, $classes)
 		</div>
 	</aside>';
 }
-
-
-/** 
- * This Function will set Post per Page for blog query as Flexia Customizer Value of Post per page
- */
-function flexia_post_per_page( $query ) {
-
-    $flexia_blog_per_page = flexia_get_option( 'flexia_blog_per_page' );
-
-    if ( $query->is_main_query() && is_home() ) {
-        $query->set( 'posts_per_page', $flexia_blog_per_page );
-    }
-
-}
-// add_action( 'pre_get_posts', 'flexia_post_per_page' );

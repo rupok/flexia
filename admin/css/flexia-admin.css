@@ -350,6 +350,79 @@
     top: -2px;
     text-decoration: none;
 }
+
+/* CSS moved from Core */
+/* Customizer Styles */
+#customize-control-flexia_core_header_script .CodeMirror-wrap,
+#customize-control-flexia_core_footer_script .CodeMirror-wrap {
+    width: 100%;
+    height: -webkit-calc(100vh - 200px);
+    height: calc(100vh - 200px);
+}
+
+#customize-control-flexia_core_header_script .customize-control-title,
+#customize-control-flexia_core_footer_script .customize-control-title {
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+/* Metabox Styles */
+.flexia-metabox-wrapper {
+    width: 100%;
+    height: auto;
+}
+.flexia-metabox-wrapper .flexia-metabox-row {
+    display: flex;
+    flex-flow: flex-start;
+    padding: 15px 0px 15px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.flexia-metabox-wrapper .flexia-metabox-row .flexia-metabox-left,
+.flexia-metabox-wrapper
+    .flexia-metabox-row
+    .flexia-metabox-right {
+    flex: 1 1 auto;
+}
+.flexia-metabox-wrapper
+    .flexia-metabox-row
+    .flexia-metabox-left {
+    flex-basis: 25%;
+}
+.flexia-metabox-wrapper
+    .flexia-metabox-row
+    .flexia-metabox-left
+    label {
+    font-weight: 600;
+}
+.flexia-metabox-wrapper
+    .flexia-metabox-row
+    .flexia-metabox-right {
+    flex-basis: 75%;
+}
+/**
+ * Altering Metabox fields
+ */
+.js-flexia-alter {
+    background-color: #f7f7f7;
+    text-indent: 15px;
+}
+.flexia-hide-metabox {
+    display: none !important;
+    background-color: rgba(0, 0, 0, 0.45);
+    transition: all 0.3s ease-in-out;
+}
+.flexia-show-metabox {
+    transition: all 0.3s ease-in-out;
+}
+#flexia-post-advance-view {
+    text-decoration: none;
+    outline: none;
+}
+.hide-adv {
+    display: none;
+}
+
+
 /* Media Quires */
 @media only screen and (max-width: 480px) {
     .flexia-plugins-wrapper {

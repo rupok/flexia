@@ -324,7 +324,7 @@ if( ! function_exists( 'flexia_dimension_attr_generator' ) ) :
     function flexia_dimension_attr_generator($key, $measure = 'px') {
         
         $saved_options = get_theme_mods();
-        if( array_key_exists( $key, $saved_options ) ) {
+        if( is_array($saved_options) && array_key_exists( $key, $saved_options ) ) {
             $valueArr = (array) json_decode(flexia_get_option($key));
         } else {
             $default = flexia_get_option_defaults();
