@@ -626,7 +626,7 @@ Context Metaboxes
 /* Metabox collapse arrow indicators */
 /* line 9, sass/partials/_context_metaboxes.scss */
 .js .cmb2-postbox.context-box .toggle-indicator:before {
-  content: "\f142";
+  content: "\f343";
   display: inline-block;
   font: normal 20px/1 dashicons;
   speak: none;
@@ -636,7 +636,7 @@ Context Metaboxes
 }
 /* line 22, sass/partials/_context_metaboxes.scss */
 .js .cmb2-postbox.context-box.closed .toggle-indicator:before {
-  content: "\f140";
+  content: "\f347";
 }
 
 /* line 30, sass/partials/_context_metaboxes.scss */

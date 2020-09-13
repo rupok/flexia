@@ -162,7 +162,7 @@ function flexia_register_post_metaboxs() {
 	) );
 
 }
-add_action( 'cmb2_admin_init', 'flexia_register_post_metaboxs' );
+// add_action( 'cmb2_admin_init', 'flexia_register_post_metaboxs' );
 
 /**
  * Show specific fields if header_meta is set to "yes"

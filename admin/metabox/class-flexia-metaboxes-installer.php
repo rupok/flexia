@@ -9,11 +9,11 @@ function flexia_register_page_metaboxs() {
      * Flexia Post Metaboxes
      */
     $cmb_post = new_cmb2_box(array(
-        'id' 			=> $prefix . 'flexia-metaboxs',
+        'id' 			=> $prefix . 'flexia-metabox',
         'title' 		=> esc_html__('Flexia Settings', 'flexia'),
         'object_types' 	=> array( 'page' ), // Post type
         'context'       => 'side',
-        'priority' 		=> 'high',
+        // 'priority' 		=> 'high',
     ));
     /**
      * Additional Body Class
@@ -34,7 +34,7 @@ function flexia_register_page_metaboxs() {
 		'type'             => 'select',
 		'show_option_none' => false,
 		'options'          => array(
-			'flexia_core_page_header_default' 	  => esc_html__( 'Default Header ( From Customizer )', 'flexia' ),
+			'flexia_core_page_header_default' 	  => esc_html__( 'Default Header ( Customizer )', 'flexia' ),
             'flexia_core_page_header_large'       => esc_html__( 'Large Header', 'flexia' ),
             'flexia_core_page_header_mini'        => esc_html__( 'Mini Header', 'flexia' ),
 			'flexia_core_page_header_none'        => esc_html__( 'No Header', 'flexia' ),
