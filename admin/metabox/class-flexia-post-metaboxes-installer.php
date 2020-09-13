@@ -12,6 +12,7 @@ function flexia_register_post_metaboxs() {
         'id' => $prefix . 'metaboxs',
         'title' => esc_html__('Flexia Post Settings', 'flexia'),
         'object_types' => array('post'), // Post type
+        'context'       => 'side',
         'priority' => 'high',
     ));
     /**
@@ -162,7 +163,7 @@ function flexia_register_post_metaboxs() {
 	) );
 
 }
-// add_action( 'cmb2_admin_init', 'flexia_register_post_metaboxs' );
+add_action( 'cmb2_admin_init', 'flexia_register_post_metaboxs' );
 
 /**
  * Show specific fields if header_meta is set to "yes"
