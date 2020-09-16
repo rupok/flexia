@@ -447,3 +447,20 @@ function flexia_sidebar_content($sidebar_id, $sidebar_position, $classes)
 		</div>
 	</aside>';
 }
+
+
+//Deactive Flexia Core
+add_action('after_setup_theme', 'flexia_check_theme_version');
+function flexia_check_theme_version() {
+
+  $current_version = wp_get_theme()->get('Version');
+  $old_version = get_option( 'flexia_theme_version' );
+
+  if ($old_version !== $current_version) {
+    // do some cool stuff
+    deactivate_plugins( '/essential-blocks/essential-blocks.php' );
+
+    // update not to run twice
+    update_option('flexia_theme_version', $current_version);
+  }
+}
