@@ -98,6 +98,7 @@ Main Wrap
 .cmb2-wrap select {
 	font-size: 14px;
 	margin-top: 3px;
+	box-sizing: border-box;
 }
 
 /* line 87, sass/partials/_main_wrap.scss */
@@ -389,7 +390,7 @@ Main Wrap
 .cmb-repeat-table .cmb-remove-row > .cmb-remove-row-button:before {
 	content: "";
 	font-family: 'Dashicons';
-	speak: none;
+	/* speak: none; */
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
@@ -778,7 +779,7 @@ Context Metaboxes
 	content: "\f343";
 	display: inline-block;
 	font: normal 20px/1 dashicons;
-	speak: none;
+	/* speak: none; */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-decoration: none !important;
@@ -1014,7 +1015,8 @@ Sidebar Placement Adjustments
 
 .inner-sidebar .cmb2-wrap > .cmb-field-list > .cmb-row,
 #side-sortables .cmb2-wrap > .cmb-field-list > .cmb-row {
-	padding: 1.4em 0;
+	padding: 1em 0;
+	background-color: transparent;
 }
 
 /* line 16, sass/partials/_sidebar_placements.scss */
@@ -1106,7 +1108,7 @@ Sidebar Placement Adjustments
 #side-sortables .cmb-th {
 	display: block;
 	float: none;
-	padding-bottom: 1em;
+	padding-bottom: 5px;
 	text-align: left;
 	width: 100%;
 	padding-left: 0;
@@ -1119,7 +1121,7 @@ Sidebar Placement Adjustments
 #side-sortables .cmb-th label {
 	display: block;
 	margin-top: 0;
-	margin-bottom: 0.5em;
+	margin-bottom: 0;
 }
 
 /* line 14, sass/partials/_mixins.scss */
@@ -1198,7 +1200,7 @@ Sidebar Placement Adjustments
 
 .inner-sidebar .cmb-row .cmb2-metabox-description,
 #side-sortables .cmb-row .cmb2-metabox-description {
-	padding-bottom: 1.8em;
+	padding-bottom: 0em;
 }
 
 /* line 130, sass/partials/_sidebar_placements.scss */
@@ -1244,7 +1246,7 @@ Sidebar Placement Adjustments
 	content: '\f142';
 	right: 12px;
 	font: normal 20px/1 'dashicons';
-	speak: none;
+	/* speak: none; */
 	display: inline-block;
 	padding: 8px 10px;
 	top: 0;
@@ -1459,7 +1461,7 @@ Sidebar Placement Adjustments
 	font: normal 20px/34px 'dashicons';
 	padding-left: 7px;
 	color: #fff;
-	speak: none;
+	/* speak: none; */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	width: 34px;
