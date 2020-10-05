@@ -103,4 +103,15 @@ if ( ! function_exists( 'flexia_sanitize_rgba' ) ) :
 		sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
 		return 'rgba('.$red.','.$green.','.$blue.','.$alpha.')';
 	}
-	endif;
+endif;
+
+
+if ( ! function_exists( 'flexia_sanitize_js_code' ) ) :
+	/**
+	 * script input sanitization function
+	 * @since 2.1.3
+	 */
+	function flexia_sanitize_js_code($input){
+        return $input;
+    }
+endif;
