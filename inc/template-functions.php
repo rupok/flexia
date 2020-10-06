@@ -479,7 +479,7 @@ function flexia_main_logo() {
 	ob_start();
 	$flexia_custom_logo_id = get_theme_mod( 'custom_logo' );
     $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'full' );
-    if( isset($flexia_header_logo) && $flexia_header_logo[0] !== NULL ) {
+    if( isset($flexia_header_logo) && is_array($flexia_header_logo) && $flexia_header_logo[0] !== NULL ) {
         $html .= '<a href=" '. esc_url( home_url( '/' ) ) . '" rel="home" class="flexia-header-logo">';
 		$html .= '<img alt="' . esc_html(bloginfo('name')) . '" src="' . esc_url($flexia_header_logo[0]) .'">';
 		$html .= '</a>';
