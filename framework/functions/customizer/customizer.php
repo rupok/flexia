@@ -2169,7 +2169,7 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_blog_content_settings',
                 'settings' => 'flexia_blog_content_display',
                 'priority' => 10,
-                'description' => 'Set whether you want to show full post content or excerpt only on blog page.',
+                'description' => 'Show full post content or excerpt only on blog page Standard Layout.',
                 'type' => 'radio',
                 'choices' => array(
                     'flexia_blog_content_display_full' => __('Show Full Post Content', 'flexia'),
