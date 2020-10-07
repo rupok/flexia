@@ -266,7 +266,7 @@ if (class_exists('\Elementor\Plugin')) {
 }
 
 /**
- * Customizer additions.
+ * Customizer additions
  */
 
 require get_template_directory() . '/framework/functions/customizer/defaults.php';
