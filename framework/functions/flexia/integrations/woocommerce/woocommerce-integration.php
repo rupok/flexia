@@ -3,22 +3,22 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 add_action( 'after_setup_theme','flexia_setup_woocommerce' );
-/** 
+/**
  * Set up WooCommerce
  *
  * @since 1.0
  */
 function flexia_setup_woocommerce() {
-	
+
 	if ( ! class_exists( 'WooCommerce' ) ) {
 		return;
 	}
-	
+
 	// Add support for WC features
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
-	
+
 	//Remove default WooCommerce wrappers
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
@@ -38,16 +38,16 @@ function flexia_woo_wrapper_start() {
 			<div class="flexia-wrapper flexia-container max width">
 				<div id="primary" class="content-area">
 					<main id="main" class="site-main flexia-woocommerce-wrapper flexia-container">
-<?php } ?>
+<?php }
 
-<?php function flexia_woo_wrapper_end() { ?>
+	function flexia_woo_wrapper_end() { ?>
 					</main><!-- #main -->
 				</div><!-- #primary -->
 
 				<?php echo flexia_woocommerce_sidebar(); ?>
 
 			</div><!-- #flexia-wrapper -->
-		</div><!-- #content --> 
+		</div><!-- #content -->
 	</div><!-- #page -->
 	<?php
 	get_footer();
@@ -61,7 +61,7 @@ function page_sidebar_control($content_layout) {
 		if ( flexia_get_option('flexia_woo_sidebar_cart_page') ) {
 			echo flexia_sidebar_content('woo-sidebar', 'flexia-sidebar-right', 'flexia-woo-sidebar');
 		}
-		
+
 	}
 
 	if ( is_page( 'checkout' ) || is_checkout() ) {
@@ -69,7 +69,7 @@ function page_sidebar_control($content_layout) {
 		if ( flexia_get_option('flexia_woo_sidebar_checkout_page') ) {
 			echo flexia_sidebar_content('woo-sidebar', 'flexia-sidebar-right', 'flexia-woo-sidebar');
 		}
-		
+
 	}
 
 	return $content_layout;
@@ -98,12 +98,12 @@ function show_discount_with_product_price_display( $price ) {
 add_filter( 'woocommerce_get_price_html', 'show_discount_with_product_price_display' );
 
 //Add Plus Minus Button to WooCommerce Quantity in single page
-add_action( 'woocommerce_before_add_to_cart_quantity', 'bbloomer_display_quantity_plus' );  
+add_action( 'woocommerce_before_add_to_cart_quantity', 'bbloomer_display_quantity_plus' );
 function bbloomer_display_quantity_plus() {
    echo '<div class="product-single-quantity"><button type="button" class="plus" >+</button>';
 }
-  
-add_action( 'woocommerce_after_add_to_cart_quantity', 'bbloomer_display_quantity_minus' );  
+
+add_action( 'woocommerce_after_add_to_cart_quantity', 'bbloomer_display_quantity_minus' );
 function bbloomer_display_quantity_minus() {
    echo '<button type="button" class="minus" >-</button></div>';
 }
@@ -146,7 +146,7 @@ function menu_cart_items_html() {
 function add_cart_menu_to_navbar($items)
 {
 	$flexia_woo_cart_menu = flexia_get_option('flexia_woo_cart_menu');
-	
+
 	global $woocommerce;
 	$cartitems = $woocommerce->cart->get_cart();
 
@@ -161,7 +161,7 @@ function add_cart_menu_to_navbar($items)
 			$items .= menu_cart_items_html();
 			$items .= '</ul>';
 		}
-		
+
         $items .= '</li>';
     }
     return $items;
@@ -172,7 +172,7 @@ add_filter('flexia_header_icon_items', 'add_cart_menu_to_navbar', 99, 2);
  * Ensure cart contents update when products are added to the cart via AJAX
  */
 function flexia_add_to_cart_fragment( $fragments ) {
- 
+
     ob_start();
     $count = WC()->cart->get_cart_contents_count();
     ?>
@@ -184,9 +184,9 @@ function flexia_add_to_cart_fragment( $fragments ) {
 		</a>
 
         <?php
- 
+
     $fragments['a.wc-cart-contents'] = ob_get_clean();
-     
+
     return $fragments;
 }
 add_filter( 'woocommerce_add_to_cart_fragments', 'flexia_add_to_cart_fragment' );
@@ -227,7 +227,7 @@ function flexia_woocommerce_sidebar() {
 	if ( is_product() && flexia_get_option('flexia_woo_sidebar_product_single') ) {
 		return flexia_sidebar_content($flexia_sidebar_id, 'flexia-sidebar-right', 'flexia-woo-sidebar');
 	}
-	
+
 	if ( is_product_category() && flexia_get_option('flexia_woo_sidebar_archive_page') ) {
 		return flexia_sidebar_content($flexia_sidebar_id, 'flexia-sidebar-right', 'flexia-woo-sidebar');
 	}
@@ -246,7 +246,7 @@ function flexia_woocommerce_sidebar_content($sidebar_id, $sidebar_position) {
 }
 
 
-add_action( 'wp_footer', 'bbloomer_add_cart_quantity_plus_minus' );  
+add_action( 'wp_footer', 'bbloomer_add_cart_quantity_plus_minus' );
 function bbloomer_add_cart_quantity_plus_minus() {
 	//Delete Cart item ajax
 	?>
@@ -256,7 +256,7 @@ function bbloomer_add_cart_quantity_plus_minus() {
 			jQuery('.flexia-cart-product-action i').click(function(){
 				console.log('Remove Click');
 				var product_id = jQuery(this).attr("data-id");
-				
+
 				var data = {
 					'action' : 'product_remove',
 					'product_id': product_id
@@ -285,15 +285,15 @@ function bbloomer_add_cart_quantity_plus_minus() {
    	// Only run this on the single product page
    	if ( is_product() ) {
 		?>
-			<script type="text/javascript">				
-				jQuery(document).ready(function($){           
-					$('form.cart').on( 'click', 'button.plus, button.minus', function() {  
+			<script type="text/javascript">
+				jQuery(document).ready(function($){
+					$('form.cart').on( 'click', 'button.plus, button.minus', function() {
 					// Get current quantity values
 					var qty = $( this ).closest( 'form.cart' ).find( '.qty' );
 					var val   = parseFloat(qty.val());
 					var max = parseFloat(qty.attr( 'max' ));
 					var min = parseFloat(qty.attr( 'min' ));
-					var step = parseFloat(qty.attr( 'step' ));  
+					var step = parseFloat(qty.attr( 'step' ));
 					// Change the value if plus or minus
 					if ( $( this ).is( '.plus' ) ) {
 						if ( max && ( max <= val ) ) {
@@ -307,10 +307,10 @@ function bbloomer_add_cart_quantity_plus_minus() {
 						} else if ( val > 1 ) {
 							qty.val( val - step );
 						}
-					}              
+					}
 					});
 				});
-				
+
 			</script>
 		<?php
    	}
