@@ -4,8 +4,8 @@ Contributors: re_enter_rupok, Codetic, wpdevteam
 Theme URI: https://flexia.pro/
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.0
-Tested up to: 5.4
-Stable tag: 2.1.3
+Tested up to: 5.5
+Stable tag: 2.2.0
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -35,18 +35,16 @@ Flexia License
 Flexia is licensed under the GNU General Public License v3 or later
 More details here: http://www.gnu.org/licenses/gpl-3.0.html
 
-Flexia is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
--------------------------------------------------------
-Screenshot Licenses
--------------------------------------------------------
-Background image, Photo by Picjumbo
-License: CC0 Public Domain
-Source: https://picjumbo.com/entrepreneur-working-on-his-macbook/
-
 
 == Changelog ==
+
+= 2.2.0 =
+* Released: October 11, 2020
+
+* Added: Metabox controls for Page and Post
+* Added: More customizer controls
+* Fixed: Compatibility issues with PHP 7.4
+* Few minor improvements & bug fixed
 
 = 2.1.3 =
 * Released: July 5, 2020
