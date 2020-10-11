@@ -109,7 +109,7 @@ function flexia_dashboard_page() {
         <div class="flexia-core-content">
             <div class="flexia-core-content-inner">
                 <div class="flexia-core-admin-block-large">
-                    <img class="flexia-preview-img" src="' . get_template_directory_uri() . '/admin/img/flexia-banner.png" >';
+                    <img class="flexia-preview-img" src="' . get_template_directory_uri() . '/admin/img/flexia-banner.jpg" >';
                     do_action('flexia_pro_license_activation');
                 echo '</div>
                 <div class="flexia-core-admin-block-wrapper">
