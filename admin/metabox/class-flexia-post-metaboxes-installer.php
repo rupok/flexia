@@ -163,7 +163,7 @@ function flexia_register_post_metaboxs() {
 	) );
 
 }
-add_action( 'cmb2_admin_init', 'flexia_register_post_metaboxs' );
+// add_action( 'cmb2_admin_init', 'flexia_register_post_metaboxs' );
 
 /**
  * Show specific fields if header_meta is set to "yes"
@@ -173,3 +173,94 @@ function flexia_show_if_header_meta_active( $cmb_post ) {
 	// Only show if status is 'external'
 	return 'yes' === $status;
 }
+
+//---------------------------------------------------------------
+//Register Meta Box
+function flexia_register_post_meta_box() {
+    $prefix = '_flexia_meta_key_';
+    add_meta_box( 
+        'flexia-post-meta-box',
+        esc_html__('Flexia Settings', 'flexia'), 
+        'flexia_post_meta_box_callback', 
+        'post', 
+        'side', 
+        'high' 
+    );
+}
+add_action( 'add_meta_boxes', 'flexia_register_post_meta_box');
+ 
+//Display Fileds
+function flexia_post_meta_box_callback( $meta_id ) {
+
+    wp_nonce_field( 'flexia_metabox_nonce', 'flexia_meta_value_nonce' );
+ 
+    $html = '<div class="flexia_metaboxs">';
+
+    //Page Additional Body Class
+    $html .= '<div class="flexia_metabox_item">';
+    $html .= '<label for="flexia_body_class">'. esc_html__('Additional Body Class', 'flexia') .'</label>';
+    $body_class = get_post_meta( $meta_id->ID, '_flexia_post_meta_key_body_class', true );
+    $html .= '<input type="text" name="flexia_body_class" id="flexia_body_class" class="flexia_body_class" value="'. esc_attr($body_class) .'" />';
+	$html .= '</div>';
+	
+	
+    //Page Header Option    
+	$post_layout = get_post_meta( $meta_id->ID, '_flexia_post_meta_key_page_title', true );
+	
+    $html .= '<div class="flexia_metabox_item">';
+    $html .= '<label for="flexia_post_layout">'. esc_html__('Post Layout', 'flexia') .'</label>';
+    $html .= '<select name="flexia_post_layout" id="flexia_post_layout">';
+
+    $selected = ($post_layout == "default") ? "selected" : null;
+    $html .= '<option value="default" ' . $selected . '>'. esc_html__('Default (from Customizer)', 'flexia') .'</option>';
+
+    $selected = ($post_layout == "large") ? "selected" : null;
+    $html .= '<option value="large" ' . $selected . '>'. esc_html__('Large Header (Featured Image Background)', 'flexia') .'</option>';
+
+    $selected = ($post_layout == "simple") ? "selected" : null;
+    $html .= '<option value="simple" ' . $selected . '>'. esc_html__('Simple Header', 'flexia') .'</option>';
+
+    $selected = ($post_layout == "simple_no_container") ? "selected" : null;
+	$html .= '<option value="simple_no_container" ' . $selected . '>'. esc_html__('Simple Header No Container', 'flexia') .'</option>';
+	
+    $selected = ($post_layout == "none") ? "selected" : null;
+    $html .= '<option value="none" ' . $selected . '>'. esc_html__('No Header', 'flexia') .'</option>';
+    
+    $html .= '</select>';
+    $html .= '</div>';
+
+
+    $html .= '</div>';
+ 
+    echo $html;
+}
+
+//Save Metabox Values
+function save_flexia_post_metabox( $post_id ) {
+ 
+    if( !isset( $_POST['flexia_meta_value_nonce'] ) || !wp_verify_nonce( $_POST['flexia_meta_value_nonce'],'flexia_metabox_nonce') ) {
+        return;
+    }
+ 
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+ 
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
+ 
+    if ( isset( $_POST['post_type'] ) && 'post' === $_POST['post_type'] ) {
+ 
+        if (isset($_POST['flexia_body_class']) ) { 
+            update_post_meta($post_id, '_flexia_post_meta_key_body_class', sanitize_html_class($_POST['flexia_body_class']) );
+        }
+
+        if (isset($_POST['flexia_post_layout']) ) { 
+            update_post_meta($post_id, '_flexia_post_meta_key_page_title', sanitize_text_field($_POST['flexia_post_layout']) );
+        }
+ 
+    }
+     
+}
+add_action( 'save_post', 'save_flexia_post_metabox' );

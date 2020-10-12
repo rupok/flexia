@@ -275,7 +275,7 @@ require get_template_directory() . '/framework/functions/customizer/customizer.p
 /**
  * Requiring CMB2
  */
-require_once get_template_directory() . '/inc/cmb2/init.php';
+// require_once get_template_directory() . '/inc/cmb2/init.php';
 
 /**
  * Requiring flexia metaboxes

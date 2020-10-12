@@ -55,9 +55,9 @@ add_action( 'wp_head', 'flexia_pingback_header' );
  * @since  v1.0.0
  */
 function flexia_page_title() {
+	global $post;
 
-	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
-		global $post;
+	if( metadata_exists( 'post', $post->ID, '_flexia_meta_key_page_header' ) ) {
 		$flexia_core_page_header = get_post_meta( $post->ID, '_flexia_meta_key_page_header', true );
 		if( $flexia_core_page_header == 'flexia_core_page_header_default' || $flexia_core_page_header == NULL ) {
 			?>
@@ -83,10 +83,12 @@ add_action('flexia_page_header_breadcrumb', 'flexia_page_header_markup'); // @si
 function flexia_page_header_markup() {
 
 	$flexia_page_header_layout 	= get_theme_mod( 'flexia_page_header_layout', 'flexia_page_header_default' );
-	// If CMB2 installed
-	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
+	
+	global $post;
 
-		global $post;
+	// If This Page has custom Header Meta
+	if( metadata_exists( 'post', $post->ID, '_flexia_meta_key_page_header' ) ) {
+
 		$flexia_core_page_header = get_post_meta( $post->ID, '_flexia_meta_key_page_header', true );
 
 		if( $flexia_core_page_header == 'flexia_core_page_header_large' ) :

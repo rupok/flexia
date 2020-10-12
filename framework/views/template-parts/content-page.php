@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		if (get_theme_mod( 'flexia_page_header', 'flexia' )) {
 			$flexia_page_header_layout 	= get_theme_mod( 'flexia_page_header_layout', 'flexia_page_header_default' );
 			if( $flexia_page_header_layout == 'flexia_page_header_default' || $flexia_page_header_layout == NULL  ){
-				flexia_page_title();
+				flexia_page_title(); 
 			}
 		}		
 	?>
