@@ -41,6 +41,7 @@ class Flexia_Admin
     public function flexia_admin_enqueue_scripts()
     {
         wp_enqueue_style('flexia', get_template_directory_uri() . '/admin/css/flexia-admin.css', array(), $this->theme->version);
+        wp_enqueue_script( 'flexia_admin_script', get_template_directory_uri() . '/admin/js/flexia-admin.js', array( 'jquery' ), $this->theme->version, true );
     }
 
     /**

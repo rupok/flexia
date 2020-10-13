@@ -254,13 +254,3 @@ function save_flexia_post_metabox( $post_id ) {
      
 }
 add_action( 'save_post', 'save_flexia_post_metabox' );
-
-
-/**
- * Show specific fields if header_meta is set to "yes"
- */
-function flexia_show_if_header_meta_active( $cmb_post ) {
-	$status = get_post_meta( $cmb_post->object_id(), '_flexia_post_meta_key_header_meta', true );
-	// Only show if status is 'external'
-	return 'yes' === $status;
-}
