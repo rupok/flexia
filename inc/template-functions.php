@@ -193,8 +193,8 @@ function flexia_post_large_title_markup() {
  */
 function flexia_post_large_title_author_avatar_markup() {
 
-	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
-		global $post;
+	global $post;
+	if( metadata_exists( 'post', $post->ID, '_flexia_post_meta_key_header_author_meta' ) ) {
 		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
 		$post_title_header_post_author = get_post_meta( $post->ID, '_flexia_post_meta_key_header_author_meta', true );
 		if( $post_title_header_meta == 'yes' || $post_title_header_meta == NULL ) {
@@ -251,9 +251,9 @@ function flexia_post_large_title_header_meta_markup() {
  * @since  v0.0.5
  */
 function flexia_post_large_title() {
+	global $post;
 	$flexia_single_posts_layout = get_theme_mod('flexia_single_posts_layout', 'flexia_single_posts_layout_large');
-	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
-		global $post;
+	if( metadata_exists( 'post', $post->ID, '_flexia_post_meta_key_page_title' ) ) {
 		$post_title = get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
 		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
 		if( $post_title == 'default' || $post_title == NULL ) {
@@ -273,7 +273,7 @@ function flexia_post_large_title() {
 		}else {
 			return false;
 		}
-	}else {
+	} else {
 		if( $flexia_single_posts_layout == NULL || $flexia_single_posts_layout == 'flexia_single_posts_layout_large' ) {
 			flexia_post_large_title_markup();
 			flexia_post_large_title_header_meta_markup();
@@ -363,8 +363,8 @@ function flexia_post_simple_no_container_title_markup() {
  */
 function flexia_post_simple_title() {
 	$flexia_single_posts_layout = get_theme_mod('flexia_single_posts_layout', 'flexia_single_posts_layout_large');
-	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
-		global $post;
+	global $post;
+	if( metadata_exists( 'post', $post->ID, '_flexia_post_meta_key_page_title' ) ) {
 		$post_title = get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
 		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
 		if( $post_title == 'simple' ) {
@@ -415,8 +415,8 @@ add_filter( 'body_class', 'flexia_add_body_class', 10, 1 );
  */
 function flexia_post_footer_meta() {
 
-	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
-		global $post;
+	global $post;
+	if( metadata_exists( 'post', $post->ID, '_flexia_post_meta_key_footer_meta' ) ) {
 		$footer_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_footer_meta', true );
 		if( $footer_meta == 'yes' || $footer_meta == NULL ) {
 			get_template_part( 'framework/views/template-parts/content', 'post-author' );
@@ -436,8 +436,8 @@ function flexia_post_footer_meta() {
  */
 function flexia_post_sharer() {
 
-	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
-		global $post;
+	global $post;
+	if( metadata_exists( 'post', $post->ID, '_flexia_post_meta_key_post_sharer' ) ) {
 		$post_sharer = get_post_meta( $post->ID, '_flexia_post_meta_key_post_sharer', true );
 		if( $post_sharer == 'yes' || $post_sharer == NULL ) {
 			get_template_part( 'framework/views/template-parts/content', 'social-sharer' );
@@ -457,8 +457,8 @@ function flexia_post_sharer() {
  */
 function flexia_post_navigation() {
 
-	if( class_exists( 'Flexia_Core' ) ) {
-		global $post;
+	global $post;
+	if( metadata_exists( 'post', $post->ID, '_flexia_post_meta_key_post_navigation' ) ) {
 		$post_navigation = get_post_meta( $post->ID, '_flexia_post_meta_key_post_navigation', true );
 		if( $post_navigation == 'yes' || $post_navigation == NULL ) {
 			the_post_navigation();
@@ -468,7 +468,6 @@ function flexia_post_navigation() {
 	}else {
 		the_post_navigation();
 	}
-
 }
 
 /**
