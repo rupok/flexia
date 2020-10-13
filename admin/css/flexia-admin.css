@@ -422,6 +422,25 @@
     display: none;
 }
 
+/*Flexia Page & Post Metabox Design*/
+.flexia_metaboxs .flexia_metabox_item {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #ececec;
+}
+.flexia_metaboxs .flexia_metabox_item:first-child {
+    border-top: 0;
+    padding-top: 0;
+}
+.flexia_metaboxs .flexia_metabox_item label {
+    display: block;
+    margin-bottom: 5px;
+}
+.flexia_metaboxs .flexia_metabox_item input, .flexia_metaboxs .flexia_metabox_item select {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 
 /* Media Quires */
 @media only screen and (max-width: 480px) {

@@ -273,11 +273,6 @@ require get_template_directory() . '/framework/functions/customizer/defaults.php
 require get_template_directory() . '/framework/functions/customizer/customizer.php';
 
 /**
- * Requiring CMB2
- */
-// require_once get_template_directory() . '/inc/cmb2/init.php';
-
-/**
  * Requiring flexia metaboxes
  */
 require_once get_template_directory() . '/admin/metabox/class-flexia-metaboxes-installer.php';
