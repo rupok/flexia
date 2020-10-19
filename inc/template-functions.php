@@ -281,6 +281,7 @@ function flexia_post_large_title() {
 	}
 
 }
+add_action('flexia_single_large_title', 'flexia_post_large_title');
 
 /**
  * This function will generate simple post title markup
@@ -467,6 +468,32 @@ function flexia_post_navigation() {
 		}
 	}else {
 		the_post_navigation();
+	}
+}
+
+/**
+ * This method will show/hide post Comment.
+ *
+ * @since  v1.1.4
+ */
+function flexia_post_comment() {
+
+	global $post;
+	if( metadata_exists( 'post', $post->ID, '_flexia_post_meta_key_post_comment' ) ) {
+		$post_navigation = get_post_meta( $post->ID, '_flexia_post_meta_key_post_comment', true );
+		if( $post_navigation == 'yes' || $post_navigation == NULL ) {
+			// If comments are open or we have at least one comment, load up the comment template
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+		}else {
+			return false;
+		}
+	}else {
+		// If comments are open or we have at least one comment, load up the comment template
+		if ( comments_open() || get_comments_number() ) :
+			comments_template();
+		endif;
 	}
 }
 

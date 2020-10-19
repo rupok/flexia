@@ -4881,6 +4881,15 @@ body.archive .flexia-wrapper > .content-area article.post {
   max-width: 1400px;
   margin: 3em auto 0;
 }
+.single .flexia-blank-container .entry-content-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+.single .flexia-blank-container .entry-content-wrapper .single-post-entry {
+  padding: 0;
+  margin: 0;
+}
 .single .single-post-meta-large .entry-meta {
   display: flex;
   flex-flow: row nowrap;
@@ -7360,7 +7369,10 @@ ol.comment-list li {
 }
 .comments-area .comment-form label {
   color: #323232;
-  font-size: 13px;
+  font-size: 1em;
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 600;
 }
 .comments-area .blog-img-wide.blogdetails img {
   height: auto;

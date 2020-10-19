@@ -29,7 +29,7 @@ $post_social_share = get_theme_mod('post_social_share', false);
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <?php flexia_post_large_title(); ?>
+    <?php do_action('flexia_single_large_title'); ?>
 
     <div class="entry-content-wrapper">
 
@@ -82,10 +82,7 @@ $post_social_share = get_theme_mod('post_social_share', false);
             endif; ?>
 
             <?php
-                // If comments are open or we have at least one comment, load up the comment template
-                if ( comments_open() || get_comments_number() ) :
-                    comments_template();
-                endif;
+                flexia_post_comment();
             ?>
 
         </div>

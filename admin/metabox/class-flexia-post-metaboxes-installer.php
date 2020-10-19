@@ -183,6 +183,22 @@ function flexia_post_meta_box_callback( $meta_id ) {
     $html .= '<option value="no" ' . $selected . '>'. esc_html__('No', 'flexia') .'</option>';
     
     $html .= '</select>';
+    $html .= '</div>';
+    
+
+    //Show Comments
+	$post_comment = get_post_meta( $meta_id->ID, $prefix . 'post_comment', true );
+	$html .= '<div class="flexia_metabox_item">';
+    $html .= '<label for="flexia_post_comment">'. esc_html__('Show Post Comment', 'flexia') .'</label>';
+    $html .= '<select name="flexia_post_comment" id="flexia_post_comment">';
+
+    $selected = ($post_comment == "yes") ? "selected" : null;
+    $html .= '<option value="yes" ' . $selected . '>'. esc_html__('Yes', 'flexia') .'</option>';
+
+    $selected = ($post_comment == "no") ? "selected" : null;
+    $html .= '<option value="no" ' . $selected . '>'. esc_html__('No', 'flexia') .'</option>';
+    
+    $html .= '</select>';
 	$html .= '</div>';
 
 
@@ -248,6 +264,10 @@ function save_flexia_post_metabox( $post_id ) {
 
         if (isset($_POST['flexia_post_navigation']) ) { 
             update_post_meta($post_id, $prefix . 'post_navigation', sanitize_text_field($_POST['flexia_post_navigation']) );
+        }
+
+        if (isset($_POST['flexia_post_comment']) ) { 
+            update_post_meta($post_id, $prefix . 'post_comment', sanitize_text_field($_POST['flexia_post_comment']) );
         }
  
     }
