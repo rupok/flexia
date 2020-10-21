@@ -39,8 +39,9 @@ More details here: http://www.gnu.org/licenses/gpl-3.0.html
 == Changelog ==
 
 = 2.2.0 =
-* Released: October 11, 2020
+* Released: October 21, 2020
 
+* Added: Added Post Template (No Container | No Header | No Footer, No Container | Header | Footer)
 * Added: Metabox controls for Page and Post
 * Added: More customizer controls
 * Fixed: Compatibility issues with PHP 7.4
