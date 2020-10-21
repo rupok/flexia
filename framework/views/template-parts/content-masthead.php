@@ -39,7 +39,7 @@ $header_layouts = get_theme_mod('flexia_header_layouts', '1');
 	endif; ?>
 
 	<?php if( $flexia_logobar_position == 'flexia-logobar-stacked' ) : 
-		get_template_part( 'framework/views/template-parts/content', 'logobar' );  
+		get_template_part( 'framework/views/template-parts/content', 'logobar' );
 	endif; ?>
 
 	<?php if( $flexia_navbar == true ) :
