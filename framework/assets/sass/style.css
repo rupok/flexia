@@ -6749,7 +6749,7 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
   background-color: rgba(0, 0, 0, 0.75);
   color: #fff;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1em;
   padding: 15px;
   border-radius: 0;
@@ -6811,7 +6811,7 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   background-color: rgba(0, 0, 0, 0.75);
   color: #fff;
   border-radius: 0;
-  font-weight: 400;
+  font-weight: 600;
   padding: 15px;
 }
 
