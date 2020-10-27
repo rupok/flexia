@@ -175,9 +175,11 @@ if (!function_exists('flexia_setup')) {
         ));
 
         /**
-         * Register support for Gutenberg wide images in your theme
+         * Register support for Gutenberg
          */
-        add_theme_support('align-wide');
+        add_theme_support( 'align-wide' ); //Wide/Full Alignment
+        
+
     }
 }
 add_action('after_setup_theme', 'flexia_setup');
