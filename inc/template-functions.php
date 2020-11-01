@@ -460,7 +460,7 @@ function flexia_post_navigation() {
 
 	global $post;
 	if( metadata_exists( 'post', $post->ID, '_flexia_post_meta_key_post_navigation' ) ) {
-		$post_navigation = get_post_meta( $post->ID, '_flexia_post_meta_key_post_navigation', true );
+		$post_navigation = get_post_meta( $post->ID, '_flexia_post_meta_key_post_navigation', true ); 
 		if( $post_navigation == 'yes' || $post_navigation == NULL ) {
 			the_post_navigation();
 		}else {

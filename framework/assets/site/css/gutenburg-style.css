@@ -1,0 +1,26 @@
+
+.flexia-gutenberg-container #primary {
+    padding: 0;
+}
+
+.flexia-gutenberg-container .entry-title,
+.flexia-gutenberg-container .entry-content p,
+.flexia-gutenberg-container .entry-content .wp-block-image,
+.flexia-gutenberg-container .entry-content ul {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.flexia-gutenberg-container #main .alignwide{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flexia-gutenberg-container #main .alignfull{
+    width: auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
