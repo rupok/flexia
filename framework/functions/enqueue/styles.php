@@ -40,9 +40,12 @@ function flexia_gutenberg_template_style() {
 		.flexia-gutenberg-container .entry-content ul {
 			width: {$width};
 			max-width: {$max_width};
-		}
-			
+		}			
 		.flexia-gutenberg-container #main .alignwide{
+			max-width: {$max_width};
+		}
+		.flexia-gutenberg-container #main .wp-block-pullquote.has-background blockquote{
+			width: {$width};
 			max-width: {$max_width};
 		}";
 		wp_add_inline_style( 'gutenberg-style', $custom_css );
