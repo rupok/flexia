@@ -148,7 +148,7 @@ function flexia_blog_layout() {
 					                <div class="flexia-entry-content">
 					                    <div class="flexia-grid-post-excerpt">
 					                        <?php
-												$content = get_the_content();
+												$content = get_the_excerpt();
 												$trimmed_content = wp_trim_words($content, $flexia_blog_excerpt_count);
 												echo $trimmed_content;
 											?>
@@ -307,7 +307,7 @@ function flexia_pro_load_more_posts() {
 						<div class="flexia-entry-content">
 							<div class="flexia-grid-post-excerpt">
 							<?php
-								$content = get_the_content();
+								$content = get_the_excerpt();
 								$trimmed_content = wp_trim_words($content, $flexia_blog_excerpt_count);
 								echo $trimmed_content;
 							?>
@@ -374,7 +374,7 @@ function flexia_pro_load_more_posts() {
 		                <div class="flexia-entry-content">
 		                    <div class="flexia-grid-post-excerpt">
 		                        <?php
-									$content = get_the_content();
+									$content = get_the_excerpt();
 									$trimmed_content = wp_trim_words($content, $flexia_blog_excerpt_count);
 									echo $trimmed_content;
 								?>
