@@ -26,7 +26,7 @@ add_action( 'wp_enqueue_scripts', 'flexia_site_styles' );
 
 //Include Gutenberg Template Style
 function flexia_gutenberg_template_style() {
-	if ( is_page_template('template-gutenberg.php') ) {
+	if ( is_page_template('template-gutenberg.php') || is_page_template('template-post-gutenberg.php') ) {
 		wp_enqueue_style(
 			'gutenberg-style',
 			get_template_directory_uri() . '/framework/assets/site/css/gutenburg-style.css'
@@ -37,7 +37,9 @@ function flexia_gutenberg_template_style() {
 		.flexia-gutenberg-container .entry-title,
 		.flexia-gutenberg-container .entry-content p,
 		.flexia-gutenberg-container .entry-content .wp-block-image,
-		.flexia-gutenberg-container .entry-content ul {
+		.flexia-gutenberg-container .entry-content ul,
+		.flexia-gutenberg-container .entry-content .post-author,
+		.flexia-gutenberg-container .entry-content .flexia-social-share {
 			width: {$width};
 			max-width: {$max_width};
 		}			
