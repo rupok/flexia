@@ -55,9 +55,9 @@ add_action( 'wp_head', 'flexia_pingback_header' );
  * @since  v1.0.0
  */
 function flexia_page_title() {
+	global $post;
 
-	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
-		global $post;
+	if( metadata_exists( 'post', $post->ID, '_flexia_meta_key_page_header' ) ) {
 		$flexia_core_page_header = get_post_meta( $post->ID, '_flexia_meta_key_page_header', true );
 		if( $flexia_core_page_header == 'flexia_core_page_header_default' || $flexia_core_page_header == NULL ) {
 			?>
@@ -83,10 +83,12 @@ add_action('flexia_page_header_breadcrumb', 'flexia_page_header_markup'); // @si
 function flexia_page_header_markup() {
 
 	$flexia_page_header_layout 	= get_theme_mod( 'flexia_page_header_layout', 'flexia_page_header_default' );
-	// If CMB2 installed
-	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
+	
+	global $post;
 
-		global $post;
+	// If This Page has custom Header Meta
+	if( metadata_exists( 'post', $post->ID, '_flexia_meta_key_page_header' ) ) {
+
 		$flexia_core_page_header = get_post_meta( $post->ID, '_flexia_meta_key_page_header', true );
 
 		if( $flexia_core_page_header == 'flexia_core_page_header_large' ) :
@@ -191,8 +193,8 @@ function flexia_post_large_title_markup() {
  */
 function flexia_post_large_title_author_avatar_markup() {
 
-	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
-		global $post;
+	global $post;
+	if( metadata_exists( 'post', $post->ID, '_flexia_post_meta_key_header_author_meta' ) ) {
 		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
 		$post_title_header_post_author = get_post_meta( $post->ID, '_flexia_post_meta_key_header_author_meta', true );
 		if( $post_title_header_meta == 'yes' || $post_title_header_meta == NULL ) {
@@ -249,9 +251,9 @@ function flexia_post_large_title_header_meta_markup() {
  * @since  v0.0.5
  */
 function flexia_post_large_title() {
+	global $post;
 	$flexia_single_posts_layout = get_theme_mod('flexia_single_posts_layout', 'flexia_single_posts_layout_large');
-	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
-		global $post;
+	if( metadata_exists( 'post', $post->ID, '_flexia_post_meta_key_page_title' ) ) {
 		$post_title = get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
 		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
 		if( $post_title == 'default' || $post_title == NULL ) {
@@ -271,7 +273,7 @@ function flexia_post_large_title() {
 		}else {
 			return false;
 		}
-	}else {
+	} else {
 		if( $flexia_single_posts_layout == NULL || $flexia_single_posts_layout == 'flexia_single_posts_layout_large' ) {
 			flexia_post_large_title_markup();
 			flexia_post_large_title_header_meta_markup();
@@ -279,6 +281,7 @@ function flexia_post_large_title() {
 	}
 
 }
+add_action('flexia_single_large_title', 'flexia_post_large_title');
 
 /**
  * This function will generate simple post title markup
@@ -361,8 +364,8 @@ function flexia_post_simple_no_container_title_markup() {
  */
 function flexia_post_simple_title() {
 	$flexia_single_posts_layout = get_theme_mod('flexia_single_posts_layout', 'flexia_single_posts_layout_large');
-	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
-		global $post;
+	global $post;
+	if( metadata_exists( 'post', $post->ID, '_flexia_post_meta_key_page_title' ) ) {
 		$post_title = get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
 		$post_title_header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
 		if( $post_title == 'simple' ) {
@@ -413,8 +416,8 @@ add_filter( 'body_class', 'flexia_add_body_class', 10, 1 );
  */
 function flexia_post_footer_meta() {
 
-	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
-		global $post;
+	global $post;
+	if( metadata_exists( 'post', $post->ID, '_flexia_post_meta_key_footer_meta' ) ) {
 		$footer_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_footer_meta', true );
 		if( $footer_meta == 'yes' || $footer_meta == NULL ) {
 			get_template_part( 'framework/views/template-parts/content', 'post-author' );
@@ -434,8 +437,8 @@ function flexia_post_footer_meta() {
  */
 function flexia_post_sharer() {
 
-	if( class_exists( 'CMB2_Bootstrap_230' ) ) {
-		global $post;
+	global $post;
+	if( metadata_exists( 'post', $post->ID, '_flexia_post_meta_key_post_sharer' ) ) {
 		$post_sharer = get_post_meta( $post->ID, '_flexia_post_meta_key_post_sharer', true );
 		if( $post_sharer == 'yes' || $post_sharer == NULL ) {
 			get_template_part( 'framework/views/template-parts/content', 'social-sharer' );
@@ -455,9 +458,9 @@ function flexia_post_sharer() {
  */
 function flexia_post_navigation() {
 
-	if( class_exists( 'Flexia_Core' ) ) {
-		global $post;
-		$post_navigation = get_post_meta( $post->ID, '_flexia_post_meta_key_post_navigation', true );
+	global $post;
+	if( metadata_exists( 'post', $post->ID, '_flexia_post_meta_key_post_navigation' ) ) {
+		$post_navigation = get_post_meta( $post->ID, '_flexia_post_meta_key_post_navigation', true ); 
 		if( $post_navigation == 'yes' || $post_navigation == NULL ) {
 			the_post_navigation();
 		}else {
@@ -466,7 +469,32 @@ function flexia_post_navigation() {
 	}else {
 		the_post_navigation();
 	}
+}
 
+/**
+ * This method will show/hide post Comment.
+ *
+ * @since  v1.1.4
+ */
+function flexia_post_comment() {
+
+	global $post;
+	if( metadata_exists( 'post', $post->ID, '_flexia_post_meta_key_post_comment' ) ) {
+		$post_navigation = get_post_meta( $post->ID, '_flexia_post_meta_key_post_comment', true );
+		if( $post_navigation == 'yes' || $post_navigation == NULL ) {
+			// If comments are open or we have at least one comment, load up the comment template
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+		}else {
+			return false;
+		}
+	}else {
+		// If comments are open or we have at least one comment, load up the comment template
+		if ( comments_open() || get_comments_number() ) :
+			comments_template();
+		endif;
+	}
 }
 
 /**
@@ -479,7 +507,7 @@ function flexia_main_logo() {
 	ob_start();
 	$flexia_custom_logo_id = get_theme_mod( 'custom_logo' );
     $flexia_header_logo = wp_get_attachment_image_src( $flexia_custom_logo_id , 'full' );
-    if( isset($flexia_header_logo) && $flexia_header_logo[0] !== NULL ) {
+    if( isset($flexia_header_logo) && is_array($flexia_header_logo) && $flexia_header_logo[0] !== NULL ) {
         $html .= '<a href=" '. esc_url( home_url( '/' ) ) . '" rel="home" class="flexia-header-logo">';
 		$html .= '<img alt="' . esc_html(bloginfo('name')) . '" src="' . esc_url($flexia_header_logo[0]) .'">';
 		$html .= '</a>';

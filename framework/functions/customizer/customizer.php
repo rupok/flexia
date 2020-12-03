@@ -22,7 +22,6 @@ if (!defined('ABSPATH')) {
  *
  * @see _wp_customize_include()
  */
-
 function flexia_customize_register($wp_customize)
 {
 
@@ -2170,7 +2169,7 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_blog_content_settings',
                 'settings' => 'flexia_blog_content_display',
                 'priority' => 10,
-                'description' => 'Set whether you want to show full post content or excerpt only on blog page.',
+                'description' => 'Show full post content or excerpt only on blog page Standard Layout.',
                 'type' => 'radio',
                 'choices' => array(
                     'flexia_blog_content_display_full' => __('Show Full Post Content', 'flexia'),
@@ -5265,14 +5264,19 @@ function flexia_customize_register($wp_customize)
 
     // Header Script section 
     $wp_customize->add_section( 'flexia_header_script_section' , array(
-        'title'      => __('Header Script','flexia-core'), 
+        'title'      => __('Header Script','flexia'), 
         'priority'   => 10    
     ) );  
     
-    $wp_customize->add_setting( 'flexia_header_script' );
+    $wp_customize->add_setting( 
+        'flexia_header_script',
+        array(          
+            'sanitize_callback' => 'flexia_sanitize_js_code',
+        )
+    );
 
         $control = new WP_Customize_Code_Editor_Control( $wp_customize, 'flexia_header_script', array(
-                'label'          => __( 'Add your header script without script tag', 'flexia-core' ),
+                'label'          => __( 'Add your header script without script tag', 'flexia' ),
                 'section' => 'flexia_header_script_section',
                 'code_type' => 'text/javascript',
                 'settings'       => 'flexia_header_script',
@@ -5282,13 +5286,18 @@ function flexia_customize_register($wp_customize)
     // Footer Script section
 
     $wp_customize->add_section( 'flexia_footer_script_section' , array(
-    'title'      => __('Footer Script','flexia-core'), 
+    'title'      => __('Footer Script','flexia'), 
     'priority'   => 20    
     ) );  
 
-    $wp_customize->add_setting( 'flexia_footer_script' );
+    $wp_customize->add_setting( 
+        'flexia_footer_script',        
+        array(          
+            'sanitize_callback' => 'flexia_sanitize_js_code',
+        )
+    );
         $control = new WP_Customize_Code_Editor_Control( $wp_customize, 'flexia_footer_script', array(
-                'label'          => __( 'Add your footer script without script tag', 'flexia-core' ),
+                'label'          => __( 'Add your footer script without script tag', 'flexia' ),
                 'section' => 'flexia_footer_script_section',
                 'code_type' => 'text/javascript',
                 'settings'       => 'flexia_footer_script',
@@ -5298,13 +5307,18 @@ function flexia_customize_register($wp_customize)
     // Google Analytics section
 
     $wp_customize->add_section( 'flexia_ga_script_section' , array(
-    'title'      => __('Google Analytics','flexia-core'), 
+    'title'      => __('Google Analytics','flexia'), 
     'priority'   => 30    
     ) );  
 
-    $wp_customize->add_setting( 'flexia_ga_script' );
+    $wp_customize->add_setting( 
+        'flexia_ga_script',
+        array(          
+            'sanitize_callback' => 'flexia_sanitize_js_code',
+        )
+    );
         $control = new WP_Customize_Code_Editor_Control( $wp_customize, 'flexia_ga_script', array(
-                'label'          => __( 'Paste your Google Analytics code as is.', 'flexia-core' ),
+                'label'          => __( 'Paste your Google Analytics code as is.', 'flexia' ),
                 'section' => 'flexia_ga_script_section',
                 'code_type' => 'text/html',
                 'settings'       => 'flexia_ga_script',
@@ -5315,8 +5329,8 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_panel( 'flexia_custom_scripts', array(
         'priority' => 999,
         'theme_supports' => '',
-        'title' => __( 'Custom JavaScripts', 'flexia-core' ),
-        'description' => __( 'Add custom header/footer scripts or Google Analytics', 'flexia-core' ),
+        'title' => __( 'Custom JavaScripts', 'flexia' ),
+        'description' => __( 'Add custom header/footer scripts or Google Analytics', 'flexia' ),
     ) );
 
     // Assign sections to panels

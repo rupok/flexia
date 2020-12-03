@@ -236,7 +236,7 @@ if (!class_exists('Flexia_Plugin_Installer')) {
                     'desc' => 'Adds premium features for the theme Flexia.',
                     'author' => 'Codetic',
                     'author_url' => 'https://flexia.pro/',
-                    'banner' => get_template_directory_uri() . '/admin/img/flexia-banner.png',
+                    'banner' => get_template_directory_uri() . '/admin/img/flexia-banner.jpg',
                     'doc_url' => 'https://flexia.pro/docs/',
                 ),
                 array(
@@ -245,7 +245,7 @@ if (!class_exists('Flexia_Plugin_Installer')) {
                     'desc' => 'Ultimate elements  library for Elementor WordPress Page Builder. 30+ stunning elements for Elementor.',
                     'author' => 'Codetic',
                     'author_url' => 'https://essential-addons.com',
-                    'banner' => get_template_directory_uri() . '/admin/img/eael-pro-banner.png',
+                    'banner' => get_template_directory_uri() . '/admin/img/eael-pro-banner.jpg',
                     'doc_url' => 'https://essential-addons.com/elementor',
                 ),
             );

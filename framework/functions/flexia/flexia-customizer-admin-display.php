@@ -33,7 +33,7 @@ function flexia_add_custom_js_in_wp_footer() {
 	if (! empty( $flexia_footer_script)) { ?>
 	<script type="text/javascript">
 		/* <![CDATA[ */
-			<?php echo get_theme_mod('flexia_footer_script'); ?>
+			<?php echo $flexia_footer_script; ?>
 		/* ]]> */
 	</script>
 	<?php }
