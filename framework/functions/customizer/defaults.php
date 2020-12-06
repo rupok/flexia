@@ -88,7 +88,7 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_header_layout_type' => 'boxed',
             'flexia_navbar_position' => 'flexia-navbar-static-top',
             'flexia_header_layouts' => '1',
-            'flexia_header_mobile_layouts' => 'layout1',            
+            'flexia_header_mobile_layouts' => '1',            
 
             'flexia_primary_logo_label' => '',
             'flexia_sticky_logo_label' => '',

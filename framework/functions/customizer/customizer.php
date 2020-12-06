@@ -3113,6 +3113,63 @@ function flexia_customize_register($wp_customize)
         'container_inclusive' => true,
     ] );
 
+
+
+
+
+
+
+
+
+    /**
+     * Header Layout Section: Header Layouts Mobile
+     * @flexia_header_moible_layouts
+     * Parent: @flexia_header_panel -> flexia_header_layout
+     */
+    $wp_customize->add_setting('flexia_header_mobile_layouts', array(
+        'default' => $defaults['flexia_header_mobile_layouts'],
+        'sanitize_callback' => 'flexia_sanitize_choices',
+    ));
+
+    $wp_customize->add_control(
+		new Flexia_Radio_Image_Control(
+            $wp_customize,
+            'flexia_header_mobile_layouts',
+            array(
+                'type'          => 'flexia-radio-image',
+                'settings'		=> 'flexia_header_mobile_layouts',
+                'section'		=> 'flexia_header_layout',
+                'label'			=> __('Header Styles Mobile', 'flexia'),
+                'choices'		=> apply_filters(
+                    'flexia_header_mobile_layouts', 
+                    array(
+                        '1' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-01.png',
+                        ),  
+                        '2' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-02.png',
+                        ),                       
+                    )
+                ),
+            ) 
+        )
+    );
+
+    $wp_customize->selective_refresh->add_partial( "flexia_header_mobile_layouts_partial", [
+        'selector'            => "#masthead",
+        'settings'            => [
+            "flexia_header_mobile_layouts",
+        ],
+        'container_inclusive' => true,
+    ] );
+
+
+
+
+
+
+
+
     /**
      * Header Layout Section: Mobile Layouts
      * @flexia_header_mobile_layouts
