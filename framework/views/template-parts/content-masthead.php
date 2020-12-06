@@ -30,7 +30,7 @@ $header_mobile_layouts = get_theme_mod('flexia_header_mobile_layouts', '1');
 
 ?>
 
-<header id="masthead" class="site-header flexia-header-<?php echo esc_attr($header_layouts); ?> flexia-header-mobile-<?php echo esc_attr($header_layouts); ?>">
+<header id="masthead" class="site-header flexia-header-<?php echo esc_attr($header_layouts); ?> flexia-header-mobile-<?php echo esc_attr($header_mobile_layouts); ?>">
 
 	<?php if( $header_widget_area == true ) :
 		get_template_part( 'framework/views/template-parts/content', 'header-widgets' ); 
