@@ -26,11 +26,11 @@ $flexia_navbar = get_theme_mod('flexia_navbar', true);
 
 $header_layouts = get_theme_mod('flexia_header_layouts', '1');
 
-$header_mobile_layouts = get_theme_mod('flexia_header_mobile_layouts', '1');
+$header_mobile_layouts = flexia_get_option('flexia_header_mobile_layouts', 'flexia_header_mobile_layouts_1');
 
 ?>
 
-<header id="masthead" class="site-header flexia-header-<?php echo esc_attr($header_layouts); ?> flexia-header-mobile-<?php echo esc_attr($header_mobile_layouts); ?>">
+<header id="masthead" class="site-header flexia-header-<?php echo esc_attr($header_layouts); ?> <?php echo esc_attr($header_mobile_layouts); ?>">
 
 	<?php if( $header_widget_area == true ) :
 		get_template_part( 'framework/views/template-parts/content', 'header-widgets' ); 
