@@ -3136,10 +3136,10 @@ function flexia_customize_register($wp_customize)
                     'flexia_header_mobile_layouts', 
                     array(
                         'flexia_header_mobile_layouts_1' 	=> array(
-                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-01.png',
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-mobile-01.png',
                         ),  
                         'flexia_header_mobile_layouts_2' 	=> array(
-                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-02.png',
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-mobile-02.png',
                         ),                       
                     )
                 ),
