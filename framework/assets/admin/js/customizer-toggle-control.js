@@ -1,13 +1,11 @@
 /*
  * Script run inside a Customizer control sidebar
  *
- * Enable / disable the control title by toggeling its .disabled-control-title style class on or off.
+ * Enable / disable the control title by toggeling its .disabled-control-title style class on or off. 
  */
 (function($) {
-
     
     wp.customize.bind( 'ready', function() {
-        console.log('customizer', customizer);
         if( 'flexia_blog_content_layout_standard' === customizer.flexia_blog_content_layout ) {
             flexia_blog_cotnent_hide_controls();
         }else {
