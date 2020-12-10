@@ -6,7 +6,8 @@
 (function($) {
     
     wp.customize.bind( 'ready', function() {
-        if( 'flexia_blog_content_layout_standard' === customizer.flexia_blog_content_layout ) {
+        console.log("customizer", flexia_settings);
+        if( 'flexia_blog_content_layout_standard' === flexia_settings.flexia_blog_content_layout ) {
             flexia_blog_cotnent_hide_controls();
         }else {
             flexia_blog_cotnent_show_controls();

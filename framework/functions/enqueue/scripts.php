@@ -151,14 +151,9 @@ function flexia_admin_js()
         'button_google_font' => get_theme_mod('flexia_button_font_family', true),
         'flexia_button_font_variants' => get_theme_mod('flexia_button_font_variants', true),
         'flexia_button_font_subsets' => get_theme_mod('flexia_button_font_subsets', true),
+        'flexia_blog_content_layout' => get_theme_mod( 'flexia_blog_content_layout', 'flexia_blog_content_layout_standard' ),
     );
 
     wp_localize_script('flexia-admin', 'flexia_settings', $flexia_settings);
-
-    $settings = array(
-        'ajax_url' => admin_url( 'admin-ajax.php' ),
-        'flexia_blog_content_layout' => get_theme_mod( 'flexia_blog_content_layout', 'flexia_blog_content_layout_standard' ),
-    );
-    wp_localize_script( 'flexia-admin', 'customizer', $settings );
 }
 add_action('admin_enqueue_scripts', 'flexia_admin_js');
