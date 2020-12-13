@@ -377,56 +377,6 @@ function flexia_nag_ignore()
 }
 add_action('admin_init', 'flexia_nag_ignore');
 
-// Flexia admin notices
-function flexia_admin_notices()
-{
-    if (!class_exists('Flexia_Core')) {
-        if (current_user_can('install_plugins')) {
-            $flexia_admin_notice_text = __('Thanks for using <strong>Flexia!</strong> We have added lots of cool features through <strong>Flexia Core</strong> and we recommend to keep the plugin active for maximum features.<a href="%1$s" style="text-decoration: none;"><span class="dashicons dashicons-admin-plugins" style="margin-top: -1px;margin-left: 10px;"></span> Install Plugin</a><a href="%2$s" style="text-decoration: none; margin-left: 10px;"><span class="dashicons dashicons-dismiss"></span> Dismiss</a>', 'flexia');
-
-            //Create Dismiss URL
-            $dismiss_notice_url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-            $query = parse_url($dismiss_notice_url, PHP_URL_QUERY);
-            if ($query) {
-                $dismiss_notice_url .= '&flexia_nag_ignore=0';
-            } else {
-                $dismiss_notice_url .= '?flexia_nag_ignore=0';
-            }
-
-            //Create Install URL
-            $pathpluginurl = WP_PLUGIN_DIR . '/flexia-core/flexia-core.php';
-            if (!file_exists($pathpluginurl)) {
-                $action = 'install-plugin';
-                $slug = 'flexia-core';
-                $install_url = wp_nonce_url(
-                    add_query_arg(
-                        array(
-                            'action' => $action,
-                            'plugin' => $slug
-                        ),
-                        admin_url('update.php')
-                    ),
-                    $action . '_' . $slug
-                );
-                if (!get_user_meta(get_current_user_id(), 'flexia_ignore_notice006', true)) {
-                    if ($GLOBALS['pagenow'] == "update.php" && isset($_GET['plugin']) && $_GET['plugin'] == 'flexia-core') {
-                        //No message to show
-                    } else {
-                        echo '<div class="flexia-admin-notice updated"><p>'
-                            . sprintf(
-                                $flexia_admin_notice_text,
-                                $install_url,
-                                $dismiss_notice_url
-                            ) .
-                            '</p></div>';
-                    }
-                }
-            }
-        }
-    }
-}
-add_action('admin_notices', 'flexia_admin_notices');
-
 
 /** 
  * This Function will be used for Showig Sidebar in page templates
