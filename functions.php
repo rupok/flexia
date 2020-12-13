@@ -280,6 +280,11 @@ require get_template_directory() . '/framework/functions/customizer/customizer.p
 require_once get_template_directory() . '/admin/metabox/class-flexia-metaboxes-installer.php';
 require_once get_template_directory() . '/admin/metabox/class-flexia-post-metaboxes-installer.php';
 
+/**
+ * Requiring flexia Demo Import
+ */
+require_once get_template_directory() . '/admin/demo-import/demo-import.php';
+
 // Admin functionalities
 if (is_admin()) {
     require_once get_template_directory() . '/admin/admin.php';
