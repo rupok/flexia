@@ -4685,6 +4685,7 @@ function flexia_customize_register($wp_customize)
         'settings' => 'flexia_footer_widget_area',
         'type' => 'light', // light, ios, flat
         'priority' => 30,
+        'required' => array('flexia_footer_widget_area','==', true)
     )));
 
     /**

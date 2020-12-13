@@ -86,6 +86,7 @@
 .flexia-dimension-fields .flexia-dimension-connected {
     display: none;
 }
+
 .flexia-dimension-fields .flexia-dimension-disconnected {
     display: block;
 }
@@ -94,6 +95,7 @@
     display: block;
     color: #0073aa;
 }
+
 .flexia-dimension-fields .flexia-dimension-link.connected .flexia-dimension-disconnected {
     display: none;
 }

@@ -121,6 +121,53 @@ function flexia_customizer_condition()
         array(),
         true
     );
+    wp_enqueue_script(
+        'flexia-customizer-dependency',
+        get_template_directory_uri() . '/framework/assets/admin/js/customizer-dependency.js',
+        array('customize-preview'),
+        true
+    );
+    $config = array(
+        // Navbar Settings
+        'flexia_logobar_position' => array('flexia_navbar', '==', true),
+        'flexia_logobar_bg_color' => array('flexia_navbar', '==', true),
+        'flexia_navbar_bg_color' => array('flexia_navbar', '==', true),
+        'flexia_navbar_padding' => array('flexia_navbar', '==', true),
+        'main_nav_settings_title' => array('flexia_navbar', '==', true),
+        'flexia_nav_menu_search' => array('flexia_navbar', '==', true),
+        'flexia_woo_cart_menu' => array('flexia_navbar', '==', true),
+        'flexia_enable_login_button' => array('flexia_navbar', '==', true),
+        'flexia_main_nav_menu_link_color' => array('flexia_navbar', '==', true),
+        'flexia_main_nav_menu_link_hover_color' => array('flexia_navbar', '==', true),
+        'flexia_main_nav_menu_link_hover_bg' => array('flexia_navbar', '==', true),
+        'flexia_main_nav_menu_submenu_bg_color' => array('flexia_navbar', '==', true),
+        'flexia_main_nav_menu_submenu_link_color' => array('flexia_navbar', '==', true),
+        'flexia_main_nav_menu_submenu_link_hover_color' => array('flexia_navbar', '==', true),
+        'flexia_main_nav_menu_submenu_link_hover_bg' => array('flexia_navbar', '==', true),
+        'flexia_main_nav_menu_dropdown_animation_control' => array('flexia_navbar', '==', true),
+        'flexia_custom_login_url' => array('flexia_enable_login_button', '==', true),
+        //Header Widget Area
+        'flexia_header_widget_area_bg_color' => array('flexia_header_widget_area', '==', true),
+        // Top bar
+        'flexia_enable_topbar_on_mobile' => array('flexia_enable_topbar', '==', true),
+        'flexia_topbar_bg_color' => array('flexia_enable_topbar', '==', true),
+        'flexia_topbar_content' => array('flexia_enable_topbar', '==', true),
+        // footer widget area
+        'flexia_footer_widget_column' => array('flexia_footer_widget_area', '==', true),
+        'flexia_footer_widget_area_bg_color' => array('flexia_footer_widget_area', '==', true), 
+        'flexia_footer_widget_area_bg_color' => array('flexia_footer_widget_area', '==', true),
+        'flexia_footer_widget_area_content_color' => array('flexia_footer_widget_area', '==', true),
+        'flexia_footer_widget_area_link_color' => array('flexia_footer_widget_area', '==', true),
+        'flexia_footer_widget_area_link_hover_color' => array('flexia_footer_widget_area', '==', true),
+        // footer bottom area
+        'flexia_enable_footer_menu' => array('footer_bottom', '==', true),
+        'flexia_footer_bg_color' => array('footer_bottom', '==', true),
+        'flexia_footer_content_color' => array('footer_bottom', '==', true),
+        'flexia_footer_link_color' => array('footer_bottom', '==', true),
+        'flexia_footer_link_hover_color' => array('footer_bottom', '==', true),
+        'flexia_footer_content' => array('footer_bottom', '==', true),
+    );
+    wp_localize_script( 'flexia-customizer-dependency', 'config', $config );
 }
 add_action('customize_controls_enqueue_scripts', 'flexia_customizer_condition');
 
