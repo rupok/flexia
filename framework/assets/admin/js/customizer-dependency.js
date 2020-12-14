@@ -107,7 +107,7 @@
 
             if (!_.isUndefined(control)) {
 
-                // If control has dependency defined
+                // If control has required defined
                 if ('undefined' != typeof config[id]) {
                     var check = false;
                     var conditions = config[id];
@@ -129,7 +129,7 @@
         },
 
         /**
-         * Checks dependency condtions for controls
+         * Checks dependency conditions for controls
          *
          * @method checkDependency
          */

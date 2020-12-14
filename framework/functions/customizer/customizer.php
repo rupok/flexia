@@ -3672,12 +3672,11 @@ function flexia_customize_register($wp_customize)
         'sanitize_callback' => 'esc_html',
     ));
 
-    $wp_customize->add_control('flexia_main_nav_menu_dropdown_animation_control', array(
+    $wp_customize->add_control('flexia_main_nav_menu_dropdown_animation', array(
         'label' => 'Dropdown animation',
         'section' => 'flexia_header_navbar',
         'settings' => 'flexia_main_nav_menu_dropdown_animation',
         'type' => 'select',
-        'priority' => 18,
         'choices' => array(
             'fade' => 'Fade',
             'to-top' => 'To Top',
@@ -4191,8 +4190,8 @@ function flexia_customize_register($wp_customize)
         'sanitize_callback' => 'esc_html',
     ));
 
-    $wp_customize->add_control('flexia_top_nav_menu_dropdown_animation_control', array(
-        'label' => 'Dropdown animation',
+    $wp_customize->add_control('flexia_top_nav_menu_dropdown_animation', array(
+        'label' => __('Dropdown animation','flexia'),
         'section' => 'flexia_header_top',
         'priority' => 31,
         'settings' => 'flexia_top_nav_menu_dropdown_animation',

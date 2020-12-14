@@ -54,39 +54,9 @@
         jQuery('.flexia-gradient').parent().addClass('flexia-gradient-control');
     });
 
-
-    wp.customize.bind("ready", function() {
-        // Ready?
-
-        var customize = this; // Customize object alias.
-        // Array with the control names
-        // TODO: Replace #CONTROLNAME01#, #CONTROLNAME02# etc with the real control names.
-        var toggleControls = ["#CONTROLNAME01#", "#CONTROLNAME02#"];
-        $.each(toggleControls, function(index, control_name) {
-            customize(control_name, function(value) {
-                var controlTitle = customize
-                    .control(control_name)
-                    .container.find(".customize-control-title"); // Get control  title.
-                // 1. On loading.
-                controlTitle.toggleClass(
-                    "disabled-control-title", !value.get()
-                );
-                // 2. Binding to value change.
-                value.bind(function(to) {
-                    controlTitle.toggleClass(
-                        "disabled-control-title", !value.get()
-                    );
-                });
-            });
-        });
-    });
-
     // Blog Content Display Excerpt Show/Hide
     wp.customize.bind("ready", function() {
-        if (
-            "flexia_blog_content_display_full" ===
-            flexia_settings.flexia_blog_content_display
-        ) {
+        if ("flexia_blog_content_display_full" === flexia_settings.flexia_blog_content_display) {
             flexia_blog_cotnent_hide_controls();
         } else {
             flexia_blog_cotnent_show_controls();
@@ -108,43 +78,6 @@
 
         function flexia_blog_cotnent_show_controls() {
             $("#customize-control-flexia_blog_excerpt_count").show();
-        }
-    });
-
-    // Topbar Settings Show/Hide
-    wp.customize.bind("ready", function() {
-        if (flexia_settings.flexia_enable_topbar) {
-            flexia_blog_cotnent_show_controls();
-        } else {
-            flexia_blog_cotnent_hide_controls();
-        }
-
-        wp.customize("flexia_enable_topbar", function(value) {
-            value.bind(function(to) {
-                if (true == to) {
-                    flexia_blog_cotnent_show_controls();
-                } else {
-                    flexia_blog_cotnent_hide_controls();
-                }
-            });
-        });
-
-        function flexia_blog_cotnent_hide_controls() {
-            $("#customize-control-flexia_enable_topbar_menu").hide();
-            $("#customize-control-flexia_topbar_bg_color").hide();
-            $("#customize-control-flexia_topbar_content").hide();
-            $(
-                "#customize-control-top_nav_settings_title, #customize-control-top_nav_settings_title, #customize-control-flexia_top_nav_menu_link_color, #customize-control-flexia_top_nav_menu_link_hover_color, #customize-control-flexia_top_nav_menu_link_hover_bg, #customize-control-flexia_top_nav_menu_submenu_bg_color, #customize-control-flexia_top_nav_menu_submenu_link_color, #customize-control-flexia_top_nav_menu_submenu_link_color, #customize-control-flexia_top_nav_menu_submenu_link_hover_color, #customize-control-flexia_top_nav_menu_submenu_link_hover_bg, #customize-control-flexia_top_nav_menu_dropdown_animation_control"
-            ).hide();
-        }
-
-        function flexia_blog_cotnent_show_controls() {
-            $("#customize-control-flexia_enable_topbar_menu").show();
-            $("#customize-control-flexia_topbar_bg_color").show();
-            $("#customize-control-flexia_topbar_content").show();
-            $(
-                "#customize-control-top_nav_settings_title, #customize-control-top_nav_settings_title, #customize-control-flexia_top_nav_menu_link_color, #customize-control-flexia_top_nav_menu_link_hover_color, #customize-control-flexia_top_nav_menu_link_hover_bg, #customize-control-flexia_top_nav_menu_submenu_bg_color, #customize-control-flexia_top_nav_menu_submenu_link_color, #customize-control-flexia_top_nav_menu_submenu_link_color, #customize-control-flexia_top_nav_menu_submenu_link_hover_color, #customize-control-flexia_top_nav_menu_submenu_link_hover_bg, #customize-control-flexia_top_nav_menu_dropdown_animation_control"
-            ).show();
         }
     });
 
