@@ -235,7 +235,7 @@ function flexia_customizer_condition()
         'flexia_footer_link_hover_color' => array('footer_bottom', '==', true),
         'flexia_footer_content' => array('footer_bottom', '==', true),
     );
-    wp_localize_script( 'flexia-customizer-dependency', 'config', $config );
+    wp_localize_script( 'flexia-customizer-dependency', 'config', apply_filters('flexia_customizer_dependency',$config) );
 }
 add_action('customize_controls_enqueue_scripts', 'flexia_customizer_condition');
 

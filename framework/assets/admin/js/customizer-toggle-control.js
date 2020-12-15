@@ -4,18 +4,9 @@
  * Enable / disable the control title by toggeling its .disabled-control-title style class on or off. 
  */
 (function($) {
-<<<<<<< HEAD
-
-    'use_strict';
 
     wp.customize.bind('ready', function() {
-        if ('flexia_blog_content_layout_standard' === customizer.flexia_blog_content_layout) {
-=======
-    
-    wp.customize.bind( 'ready', function() {
-        console.log("customizer", flexia_settings);
-        if( 'flexia_blog_content_layout_standard' === flexia_settings.flexia_blog_content_layout ) {
->>>>>>> 11bc266341878a29eb9cbfd599ea0ac977dd1679
+        if ('flexia_blog_content_layout_standard' === flexia_settings.flexia_blog_content_layout) {
             flexia_blog_cotnent_hide_controls();
         } else {
             flexia_blog_cotnent_show_controls();
