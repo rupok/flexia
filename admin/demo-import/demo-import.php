@@ -5,9 +5,10 @@ function flexia_import_files() {
       array(
         'import_file_name'           => 'Flexia Demo 1',
         'categories'                 => array( 'elementor', 'templately' ),
-        'import_file_url'            => site_url() . '/wp-content/themes/flexia/demo/freshwp.xml',
-        'import_widget_file_url'     => site_url() . '/wp-content/themes/flexia/demo/flexia-widgets.wie',
-        'import_customizer_file_url' => site_url() . '/wp-content/themes/flexia/demo/flexia-customizer.dat',
+        // 'import_file_url'            => site_url() . '/wp-content/themes/flexia/demo/freshwp.xml',
+        'import_file_url'            => 'http://fencermonir.com/flexia-demo/flexiapro.xml',
+        // 'import_widget_file_url'     => site_url() . '/wp-content/themes/flexia/demo/flexia-widgets.wie',
+        // 'import_customizer_file_url' => site_url() . '/wp-content/themes/flexia/demo/flexia-customizer.dat',
         // 'import_redux'               => array(
         //   array(
         //     'file_url'    => 'http://www.your_domain.com/ocdi/redux.json',
