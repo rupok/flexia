@@ -5,12 +5,6 @@
 */
 function flexia_ocdi_import_files() {
     return array(
-        array(
-            'import_file_name'             => 'Flexia Demo',
-            'local_import_file'            => trailingslashit( get_template_directory() ) . 'demo/flexia-demo.xml',
-            'local_import_widget_file'     => trailingslashit( get_template_directory() ) . 'demo/flexia-widgets.wie',
-            'local_import_customizer_file' => trailingslashit( get_template_directory() ) . 'demo/flexia-customizer.dat'
-        ),
     );
 }
 add_filter( 'pt-ocdi/import_files', 'flexia_ocdi_import_files' );
