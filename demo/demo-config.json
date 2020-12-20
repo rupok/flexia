@@ -1,6 +1,6 @@
 [{
     "demo_name": "Flexia Demo",
-    "file_path": "flexia-demo.xml",
+    "file_path": "demo.xml",
     "settings": {
         "reading_settings": {
             "homepage": "Home",
@@ -15,10 +15,6 @@
         "navigation": [{
                 "name": "Primary Menu",
                 "location": "primary"
-            },
-            {
-                "name": "Topbar Menu",
-                "location": "topbar-menu"
             }
         ]
     }
