@@ -5,9 +5,9 @@ function flexia_import_files() {
       array(
         'import_file_name'           => 'Flexia Demo 1',
         'categories'                 => array( 'elementor', 'templately' ),
-        'import_file_url'            => site_url() . '/wp-content/themes/flexia/demo/demo1.xml',
-        'import_widget_file_url'     => site_url() . '/wp-content/themes/flexia/demo/widgets.wie',
-        'import_customizer_file_url' => site_url() . '/wp-content/themes/flexia/demo/customizer.dat',
+        'import_file_url'            => 'http://fencermonir.com/flexia-demo/flexia-demo.xml',
+        'import_widget_file_url'     => 'http://fencermonir.com/flexia-demo/flexia-widgets.wie',
+        'import_customizer_file_url' => 'http://fencermonir.com/flexia-demo/flexia-export.dat',
         // 'import_redux'               => array(
         //   array(
         //     'file_url'    => 'http://www.your_domain.com/ocdi/redux.json',
@@ -148,5 +148,9 @@ function flexia_ocdi_before_content_import_setup() {
 add_action( 'pt-ocdi/before_content_import', 'flexia_ocdi_before_content_import_setup' );
 
 add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
-
-?>
+/**
+ * add extra time to timeout
+ */
+add_filter('pt-ocdi/timeout_for_downloading_import_file', function(){
+  return 200;
+});
