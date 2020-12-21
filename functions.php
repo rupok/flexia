@@ -285,6 +285,12 @@ require_once get_template_directory() . '/admin/metabox/class-flexia-post-metabo
  */
 require_once get_template_directory() . '/admin/demo-import/demo-import.php';
 
+/**
+ * Requiring required plugins
+ */
+require_once get_template_directory() . '/admin/tgm/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/admin/tgm/plugins.php';
+
 // Admin functionalities
 if (is_admin()) {
     require_once get_template_directory() . '/admin/admin.php';
