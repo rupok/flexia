@@ -3,7 +3,7 @@
     "file_path": "demo.xml",
     "settings": {
         "reading_settings": {
-            "homepage": "Home",
+            "homepage": "Homepage",
             "blog": "Blog"
         },
         "woocommerce_pages": {

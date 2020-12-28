@@ -148,9 +148,3 @@ function flexia_ocdi_before_content_import_setup() {
 add_action( 'pt-ocdi/before_content_import', 'flexia_ocdi_before_content_import_setup' );
 
 add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
-/**
- * add extra time to timeout
- */
-add_filter('pt-ocdi/timeout_for_downloading_import_file', function(){
-  return 200;
-});
