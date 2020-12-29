@@ -2220,6 +2220,7 @@ big {
   width: 100%;
   color: #262625;
   z-index: 99;
+  position: relative;
   box-shadow: 0 0.15em 0.35em 0 rgba(0, 0, 0, 0.135);
   transition: all 300ms ease-in-out;
   transform: translate3d(0, 0, 0);
@@ -2832,10 +2833,6 @@ table tbody + tbody {
 }
 table table table {
   background-color: #fff;
-}
-
-@-ms-viewport {
-  width: device-width;
 }
 html {
   box-sizing: border-box;
@@ -4881,15 +4878,6 @@ body.archive .flexia-wrapper > .content-area article.post {
   max-width: 1400px;
   margin: 3em auto 0;
 }
-.single .flexia-blank-container .entry-content-wrapper {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-}
-.single .flexia-blank-container .entry-content-wrapper .single-post-entry {
-  padding: 0;
-  margin: 0;
-}
 .single .single-post-meta-large .entry-meta {
   display: flex;
   flex-flow: row nowrap;
@@ -5981,7 +5969,6 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   overflow: hidden;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   color: transparent;
 }
@@ -7369,10 +7356,7 @@ ol.comment-list li {
 }
 .comments-area .comment-form label {
   color: #323232;
-  font-size: 1em;
-  margin-bottom: 10px;
-  display: block;
-  font-weight: 600;
+  font-size: 13px;
 }
 .comments-area .blog-img-wide.blogdetails img {
   height: auto;
