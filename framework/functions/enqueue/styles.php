@@ -1,7 +1,7 @@
 <?php
 
 // No direct access, please
-if ( ! defined( 'ABSPATH' ) ) exit;
+if (!defined('ABSPATH')) exit;
 
 /**
  * Flexia stylesheets
@@ -13,20 +13,24 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * Enqueue scripts and styles.
  */
 
-function flexia_site_styles() {
-	if( FLEXIA_DEV_MODE == true ) {
-		wp_enqueue_style( 'flexia-theme-style', get_template_directory_uri() . '/framework/assets/sass/style.css');
+function flexia_site_styles()
+{
+	if (FLEXIA_DEV_MODE == true) {
+		wp_enqueue_style('flexia-theme-style', get_template_directory_uri() . '/framework/assets/sass/style.css');
 	} else {
-		wp_enqueue_style( 'flexia-theme-style', get_template_directory_uri() . '/framework/assets/site/css/style.css');
+		wp_enqueue_style('flexia-theme-style', get_template_directory_uri() . '/framework/assets/site/css/style.css');
 	}
 	wp_enqueue_style('flexia-google-fonts', flexia_fonts_url(), array(), null);
 
+	// enqueue demo import css
+	wp_enqueue_style('flexia-demo-import', get_template_directory_uri() . '/framework/assets/site/css/demo-import.css', array(), null, 'all');
 }
-add_action( 'wp_enqueue_scripts', 'flexia_site_styles' );
+add_action('wp_enqueue_scripts', 'flexia_site_styles');
 
 //Include Gutenberg Template Style
-function flexia_gutenberg_template_style() {
-	if ( is_page_template('template-gutenberg.php') || is_page_template('template-post-gutenberg.php') ) {
+function flexia_gutenberg_template_style()
+{
+	if (is_page_template('template-gutenberg.php') || is_page_template('template-post-gutenberg.php')) {
 		wp_enqueue_style(
 			'gutenberg-style',
 			get_template_directory_uri() . '/framework/assets/site/css/gutenburg-style.css'
@@ -50,7 +54,7 @@ function flexia_gutenberg_template_style() {
 			width: {$width};
 			max-width: {$max_width};
 		}";
-		wp_add_inline_style( 'gutenberg-style', $custom_css );
+		wp_add_inline_style('gutenberg-style', $custom_css);
 	}
 }
-add_action( 'wp_enqueue_scripts', 'flexia_gutenberg_template_style' );
+add_action('wp_enqueue_scripts', 'flexia_gutenberg_template_style');

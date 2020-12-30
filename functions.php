@@ -286,7 +286,7 @@ require_once get_template_directory() . '/admin/metabox/class-flexia-post-metabo
 require_once get_template_directory() . '/admin/demo-import/demo-import.php';
 
 /**
- * Requiring required plugins
+ * Requiring required plugins 
  */
 require_once get_template_directory() . '/admin/tgm/class-tgm-plugin-activation.php';
 require_once get_template_directory() . '/admin/tgm/plugins.php';
@@ -405,3 +405,12 @@ function flexia_sidebar_content($sidebar_id, $sidebar_position, $classes)
 		</div>
 	</aside>';
 }
+/**
+ * Add demo import number in options table
+ */
+function flexia_add_demo_number(){
+    if( ! get_option( 'flexia_demo_import' ) ) {
+        add_option('flexia_demo_import', 0);
+    }
+}
+add_action('init', 'flexia_add_demo_number');

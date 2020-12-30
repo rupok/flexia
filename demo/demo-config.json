@@ -13,9 +13,8 @@
             "woocommerce_myaccount_page_id": "My Account"
         },
         "navigation": [{
-                "name": "Primary Menu",
-                "location": "primary"
-            }
-        ]
+            "name": "Primary Menu",
+            "location": "primary"
+        }]
     }
 }]
