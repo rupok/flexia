@@ -3114,46 +3114,46 @@ function flexia_customize_register($wp_customize)
     ] );
 
     /**
-     * Header Layout Section: Mobile Layouts
-     * @flexia_header_mobile_layouts
+     * Header Layout Section: Header Layouts Mobile
+     * @flexia_header_moible_layouts
      * Parent: @flexia_header_panel -> flexia_header_layout
      */
-    // $wp_customize->add_setting('flexia_header_mobile_layouts', array(
-    //     'default' => $defaults['flexia_header_mobile_layouts'],
-    //     'sanitize_callback' => 'flexia_sanitize_choices',
-    // ));
+    $wp_customize->add_setting('flexia_header_mobile_layouts', array(
+        'default' => $defaults['flexia_header_mobile_layouts'],
+        'sanitize_callback' => 'flexia_sanitize_choices',
+    ));
 
-    // $wp_customize->add_control(
-    //     new Flexia_Radio_Image_Control(
-    //         $wp_customize,
-    //         'flexia_header_mobile_layouts',
-    //         array(
-    //             'label' => __('Mobile Layouts', 'flexia'),
-    //             'section' => 'flexia_header_layout',
-    //             'settings' => 'flexia_header_mobile_layouts',
-    //             'type'          => 'flexia-radio-image',
-    //             'choices'		=> apply_filters(
-    //                 'mobile_flexia_header_layouts', 
-    //                 array(
-    //                     '1' 	=> array(
-    //                         'image' => get_template_directory_uri() . '/admin/img/header-layouts/mobile-1.png',
-    //                     ),
-    //                     '2' 	=> array(
-    //                         'image' => get_template_directory_uri() . '/admin/img/header-layouts/mobile-2.png',
-    //                     ),
-    //                     '3' 	=> array(
-    //                         'image' => get_template_directory_uri() . '/admin/img/header-layouts/mobile-3.png',
-    //                     ),
-    //                     '4' 	=> array(
-    //                         'image' => get_template_directory_uri() . '/admin/img/header-layouts/mobile-4.png',
-    //                         'pro'   => true,
-    //                         'url'   => 'https://flexia.pro/pricing/',
-    //                     ),
-    //                 )
-    //             )
-    //         )
-    //     )
-    // );
+    $wp_customize->add_control(
+		new Flexia_Radio_Image_Control(
+            $wp_customize,
+            'flexia_header_mobile_layouts',
+            array(
+                'type'          => 'flexia-radio-image',
+                'settings'		=> 'flexia_header_mobile_layouts',
+                'section'		=> 'flexia_header_layout',
+                'label'			=> __('Header Styles Mobile', 'flexia'),
+                'choices'		=> apply_filters(
+                    'flexia_header_mobile_layouts', 
+                    array(
+                        'flexia_header_mobile_layouts_1' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-mobile-01.png',
+                        ),  
+                        'flexia_header_mobile_layouts_2' 	=> array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-mobile-02.png',
+                        ),                       
+                    )
+                ),
+            ) 
+        )
+    );
+
+    $wp_customize->selective_refresh->add_partial( "flexia_header_mobile_layouts_partial", [
+        'selector'            => "#masthead",
+        'settings'            => [
+            "flexia_header_mobile_layouts",
+        ],
+        'container_inclusive' => true,
+    ] );
 
 
     /**
@@ -3672,12 +3672,11 @@ function flexia_customize_register($wp_customize)
         'sanitize_callback' => 'esc_html',
     ));
 
-    $wp_customize->add_control('flexia_main_nav_menu_dropdown_animation_control', array(
+    $wp_customize->add_control('flexia_main_nav_menu_dropdown_animation', array(
         'label' => 'Dropdown animation',
         'section' => 'flexia_header_navbar',
         'settings' => 'flexia_main_nav_menu_dropdown_animation',
         'type' => 'select',
-        'priority' => 18,
         'choices' => array(
             'fade' => 'Fade',
             'to-top' => 'To Top',
@@ -4191,8 +4190,8 @@ function flexia_customize_register($wp_customize)
         'sanitize_callback' => 'esc_html',
     ));
 
-    $wp_customize->add_control('flexia_top_nav_menu_dropdown_animation_control', array(
-        'label' => 'Dropdown animation',
+    $wp_customize->add_control('flexia_top_nav_menu_dropdown_animation', array(
+        'label' => __('Dropdown animation','flexia'),
         'section' => 'flexia_header_top',
         'priority' => 31,
         'settings' => 'flexia_top_nav_menu_dropdown_animation',
@@ -4685,6 +4684,7 @@ function flexia_customize_register($wp_customize)
         'settings' => 'flexia_footer_widget_area',
         'type' => 'light', // light, ios, flat
         'priority' => 30,
+        'required' => array('flexia_footer_widget_area','==', true)
     )));
 
     /**
