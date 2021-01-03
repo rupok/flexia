@@ -86,6 +86,7 @@
 .flexia-dimension-fields .flexia-dimension-connected {
     display: none;
 }
+
 .flexia-dimension-fields .flexia-dimension-disconnected {
     display: block;
 }
@@ -94,13 +95,14 @@
     display: block;
     color: #0073aa;
 }
+
 .flexia-dimension-fields .flexia-dimension-link.connected .flexia-dimension-disconnected {
     display: none;
 }
 
 .flexia-dimension-fields li:not(:first-child) {
     width: 20%;
-    padding-left: 5px;
+    padding-left: 4px;
 }
 
 .flexia-dimension-fields li input {
@@ -111,4 +113,21 @@
     text-align: center;
     font-size: 11px;
     display: block;
+}
+
+.flexia-spacing-responsive-units {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.single-unit {
+    padding: 2px 8px;
+    background: lightgoldenrodyellow;
+    margin-right: 5px;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+}
+
+.single-unit.active {
+    border-color: black;
 }
