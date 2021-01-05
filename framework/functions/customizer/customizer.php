@@ -3451,6 +3451,7 @@ function flexia_customize_register($wp_customize)
                     'input2'  	=> 15,
                     'input3'  	=> 0,
                     'input4'  	=> 15,
+                    'data_unit' => 'px'
                 )
             ))
     );

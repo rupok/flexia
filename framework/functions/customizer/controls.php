@@ -37,7 +37,7 @@ class Customizer_Range_Value_Control extends WP_Customize_Control
 			<?php endif; ?>
 			<div class="range-slider" data-default-val="<?php echo esc_attr($this->settings['default']->value()); ?>" style="width:100%; display:flex;flex-direction: row;justify-content: flex-start;">
 				<span style="width:100%; flex: 1 0 0; vertical-align: middle;"><input class="range-slider__range" type="range" value="<?php echo esc_attr($this->value()); ?>" <?php $this->input_attrs();
-																																													$this->link(); ?>>
+																																												$this->link(); ?>>
 					<span class="range-slider__value">0</span></span>
 			</div>
 			<?php if (!empty($this->description)) : ?>
@@ -332,7 +332,7 @@ class Flexia_Number_Control extends WP_Customize_Control
 					<span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
 					<!-- <a href="#" title="<?php //echo esc_html__('Reset', 'flexia') 
 											?>" class="flexia-customizer-reset <?php //echo esc_html( $this->type ); 
-																															?>"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20px"><path d="M 25 2 C 12.321124 2 2 12.321124 2 25 C 2 37.678876 12.321124 48 25 48 C 37.678876 48 48 37.678876 48 25 A 2.0002 2.0002 0 1 0 44 25 C 44 35.517124 35.517124 44 25 44 C 14.482876 44 6 35.517124 6 25 C 6 14.482876 14.482876 6 25 6 C 30.475799 6 35.391893 8.3080175 38.855469 12 L 35 12 A 2.0002 2.0002 0 1 0 35 16 L 46 16 L 46 5 A 2.0002 2.0002 0 0 0 43.970703 2.9726562 A 2.0002 2.0002 0 0 0 42 5 L 42 9.5253906 C 37.79052 4.9067015 31.727675 2 25 2 z"></path></svg></a> -->
+																				?>"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20px"><path d="M 25 2 C 12.321124 2 2 12.321124 2 25 C 2 37.678876 12.321124 48 25 48 C 37.678876 48 48 37.678876 48 25 A 2.0002 2.0002 0 1 0 44 25 C 44 35.517124 35.517124 44 25 44 C 14.482876 44 6 35.517124 6 25 C 6 14.482876 14.482876 6 25 6 C 30.475799 6 35.391893 8.3080175 38.855469 12 L 35 12 A 2.0002 2.0002 0 1 0 35 16 L 46 16 L 46 5 A 2.0002 2.0002 0 0 0 43.970703 2.9726562 A 2.0002 2.0002 0 0 0 42 5 L 42 9.5253906 C 37.79052 4.9067015 31.727675 2 25 2 z"></path></svg></a> -->
 				<?php endif; ?>
 				<input type="number" data-default-val="<?php echo esc_attr($this->settings['default']->value()); ?>" class="<?php echo esc_attr($this->type) ?>" value="<?php echo esc_attr($this->value()); ?>" <?php $this->input_attrs();
 																																																					$this->link(); ?>>
@@ -401,7 +401,7 @@ class Flexia_Radio_Image_Control extends WP_Customize_Control
 				} else {
 				?>
 					<input class="image-select" type="radio" value="<?php echo esc_attr($value) ?>" id="<?php echo esc_attr($this->id) . $value; ?>" name="<?php echo esc_attr($name) ?>" <?php $this->link();
-																																																checked($this->value(), $value); ?>>
+																																															checked($this->value(), $value); ?>>
 					<label for="<?php echo esc_attr($this->id) . $value; ?>">
 						<img src="<?php echo esc_url($label['image']) ?>" alt="<?php echo esc_attr($value) ?>" title="<?php echo esc_attr($value) ?>">
 						<?php
@@ -744,12 +744,13 @@ class Flexia_Dimension_Control extends WP_Customize_Control
 			echo '<span class="description customize-control-description">' . sanitize_text_field($this->description) . '</span>';
 		}
 	?>
+		<input type="hidden" value="" class="flexia-dimension-control <?php echo esc_attr($this->id) ?>" data-customize-setting-link="<?php echo esc_attr($this->id); ?>">
 		<ul class="flexia-spacing-responsive-units">
 			<li class="single-unit<?php echo 'px' === $dimension_val['data_unit'] ? ' active' : ''; ?>" data-unit="px"><span class="unit-text">px</span></li>
 			<li class="single-unit<?php echo 'em' === $dimension_val['data_unit'] ? ' active' : ''; ?>" data-unit="em"><span class="unit-text">em</span></li>
 			<li class="single-unit<?php echo '%' === $dimension_val['data_unit'] ? ' active' : ''; ?>" data-unit="%"><span class="unit-text">%</span></li>
 		</ul>
-		<input type="hidden" value="" class="flexia-dimension-control <?php echo esc_attr($this->id) ?>" data-customize-setting-link="<?php echo esc_attr($this->id); ?>">
+
 		<ul class="flexia-dimension-fields">
 			<li class="flexia-dimension-link">
 				<span class="dashicons dashicons-admin-links flexia-dimension-connected" data-element-connect="<?php echo esc_attr($this->id) ?>" title="Link Values Together"></span>
