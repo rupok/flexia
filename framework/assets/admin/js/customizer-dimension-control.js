@@ -7,7 +7,7 @@
             let dinput2 = $(this).find('.flexia-dimension-input-2');
             let dinput3 = $(this).find('.flexia-dimension-input-3');
             let dinput4 = $(this).find('.flexia-dimension-input-4');
-            let data_unit = $(this).find('.flexia-dimension-input-1').attr('data-unit');
+            let data_unit = $(this).find('.flexia-dimension-link').attr('data-unit');
             let dimension_result = {
                 input1: dinput1.val(),
                 input2: dinput2.val(),

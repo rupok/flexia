@@ -752,24 +752,24 @@ class Flexia_Dimension_Control extends WP_Customize_Control
 		</ul>
 
 		<ul class="flexia-dimension-fields">
-			<li class="flexia-dimension-link">
+			<li class="flexia-dimension-link" data-unit="<?php echo esc_attr($dimension_val['data_unit']); ?>">
 				<span class="dashicons dashicons-admin-links flexia-dimension-connected" data-element-connect="<?php echo esc_attr($this->id) ?>" title="Link Values Together"></span>
 				<span class="dashicons dashicons-editor-unlink flexia-dimension-disconnected" data-element-connect="<?php echo esc_attr($this->id) ?>" title="Link Values Together"></span>
 			</li>
 			<li class="dimension-field">
-				<input type="number" class="flexia-dimension-input flexia-dimension-input-1 disconnected" value="<?php echo esc_attr($dimension_val['input1']); ?>" data-element-connect="<?php echo esc_attr($this->id) ?>" data-input="input1" data-unit="px">
+				<input type="number" class="flexia-dimension-input flexia-dimension-input-1 disconnected" value="<?php echo esc_attr($dimension_val['input1']); ?>" data-element-connect="<?php echo esc_attr($this->id) ?>" data-input="input1" data-unit="<?php echo esc_attr($dimension_val['data_unit']); ?>">
 				<span class="dimension-title"><?php echo $this->input_fields['input1'] ?></span>
 			</li>
 			<li class="dimension-field">
-				<input type="number" class="flexia-dimension-input flexia-dimension-input-2 disconnected" value="<?php echo esc_attr($dimension_val['input2']); ?>" data-element-connect="<?php echo esc_attr($this->id) ?>" data-input="input2" data-unit="px">
+				<input type="number" class="flexia-dimension-input flexia-dimension-input-2 disconnected" value="<?php echo esc_attr($dimension_val['input2']); ?>" data-element-connect="<?php echo esc_attr($this->id) ?>" data-input="input2" data-unit="<?php echo esc_attr($dimension_val['data_unit']); ?>">
 				<span class="dimension-title"><?php echo $this->input_fields['input2'] ?></span>
 			</li>
 			<li class="dimension-field">
-				<input type="number" class="flexia-dimension-input flexia-dimension-input-3 disconnected" value="<?php echo esc_attr($dimension_val['input3']); ?>" data-element-connect="<?php echo esc_attr($this->id) ?>" data-input="input3" data-unit="px">
+				<input type="number" class="flexia-dimension-input flexia-dimension-input-3 disconnected" value="<?php echo esc_attr($dimension_val['input3']); ?>" data-element-connect="<?php echo esc_attr($this->id) ?>" data-input="input3" data-unit="<?php echo esc_attr($dimension_val['data_unit']); ?>">
 				<span class="dimension-title"><?php echo $this->input_fields['input3'] ?></span>
 			</li>
 			<li class="dimension-field">
-				<input type="number" class="flexia-dimension-input flexia-dimension-input-4 disconnected" value="<?php echo esc_attr($dimension_val['input4']); ?>" data-element-connect="<?php echo esc_attr($this->id) ?>" data-input="input4" data-unit="px">
+				<input type="number" class="flexia-dimension-input flexia-dimension-input-4 disconnected" value="<?php echo esc_attr($dimension_val['input4']); ?>" data-element-connect="<?php echo esc_attr($this->id) ?>" data-input="input4" data-unit="<?php echo esc_attr($dimension_val['data_unit']); ?>">
 				<span class="dimension-title"><?php echo $this->input_fields['input4'] ?></span>
 			</li>
 		</ul>

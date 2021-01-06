@@ -19,7 +19,6 @@ function generateCSS() {
 function genaerateDimemsion(value, measure = 'px') {
 
     var valueArr = JSON.parse(value);
-    // console.log(valueArr);
 
     const dimensionArr = [];
     var dimensionAttr, input1, input2, input3, input4 = '';
