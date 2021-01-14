@@ -283,6 +283,12 @@ require get_template_directory() . '/framework/functions/customizer/defaults.php
 require get_template_directory() . '/framework/functions/customizer/customizer.php';
 
 /**
+ * Extend Customizer
+ */
+require get_template_directory() . '/framework/functions/customizer/customizer-extend/class-flexia-wp-customize-panel.php';
+require get_template_directory() . '/framework/functions/customizer/customizer-extend/class-flexia-wp-customize-section.php';
+
+/**
  * Requiring flexia metaboxes
  */
 require_once get_template_directory() . '/admin/metabox/class-flexia-metaboxes-installer.php';

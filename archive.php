@@ -1,7 +1,7 @@
 <?php
 
 // No direct access, please
-if ( ! defined( 'ABSPATH' ) ) exit;
+if (!defined('ABSPATH')) exit;
 
 /**
  * The template for displaying archive pages
@@ -11,62 +11,48 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @package Flexia
  */
 
-get_header(); ?>
-	
-	<header class="page-header archive-header" style="background-image: url('<?php echo esc_attr(header_image()); ?>');">
-        <div class="header-inner">
-            <div class="header-content">
-				<?php the_archive_title( '<h2 class="page-title">', '</h2>' ); ?>
-                <?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
-            </div>
-        </div>
-    </header>
+get_header();
+/**
+ * Flexia hook for Blog Header
+ */
+do_action('flexia_archive_header');
+?>
 
 	<div id="content" class="site-content">
 		<div class="flexia-wrapper flexia-container max width">
 
 			<div id="primary" class="content-area">
-				<main id="main" class="site-main flexia-container">
 
 				<?php
-				if ( have_posts() ) :
+				/**
+				 * Flexia hook for Archive Before Main Content/ Loop
+				 */
 
-					if ( is_home() && ! is_front_page() ) : ?>
-						<header>
-							<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-						</header>
+				do_action('flexia_archive_before_content');
+				?>
 
-					<?php
-					endif;
+				<?php
+				/**
+				 * Flexia hook for Archive Content/The Loop
+				 */
 
-					/* Start the Loop */
-					while ( have_posts() ) : the_post();
+				do_action('flexia_archive_content');
+				?>
 
-						/*
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'framework/views/template-parts/content', get_post_format() );
+				<?php
+				/**
+				 * Flexia hook for archive After Main Content/ Loop
+				 */
 
-					endwhile;
+				do_action('flexia_archive_after_content');
+				?>
 
-					get_template_part( 'framework/views/template-parts/content', 'pagination' ); 
-
-				else :
-
-					get_template_part( 'framework/views/template-parts/content', 'none' );
-
-				endif; ?>
-
-				
-				</main><!-- #main -->
 			</div><!-- #primary -->
 
 			<?php get_sidebar(); ?>
 
 		</div><!-- #flexia-wrapper -->
-	</div><!-- #content --> 
+	</div><!-- #content -->
 </div><!-- #page -->
 
 <?php

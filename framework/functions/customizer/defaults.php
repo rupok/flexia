@@ -17,8 +17,6 @@ if (!function_exists('flexia_site_primary_color')) {
     }
 }
 
-
-
 if (!function_exists('flexia_get_option_defaults')) {
 /**
  * Set default options
@@ -267,6 +265,30 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_call_to_action_button_text' => 'Learn More',
             'flexia_call_to_action_url' => get_site_url(),
 
+            // archive page header settings
+            'flexia_show_archive_header' => get_theme_mod('show_blog_header', true),
+            'flexia_archive_header_bg_color' => get_theme_mod('flexia_blog_header_bg_color','#612ee9'),
+            'flexia_archive_title_font_size' => get_theme_mod('flexia_blog_title_font_size','54'),
+            'flexia_archive_title_font_color' => get_theme_mod('flexia_blog_title_font_color','#ffffff'),
+            'flexia_archive_header_title_font_family' => get_theme_mod('flexia_blog_header_title_font_family','Poppins'),
+            'flexia_archive_desc_font_size' => get_theme_mod('flexia_blog_desc_font_size','28'),
+            'flexia_archive_desc_font_color' => get_theme_mod('flexia_blog_desc_font_color','#ffffff'),
+            'flexia_archive_header_desc_font_family' => get_theme_mod('flexia_blog_header_desc_font_family','Nunito'),
+
+            // archive page content settings
+            'flexia_archive_content_display' => get_theme_mod('flexia_blog_content_display'),
+            'flexia_archive_excerpt_count' => get_theme_mod('flexia_blog_excerpt_count',60),
+            'flexia_archive_content_layout' => get_theme_mod('flexia_blog_content_layout'),
+            'flexia_archive_per_page' => get_theme_mod('flexia_blog_per_page',10),
+            'flexia_archive_grid_column' => get_theme_mod('flexia_blog_grid_column',3),
+            'flexia_archive_load_more' => get_theme_mod('flexia_blog_load_more',true),
+            'flexia_archive_load_more_text' => get_theme_mod('flexia_blog_load_more_text',__('Load More','flexia')),
+            'flexia_archive_loading_text' => get_theme_mod('flexia_blog_loading_text','Loading...'),
+            'flexia_archive_load_more_btn_font_size' => get_theme_mod('flexia_load_more_btn_font_size', 14),
+            'flexia_archive_load_more_btn_bg' => get_theme_mod('flexia_load_more_btn_bg','#444444'),
+            'flexia_archive_load_more_font_color' => get_theme_mod('flexia_load_more_font_color', '#ffffff'),
+            'flexia_archive_load_more_btn_bg_active' => get_theme_mod('flexia_load_more_btn_bg_active','#27bdbd'),
+            'flexia_archive_load_more_font_color_active' => get_theme_mod('flexia_load_more_font_color_active','#ffffff'),
         );
 
         return apply_filters('flexia_option_defaults', $flexia_defaults);
