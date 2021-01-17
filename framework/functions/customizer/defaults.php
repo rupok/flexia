@@ -151,6 +151,7 @@ if (!function_exists('flexia_get_option_defaults')) {
                 'input2'  	=> 15,
                 'input3'  	=> 0,
                 'input4'  	=> 15,
+                'data_unit' => 'px'
             ),
             'flexia_main_nav_menu_link_color' => '#4d4d4d',
             'flexia_main_nav_menu_link_hover_color' => '#1b1f21',
@@ -337,11 +338,12 @@ if( ! function_exists( 'flexia_dimension_attr_generator' ) ) :
         $input2 = '';
         $input3 = '';
         $input4 = '';
+        $measure = isset($valueArr['data_unit']) ? $valueArr['data_unit'] : $measure;
         
         if ( $valueArr['input1'] !== '' ) {
             $input1 = $valueArr['input1'] . $measure;
         } else {
-            $input1 = '0px';
+            $input1 = '0' . $measure;
         }
         if ( $input1 !== '' ) {
             $dimensionArr[] = $input1;
@@ -350,7 +352,7 @@ if( ! function_exists( 'flexia_dimension_attr_generator' ) ) :
         if ( $valueArr['input2'] !== '' ) {
             $input2 = $valueArr['input2'] . $measure;
         } else {
-            $input2 = '0px';
+            $input2 = '0' . $measure;
         }
         if ( $input2 !== '' ) {
             $dimensionArr[] = $input2;
@@ -359,16 +361,16 @@ if( ! function_exists( 'flexia_dimension_attr_generator' ) ) :
         if ( $valueArr['input3'] !== '' ) {
             $input3 = $valueArr['input3'] . $measure;
         } else {
-            $input3 = '0px';
+            $input3 = '0' . $measure;
         }
         if ( $input3 !== '' ) {
             $dimensionArr[] = $input3;
         }
         
         if ( $valueArr['input4'] !== '' ) {
-            $input3 = $valueArr['input4'] . $measure;
+            $input4 = $valueArr['input4'] . $measure;
         } else {
-            $input4 = '0px';
+            $input4 = '0' . $measure;
         }
         if ( $input4 !== '' ) {
             $dimensionArr[] = $input4;

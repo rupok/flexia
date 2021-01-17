@@ -16,50 +16,51 @@ function generateCSS() {
     })
 }
 
-function genaerateDimemsion (value, measure = 'px') {
-        
+function genaerateDimemsion(value, measure = 'px') {
+
     var valueArr = JSON.parse(value);
 
     const dimensionArr = [];
     var dimensionAttr, input1, input2, input3, input4 = '';
+    measure = valueArr.data_unit;
 
-    if ( valueArr.input1 !== '' ) {
+    if (valueArr.input1 !== '') {
         var input1 = valueArr.input1 + measure;
     } else {
         var input1 = '0' + measure;
     }
-    if ( typeof input1 !== 'undefined' ) {
+    if (typeof input1 !== 'undefined') {
         dimensionArr.push(input1);
     }
-    
-    if ( valueArr.input2 !== '' ) {
+
+    if (valueArr.input2 !== '') {
         var input2 = valueArr.input2 + measure;
     } else {
         var input2 = '0' + measure;
     }
-    if ( typeof input2 !== 'undefined' ) {
+    if (typeof input2 !== 'undefined') {
         dimensionArr.push(input2);
     }
-    
-    if ( valueArr.input3 !== '' ) {
+
+    if (valueArr.input3 !== '') {
         var input3 = valueArr.input3 + measure;
     } else {
         var input3 = '0' + measure;
     }
-    if ( typeof input3 !== 'undefined' ) {
+    if (typeof input3 !== 'undefined') {
         dimensionArr.push(input3);
     }
-    
-    if ( valueArr.input4 !== '' ) {
+
+    if (valueArr.input4 !== '') {
         var input4 = valueArr.input4 + measure;
     } else {
         var input4 = '0' + measure;
     }
-    if ( typeof input4 !== 'undefined' ) {
+    if (typeof input4 !== 'undefined') {
         dimensionArr.push(input4);
     }
 
-    if ( dimensionArr.length > 0) {
+    if (dimensionArr.length > 0) {
         var dimensionAttr = dimensionArr.join(' ');
     }
 
@@ -80,7 +81,7 @@ function genaerateDimemsion (value, measure = 'px') {
     });
 
 
-    wp.customize( 'flexia_primary_color', function( value ) {
+    wp.customize('flexia_primary_color', function(value) {
         value.bind(function(color) {
             $("input:focus, textarea:focus, select:focus").css("border-color", color);
             $(".single-product.woocommerce .product .woocommerce-tabs ul.wc-tabs > li.active::before").css("border-color", color);
@@ -88,33 +89,33 @@ function genaerateDimemsion (value, measure = 'px') {
             $(".single-product.woocommerce .product .cart .single_add_to_cart_button, aside .widget button, .flexia-woo-sidebar .widget button").css("background-color", color);
             $(".single-blog-meta .entry-meta i").css("color", color);
             //Set primary color of Button Background Color
-            let button_bg_color= '';
-            wp.customize( 'flexia_button_background_color', function( value ) {
+            let button_bg_color = '';
+            wp.customize('flexia_button_background_color', function(value) {
                 button_bg_color = value();
             });
             if (!button_bg_color || button_bg_color == color) {
                 $("button, input[type=button]")
-                .css("background-color", color);
+                    .css("background-color", color);
             }
 
             //Set primary color of Topbar Background
-            let topbar_bg_color= '';
-            wp.customize( 'flexia_topbar_bg_color', function( value ) {
+            let topbar_bg_color = '';
+            wp.customize('flexia_topbar_bg_color', function(value) {
                 topbar_bg_color = value();
             });
             if (!topbar_bg_color || topbar_bg_color == color) {
                 $(".flexia-topbar")
-                .css("background-color", color);
+                    .css("background-color", color);
             }
 
             //Set primary color of Link Color
-            let link_color= '';
-            wp.customize( 'flexia_link_color', function( value ) {
+            let link_color = '';
+            wp.customize('flexia_link_color', function(value) {
                 link_color = value();
             });
             if (!link_color || link_color == color) {
                 $(".a")
-                .css("color", color);
+                    .css("color", color);
             }
         });
     });
@@ -129,7 +130,7 @@ function genaerateDimemsion (value, measure = 'px') {
         });
     });
 
-    
+
     /**
      * Defeault Colors from Global Settings
      */
@@ -189,7 +190,7 @@ function genaerateDimemsion (value, measure = 'px') {
         value.bind(function(to) {
             $("body").css(
                 "background-image",
-                "url('"+to+"')"
+                "url('" + to + "')"
             );
         });
     });
@@ -233,7 +234,7 @@ function genaerateDimemsion (value, measure = 'px') {
         value.bind(function(to) {
             $("body").css(
                 "font-size",
-                to+"px"
+                to + "px"
             );
         });
     });
@@ -263,7 +264,7 @@ function genaerateDimemsion (value, measure = 'px') {
         value.bind(function(to) {
             $("body").css(
                 "font-family",
-                '"'+to+'+'+'-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;'
+                '"' + to + '+' + '-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;'
             );
         });
     });
@@ -273,7 +274,7 @@ function genaerateDimemsion (value, measure = 'px') {
         value.bind(function(to) {
             $("p").css(
                 "font-size",
-                to+"em"
+                to + "em"
             );
         });
     });
@@ -303,7 +304,7 @@ function genaerateDimemsion (value, measure = 'px') {
         value.bind(function(to) {
             $("p").css(
                 "font-family",
-                '"'+to+'+'+'-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;'
+                '"' + to + '+' + '-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;'
             );
         });
     });
@@ -313,7 +314,7 @@ function genaerateDimemsion (value, measure = 'px') {
         value.bind(function(to) {
             $("h1").css(
                 "font-size",
-                to+"em"
+                to + "em"
             );
         });
     });
@@ -323,7 +324,7 @@ function genaerateDimemsion (value, measure = 'px') {
         value.bind(function(to) {
             $("h2").css(
                 "font-size",
-                to+"em"
+                to + "em"
             );
         });
     });
@@ -333,7 +334,7 @@ function genaerateDimemsion (value, measure = 'px') {
         value.bind(function(to) {
             $("h3").css(
                 "font-size",
-                to+"em"
+                to + "em"
             );
         });
     });
@@ -343,7 +344,7 @@ function genaerateDimemsion (value, measure = 'px') {
         value.bind(function(to) {
             $("h4").css(
                 "font-size",
-                to+"em"
+                to + "em"
             );
         });
     });
@@ -353,7 +354,7 @@ function genaerateDimemsion (value, measure = 'px') {
         value.bind(function(to) {
             $("h5").css(
                 "font-size",
-                to+"em"
+                to + "em"
             );
         });
     });
@@ -363,7 +364,7 @@ function genaerateDimemsion (value, measure = 'px') {
         value.bind(function(to) {
             $("h6").css(
                 "font-size",
-                to+"em"
+                to + "em"
             );
         });
     });
@@ -394,7 +395,7 @@ function genaerateDimemsion (value, measure = 'px') {
             $("h1, h2, h3, h4, h5, h6").css(
                 "font-family",
                 "font-family",
-                '"'+to+'+'+'-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;'
+                '"' + to + '+' + '-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;'
             );
         });
     });
@@ -404,7 +405,7 @@ function genaerateDimemsion (value, measure = 'px') {
         value.bind(function(to) {
             $(".site-content a").css(
                 "font-size",
-                to+"em"
+                to + "em"
             );
         });
     });
@@ -434,7 +435,7 @@ function genaerateDimemsion (value, measure = 'px') {
         value.bind(function(to) {
             $("a").css(
                 "font-family",
-                '"'+to+'+'+'-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;'
+                '"' + to + '+' + '-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;'
             );
         });
     });
@@ -444,7 +445,7 @@ function genaerateDimemsion (value, measure = 'px') {
         value.bind(function(to) {
             $("input[type=button], button").css(
                 "font-size",
-                to+"em"
+                to + "em"
             );
         });
     });
@@ -474,7 +475,7 @@ function genaerateDimemsion (value, measure = 'px') {
         value.bind(function(to) {
             $("input[type=button], button").css(
                 "font-family",
-                '"'+to+'+'+'-apple-system,BbuttonMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;'
+                '"' + to + '+' + '-apple-system,BbuttonMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;'
             );
         });
     });
@@ -483,21 +484,21 @@ function genaerateDimemsion (value, measure = 'px') {
      * ......................................
      */
 
-     /**
-      * Social Media Links
-      */
-     //Social Media Icon Size
+    /**
+     * Social Media Links
+     */
+    //Social Media Icon Size
     wp.customize("flexia_header_social_icon_size", function(value) {
         value.bind(function(to) {
             $(".flexia-social-links li a svg").css(
                 "height",
-                to+"em"
+                to + "em"
             );
         });
     });
 
-     //Social Media Icon Color
-     wp.customize("flexia_header_social_icon_color", function(value) {
+    //Social Media Icon Color
+    wp.customize("flexia_header_social_icon_color", function(value) {
         value.bind(function(to) {
             $(".flexia-social-links li a svg").css(
                 "fill",
@@ -506,8 +507,8 @@ function genaerateDimemsion (value, measure = 'px') {
         });
     });
 
-     //Social Media Icon Hover Color
-     wp.customize("flexia_header_social_icon_hover_color", function(value) {
+    //Social Media Icon Hover Color
+    wp.customize("flexia_header_social_icon_hover_color", function(value) {
         value.bind(function(to) {
             $(".flexia-social-links li a:hover svg").css(
                 "fill",
@@ -517,20 +518,20 @@ function genaerateDimemsion (value, measure = 'px') {
     });
 
     /**
-      * Header Top Contact Link
-      */
-     //Contact Info Font Size
-     wp.customize("flexia_header_top_contact_font_size", function(value) {
+     * Header Top Contact Link
+     */
+    //Contact Info Font Size
+    wp.customize("flexia_header_top_contact_font_size", function(value) {
         value.bind(function(to) {
             $(".flexia-topbar_contact a, .flexia-topbar-content").css(
                 "font-size",
-                to+"em"
+                to + "em"
             );
         });
     });
 
-     //Contact Info Font Color
-     wp.customize("flexia_header_top_contact_font_color", function(value) {
+    //Contact Info Font Color
+    wp.customize("flexia_header_top_contact_font_color", function(value) {
         value.bind(function(to) {
             $(".flexia-topbar_contact a, .flexia-topbar-content").css(
                 "color",
@@ -539,8 +540,8 @@ function genaerateDimemsion (value, measure = 'px') {
         });
     });
 
-     //Contact Info Font Hover Color
-     wp.customize("flexia_header_top_contact_font_hover_color", function(value) {
+    //Contact Info Font Hover Color
+    wp.customize("flexia_header_top_contact_font_hover_color", function(value) {
         value.bind(function(to) {
             $(".flexia-topbar_contact a:hover").css(
                 "color",
@@ -627,7 +628,7 @@ function genaerateDimemsion (value, measure = 'px') {
     // Blog Header Background Color
     wp.customize("flexia_blog_header_bg_color", function(value) {
         value.bind(function(to) {
-            $(".page-header.blog-header").css("background-color", to );
+            $(".page-header.blog-header").css("background-color", to);
         });
     });
 
@@ -738,57 +739,59 @@ function genaerateDimemsion (value, measure = 'px') {
     });
 
     //Blog Load More
-    wp.customize( 'flexia_load_more_btn_bg', function( value ) {
-        value.bind( function( to ) {
-            $( '.blog .flexia-load-more-button' ).css( 'background-color', to );
-        } );
+    wp.customize('flexia_load_more_btn_bg', function(value) {
+        value.bind(function(to) {
+            $('.blog .flexia-load-more-button').css('background-color', to);
+        });
     });
 
-    wp.customize( 'flexia_load_more_font_color', function( value ) {
-        value.bind( function( to ) {
-            $( '.blog .flexia-load-more-button' ).css( 'color', to );
-        } );
+    wp.customize('flexia_load_more_font_color', function(value) {
+        value.bind(function(to) {
+            $('.blog .flexia-load-more-button').css('color', to);
+        });
     });
 
-    wp.customize( 'flexia_load_more_btn_font_size', function( value ) {
-        value.bind( function( to ) {
-             $( '.blog .flexia-load-more-button' ).css( 'font-size', to + 'px' );
-        } );
+    wp.customize('flexia_load_more_btn_font_size', function(value) {
+        value.bind(function(to) {
+            $('.blog .flexia-load-more-button').css('font-size', to + 'px');
+        });
     });
 
-    wp.customize( 'flexia_load_more_btn_bg_active', function( value ) {
-        value.bind( function( to ) {
-            $( '.blog .flexia-load-more-button.button--loading' ).css( 'background-color', to );
-        } );
+    wp.customize('flexia_load_more_btn_bg_active', function(value) {
+        value.bind(function(to) {
+            $('.blog .flexia-load-more-button.button--loading').css('background-color', to);
+        });
     });
 
-    wp.customize( 'flexia_load_more_btn_bg_active', function( value ) {
-        value.bind( function( to ) {
-            var loadMoreBg=$(".blog .flexia-load-more-button").css('background-color');
+    wp.customize('flexia_load_more_btn_bg_active', function(value) {
+        value.bind(function(to) {
+            var loadMoreBg = $(".blog .flexia-load-more-button").css('background-color');
             $(".blog .flexia-load-more-button").hover(
-            function() {
-                //mouse over
-                $(this).css('background-color', to)
-            }, function() {
-                //mouse out
-                $(this).css('background-color', loadMoreBg)
-            });
+                function() {
+                    //mouse over
+                    $(this).css('background-color', to)
+                },
+                function() {
+                    //mouse out
+                    $(this).css('background-color', loadMoreBg)
+                });
 
-        } );
+        });
     });
 
-    wp.customize( 'flexia_load_more_font_color_active', function( value ) {
-        value.bind( function( to ) {
-            var loadMoreHovTxt=$(".blog .flexia-load-more-button:hover, .blog .flexia-load-more-button.button--loading").css('color');
+    wp.customize('flexia_load_more_font_color_active', function(value) {
+        value.bind(function(to) {
+            var loadMoreHovTxt = $(".blog .flexia-load-more-button:hover, .blog .flexia-load-more-button.button--loading").css('color');
             $(".blog .flexia-load-more-button").hover(
-            function() {
-                //mouse over
-                $(this).css('color', to)
-            }, function() {
-                //mouse out
-                $(this).css('color', loadMoreHovTxt)
-            });
-        } );
+                function() {
+                    //mouse over
+                    $(this).css('color', to)
+                },
+                function() {
+                    //mouse out
+                    $(this).css('color', loadMoreHovTxt)
+                });
+        });
     });
 
 
@@ -829,10 +832,10 @@ function genaerateDimemsion (value, measure = 'px') {
             $(".flexia-navbar").css("background-color", to);
         });
     });
-    
+
     wp.customize("flexia_navbar_padding", function(value) {
         value.bind(function(to) {
-            $(".flexia-navbar").css("padding", genaerateDimemsion( to ));
+            $(".flexia-navbar").css("padding", genaerateDimemsion(to));
         });
     });
 
@@ -882,7 +885,7 @@ function genaerateDimemsion (value, measure = 'px') {
             $('.main-navigation .nav-menu li ul li:hover > a:not(.cart-contents), .main-navigation .nav-menu li ul li.current-menu-item > a:not(.cart-contents), .main-navigation .nav-menu li ul li.current-menu-ancestor > a:not(.cart-contents), .main-navigation .nav-menu li ul.flexia-mega-menu li > a:not(.cart-contents):hover').css('background-color', to);
         });
     });
-    
+
     wp.customize("flexia_main_nav_menu_dropdown_animation", function(value) {
         value.bind(function(to) {
             $('.flexia-primary-menu').removeClass('flexia-menu-dropdown-animate-fade flexia-menu-dropdown-animate-to-top flexia-menu-dropdown-animate-zoom-in flexia-menu-dropdown-animate-zoom-out').addClass('flexia-menu-dropdown-animate-' + to)
@@ -927,7 +930,7 @@ function genaerateDimemsion (value, measure = 'px') {
             generateCSS();
         });
     });
-    
+
     wp.customize("flexia_top_nav_menu_dropdown_animation", function(value) {
         value.bind(function(to) {
             $('.flexia-topbar-menu').removeClass('flexia-menu-dropdown-animate-fade flexia-menu-dropdown-animate-to-top flexia-menu-dropdown-animate-zoom-in flexia-menu-dropdown-animate-zoom-out').addClass('flexia-menu-dropdown-animate-' + to)
@@ -985,49 +988,49 @@ function genaerateDimemsion (value, measure = 'px') {
     // Footer Area
     wp.customize("flexia_footer_widget_area_bg_color", function(value) {
         value.bind(function(to) {
-            $(".flexia-footer-widget-area").css("background-color", to );
+            $(".flexia-footer-widget-area").css("background-color", to);
         });
     });
-    
+
     wp.customize("flexia_footer_widget_area_content_color", function(value) {
         value.bind(function(to) {
-            $(".flexia-colophon-inner .widget").css("color", to );
+            $(".flexia-colophon-inner .widget").css("color", to);
         });
     });
-    
+
     wp.customize("flexia_footer_widget_area_link_color", function(value) {
         value.bind(function(to) {
-            $(".flexia-colophon-inner .widget a").css("color", to );
+            $(".flexia-colophon-inner .widget a").css("color", to);
         });
     });
-    
+
     wp.customize("flexia_footer_widget_area_link_hover_color", function(value) {
         value.bind(function(to) {
-            $(".flexia-colophon-inner .widget a:hover").css("color", to );
+            $(".flexia-colophon-inner .widget a:hover").css("color", to);
         });
     });
 
     wp.customize("flexia_footer_bg_color", function(value) {
         value.bind(function(to) {
-            $(".flexia-site-footer").css("background-color", to );
+            $(".flexia-site-footer").css("background-color", to);
         });
     });
 
     wp.customize("flexia_footer_content_color", function(value) {
         value.bind(function(to) {
-            $(".flexia-site-footer .site-info").css("color", to );
+            $(".flexia-site-footer .site-info").css("color", to);
         });
     });
 
     wp.customize("flexia_footer_link_color", function(value) {
         value.bind(function(to) {
-            $(".flexia-site-footer .site-info a, .flexia-footer-menu li a").css("color", to );
+            $(".flexia-site-footer .site-info a, .flexia-footer-menu li a").css("color", to);
         });
     });
 
     wp.customize("flexia_footer_link_hover_color", function(value) {
         value.bind(function(to) {
-            $(".flexia-site-footer .site-info a:hover, .flexia-footer-menu li a:hover").css("color", to );
+            $(".flexia-site-footer .site-info a:hover, .flexia-footer-menu li a:hover").css("color", to);
         });
     });
 })(jQuery);
