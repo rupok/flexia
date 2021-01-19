@@ -146,6 +146,7 @@
                 },
                 type: "POST",
                 success: function(data) {
+                    console.log(data);
                     var data = $.parseJSON(data);
 
                     $(data.variants).each(function(i, val) {

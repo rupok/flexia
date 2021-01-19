@@ -191,25 +191,10 @@
     }
 }
 
-.flexia-header-5 {
-    .flexia-navbar-container {
-        .flexia-container {
-            flex-direction: column !important;
-            .flexia-header-top {
-                display: flex;
-                justify-content: space-between;
-                .flexia-social-links,
-                .flexia-menu {
-                    width: 300px;
-                }
-                .flexia-social-links {
-                    margin: 0;
-                }
-                .flexia-menu {
-                    display: flex;
-                    justify-content: flex-end;
-                }
-            }
+.flexia-header-1 {
+    .flexia-navbar-inner {
+        .flexia-logobar-inline {
+            // margin-right: 0 !important;
         }
     }
 }
@@ -318,7 +303,7 @@
         .flexia-navbar-container {
             .flexia-container {
                 .flexia-header-top {
-                    width: calc(100% - 50px);
+                    width: calc(100% - 30px);
                 }
             }
         }
@@ -364,12 +349,15 @@
         margin-left: 0 !important;
     }
     .flexia_header_mobile_layouts_1 .flexia-navbar-container .flexia-navbar-inner .flexia-menu.header-icons {
-        margin-left: 0 !important;
+        // margin-left: 0 !important;
     }
     .flexia_header_mobile_layouts_1 .flexia-navbar .flexia-navbar-container .flexia-navbar-inner {
         flex-flow: row nowrap;
     }
     .flexia_header_mobile_layouts_1 .flexia-navbar-container .flexia-navbar-inner .main-navigation {
         margin: 0 0 0 0 !important;
+    }
+    .flexia-menu-toggle {
+        padding: 5px 2px;
     }
 }
