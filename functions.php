@@ -110,7 +110,6 @@ if (!function_exists('flexia_setup')) {
             return $items;
         }
         add_filter('flexia_header_icon_items', 'flexia_nav_search', 98, 1);
-        $header_layouts = get_theme_mod('flexia_header_layouts');
 
         /**
          * Add Login Button header navigation
@@ -126,9 +125,6 @@ if (!function_exists('flexia_setup')) {
             $flexia_log_in_out_url = is_user_logged_in() ? $logout_url : $login_url;
             $flexia_log_in_out_text = is_user_logged_in() ? $flexia_logout_text : $flexia_login_text;
 
-
-
-
             if ($flexia_nav_login == true) {
                 $items .= '<li class="menu-item navbar-login-menu">';
                 $items .= '<a href="' . $flexia_log_in_out_url . '">';
@@ -138,7 +134,6 @@ if (!function_exists('flexia_setup')) {
             return $items;
         }
         add_filter('flexia_header_icon_items', 'flexia_nav_logo_button', 101, 1);
-
 
         /**
          * Enable support for Post Formats

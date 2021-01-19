@@ -43,7 +43,13 @@ $header_mobile_layouts = flexia_get_option('flexia_header_mobile_layouts', 'flex
 	endif; ?>
 
 	<?php if ($flexia_navbar == true) :
-		get_template_part('framework/views/template-parts/headers/header', $header_layouts);
+		if ($header_layouts <= 4) {
+			get_template_part('framework/views/template-parts/headers/header', $header_layouts);
+		}
+
+		if (class_exists('Flexia_Pro') && $header_layouts > 4) :
+			include(FLEXIA_PRO_DIR_PATH . 'public/template-parts/headers/header-' . $header_layouts . '.php');
+		endif;
 	endif; ?>
 
 
