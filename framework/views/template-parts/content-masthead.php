@@ -43,11 +43,12 @@ $header_mobile_layouts = flexia_get_option('flexia_header_mobile_layouts', 'flex
 	endif; ?>
 
 	<?php if ($flexia_navbar == true) :
-		if ($header_layouts <= 4) {
+		$header_layouts_key = strpos($header_layouts, 'pro');
+		if ( $header_layouts_key === false) :
 			get_template_part('framework/views/template-parts/headers/header', $header_layouts);
-		}
+		endif;
 
-		if (class_exists('Flexia_Pro') && $header_layouts > 4) :
+		if (class_exists('Flexia_Pro') && $header_layouts_key !== false) :
 			include(FLEXIA_PRO_DIR_PATH . 'public/template-parts/headers/header-' . $header_layouts . '.php');
 		endif;
 	endif; ?>

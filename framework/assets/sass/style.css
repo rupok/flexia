@@ -2252,6 +2252,22 @@ big {
     display: block;
   }
 
+  #masthead .flexia_header_mobile_layouts_1 .flexia-menu.header-icons ul li.navbar-login-menu a {
+    padding: 0 5px !important;
+  }
+
+  .flexia_header_mobile_layouts_1 .site-branding .flexia-header-logo > img {
+    margin-right: 0;
+  }
+  .flexia_header_mobile_layouts_1 .flexia-navbar-container .flexia-navbar-inner .flexia-logobar-inline {
+    margin-left: 0 !important;
+  }
+  .flexia_header_mobile_layouts_1 .flexia-navbar-container .flexia-navbar-inner .main-navigation {
+    margin: 0 0 0 0 !important;
+  }
+  .flexia_header_mobile_layouts_1 .flexia-navbar .flexia-navbar-container .flexia-navbar-inner {
+    flex-flow: row nowrap;
+  }
   .flexia_header_mobile_layouts_1 .flexia-navbar-container .flexia-container .flexia-header-top {
     width: calc(100% - 30px);
   }
@@ -2263,26 +2279,6 @@ big {
   }
   .flexia_header_mobile_layouts_1 .flexia-menu.header-icons ul li.navbar-login-menu a button {
     padding: 8px 10px !important;
-  }
-
-  #masthead .flexia_header_mobile_layouts_1 .flexia-menu.header-icons ul li.navbar-login-menu a {
-    padding: 0 5px !important;
-  }
-
-  .flexia_header_mobile_layouts_1 .site-branding .flexia-header-logo > img {
-    margin-right: 0;
-  }
-
-  .flexia_header_mobile_layouts_1 .flexia-navbar-container .flexia-navbar-inner .flexia-logobar-inline {
-    margin-left: 0 !important;
-  }
-
-  .flexia_header_mobile_layouts_1 .flexia-navbar .flexia-navbar-container .flexia-navbar-inner {
-    flex-flow: row nowrap;
-  }
-
-  .flexia_header_mobile_layouts_1 .flexia-navbar-container .flexia-navbar-inner .main-navigation {
-    margin: 0 0 0 0 !important;
   }
 
   .flexia-menu-toggle {
@@ -2491,11 +2487,6 @@ big {
   }
 }
 
-@media all and (min-width: 600px) {
-  .flexia-header-6 .flexia-navbar-inner .flexia-menu.header-icons .navbar-search-menu {
-    display: none;
-  }
-}
 @media all and (min-width: 992px) {
   .flexia-header-3 .flexia-navbar-inner .flexia-menu.header-icons .navbar-search-menu {
     display: none;
@@ -2516,7 +2507,6 @@ big {
     text-transform: capitalize !important;
     border: 0px;
   }
-
   #masthead .flexia-menu.header-icons ul li.navbar-login-menu a .button-text {
     display: none;
   }
@@ -2545,7 +2535,6 @@ big {
     width: 260px;
     z-index: 9999;
   }
-
   .flexia-header-4.flexia_header_mobile_layouts_2 .flexia-navbar-inner .main-navigation {
     margin-left: 12px !important;
   }
@@ -2592,6 +2581,9 @@ big {
     margin: 0 !important;
   }
 
+  .flexia-header-3 .flexia-navbar .flexia-navbar-container .flexia-navbar-inner .search-form {
+    display: none;
+  }
   .flexia-header-3.flexia_header_mobile_layouts_2 .flexia-navbar-inner {
     flex-flow: row wrap;
     justify-content: center !important;
@@ -2609,46 +2601,6 @@ big {
   }
   .flexia-header-3.flexia_header_mobile_layouts_2 .flexia-navbar-inner .flexia-menu.header-icons {
     margin: 0 !important;
-  }
-
-  .flexia-header-3 .flexia-navbar .flexia-navbar-container .flexia-navbar-inner .search-form {
-    display: none;
-  }
-
-  .flexia-header-5.flexia_header_mobile_layouts_2 .flexia-navbar .flexia-container {
-    position: relative;
-  }
-  .flexia-header-5.flexia_header_mobile_layouts_2 .flexia-navbar .flexia-container .flexia-header-top {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .flexia-header-5.flexia_header_mobile_layouts_2 .flexia-navbar .flexia-container .flexia-header-top .flexia-logobar-inline {
-    order: 1;
-    width: 100%;
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-  .flexia-header-5.flexia_header_mobile_layouts_2 .flexia-navbar .flexia-container .flexia-header-top .flexia-logobar-inline .site-branding {
-    margin: 0 auto;
-  }
-  .flexia-header-5.flexia_header_mobile_layouts_2 .flexia-navbar .flexia-container .flexia-header-top .flexia-social-links {
-    order: 2;
-    width: auto;
-    display: none;
-  }
-  .flexia-header-5.flexia_header_mobile_layouts_2 .flexia-navbar .flexia-container .flexia-header-top .header-icons {
-    order: 3;
-    width: auto;
-  }
-  .flexia-header-5.flexia_header_mobile_layouts_2 .flexia-navbar .flexia-container .flexia-header-navigation {
-    position: absolute;
-    top: 11px;
-    right: -20px;
-  }
-  .flexia-header-5.flexia_header_mobile_layouts_2 .flexia-navbar .flexia-container .flexia-header-navigation .main-navigation .flexia-primary-menu {
-    width: 260px;
-    left: auto;
-    right: 0;
   }
 }
 .flexia-logobar-inline {

@@ -207,15 +207,15 @@
     }
 }
 
-@media all and (min-width: 600px) {
-    .flexia-header-6 .flexia-navbar-inner .flexia-menu.header-icons .navbar-search-menu {
-        display: none;
-    }
-}
-
 @media all and (min-width: 992px) {
-    .flexia-header-3 .flexia-navbar-inner .flexia-menu.header-icons .navbar-search-menu {
-        display: none;
+    .flexia-header-3 {
+        .flexia-navbar-inner {
+            .flexia-menu.header-icons {
+                .navbar-search-menu {
+                    display: none;
+                }
+            }
+        }
     }
 }
 
@@ -234,42 +234,44 @@
         color: inherit !important;
         text-transform: capitalize !important;
         border: 0px;
-    }
-    #masthead .flexia-menu.header-icons ul li.navbar-login-menu a .button-text {
-        display: none;
-    }
-    .flexia-header-4.flexia_header_mobile_layouts_2 .flexia-navbar .flexia-navbar-container {
-        .flexia-navbar-inner {
-            flex-flow: row wrap;
-            .header-icons {
-                margin: 0 !important;
-            }
+        .button-text {
+            display: none;
         }
-        .flexia-logobar-inline {
-            width: 100%;
-            flex: 0 0 100%;
-            max-width: 100%;
-            .site-branding {
-                margin: 0 auto;
-                .flexia-header-logo {
-                    img {
-                        margin-right: 0;
+    }
+    .flexia-header-4.flexia_header_mobile_layouts_2 {
+        .flexia-navbar .flexia-navbar-container {
+            .flexia-navbar-inner {
+                flex-flow: row wrap;
+                .header-icons {
+                    margin: 0 !important;
+                }
+            }
+            .flexia-logobar-inline {
+                width: 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+                .site-branding {
+                    margin: 0 auto;
+                    .flexia-header-logo {
+                        img {
+                            margin-right: 0;
+                        }
                     }
                 }
             }
-        }
-        .main-navigation {
-            .flexia-primary-menu {
-                right: 50%;
-                transform: translateX(50%);
-                left: auto;
-                width: 260px;
-                z-index: 9999;
+            .main-navigation {
+                .flexia-primary-menu {
+                    right: 50%;
+                    transform: translateX(50%);
+                    left: auto;
+                    width: 260px;
+                    z-index: 9999;
+                }
             }
         }
-    }
-    .flexia-header-4.flexia_header_mobile_layouts_2 .flexia-navbar-inner .main-navigation {
-        margin-left: 12px !important;
+        .flexia-navbar-inner .main-navigation {
+            margin-left: 12px !important;
+        }
     }
     .flexia-menu .nav-menu li>a {
         padding: 3px 10px 5px !important;
@@ -314,67 +316,28 @@
             margin: 0 !important;
         }
     }
-    .flexia-header-3.flexia_header_mobile_layouts_2 .flexia-navbar-inner {
-        flex-flow: row wrap;
-        justify-content: center !important;
-        .flexia-logobar-inline {
-            width: 100%;
-            flex: 0 0 100%;
-            max-width: 100%;
-            .site-branding {
-                margin: 0 auto;
-                .flexia-header-logo {
-                    img {
-                        margin-right: 0;
+    .flexia-header-3 {
+        .flexia-navbar .flexia-navbar-container .flexia-navbar-inner .search-form {
+            display: none;
+        }
+        &.flexia_header_mobile_layouts_2 .flexia-navbar-inner {
+            flex-flow: row wrap;
+            justify-content: center !important;
+            .flexia-logobar-inline {
+                width: 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+                .site-branding {
+                    margin: 0 auto;
+                    .flexia-header-logo {
+                        img {
+                            margin-right: 0;
+                        }
                     }
                 }
             }
-        }
-        .flexia-menu.header-icons {
-            margin: 0 !important;
-        }
-    }
-    .flexia-header-3 .flexia-navbar .flexia-navbar-container .flexia-navbar-inner .search-form {
-        display: none;
-    }
-    .flexia-header-5.flexia_header_mobile_layouts_2 {
-        .flexia-navbar {
-            .flexia-container {
-                position: relative;
-                .flexia-header-top {
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    .flexia-logobar-inline {
-                        order: 1;
-                        width: 100%;
-                        flex: 0 0 100%;
-                        max-width: 100%;
-                        .site-branding {
-                            margin: 0 auto;
-                        }
-                    }
-                    .flexia-social-links {
-                        order: 2;
-                        width: auto;
-                        display: none;
-                    }
-                    .header-icons {
-                        order: 3;
-                        width: auto;
-                    }
-                }
-                .flexia-header-navigation {
-                    position: absolute;
-                    top: 11px;
-                    right: -20px;
-                    .main-navigation {
-                        .flexia-primary-menu {
-                            width: 260px;
-                            left: auto;
-                            right: 0;
-                        }
-                    }
-                }
+            .flexia-menu.header-icons {
+                margin: 0 !important;
             }
         }
     }

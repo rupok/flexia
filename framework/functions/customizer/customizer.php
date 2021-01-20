@@ -3140,11 +3140,8 @@ function flexia_customize_register($wp_customize)
                         '3'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-03.png',
                         ),
-                        '4'     => array(
-                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-04.png',
-                        ),
-                        '5'     => array(
-                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-05.png',
+                        'pro-1'     => array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-pro-01.png',
                             'pro'   => true,
                             'url'   => 'https://flexia.pro/pricing/',
                         ),
@@ -3189,6 +3186,8 @@ function flexia_customize_register($wp_customize)
                         ),
                         'flexia_header_mobile_layouts_2'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-mobile-02.png',
+                            'pro'   => true,
+                            'url'   => 'https://flexia.pro/pricing/',
                         ),
                     )
                 ),

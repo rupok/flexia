@@ -191,14 +191,6 @@
     }
 }
 
-.flexia-header-1 {
-    .flexia-navbar-inner {
-        .flexia-logobar-inline {
-            // margin-right: 0 !important;
-        }
-    }
-}
-
 @media all and (min-width: 768px) {
     .flexia-header-widget-inner {
         .widget {
@@ -299,7 +291,44 @@
             }
         }
     }
+    #masthead {
+        .flexia_header_mobile_layouts_1 {
+            .flexia-menu.header-icons {
+                ul {
+                    li {
+                        &.navbar-login-menu {
+                            a {
+                                padding: 0 5px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     .flexia_header_mobile_layouts_1 {
+        .site-branding {
+            .flexia-header-logo>img {
+                margin-right: 0;
+            }
+        }
+        .flexia-navbar-container {
+            .flexia-navbar-inner {
+                .flexia-logobar-inline {
+                    margin-left: 0 !important;
+                }
+                .main-navigation {
+                    margin: 0 0 0 0 !important;
+                }
+            }
+        }
+        .flexia-navbar {
+            .flexia-navbar-container {
+                .flexia-navbar-inner {
+                    flex-flow: row nowrap;
+                }
+            }
+        }
         .flexia-navbar-container {
             .flexia-container {
                 .flexia-header-top {
@@ -326,36 +355,6 @@
                 }
             }
         }
-    }
-    #masthead {
-        .flexia_header_mobile_layouts_1 {
-            .flexia-menu.header-icons {
-                ul {
-                    li {
-                        &.navbar-login-menu {
-                            a {
-                                padding: 0 5px !important;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .flexia_header_mobile_layouts_1 .site-branding .flexia-header-logo>img {
-        margin-right: 0;
-    }
-    .flexia_header_mobile_layouts_1 .flexia-navbar-container .flexia-navbar-inner .flexia-logobar-inline {
-        margin-left: 0 !important;
-    }
-    .flexia_header_mobile_layouts_1 .flexia-navbar-container .flexia-navbar-inner .flexia-menu.header-icons {
-        // margin-left: 0 !important;
-    }
-    .flexia_header_mobile_layouts_1 .flexia-navbar .flexia-navbar-container .flexia-navbar-inner {
-        flex-flow: row nowrap;
-    }
-    .flexia_header_mobile_layouts_1 .flexia-navbar-container .flexia-navbar-inner .main-navigation {
-        margin: 0 0 0 0 !important;
     }
     .flexia-menu-toggle {
         padding: 5px 2px;
