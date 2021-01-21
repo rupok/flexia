@@ -2769,10 +2769,6 @@ table table table {
     background-color: #fff;
 }
 
-@-ms-viewport {
-    width: device-width;
-}
-
 html {
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
@@ -6286,7 +6282,6 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
     overflow: hidden;
     -webkit-user-select: none;
     -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     color: transparent;
 }
