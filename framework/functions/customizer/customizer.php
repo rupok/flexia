@@ -3005,16 +3005,16 @@ function flexia_customize_register($wp_customize)
         'type' => 'light', // light, ios, flat
     )));
 
-    $wp_customize->add_setting('post_social_share_gplus', array(
-        'default' => $defaults['post_social_share_gplus'],
+    $wp_customize->add_setting('post_social_share_gmail', array(
+        'default' => $defaults['post_social_share_gmail'],
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'flexia_sanitize_checkbox',
     ));
 
-    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'post_social_share_gplus', array(
-        'label' => esc_html__('Google Plus Sharing', 'flexia'),
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'post_social_share_gmail', array(
+        'label' => esc_html__('Gmail Sharing', 'flexia'),
         'section' => 'flexia_single_posts_settings',
-        'settings' => 'post_social_share_gplus',
+        'settings' => 'post_social_share_gmail',
         'type' => 'light', // light, ios, flat
     )));
 
@@ -3031,6 +3031,44 @@ function flexia_customize_register($wp_customize)
         'type' => 'light', // light, ios, flat
     )));
 
+    $wp_customize->add_setting('post_social_share_reddit', array(
+        'default' => $defaults['post_social_share_reddit'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'post_social_share_reddit', array(
+        'label' => esc_html__('Reddit Sharing', 'flexia'),
+        'section' => 'flexia_single_posts_settings',
+        'settings' => 'post_social_share_reddit',
+        'type' => 'light', // light, ios, flat
+    )));
+
+    $wp_customize->add_setting('post_social_share_blogger', array(
+        'default' => $defaults['post_social_share_blogger'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'post_social_share_blogger', array(
+        'label' => esc_html__('Blogger Sharing', 'flexia'),
+        'section' => 'flexia_single_posts_settings',
+        'settings' => 'post_social_share_blogger',
+        'type' => 'light', // light, ios, flat
+    )));
+
+    $wp_customize->add_setting('post_social_share_thumblr', array(
+        'default' => $defaults['post_social_share_thumblr'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'post_social_share_thumblr', array(
+        'label' => esc_html__('Thumblr Sharing', 'flexia'),
+        'section' => 'flexia_single_posts_settings',
+        'settings' => 'post_social_share_thumblr',
+        'type' => 'light', // light, ios, flat
+    )));
 
     /**
      * ......................................................

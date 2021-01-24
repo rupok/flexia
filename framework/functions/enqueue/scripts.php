@@ -261,8 +261,11 @@ function flexia_customizer_condition()
         'post_social_share_facebook' => array('post_social_share', '==', false),
         'post_social_share_twitter' => array('post_social_share', '==', false),
         'post_social_share_linkedin' => array('post_social_share', '==', false),
-        'post_social_share_gplus' => array('post_social_share', '==', false),
+        'post_social_share_gmail' => array('post_social_share', '==', false),
         'post_social_share_pinterest' => array('post_social_share', '==', false),
+        'post_social_share_reddit' => array('post_social_share', '==', false),
+        'post_social_share_blogger' => array('post_social_share', '==', false),
+        'post_social_share_thumblr' => array('post_social_share', '==', false),
         // call to action
         'flexia_call_to_action_layout' => array('flexia_call_to_action_enable', '==', true),
         'flexia_call_to_action_title' => array('flexia_call_to_action_enable', '==', true),
