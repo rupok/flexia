@@ -53,5 +53,4 @@ $header_mobile_layouts = flexia_get_option('flexia_header_mobile_layouts', 'flex
 		endif;
 	endif; ?>
 
-
 </header><!-- #masthead -->
