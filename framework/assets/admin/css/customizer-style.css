@@ -1,3 +1,13 @@
+.customize-control-color .wp-color-result {
+    border-color: #a6a6a6;
+    border-radius: 4px;
+}
+.customize-control-color .wp-color-result .wp-color-result-text {
+    background-color: #f1f1f1;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
 .customize-control-flexia-title .flexia-select,
 .customize-control-flexia-title .flexia-dimension {
     display: flex;
@@ -69,20 +79,41 @@
 
 .flexia-dimension-fields li {
     float: left;
+    width: 20%;
 }
 
+.customize-control-flexia-dimension {
+    position: relative;
+}
+.flexia-spacing-responsive-units {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    top: 2px;
+}
 .flexia-dimension-fields li:first-child span {
-    height: 30px;
+    height: 28px;
+    width: 100%;
+    text-align: center;
     line-height: 30px;
     font-size: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 4px;
-    border: 1px solid #7e8993;
-    background-color: #fff;
+    border: 1px solid #a6a6a6;
+    background-color: #a6a6a6;
     cursor: pointer;
+    color: #fff;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
 }
-
+.flexia-dimension-fields li.connected:first-child span {
+    background-color: #ee3560;
+    color: #fff !important;
+    border-color: #ee3560;
+}
+.flexia-dimension-fields li:last-child .flexia-dimension-input {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
 .flexia-dimension-fields .flexia-dimension-connected {
     display: none;
 }
@@ -102,15 +133,45 @@
 
 .flexia-dimension-fields li:not(:first-child) {
     width: 20%;
-    padding-left: 5px;
+    padding-left: -1px;
 }
-
+.flexia-dimension-fields li:not(:first-child) .flexia-dimension-input {
+    border-radius: 0;
+    border-left: 0;
+    background-color: #f1f1f1;
+    border-color: #a6a6a6;
+}
 .flexia-dimension-fields li input {
     height: 30px;
 }
 
 .flexia-dimension-fields .dimension-title {
     text-align: center;
-    font-size: 11px;
+    font-size: .8em;
+    text-transform: uppercase;
     display: block;
+    color: #999;
+}
+
+.customize-control-flexia-dimension .flexia-spacing-responsive-units {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.customize-control-flexia-dimension .single-unit {
+    padding: 2px 4px;
+    margin-right: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #999;
+    font-size: .85em;
+}
+.customize-control-flexia-dimension .single-unit:last-child {
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.customize-control-flexia-dimension .single-unit.active {
+    color: #ee3560;
+    font-weight: 500;
 }

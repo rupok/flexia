@@ -22,6 +22,7 @@ function genaerateDimemsion(value, measure = 'px') {
 
     const dimensionArr = [];
     var dimensionAttr, input1, input2, input3, input4 = '';
+    measure = valueArr.data_unit;
 
     if (valueArr.input1 !== '') {
         var input1 = valueArr.input1 + measure;

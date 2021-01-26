@@ -1842,11 +1842,6 @@ function flexia_customize_register($wp_customize)
     );
     /**
      * ..............................................................
-     */
-
-
-    /**
-     * ..............................................................
      * Typography Section: Add Section: Link
      * @flexia_typography_link
      * Parent: @flexia_typography_settings
@@ -2012,9 +2007,6 @@ function flexia_customize_register($wp_customize)
             ),
         )
     );
-    /**
-     * ..............................................................
-     */
 
 
     /**
@@ -3542,10 +3534,11 @@ function flexia_customize_register($wp_customize)
                     'input4'       => __('left', 'flexia'),
                 ),
                 'defaults' => array(
-                    'input1'      => 0,
-                    'input2'      => 15,
-                    'input3'      => 0,
-                    'input4'      => 15,
+                    'input1'  	=> 0,
+                    'input2'  	=> 15,
+                    'input3'  	=> 0,
+                    'input4'  	=> 15,
+                    'data_unit' => 'px'
                 )
             )
         )
