@@ -3183,6 +3183,11 @@ function flexia_customize_register($wp_customize)
                             'pro'   => true,
                             'url'   => 'https://flexia.pro/pricing/',
                         ),
+                        'pro-2'     => array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-pro-02.png',
+                            'pro'   => true,
+                            'url'   => 'https://flexia.pro/pricing/',
+                        ),
                     )
                 ),
             )
