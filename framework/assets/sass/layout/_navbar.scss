@@ -64,7 +64,7 @@
     .flexia-navbar-inner {
         justify-content: end !important;
         .flexia-logobar-inline {
-            margin: 0;
+            margin: 0 auto 0 0;
         }
         .flexia-social-links {
             margin: 0 auto 0 0 !important;
@@ -76,6 +76,7 @@
             margin: unset !important;
             @media all and (max-width: 991px) {
                 margin-left: auto !important;
+                margin-right: 1em !important;
             }
         }
         @media all and (max-width: 991px) {

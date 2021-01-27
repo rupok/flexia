@@ -2263,7 +2263,7 @@ big {
     margin-left: 0 !important;
   }
   .flexia_header_mobile_layouts_1 .flexia-navbar-container .flexia-navbar-inner .main-navigation {
-    margin: 0 0 0 0 !important;
+    margin: 0 .5em 0 0 !important;
   }
   .flexia_header_mobile_layouts_1 .flexia-navbar .flexia-navbar-container .flexia-navbar-inner {
     flex-flow: row nowrap;
@@ -2350,7 +2350,7 @@ big {
   justify-content: end !important;
 }
 .flexia-header-1 .flexia-navbar-inner .flexia-logobar-inline {
-  margin: 0;
+  margin: 0 auto 0 0;
 }
 .flexia-header-1 .flexia-navbar-inner .flexia-social-links {
   margin: 0 auto 0 0 !important;
@@ -2364,6 +2364,7 @@ big {
 @media all and (max-width: 991px) {
   .flexia-header-1 .flexia-navbar-inner .flexia-menu.header-icons {
     margin-left: auto !important;
+    margin-right: 1em !important;
   }
 }
 @media all and (max-width: 991px) {
@@ -3511,7 +3512,7 @@ a:hover, a:active {
   top: 0;
   right: 0;
   width: 42px;
-  height: 42px;
+  height: calc(100% - 2px);
   display: block;
   background-color: #ffffff;
   border: 1px solid #dddddd;
@@ -3526,8 +3527,8 @@ a:hover, a:active {
 .flexia-menu .flexia-menu-indicator:before {
   content: "";
   position: absolute;
-  top: 19px;
-  right: 19px;
+  top: calc(50% - 4px);
+  right: calc(50% - 1px);
   width: 2px;
   height: 8px;
   background: #dddddd;
@@ -3536,8 +3537,8 @@ a:hover, a:active {
 .flexia-menu .flexia-menu-indicator:after {
   content: "";
   position: absolute;
-  top: 22px;
-  right: 16px;
+  top: calc(50% - 1px);
+  right: calc(50% - 4px);
   width: 8px;
   height: 2px;
   background: #dddddd;
