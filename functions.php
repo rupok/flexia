@@ -73,8 +73,8 @@ if (!function_exists('flexia_setup')) {
 
         /**
          * Add SVG Support to flexia
-        */
-        add_filter( 'wp_kses_allowed_html', function( $tags ) {
+         */
+        add_filter('wp_kses_allowed_html', function ($tags) {
 
             $tags['svg'] = array(
                 'xmlns' => array(),
@@ -89,7 +89,6 @@ if (!function_exists('flexia_setup')) {
                 'fill' => array(),
             );
             return $tags;
-        
         }, 10, 2);
 
         /**
@@ -119,7 +118,7 @@ if (!function_exists('flexia_setup')) {
             $flexia_nav_login = get_theme_mod('flexia_enable_login_button', false);
             $flexia_nav_login_url = get_theme_mod('flexia_custom_login_url');
             $login_url = (empty($flexia_nav_login_url) ? esc_url(wp_login_url(get_permalink())) : esc_url($flexia_nav_login_url));
-            $logout_url = wp_logout_url( home_url() );
+            $logout_url = wp_logout_url(home_url());
             $flexia_login_text = esc_html__('Sign in', 'flexia');
             $flexia_logout_text = esc_html__('Log out', 'flexia');
             $flexia_log_in_out_url = is_user_logged_in() ? $logout_url : $login_url;
@@ -128,7 +127,7 @@ if (!function_exists('flexia_setup')) {
             if ($flexia_nav_login == true) {
                 $items .= '<li class="menu-item navbar-login-menu">';
                 $items .= '<a href="' . $flexia_log_in_out_url . '">';
-                $items .= '<button><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <path d="M437,75C388.7,26.6,324.4,0,256,0C187.6,0,123.3,26.6,75,75S0,187.6,0,256c0,68.4,26.6,132.7,75,181 c48.4,48.4,112.6,75,181,75c68.4,0,132.7-26.6,181-75c48.4-48.4,75-112.6,75-181C512,187.6,485.4,123.3,437,75z M184.8,224.8 c0-39.2,31.9-71.2,71.2-71.2c39.2,0,71.2,31.9,71.2,71.2c0,39.2-31.9,71.2-71.2,71.2C216.8,296,184.8,264.1,184.8,224.8z M256,340.6 c55.8,0,103.5,38.6,115.2,92.5c-34.3,22.4-74,34.2-115.2,34.2c-41.1,0-80.9-11.8-115.2-34.2C152.5,379.2,200.2,340.6,256,340.6z M365,338c-10.6-9.6-22.4-17.7-35-24.2c26.4-21.9,41.8-54.3,41.8-89c0-63.8-51.9-115.8-115.8-115.8c-63.8,0-115.8,51.9-115.8,115.8 c0,34.7,15.4,67.1,41.8,89c-12.7,6.5-24.4,14.6-35,24.2c-19.6,17.7-34.4,39.7-43.5,64.2C65.9,363,44.6,310.4,44.6,256 c0-116.6,94.8-211.4,211.4-211.4c116.6,0,211.4,94.8,211.4,211.4c0,54.4-21.3,107-58.9,146.2C399.4,377.7,384.6,355.7,365,338z"/> </svg> <span class="button-text">'.$flexia_log_in_out_text.'</span></button>';
+                $items .= '<button><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <path d="M437,75C388.7,26.6,324.4,0,256,0C187.6,0,123.3,26.6,75,75S0,187.6,0,256c0,68.4,26.6,132.7,75,181 c48.4,48.4,112.6,75,181,75c68.4,0,132.7-26.6,181-75c48.4-48.4,75-112.6,75-181C512,187.6,485.4,123.3,437,75z M184.8,224.8 c0-39.2,31.9-71.2,71.2-71.2c39.2,0,71.2,31.9,71.2,71.2c0,39.2-31.9,71.2-71.2,71.2C216.8,296,184.8,264.1,184.8,224.8z M256,340.6 c55.8,0,103.5,38.6,115.2,92.5c-34.3,22.4-74,34.2-115.2,34.2c-41.1,0-80.9-11.8-115.2-34.2C152.5,379.2,200.2,340.6,256,340.6z M365,338c-10.6-9.6-22.4-17.7-35-24.2c26.4-21.9,41.8-54.3,41.8-89c0-63.8-51.9-115.8-115.8-115.8c-63.8,0-115.8,51.9-115.8,115.8 c0,34.7,15.4,67.1,41.8,89c-12.7,6.5-24.4,14.6-35,24.2c-19.6,17.7-34.4,39.7-43.5,64.2C65.9,363,44.6,310.4,44.6,256 c0-116.6,94.8-211.4,211.4-211.4c116.6,0,211.4,94.8,211.4,211.4c0,54.4-21.3,107-58.9,146.2C399.4,377.7,384.6,355.7,365,338z"/> </svg> <span class="button-text">' . $flexia_log_in_out_text . '</span></button>';
                 $items .= '</a></li>';
             }
             return $items;
@@ -180,8 +179,8 @@ if (!function_exists('flexia_setup')) {
         /**
          * Register support for Gutenberg
          */
-        add_theme_support( 'align-wide' ); //Wide/Full Alignment
-        
+        add_theme_support('align-wide'); //Wide/Full Alignment
+
 
     }
 }
@@ -331,7 +330,7 @@ if (!function_exists('flexia_fonts_url')) {
 
         $blogHeader_title_font = flexia_get_option('flexia_blog_header_title_font_family');
         $blogHeader_desc_font = flexia_get_option('flexia_blog_header_desc_font_family');
-        
+
 
         if ('off' !== $content_font || 'off' !== $header_font) {
             $font_families = array();
@@ -370,7 +369,7 @@ if (!function_exists('flexia_fonts_url')) {
 
             $fonts_url = add_query_arg($query_args, 'https://fonts.googleapis.com/css');
         }
-        
+
         return esc_url_raw($fonts_url);
     }
     add_action('init', 'flexia_fonts_url');
@@ -403,3 +402,21 @@ function flexia_sidebar_content($sidebar_id, $sidebar_position, $classes)
 		</div>
 	</aside>';
 }
+
+/**
+ * upgrader_process_complete
+ */
+function flexia_upgrader_process_complete($upgrader_object, $options)
+{
+    if ($options['action'] === 'update' && $options['type'] === 'theme') {
+        foreach ($options['themes'] as $each_theme) {
+            if ($each_theme === 'flexia') {
+                $logobar_position = get_theme_mod('flexia_logobar_position');
+                if ('flexia-logobar-stacked' === $logobar_position) {
+                    set_theme_mod('flexia_header_layouts', 4);
+                }
+            }
+        }
+    }
+}
+add_action('upgrader_process_complete', 'flexia_upgrader_process_complete', 10, 2);

@@ -3170,13 +3170,11 @@ function flexia_customize_register($wp_customize)
                         '3'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-03.png',
                         ),
+                        '4'     => array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-04.png',
+                        ),
                         'pro-1'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-pro-01.png',
-                            'pro'   => true,
-                            'url'   => 'https://flexia.pro/pricing/',
-                        ),
-                        'pro-2'     => array(
-                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-pro-02.png',
                             'pro'   => true,
                             'url'   => 'https://flexia.pro/pricing/',
                         ),
@@ -3446,52 +3444,6 @@ function flexia_customize_register($wp_customize)
         'type' => 'light', // light, ios, flat
         'priority' => 20,
     )));
-
-    // Logobar position
-
-    $wp_customize->add_setting('flexia_logobar_position', array(
-        'default' => $defaults['flexia_logobar_position'],
-        'sanitize_callback' => 'flexia_sanitize_choices',
-    ));
-
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'flexia_logobar_position',
-            array(
-                'label' => __('Logobar Position', 'flexia'),
-                'section' => 'flexia_header_navbar',
-                'settings' => 'flexia_logobar_position',
-                'type' => 'radio',
-                'choices' => array(
-                    'flexia-logobar-inline' => __('Inline', 'flexia'),
-                    'flexia-logobar-stacked' => __('Stacked', 'flexia'),
-                ),
-                'priority' => 30,
-            )
-        )
-    );
-
-    // Navbar background colors
-
-    $wp_customize->add_setting('flexia_logobar_bg_color', array(
-        'default' => $defaults['flexia_logobar_bg_color'],
-        'transport' => 'postMessage',
-        'sanitize_callback' => 'sanitize_hex_color',
-    ));
-
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'flexia_logobar_bg_color',
-            array(
-                'label' => __('Logobar Background', 'flexia'),
-                'section' => 'flexia_header_navbar',
-                'settings' => 'flexia_logobar_bg_color',
-                'priority' => 40,
-            )
-        )
-    );
 
     $wp_customize->add_setting('flexia_navbar_bg_color', array(
         'default' => $defaults['flexia_navbar_bg_color'],
