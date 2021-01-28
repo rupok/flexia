@@ -17,27 +17,24 @@ if (!defined('ABSPATH')) exit;
 $navbar_class = get_theme_mod('flexia_navbar_position', 'flexia-navbar-static-top');
 $dropdown_animation = 'flexia-menu-dropdown-animate-' . get_theme_mod('flexia_main_nav_menu_dropdown_animation', 'to-top');
 $flexia_logobar_position = get_theme_mod('flexia_logobar_position', 'flexia-logobar-inline');
-
+$flexia_logobar_position_class = 'flexia-logobar-stacked' === $flexia_logobar_position ? 'stacked-sticky-logo' : 'flexia-logobar-inline';
 ?>
 
 <div class="flexia-navbar <?php echo esc_attr($navbar_class); ?>">
 	<div class="flexia-navbar-container">
 		<div class="flexia-container flexia-navbar-inner <?php echo (get_theme_mod('flexia_header_layout_type') == "full-width") ? "full-width" : "width max" ?>">
 
-			<?php if ($flexia_logobar_position == 'flexia-logobar-inline') : ?>
+			<div class="<?php echo esc_attr($flexia_logobar_position_class); ?>">
+				<div class="site-branding">
 
-				<div class="flexia-logobar-inline">
-					<div class="site-branding">
+					<?php echo flexia_main_logo(); ?>
 
-						<?php echo flexia_main_logo(); ?>
+				</div><!-- .site-branding -->
 
-					</div><!-- .site-branding -->
-
-					<!-- Header Search Box -->
-					<?php get_search_form(); ?>
-					<!-- Header Search Box End -->
-				</div>
-			<?php endif; ?>
+				<!-- Header Search Box -->
+				<?php get_search_form(); ?>
+				<!-- Header Search Box End -->
+			</div>
 
 			<nav id="site-navigation" class="flexia-menu main-navigation">
 				<?php

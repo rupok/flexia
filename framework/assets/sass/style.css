@@ -2408,6 +2408,9 @@ big {
   margin: unset !important;
   order: 4;
 }
+.flexia-header-3.stacked-enable .stacked-sticky-logo {
+  display: flex;
+}
 
 .flexia-header-4 .flexia-navbar-inner {
   justify-content: center !important;
@@ -2425,6 +2428,25 @@ big {
   order: 3;
 }
 
+/* Stacked Logobar */
+.stacked-enable.flexia-header-1 .flexia-navbar-inner {
+  justify-content: center !important;
+}
+.stacked-enable.flexia-header-1 .flexia-social-links,
+.stacked-enable.flexia-header-1 .main-navigation,
+.stacked-enable.flexia-header-1 .header-icons {
+  margin: unset !important;
+}
+.stacked-enable .stacked-sticky-logo .flexia-header-logo {
+  display: none;
+}
+.stacked-enable .flexia-sticky-navbar .flexia-social-links {
+  display: none;
+}
+.stacked-enable .flexia-sticky-navbar .stacked-sticky-logo .flexia-header-sticky-logo {
+  display: block;
+}
+
 @media all and (min-width: 992px) {
   .flexia-header-3 .flexia-navbar-inner .flexia-menu.header-icons .navbar-search-menu {
     display: none;
@@ -2437,6 +2459,18 @@ big {
   }
 }
 @media all and (max-width: 991px) {
+  .stacked-enable.flexia_header_mobile_layouts_1 .flexia-navbar-inner .flexia-social-links {
+    width: auto;
+    flex: none;
+  }
+  .stacked-enable.flexia_header_mobile_layouts_2 .flexia-navbar-inner .flexia-social-links {
+    margin: 0 auto 0 0 !important;
+  }
+  .stacked-enable.flexia_header_mobile_layouts_2 .stacked-sticky-logo {
+    width: 100%;
+    text-align: center;
+  }
+
   .flexia_header_mobile_layouts_1 .flexia-navbar-inner .flexia-social-links {
     width: 100%;
     flex: 0 0 100%;
@@ -2513,6 +2547,9 @@ big {
 
   .flexia-header-3 .flexia-navbar .flexia-navbar-container .flexia-navbar-inner .search-form {
     display: none;
+  }
+  .flexia-header-3.stacked-enable .stacked-sticky-logo {
+    display: block;
   }
 }
 .flexia-logobar-inline {
@@ -2631,6 +2668,9 @@ big {
 .flexia-navbar.flexia-sticky-navbar .flexia-header-sticky-logo {
   display: flex;
   align-items: center;
+}
+.flexia-navbar.flexia-sticky-navbar .flexia-social-links {
+  display: none;
 }
 
 .flexia-navbar.flexia-navbar-transparent-top {

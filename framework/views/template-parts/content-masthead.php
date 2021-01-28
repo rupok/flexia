@@ -26,9 +26,10 @@ $header_layouts = get_theme_mod('flexia_header_layouts', '1');
 
 $header_mobile_layouts = flexia_get_option('flexia_header_mobile_layouts', 'flexia_header_mobile_layouts_1');
 
+$logobar_position_class = 'flexia-logobar-stacked' === $flexia_logobar_position ? 'stacked-enable' : '';
 ?>
 
-<header id="masthead" class="site-header flexia-header-<?php echo esc_attr($header_layouts); ?> <?php echo esc_attr($header_mobile_layouts); ?>">
+<header id="masthead" class="site-header flexia-header-<?php echo esc_attr($header_layouts); ?> <?php echo esc_attr($header_mobile_layouts); ?> <?php echo esc_attr($logobar_position_class); ?>">
 
 	<?php if ($header_widget_area == true) :
 		get_template_part('framework/views/template-parts/content', 'header-widgets');
