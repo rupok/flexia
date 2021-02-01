@@ -2833,10 +2833,6 @@ table tbody + tbody {
 table table table {
   background-color: #fff;
 }
-
-@-ms-viewport {
-  width: device-width;
-}
 html {
   box-sizing: border-box;
   -ms-overflow-style: scrollbar;
@@ -3412,6 +3408,7 @@ a:hover, a:active {
 .main-navigation .flexia-primary-menu li {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .main-navigation .flexia-primary-menu li > a {
   display: flex;
@@ -3477,6 +3474,11 @@ a:hover, a:active {
   }
 }
 
+.menu-sub-text {
+  flex: 100%;
+  width: 100%;
+}
+
 @media all and (min-width: 992px) {
   .main-navigation .nav-menu > li > a:after {
     content: "";
@@ -3512,11 +3514,7 @@ a:hover, a:active {
     opacity: 1;
   }
 
-  .flexia-header-4
-  .main-navigation
-  .nav-menu
-  > li.menu-item-has-children
-  > a:after {
+  .flexia-header-4 .main-navigation .nav-menu > li.menu-item-has-children > a:after {
     bottom: 30%;
   }
 
@@ -4881,15 +4879,6 @@ body.archive .flexia-wrapper > .content-area article.post {
   max-width: 1400px;
   margin: 3em auto 0;
 }
-.single .flexia-blank-container .entry-content-wrapper {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-}
-.single .flexia-blank-container .entry-content-wrapper .single-post-entry {
-  padding: 0;
-  margin: 0;
-}
 .single .single-post-meta-large .entry-meta {
   display: flex;
   flex-flow: row nowrap;
@@ -5981,7 +5970,6 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
   overflow: hidden;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   color: transparent;
 }
@@ -7369,10 +7357,7 @@ ol.comment-list li {
 }
 .comments-area .comment-form label {
   color: #323232;
-  font-size: 1em;
-  margin-bottom: 10px;
-  display: block;
-  font-weight: 600;
+  font-size: 13px;
 }
 .comments-area .blog-img-wide.blogdetails img {
   height: auto;

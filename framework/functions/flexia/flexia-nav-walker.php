@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Flexia Nav Walker
  *
@@ -49,7 +50,7 @@ class Flexia_Nav_Walker extends Walker_Nav_Menu
         $is_megamenu_has_widget = false;
         if ($depth == 1) {
             $widget_id = esc_attr(get_post_meta($item->ID, 'flexia-menu-item-mega-menu-widget', true));
-            if ( !empty($widget_id) && !is_array($widget_id) ) {
+            if (!empty($widget_id) && !is_array($widget_id)) {
                 $is_megamenu_has_widget = true;
             }
         }
@@ -165,20 +166,23 @@ class Flexia_Nav_Walker extends Walker_Nav_Menu
         $item_output .= $args->link_before . $title . $args->link_after;
         $item_output .= '</a>';
         $item_output .= $args->after;
+        if (!empty($item->description)) {
+            $item_output .= '<span class="menu-sub-text">' . $item->description . '</span>';
+        }
 
         if ($is_megamenu_has_widget) {
             $item_output .= '<ul class="sub-menu">';
             $item_output .= '<li>';
             ob_start();
-            dynamic_sidebar( $widget_id ); 
+            dynamic_sidebar($widget_id);
             $item_output .=  ob_get_clean();
             $item_output .= '</li>';
             $item_output .= '</ul>';
         }
 
-        
 
-        
+
+
 
         /**
          * Filters a menu item's starting output.
@@ -204,9 +208,9 @@ class Flexia_Nav_Walker extends Walker_Nav_Menu
  *
  * @package Flexia
  */
-if (!function_exists('flexia_nav_walker')):
+if (!function_exists('flexia_nav_walker')) :
     function flexia_nav_walker($args)
-{
+    {
         if ('primary' === $args['theme_location']) {
             $args['walker'] = new Flexia_Nav_Walker;
         }
