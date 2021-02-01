@@ -153,6 +153,16 @@ function flexia_customizer_condition()
         true
     );
     $config = array(
+        // page settings
+        'flexia_page_breadcrumb' => array('flexia_page_header', '==', true),
+        'flexia_page_header_layout' => array('flexia_page_header', '==', true),
+        'flexia_page_title_heading' => array('flexia_page_header', '==', true),
+        'flexia_page_title_bg' => array('flexia_page_header', '==', true),
+        'flexia_page_title_font_color' => array('flexia_page_header', '==', true),
+        'flexia_page_title_font_size' => array('flexia_page_header', '==', true),
+        'flexia_breadcrumb_font_size' => array('flexia_page_header', '==', true),
+        'flexia_breadcrumb_font_color' => array('flexia_page_header', '==', true),
+        'flexia_breadcrumb_active_font_color' => array('flexia_page_header', '==', true),
         // Navbar Settings
         'flexia_logobar_position' => array('flexia_navbar', '==', true),
         'flexia_logobar_bg_color' => array('flexia_navbar', '==', true),
@@ -161,6 +171,7 @@ function flexia_customizer_condition()
         'main_nav_settings_title' => array('flexia_navbar', '==', true),
         'flexia_nav_menu_search' => array('flexia_navbar', '==', true),
         'flexia_woo_cart_menu' => array('flexia_navbar', '==', true),
+        'flexia_custom_login_url' => array('flexia_woo_cart_menu', '==', true),
         'flexia_enable_login_button' => array('flexia_navbar', '==', true),
         'flexia_main_nav_menu_link_color' => array('flexia_navbar', '==', true),
         'flexia_main_nav_menu_link_hover_color' => array('flexia_navbar', '==', true),
