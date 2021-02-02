@@ -3478,6 +3478,7 @@ a:hover, a:active {
   flex: 100%;
   width: 100%;
   color: #999999;
+  font-size: 0.85em;
   display: inline-block;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
