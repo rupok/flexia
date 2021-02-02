@@ -355,8 +355,6 @@ function flexia_post_simple_no_container_title_markup() {
 
 }
 
-
-
 /**
  * This function will show/hide simple post title
  *
@@ -407,7 +405,6 @@ function flexia_add_body_class( $classes ) {
 
 }
 add_filter( 'body_class', 'flexia_add_body_class', 10, 1 );
-
 
 /**
  * This method will show/hide post footer meta.
@@ -539,3 +536,17 @@ function flexia_main_logo() {
 	ob_get_clean();
 	return $html;
 }
+/**
+ * Add class in body
+ */
+function flexia_body_class( $classes ) {
+
+	$header_layout = flexia_get_option('flexia_header_layouts');
+	if( 'pro-1' === $header_layout ) {
+		$classes[] = 'flexia-header-pro-1-wrapper';
+	}
+     
+    return $classes;
+     
+}
+add_filter( 'body_class','flexia_body_class' );

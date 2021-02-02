@@ -15,44 +15,46 @@ get_header();
 /**
  * Flexia hook for Blog Header
  */
-do_action('flexia_archive_header');
 ?>
 
-	<div id="content" class="site-content">
-		<div class="flexia-wrapper flexia-container max width">
+<div id="content" class="site-content">
 
-			<div id="primary" class="content-area">
+	<?php do_action('flexia_archive_header'); ?>
 
-				<?php
-				/**
-				 * Flexia hook for Archive Before Main Content/ Loop
-				 */
+	<div class="flexia-wrapper flexia-container max width">
 
-				do_action('flexia_archive_before_content');
-				?>
+		<div id="primary" class="content-area">
 
-				<?php
-				/**
-				 * Flexia hook for Archive Content/The Loop
-				 */
+			<?php
+			/**
+			 * Flexia hook for Archive Before Main Content/ Loop
+			 */
 
-				do_action('flexia_archive_content');
-				?>
+			do_action('flexia_archive_before_content');
+			?>
 
-				<?php
-				/**
-				 * Flexia hook for archive After Main Content/ Loop
-				 */
+			<?php
+			/**
+			 * Flexia hook for Archive Content/The Loop
+			 */
 
-				do_action('flexia_archive_after_content');
-				?>
+			do_action('flexia_archive_content');
+			?>
 
-			</div><!-- #primary -->
+			<?php
+			/**
+			 * Flexia hook for archive After Main Content/ Loop
+			 */
 
-			<?php get_sidebar(); ?>
+			do_action('flexia_archive_after_content');
+			?>
 
-		</div><!-- #flexia-wrapper -->
-	</div><!-- #content -->
+		</div><!-- #primary -->
+
+		<?php get_sidebar(); ?>
+
+	</div><!-- #flexia-wrapper -->
+</div><!-- #content -->
 </div><!-- #page -->
 
 <?php

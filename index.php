@@ -23,12 +23,13 @@ get_header();
  *
  * @since   v2.1.3
  */
-
-do_action( 'flexia_blog_header' );
 ?>
 	
 
 	<div id="content" class="site-content">
+
+	<?php do_action( 'flexia_blog_header' ); ?>
+	
 		<div class="flexia-wrapper flexia-container max width">
 
 			<div id="primary" class="content-area">

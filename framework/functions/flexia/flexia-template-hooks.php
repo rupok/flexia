@@ -82,7 +82,7 @@ function flexia_blog_header() {
 
     if ($flexia_blog_show) : ?>
 
-		<header class="page-header blog-header" <?php if ( has_header_image() ) { ?> style="background-image: url('<?php echo( get_header_image() ); ?>'); <?php } ?>">
+		<div class="page-header blog-header" <?php if ( has_header_image() ) { ?> style="background-image: url('<?php echo( get_header_image() ); ?>'); <?php } ?>">
 			<div class="header-inner">
 				<div class="header-content">					
 
@@ -130,7 +130,7 @@ function flexia_blog_header() {
 						endif;?></h3>
 				</div>
 			</div>
-		</header>
+                    </div>
 
 	<?php endif;
 }
@@ -206,14 +206,14 @@ function flexia_archive_page_header() {
     $background_img = $image ? ' style="background-image: url('.$image.');"' : '';
 
     if( $flexia_show_archive_header ) : ?>
-        <header class="page-header archive-header"<?php echo $background_img; ?>>
+        <div class="page-header archive-header"<?php echo $background_img; ?>>
         <div class="header-inner">
             <div class="header-content">
 				<?php the_archive_title( '<h2 class="page-title">', '</h2>' ); ?>
                 <?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
             </div>
         </div>
-    </header>
+    </div>
     <?php endif;
 }
 add_action('flexia_archive_header', 'flexia_archive_page_header');
