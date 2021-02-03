@@ -9,9 +9,7 @@
             height: 100%;
         }
         li {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
+            display: inline;
             >a {
                 display: flex;
                 align-items: center;
@@ -100,15 +98,17 @@
 
 // menu sub text
 .menu-sub-text {
-    flex: 100%;
     width: 100%;
     color: #999999;
     font-size: 0.85em;
-    display: inline-block;
+    display: block;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     padding-left: 15px;
     padding-right: 15px;
+    @media all and (max-width: 991px) {
+        margin-bottom: 10px;
+    }
 }
 
 //Main Navigation Active/ Hover styles

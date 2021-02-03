@@ -3406,9 +3406,7 @@ a:hover, a:active {
   height: 100%;
 }
 .main-navigation .flexia-primary-menu li {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  display: inline;
 }
 .main-navigation .flexia-primary-menu li > a {
   display: flex;
@@ -3475,15 +3473,19 @@ a:hover, a:active {
 }
 
 .menu-sub-text {
-  flex: 100%;
   width: 100%;
   color: #999999;
   font-size: 0.85em;
-  display: inline-block;
+  display: block;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   padding-left: 15px;
   padding-right: 15px;
+}
+@media all and (max-width: 991px) {
+  .menu-sub-text {
+    margin-bottom: 10px;
+  }
 }
 
 @media all and (min-width: 992px) {
