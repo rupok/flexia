@@ -3480,8 +3480,7 @@ a:hover, a:active {
   color: #999999;
   font-size: 0.85em;
   display: inline-block;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  padding: 0 15px !important;
 }
 
 @media all and (min-width: 992px) {
