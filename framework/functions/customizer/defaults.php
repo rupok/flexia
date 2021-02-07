@@ -347,8 +347,9 @@ if( ! function_exists( 'flexia_generate_defaults' ) ) :
 endif;
 
 if( ! function_exists( 'flexia_dimension_attr_generator' ) ) :
-    function flexia_dimension_attr_generator($key, $measure = 'px') {
+    function flexia_dimension_attr_generator($key, $measure = 'px', $important = false) {
         
+        $important = $important ? ' !important' : '';
         $saved_options = get_theme_mods();
         if( is_array($saved_options) && array_key_exists( $key, $saved_options ) ) {
             $valueArr = (array) json_decode(flexia_get_option($key));
@@ -402,7 +403,7 @@ if( ! function_exists( 'flexia_dimension_attr_generator' ) ) :
         }
 
         if ( count($dimensionArr) > 0 ) {
-            $dimensionAttr = "padding: " . implode(' ', $dimensionArr) . ";";
+            $dimensionAttr = "padding: " . implode(' ', $dimensionArr) . $important . ";";
         }
         
         return $dimensionAttr;
