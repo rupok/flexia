@@ -60,7 +60,7 @@ class Customizer_Toggle_Control extends WP_Customize_Control
 	 */
 	public function enqueue()
 	{
-		// wp_enqueue_script( 'flexia-customizer-toggle-control', get_template_directory_uri() . '/framework/assets/admin/js/customizer-toggle-control.js', array( 'jquery' ), rand(), true );
+		wp_enqueue_script( 'flexia-customizer-toggle-control', get_template_directory_uri() . '/framework/assets/admin/js/customizer-toggle-control.js', array( 'jquery' ), rand(), true );
 		wp_enqueue_style('flexia-pure-css-toggle-buttons', get_template_directory_uri() . '/framework/assets/admin/css/customizer-togle-buttons.css', array(), rand());
 
 		$css = '
