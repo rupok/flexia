@@ -191,7 +191,19 @@ jQuery(document).ready(function($) {
         $('.page-header.blog-header .header-content').css('margin-top', (0 - (scrollPosition * .8)) + 'px');
     }
 
+    $(window).load(function() {
+        /**
+         * menu indicator height 
+         */
+        $('.flexia-menu-indicator').on('click', function(e) {
+            e.preventDefault();
+            const anchor = $(this).parent('li').find('a');
+            $(this).css('height', anchor.innerHeight());
+        });
+    })
+
 });
+
 
 // Overlay search
 

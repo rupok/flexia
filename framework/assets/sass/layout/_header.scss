@@ -221,9 +221,6 @@
                 align-items: center !important;
                 .flexia-header-top {
                     width: 100%;
-                    .flexia-social-links {
-                        display: none;
-                    }
                 }
             }
         }
@@ -319,13 +316,6 @@
                 }
                 .main-navigation {
                     margin: 0 .5em 0 0 !important;
-                }
-            }
-        }
-        .flexia-navbar {
-            .flexia-navbar-container {
-                .flexia-navbar-inner {
-                    flex-flow: row nowrap;
                 }
             }
         }
