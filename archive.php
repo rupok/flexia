@@ -11,44 +11,56 @@ if (!defined('ABSPATH')) exit;
  * @package Flexia
  */
 
-get_header();
-/**
- * Flexia hook for Blog Header
- */
-?>
+get_header(); ?>
+
+<header class="page-header archive-header" style="background-image: url('<?php echo esc_attr(header_image()); ?>');">
+	<div class="header-inner">
+		<div class="header-content">
+			<?php the_archive_title('<h2 class="page-title">', '</h2>'); ?>
+			<?php the_archive_description('<div class="archive-description">', '</div>'); ?>
+		</div>
+	</div>
+</header>
 
 <div id="content" class="site-content">
-
-	<?php do_action('flexia_archive_header'); ?>
-
 	<div class="flexia-wrapper flexia-container max width">
 
 		<div id="primary" class="content-area">
+			<main id="main" class="site-main flexia-container">
 
-			<?php
-			/**
-			 * Flexia hook for Archive Before Main Content/ Loop
-			 */
+				<?php
+				if (have_posts()) :
 
-			do_action('flexia_archive_before_content');
-			?>
+					if (is_home() && !is_front_page()) : ?>
+						<header>
+							<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+						</header>
 
-			<?php
-			/**
-			 * Flexia hook for Archive Content/The Loop
-			 */
+				<?php
+					endif;
 
-			do_action('flexia_archive_content');
-			?>
+					/* Start the Loop */
+					while (have_posts()) : the_post();
 
-			<?php
-			/**
-			 * Flexia hook for archive After Main Content/ Loop
-			 */
+						/*
+						 * Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part('framework/views/template-parts/content', get_post_format());
 
-			do_action('flexia_archive_after_content');
-			?>
+					endwhile;
 
+					get_template_part('framework/views/template-parts/content', 'pagination');
+
+				else :
+
+					get_template_part('framework/views/template-parts/content', 'none');
+
+				endif; ?>
+
+
+			</main><!-- #main -->
 		</div><!-- #primary -->
 
 		<?php get_sidebar(); ?>
