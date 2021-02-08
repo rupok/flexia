@@ -478,6 +478,7 @@ function flexia_pro_load_more_posts()
 	// End of Loop
 }
 add_action('wp_ajax_load_more_posts', 'flexia_pro_load_more_posts');
+add_action('wp_ajax_nopriv_load_more_posts', 'flexia_pro_load_more_posts');
 
 
 /**
