@@ -27,9 +27,12 @@ function flexia_body_classes( $classes ) {
 		$classes[] = 'sidebar-left-right';
 	}
 
-
 	if( get_theme_mod('flexia_navbar_position') == 'flexia-navbar-transparent-top' ) {
 		$classes[] = 'transparent-top-navbar';
+	}
+
+	if( 'pro-1' === flexia_get_option('flexia_header_layouts') ) {
+		$classes[] = 'flexia-header-pro-1-wrapper';
 	}
 
 	$flexia_version = wp_get_theme();
@@ -536,17 +539,3 @@ function flexia_main_logo() {
 	ob_get_clean();
 	return $html;
 }
-/**
- * Add class in body
- */
-function flexia_body_class( $classes ) {
-
-	$header_layout = flexia_get_option('flexia_header_layouts');
-	if( 'pro-1' === $header_layout ) {
-		$classes[] = 'flexia-header-pro-1-wrapper';
-	}
-     
-    return $classes;
-     
-}
-add_filter( 'body_class','flexia_body_class' );

@@ -153,6 +153,8 @@ function flexia_customizer_condition()
         true
     );
     $config = array(
+        // header layout
+        'flexia_navbar_position' => array('flexia_header_layouts', '!=', 'pro-1'),
         // page settings
         'flexia_page_breadcrumb' => array('flexia_page_header', '==', true),
         'flexia_page_header_layout' => array('flexia_page_header', '==', true),
