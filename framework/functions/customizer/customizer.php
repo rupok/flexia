@@ -696,7 +696,7 @@ function flexia_customize_register($wp_customize)
             $wp_customize,
             'flexia_blog_bg_color',
             array(
-                'label' => __('Blog Body Background', 'flexia'),
+                'label' => __('Blog/Archive Background', 'flexia'),
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_blog_bg_color',
                 'priority' => 20,
