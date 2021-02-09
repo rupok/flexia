@@ -5611,7 +5611,7 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_setting('flexia_archive_header_title_font_family', array(
         'default' => $defaults['flexia_archive_header_title_font_family'],
         'sanitize_callback' => 'sanitize_text_field',
-        'transport' => 'postMessage',
+        // 'transport' => 'postMessage',
     ));
     $wp_customize->add_control(
         new Customizer_Select2_Google_Fonts(
@@ -5672,7 +5672,7 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_setting('flexia_archive_header_desc_font_family', array(
         'default' => $defaults['flexia_archive_header_desc_font_family'],
         'sanitize_callback' => 'sanitize_text_field',
-        'transport' => 'postMessage',
+        // 'transport' => 'postMessage',
     ));
     $wp_customize->add_control(
         new Customizer_Select2_Google_Fonts(

@@ -198,7 +198,7 @@ function flexia_generate_css()
 		font-size: calc(' . $defaults['flexia_blog_title_font_size'] . 'px / 1.2);
 	}
 	
-	.header-content .blog-desc, .header-content .archive-description > p {
+	.header-content .blog-desc {
 		font-size: ' . $defaults['flexia_blog_desc_font_size'] . 'px;
 		color: ' . $defaults['flexia_blog_desc_font_color'] . ';
 		font-family: ' . $defaults['flexia_blog_header_desc_font_family'] . ';

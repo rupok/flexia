@@ -331,6 +331,9 @@ if (!function_exists('flexia_fonts_url')) {
         $blogHeader_title_font = flexia_get_option('flexia_blog_header_title_font_family');
         $blogHeader_desc_font = flexia_get_option('flexia_blog_header_desc_font_family');
 
+        $archiveHeader_title_font = flexia_get_option('flexia_archive_header_title_font_family');
+        $archiveHeader_desc_font = flexia_get_option('flexia_archive_header_desc_font_family');
+
 
         if ('off' !== $content_font || 'off' !== $header_font) {
             $font_families = array();
@@ -361,6 +364,14 @@ if (!function_exists('flexia_fonts_url')) {
 
             if ('off' !== $blogHeader_desc_font) {
                 $font_families[] = $blogHeader_desc_font;
+            }
+
+            if ('off' !== $archiveHeader_title_font) {
+                $font_families[] = $archiveHeader_title_font;
+            }
+
+            if ('off' !== $archiveHeader_desc_font) {
+                $font_families[] = $archiveHeader_desc_font;
             }
 
             $query_args = array(

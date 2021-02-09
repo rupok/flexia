@@ -1055,11 +1055,11 @@ function genaerateDimemsion(value, measure = 'px') {
         });
     });
 
-    wp.customize("flexia_archive_header_title_font_family", function(value) {
-        value.bind(function(to) {
-            $(".archive-header .header-content > .page-title").css("font-family", to);
-        });
-    });
+    // wp.customize("flexia_archive_header_title_font_family", function(value) {
+    //     value.bind(function(to) {
+    //         $(".archive-header .header-content > .page-title").css("font-family", to);
+    //     });
+    // });
 
     wp.customize("flexia_archive_desc_font_size", function(value) {
         value.bind(function(to) {
@@ -1073,9 +1073,9 @@ function genaerateDimemsion(value, measure = 'px') {
         });
     });
 
-    wp.customize("flexia_archive_header_desc_font_family", function(value) {
-        value.bind(function(to) {
-            $(".header-content .archive-description > p").css("font-family", to);
-        });
-    });
+    // wp.customize("flexia_archive_header_desc_font_family", function(value) {
+    //     value.bind(function(to) {
+    //         $(".header-content .archive-description > p").css("font-family", to);
+    //     });
+    // });
 })(jQuery);
