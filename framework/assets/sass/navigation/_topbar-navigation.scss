@@ -18,6 +18,11 @@
                 height: 100%;
                 display: flex;
                 align-items: center;
+                svg {
+                    height: .7em;
+                    width: auto;
+                    margin-left: 5px;
+                }
             }
 
             &:hover,

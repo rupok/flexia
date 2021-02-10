@@ -2605,6 +2605,9 @@ big {
   .flexia_header_mobile_layouts_2 .flexia-navbar-inner {
     padding-bottom: .8em !important;
   }
+  .flexia_header_mobile_layouts_2 .flexia-navbar-inner .flexia-social-links {
+    margin: unset !important;
+  }
   .flexia_header_mobile_layouts_2 .flexia-navbar-inner .flexia-logobar-inline {
     width: 100%;
     flex: 0 0 100%;
@@ -3752,6 +3755,11 @@ a:hover, a:active {
   height: 100%;
   display: flex;
   align-items: center;
+}
+.topbar-navigation .nav-menu li > a svg {
+  height: .7em;
+  width: auto;
+  margin-left: 5px;
 }
 .topbar-navigation .nav-menu li:hover > a, .topbar-navigation .nav-menu li.current-menu-item > a, .topbar-navigation .nav-menu li.current-menu-ancestor > a {
   color: #ffffff;

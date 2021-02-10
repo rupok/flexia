@@ -738,6 +738,62 @@ function genaerateDimemsion(value, measure = 'px') {
         });
     });
 
+    // archive load more
+    wp.customize('flexia_archive_load_more_btn_bg', function(value) {
+        value.bind(function(to) {
+            $('.archive .flexia-load-more-button').css('background-color', to);
+        });
+    });
+
+    wp.customize('flexia_archive_load_more_font_color', function(value) {
+        value.bind(function(to) {
+            $('.archive .flexia-load-more-button').css('color', to);
+        });
+    });
+
+    wp.customize('flexia_archive_load_more_btn_font_size', function(value) {
+        value.bind(function(to) {
+            $('.archive .flexia-load-more-button').css('font-size', to + 'px');
+        });
+    });
+
+    wp.customize('flexia_archive_load_more_btn_bg_active', function(value) {
+        value.bind(function(to) {
+            $('.archive .flexia-load-more-button.button--loading').css('background-color', to);
+        });
+    });
+
+    wp.customize('flexia_load_more_btn_bg_flexia_archive_load_more_btn_bg_activeactive', function(value) {
+        value.bind(function(to) {
+            var loadMoreBg = $(".archive .flexia-load-more-button").css('background-color');
+            $(".archive .flexia-load-more-button").hover(
+                function() {
+                    //mouse over
+                    $(this).css('background-color', to)
+                },
+                function() {
+                    //mouse out
+                    $(this).css('background-color', loadMoreBg)
+                });
+
+        });
+    });
+
+    wp.customize('flexia_archive_load_more_font_color_active', function(value) {
+        value.bind(function(to) {
+            var loadMoreHovTxt = $(".archive .flexia-load-more-button:hover, .archive .flexia-load-more-button.button--loading").css('color');
+            $(".archive .flexia-load-more-button").hover(
+                function() {
+                    //mouse over
+                    $(this).css('color', to)
+                },
+                function() {
+                    //mouse out
+                    $(this).css('color', loadMoreHovTxt)
+                });
+        });
+    });
+
     //Blog Load More
     wp.customize('flexia_load_more_btn_bg', function(value) {
         value.bind(function(to) {

@@ -331,6 +331,9 @@
     }
     .flexia_header_mobile_layouts_2 .flexia-navbar-inner {
         padding-bottom: .8em !important;
+        .flexia-social-links {
+            margin: unset !important;
+        }
         .flexia-logobar-inline {
             width: 100%;
             flex: 0 0 100%;

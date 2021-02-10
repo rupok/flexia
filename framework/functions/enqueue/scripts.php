@@ -40,8 +40,8 @@ function flexia_site_scripts()
     $flexia_archive_excerpt_count           = get_theme_mod('flexia_archive_excerpt_count', 30);
     $flexia_archive_magnific_popup          = get_theme_mod('flexia_pro_archive_image_popup', false);
     $flexia_archive_show_load_more          = get_theme_mod('flexia_archive_load_more', true);
-    $flexia_archive_load_more_text          = get_theme_mod('flexia_archive_load_more_text', 'Load More');
-    $flexia_archive_loading_text            = get_theme_mod('flexia_archive_loading_text', 'Loading...');
+    $flexia_archive_load_more_text          = get_theme_mod('flexia_archive_load_more_text', __('Load More','flexia'));
+    $flexia_archive_loading_text            = get_theme_mod('flexia_archive_loading_text', __('Loading...','flexia'));
 
     $flexia_blog_per_page           = get_theme_mod('flexia_blog_per_page', 10);
     $flexia_blog_layout             = get_theme_mod('flexia_blog_content_layout', 'flexia_blog_content_layout_grid');
@@ -51,8 +51,8 @@ function flexia_site_scripts()
     $flexia_magnific_popup          = get_theme_mod('flexia_blog_image_popup', false);
     $flexia_show_filter             = get_theme_mod('flexia_blog_filterable', false);
     $flexia_show_load_more          = get_theme_mod('flexia_blog_load_more', true);
-    $flexia_load_more_text          = get_theme_mod('flexia_blog_load_more_text', 'Load More');
-    $flexia_loading_text            = get_theme_mod('flexia_blog_loading_text', 'Loading...');
+    $flexia_load_more_text          = get_theme_mod('flexia_blog_load_more_text',  __('Load More','flexia'));
+    $flexia_loading_text            = get_theme_mod('flexia_blog_loading_text', __('Loading...','flexia'));
     $flexia_blog_categories         = get_theme_mod('flexia_blog_categories', '');
 
     $flexia_pro_active = "false";

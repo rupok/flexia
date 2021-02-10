@@ -435,6 +435,18 @@ function flexia_generate_css()
 		background-color: ' .$defaults['flexia_load_more_btn_bg_active'] . ';
 		color: ' .$defaults['flexia_load_more_font_color_active'] . ';
 	}
+
+	.archive .flexia-load-more-button {
+		background-color: ' .$defaults['flexia_archive_load_more_btn_bg'] . ';
+		color: ' .$defaults['flexia_archive_load_more_font_color'] . ';
+		font-size: ' .$defaults['flexia_archive_load_more_btn_font_size'] . 'px;
+	}
+
+	.archive .flexia-load-more-button:hover,
+	.archive .flexia-load-more-button.button--loading {
+		background-color: ' .$defaults['flexia_archive_load_more_btn_bg_active'] . ';
+		color: ' .$defaults['flexia_archive_load_more_font_color_active'] . ';
+	}
 	
 	@media screen and (min-width: 992px) {
 		.main-navigation .nav-menu li > a, .flexia-menu.header-icons .nav-menu li > a {
