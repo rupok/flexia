@@ -512,19 +512,8 @@ function flexia_archive_layout()
 
 			<div class="js-flexia-load-post flexia-post-block-grid flexia-col-<?php echo $flexia_archive_grid_cols; ?>">
 				<?php
-				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-				$args = [
-					'paged'           => $paged,
-					'post_type' => 'post',
-					'post_status' => 'publish',
-					'posts_per_page' => $flexia_archive_per_page,
-				];
-
-				$loop = new WP_Query($args);
-				while ($loop->have_posts()) : $loop->the_post();
+				while (have_posts()) : the_post();
 					$terms = get_the_category();
-					$categories_list = get_the_category_list(esc_html__(', ', 'flexia'));
-
 				?>
 					<article class="flexia-post-block-item flexia-post-block-column <?php foreach ($terms as $term) : echo $term->slug . ' ';
 																					endforeach; ?>">
@@ -638,7 +627,7 @@ function flexia_archive_load_more_button()
 
 	if ($flexia_show_load_more) : ?>
 		<div class="flexia-load-more-button-wrap">
-			<button id="load-more-post" class="flexia-load-more-button">
+			<button id="load-more-post-archive" class="flexia-load-more-button">
 				<div class="flexia-btn-loader button__loader"></div>
 				<span><?php echo $flexia_load_more_text; ?></span>
 			</button>
@@ -647,3 +636,219 @@ function flexia_archive_load_more_button()
 <?php
 }
 add_action('flexia_archive_layout', 'flexia_archive_load_more_button', 5);
+/**
+ * This method is used with ajax call for load more archive posts
+ * Hooked: 'wp_ajax_flexia_archive_load_more'
+ * Hooked: 'wp_ajax_nopriv_flexia_archive_load_more'
+ * @since   
+ */
+function flexia_archive_load_more_func()
+{
+	check_ajax_referer( 'flexia-archive-load-more-nonce', 'nonce' );
+	/**
+	 * Localized Values
+	 */
+	$flexia_archive_layout 				= $_POST['archiveLayout'];
+	$flexia_archive_grid_cols 			= $_POST['archiveMasonryGridCols'];
+	$flexia_archive_post_meta_position 	= $_POST['archivePostMetaPosition'];
+	$flexia_archive_excerpt_count 		= $_POST['archiveExcerptCount'];
+	$flexia_magnific_popup 				= $_POST['archiveMagnificPopup'];
+	$flexia_load_more_text 				= $_POST['archiveLoadMoreText'];
+	$flexia_loading_text 				= $_POST['archiveLoadingText'];
+
+
+	$query_vars                			= json_decode( stripslashes( $_POST['query_vars'] ), true );
+	$query_vars['paged']       			= ( isset( $_POST['page_no'] ) ) ? stripslashes( $_POST['page_no'] ) : 1;
+	$query_vars['post_status'] 			= 'publish';
+	$query_vars['posts_per_page'] 		= ( isset($_POST['posts_per_page']) ) ? stripslashes($_POST['posts_per_page']) : get_option( 'posts_per_page' );
+	$posts                     			= new WP_Query( $query_vars );
+
+	/**
+	 * Init WP_Query
+	 */
+	while ($posts->have_posts()) : $posts->the_post();
+		$terms = get_the_category();
+	?>
+		<?php if ('flexia_blog_content_layout_masonry' === $flexia_archive_layout) : ?>
+			<div class="flexia-grid-post flexia-post-grid-column  <?php foreach ($terms as $term) : echo $term->slug . ' '; endforeach; ?>">
+				<div class="flexia-grid-post-holder">
+					<div class="flexia-grid-post-holder-inner">
+						<div class="flexia-entry-media">
+							<div class="flexia-entry-overlay">
+								<?php if (has_post_thumbnail()) : ?>
+									<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+										<g>
+											<g>
+												<path d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z" />
+											</g>
+										</g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+									</svg>
+								<?php endif; ?>
+								<?php if ($flexia_magnific_popup == true) : ?>
+									<a href="<?php echo esc_url(the_post_thumbnail_url()); ?>" class="flexia-magnific-popup"></a>
+								<?php else : ?>
+									<a href="<?php the_permalink(); ?>"></a>
+								<?php endif; ?>
+							</div>
+							<?php if (has_post_thumbnail()) : ?>
+								<div class="flexia-entry-thumbnail">
+									<?php the_post_thumbnail('full'); ?>
+								</div>
+							<?php endif; ?>
+						</div>
+						<div class="flexia-entry-wrapper">
+							<header class="flexia-entry-header">
+								<h2 class="flexia-entry-title"><a class="flexia-grid-post-link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+								<?php
+								/**
+								 * If Meta On Top Selected
+								 */
+								if ('meta-on-top' === $flexia_archive_post_meta_position) : ?>
+									<div class="flexia-entry-meta">
+										<span class="flexia-posted-by"><?php the_author_posts_link(); ?></span>
+										<span class="flexia-posted-on"><time datetime="<?php echo get_the_date(); ?>"><?php echo get_the_date(); ?></time></span>
+									</div>
+								<?php endif; ?>
+							</header>
+							<div class="flexia-entry-content">
+								<div class="flexia-grid-post-excerpt">
+									<?php
+									$content = get_the_excerpt();
+									$trimmed_content = wp_trim_words($content, $flexia_archive_excerpt_count);
+									echo $trimmed_content;
+									?>
+								</div>
+							</div>
+						</div>
+						<?php
+						/**
+						 * If Meta On Bottom Selected
+						 */
+						if ('meta-on-bottom' === $flexia_archive_post_meta_position) : ?>
+							<div class="flexia-entry-footer">
+								<div class="flexia-author-avatar">
+									<a href="<?php echo get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename')); ?>"><?php echo get_avatar(get_the_author_meta('ID'), 96); ?> </a>
+								</div>
+								<div class="flexia-entry-meta">
+									<div class="flexia-posted-by"><?php the_author_posts_link(); ?></div>
+									<div class="flexia-posted-on">
+										<time datetime="<?php echo get_the_date(); ?>"><?php echo get_the_date(); ?></time>
+									</div>
+								</div>
+							</div>
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>
+
+		<?php if ('flexia_blog_content_layout_grid' === $flexia_archive_layout) : ?>
+			<article class="flexia-post-block-item flexia-post-block-column <?php foreach ($terms as $term) : echo $term->slug . ' ';
+																			endforeach; ?>">
+				<div class="flexia-post-block-item-holder">
+					<div class="flexia-post-block-item-holder-inner">
+						<div class="flexia-entry-media">
+							<div class="flexia-entry-overlay">
+								<?php if (has_post_thumbnail()) : ?>
+									<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+										<g>
+											<g>
+												<path d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z" />
+											</g>
+										</g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+										<g> </g>
+									</svg>
+								<?php endif; ?>
+								<?php if ($flexia_magnific_popup == true) : ?>
+									<a href="<?php echo esc_url(the_post_thumbnail_url()); ?>" class="flexia-magnific-popup"></a>
+								<?php else : ?>
+									<a href="<?php the_permalink(); ?>"></a>
+								<?php endif; ?>
+							</div>
+							<?php if (has_post_thumbnail()) : ?>
+								<div class="flexia-entry-thumbnail">
+									<?php the_post_thumbnail('full'); ?>
+								</div>
+							<?php endif; ?>
+						</div>
+						<div class="flexia-entry-wrapper">
+							<header class="flexia-entry-header">
+								<h2 class="flexia-entry-title"><a class="flexia-grid-post-link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+								<?php
+								/**
+								 * If Meta On Top Selected
+								 */
+								if ('meta-on-top' === $flexia_archive_post_meta_position) : ?>
+									<div class="flexia-entry-meta">
+										<span class="flexia-posted-by"><?php the_author_posts_link(); ?></span>
+										<span class="flexia-posted-on"><time datetime="<?php echo get_the_date(); ?>"><?php echo get_the_date(); ?></time></span>
+									</div>
+								<?php endif; ?>
+							</header>
+							<div class="flexia-entry-content">
+								<div class="flexia-grid-post-excerpt">
+									<?php
+									$content = get_the_excerpt();
+									$trimmed_content = wp_trim_words($content, $flexia_archive_excerpt_count);
+									echo $trimmed_content;
+									?>
+								</div>
+							</div>
+						</div>
+						<?php
+						/**
+						 * If Meta On Bottom Selected
+						 */
+						if ('meta-on-bottom' === $flexia_archive_post_meta_position) : ?>
+							<div class="flexia-entry-footer">
+								<div class="flexia-author-avatar">
+									<a href="<?php echo get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename')); ?>"><?php echo get_avatar(get_the_author_meta('ID'), 96); ?> </a>
+								</div>
+								<div class="flexia-entry-meta">
+									<div class="flexia-posted-by"><?php the_author_posts_link(); ?></div>
+									<div class="flexia-posted-on">
+										<time datetime="<?php echo get_the_date(); ?>"><?php echo get_the_date(); ?></time>
+									</div>
+								</div>
+							</div>
+						<?php endif; ?>
+					</div>
+				</div>
+			</article>
+		<?php endif; ?>
+	<?php
+	endwhile;
+	die();
+	// End of Loop
+}
+add_action('wp_ajax_flexia_archive_load_more', 'flexia_archive_load_more_func');
+add_action('wp_ajax_nopriv_flexia_archive_load_more', 'flexia_archive_load_more_func');

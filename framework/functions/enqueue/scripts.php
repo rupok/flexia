@@ -31,30 +31,30 @@ function flexia_site_scripts()
     }
 
     //Set localize Script to 'flexia-navigation'
-    $flexia_blog_layout = $flexia_blog_layout = $flexia_blog_grid_cols = $flexia_blog_post_meta = $flexia_blog_excerpt_count = $flexia_magnific_popup = $flexia_show_load_more = $flexia_load_more_text = $flexia_loading_text = $flexia_show_filter = $flexia_blog_categories = '';
-    if (is_archive()) {
-        $flexia_blog_per_page           = get_theme_mod('flexia_archive_per_page', 10);
-        $flexia_blog_layout             = get_theme_mod('flexia_archive_content_layout');
-        $flexia_blog_grid_cols          = get_theme_mod('flexia_archive_grid_column', 3);
-        $flexia_blog_post_meta          = get_theme_mod('flexia_pro_archive_post_meta', 'meta-on-bottom');
-        $flexia_blog_excerpt_count      = get_theme_mod('flexia_archive_excerpt_count', 30);
-        $flexia_magnific_popup          = get_theme_mod('flexia_pro_archive_image_popup', false);
-        $flexia_show_load_more          = get_theme_mod('flexia_archive_load_more', true);
-        $flexia_load_more_text          = get_theme_mod('flexia_archive_load_more_text', 'Load More');
-        $flexia_loading_text            = get_theme_mod('flexia_archive_loading_text', 'Loading...');
-    } else {
-        $flexia_blog_per_page           = get_theme_mod('flexia_blog_per_page', 10);
-        $flexia_blog_layout             = get_theme_mod('flexia_blog_content_layout');
-        $flexia_blog_grid_cols          = get_theme_mod('flexia_blog_grid_column', 3);
-        $flexia_blog_post_meta          = get_theme_mod('flexia_blog_post_meta', 'meta-on-bottom');
-        $flexia_blog_excerpt_count      = get_theme_mod('flexia_blog_excerpt_count', 30);
-        $flexia_magnific_popup          = get_theme_mod('flexia_blog_image_popup', false);
-        $flexia_show_filter             = get_theme_mod('flexia_blog_filterable', false);
-        $flexia_show_load_more          = get_theme_mod('flexia_blog_load_more', true);
-        $flexia_load_more_text          = get_theme_mod('flexia_blog_load_more_text', 'Load More');
-        $flexia_loading_text            = get_theme_mod('flexia_blog_loading_text', 'Loading...');
-        $flexia_blog_categories         = get_theme_mod('flexia_blog_categories', '');
-    }
+    global $wp_query;
+
+    $flexia_archive_per_page                = get_theme_mod('flexia_archive_per_page', 10);
+    $flexia_archive_layout                  = get_theme_mod('flexia_archive_content_layout', 'flexia_archive_content_layout_grid');
+    $flexia_archive_grid_cols               = get_theme_mod('flexia_archive_grid_column', 3);
+    $flexia_archive_post_meta               = get_theme_mod('flexia_pro_archive_post_meta', 'meta-on-bottom');
+    $flexia_archive_excerpt_count           = get_theme_mod('flexia_archive_excerpt_count', 30);
+    $flexia_archive_magnific_popup          = get_theme_mod('flexia_pro_archive_image_popup', false);
+    $flexia_archive_show_load_more          = get_theme_mod('flexia_archive_load_more', true);
+    $flexia_archive_load_more_text          = get_theme_mod('flexia_archive_load_more_text', 'Load More');
+    $flexia_archive_loading_text            = get_theme_mod('flexia_archive_loading_text', 'Loading...');
+
+    $flexia_blog_per_page           = get_theme_mod('flexia_blog_per_page', 10);
+    $flexia_blog_layout             = get_theme_mod('flexia_blog_content_layout', 'flexia_blog_content_layout_grid');
+    $flexia_blog_grid_cols          = get_theme_mod('flexia_blog_grid_column', 3);
+    $flexia_blog_post_meta          = get_theme_mod('flexia_blog_post_meta', 'meta-on-bottom');
+    $flexia_blog_excerpt_count      = get_theme_mod('flexia_blog_excerpt_count', 30);
+    $flexia_magnific_popup          = get_theme_mod('flexia_blog_image_popup', false);
+    $flexia_show_filter             = get_theme_mod('flexia_blog_filterable', false);
+    $flexia_show_load_more          = get_theme_mod('flexia_blog_load_more', true);
+    $flexia_load_more_text          = get_theme_mod('flexia_blog_load_more_text', 'Load More');
+    $flexia_loading_text            = get_theme_mod('flexia_blog_loading_text', 'Loading...');
+    $flexia_blog_categories         = get_theme_mod('flexia_blog_categories', '');
+
     $flexia_pro_active = "false";
     if (class_exists('Flexia_Pro')) {
         $flexia_pro_active = "true";
@@ -100,6 +100,20 @@ function flexia_site_scripts()
         'loading_text'        => $flexia_loading_text,
         'selected_cats'        => $flexia_blog_categories,
         'is_pro_active'        => $flexia_pro_active,
+        // archive
+        'archive_layout' => $flexia_archive_layout,
+        'archive_per_page' => $flexia_archive_per_page,
+        'archive_masonry_grid_cols' => $flexia_archive_grid_cols,
+        'archive_post_meta_position' => $flexia_archive_post_meta,
+        'archive_excerpt_count' => $flexia_archive_excerpt_count,
+        'archive_magnific_popup' => $flexia_archive_magnific_popup,
+        'archive_show_load_more' => $flexia_archive_show_load_more,
+        'archive_load_more_text' => $flexia_archive_load_more_text,
+        'archive_loading_text' => $flexia_archive_loading_text,
+        'query_vars' => wp_json_encode( $wp_query->query ),
+        'archive_total_page' => $wp_query->max_num_pages,
+        'archive_count' => 2,
+        'archive_nonce' => wp_create_nonce('flexia-archive-load-more-nonce'),
     ];
     wp_localize_script('flexia-navigation', 'settings', $settings);
 }

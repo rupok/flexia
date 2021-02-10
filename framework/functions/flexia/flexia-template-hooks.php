@@ -228,7 +228,7 @@ function flexia_archive_main_content() {
     if ( have_posts() ) :
         
         if ($flexia_archive_layout == 'flexia_blog_content_layout_grid' || $flexia_archive_layout == 'flexia_blog_content_layout_masonry') :
-
+            
             /**
              * A flexia hook to add archive layouts
              */
@@ -236,7 +236,6 @@ function flexia_archive_main_content() {
 
         // is layout not selected or startdard
         else : 
-
             /* Start the Loop */
             while ( have_posts() ) : the_post();
 
@@ -264,3 +263,14 @@ function flexia_archive_main_content() {
     echo '</main>';
 }
 add_action('flexia_archive_content', 'flexia_archive_main_content', 2);
+/**
+ * Change the main archive query's posts per page number
+ */
+function flexia_modify_archive_main_query( $query ) {
+    
+    if ( $query->is_archive() && $query->is_main_query() && !is_admin() ) {
+        $flexia_archive_per_page    = flexia_get_option('flexia_archive_per_page');
+        $query->set( 'posts_per_page', $flexia_archive_per_page );
+    }
+}
+add_action( 'pre_get_posts', 'flexia_modify_archive_main_query' );
