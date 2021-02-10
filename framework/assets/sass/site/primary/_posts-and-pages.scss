@@ -928,14 +928,16 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
 }
 
 .flexia-load-more-button .button__loader {
-  left: -100%;
+  left: auto;
   top: auto;
   margin-right: 5px;
   transition: all .2s;
+  visibility: hidden;
 }
 
 .flexia-load-more-button > span {
   margin-left: -20px;
+  padding: 0 2em;
 }
 
 .flexia-load-more-button.button--loading > span {
@@ -944,6 +946,7 @@ body.blog .flexia-post-grid.flexia-post-block .flexia-post-block-column {
 
 .flexia-load-more-button.button--loading .button__loader {
   left: auto;
+  visibility: visible;
 }
 .flexia-btn-loader, .flexia-btn-loader:after {
   border-radius: 50%;
