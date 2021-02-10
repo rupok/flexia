@@ -3088,6 +3088,10 @@ a:hover, a:active {
   z-index: 100;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
+.flexia-menu .nav-menu li ul.flexia-mega-menu li > a span.menu-sub-text {
+  padding-left: 0;
+  display: block;
+}
 @media screen and (min-width: 992px) {
   .flexia-menu .nav-menu li ul.flexia-mega-menu {
     left: 1em;
