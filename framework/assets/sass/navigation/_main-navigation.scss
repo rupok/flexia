@@ -5,9 +5,11 @@
         right: 0;
         margin: 0;
         padding: 15px;
+        >li>a {
+            height: 100%;
+        }
         li {
-            display: flex;
-            align-items: center;
+            display: inline;
             >a {
                 display: flex;
                 align-items: center;
@@ -15,7 +17,6 @@
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 color: #4d4d4d;
-                padding: 10px;
             }
             &:hover,
             &.current-menu-item,
@@ -30,7 +31,7 @@
                 li {
                     >a {
                         font-size: 13px;
-                        line-height: 15px;
+                        line-height: 21px;
                         text-transform: none;
                         color: #4d4d4d;
                         padding: 12px 15px;
@@ -92,6 +93,74 @@
                 }
             }
         }
+    }
+}
+
+// menu sub text
+.menu-sub-text {
+    width: 100%;
+    color: #999999;
+    font-size: 0.85em;
+    display: block;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 15px;
+    padding-right: 15px;
+    @media all and (max-width: 991px) {
+        margin-bottom: 10px;
+    }
+}
+
+//Main Navigation Active/ Hover styles
+@media all and (min-width: 992px) {
+    .main-navigation .nav-menu>li>a:after {
+        content: "";
+        transition: all 200ms;
+        height: 2px;
+        width: 40px;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .flexia-header-2 .main-navigation .nav-menu>li>a:after {
+        top: 100%;
+        left: -30px;
+    }
+    .flexia-header-2 .main-navigation .nav-menu>li.current-menu-item>a:after,
+    .flexia-header-2 .main-navigation .nav-menu>li:hover>a:after {
+        left: 15px;
+        visibility: visible;
+        opacity: 1;
+    }
+    .flexia-header-3 .main-navigation .nav-menu>li>a:after {
+        top: 0;
+        left: -30px;
+    }
+    .flexia-header-3 .main-navigation .nav-menu>li.current-menu-item>a:after,
+    .flexia-header-3 .main-navigation .nav-menu>li:hover>a:after {
+        left: 15px;
+        visibility: visible;
+        opacity: 1;
+    }
+    .flexia-header-4 .main-navigation .nav-menu>li.menu-item-has-children>a:after {
+        bottom: 30%;
+    }
+    .flexia-header-4 .main-navigation .nav-menu>li>a:after {
+        content: ". . .";
+        background-color: transparent;
+        top: auto;
+        left: -50px;
+        bottom: 40%;
+        font-weight: 700;
+    }
+    .flexia-header-4 .main-navigation .nav-menu>li.current-menu-item>a:after,
+    .flexia-header-4 .main-navigation .nav-menu>li:hover>a:after {
+        left: 15px;
+        visibility: visible;
+        opacity: 1;
+    }
+    .main-navigation .nav-menu>li.navbar-search-menu:hover>a:after {
+        content: unset !important;
     }
 }
 
@@ -207,7 +276,7 @@
             }
             .flexia-cart-total {
                 display: flex !important;
-                justify-content: flex-end;
+                justify-content: end;
                 align-items: baseline;
                 font-size: 0.9em;
                 color: #707070;

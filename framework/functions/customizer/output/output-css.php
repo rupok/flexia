@@ -32,7 +32,7 @@ function flexia_generate_css()
 	$css = '.flexia-primary-menu .customize-partial-edit-shortcut button {
 		margin-left: 50px;
 	}
-	
+
 	.site-title a, .site-description {
 		color: #' . $header_text_color . ';
 	}
