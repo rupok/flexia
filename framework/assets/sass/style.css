@@ -2708,9 +2708,8 @@ big {
   .flexia-header-4.flexia_header_mobile_layouts_2 .flexia-navbar .flexia-container .flexia-header-navigation {
     position: absolute;
     top: auto;
-    right: auto;
     bottom: 17px;
-    left: calc(50% + 50px);
+    right: 0;
     margin-top: -1em;
   }
   .flexia-header-4.flexia_header_mobile_layouts_2 .flexia-navbar .flexia-container .flexia-header-navigation .main-navigation .flexia-primary-menu {
