@@ -3862,6 +3862,7 @@ a:hover, a:active {
   .topbar-navigation .nav-menu {
     margin: 0;
     background-color: #262625;
+    height: auto;
   }
   .topbar-navigation .nav-menu li > a {
     line-height: 42px;
