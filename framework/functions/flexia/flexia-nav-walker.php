@@ -164,11 +164,11 @@ class Flexia_Nav_Walker extends Walker_Nav_Menu
         $item_output = $args->before;
         $item_output .= '<a' . $attributes . '>';
         $item_output .= $args->link_before . $title . $args->link_after;
+	    if (!empty($item->description)) {
+		    $item_output .= '<span class="menu-sub-text">' . $item->description . '</span>';
+	    }
         $item_output .= '</a>';
         $item_output .= $args->after;
-        if (!empty($item->description)) {
-            $item_output .= '<span class="menu-sub-text">' . $item->description . '</span>';
-        }
 
         if ($is_megamenu_has_widget) {
             $item_output .= '<ul class="sub-menu">';
