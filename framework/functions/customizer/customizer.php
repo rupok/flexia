@@ -3163,20 +3163,25 @@ function flexia_customize_register($wp_customize)
                     array(
                         '1'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-01.png',
+                            'title' => __('Header Layout 1','flexia')
                         ),
                         '2'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-02.png',
+                            'title' => __('Header Layout 2','flexia')
                         ),
                         '3'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-03.png',
+                            'title' => __('Header Layout 3','flexia')
                         ),
                         '4'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-04.png',
+                            'title' => __('Header Layout 4','flexia')
                         ),
                         'pro-1'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-pro-01.png',
                             'pro'   => true,
                             'url'   => 'https://flexia.pro/pricing/',
+                            'title' => __('Header Layout Pro 1','flexia')
                         ),
                     )
                 ),
@@ -3216,11 +3221,13 @@ function flexia_customize_register($wp_customize)
                     array(
                         'flexia_header_mobile_layouts_1'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-mobile-01.png',
+                            'title' => __('Header Mobile Layout 1','flexia')
                         ),
                         'flexia_header_mobile_layouts_2'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-mobile-02.png',
                             'pro'   => true,
                             'url'   => 'https://flexia.pro/pricing/',
+                            'title' => __('Header Mobile Layout 2','flexia')
                         ),
                     )
                 ),
