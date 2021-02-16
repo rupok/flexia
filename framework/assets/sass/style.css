@@ -2185,10 +2185,6 @@ big {
     width: 100%;
   }
 
-  .flexia-menu .nav-menu li > a {
-    padding: 13px 10px 15px !important;
-  }
-
   .flexia-menu .nav-menu li.navbar-login-menu > a {
     padding: 0;
   }
