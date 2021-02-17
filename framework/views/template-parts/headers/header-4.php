@@ -24,11 +24,13 @@ $dropdown_animation = 'flexia-menu-dropdown-animate-' . get_theme_mod('flexia_ma
         <div class="flexia-container flexia-navbar-inner <?php echo (get_theme_mod('flexia_header_layout_type') == "full-width") ? "full-width" : "width max" ?>">
             <div class="flexia-header-top">
                 <!-- Header Main Social Start -->
-                <?php
-                if (flexia_get_option('flexia_enable_header_social') == true && flexia_get_option('flexia_header_social_position') == "header_main") {
-                    get_template_part('framework/views/template-parts/content', 'social-links');
-                }
-                ?>
+                <div class="flexia-header-4-social">
+                    <?php
+                    if (flexia_get_option('flexia_enable_header_social') == true && flexia_get_option('flexia_header_social_position') == "header_main") {
+                        get_template_part('framework/views/template-parts/content', 'social-links');
+                    }
+                    ?>
+                </div>
                 <!-- Header Main Social End -->
 
                 <div class="flexia-logobar-inline">

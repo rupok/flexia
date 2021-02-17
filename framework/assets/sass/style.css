@@ -2405,7 +2405,8 @@ big {
   flex-flow: row wrap;
   justify-content: space-between;
 }
-.flexia-header-4 .flexia-navbar-container .flexia-container .flexia-header-top .flexia-social-links {
+.flexia-header-4 .flexia-navbar-container .flexia-container .flexia-header-top .flexia-header-4-social {
+  display: flex;
   width: 300px;
   margin: 0px;
 }
@@ -2668,7 +2669,7 @@ big {
     position: absolute;
     top: auto;
     right: 0;
-    bottom: 18px;
+    bottom: 27px;
   }
   .flexia-header-4.flexia_header_mobile_layouts_1 .flexia-header-navigation .nav-menu {
     right: 0;
