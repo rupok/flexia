@@ -342,7 +342,6 @@ jQuery(document).ready(function ($) {
                 self.find('span').html(settings.archive_loading_text);
             },
             success: function (data) {
-                console.log(data)
                 self.find('span').html(settings.archive_load_more_text);
                 self.removeClass('button--loading');
                 $('.js-flexia-load-post').append(data);
