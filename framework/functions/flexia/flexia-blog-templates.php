@@ -515,8 +515,7 @@ function flexia_archive_layout()
 				while (have_posts()) : the_post();
 					$terms = get_the_category();
 				?>
-					<article class="flexia-post-block-item flexia-post-block-column <?php foreach ($terms as $term) : echo $term->slug . ' ';
-																					endforeach; ?>">
+					<article class="flexia-post-block-item flexia-post-block-column <?php foreach ($terms as $term) : echo $term->slug . ' '; endforeach; ?>">
 						<div class="flexia-post-block-item-holder">
 							<div class="flexia-post-block-item-holder-inner">
 								<div class="flexia-entry-media">
@@ -654,7 +653,7 @@ function flexia_archive_load_more_func()
 	$flexia_archive_excerpt_count 		= $_POST['archiveExcerptCount'];
 	$flexia_magnific_popup 				= $_POST['archiveMagnificPopup'];
 	$flexia_load_more_text 				= $_POST['archiveLoadMoreText'];
-	$flexia_loading_text 				= $_POST['archiveLoadingText'];
+	$flexia_loading_text 	 			= $_POST['archiveLoadingText'];
 
 
 	$query_vars                			= json_decode( stripslashes( $_POST['query_vars'] ), true );
@@ -758,8 +757,7 @@ function flexia_archive_load_more_func()
 		<?php endif; ?>
 
 		<?php if ('flexia_blog_content_layout_grid' === $flexia_archive_layout) : ?>
-			<article class="flexia-post-block-item flexia-post-block-column <?php foreach ($terms as $term) : echo $term->slug . ' ';
-																			endforeach; ?>">
+			<article class="flexia-post-block-item flexia-post-block-column <?php foreach ($terms as $term) : echo $term->slug . ' '; endforeach; ?>">
 				<div class="flexia-post-block-item-holder">
 					<div class="flexia-post-block-item-holder-inner">
 						<div class="flexia-entry-media">

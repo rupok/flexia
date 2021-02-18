@@ -33,27 +33,32 @@ function flexia_site_scripts()
     //Set localize Script to 'flexia-navigation'
     global $wp_query;
 
-    $flexia_archive_per_page                = get_theme_mod('flexia_archive_per_page', 10);
-    $flexia_archive_layout                  = get_theme_mod('flexia_archive_content_layout', 'flexia_archive_content_layout_grid');
-    $flexia_archive_grid_cols               = get_theme_mod('flexia_archive_grid_column', 3);
-    $flexia_archive_post_meta               = get_theme_mod('flexia_pro_archive_post_meta', 'meta-on-bottom');
-    $flexia_archive_excerpt_count           = get_theme_mod('flexia_archive_excerpt_count', 30);
-    $flexia_archive_magnific_popup          = get_theme_mod('flexia_pro_archive_image_popup', false);
-    $flexia_archive_show_load_more          = get_theme_mod('flexia_archive_load_more', true);
-    $flexia_archive_load_more_text          = get_theme_mod('flexia_archive_load_more_text', __('Load More','flexia'));
-    $flexia_archive_loading_text            = get_theme_mod('flexia_archive_loading_text', __('Loading...','flexia'));
+    $flexia_archive_per_page                = flexia_get_option('flexia_archive_per_page');
+    $flexia_archive_layout                  = flexia_get_option('flexia_archive_content_layout');
+    $flexia_archive_grid_cols               = flexia_get_option('flexia_archive_grid_column', 3);
+    $flexia_archive_excerpt_count           = flexia_get_option('flexia_archive_excerpt_count');
+    $flexia_archive_show_load_more          = flexia_get_option('flexia_archive_load_more');
+    $flexia_archive_load_more_text          = flexia_get_option('flexia_archive_load_more_text');
+    $flexia_archive_loading_text            = flexia_get_option('flexia_archive_loading_text');
 
-    $flexia_blog_per_page           = get_theme_mod('flexia_blog_per_page', 10);
-    $flexia_blog_layout             = get_theme_mod('flexia_blog_content_layout', 'flexia_blog_content_layout_grid');
-    $flexia_blog_grid_cols          = get_theme_mod('flexia_blog_grid_column', 3);
-    $flexia_blog_post_meta          = get_theme_mod('flexia_blog_post_meta', 'meta-on-bottom');
-    $flexia_blog_excerpt_count      = get_theme_mod('flexia_blog_excerpt_count', 30);
-    $flexia_magnific_popup          = get_theme_mod('flexia_blog_image_popup', false);
-    $flexia_show_filter             = get_theme_mod('flexia_blog_filterable', false);
-    $flexia_show_load_more          = get_theme_mod('flexia_blog_load_more', true);
-    $flexia_load_more_text          = get_theme_mod('flexia_blog_load_more_text',  __('Load More','flexia'));
-    $flexia_loading_text            = get_theme_mod('flexia_blog_loading_text', __('Loading...','flexia'));
-    $flexia_blog_categories         = get_theme_mod('flexia_blog_categories', '');
+    $flexia_archive_post_meta               = 'met;a-on-bottom';
+    $flexia_archive_magnific_popup          = false;
+    if( class_exists('Flexia_Pro') ) {
+        $flexia_archive_post_meta           = flexia_pro_get_option('flexia_pro_archive_post_meta');
+        $flexia_archive_magnific_popup      = flexia_pro_get_option('flexia_pro_archive_image_popup');
+    }
+
+    $flexia_blog_per_page                   = get_theme_mod('flexia_blog_per_page', 10);
+    $flexia_blog_layout                     = get_theme_mod('flexia_blog_content_layout', 'flexia_blog_content_layout_grid');
+    $flexia_blog_grid_cols                  = get_theme_mod('flexia_blog_grid_column', 3);
+    $flexia_blog_post_meta                  = get_theme_mod('flexia_blog_post_meta', 'meta-on-bottom');
+    $flexia_blog_excerpt_count              = get_theme_mod('flexia_blog_excerpt_count', 30);
+    $flexia_magnific_popup                  = get_theme_mod('flexia_blog_image_popup', false);
+    $flexia_show_filter                     = get_theme_mod('flexia_blog_filterable', false);
+    $flexia_show_load_more                  = get_theme_mod('flexia_blog_load_more', true);
+    $flexia_load_more_text                  = get_theme_mod('flexia_blog_load_more_text',  __('Load More','flexia'));
+    $flexia_loading_text                    = get_theme_mod('flexia_blog_loading_text', __('Loading...','flexia'));
+    $flexia_blog_categories                 = get_theme_mod('flexia_blog_categories', '');
 
     $flexia_pro_active = "false";
     if (class_exists('Flexia_Pro')) {

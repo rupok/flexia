@@ -293,7 +293,7 @@ jQuery(document).ready(function ($) {
 
 
 /**
- * Script Name: flexia-load-blog 
+ * Script Name: flexia-load-blog/archive
  */
 (function ($) {
     'use strict';
