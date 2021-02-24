@@ -133,6 +133,14 @@
     .flexia-navbar-container {
         .flexia-container {
             flex-direction: column !important;
+            .flexia-header-4-mobile {
+                display: none;
+            }
+            .flexia-header-navigation {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
             .flexia-header-top {
                 display: flex;
                 flex-flow: row wrap;
@@ -141,6 +149,9 @@
                     display: flex;
                     width: 300px;
                     margin: 0px;
+                    @media all and (max-width: 991px) {
+                        width: 100%;
+                    }
                 }
                 .flexia-menu {
                     width: 300px;
@@ -321,17 +332,34 @@
 }
 
 @media all and (max-width: 991px) {
-    .flexia_header_mobile_layouts_1 .flexia-navbar-inner {
-        .flexia-social-links {
-            width: 100%;
-            flex: 0 0 100%;
-            max-width: 100%;
-            margin: 0 !important;
-            text-align: center;
+    .flexia-header-4 {
+        .flexia-navbar-container {
+            .flexia-container {
+                .flexia-header-4-mobile {
+                    display: block;
+                }
+            }
+        }
+    }
+    .flexia_header_mobile_layouts_1 {
+        .flexia-navbar-inner {
+            .flexia-social-links {
+                width: 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin: 0 !important;
+                text-align: center;
+            }
+            .flexia-header-4-social {
+                display: none;
+            }
         }
     }
     .flexia_header_mobile_layouts_2 .flexia-navbar-inner {
         padding-bottom: .8em !important;
+        .flexia-header-4-social {
+            display: none;
+        }
         .flexia-social-links {
             margin: unset !important;
         }
@@ -403,9 +431,9 @@
                 .flexia-container {
                     .flexia-header-navigation {
                         position: absolute;
-                        top: auto;
+                        top: 50%;
                         right: 0;
-                        bottom: 27px;
+                        margin-top: -10px;
                     }
                 }
             }
@@ -413,7 +441,6 @@
                 .nav-menu {
                     right: 0;
                     left: auto;
-                    min-width: 250px;
                 }
             }
         }
@@ -446,11 +473,6 @@
                         }
                     }
                     .flexia-header-navigation {
-                        position: absolute;
-                        top: auto;
-                        bottom: 17px;
-                        right: 0;
-                        margin-top: -1em;
                         .main-navigation {
                             .flexia-primary-menu {
                                 width: 260px;
