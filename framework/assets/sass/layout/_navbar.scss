@@ -443,6 +443,11 @@
                     left: auto;
                 }
             }
+            .main-navigation {
+                .flexia-primary-menu {
+                    width: 260px;
+                }
+            }
         }
     }
     /* header 4 & mobile 2*/
@@ -475,12 +480,16 @@
                     .flexia-header-navigation {
                         .main-navigation {
                             .flexia-primary-menu {
-                                width: 260px;
                                 left: auto;
                                 right: 0;
                             }
                         }
                     }
+                }
+            }
+            .main-navigation {
+                .flexia-primary-menu {
+                    width: 260px;
                 }
             }
         }

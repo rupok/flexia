@@ -2698,6 +2698,9 @@ big {
     right: 0;
     left: auto;
   }
+  .flexia-header-4.flexia_header_mobile_layouts_1 .main-navigation .flexia-primary-menu {
+    width: 260px;
+  }
 
   /* header 4 & mobile 2*/
   .flexia-header-4.flexia_header_mobile_layouts_2 .flexia-navbar .flexia-container {
@@ -2725,9 +2728,11 @@ big {
     width: auto;
   }
   .flexia-header-4.flexia_header_mobile_layouts_2 .flexia-navbar .flexia-container .flexia-header-navigation .main-navigation .flexia-primary-menu {
-    width: 260px;
     left: auto;
     right: 0;
+  }
+  .flexia-header-4.flexia_header_mobile_layouts_2 .main-navigation .flexia-primary-menu {
+    width: 260px;
   }
 }
 @media all and (max-width: 599px) {
