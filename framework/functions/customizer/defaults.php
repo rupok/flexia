@@ -17,8 +17,6 @@ if (!function_exists('flexia_site_primary_color')) {
     }
 }
 
-
-
 if (!function_exists('flexia_get_option_defaults')) {
 /**
  * Set default options
@@ -88,7 +86,7 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_header_layout_type' => 'boxed',
             'flexia_navbar_position' => 'flexia-navbar-static-top',
             'flexia_header_layouts' => '1',
-            'flexia_header_mobile_layouts' => 'layout1',            
+            'flexia_header_mobile_layouts' => 'flexia_header_mobile_layouts_1',            
 
             'flexia_primary_logo_label' => '',
             'flexia_sticky_logo_label' => '',
@@ -151,6 +149,7 @@ if (!function_exists('flexia_get_option_defaults')) {
                 'input2'  	=> 15,
                 'input3'  	=> 0,
                 'input4'  	=> 15,
+                'data_unit' => 'px'
             ),
             'flexia_main_nav_menu_link_color' => '#4d4d4d',
             'flexia_main_nav_menu_link_hover_color' => '#1b1f21',
@@ -196,12 +195,15 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_single_content_layout' => 'content_layout4',
             'single_post_settings_title_heading' => '',
             'flexia_single_posts_settings' => '',
-            'flexia_social_sharing_text' => 'Share This Story',
+            'flexia_social_sharing_text' => __('Share This Story','flexia'),
             'post_social_share_facebook' => true,
             'post_social_share_twitter' => true,
             'post_social_share_linkedin' => true,
-            'post_social_share_gplus' => true,
+            'post_social_share_gmail' => true,
             'post_social_share_pinterest' => true,
+            'post_social_share_reddit' => true,
+            'post_social_share_blogger' => true,
+            'post_social_share_thumblr' => true,
             'flexia_blog_excerpt_count' => '60',
 
             'flexia_blog_content_layout' => 'flexia_blog_content_layout_grid',
@@ -267,8 +269,31 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_call_to_action_button_text' => 'Learn More',
             'flexia_call_to_action_url' => get_site_url(),
 
+            // archive page header settings
+            'flexia_show_archive_header' => true,
+            'flexia_archive_header_bg_color' => '#612ee9',
+            'flexia_archive_title_font_size' => '54',
+            'flexia_archive_title_font_color' => '#ffffff',
+            'flexia_archive_header_title_font_family' => 'Poppins',
+            'flexia_archive_desc_font_size' => '28',
+            'flexia_archive_desc_font_color' => '#ffffff',
+            'flexia_archive_header_desc_font_family' => 'Nunito',
+            // archive page content settings
+            'flexia_archive_content_display' => 'flexia_blog_content_display_excerpt',
+            'flexia_archive_excerpt_count' => 60,
+            'flexia_archive_content_layout' => 'flexia_blog_content_layout_grid',
+            'flexia_archive_per_page' => 10,
+            'flexia_archive_grid_column' => 3,
+            'flexia_archive_load_more' => true,
+            'flexia_archive_load_more_text' => __('Load More','flexia'),
+            'flexia_archive_loading_text' => __('Loading...','flexia'),
+            'flexia_archive_load_more_btn_font_size' => 14,
+            'flexia_archive_load_more_btn_bg' => '#444444',
+            'flexia_archive_load_more_font_color' => '#ffffff',
+            'flexia_archive_load_more_btn_bg_active' => '#27bdbd',
+            'flexia_archive_load_more_font_color_active' => '#ffffff',
         );
-
+        
         return apply_filters('flexia_option_defaults', $flexia_defaults);
     }
 }
@@ -321,8 +346,9 @@ if( ! function_exists( 'flexia_generate_defaults' ) ) :
 endif;
 
 if( ! function_exists( 'flexia_dimension_attr_generator' ) ) :
-    function flexia_dimension_attr_generator($key, $measure = 'px') {
+    function flexia_dimension_attr_generator($key, $measure = 'px', $important = false) {
         
+        $important = $important ? ' !important' : '';
         $saved_options = get_theme_mods();
         if( is_array($saved_options) && array_key_exists( $key, $saved_options ) ) {
             $valueArr = (array) json_decode(flexia_get_option($key));
@@ -337,11 +363,12 @@ if( ! function_exists( 'flexia_dimension_attr_generator' ) ) :
         $input2 = '';
         $input3 = '';
         $input4 = '';
+        $measure = isset($valueArr['data_unit']) ? $valueArr['data_unit'] : $measure;
         
         if ( $valueArr['input1'] !== '' ) {
             $input1 = $valueArr['input1'] . $measure;
         } else {
-            $input1 = '0px';
+            $input1 = '0' . $measure;
         }
         if ( $input1 !== '' ) {
             $dimensionArr[] = $input1;
@@ -350,7 +377,7 @@ if( ! function_exists( 'flexia_dimension_attr_generator' ) ) :
         if ( $valueArr['input2'] !== '' ) {
             $input2 = $valueArr['input2'] . $measure;
         } else {
-            $input2 = '0px';
+            $input2 = '0' . $measure;
         }
         if ( $input2 !== '' ) {
             $dimensionArr[] = $input2;
@@ -359,23 +386,23 @@ if( ! function_exists( 'flexia_dimension_attr_generator' ) ) :
         if ( $valueArr['input3'] !== '' ) {
             $input3 = $valueArr['input3'] . $measure;
         } else {
-            $input3 = '0px';
+            $input3 = '0' . $measure;
         }
         if ( $input3 !== '' ) {
             $dimensionArr[] = $input3;
         }
         
         if ( $valueArr['input4'] !== '' ) {
-            $input3 = $valueArr['input4'] . $measure;
+            $input4 = $valueArr['input4'] . $measure;
         } else {
-            $input4 = '0px';
+            $input4 = '0' . $measure;
         }
         if ( $input4 !== '' ) {
             $dimensionArr[] = $input4;
         }
 
         if ( count($dimensionArr) > 0 ) {
-            $dimensionAttr = "padding: " . implode(' ', $dimensionArr) . ";";
+            $dimensionAttr = "padding: " . implode(' ', $dimensionArr) . $important . ";";
         }
         
         return $dimensionAttr;

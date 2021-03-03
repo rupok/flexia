@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The main template file
  *
@@ -16,60 +17,61 @@ get_header();
 
 ?>
 
-	
-<?php 
+
+<?php
 /**
  * Flexia hook for Blog Header
  *
  * @since   v2.1.3
  */
-
-do_action( 'flexia_blog_header' );
 ?>
-	
 
-	<div id="content" class="site-content">
-		<div class="flexia-wrapper flexia-container max width">
 
-			<div id="primary" class="content-area">
+<div id="content" class="site-content">
 
-				<?php 
-				/**
-				 * Flexia hook for Blog Before Main Content/ Loop
-				 *
-				 * @since   v2.1.3
-				*/
+	<?php do_action('flexia_blog_header'); ?>
 
-				do_action( 'flexia_blog_before_content' );
-				?>				
+	<div class="flexia-wrapper flexia-container max width">
 
-				<?php 
-				/**
-				 * Flexia hook for Blog Content/The Loop
-				 *
-				 * @since   v2.1.3
-				*/
+		<div id="primary" class="content-area">
 
-				do_action( 'flexia_blog_content' );
-				?>
-				
+			<?php
+			/**
+			 * Flexia hook for Blog Before Main Content/ Loop
+			 *
+			 * @since   v2.1.3
+			 */
 
-				<?php 
-				/**
-				 * Flexia hook for Blog After Main Content/ Loop
-				 *
-				 * @since   v2.1.3
-				*/
+			do_action('flexia_blog_before_content');
+			?>
 
-				do_action( 'flexia_blog_after_content' );
-				?>
+			<?php
+			/**
+			 * Flexia hook for Blog Content/The Loop
+			 *
+			 * @since   v2.1.3
+			 */
 
-			</div><!-- #primary -->
+			do_action('flexia_blog_content');
+			?>
 
-			<?php get_sidebar(); ?>
 
-		</div><!-- #flexia-wrapper -->
-	</div><!-- #content -->
+			<?php
+			/**
+			 * Flexia hook for Blog After Main Content/ Loop
+			 *
+			 * @since   v2.1.3
+			 */
+
+			do_action('flexia_blog_after_content');
+			?>
+
+		</div><!-- #primary -->
+
+		<?php get_sidebar(); ?>
+
+	</div><!-- #flexia-wrapper -->
+</div><!-- #content -->
 </div><!-- #page -->
 
 <?php

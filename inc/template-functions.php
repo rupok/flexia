@@ -27,9 +27,12 @@ function flexia_body_classes( $classes ) {
 		$classes[] = 'sidebar-left-right';
 	}
 
-
 	if( get_theme_mod('flexia_navbar_position') == 'flexia-navbar-transparent-top' ) {
 		$classes[] = 'transparent-top-navbar';
+	}
+
+	if( 'pro-1' === flexia_get_option('flexia_header_layouts') ) {
+		$classes[] = 'flexia-header-pro-1-wrapper';
 	}
 
 	$flexia_version = wp_get_theme();
@@ -355,8 +358,6 @@ function flexia_post_simple_no_container_title_markup() {
 
 }
 
-
-
 /**
  * This function will show/hide simple post title
  *
@@ -407,7 +408,6 @@ function flexia_add_body_class( $classes ) {
 
 }
 add_filter( 'body_class', 'flexia_add_body_class', 10, 1 );
-
 
 /**
  * This method will show/hide post footer meta.

@@ -137,7 +137,7 @@ function flexia_generate_css()
 	}
 	
 	body.blog, body.archive, body.single-post,
-	body.blog.custom-background, body.archive.custom-background, body.single-post.custom-background, body.search, body,error404 {
+	body.blog.custom-background, body.archive.custom-background, body.single-post.custom-background, body.search,error404 {
 		background-color: ' . $defaults['flexia_blog_bg_color'] . ';
 	}
 	
@@ -167,11 +167,28 @@ function flexia_generate_css()
 		width: ' . $defaults['flexia_blog_logo_width'] . 'px;
 	}
 
-	.page-header.blog-header, .page-header.single-blog-header, .page-header.archive-header {
+	.page-header.blog-header, .page-header.single-blog-header {
 		background-color: ' . $defaults['flexia_blog_header_bg_color'] . ';
 	}
-	
-	.blog-header .header-content > .page-title, .archive-header .header-content > .page-title {
+
+	/* Archive page header */
+	.page-header.archive-header {
+		background-color: ' . $defaults['flexia_archive_header_bg_color'] . ';
+	}
+
+	.archive-header .header-content > .page-title {
+		font-size: ' . $defaults['flexia_archive_title_font_size'] . 'px;
+		color: ' . $defaults['flexia_archive_title_font_color'] . ';
+		font-family: ' . $defaults['flexia_archive_header_title_font_family'] . ';
+	}
+
+	.header-content .archive-description > p {
+		font-size: ' . $defaults['flexia_archive_desc_font_size'] . 'px;
+		color: ' . $defaults['flexia_archive_desc_font_color'] . ';
+		font-family: ' . $defaults['flexia_archive_header_desc_font_family'] . ';
+	}
+
+	.blog-header .header-content > .page-title {
 		font-size: ' . $defaults['flexia_blog_title_font_size'] . 'px;
 		color: ' . $defaults['flexia_blog_title_font_color'] . ';
 		font-family: ' . $defaults['flexia_blog_header_title_font_family'] . ';
@@ -181,7 +198,7 @@ function flexia_generate_css()
 		font-size: calc(' . $defaults['flexia_blog_title_font_size'] . 'px / 1.2);
 	}
 	
-	.header-content .blog-desc, .header-content .archive-description > p {
+	.header-content .blog-desc {
 		font-size: ' . $defaults['flexia_blog_desc_font_size'] . 'px;
 		color: ' . $defaults['flexia_blog_desc_font_color'] . ';
 		font-family: ' . $defaults['flexia_blog_header_desc_font_family'] . ';
@@ -417,6 +434,18 @@ function flexia_generate_css()
 	.blog .flexia-load-more-button.button--loading {
 		background-color: ' .$defaults['flexia_load_more_btn_bg_active'] . ';
 		color: ' .$defaults['flexia_load_more_font_color_active'] . ';
+	}
+
+	.archive .flexia-load-more-button {
+		background-color: ' .$defaults['flexia_archive_load_more_btn_bg'] . ';
+		color: ' .$defaults['flexia_archive_load_more_font_color'] . ';
+		font-size: ' .$defaults['flexia_archive_load_more_btn_font_size'] . 'px;
+	}
+
+	.archive .flexia-load-more-button:hover,
+	.archive .flexia-load-more-button.button--loading {
+		background-color: ' .$defaults['flexia_archive_load_more_btn_bg_active'] . ';
+		color: ' .$defaults['flexia_archive_load_more_font_color_active'] . ';
 	}
 	
 	@media screen and (min-width: 992px) {

@@ -17,39 +17,32 @@
 .flexia-menu {
     .nav-menu {
         @extend %ul;
-
         li {
             @extend %li;
             position: relative;
             float: left;
             display: inline-block;
-
             @media screen and (min-width: 992px) {
                 &.flexia-mega-menu-parent {
                     position: static;
                 }
             }
-
-            > a {
+            >a {
                 display: block;
                 padding: 0 15px;
                 margin: 0;
-
                 span {
                     padding-left: 5px;
-
                     @media screen and (max-width: 991px) {
                         display: none;
                     }
                 }
             }
-
             &.menu-item-has-children {
-                > a {
+                >a {
                     position: relative;
                 }
             }
-
             ul {
                 @extend %ul;
                 position: absolute;
@@ -61,6 +54,11 @@
                 z-index: 100;
                 box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 
+                &.flexia-mega-menu li>a span.menu-sub-text {
+                    padding-left: 0;
+                    display: block;
+                }
+
                 @media screen and (min-width: 992px) {
                     &.flexia-mega-menu {
                         left: 1em;
@@ -68,39 +66,31 @@
                         width: unset;
                         padding: 25px;
                         box-sizing: border-box;
-
                         display: grid;
                         grid-column-gap: 25px;
                     }
-
                     &.flexia-mega-menu-3-col {
                         grid-template-columns: repeat(3, 1fr);
                     }
-
                     &.flexia-mega-menu-4-col {
                         grid-template-columns: repeat(4, 1fr);
                     }
-
                     &.flexia-mega-menu-5-col {
                         grid-template-columns: repeat(5, 1fr);
                     }
-
                     &.flexia-mega-menu-6-col {
                         grid-template-columns: repeat(6, 1fr);
                     }
                 }
-
                 li {
                     @extend %li;
                     position: relative;
                     float: none;
                     display: block;
-
-                    > a {
+                    >a {
                         display: block;
                         padding: 0 15px;
                         margin: 0;
-
                         span.submenu-menu-dropdown-icon {
                             position: absolute;
                             right: 12px;
@@ -108,22 +98,19 @@
                             line-height: 45px;
                         }
                     }
-
                     ul {
                         top: 0;
                         left: 100%;
                     }
                 }
-
                 @media screen and (min-width: 992px) {
                     &.flexia-mega-menu {
                         li {
-                            > a {
+                            >a {
                                 span {
                                     display: none;
                                 }
                             }
-
                             ul {
                                 position: relative;
                                 top: unset;
@@ -137,10 +124,9 @@
                                 transition: none;
                             }
                         }
-
-                        > li {
+                        >li {
                             &.menu-item-has-children {
-                                > a {
+                                >a {
                                     font-size: 105%;
                                 }
                             }
@@ -148,17 +134,14 @@
                     }
                 }
             }
-
             &:hover {
-                > ul {
+                >ul {
                     visibility: visible;
                     opacity: 1;
                 }
-
-                > ul.flexia-mega-menu {
+                >ul.flexia-mega-menu {
                     visibility: visible;
                     opacity: 1;
-
                     ul {
                         visibility: visible;
                         opacity: 1;
@@ -176,24 +159,20 @@
                                 padding: 12px 15px;
                                 margin: 0;
                                 box-shadow: unset;
-
                                 ul {
                                     li {
                                         list-style: none;
-
                                         a {
                                             list-style: 1em;
                                             padding: 10px 15px;
                                             background-color: transparent;
                                         }
-
                                         &:before {
                                             content: "";
                                             display: none;
                                         }
                                     }
                                 }
-
                                 .product_list_widget {
                                     li {
                                         margin-bottom: 1em;
@@ -207,7 +186,7 @@
                                             .product-title {
                                                 display: none !important;
                                                 position: absolute;
-                                                background-color:#8c8c8c;
+                                                background-color: #8c8c8c;
                                                 left: 0;
                                                 right: auto;
                                                 width: 100%;
@@ -216,10 +195,9 @@
                                                 line-height: 1.4;
                                                 font-weight: 400;
                                                 font-size: 1em;
-                                                color:#fff;
+                                                color: #fff;
                                             }
                                         }
-
                                         .woocommerce-Price-amount.amount {
                                             position: absolute;
                                             bottom: 0;
@@ -231,7 +209,6 @@
                                         }
                                     }
                                 }
-
                                 .product-categories {
                                     li {
                                         a {
@@ -248,7 +225,6 @@
                 }
             }
         }
-
         // Responsive menu
         @media screen and (max-width: 991px) {
             position: absolute;
@@ -258,18 +234,15 @@
             z-index: 100;
             display: none;
             padding: 20px 20px 10px;
-
             li {
                 position: relative;
                 float: none;
                 display: block;
-
-                > a {
+                >a {
                     display: block;
                     text-align: inherit;
                     margin-bottom: 10px;
                 }
-
                 ul {
                     position: relative;
                     top: unset;
@@ -280,16 +253,13 @@
                     opacity: 1;
                     display: none;
                     padding-left: 30px;
-
                     li {
                         position: relative;
                         display: block;
-
-                        > a {
+                        >a {
                             padding: 0 15px;
                             margin-bottom: 10px;
                         }
-
                         ul {
                             position: relative;
                             width: 100%;
@@ -300,7 +270,6 @@
                 }
             }
         }
-
         // animation
         @media screen and (min-width: 992px) {
             &.flexia-menu-dropdown-animate-fade {
@@ -310,46 +279,40 @@
                     }
                 }
             }
-
             &.flexia-menu-dropdown-animate-to-top {
                 li {
                     ul {
                         transform: translateY(20px);
                         transition: all 200ms;
                     }
-
                     &:hover {
-                        > ul {
+                        >ul {
                             transform: translateY(0);
                         }
                     }
                 }
             }
-
             &.flexia-menu-dropdown-animate-zoom-in {
                 li {
                     ul {
                         transform: scale(0.8);
                         transition: all 200ms;
                     }
-
                     &:hover {
-                        > ul {
+                        >ul {
                             transform: scale(1);
                         }
                     }
                 }
             }
-
             &.flexia-menu-dropdown-animate-zoom-out {
                 li {
                     ul {
                         transform: scale(1.2);
                         transition: all 200ms;
                     }
-
                     &:hover {
-                        > ul {
+                        >ul {
                             transform: scale(1);
                         }
                     }
@@ -357,14 +320,12 @@
             }
         }
     }
-
     // responsive menu
     .flexia-menu-toggle {
         background-color: transparent;
         border: none;
         border-radius: 0;
         outline: none;
-
         &:before {
             content: "";
             position: relative;
@@ -376,7 +337,6 @@
             background-color: #1b1f21;
             transition: all 0.3s ease;
         }
-
         &:after {
             content: "";
             position: relative;
@@ -389,13 +349,11 @@
             border-bottom: 2px solid #1b1f21;
             transition: all 0.3s ease;
         }
-
         &.flexia-menu-toggle-open {
             &::before {
                 top: 0;
                 transform: rotate(-45deg);
             }
-
             &:after {
                 top: -1px;
                 border: 0;
@@ -405,68 +363,58 @@
                 transform: rotate(45deg);
             }
         }
-
         @media screen and (min-width: 992px) {
             display: none;
         }
     }
-
     .flexia-menu-indicator {
         position: absolute;
         top: 0;
         right: 0;
         width: 42px;
-        height: 42px;
+        height: calc(100% - 2px);
         display: block;
         background-color: #ffffff;
         border: 1px solid #dddddd;
         box-sizing: content-box;
         cursor: pointer;
-
         @media screen and (min-width: 992px) {
             display: none;
         }
-
         &:before {
             content: "";
             position: absolute;
-            top: 19px;
-            right: 19px;
+            top: calc(50% - 4px);
+            right: calc(50% - 1px);
             width: 2px;
             height: 8px;
             background: #dddddd;
             transition: all 0.25s ease;
         }
-
         &:after {
             content: "";
             position: absolute;
-            top: 22px;
-            right: 16px;
+            top: calc(50% - 1px);
+            right: calc(50% - 4px);
             width: 8px;
             height: 2px;
             background: #dddddd;
         }
-
         &:hover {
             background-color: #262625;
             border-color: #262625;
-
             &:before,
             &:after {
                 background: #ffffff;
             }
         }
-
         &.flexia-menu-indicator-open {
             background-color: #262625;
             border-color: #262625;
-
             &:before,
             &:after {
                 background: #ffffff;
             }
-
             &:before {
                 height: 0;
             }

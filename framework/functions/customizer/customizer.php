@@ -24,6 +24,9 @@ if (!defined('ABSPATH')) {
  */
 function flexia_customize_register($wp_customize)
 {
+    // register extend customizer
+    $wp_customize->register_panel_type('Flexia_WP_Customize_Panel');
+    $wp_customize->register_section_type('Flexia_WP_Customize_Section');
 
     // Get default customizer values
     $defaults = flexia_get_option_defaults();
@@ -47,10 +50,10 @@ function flexia_customize_register($wp_customize)
     $wp_customize->get_control('page_for_posts')->label = __('Select Blog Homepage', 'flexia');
 
     // Remove some core control
-	// $wp_customize->remove_control( 'header_textcolor' );
-	$wp_customize->remove_control( 'background_color' );
-	$wp_customize->remove_section( 'background_image' );
-	$wp_customize->remove_control( 'background_image' );
+    // $wp_customize->remove_control( 'header_textcolor' );
+    $wp_customize->remove_control('background_color');
+    $wp_customize->remove_section('background_image');
+    $wp_customize->remove_control('background_image');
 
     if (isset($wp_customize->selective_refresh)) {
         $wp_customize->selective_refresh->add_partial('blogname', array(
@@ -68,7 +71,7 @@ function flexia_customize_register($wp_customize)
      * @flexia_general_settings
      */
 
-    
+
     /**
      * Add "Layout Settings" Section to General Settings
      * @flexia_layout_settings
@@ -77,8 +80,8 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_section('flexia_layout_settings', array(
         'title' => __('Layout Settings', 'flexia'),
         'priority' => 100,
-    ));        
-    
+    ));
+
     $wp_customize->add_setting(
         'flexia_container_max_width',
         array(
@@ -130,46 +133,46 @@ function flexia_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control(
-		new Flexia_Radio_Image_Control(
+        new Flexia_Radio_Image_Control(
             $wp_customize,
             'content_layout',
             array(
                 'label' => __('Content Layout', 'flexia'),
                 'type'          => 'flexia-radio-image',
-                'settings'		=> 'content_layout',
-                'section'		=> 'flexia_layout_settings',
-                'choices'		=> apply_filters(
-                    'content_layout', 
+                'settings'        => 'content_layout',
+                'section'        => 'flexia_layout_settings',
+                'choices'        => apply_filters(
+                    'content_layout',
                     array(
-                        'content_layout1' 	=> array(
+                        'content_layout1'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/content-layouts/content-sidebar-both.jpg',
                             'label'   => 'Sidebar | Content | Sidebar',
                         ),
-                        'content_layout2' 	=> array(
+                        'content_layout2'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/content-layouts/content-sidebar-left.jpg',
                             'label'   => 'Sidebar | Content',
                         ),
-                        'content_layout3' 	=> array(
+                        'content_layout3'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/content-layouts/content-sidebar-right.jpg',
                             'label'   => 'Content | Sidebar',
                         ),
-                        'content_layout4' 	=> array(
+                        'content_layout4'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/content-layouts/content-no-sidebar.jpg',
                             'label'   => 'No Sidebar',
                         )
                     )
                 ),
-            ) 
+            )
         )
     );
-    
-    $wp_customize->selective_refresh->add_partial( "content_layout_partial", [
+
+    $wp_customize->selective_refresh->add_partial("content_layout_partial", [
         'selector'            => "#content",
         'settings'            => [
             "content_layout",
         ],
         'container_inclusive' => true,
-    ] );
+    ]);
 
     //Left Sidebr Width Set
     $wp_customize->add_setting('flexia_sidebar_width_left', array(
@@ -247,7 +250,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_primary_color',
                 'priority' => 1
-            ))
+            )
+        )
     );
 
     /**
@@ -270,9 +274,10 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_default_text_color',
                 'priority' => 1
-            ))
-    ); 
-    
+            )
+        )
+    );
+
     /**
      * Default Color Section: Heading Color
      * @flexia_default_heading_color
@@ -293,7 +298,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_default_heading_color',
                 'priority' => 1
-            ))
+            )
+        )
     );
 
     /**
@@ -333,8 +339,9 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_link_color',
                 'priority' => 4
-            ))
-    );    
+            )
+        )
+    );
 
     /**
      * Default Color Section: Link Hover Color
@@ -356,7 +363,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_link_hover_color',
                 'priority' => 2
-            ))
+            )
+        )
     );
 
     /**
@@ -396,7 +404,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_background_color',
                 'priority' => 7
-            ))
+            )
+        )
     );
 
 
@@ -414,14 +423,17 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_control(
         new Customizer_Toggle_Control(
-            $wp_customize, 
-            'flexia_background_image_enable_button', array(
-            'label' => esc_html__('Enable Background Image?', 'flexia'),
-            'section' => 'flexia_default_colors_settings',
-            'settings' => 'flexia_background_image_enable_button',
-            'type' => 'light', // light, ios, flat
-            'priority' => 10,
-    )));
+            $wp_customize,
+            'flexia_background_image_enable_button',
+            array(
+                'label' => esc_html__('Enable Background Image?', 'flexia'),
+                'section' => 'flexia_default_colors_settings',
+                'settings' => 'flexia_background_image_enable_button',
+                'type' => 'light', // light, ios, flat
+                'priority' => 10,
+            )
+        )
+    );
 
     /**
      * If Background Image Enabled:
@@ -458,27 +470,30 @@ function flexia_customize_register($wp_customize)
      * Parent: @flexia_general_settings -> @flexia_default_colors_settings
      */
 
-    $wp_customize->add_setting( 'flexia_background_property', array(
-		'default'       => $defaults['flexia_background_property'],
-		'capability'    => 'edit_theme_options',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'flexia_sanitize_select'
+    $wp_customize->add_setting('flexia_background_property', array(
+        'default'       => $defaults['flexia_background_property'],
+        'capability'    => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'flexia_sanitize_select'
 
-	) );
+    ));
 
-	$wp_customize->add_control( new Flexia_Title_Custom_Control(
-		$wp_customize, 'flexia_background_property', array(
-		'type'     => 'flexia-title',
-		'section'  => 'flexia_default_colors_settings',
-		'settings' => 'flexia_background_property',
-        'label'    => __( 'Background Property', 'flexia' ),
-        'priority' => 10,
-		'input_attrs' => array(
-			'id' => 'flexia_background_property',
-			'class' => 'flexia-select',
-		),
-	) ) );
-    
+    $wp_customize->add_control(new Flexia_Title_Custom_Control(
+        $wp_customize,
+        'flexia_background_property',
+        array(
+            'type'     => 'flexia-title',
+            'section'  => 'flexia_default_colors_settings',
+            'settings' => 'flexia_background_property',
+            'label'    => __('Background Property', 'flexia'),
+            'priority' => 10,
+            'input_attrs' => array(
+                'id' => 'flexia_background_property',
+                'class' => 'flexia-select',
+            ),
+        )
+    ));
+
     /**
      * Default Color Section: Background Image Size
      * @flexia_background_image_size
@@ -490,7 +505,8 @@ function flexia_customize_register($wp_customize)
             'default' => $defaults['flexia_background_image_size'],
             'transport'   => 'postMessage',
             'sanitize_callback' => 'flexia_sanitize_select',
-        ));
+        )
+    );
 
     $wp_customize->add_control(
         new Flexia_Select_Control(
@@ -517,7 +533,7 @@ function flexia_customize_register($wp_customize)
         )
     );
 
-    
+
     /**
      * Default Color Section: Background Image Position
      * @flexia_background_image_position
@@ -529,7 +545,8 @@ function flexia_customize_register($wp_customize)
             'default' => $defaults['flexia_background_image_position'],
             'transport'   => 'postMessage',
             'sanitize_callback' => 'flexia_sanitize_select',
-        ));
+        )
+    );
 
     $wp_customize->add_control(
         new Flexia_Select_Control(
@@ -571,7 +588,8 @@ function flexia_customize_register($wp_customize)
             'default' => $defaults['flexia_background_image_repeat'],
             'transport'   => 'postMessage',
             'sanitize_callback' => 'flexia_sanitize_select',
-        ));
+        )
+    );
 
     $wp_customize->add_control(
         new Flexia_Select_Control(
@@ -605,32 +623,35 @@ function flexia_customize_register($wp_customize)
      * Parent: @flexia_general_settings -> @flexia_default_colors_settings
      */
 
-    $wp_customize->add_setting( 'flexia_background_image_attachment', array(
-		'default'       => $defaults['flexia_background_image_attachment'],
-		'capability'    => 'edit_theme_options',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'flexia_sanitize_select'
+    $wp_customize->add_setting('flexia_background_image_attachment', array(
+        'default'       => $defaults['flexia_background_image_attachment'],
+        'capability'    => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'flexia_sanitize_select'
 
-	) );
+    ));
 
-	$wp_customize->add_control( new Flexia_Select_Control(
-		$wp_customize, 'flexia_background_image_attachment', array(
-		'type'     => 'flexia-select',
-		'section'  => 'flexia_default_colors_settings',
-		'settings' => 'flexia_background_image_attachment',
-        'label'    => __( 'Attachment', 'flexia' ),
-        'priority' => 10,
-        'input_attrs' => array(
-            'class' => 'flexia_background_property flexia-select',
-        ),
-		'choices'  => array(
-			'initial' 	=> __( 'initial', 'flexia' ),
-			'inherit'   => __( 'inherit', 'flexia' ),
-			'scroll'   	=> __( 'scroll', 'flexia' ),
-			'fixed'  	 => __( 'fixed', 'flexia' ),
-			'local'  	=> __( 'local', 'flexia' ),
-		)
-	) ) );
+    $wp_customize->add_control(new Flexia_Select_Control(
+        $wp_customize,
+        'flexia_background_image_attachment',
+        array(
+            'type'     => 'flexia-select',
+            'section'  => 'flexia_default_colors_settings',
+            'settings' => 'flexia_background_image_attachment',
+            'label'    => __('Attachment', 'flexia'),
+            'priority' => 10,
+            'input_attrs' => array(
+                'class' => 'flexia_background_property flexia-select',
+            ),
+            'choices'  => array(
+                'initial'     => __('initial', 'flexia'),
+                'inherit'   => __('inherit', 'flexia'),
+                'scroll'       => __('scroll', 'flexia'),
+                'fixed'       => __('fixed', 'flexia'),
+                'local'      => __('local', 'flexia'),
+            )
+        )
+    ));
 
     /**
      * If Background Color Overlay set:
@@ -641,7 +662,7 @@ function flexia_customize_register($wp_customize)
     //Default Color Section: Overlay Opacity
 
 
-    
+
 
     /**
      * Default Color Section: Blog Heading Background Color
@@ -675,11 +696,12 @@ function flexia_customize_register($wp_customize)
             $wp_customize,
             'flexia_blog_bg_color',
             array(
-                'label' => __('Blog Body Background', 'flexia'),
+                'label' => __('Blog/Archive Background', 'flexia'),
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_blog_bg_color',
                 'priority' => 20,
-            ))
+            )
+        )
     );
 
     /**
@@ -703,7 +725,8 @@ function flexia_customize_register($wp_customize)
                 // 'section' => 'background_image',
                 'settings' => 'flexia_post_content_bg_color',
                 'priority' => 25,
-            ))
+            )
+        )
     );
 
     /**
@@ -726,7 +749,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_default_colors_settings',
                 'settings' => 'flexia_sidebar_widget_bg_color',
                 'priority' => 30,
-            ))
+            )
+        )
     );
 
 
@@ -810,7 +834,7 @@ function flexia_customize_register($wp_customize)
             )
         )
     );
-    
+
 
     // Page title styles
 
@@ -841,7 +865,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_page_settings',
                 'settings' => 'flexia_page_title_bg',
                 'priority' => 50,
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_page_title_font_color', array(
@@ -859,7 +884,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_page_settings',
                 'settings' => 'flexia_page_title_font_color',
                 'priority' => 60,
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_page_title_font_size', array(
@@ -921,7 +947,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_page_settings',
                 'settings' => 'flexia_breadcrumb_font_color',
                 'priority' => 90,
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_breadcrumb_active_font_color', array(
@@ -939,7 +966,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_page_settings',
                 'settings' => 'flexia_breadcrumb_active_font_color',
                 'priority' => 100,
-            ))
+            )
+        )
     );
 
     // Design Settings : Overlay Search
@@ -963,7 +991,8 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Search Overlay Background Color', 'flexia'),
                 'section' => 'flexia_overlay_search_settings',
                 'settings' => 'flexia_overlay_search_bg_color',
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_overlay_search_border_color', array(
@@ -980,7 +1009,8 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Search Overlay Border Color', 'flexia'),
                 'section' => 'flexia_overlay_search_settings',
                 'settings' => 'flexia_overlay_search_border_color',
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_overlay_search_border_width', array(
@@ -1031,7 +1061,8 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Search Field Font Color', 'flexia'),
                 'section' => 'flexia_overlay_search_settings',
                 'settings' => 'flexia_overlay_search_field_font_color',
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_overlay_search_field_font_size', array(
@@ -1069,7 +1100,8 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Label Font Color', 'flexia'),
                 'section' => 'flexia_overlay_search_settings',
                 'settings' => 'flexia_overlay_search_label_font_color',
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_overlay_search_label_font_size', array(
@@ -1120,7 +1152,8 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Close Button Color', 'flexia'),
                 'section' => 'flexia_overlay_search_settings',
                 'settings' => 'flexia_overlay_search_close_btn_color',
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_overlay_search_close_btn_hover_color', array(
@@ -1137,7 +1170,8 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Close Button Hover Color', 'flexia'),
                 'section' => 'flexia_overlay_search_settings',
                 'settings' => 'flexia_overlay_search_close_btn_hover_color',
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_overlay_search_close_btn_size', array(
@@ -1165,10 +1199,10 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Add Panel
      * @flexia_typography_settings
      */
-    $wp_customize->add_panel('flexia_typography_settings',array(
-        'title'=>'Typography',
-        'description'=> 'Default Typography Settings',
-        'priority'=> 40,
+    $wp_customize->add_panel('flexia_typography_settings', array(
+        'title' => 'Typography',
+        'description' => 'Default Typography Settings',
+        'priority' => 40,
     ));
 
     /**
@@ -1176,7 +1210,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Add Section
      * @flexia_typography_body
      * Parent: @flexia_typography_settings
-     */    
+     */
     $wp_customize->add_section('flexia_typography_body', array(
         'title' => __('Body', 'flexia'),
         'priority' => 10,
@@ -1195,8 +1229,9 @@ function flexia_customize_register($wp_customize)
     ));
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
-            $wp_customize, 
-            'flexia_body_font_size', array(
+            $wp_customize,
+            'flexia_body_font_size',
+            array(
                 'type' => 'range-value',
                 'section' => 'flexia_typography_body',
                 'settings' => 'flexia_body_font_size',
@@ -1225,8 +1260,9 @@ function flexia_customize_register($wp_customize)
     ));
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
-            $wp_customize, 
-            'flexia_body_font_line_height', array(
+            $wp_customize,
+            'flexia_body_font_line_height',
+            array(
                 'type' => 'range-value',
                 'section' => 'flexia_typography_body',
                 'settings' => 'flexia_body_font_line_height',
@@ -1245,7 +1281,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Body Font Family
      * @flexia_body_font_family
      * Parent: @flexia_typography_settings -> @flexia_typography_body
-     */  
+     */
     $wp_customize->add_setting('flexia_body_font_family', array(
         'default' => $defaults['flexia_body_font_family'],
         'sanitize_callback' => 'sanitize_text_field',
@@ -1268,7 +1304,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Body Font Variants
      * @flexia_body_font_variants
      * Parent: @flexia_typography_settings -> @flexia_typography_body
-     */ 
+     */
     $wp_customize->add_setting('flexia_body_font_variants', array(
         'default' => '',
         'sanitize_callback' => 'sanitize_text_field',
@@ -1292,7 +1328,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Body Font Subsets
      * @flexia_body_font_subsets
      * Parent: @flexia_typography_settings -> @flexia_typography_body
-     */ 
+     */
     $wp_customize->add_setting('flexia_body_font_subsets', array(
         'default' => '',
         'sanitize_callback' => 'sanitize_text_field',
@@ -1316,25 +1352,25 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Body Font Text Transform
      * @flexia_body_font_text_transform
      * Parent: @flexia_typography_settings -> @flexia_typography_body
-     */ 
-    $wp_customize->add_setting( 'flexia_body_font_text_transform', array(              
+     */
+    $wp_customize->add_setting('flexia_body_font_text_transform', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['flexia_body_font_text_transform'],
         'transport' => 'postMessage',
     ));
-      
+
     $wp_customize->add_control(
-        'flexia_body_font_text_transform', 
+        'flexia_body_font_text_transform',
         array(
             'type' => 'select',
             'section' => 'flexia_typography_body', // Add a default or your own section
-            'label' => __( 'Text Transform', 'flexia' ),
+            'label' => __('Text Transform', 'flexia'),
             'choices' => array(
-                'none' => __( 'None', 'flexia' ),
-                'capitalize' => __( 'Capitalize', 'flexia' ),
-                'uppercase' => __( 'Uppercase', 'flexia' ),
-                'lowercase' => __( 'Lowercase', 'flexia' ),
+                'none' => __('None', 'flexia'),
+                'capitalize' => __('Capitalize', 'flexia'),
+                'uppercase' => __('Uppercase', 'flexia'),
+                'lowercase' => __('Lowercase', 'flexia'),
             ),
         )
     );
@@ -1367,8 +1403,9 @@ function flexia_customize_register($wp_customize)
     ));
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
-            $wp_customize, 
-            'flexia_paragraph_font_size', array(
+            $wp_customize,
+            'flexia_paragraph_font_size',
+            array(
                 'type' => 'range-value',
                 'section' => 'flexia_typography_paragraph',
                 'settings' => 'flexia_paragraph_font_size',
@@ -1396,8 +1433,9 @@ function flexia_customize_register($wp_customize)
     ));
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
-            $wp_customize, 
-            'flexia_paragraph_font_line_height', array(
+            $wp_customize,
+            'flexia_paragraph_font_line_height',
+            array(
                 'type' => 'range-value',
                 'section' => 'flexia_typography_paragraph',
                 'settings' => 'flexia_paragraph_font_line_height',
@@ -1416,7 +1454,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Paragraph Font Family
      * @flexia_paragraph_font_family
      * Parent: @flexia_typography_settings -> @flexia_typography_paragraph
-     */  
+     */
     $wp_customize->add_setting('flexia_paragraph_font_family', array(
         'default' => $defaults['flexia_paragraph_font_family'],
         'sanitize_callback' => 'sanitize_text_field',
@@ -1434,7 +1472,7 @@ function flexia_customize_register($wp_customize)
             )
         )
     );
-    
+
     /**
      * Typography Section: Paragraph Font Variants
      * @flexia_paragraph_font_variants
@@ -1463,7 +1501,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Paragraph Font Subsets
      * @flexia_paragraph_font_subsets
      * Parent: @flexia_typography_settings -> @flexia_typography_paragraph
-     */ 
+     */
     $wp_customize->add_setting('flexia_paragraph_font_subsets', array(
         'default' => '',
         'sanitize_callback' => 'sanitize_text_field',
@@ -1487,25 +1525,25 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Paragraph Font Text Transform
      * @flexia_paragraph_font_text_transform
      * Parent: @flexia_typography_settings -> @flexia_typography_paragraph
-     */ 
-    $wp_customize->add_setting( 'flexia_paragraph_font_text_transform', array(              
+     */
+    $wp_customize->add_setting('flexia_paragraph_font_text_transform', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['flexia_paragraph_font_text_transform'],
         'transport' => 'postMessage',
     ));
-      
+
     $wp_customize->add_control(
-        'flexia_paragraph_font_text_transform', 
+        'flexia_paragraph_font_text_transform',
         array(
             'type' => 'select',
             'section' => 'flexia_typography_paragraph', // Add a default or your own section
-            'label' => __( 'Text Transform', 'flexia' ),
+            'label' => __('Text Transform', 'flexia'),
             'choices' => array(
-                'none' => __( 'None', 'flexia' ),
-                'capitalize' => __( 'Capitalize', 'flexia' ),
-                'uppercase' => __( 'Uppercase', 'flexia' ),
-                'lowercase' => __( 'Lowercase', 'flexia' ),
+                'none' => __('None', 'flexia'),
+                'capitalize' => __('Capitalize', 'flexia'),
+                'uppercase' => __('Uppercase', 'flexia'),
+                'lowercase' => __('Lowercase', 'flexia'),
             ),
         )
     );
@@ -1519,7 +1557,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Add Section: Heading
      * @flexia_typography_heading
      * Parent: @flexia_typography_settings
-     */    
+     */
     $wp_customize->add_section('flexia_typography_heading', array(
         'title' => __('Heading', 'flexia'),
         'priority' => 10,
@@ -1688,8 +1726,9 @@ function flexia_customize_register($wp_customize)
     ));
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
-            $wp_customize, 
-            'flexia_heading_font_line_height', array(
+            $wp_customize,
+            'flexia_heading_font_line_height',
+            array(
                 'type' => 'range-value',
                 'section' => 'flexia_typography_heading',
                 'settings' => 'flexia_heading_font_line_height',
@@ -1708,7 +1747,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Heading Font Family
      * @flexia_heading_font_family
      * Parent: @flexia_typography_settings -> @flexia_typography_heading
-     */  
+     */
     $wp_customize->add_setting('flexia_heading_font_family', array(
         'default' => $defaults['flexia_heading_font_family'],
         'sanitize_callback' => 'sanitize_text_field',
@@ -1731,7 +1770,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Heading Font Variants
      * @flexia_heading_font_variants
      * Parent: @flexia_typography_settings -> @flexia_typography_heading
-     */ 
+     */
     $wp_customize->add_setting('flexia_heading_font_variants', array(
         'default' => '',
         'sanitize_callback' => 'sanitize_text_field',
@@ -1755,7 +1794,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Heading Font Subsets
      * @flexia_heading_font_subsets
      * Parent: @flexia_typography_settings -> @flexia_typography_heading
-     */ 
+     */
     $wp_customize->add_setting('flexia_heading_font_subsets', array(
         'default' => '',
         'sanitize_callback' => 'sanitize_text_field',
@@ -1779,39 +1818,34 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Heading Font Text Transform
      * @flexia_heading_font_text_transform
      * Parent: @flexia_typography_settings -> @flexia_typography_heading
-     */ 
-    $wp_customize->add_setting( 'flexia_heading_font_text_transform', array(              
+     */
+    $wp_customize->add_setting('flexia_heading_font_text_transform', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['flexia_heading_font_text_transform'],
         'transport' => 'postMessage',
     ));
-      
+
     $wp_customize->add_control(
-        'flexia_heading_font_text_transform', 
+        'flexia_heading_font_text_transform',
         array(
             'type' => 'select',
             'section' => 'flexia_typography_heading', // Add a default or your own section
-            'label' => __( 'Text Transform', 'flexia' ),
+            'label' => __('Text Transform', 'flexia'),
             'choices' => array(
-                'none' => __( 'None', 'flexia' ),
-                'capitalize' => __( 'Capitalize', 'flexia' ),
-                'uppercase' => __( 'Uppercase', 'flexia' ),
-                'lowercase' => __( 'Lowercase', 'flexia' ),
+                'none' => __('None', 'flexia'),
+                'capitalize' => __('Capitalize', 'flexia'),
+                'uppercase' => __('Uppercase', 'flexia'),
+                'lowercase' => __('Lowercase', 'flexia'),
             ),
         )
     );
     /**
      * ..............................................................
-     */
-
-
-    /**
-     * ..............................................................
      * Typography Section: Add Section: Link
      * @flexia_typography_link
      * Parent: @flexia_typography_settings
-     */    
+     */
     $wp_customize->add_section('flexia_typography_link', array(
         'title' => __('Link', 'flexia'),
         'priority' => 10,
@@ -1829,8 +1863,9 @@ function flexia_customize_register($wp_customize)
     ));
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
-            $wp_customize, 
-            'flexia_link_font_size', array(
+            $wp_customize,
+            'flexia_link_font_size',
+            array(
                 'type' => 'range-value',
                 'section' => 'flexia_typography_link',
                 'settings' => 'flexia_link_font_size',
@@ -1858,8 +1893,9 @@ function flexia_customize_register($wp_customize)
     ));
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
-            $wp_customize, 
-            'flexia_link_font_line_height', array(
+            $wp_customize,
+            'flexia_link_font_line_height',
+            array(
                 'type' => 'range-value',
                 'section' => 'flexia_typography_link',
                 'settings' => 'flexia_link_font_line_height',
@@ -1878,7 +1914,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Link Font Family
      * @flexia_link_font_family
      * Parent: @flexia_typography_settings -> @flexia_typography_link
-     */  
+     */
     $wp_customize->add_setting('flexia_link_font_family', array(
         'default' => $defaults['flexia_link_font_family'],
         'sanitize_callback' => 'sanitize_text_field',
@@ -1901,7 +1937,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Link Font Variants
      * @flexia_link_font_variants
      * Parent: @flexia_typography_settings -> @flexia_typography_link
-     */ 
+     */
     $wp_customize->add_setting('flexia_link_font_variants', array(
         'default' => '',
         'sanitize_callback' => 'sanitize_text_field',
@@ -1925,7 +1961,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Link Font Subsets
      * @flexia_link_font_subsets
      * Parent: @flexia_typography_settings -> @flexia_typography_link
-     */ 
+     */
     $wp_customize->add_setting('flexia_link_font_subsets', array(
         'default' => '',
         'sanitize_callback' => 'sanitize_text_field',
@@ -1949,31 +1985,28 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Link Font Text Transform
      * @flexia_link_font_text_transform
      * Parent: @flexia_typography_settings -> @flexia_typography_link
-     */ 
-    $wp_customize->add_setting( 'flexia_link_font_text_transform', array(              
+     */
+    $wp_customize->add_setting('flexia_link_font_text_transform', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['flexia_link_font_text_transform'],
         'transport' => 'postMessage',
     ));
-      
+
     $wp_customize->add_control(
-        'flexia_link_font_text_transform', 
+        'flexia_link_font_text_transform',
         array(
             'type' => 'select',
             'section' => 'flexia_typography_link', // Add a default or your own section
-            'label' => __( 'Text Transform', 'flexia' ),
+            'label' => __('Text Transform', 'flexia'),
             'choices' => array(
-                'none' => __( 'None', 'flexia' ),
-                'capitalize' => __( 'Capitalize', 'flexia' ),
-                'uppercase' => __( 'Uppercase', 'flexia' ),
-                'lowercase' => __( 'Lowercase', 'flexia' ),
+                'none' => __('None', 'flexia'),
+                'capitalize' => __('Capitalize', 'flexia'),
+                'uppercase' => __('Uppercase', 'flexia'),
+                'lowercase' => __('Lowercase', 'flexia'),
             ),
         )
     );
-    /**
-     * ..............................................................
-     */
 
 
     /**
@@ -1981,7 +2014,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Add Section: Button
      * @flexia_typography_button
      * Parent: @flexia_typography_settings
-     */    
+     */
     $wp_customize->add_section('flexia_typography_button', array(
         'title' => __('Button', 'flexia'),
         'priority' => 10,
@@ -1999,8 +2032,9 @@ function flexia_customize_register($wp_customize)
     ));
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
-            $wp_customize, 
-            'flexia_button_font_size', array(
+            $wp_customize,
+            'flexia_button_font_size',
+            array(
                 'type' => 'range-value',
                 'section' => 'flexia_typography_button',
                 'settings' => 'flexia_button_font_size',
@@ -2028,8 +2062,9 @@ function flexia_customize_register($wp_customize)
     ));
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
-            $wp_customize, 
-            'flexia_button_font_line_height', array(
+            $wp_customize,
+            'flexia_button_font_line_height',
+            array(
                 'type' => 'range-value',
                 'section' => 'flexia_typography_button',
                 'settings' => 'flexia_button_font_line_height',
@@ -2048,7 +2083,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Button Font Family
      * @flexia_button_font_family
      * Parent: @flexia_typography_settings -> @flexia_typography_button
-     */  
+     */
     $wp_customize->add_setting('flexia_button_font_family', array(
         'default' => $defaults['flexia_button_font_family'],
         'sanitize_callback' => 'sanitize_text_field',
@@ -2071,7 +2106,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Button Font Variants
      * @flexia_button_font_variants
      * Parent: @flexia_typography_settings -> @flexia_typography_button
-     */ 
+     */
     $wp_customize->add_setting('flexia_button_font_variants', array(
         'default' => '',
         'sanitize_callback' => 'sanitize_text_field',
@@ -2095,7 +2130,7 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Button Font Subsets
      * @flexia_button_font_subsets
      * Parent: @flexia_typography_settings -> @flexia_typography_button
-     */ 
+     */
     $wp_customize->add_setting('flexia_button_font_subsets', array(
         'default' => '',
         'sanitize_callback' => 'sanitize_text_field',
@@ -2119,35 +2154,34 @@ function flexia_customize_register($wp_customize)
      * Typography Section: Button Font Text Transform
      * @flexia_button_font_text_transform
      * Parent: @flexia_typography_settings -> @flexia_typography_button
-     */ 
-    $wp_customize->add_setting( 'flexia_button_font_text_transform', array(              
+     */
+    $wp_customize->add_setting('flexia_button_font_text_transform', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['flexia_button_font_text_transform'],
         'transport' => 'postMessage',
     ));
-      
+
     $wp_customize->add_control(
-        'flexia_button_font_text_transform', 
+        'flexia_button_font_text_transform',
         array(
             'type' => 'select',
             'section' => 'flexia_typography_button', // Add a default or your own section
-            'label' => __( 'Text Transform', 'flexia' ),
+            'label' => __('Text Transform', 'flexia'),
             'choices' => array(
-                'none' => __( 'None', 'flexia' ),
-                'capitalize' => __( 'Capitalize', 'flexia' ),
-                'uppercase' => __( 'Uppercase', 'flexia' ),
-                'lowercase' => __( 'Lowercase', 'flexia' ),
+                'none' => __('None', 'flexia'),
+                'capitalize' => __('Capitalize', 'flexia'),
+                'uppercase' => __('Uppercase', 'flexia'),
+                'lowercase' => __('Lowercase', 'flexia'),
             ),
         )
     );
     /**
      * ..............................................................
      */
-        
+
 
     // Blog Settings
-
     $wp_customize->add_section('flexia_blog_content_settings', array(
         'title' => __('Blog Content Settings', 'flexia'),
         'priority' => 10,
@@ -2158,7 +2192,8 @@ function flexia_customize_register($wp_customize)
         array(
             'default' => $defaults['flexia_blog_content_display'],
             'sanitize_callback' => 'flexia_sanitize_choices',
-        ));
+        )
+    );
 
     $wp_customize->add_control(
         new WP_Customize_Control(
@@ -2200,92 +2235,93 @@ function flexia_customize_register($wp_customize)
 
     // Blog Layout Settings
     $wp_customize->add_setting('flexia_blog_settings_title', array(
-		'default'           => '',
-		'sanitize_callback' => 'esc_html',
-	));
+        'default'           => '',
+        'sanitize_callback' => 'esc_html',
+    ));
 
-	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'flexia_blog_settings_title', array(
-		'label'      => __( 'Layout Settings', 'flexia' ),
-		'settings'		=> 'flexia_blog_settings_title',
-		'section'  		=> 'flexia_blog_content_settings',
-		'priority' 		=> 30,
-	)));
+    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'flexia_blog_settings_title', array(
+        'label'      => __('Layout Settings', 'flexia'),
+        'settings'        => 'flexia_blog_settings_title',
+        'section'          => 'flexia_blog_content_settings',
+        'priority'         => 30,
+    )));
 
-	$wp_customize->add_setting(
-		'flexia_blog_content_layout' ,
-		array(
-	    'default'   => $defaults['flexia_blog_content_layout'],
-	    'sanitize_callback' => 'flexia_sanitize_choices',
-	) );
-
-
-	$wp_customize->add_control(
-	    new WP_Customize_Control(
-	        $wp_customize,
-	        'flexia_blog_content_layout',
-	        array(
-	            'label'          => __( 'Content Layout', 'flexia' ),
-	            'section'        => 'flexia_blog_content_settings',
-	            'settings'       => 'flexia_blog_content_layout',
-	            'priority'   	 => 31,
-	            'description'    => 'Set how you want to arrange your posts on blog page.',
-	            'type'           => 'radio',
-	            'choices'        => array(
-	                'flexia_blog_content_layout_standard'   => __( 'Standard Layout', 'flexia' ),
-	                'flexia_blog_content_layout_grid'   => __( 'Flex Layout', 'flexia' ),
-	                'flexia_blog_content_layout_masonry'   => __( 'Masonry Layout', 'flexia' ),
-	            )
-	        )
-	    )
-	);
-
-	$wp_customize->add_setting( 'flexia_blog_per_page' , array(
-	    'default'   => $defaults['flexia_blog_per_page'],
-	    'sanitize_callback' => 'esc_html',
-	) );
+    $wp_customize->add_setting(
+        'flexia_blog_content_layout',
+        array(
+            'default'   => $defaults['flexia_blog_content_layout'],
+            'sanitize_callback' => 'flexia_sanitize_choices',
+        )
+    );
 
 
-	$wp_customize->add_control(
-	    new WP_Customize_Control(
-	        $wp_customize,
-	        'flexia_blog_per_page',
-	        array(
-	            'label'          => __( 'Posts Per Page', 'flexia' ),
-	            'section'        => 'flexia_blog_content_settings',
-	            'settings'       => 'flexia_blog_per_page',
-	            'priority'   	 => 32,
-	            'type'           => 'text',
-	        )
-	    )
-	);
-	$wp_customize->add_setting( 'flexia_blog_grid_column' , array(
-	    'default'   => $defaults['flexia_blog_grid_column'],
-	    'sanitize_callback' => 'flexia_sanitize_choices',
-	) );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_blog_content_layout',
+            array(
+                'label'          => __('Content Layout', 'flexia'),
+                'section'        => 'flexia_blog_content_settings',
+                'settings'       => 'flexia_blog_content_layout',
+                'priority'        => 31,
+                'description'    => 'Set how you want to arrange your posts on blog page.',
+                'type'           => 'radio',
+                'choices'        => array(
+                    'flexia_blog_content_layout_standard'   => __('Standard Layout', 'flexia'),
+                    'flexia_blog_content_layout_grid'   => __('Flex Layout', 'flexia'),
+                    'flexia_blog_content_layout_masonry'   => __('Masonry Layout', 'flexia'),
+                )
+            )
+        )
+    );
+
+    $wp_customize->add_setting('flexia_blog_per_page', array(
+        'default'   => $defaults['flexia_blog_per_page'],
+        'sanitize_callback' => 'esc_html',
+    ));
 
 
-	$wp_customize->add_control(
-	    new WP_Customize_Control(
-	        $wp_customize,
-	        'flexia_blog_grid_column',
-	        array(
-	            'label'          => __( 'Grid/Masonry Column', 'flexia' ),
-	            'section'        => 'flexia_blog_content_settings',
-	            'settings'       => 'flexia_blog_grid_column',
-	            'priority'   	 => 33,
-	            'description'    => 'Set the number of columns for grid or masonry layout.',
-	            'type'           => 'select',
-	            'choices'        => array(
-	                '1'		=> __( '1', 'flexia' ),
-	                '2'		=> __( '2', 'flexia' ),
-	                '3'		=> __( '3', 'flexia' ),
-	                '4'		=> __( '4', 'flexia' ),
-	                '5'		=> __( '5', 'flexia' ),
-	                '6'		=> __( '6', 'flexia' )
-	            )
-	        )
-	    )
-	);
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_blog_per_page',
+            array(
+                'label'          => __('Posts Per Page', 'flexia'),
+                'section'        => 'flexia_blog_content_settings',
+                'settings'       => 'flexia_blog_per_page',
+                'priority'        => 32,
+                'type'           => 'text',
+            )
+        )
+    );
+    $wp_customize->add_setting('flexia_blog_grid_column', array(
+        'default'   => $defaults['flexia_blog_grid_column'],
+        'sanitize_callback' => 'flexia_sanitize_choices',
+    ));
+
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_blog_grid_column',
+            array(
+                'label'          => __('Grid/Masonry Column', 'flexia'),
+                'section'        => 'flexia_blog_content_settings',
+                'settings'       => 'flexia_blog_grid_column',
+                'priority'        => 33,
+                'description'    => 'Set the number of columns for grid or masonry layout.',
+                'type'           => 'select',
+                'choices'        => array(
+                    '1'        => __('1', 'flexia'),
+                    '2'        => __('2', 'flexia'),
+                    '3'        => __('3', 'flexia'),
+                    '4'        => __('4', 'flexia'),
+                    '5'        => __('5', 'flexia'),
+                    '6'        => __('6', 'flexia')
+                )
+            )
+        )
+    );
 
     $wp_customize->add_section('flexia_blog_header_settings', array(
         'title' => __('Blog Header Settings', 'flexia'),
@@ -2301,167 +2337,171 @@ function flexia_customize_register($wp_customize)
 
     //*************************************** */
     //Blog Load More option
-	$wp_customize->add_setting('flexia_blog_load_more_title', array(
-		'default'           => '',
-		'sanitize_callback' => 'esc_html',
-	));
+    $wp_customize->add_setting('flexia_blog_load_more_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_html',
+    ));
 
-	$wp_customize->add_control(new Separator_Custom_control($wp_customize, 'flexia_blog_load_more_title', array(
-		'label'      => __( 'Load More Options', 'flexia' ),
-		'description'      => __( 'This feature will work for Grid and Masonry Layout', 'flexia' ),
-		'settings'		=> 'flexia_blog_load_more_title',
-		'section'  		=> 'flexia_blog_content_settings',
-		'priority' 		=> 58,
-	)));
+    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'flexia_blog_load_more_title', array(
+        'label'      => __('Load More Options', 'flexia'),
+        'description'      => __('This feature will work for Grid and Masonry Layout', 'flexia'),
+        'settings'        => 'flexia_blog_load_more_title',
+        'section'          => 'flexia_blog_content_settings',
+        'priority'         => 58,
+    )));
 
-	$wp_customize->add_setting( 'flexia_blog_load_more', array(
-			'default'     => $defaults['flexia_blog_load_more'],
-			'capability'  => 'edit_theme_options',
-			'sanitize_callback' => 'flexia_sanitize_checkbox',
-	) );
+    $wp_customize->add_setting('flexia_blog_load_more', array(
+        'default'     => $defaults['flexia_blog_load_more'],
+        'capability'  => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
 
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'flexia_blog_load_more', array(
-			'label'	      => esc_html__( 'Show Load More?', 'flexia' ),
-			'section'     => 'flexia_blog_content_settings',
-			'settings'    => 'flexia_blog_load_more',
-			'priority'   	 => 59,
-			'type'        => 'light',// light, ios, flat
-	) ) );
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'flexia_blog_load_more', array(
+        'label'          => esc_html__('Show Load More?', 'flexia'),
+        'section'     => 'flexia_blog_content_settings',
+        'settings'    => 'flexia_blog_load_more',
+        'priority'        => 59,
+        'type'        => 'light', // light, ios, flat
+    )));
 
-	$wp_customize->add_setting( 'flexia_blog_load_more_text' , array(
-	    'default'   => $defaults['flexia_blog_load_more_text'],
-	    'sanitize_callback' => 'esc_html',
-	) );
-
-
-	$wp_customize->add_control(
-	    new WP_Customize_Control(
-	        $wp_customize,
-	        'flexia_blog_load_more_text',
-	        array(
-	            'label'          => __( 'Load More Text', 'flexia' ),
-	            'section'        => 'flexia_blog_content_settings',
-	            'settings'       => 'flexia_blog_load_more_text',
-	            'priority'   	 => 60,
-	            'type'           => 'text',
-	        )
-	    )
-	);
-
-	$wp_customize->add_setting( 'flexia_blog_loading_text' , array(
-	    'default'   => $defaults['flexia_blog_loading_text'],
-	    'sanitize_callback' => 'esc_html',
-	) );
+    $wp_customize->add_setting('flexia_blog_load_more_text', array(
+        'default'   => $defaults['flexia_blog_load_more_text'],
+        'sanitize_callback' => 'esc_html',
+    ));
 
 
-	$wp_customize->add_control(
-	    new WP_Customize_Control(
-	        $wp_customize,
-	        'flexia_blog_loading_text',
-	        array(
-	            'label'          => __( 'Loading', 'flexia' ),
-	            'section'        => 'flexia_blog_content_settings',
-	            'settings'       => 'flexia_blog_loading_text',
-	            'priority'   	 => 61,
-	            'type'           => 'text',
-	        )
-	    )
-	);
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_blog_load_more_text',
+            array(
+                'label'          => __('Load More Text', 'flexia'),
+                'section'        => 'flexia_blog_content_settings',
+                'settings'       => 'flexia_blog_load_more_text',
+                'priority'        => 60,
+                'type'           => 'text',
+            )
+        )
+    );
 
-	$wp_customize->add_setting( 'flexia_load_more_btn_font_size', array(
-			'default'       => $defaults['flexia_load_more_btn_font_size'],
-			'capability'    => 'edit_theme_options',
-			'transport' => 'postMessage',
-			'sanitize_callback' => 'flexia_sanitize_integer'
-
-	) );
-
-	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'flexia_load_more_btn_font_size', array(
-		'type'     => 'range-value',
-		'section'  => 'flexia_blog_content_settings',
-		'settings' => 'flexia_load_more_btn_font_size',
-		'priority'    => 512,
-		'label'    => __( 'Button Font Font Size (px)', 'flexia' ),
-		'input_attrs' => array(
-			'min'    => 1,
-			'max'    => 100,
-			'step'   => 1,
-			'suffix' => 'px', //optional suffix
-	  	),
-	) ) );
+    $wp_customize->add_setting('flexia_blog_loading_text', array(
+        'default'   => $defaults['flexia_blog_loading_text'],
+        'sanitize_callback' => 'esc_html',
+    ));
 
 
-	$wp_customize->add_setting( 'flexia_load_more_btn_bg' , array(
-	    'default'     => $defaults['flexia_load_more_btn_bg'],
-	    'transport'   => 'postMessage',
-	    'sanitize_callback' => 'sanitize_hex_color',
-	) );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_blog_loading_text',
+            array(
+                'label'          => __('Loading', 'flexia'),
+                'section'        => 'flexia_blog_content_settings',
+                'settings'       => 'flexia_blog_loading_text',
+                'priority'        => 61,
+                'type'           => 'text',
+            )
+        )
+    );
 
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-		$wp_customize,
-		'flexia_load_more_btn_bg',
-		array(
-			'label'      => __( 'Load More Button Background', 'flexia' ),
-			'section'    => 'flexia_blog_content_settings',
-			'settings'   => 'flexia_load_more_btn_bg',
-			'priority'    => 513,
-		) )
-	);
+    $wp_customize->add_setting('flexia_load_more_btn_font_size', array(
+        'default'       => $defaults['flexia_load_more_btn_font_size'],
+        'capability'    => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'flexia_sanitize_integer'
 
-	$wp_customize->add_setting( 'flexia_load_more_font_color' , array(
-	    'default'     => $defaults['flexia_load_more_font_color'],
-	    'transport'   => 'postMessage',
-	    'sanitize_callback' => 'sanitize_hex_color',
-	) );
+    ));
 
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-		$wp_customize,
-		'flexia_load_more_font_color',
-		array(
-			'label'      => __( 'Load More Button Color', 'flexia' ),
-			'section'    => 'flexia_blog_content_settings',
-			'settings'   => 'flexia_load_more_font_color',
-			'priority'    => 514,
-		) )
-	);
+    $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'flexia_load_more_btn_font_size', array(
+        'type'     => 'range-value',
+        'section'  => 'flexia_blog_content_settings',
+        'settings' => 'flexia_load_more_btn_font_size',
+        'priority'    => 512,
+        'label'    => __('Button Font Font Size (px)', 'flexia'),
+        'input_attrs' => array(
+            'min'    => 1,
+            'max'    => 100,
+            'step'   => 1,
+            'suffix' => 'px', //optional suffix
+        ),
+    )));
 
-	$wp_customize->add_setting( 'flexia_load_more_btn_bg_active' , array(
-	    'default'     => $defaults['flexia_load_more_btn_bg_active'],
-	    'transport'   => 'postMessage',
-	    'sanitize_callback' => 'sanitize_hex_color',
-	) );
 
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-		$wp_customize,
-		'flexia_load_more_btn_bg_active',
-		array(
-			'label'      => __( 'Load More Hover Button Background', 'flexia' ),
-			'section'    => 'flexia_blog_content_settings',
-			'settings'   => 'flexia_load_more_btn_bg_active',
-			'priority'    => 515,
-		) )
-	);
+    $wp_customize->add_setting('flexia_load_more_btn_bg', array(
+        'default'     => $defaults['flexia_load_more_btn_bg'],
+        'transport'   => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
 
-	$wp_customize->add_setting( 'flexia_load_more_font_color_active' , array(
-	    'default'     => $defaults['flexia_load_more_font_color_active'],
-	    'transport'   => 'postMessage',
-	    'sanitize_callback' => 'sanitize_hex_color',
-	) );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_load_more_btn_bg',
+            array(
+                'label'      => __('Load More Button Background', 'flexia'),
+                'section'    => 'flexia_blog_content_settings',
+                'settings'   => 'flexia_load_more_btn_bg',
+                'priority'    => 513,
+            )
+        )
+    );
 
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-		$wp_customize,
-		'flexia_load_more_font_color_active',
-		array(
-			'label'      => __( 'Load More Hover Button Text Color', 'flexia' ),
-			'section'    => 'flexia_blog_content_settings',
-			'settings'   => 'flexia_load_more_font_color_active',
-			'priority'    => 516,
-		) )
-	);
+    $wp_customize->add_setting('flexia_load_more_font_color', array(
+        'default'     => $defaults['flexia_load_more_font_color'],
+        'transport'   => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_load_more_font_color',
+            array(
+                'label'      => __('Load More Button Color', 'flexia'),
+                'section'    => 'flexia_blog_content_settings',
+                'settings'   => 'flexia_load_more_font_color',
+                'priority'    => 514,
+            )
+        )
+    );
+
+    $wp_customize->add_setting('flexia_load_more_btn_bg_active', array(
+        'default'     => $defaults['flexia_load_more_btn_bg_active'],
+        'transport'   => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_load_more_btn_bg_active',
+            array(
+                'label'      => __('Load More Hover Button Background', 'flexia'),
+                'section'    => 'flexia_blog_content_settings',
+                'settings'   => 'flexia_load_more_btn_bg_active',
+                'priority'    => 515,
+            )
+        )
+    );
+
+    $wp_customize->add_setting('flexia_load_more_font_color_active', array(
+        'default'     => $defaults['flexia_load_more_font_color_active'],
+        'transport'   => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_load_more_font_color_active',
+            array(
+                'label'      => __('Load More Hover Button Text Color', 'flexia'),
+                'section'    => 'flexia_blog_content_settings',
+                'settings'   => 'flexia_load_more_font_color_active',
+                'priority'    => 516,
+            )
+        )
+    );
 
     //*************************************** */
 
@@ -2482,7 +2522,7 @@ function flexia_customize_register($wp_customize)
     )));
 
     // Blog Header Background Color
-	$wp_customize->add_setting('flexia_blog_header_bg_color', array(
+    $wp_customize->add_setting('flexia_blog_header_bg_color', array(
         'default' => $defaults['flexia_blog_header_bg_color'],
         'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
@@ -2496,7 +2536,8 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Blog Header Background Color', 'flexia'),
                 'section' => 'flexia_blog_header_settings',
                 'settings' => 'flexia_blog_header_bg_color',
-            ))
+            )
+        )
     );
 
     // Blog logo/Icon
@@ -2619,7 +2660,8 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Blog Title Font Color', 'flexia'),
                 'section' => 'flexia_blog_header_settings',
                 'settings' => 'flexia_blog_title_font_color',
-            ))
+            )
+        )
     );
 
     //Flexia Blog Title Font Family
@@ -2698,7 +2740,8 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Blog Description Font Color', 'flexia'),
                 'section' => 'flexia_blog_header_settings',
                 'settings' => 'flexia_blog_desc_font_color',
-            ))
+            )
+        )
     );
 
     //Flexia Blog Description Font Family
@@ -2730,7 +2773,8 @@ function flexia_customize_register($wp_customize)
         array(
             'default' => $defaults['flexia_single_posts_layout'],
             'sanitize_callback' => 'flexia_sanitize_choices',
-        ));
+        )
+    );
 
     $wp_customize->add_control(
         new WP_Customize_Control(
@@ -2751,14 +2795,15 @@ function flexia_customize_register($wp_customize)
             )
         )
     );
-    
+
     //Blog Single Sidebar Control
     $wp_customize->add_setting(
         'flexia_single_content_layout',
         array(
             'default' => $defaults['flexia_single_content_layout'],
             'sanitize_callback' => 'flexia_sanitize_choices',
-        ));
+        )
+    );
 
     $wp_customize->add_control(
         new WP_Customize_Control(
@@ -2793,7 +2838,8 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Post Meta Background', 'flexia'),
                 'section' => 'flexia_single_posts_settings',
                 'settings' => 'flexia_post_meta_bg_color',
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_post_max_width', array(
@@ -2951,16 +2997,16 @@ function flexia_customize_register($wp_customize)
         'type' => 'light', // light, ios, flat
     )));
 
-    $wp_customize->add_setting('post_social_share_gplus', array(
-        'default' => $defaults['post_social_share_gplus'],
+    $wp_customize->add_setting('post_social_share_gmail', array(
+        'default' => $defaults['post_social_share_gmail'],
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'flexia_sanitize_checkbox',
     ));
 
-    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'post_social_share_gplus', array(
-        'label' => esc_html__('Google Plus Sharing', 'flexia'),
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'post_social_share_gmail', array(
+        'label' => esc_html__('Gmail Sharing', 'flexia'),
         'section' => 'flexia_single_posts_settings',
-        'settings' => 'post_social_share_gplus',
+        'settings' => 'post_social_share_gmail',
         'type' => 'light', // light, ios, flat
     )));
 
@@ -2977,6 +3023,44 @@ function flexia_customize_register($wp_customize)
         'type' => 'light', // light, ios, flat
     )));
 
+    $wp_customize->add_setting('post_social_share_reddit', array(
+        'default' => $defaults['post_social_share_reddit'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'post_social_share_reddit', array(
+        'label' => esc_html__('Reddit Sharing', 'flexia'),
+        'section' => 'flexia_single_posts_settings',
+        'settings' => 'post_social_share_reddit',
+        'type' => 'light', // light, ios, flat
+    )));
+
+    $wp_customize->add_setting('post_social_share_blogger', array(
+        'default' => $defaults['post_social_share_blogger'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'post_social_share_blogger', array(
+        'label' => esc_html__('Blogger Sharing', 'flexia'),
+        'section' => 'flexia_single_posts_settings',
+        'settings' => 'post_social_share_blogger',
+        'type' => 'light', // light, ios, flat
+    )));
+
+    $wp_customize->add_setting('post_social_share_thumblr', array(
+        'default' => $defaults['post_social_share_thumblr'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'post_social_share_thumblr', array(
+        'label' => esc_html__('Thumblr Sharing', 'flexia'),
+        'section' => 'flexia_single_posts_settings',
+        'settings' => 'post_social_share_thumblr',
+        'type' => 'light', // light, ios, flat
+    )));
 
     /**
      * ......................................................
@@ -2984,10 +3068,10 @@ function flexia_customize_register($wp_customize)
      * Add Panel: Header
      * @flexia_header_panel
      */
-    $wp_customize->add_panel('flexia_header_panel',array(
-        'title'=>'Header',
-        'description'=> 'Header Settings',
-        'priority'=> 50,
+    $wp_customize->add_panel('flexia_header_panel', array(
+        'title' => 'Header',
+        'description' => 'Header Settings',
+        'priority' => 50,
     ));
 
     /**
@@ -3006,19 +3090,19 @@ function flexia_customize_register($wp_customize)
      * @flexia_header_layout_type
      * Parent: @flexia_header_panel -> flexia_header_layout
      */
-    
-    $wp_customize->add_setting( 'flexia_header_layout_type', array(              
+
+    $wp_customize->add_setting('flexia_header_layout_type', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['flexia_header_layout_type'],
     ));
-      
+
     $wp_customize->add_control(
         'flexia_header_layout_type',
         array(
             'type' => 'select',
             'section' => 'flexia_header_layout', // Add a default or your own section
-            'label' => __( 'Header Layout Type', 'flexia' ),
+            'label' => __('Header Layout Type', 'flexia'),
             'choices' => array(
                 'boxed' => __('Boxed/ Container', 'flexia'),
                 'full-width' => __('Full Width', 'flexia'),
@@ -3066,94 +3150,98 @@ function flexia_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control(
-		new Flexia_Radio_Image_Control(
+        new Flexia_Radio_Image_Control(
             $wp_customize,
             'flexia_header_layouts',
             array(
                 'type'          => 'flexia-radio-image',
-                'settings'		=> 'flexia_header_layouts',
-                'section'		=> 'flexia_header_layout',
-                'label'			=> __('Header Styles', 'flexia'),
-                'choices'		=> apply_filters(
-                    'flexia_header_layouts', 
+                'settings'        => 'flexia_header_layouts',
+                'section'        => 'flexia_header_layout',
+                'label'            => __('Header Styles', 'flexia'),
+                'choices'        => apply_filters(
+                    'flexia_header_layouts',
                     array(
-                        '1' 	=> array(
+                        '1'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-01.png',
+                            'title' => __('Header Layout 1','flexia')
                         ),
-                        '2' 	=> array(
+                        '2'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-02.png',
+                            'title' => __('Header Layout 2','flexia')
                         ),
-                        '3' 	=> array(
+                        '3'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-03.png',
+                            'title' => __('Header Layout 3','flexia')
                         ),
-                        '4' 	=> array(
+                        '4'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-04.png',
-                        ),                        
-                        // '5' 	=> array(
-                        //     'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-06.png',
-                        //     'pro'   => true,
-                        //     'url'   => 'https://flexia.pro/pricing/',
-                        // ),
-                        // '6' 	=> array(
-                        //     'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-07.png',
-                        //     'pro'   => true,
-                        //     'url'   => 'https://flexia.pro/pricing/',
-                        // ),
+                            'title' => __('Header Layout 4','flexia')
+                        ),
+                        'pro-1'     => array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-pro-01.png',
+                            'pro'   => true,
+                            'url'   => 'https://flexia.pro/pricing/',
+                            'title' => __('Header Layout Pro 1','flexia')
+                        ),
                     )
                 ),
-            ) 
+            )
         )
     );
-    
-    $wp_customize->selective_refresh->add_partial( "flexia_header_layouts_partial", [
+
+    $wp_customize->selective_refresh->add_partial("flexia_header_layouts_partial", [
         'selector'            => "#masthead",
         'settings'            => [
             "flexia_header_layouts",
         ],
         'container_inclusive' => true,
-    ] );
+    ]);
 
     /**
-     * Header Layout Section: Mobile Layouts
-     * @flexia_header_mobile_layouts
+     * Header Layout Section: Header Layouts Mobile
+     * @flexia_header_moible_layouts
      * Parent: @flexia_header_panel -> flexia_header_layout
      */
-    // $wp_customize->add_setting('flexia_header_mobile_layouts', array(
-    //     'default' => $defaults['flexia_header_mobile_layouts'],
-    //     'sanitize_callback' => 'flexia_sanitize_choices',
-    // ));
+    $wp_customize->add_setting('flexia_header_mobile_layouts', array(
+        'default' => $defaults['flexia_header_mobile_layouts'],
+        'sanitize_callback' => 'flexia_sanitize_choices',
+    ));
 
-    // $wp_customize->add_control(
-    //     new Flexia_Radio_Image_Control(
-    //         $wp_customize,
-    //         'flexia_header_mobile_layouts',
-    //         array(
-    //             'label' => __('Mobile Layouts', 'flexia'),
-    //             'section' => 'flexia_header_layout',
-    //             'settings' => 'flexia_header_mobile_layouts',
-    //             'type'          => 'flexia-radio-image',
-    //             'choices'		=> apply_filters(
-    //                 'mobile_flexia_header_layouts', 
-    //                 array(
-    //                     '1' 	=> array(
-    //                         'image' => get_template_directory_uri() . '/admin/img/header-layouts/mobile-1.png',
-    //                     ),
-    //                     '2' 	=> array(
-    //                         'image' => get_template_directory_uri() . '/admin/img/header-layouts/mobile-2.png',
-    //                     ),
-    //                     '3' 	=> array(
-    //                         'image' => get_template_directory_uri() . '/admin/img/header-layouts/mobile-3.png',
-    //                     ),
-    //                     '4' 	=> array(
-    //                         'image' => get_template_directory_uri() . '/admin/img/header-layouts/mobile-4.png',
-    //                         'pro'   => true,
-    //                         'url'   => 'https://flexia.pro/pricing/',
-    //                     ),
-    //                 )
-    //             )
-    //         )
-    //     )
-    // );
+    $wp_customize->add_control(
+        new Flexia_Radio_Image_Control(
+            $wp_customize,
+            'flexia_header_mobile_layouts',
+            array(
+                'type'          => 'flexia-radio-image',
+                'settings'        => 'flexia_header_mobile_layouts',
+                'section'        => 'flexia_header_layout',
+                'label'            => __('Header Styles Mobile', 'flexia'),
+                'choices'        => apply_filters(
+                    'flexia_header_mobile_layouts',
+                    array(
+                        'flexia_header_mobile_layouts_1'     => array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-mobile-01.png',
+                            'title' => __('Header Mobile Layout 1','flexia')
+                        ),
+                        'flexia_header_mobile_layouts_2'     => array(
+                            'image' => get_template_directory_uri() . '/admin/img/header-layouts/header-mobile-02.png',
+                            'pro'   => true,
+                            'url'   => 'https://flexia.pro/pricing/',
+                            'title' => __('Header Mobile Layout 2','flexia')
+                        ),
+                    )
+                ),
+            )
+        )
+    );
+
+    $wp_customize->selective_refresh->add_partial("flexia_header_mobile_layouts_partial", [
+        'selector'            => "#masthead",
+        'settings'            => [
+            "flexia_header_mobile_layouts",
+        ],
+        'container_inclusive' => true,
+    ]);
 
 
     /**
@@ -3165,7 +3253,7 @@ function flexia_customize_register($wp_customize)
      * Header Panel: Add Section - Logo
      * @flexia_header_logo
      * Parent: @flexia_general_settings
-     */    
+     */
     // $wp_customize->add_section('flexia_header_logo', array(
     //     'title' => __('Logo', 'flexia'),
     //     'priority' => 10,
@@ -3204,16 +3292,16 @@ function flexia_customize_register($wp_customize)
      * @display_header_text
      * Parent: @flexia_general_settings -> title_tagline
      */
-    $wp_customize->get_control( 'display_header_text' )->priority = '9';
+    $wp_customize->get_control('display_header_text')->priority = '9';
 
     /**
      * Header Logo Section: Default Logo
      * @custom_logo
      * Parent: @flexia_general_settings -> title_tagline
      */
-    $wp_customize->get_control( 'custom_logo' )->section = 'title_tagline';
-    $wp_customize->get_control( 'custom_logo' )->priority = '15';
-    $wp_customize->get_control( 'custom_logo' )->label = 'Upload Primary Logo';
+    $wp_customize->get_control('custom_logo')->section = 'title_tagline';
+    $wp_customize->get_control('custom_logo')->priority = '15';
+    $wp_customize->get_control('custom_logo')->label = 'Upload Primary Logo';
 
     /**
      * Header Logo Section: Default Logo Width
@@ -3228,8 +3316,9 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
-            $wp_customize, 
-            'flexia_header_logo_width', array(
+            $wp_customize,
+            'flexia_header_logo_width',
+            array(
                 'priority' => 20,
                 'type' => 'range-value',
                 'section' => 'title_tagline',
@@ -3278,7 +3367,7 @@ function flexia_customize_register($wp_customize)
             $wp_customize,
             'flexia_custom_sticky_logo',
             array(
-                'label'      => __( 'Upload Sticky Logo', 'flexia' ),
+                'label'      => __('Upload Sticky Logo', 'flexia'),
                 'priority' => 30,
                 'section'    => 'title_tagline',
                 'settings'   => 'flexia_custom_sticky_logo',
@@ -3300,8 +3389,9 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_control(
         new Customizer_Range_Value_Control(
-            $wp_customize, 
-            'flexia_sticky_header_logo_width', array(
+            $wp_customize,
+            'flexia_sticky_header_logo_width',
+            array(
                 'priority' => 40,
                 'type' => 'range-value',
                 'section' => 'title_tagline',
@@ -3326,7 +3416,7 @@ function flexia_customize_register($wp_customize)
      * Header Panel: Add Section - Navbar
      * @flexia_header_navbar
      * Parent: @flexia_header_panel
-     */    
+     */
     $wp_customize->add_section('flexia_header_navbar', array(
         'title' => __('Navbar', 'flexia'),
         'priority' => 10,
@@ -3360,52 +3450,7 @@ function flexia_customize_register($wp_customize)
         'settings' => 'flexia_navbar',
         'type' => 'light', // light, ios, flat
         'priority' => 20,
-    )));    
-
-    // Logobar position
-
-    $wp_customize->add_setting('flexia_logobar_position', array(
-        'default' => $defaults['flexia_logobar_position'],
-        'sanitize_callback' => 'flexia_sanitize_choices',
-    ));
-
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'flexia_logobar_position',
-            array(
-                'label' => __('Logobar Position', 'flexia'),
-                'section' => 'flexia_header_navbar',
-                'settings' => 'flexia_logobar_position',
-                'type' => 'radio',
-                'choices' => array(
-                    'flexia-logobar-inline' => __('Inline', 'flexia'),
-                    'flexia-logobar-stacked' => __('Stacked', 'flexia'),
-                ),
-                'priority' => 30,
-            )
-        )
-    );
-
-    // Navbar background colors
-
-    $wp_customize->add_setting('flexia_logobar_bg_color', array(
-        'default' => $defaults['flexia_logobar_bg_color'],
-        'transport' => 'postMessage',
-        'sanitize_callback' => 'sanitize_hex_color',
-    ));
-
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'flexia_logobar_bg_color',
-            array(
-                'label' => __('Logobar Background', 'flexia'),
-                'section' => 'flexia_header_navbar',
-                'settings' => 'flexia_logobar_bg_color',
-                'priority' => 40,
-            ))
-    );
+    )));
 
     $wp_customize->add_setting('flexia_navbar_bg_color', array(
         'default' => $defaults['flexia_navbar_bg_color'],
@@ -3422,7 +3467,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_navbar_bg_color',
                 'priority' => 50,
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_navbar_padding', array(
@@ -3441,18 +3487,20 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_navbar_padding',
                 'priority' => 50,
                 'input_fields' => array(
-                    'input1'   	=> __( 'top', 'flexia' ),
-                    'input2'   	=> __( 'right', 'flexia' ),
-                    'input3'   	=> __( 'bottom', 'flexia' ),
-                    'input4'   	=> __( 'left', 'flexia' ),
+                    'input1'       => __('top', 'flexia'),
+                    'input2'       => __('right', 'flexia'),
+                    'input3'       => __('bottom', 'flexia'),
+                    'input4'       => __('left', 'flexia'),
                 ),
                 'defaults' => array(
                     'input1'  	=> 0,
                     'input2'  	=> 15,
                     'input3'  	=> 0,
                     'input4'  	=> 15,
+                    'data_unit' => 'px'
                 )
-            ))
+            )
+        )
     );
 
     // Primary Menu Separator
@@ -3514,12 +3562,12 @@ function flexia_customize_register($wp_customize)
     )));
 
     //Custom Login URL
-    $wp_customize->add_setting( 'flexia_custom_login_url', array(              
+    $wp_customize->add_setting('flexia_custom_login_url', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'default' => $defaults['flexia_custom_login_url'],
     ));
-      
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -3532,7 +3580,7 @@ function flexia_customize_register($wp_customize)
                 'type' => 'text',
                 'priority' => 10,
                 'input_attrs' => array(
-                    'placeholder' => __( 'Your Login Page URL', 'flexia' ),
+                    'placeholder' => __('Your Login Page URL', 'flexia'),
                 ),
                 'priority' => 100,
             )
@@ -3555,7 +3603,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_main_nav_menu_link_color',
                 'priority' => 110,
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_main_nav_menu_link_hover_color', array(
@@ -3573,9 +3622,10 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_main_nav_menu_link_hover_color',
                 'priority' => 120,
-            ))
+            )
+        )
     );
-    
+
     $wp_customize->add_setting('flexia_main_nav_menu_link_hover_bg', array(
         'default' => $defaults['flexia_main_nav_menu_link_hover_bg'],
         'transport' => 'postMessage',
@@ -3591,7 +3641,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_main_nav_menu_link_hover_bg',
                 'priority' => 130,
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_main_nav_menu_submenu_bg_color', array(
@@ -3609,7 +3660,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_main_nav_menu_submenu_bg_color',
                 'priority' => 140,
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_main_nav_menu_submenu_link_color', array(
@@ -3627,7 +3679,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_main_nav_menu_submenu_link_color',
                 'priority' => 150,
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_main_nav_menu_submenu_link_hover_color', array(
@@ -3645,9 +3698,10 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_main_nav_menu_submenu_link_hover_color',
                 'priority' => 150,
-            ))
+            )
+        )
     );
-    
+
     $wp_customize->add_setting('flexia_main_nav_menu_submenu_link_hover_bg', array(
         'default' => $defaults['flexia_main_nav_menu_submenu_link_hover_bg'],
         'transport' => 'postMessage',
@@ -3663,7 +3717,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_main_nav_menu_submenu_link_hover_bg',
                 'priority' => 160,
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_main_nav_menu_dropdown_animation', array(
@@ -3672,12 +3727,11 @@ function flexia_customize_register($wp_customize)
         'sanitize_callback' => 'esc_html',
     ));
 
-    $wp_customize->add_control('flexia_main_nav_menu_dropdown_animation_control', array(
+    $wp_customize->add_control('flexia_main_nav_menu_dropdown_animation', array(
         'label' => 'Dropdown animation',
         'section' => 'flexia_header_navbar',
         'settings' => 'flexia_main_nav_menu_dropdown_animation',
         'type' => 'select',
-        'priority' => 18,
         'choices' => array(
             'fade' => 'Fade',
             'to-top' => 'To Top',
@@ -3731,7 +3785,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_navbar',
                 'settings' => 'flexia_header_widget_area_bg_color',
                 'priority' => 200,
-            ))
+            )
+        )
     );
 
 
@@ -3744,7 +3799,7 @@ function flexia_customize_register($wp_customize)
      * Header Panel: Add Section - Top Bar
      * @flexia_header_top
      * Parent: @flexia_header_panel
-     */    
+     */
     $wp_customize->add_section('flexia_header_top', array(
         'title' => __('Top Bar', 'flexia'),
         'priority' => 10,
@@ -3808,7 +3863,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_top',
                 'settings' => 'flexia_topbar_bg_color',
                 'priority' => 4,
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_topbar_content', array(
@@ -3829,12 +3885,12 @@ function flexia_customize_register($wp_customize)
             )
         )
     );
-     
+
     /**
      * Topbar Contact Info Separator
      * @top_contact_settings_title
      * Parent: @flexia_header_top
-     */  
+     */
     $wp_customize->add_setting('top_contact_settings_title', array(
         'default' => '',
         'sanitize_callback' => 'esc_html',
@@ -3851,13 +3907,13 @@ function flexia_customize_register($wp_customize)
      * Header Top: Topbar Phone Number
      * @flexia_header_top_phone
      * Parent: @flexia_header_top
-     */  
-    $wp_customize->add_setting( 'flexia_header_top_phone', array(              
+     */
+    $wp_customize->add_setting('flexia_header_top_phone', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'default' => $defaults['flexia_header_top_phone'],
     ));
-      
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -3869,7 +3925,7 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_header_top_phone',
                 'type' => 'text',
                 'input_attrs' => array(
-                    'placeholder' => __( 'XXX XXX XXXX', 'flexia' ),
+                    'placeholder' => __('XXX XXX XXXX', 'flexia'),
                 )
             )
         )
@@ -3879,13 +3935,13 @@ function flexia_customize_register($wp_customize)
      * Header Top: Topbar Email Address
      * @flexia_header_top_email
      * Parent: @flexia_header_top
-     */  
-    $wp_customize->add_setting( 'flexia_header_top_email', array(              
+     */
+    $wp_customize->add_setting('flexia_header_top_email', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'default' => $defaults['flexia_header_top_email'],
     ));
-      
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -3897,7 +3953,7 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_header_top_email',
                 'type' => 'text',
                 'input_attrs' => array(
-                    'placeholder' => __( 'info@wpdeveloper.net', 'flexia' ),
+                    'placeholder' => __('info@wpdeveloper.net', 'flexia'),
                 )
             )
         )
@@ -3907,13 +3963,13 @@ function flexia_customize_register($wp_customize)
      * Header Top: Topbar Location
      * @flexia_header_top_location
      * Parent: @flexia_header_top
-     */  
-    $wp_customize->add_setting( 'flexia_header_top_location', array(              
+     */
+    $wp_customize->add_setting('flexia_header_top_location', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'default' => $defaults['flexia_header_top_location'],
     ));
-      
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -3925,7 +3981,7 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_header_top_location',
                 'type' => 'text',
                 'input_attrs' => array(
-                    'placeholder' => __( 'Display name of your location', 'flexia' ),
+                    'placeholder' => __('Display name of your location', 'flexia'),
                 )
             )
         )
@@ -3935,13 +3991,13 @@ function flexia_customize_register($wp_customize)
      * Header Top: Topbar Location Link
      * @flexia_header_top_location_link
      * Parent: @flexia_header_top
-     */  
-    $wp_customize->add_setting( 'flexia_header_top_location_link', array(              
+     */
+    $wp_customize->add_setting('flexia_header_top_location_link', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'default' => $defaults['flexia_header_top_location_link'],
     ));
-      
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -3953,7 +4009,7 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_header_top_location_link',
                 'type' => 'text',
                 'input_attrs' => array(
-                    'placeholder' => __( 'Link of your Google Map Location', 'flexia' ),
+                    'placeholder' => __('Link of your Google Map Location', 'flexia'),
                 )
             )
         )
@@ -3963,7 +4019,7 @@ function flexia_customize_register($wp_customize)
      * Header Top: Topbar Contact Text Size
      * @flexia_header_top_contact_font_size
      * Parent: @flexia_header_top
-     */  
+     */
     $wp_customize->add_setting('flexia_header_top_contact_font_size', array(
         'default' => $defaults['flexia_header_top_contact_font_size'],
         'capability' => 'edit_theme_options',
@@ -3989,7 +4045,7 @@ function flexia_customize_register($wp_customize)
      * Header Top: Topbar Contact Text Color
      * @flexia_header_top_contact_font_color
      * Parent: @flexia_header_top
-     */  
+     */
     $wp_customize->add_setting('flexia_header_top_contact_font_color', array(
         'default' => $defaults['flexia_header_top_contact_font_color'],
         'transport' => 'postMessage',
@@ -4005,14 +4061,15 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_top',
                 'priority' => 16,
                 'settings' => 'flexia_header_top_contact_font_color',
-            ))
+            )
+        )
     );
 
     /**
      * Header Top: Topbar Contact Text Hover Color
      * @flexia_header_top_contact_font_hover_color
      * Parent: @flexia_header_top
-     */  
+     */
     $wp_customize->add_setting('flexia_header_top_contact_font_hover_color', array(
         'default' => $defaults['flexia_header_top_contact_font_hover_color'],
         'transport' => 'postMessage',
@@ -4028,7 +4085,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_top',
                 'priority' => 17,
                 'settings' => 'flexia_header_top_contact_font_hover_color',
-            ))
+            )
+        )
     );
 
     // Topbar Menu Separator
@@ -4074,7 +4132,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_top',
                 'priority' => 20,
                 'settings' => 'flexia_top_nav_menu_link_color',
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_top_nav_menu_link_hover_color', array(
@@ -4092,9 +4151,10 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_top',
                 'priority' => 21,
                 'settings' => 'flexia_top_nav_menu_link_hover_color',
-            ))
+            )
+        )
     );
-    
+
     $wp_customize->add_setting('flexia_top_nav_menu_link_hover_bg', array(
         'default' => $defaults['flexia_top_nav_menu_link_hover_bg'],
         'transport' => 'postMessage',
@@ -4110,7 +4170,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_top',
                 'priority' => 22,
                 'settings' => 'flexia_top_nav_menu_link_hover_bg',
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_top_nav_menu_submenu_bg_color', array(
@@ -4128,7 +4189,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_top',
                 'priority' => 23,
                 'settings' => 'flexia_top_nav_menu_submenu_bg_color',
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_top_nav_menu_submenu_link_color', array(
@@ -4146,7 +4208,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_top',
                 'priority' => 28,
                 'settings' => 'flexia_top_nav_menu_submenu_link_color',
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_top_nav_menu_submenu_link_hover_color', array(
@@ -4164,9 +4227,10 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_top',
                 'priority' => 29,
                 'settings' => 'flexia_top_nav_menu_submenu_link_hover_color',
-            ))
+            )
+        )
     );
-    
+
     $wp_customize->add_setting('flexia_top_nav_menu_submenu_link_hover_bg', array(
         'default' => $defaults['flexia_top_nav_menu_submenu_link_hover_bg'],
         'transport' => 'postMessage',
@@ -4182,7 +4246,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_header_top',
                 'priority' => 30,
                 'settings' => 'flexia_top_nav_menu_submenu_link_hover_bg',
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_top_nav_menu_dropdown_animation', array(
@@ -4191,8 +4256,8 @@ function flexia_customize_register($wp_customize)
         'sanitize_callback' => 'esc_html',
     ));
 
-    $wp_customize->add_control('flexia_top_nav_menu_dropdown_animation_control', array(
-        'label' => 'Dropdown animation',
+    $wp_customize->add_control('flexia_top_nav_menu_dropdown_animation', array(
+        'label' => __('Dropdown animation', 'flexia'),
         'section' => 'flexia_header_top',
         'priority' => 31,
         'settings' => 'flexia_top_nav_menu_dropdown_animation',
@@ -4210,12 +4275,12 @@ function flexia_customize_register($wp_customize)
      * ......................................................
      */
 
-     /**
+    /**
      * ......................................................
      * Header Panel: Add Section - Social
      * @flexia_header_social
      * Parent: @flexia_header_panel
-     */    
+     */
     $wp_customize->add_section('flexia_header_social', array(
         'title' => __('Social Media', 'flexia'),
         'priority' => 10,
@@ -4225,9 +4290,9 @@ function flexia_customize_register($wp_customize)
      * Header Social: Enable Topbar?
      * @flexia_enable_header_social
      * Parent: @flexia_header_panel -> @flexia_header_social
-     */    
+     */
     $wp_customize->add_setting(
-        'flexia_enable_header_social', 
+        'flexia_enable_header_social',
         array(
             'default' => $defaults['flexia_enable_header_social'],
             'capability' => 'edit_theme_options',
@@ -4237,8 +4302,8 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_control(
         new Customizer_Toggle_Control(
-            $wp_customize, 
-            'flexia_enable_header_social', 
+            $wp_customize,
+            'flexia_enable_header_social',
             array(
                 'label' => esc_html__('Enable Header Social?', 'flexia'),
                 'section' => 'flexia_header_social',
@@ -4252,22 +4317,22 @@ function flexia_customize_register($wp_customize)
      * Header Social: Header Social Position
      * @flexia_header_social_position
      * Parent: @flexia_header_panel -> @flexia_header_social
-     */  
-    $wp_customize->add_setting( 'flexia_header_social_position', array(              
+     */
+    $wp_customize->add_setting('flexia_header_social_position', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['flexia_header_social_position'],
     ));
-      
+
     $wp_customize->add_control(
         'flexia_header_social_position',
         array(
             'type' => 'select',
             'section' => 'flexia_header_social', // Add a default or your own section
-            'label' => __( 'Social Links Position', 'flexia' ),
+            'label' => __('Social Links Position', 'flexia'),
             'choices' => array(
-                'topbar' => __( 'Top Bar', 'flexia' ),
-                'header_main' => __( 'Header Main', 'flexia' ),
+                'topbar' => __('Top Bar', 'flexia'),
+                'header_main' => __('Header Main', 'flexia'),
             ),
         )
     );
@@ -4276,23 +4341,23 @@ function flexia_customize_register($wp_customize)
      * Header Social: Header Social Alighnment
      * @flexia_header_social_alignment
      * Parent: @flexia_header_panel -> @flexia_header_social
-     */  
-    $wp_customize->add_setting( 'flexia_header_social_alignment', array(              
+     */
+    $wp_customize->add_setting('flexia_header_social_alignment', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['flexia_header_social_alignment'],
     ));
-      
+
     $wp_customize->add_control(
         'flexia_header_social_alignment',
         array(
             'type' => 'select',
             'section' => 'flexia_header_social', // Add a default or your own section
-            'label' => __( 'Social Links Alignment', 'flexia' ),
+            'label' => __('Social Links Alignment', 'flexia'),
             'choices' => array(
-                'left' => __( 'Left', 'flexia' ),
-                'right' => __( 'Right', 'flexia' ),
-                'center' => __( 'Center', 'flexia' ),
+                'left' => __('Left', 'flexia'),
+                'right' => __('Right', 'flexia'),
+                'center' => __('Center', 'flexia'),
             ),
         )
     );
@@ -4301,7 +4366,7 @@ function flexia_customize_register($wp_customize)
      * Header Social: Header Social Icon Size
      * @flexia_header_social_icon_size
      * Parent: @flexia_header_panel -> @flexia_header_social
-     */  
+     */
     $wp_customize->add_setting('flexia_header_social_icon_size', array(
         'default' => $defaults['flexia_header_social_icon_size'],
         'capability' => 'edit_theme_options',
@@ -4326,7 +4391,7 @@ function flexia_customize_register($wp_customize)
      * Header Social: Header Social Icon Color
      * @flexia_header_social_icon_color
      * Parent: @flexia_header_panel -> @flexia_header_social
-     */  
+     */
     $wp_customize->add_setting('flexia_header_social_icon_color', array(
         'default' => $defaults['flexia_header_social_icon_color'],
         'transport' => 'postMessage',
@@ -4341,14 +4406,15 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Icon Color', 'flexia'),
                 'section' => 'flexia_header_social',
                 'settings' => 'flexia_header_social_icon_color',
-            ))
+            )
+        )
     );
 
     /**
      * Header Social: Header Social Icon Hover Color
      * @flexia_header_social_icon_hover_color
      * Parent: @flexia_header_panel -> @flexia_header_social
-     */  
+     */
     $wp_customize->add_setting('flexia_header_social_icon_hover_color', array(
         'default' => $defaults['flexia_header_social_icon_hover_color'],
         'transport' => 'postMessage',
@@ -4363,29 +4429,30 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Icon Hover Color', 'flexia'),
                 'section' => 'flexia_header_social',
                 'settings' => 'flexia_header_social_icon_hover_color',
-            ))
+            )
+        )
     );
 
     /**
      * Header Social: Header Social Link Open
      * @flexia_header_social_open_tab
      * Parent: @flexia_header_panel -> @flexia_header_social
-     */  
-    $wp_customize->add_setting( 'flexia_header_social_open_tab', array(              
+     */
+    $wp_customize->add_setting('flexia_header_social_open_tab', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['flexia_header_social_open_tab'],
     ));
-      
+
     $wp_customize->add_control(
         'flexia_header_social_open_tab',
         array(
             'type' => 'select',
             'section' => 'flexia_header_social', // Add a default or your own section
-            'label' => __( 'Social Links Open in?', 'flexia' ),
+            'label' => __('Social Links Open in?', 'flexia'),
             'choices' => array(
-                '_blank' => __( 'Open in New Tab', 'flexia' ),
-                'header_main' => __( 'Open in same Tab', 'flexia' ),
+                '_blank' => __('Open in New Tab', 'flexia'),
+                'header_main' => __('Open in same Tab', 'flexia'),
             ),
         )
     );
@@ -4394,9 +4461,9 @@ function flexia_customize_register($wp_customize)
      * Header Social: Header Social Link Separator
      * @flexia_header_social_link_separator
      * Parent: @flexia_header_panel -> @flexia_header_social
-     */  
+     */
     $wp_customize->add_setting(
-        'flexia_header_social_link_separator', 
+        'flexia_header_social_link_separator',
         array(
             'default' => '',
             'sanitize_callback' => 'esc_html',
@@ -4405,8 +4472,8 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_control(
         new Separator_Custom_control(
-            $wp_customize, 
-            'flexia_header_social_link_separator', 
+            $wp_customize,
+            'flexia_header_social_link_separator',
             array(
                 'label' => __('Social Media Links', 'flexia'),
                 'description' => __('Leave Empty to hide any social media', 'flexia'),
@@ -4420,13 +4487,13 @@ function flexia_customize_register($wp_customize)
      * Header Social: Header Social Link Facebook
      * @flexia_header_social_link_facebook
      * Parent: @flexia_header_panel -> @flexia_header_social
-     */  
-    $wp_customize->add_setting( 'flexia_header_social_link_facebook', array(              
+     */
+    $wp_customize->add_setting('flexia_header_social_link_facebook', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'default' => $defaults['flexia_header_social_link_facebook'],
     ));
-      
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -4437,7 +4504,7 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_header_social_link_facebook',
                 'type' => 'text',
                 'input_attrs' => array(
-                    'placeholder' => __( 'https://www.facebook.com/', 'flexia' ),
+                    'placeholder' => __('https://www.facebook.com/', 'flexia'),
                 )
             )
         )
@@ -4447,13 +4514,13 @@ function flexia_customize_register($wp_customize)
      * Header Social: Header Social Link Instagram
      * @flexia_header_social_link_instagram
      * Parent: @flexia_header_panel -> @flexia_header_social
-     */  
-    $wp_customize->add_setting( 'flexia_header_social_link_instagram', array(              
+     */
+    $wp_customize->add_setting('flexia_header_social_link_instagram', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'default' => $defaults['flexia_header_social_link_instagram'],
     ));
-      
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -4464,7 +4531,7 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_header_social_link_instagram',
                 'type' => 'text',
                 'input_attrs' => array(
-                    'placeholder' => __( 'https://www.instagram.com/', 'flexia' ),
+                    'placeholder' => __('https://www.instagram.com/', 'flexia'),
                 )
             )
         )
@@ -4474,13 +4541,13 @@ function flexia_customize_register($wp_customize)
      * Header Social: Header Social Link Twitter
      * @flexia_header_social_link_twitter
      * Parent: @flexia_header_panel -> @flexia_header_social
-     */  
-    $wp_customize->add_setting( 'flexia_header_social_link_twitter', array(              
+     */
+    $wp_customize->add_setting('flexia_header_social_link_twitter', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'default' => $defaults['flexia_header_social_link_twitter'],
     ));
-      
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -4491,7 +4558,7 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_header_social_link_twitter',
                 'type' => 'text',
                 'input_attrs' => array(
-                    'placeholder' => __( 'https://www.twitter.com/', 'flexia' ),
+                    'placeholder' => __('https://www.twitter.com/', 'flexia'),
                 )
             )
         )
@@ -4501,13 +4568,13 @@ function flexia_customize_register($wp_customize)
      * Header Social: Header Social Link Linkedin
      * @flexia_header_social_link_linkedin
      * Parent: @flexia_header_panel -> @flexia_header_social
-     */  
-    $wp_customize->add_setting( 'flexia_header_social_link_linkedin', array(              
+     */
+    $wp_customize->add_setting('flexia_header_social_link_linkedin', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'default' => $defaults['flexia_header_social_link_linkedin'],
     ));
-      
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -4518,7 +4585,7 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_header_social_link_linkedin',
                 'type' => 'text',
                 'input_attrs' => array(
-                    'placeholder' => __( 'https://www.linkedin.com/', 'flexia' ),
+                    'placeholder' => __('https://www.linkedin.com/', 'flexia'),
                 )
             )
         )
@@ -4528,13 +4595,13 @@ function flexia_customize_register($wp_customize)
      * Header Social: Header Social Link YouTube
      * @flexia_header_social_link_youtube
      * Parent: @flexia_header_panel -> @flexia_header_social
-     */  
-    $wp_customize->add_setting( 'flexia_header_social_link_youtube', array(              
+     */
+    $wp_customize->add_setting('flexia_header_social_link_youtube', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'default' => $defaults['flexia_header_social_link_youtube'],
     ));
-      
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -4545,7 +4612,7 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_header_social_link_youtube',
                 'type' => 'text',
                 'input_attrs' => array(
-                    'placeholder' => __( 'https://www.youtube.com/', 'flexia' ),
+                    'placeholder' => __('https://www.youtube.com/', 'flexia'),
                 )
             )
         )
@@ -4555,13 +4622,13 @@ function flexia_customize_register($wp_customize)
      * Header Social: Header Social Link Pinterest
      * @flexia_header_social_link_pinterest
      * Parent: @flexia_header_panel -> @flexia_header_social
-     */  
-    $wp_customize->add_setting( 'flexia_header_social_link_pinterest', array(              
+     */
+    $wp_customize->add_setting('flexia_header_social_link_pinterest', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'default' => $defaults['flexia_header_social_link_pinterest'],
     ));
-      
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -4572,7 +4639,7 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_header_social_link_pinterest',
                 'type' => 'text',
                 'input_attrs' => array(
-                    'placeholder' => __( 'https://www.pinterest.com/', 'flexia' ),
+                    'placeholder' => __('https://www.pinterest.com/', 'flexia'),
                 )
             )
         )
@@ -4582,13 +4649,13 @@ function flexia_customize_register($wp_customize)
      * Header Social: Header Social Link Reddit
      * @flexia_header_social_link_reddit
      * Parent: @flexia_header_panel -> @flexia_header_social
-     */  
-    $wp_customize->add_setting( 'flexia_header_social_link_reddit', array(              
+     */
+    $wp_customize->add_setting('flexia_header_social_link_reddit', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'default' => $defaults['flexia_header_social_link_reddit'],
     ));
-      
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -4599,7 +4666,7 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_header_social_link_reddit',
                 'type' => 'text',
                 'input_attrs' => array(
-                    'placeholder' => __( 'https://www.reddit.com/', 'flexia' ),
+                    'placeholder' => __('https://www.reddit.com/', 'flexia'),
                 )
             )
         )
@@ -4609,13 +4676,13 @@ function flexia_customize_register($wp_customize)
      * Header Social: Header Social Link RSS
      * @flexia_header_social_link_rss
      * Parent: @flexia_header_panel -> @flexia_header_social
-     */  
-    $wp_customize->add_setting( 'flexia_header_social_link_rss', array(              
+     */
+    $wp_customize->add_setting('flexia_header_social_link_rss', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'default' => $defaults['flexia_header_social_link_rss'],
     ));
-      
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -4626,7 +4693,7 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_header_social_link_rss',
                 'type' => 'text',
                 'input_attrs' => array(
-                    'placeholder' => __( 'Your RSS Feed Link', 'flexia' ),
+                    'placeholder' => __('Your RSS Feed Link', 'flexia'),
                 )
             )
         )
@@ -4637,7 +4704,7 @@ function flexia_customize_register($wp_customize)
      * ......................................................
      */
 
-    
+
 
     // Footer Settings
     $wp_customize->add_section('flexia_footer_settings', array(
@@ -4685,6 +4752,7 @@ function flexia_customize_register($wp_customize)
         'settings' => 'flexia_footer_widget_area',
         'type' => 'light', // light, ios, flat
         'priority' => 30,
+        'required' => array('flexia_footer_widget_area', '==', true)
     )));
 
     /**
@@ -4732,7 +4800,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_widget_area_bg_color',
                 'priority' => 50,
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_footer_widget_area_content_color', array(
@@ -4750,7 +4819,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_widget_area_content_color',
                 'priority' => 60,
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_footer_widget_area_link_color', array(
@@ -4768,7 +4838,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_widget_area_link_color',
                 'priority' => 70,
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_footer_widget_area_link_hover_color', array(
@@ -4786,9 +4857,10 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_widget_area_link_hover_color',
                 'priority' => 80,
-            ))
+            )
+        )
     );
-    
+
     $wp_customize->add_setting('footer_copyright_settings_title', array(
         'default' => '',
         'sanitize_callback' => 'esc_html',
@@ -4846,7 +4918,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_bg_color',
                 'priority' => 130,
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_footer_content_color', array(
@@ -4864,7 +4937,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_content_color',
                 'priority' => 140,
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_footer_link_color', array(
@@ -4882,7 +4956,8 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_link_color',
                 'priority' => 150,
-            ))
+            )
+        )
     );
 
     $wp_customize->add_setting('flexia_footer_link_hover_color', array(
@@ -4900,14 +4975,17 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_footer_settings',
                 'settings' => 'flexia_footer_link_hover_color',
                 'priority' => 160,
-            ))
+            )
+        )
     );
 
-    $wp_customize->add_setting('flexia_footer_content', 
-    array(
-        'default' => $defaults['flexia_footer_content'],
-        'sanitize_callback' => 'wp_kses_post',
-    ));
+    $wp_customize->add_setting(
+        'flexia_footer_content',
+        array(
+            'default' => $defaults['flexia_footer_content'],
+            'sanitize_callback' => 'wp_kses_post',
+        )
+    );
 
     $wp_customize->add_control(
         new WP_Customize_Control(
@@ -4937,7 +5015,7 @@ function flexia_customize_register($wp_customize)
      * @flexia_woo_sidebar_default
      * Parent: @woocommerce -> @flexia_woo_sidebar_section
      */
-    $wp_customize->add_setting( 'flexia_woo_sidebar_default', array(              
+    $wp_customize->add_setting('flexia_woo_sidebar_default', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'flexia_sanitize_select',
         'default' => $defaults['flexia_woo_sidebar_default'],
@@ -4945,16 +5023,16 @@ function flexia_customize_register($wp_customize)
     ));
 
     $widget_list = array();
-    foreach ( $GLOBALS['wp_registered_sidebars'] as $sidebar ) {
-        $widget_list[$sidebar['id']] = ucwords( $sidebar['name'] );
+    foreach ($GLOBALS['wp_registered_sidebars'] as $sidebar) {
+        $widget_list[$sidebar['id']] = ucwords($sidebar['name']);
     }
-      
+
     $wp_customize->add_control(
-        'flexia_woo_sidebar_default', 
+        'flexia_woo_sidebar_default',
         array(
             'type' => 'select',
             'section' => 'flexia_woo_sidebar_section',
-            'label' => __( 'Default Sidebar for WooCommerce', 'flexia' ),
+            'label' => __('Default Sidebar for WooCommerce', 'flexia'),
             'choices' => $widget_list,
         )
     );
@@ -4972,13 +5050,16 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_control(
         new Customizer_Toggle_Control(
-            $wp_customize, 
-            'flexia_woo_sidebar_shop_page', array(
-            'label' => esc_html__('Enable Sidebar in Shop Page?', 'flexia'),
-            'section' => 'flexia_woo_sidebar_section',
-            'settings' => 'flexia_woo_sidebar_shop_page',
-            'type' => 'light', // light, ios, flat
-    )));
+            $wp_customize,
+            'flexia_woo_sidebar_shop_page',
+            array(
+                'label' => esc_html__('Enable Sidebar in Shop Page?', 'flexia'),
+                'section' => 'flexia_woo_sidebar_section',
+                'settings' => 'flexia_woo_sidebar_shop_page',
+                'type' => 'light', // light, ios, flat
+            )
+        )
+    );
 
     /**
      * Enable Sidebar in Product Single
@@ -4993,13 +5074,16 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_control(
         new Customizer_Toggle_Control(
-            $wp_customize, 
-            'flexia_woo_sidebar_product_single', array(
-            'label' => esc_html__('Enable Sidebar in Single Product Page?', 'flexia'),
-            'section' => 'flexia_woo_sidebar_section',
-            'settings' => 'flexia_woo_sidebar_product_single',
-            'type' => 'light', // light, ios, flat
-    )));
+            $wp_customize,
+            'flexia_woo_sidebar_product_single',
+            array(
+                'label' => esc_html__('Enable Sidebar in Single Product Page?', 'flexia'),
+                'section' => 'flexia_woo_sidebar_section',
+                'settings' => 'flexia_woo_sidebar_product_single',
+                'type' => 'light', // light, ios, flat
+            )
+        )
+    );
 
     /**
      * Enable Sidebar in Cart Page
@@ -5014,13 +5098,16 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_control(
         new Customizer_Toggle_Control(
-            $wp_customize, 
-            'flexia_woo_sidebar_cart_page', array(
-            'label' => esc_html__('Enable Sidebar in Cart Page?', 'flexia'),
-            'section' => 'flexia_woo_sidebar_section',
-            'settings' => 'flexia_woo_sidebar_cart_page',
-            'type' => 'light', // light, ios, flat
-    )));
+            $wp_customize,
+            'flexia_woo_sidebar_cart_page',
+            array(
+                'label' => esc_html__('Enable Sidebar in Cart Page?', 'flexia'),
+                'section' => 'flexia_woo_sidebar_section',
+                'settings' => 'flexia_woo_sidebar_cart_page',
+                'type' => 'light', // light, ios, flat
+            )
+        )
+    );
 
     /**
      * Enable Sidebar in Checkout Page
@@ -5035,13 +5122,16 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_control(
         new Customizer_Toggle_Control(
-            $wp_customize, 
-            'flexia_woo_sidebar_checkout_page', array(
-            'label' => esc_html__('Enable Sidebar in Checkout Page?', 'flexia'),
-            'section' => 'flexia_woo_sidebar_section',
-            'settings' => 'flexia_woo_sidebar_checkout_page',
-            'type' => 'light', // light, ios, flat
-    )));
+            $wp_customize,
+            'flexia_woo_sidebar_checkout_page',
+            array(
+                'label' => esc_html__('Enable Sidebar in Checkout Page?', 'flexia'),
+                'section' => 'flexia_woo_sidebar_section',
+                'settings' => 'flexia_woo_sidebar_checkout_page',
+                'type' => 'light', // light, ios, flat
+            )
+        )
+    );
 
     /**
      * Enable Sidebar in Product Arcive Page
@@ -5056,13 +5146,16 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_control(
         new Customizer_Toggle_Control(
-            $wp_customize, 
-            'flexia_woo_sidebar_archive_page', array(
-            'label' => esc_html__('Enable Sidebar in Product Archive Page?', 'flexia'),
-            'section' => 'flexia_woo_sidebar_section',
-            'settings' => 'flexia_woo_sidebar_archive_page',
-            'type' => 'light', // light, ios, flat
-    )));
+            $wp_customize,
+            'flexia_woo_sidebar_archive_page',
+            array(
+                'label' => esc_html__('Enable Sidebar in Product Archive Page?', 'flexia'),
+                'section' => 'flexia_woo_sidebar_section',
+                'settings' => 'flexia_woo_sidebar_archive_page',
+                'type' => 'light', // light, ios, flat
+            )
+        )
+    );
 
 
 
@@ -5086,15 +5179,18 @@ function flexia_customize_register($wp_customize)
 
     $wp_customize->add_control(
         new Customizer_Toggle_Control(
-            $wp_customize, 
-            'flexia_call_to_action_enable', array(
-            'label' => esc_html__('Enable Call to Action?', 'flexia'),
-            'section' => 'flexia_call_to_action',
-            'settings' => 'flexia_call_to_action_enable',
-            'description' => __('Call to Action fullwidth section will be displayed before the Footer Section', 'flexia'),
-            'type' => 'light', // light, ios, flat
-            'priority' =>  10,
-    )));
+            $wp_customize,
+            'flexia_call_to_action_enable',
+            array(
+                'label' => esc_html__('Enable Call to Action?', 'flexia'),
+                'section' => 'flexia_call_to_action',
+                'settings' => 'flexia_call_to_action_enable',
+                'description' => __('Call to Action fullwidth section will be displayed before the Footer Section', 'flexia'),
+                'type' => 'light', // light, ios, flat
+                'priority' =>  10,
+            )
+        )
+    );
 
     //Call To Action Layout
     $wp_customize->add_setting('flexia_call_to_action_layout', array(
@@ -5103,51 +5199,53 @@ function flexia_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control(
-		new Flexia_Radio_Image_Control(
+        new Flexia_Radio_Image_Control(
             $wp_customize,
             'flexia_call_to_action_layout',
             array(
                 'label' => __('Select Layout', 'flexia'),
                 'type'          => 'flexia-radio-image',
-                'settings'		=> 'flexia_call_to_action_layout',
-                'section'		=> 'flexia_call_to_action',
+                'settings'        => 'flexia_call_to_action_layout',
+                'section'        => 'flexia_call_to_action',
                 'priority'      =>  20,
-                'choices'		=> apply_filters(
-                    'flexia_call_to_action_layout', 
+                'choices'        => apply_filters(
+                    'flexia_call_to_action_layout',
                     array(
-                        '1' 	=> array(
+                        '1'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/cta/cta-1.jpg',
                         ),
-                        '2' 	=> array(
+                        '2'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/cta/cta-2.jpg',
                             'pro'   => true,
                             'url'   => 'https://flexia.pro/pricing/',
                         ),
-                        '3' 	=> array(
+                        '3'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/cta/cta-3.jpg',
                             'pro'   => true,
                             'url'   => 'https://flexia.pro/pricing/',
                         ),
                     )
                 ),
-            ) 
+            )
         )
     );
-    
-    $wp_customize->selective_refresh->add_partial( "flexia_call_to_action_layout_partial", [
+
+    $wp_customize->selective_refresh->add_partial("flexia_call_to_action_layout_partial", [
         'selector'            => "#flexia-cta",
         'settings'            => [
             "flexia_call_to_action_layout",
         ],
         'container_inclusive' => true,
-    ] );
+    ]);
 
     // Call to Action Title
-    $wp_customize->add_setting('flexia_call_to_action_title', 
-    array(
-        'default' => $defaults['flexia_call_to_action_title'],
-        'sanitize_callback' => 'wp_kses_post',
-    ));
+    $wp_customize->add_setting(
+        'flexia_call_to_action_title',
+        array(
+            'default' => $defaults['flexia_call_to_action_title'],
+            'sanitize_callback' => 'wp_kses_post',
+        )
+    );
 
     $wp_customize->add_control(
         new WP_Customize_Control(
@@ -5164,11 +5262,13 @@ function flexia_customize_register($wp_customize)
     );
 
     // Call to Action Sub Title
-    $wp_customize->add_setting('flexia_call_to_action_subtitle', 
-    array(
-        'default' => $defaults['flexia_call_to_action_subtitle'],
-        'sanitize_callback' => 'wp_kses_post',
-    ));
+    $wp_customize->add_setting(
+        'flexia_call_to_action_subtitle',
+        array(
+            'default' => $defaults['flexia_call_to_action_subtitle'],
+            'sanitize_callback' => 'wp_kses_post',
+        )
+    );
 
     $wp_customize->add_control(
         new WP_Customize_Control(
@@ -5185,12 +5285,12 @@ function flexia_customize_register($wp_customize)
     );
 
     //Call to Action Button Text
-    $wp_customize->add_setting( 'flexia_call_to_action_button_text', array(              
+    $wp_customize->add_setting('flexia_call_to_action_button_text', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'default' => $defaults['flexia_call_to_action_button_text'],
     ));
-      
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -5202,7 +5302,7 @@ function flexia_customize_register($wp_customize)
                 'type' => 'text',
                 'priority' => 50,
                 'input_attrs' => array(
-                    'placeholder' => __( 'Your Login Page URL', 'flexia' ),
+                    'placeholder' => __('Your Login Page URL', 'flexia'),
                 ),
             )
         )
@@ -5211,12 +5311,12 @@ function flexia_customize_register($wp_customize)
 
 
     //Call to Action URL
-    $wp_customize->add_setting( 'flexia_call_to_action_url', array(              
+    $wp_customize->add_setting('flexia_call_to_action_url', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'default' => $defaults['flexia_call_to_action_url'],
     ));
-      
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -5227,7 +5327,7 @@ function flexia_customize_register($wp_customize)
                 'settings' => 'flexia_call_to_action_url',
                 'type' => 'text',
                 'priority' => 60,
-                'description' => __( 'Call to Action Destination URL', 'flexia' ),
+                'description' => __('Call to Action Destination URL', 'flexia'),
             )
         )
     );
@@ -5249,95 +5349,87 @@ function flexia_customize_register($wp_customize)
         'description' => __('Controls the design settings for the theme.', 'flexia'),
     ));
 
-    $wp_customize->add_panel('flexia_blog_settings', array(
-        'priority' => 70,
-        'theme_supports' => '',
-        'title' => __('Blog Styles', 'flexia'),
-        'description' => __('Controls the blog settings for the theme.', 'flexia'),
-    ));
-
-
     /**
      * Customizer codes from Flexia Core
      * @since 2.2.1
-    */
+     */
 
     // Header Script section 
-    $wp_customize->add_section( 'flexia_header_script_section' , array(
-        'title'      => __('Header Script','flexia'), 
-        'priority'   => 10    
-    ) );  
-    
-    $wp_customize->add_setting( 
+    $wp_customize->add_section('flexia_header_script_section', array(
+        'title'      => __('Header Script', 'flexia'),
+        'priority'   => 10
+    ));
+
+    $wp_customize->add_setting(
         'flexia_header_script',
-        array(          
+        array(
             'sanitize_callback' => 'flexia_sanitize_js_code',
         )
     );
 
-        $control = new WP_Customize_Code_Editor_Control( $wp_customize, 'flexia_header_script', array(
-                'label'          => __( 'Add your header script without script tag', 'flexia' ),
-                'section' => 'flexia_header_script_section',
-                'code_type' => 'text/javascript',
-                'settings'       => 'flexia_header_script',
-        ) );
-        $wp_customize->add_control( $control );
+    $control = new WP_Customize_Code_Editor_Control($wp_customize, 'flexia_header_script', array(
+        'label'          => __('Add your header script without script tag', 'flexia'),
+        'section' => 'flexia_header_script_section',
+        'code_type' => 'text/javascript',
+        'settings'       => 'flexia_header_script',
+    ));
+    $wp_customize->add_control($control);
 
     // Footer Script section
 
-    $wp_customize->add_section( 'flexia_footer_script_section' , array(
-    'title'      => __('Footer Script','flexia'), 
-    'priority'   => 20    
-    ) );  
+    $wp_customize->add_section('flexia_footer_script_section', array(
+        'title'      => __('Footer Script', 'flexia'),
+        'priority'   => 20
+    ));
 
-    $wp_customize->add_setting( 
-        'flexia_footer_script',        
-        array(          
+    $wp_customize->add_setting(
+        'flexia_footer_script',
+        array(
             'sanitize_callback' => 'flexia_sanitize_js_code',
         )
     );
-        $control = new WP_Customize_Code_Editor_Control( $wp_customize, 'flexia_footer_script', array(
-                'label'          => __( 'Add your footer script without script tag', 'flexia' ),
-                'section' => 'flexia_footer_script_section',
-                'code_type' => 'text/javascript',
-                'settings'       => 'flexia_footer_script',
-        ) );
-        $wp_customize->add_control( $control );
+    $control = new WP_Customize_Code_Editor_Control($wp_customize, 'flexia_footer_script', array(
+        'label'          => __('Add your footer script without script tag', 'flexia'),
+        'section' => 'flexia_footer_script_section',
+        'code_type' => 'text/javascript',
+        'settings'       => 'flexia_footer_script',
+    ));
+    $wp_customize->add_control($control);
 
     // Google Analytics section
 
-    $wp_customize->add_section( 'flexia_ga_script_section' , array(
-    'title'      => __('Google Analytics','flexia'), 
-    'priority'   => 30    
-    ) );  
+    $wp_customize->add_section('flexia_ga_script_section', array(
+        'title'      => __('Google Analytics', 'flexia'),
+        'priority'   => 30
+    ));
 
-    $wp_customize->add_setting( 
+    $wp_customize->add_setting(
         'flexia_ga_script',
-        array(          
+        array(
             'sanitize_callback' => 'flexia_sanitize_js_code',
         )
     );
-        $control = new WP_Customize_Code_Editor_Control( $wp_customize, 'flexia_ga_script', array(
-                'label'          => __( 'Paste your Google Analytics code as is.', 'flexia' ),
-                'section' => 'flexia_ga_script_section',
-                'code_type' => 'text/html',
-                'settings'       => 'flexia_ga_script',
-        ) );
-        $wp_customize->add_control( $control );
+    $control = new WP_Customize_Code_Editor_Control($wp_customize, 'flexia_ga_script', array(
+        'label'          => __('Paste your Google Analytics code as is.', 'flexia'),
+        'section' => 'flexia_ga_script_section',
+        'code_type' => 'text/html',
+        'settings'       => 'flexia_ga_script',
+    ));
+    $wp_customize->add_control($control);
 
     // Create custom panels
-    $wp_customize->add_panel( 'flexia_custom_scripts', array(
+    $wp_customize->add_panel('flexia_custom_scripts', array(
         'priority' => 999,
         'theme_supports' => '',
-        'title' => __( 'Custom JavaScripts', 'flexia' ),
-        'description' => __( 'Add custom header/footer scripts or Google Analytics', 'flexia' ),
-    ) );
+        'title' => __('Custom JavaScripts', 'flexia'),
+        'description' => __('Add custom header/footer scripts or Google Analytics', 'flexia'),
+    ));
 
     // Assign sections to panels
-    $wp_customize->get_section('flexia_header_script_section')->panel = 'flexia_custom_scripts';      
+    $wp_customize->get_section('flexia_header_script_section')->panel = 'flexia_custom_scripts';
     $wp_customize->get_section('flexia_footer_script_section')->panel = 'flexia_custom_scripts';
     $wp_customize->get_section('flexia_ga_script_section')->panel = 'flexia_custom_scripts';
-    
+
 
     // Assign sections to panels
     $wp_customize->get_section('title_tagline')->panel = 'flexia_general_settings';
@@ -5348,7 +5440,7 @@ function flexia_customize_register($wp_customize)
     // $wp_customize->get_section('background_image')->panel = 'flexia_design_settings';
     // $wp_customize->get_section('background_image')->priority = 1000;
     $wp_customize->get_section('flexia_blog_content_settings')->panel = 'flexia_blog_settings';
-    $wp_customize->get_section('flexia_blog_header_settings')->panel = 'flexia_blog_settings';
+    // $wp_customize->get_section('flexia_blog_header_settings')->panel = 'flexia_blog_settings';
     $wp_customize->get_section('flexia_single_posts_settings')->panel = 'flexia_blog_settings';
     $wp_customize->get_section('flexia_page_settings')->panel = 'flexia_design_settings';
     $wp_customize->get_section('flexia_overlay_search_settings')->panel = 'flexia_design_settings';
@@ -5359,18 +5451,563 @@ function flexia_customize_register($wp_customize)
     $wp_customize->get_section('flexia_typography_link')->panel = 'flexia_typography_settings';
     $wp_customize->get_section('flexia_typography_button')->panel = 'flexia_typography_settings';
     //Add Sections to Header Section
-    $wp_customize->get_section('header_image')->panel = 'flexia_blog_settings';
-    $wp_customize->get_section('header_image')->priority = '1';
     $wp_customize->get_section('flexia_header_layout')->panel = 'flexia_header_panel';
     // $wp_customize->get_section('flexia_header_logo')->panel = 'flexia_header_panel';
     $wp_customize->get_section('flexia_header_navbar')->panel = 'flexia_header_panel';
     $wp_customize->get_section('flexia_header_top')->panel = 'flexia_header_panel';
     $wp_customize->get_section('flexia_header_social')->panel = 'flexia_header_panel';
     //Add Section to Blog Styles
-    $wp_customize->get_section('header_image')->panel = 'flexia_blog_settings';
-    $wp_customize->get_section('header_image')->label = __('Blog Page Header Image', 'flexia');    
+    $wp_customize->get_section('header_image')->panel = 'blog_style_parent_panel';
+    $wp_customize->get_section('header_image')->label = __('Header Image', 'flexia');
+    $wp_customize->get_section('header_image')->priority = '1';
     //Add Section to WooCommerce
     $wp_customize->get_section('flexia_woo_sidebar_section')->panel = 'woocommerce';
+
+    // Blog Style Panel
+    $wp_customize->add_panel(new Flexia_WP_Customize_Panel(
+        $wp_customize,
+        'blog_style_parent_panel',
+        array(
+            'title' => esc_html__('Blog Styles', 'flexia'),
+            'description' => __('Controls the blog settings for the theme.', 'flexia'),
+            'priority' => 70
+        )
+    ));
+
+    // Blog Page Inner Panel 
+    $wp_customize->add_panel(new Flexia_WP_Customize_Panel(
+        $wp_customize,
+        'blog_page_panel',
+        array(
+            'title' => esc_html__('Blog', 'flexia'),
+            'panel' => 'blog_style_parent_panel',
+            'priority' => 2
+        )
+    ));
+    
+    // Archive Page Inner Panel 
+    $wp_customize->add_panel(new Flexia_WP_Customize_Panel(
+        $wp_customize,
+        'archive_page_panel',
+        array(
+            'title' => esc_html__('Archive', 'flexia'),
+            'panel' => 'blog_style_parent_panel',
+            'priority' => 3
+        )
+    ));
+    
+    // Single Post Inner Panel 
+    $wp_customize->add_panel(new Flexia_WP_Customize_Panel(
+        $wp_customize,
+        'single_post_panel',
+        array(
+            'title' => esc_html__('Single Post', 'flexia'),
+            'panel' => 'blog_style_parent_panel',
+            'priority' => 4
+        )
+    ));
+
+    /**
+     * Add section and controls to the Blog Page panel
+     */
+    // add Header Settings Section
+    $wp_customize->add_section('flexia_blog_header_settings', array(
+        'title' => esc_html__('Header Settings', 'flexia'),
+        'panel' => 'blog_page_panel',
+    ));
+
+    // add Content Settigns Section
+    $wp_customize->add_section('flexia_blog_content_settings', array(
+        'title' => esc_html__('Content Settings', 'flexia'),
+        'panel' => 'blog_page_panel',
+    ));
+
+    /**
+     * Add section and controls to the Archive Page panel
+     */
+    // add Header Settings Section
+    $wp_customize->add_section('flexia_archive_header_settings', array(
+        'title' => esc_html__('Header Settings', 'flexia'),
+        'panel' => 'archive_page_panel',
+    ));
+
+    // add Content Settigns Section
+    $wp_customize->add_section('flexia_archive_content_settings', array(
+        'title' => esc_html__('Content Settings', 'flexia'),
+        'panel' => 'archive_page_panel',
+    ));
+
+    /*********************** Archive Page Start ***********************/
+
+
+    // Show Archive Header Option
+    $wp_customize->add_setting('flexia_show_archive_header', array(
+        'default' => $defaults['flexia_show_archive_header'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'flexia_show_archive_header', array(
+        'label' => esc_html__('Show Archive Header?', 'flexia'),
+        'section' => 'flexia_archive_header_settings',
+        'settings' => 'flexia_show_archive_header',
+        'type' => 'light', // light, ios, flat
+    )));
+
+    // Archive Header Background Color
+    $wp_customize->add_setting('flexia_archive_header_bg_color', array(
+        'default' => $defaults['flexia_archive_header_bg_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_archive_header_bg_color',
+            array(
+                'label' => __('Header Background Color', 'flexia'),
+                'section' => 'flexia_archive_header_settings',
+                'settings' => 'flexia_archive_header_bg_color',
+            )
+        )
+    );
+
+    //Flexia Blog Title Font Size
+    $wp_customize->add_setting('flexia_archive_title_font_size', array(
+        'default' => $defaults['flexia_archive_title_font_size'],
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'flexia_sanitize_integer',
+
+    ));
+
+    $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'flexia_archive_title_font_size', array(
+        'type' => 'range-value',
+        'section' => 'flexia_archive_header_settings',
+        'settings' => 'flexia_archive_title_font_size',
+        'label' => __('Archive Title Font Size (px)', 'flexia'),
+        'input_attrs' => array(
+            'min' => 1,
+            'max' => 160,
+            'step' => 1,
+            'suffix' => 'px', //optional suffix
+        ),
+    )));
+
+    //Flexia Blog Title Font Color
+    $wp_customize->add_setting('flexia_archive_title_font_color', array(
+        'default' => $defaults['flexia_archive_title_font_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_archive_title_font_color',
+            array(
+                'label' => __('Archive Title Font Color', 'flexia'),
+                'section' => 'flexia_archive_header_settings',
+                'settings' => 'flexia_archive_title_font_color',
+            )
+        )
+    );
+
+    //Flexia Archive Title Font Family
+    $wp_customize->add_setting('flexia_archive_header_title_font_family', array(
+        'default' => $defaults['flexia_archive_header_title_font_family'],
+        'sanitize_callback' => 'sanitize_text_field',
+        // 'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(
+        new Customizer_Select2_Google_Fonts(
+            $wp_customize,
+            'flexia_archive_header_title_font_family',
+            array(
+                'label' => esc_html__('Archive Title Font Family', 'flexia'),
+                'section' => 'flexia_archive_header_settings',
+                'settings' => 'flexia_archive_header_title_font_family',
+                'type' => 'select2_google_fonts',
+                'choices' => flexia_google_fonts(),
+            )
+        )
+    );
+
+    //Flexia Blog Description Font Size
+    $wp_customize->add_setting('flexia_archive_desc_font_size', array(
+        'default' => $defaults['flexia_archive_desc_font_size'],
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'flexia_sanitize_integer',
+
+    ));
+
+    $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'flexia_archive_desc_font_size', array(
+        'type' => 'range-value',
+        'section' => 'flexia_archive_header_settings',
+        'settings' => 'flexia_archive_desc_font_size',
+        'label' => __('Archive Description Font Size (px)', 'flexia'),
+        'input_attrs' => array(
+            'min' => 1,
+            'max' => 72,
+            'step' => 1,
+            'suffix' => 'px', //optional suffix
+        ),
+    )));
+
+    //Flexia Archive Description Font Color
+    $wp_customize->add_setting('flexia_archive_desc_font_color', array(
+        'default' => $defaults['flexia_archive_desc_font_color'],
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_archive_desc_font_color',
+            array(
+                'label' => __('Archive Description Font Color', 'flexia'),
+                'section' => 'flexia_archive_header_settings',
+                'settings' => 'flexia_archive_desc_font_color',
+            )
+        )
+    );
+
+    //Flexia Archive Description Font Family
+    $wp_customize->add_setting('flexia_archive_header_desc_font_family', array(
+        'default' => $defaults['flexia_archive_header_desc_font_family'],
+        'sanitize_callback' => 'sanitize_text_field',
+        // 'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(
+        new Customizer_Select2_Google_Fonts(
+            $wp_customize,
+            'flexia_archive_header_desc_font_family',
+            array(
+                'label' => esc_html__('Archive Description Font Family', 'flexia'),
+                'section' => 'flexia_archive_header_settings',
+                'settings' => 'flexia_archive_header_desc_font_family',
+                'type' => 'select2_google_fonts',
+                'choices' => flexia_google_fonts(),
+            )
+        )
+    );
+    // archive content settings
+    $wp_customize->add_setting(
+        'flexia_archive_content_display',
+        array(
+            'default' => $defaults['flexia_archive_content_display'],
+            'sanitize_callback' => 'flexia_sanitize_choices',
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_archive_content_display',
+            array(
+                'label' => __('Content Display', 'flexia'),
+                'section' => 'flexia_archive_content_settings',
+                'settings' => 'flexia_archive_content_display',
+                'priority' => 10,
+                'description' => 'Show full post content or excerpt only on archive page Standard Layout.',
+                'type' => 'radio',
+                'choices' => array(
+                    // keep same as blog settings to set the blog settings on archive page
+                    'flexia_blog_content_display_full' => __('Show Full Post Content', 'flexia'),
+                    'flexia_blog_content_display_excerpt' => __('Show Excerpt only', 'flexia'),
+                ),
+            )
+        )
+    );
+
+    $wp_customize->add_setting('flexia_archive_excerpt_count', array(
+        'default' => $defaults['flexia_archive_excerpt_count'],
+        'sanitize_callback' => 'flexia_sanitize_integer',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_archive_excerpt_count',
+            array(
+                'label' => __('Excerpt Count (words)', 'flexia'),
+                'section' => 'flexia_archive_content_settings',
+                'settings' => 'flexia_archive_excerpt_count',
+                'type' => 'text',
+                'priority' => 20,
+            )
+        )
+    );
+
+    $wp_customize->add_setting('flexia_archive_settings_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_html',
+    ));
+
+    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'flexia_archive_settings_title', array(
+        'label'      => __('Layout Settings', 'flexia'),
+        'settings'        => 'flexia_archive_settings_title',
+        'section'          => 'flexia_archive_content_settings',
+        'priority'         => 30,
+    )));
+
+    $wp_customize->add_setting(
+        'flexia_archive_content_layout',
+        array(
+            'default'   => $defaults['flexia_archive_content_layout'],
+            'sanitize_callback' => 'flexia_sanitize_choices',
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_archive_content_layout',
+            array(
+                'label'          => __('Content Layout', 'flexia'),
+                'section'        => 'flexia_archive_content_settings',
+                'settings'       => 'flexia_archive_content_layout',
+                'priority'        => 31,
+                'description'    => 'Set how you want to arrange your posts on archive pages.',
+                'type'           => 'radio',
+                'choices'        => array(
+                    // keep same as blog settings to set the blog settings on archive page
+                    'flexia_blog_content_layout_standard'   => __('Standard Layout', 'flexia'),
+                    'flexia_blog_content_layout_grid'   => __('Flex Layout', 'flexia'),
+                    'flexia_blog_content_layout_masonry'   => __('Masonry Layout', 'flexia'),
+                )
+            )
+        )
+    );
+
+    $wp_customize->add_setting('flexia_archive_per_page', array(
+        'default'   => $defaults['flexia_archive_per_page'],
+        'sanitize_callback' => 'esc_html',
+    ));
+
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_archive_per_page',
+            array(
+                'label'          => __('Posts Per Page', 'flexia'),
+                'section'        => 'flexia_archive_content_settings',
+                'settings'       => 'flexia_archive_per_page',
+                'priority'        => 32,
+                'type'           => 'text',
+            )
+        )
+    );
+    $wp_customize->add_setting('flexia_archive_grid_column', array(
+        'default'   => $defaults['flexia_archive_grid_column'],
+        'sanitize_callback' => 'flexia_sanitize_choices',
+    ));
+
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_archive_grid_column',
+            array(
+                'label'          => __('Grid/Masonry Column', 'flexia'),
+                'section'        => 'flexia_archive_content_settings',
+                'settings'       => 'flexia_archive_grid_column',
+                'priority'        => 33,
+                'description'    => 'Set the number of columns for grid or masonry layout.',
+                'type'           => 'select',
+                'choices'        => array(
+                    '1'        => __('1', 'flexia'),
+                    '2'        => __('2', 'flexia'),
+                    '3'        => __('3', 'flexia'),
+                    '4'        => __('4', 'flexia'),
+                    '5'        => __('5', 'flexia'),
+                    '6'        => __('6', 'flexia')
+                )
+            )
+        )
+    );
+
+    //Archive Load More option
+    $wp_customize->add_setting('flexia_archive_load_more_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_html',
+    ));
+
+    $wp_customize->add_control(new Separator_Custom_control($wp_customize, 'flexia_archive_load_more_title', array(
+        'label'      => __('Load More Options', 'flexia'),
+        'description'      => __('This feature will work for Grid and Masonry Layout', 'flexia'),
+        'settings'        => 'flexia_archive_load_more_title',
+        'section'          => 'flexia_archive_content_settings',
+        'priority'         => 58,
+    )));
+
+    $wp_customize->add_setting('flexia_archive_load_more', array(
+        'default'     => $defaults['flexia_archive_load_more'],
+        'capability'  => 'edit_theme_options',
+        'sanitize_callback' => 'flexia_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control(new Customizer_Toggle_Control($wp_customize, 'flexia_archive_load_more', array(
+        'label'          => esc_html__('Show Load More?', 'flexia'),
+        'section'     => 'flexia_archive_content_settings',
+        'settings'    => 'flexia_archive_load_more',
+        'priority'        => 59,
+        'type'        => 'light', // light, ios, flat
+    )));
+
+    $wp_customize->add_setting('flexia_archive_load_more_text', array(
+        'default'   => $defaults['flexia_archive_load_more_text'],
+        'sanitize_callback' => 'esc_html',
+    ));
+
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_archive_load_more_text',
+            array(
+                'label'          => __('Load More Text', 'flexia'),
+                'section'        => 'flexia_archive_content_settings',
+                'settings'       => 'flexia_archive_load_more_text',
+                'priority'        => 60,
+                'type'           => 'text',
+            )
+        )
+    );
+
+    $wp_customize->add_setting('flexia_archive_loading_text', array(
+        'default'   => $defaults['flexia_archive_loading_text'],
+        'sanitize_callback' => 'esc_html',
+    ));
+
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_archive_loading_text',
+            array(
+                'label'          => __('Loading', 'flexia'),
+                'section'        => 'flexia_archive_content_settings',
+                'settings'       => 'flexia_archive_loading_text',
+                'priority'        => 61,
+                'type'           => 'text',
+            )
+        )
+    );
+
+    $wp_customize->add_setting('flexia_archive_load_more_btn_font_size', array(
+        'default'       => $defaults['flexia_archive_load_more_btn_font_size'],
+        'capability'    => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'flexia_sanitize_integer'
+
+    ));
+
+    $wp_customize->add_control(new Customizer_Range_Value_Control($wp_customize, 'flexia_archive_load_more_btn_font_size', array(
+        'type'     => 'range-value',
+        'section'  => 'flexia_archive_content_settings',
+        'settings' => 'flexia_archive_load_more_btn_font_size',
+        'priority'    => 512,
+        'label'    => __('Button Font Size (px)', 'flexia'),
+        'input_attrs' => array(
+            'min'    => 1,
+            'max'    => 100,
+            'step'   => 1,
+            'suffix' => 'px', //optional suffix
+        ),
+    )));
+
+
+    $wp_customize->add_setting('flexia_archive_load_more_btn_bg', array(
+        'default'     => $defaults['flexia_archive_load_more_btn_bg'],
+        'transport'   => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_archive_load_more_btn_bg',
+            array(
+                'label'      => __('Load More Button Background', 'flexia'),
+                'section'    => 'flexia_archive_content_settings',
+                'settings'   => 'flexia_archive_load_more_btn_bg',
+                'priority'    => 513,
+            )
+        )
+    );
+
+    $wp_customize->add_setting('flexia_archive_load_more_font_color', array(
+        'default'     => $defaults['flexia_archive_load_more_font_color'],
+        'transport'   => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_archive_load_more_font_color',
+            array(
+                'label'      => __('Load More Button Color', 'flexia'),
+                'section'    => 'flexia_archive_content_settings',
+                'settings'   => 'flexia_archive_load_more_font_color',
+                'priority'    => 514,
+            )
+        )
+    );
+
+    $wp_customize->add_setting('flexia_archive_load_more_btn_bg_active', array(
+        'default'     => $defaults['flexia_archive_load_more_btn_bg_active'],
+        'transport'   => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_archive_load_more_btn_bg_active',
+            array(
+                'label'      => __('Load More Hover Button Background', 'flexia'),
+                'section'    => 'flexia_archive_content_settings',
+                'settings'   => 'flexia_archive_load_more_btn_bg_active',
+                'priority'    => 515,
+            )
+        )
+    );
+
+    $wp_customize->add_setting('flexia_archive_load_more_font_color_active', array(
+        'default'     => $defaults['flexia_archive_load_more_font_color_active'],
+        'transport'   => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'flexia_archive_load_more_font_color_active',
+            array(
+                'label'      => __('Load More Hover Button Text Color', 'flexia'),
+                'section'    => 'flexia_archive_content_settings',
+                'settings'   => 'flexia_archive_load_more_font_color_active',
+                'priority'    => 516,
+            )
+        )
+    );
+    /*********************** Archive Page End ***********************/
+
+    /**
+     * Add section and controls to the Single Post panel
+     */
+    // add single post settings section
+    $wp_customize->add_section('flexia_single_posts_settings', array(
+        'title' => esc_html__('Single Posts Settings', 'flexia'),
+        'panel' => 'single_post_panel',
+    ));
+
 }
 add_action('customize_register', 'flexia_customize_register');
 

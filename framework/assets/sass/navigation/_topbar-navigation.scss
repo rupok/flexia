@@ -18,6 +18,11 @@
                 height: 100%;
                 display: flex;
                 align-items: center;
+                svg {
+                    height: .7em;
+                    width: auto;
+                    margin-left: 5px;
+                }
             }
 
             &:hover,
@@ -57,6 +62,7 @@
         @media screen and (max-width: 991px) {
             margin: 0;
             background-color: #262625;
+            height: auto;
 
             li {
                 > a {

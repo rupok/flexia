@@ -82,7 +82,7 @@ function flexia_blog_header() {
 
     if ($flexia_blog_show) : ?>
 
-		<header class="page-header blog-header" <?php if ( has_header_image() ) { ?> style="background-image: url('<?php echo( get_header_image() ); ?>'); <?php } ?>">
+		<div class="page-header blog-header" <?php if ( has_header_image() ) { ?> style="background-image: url('<?php echo( get_header_image() ); ?>'); <?php } ?>">
 			<div class="header-inner">
 				<div class="header-content">					
 
@@ -130,7 +130,7 @@ function flexia_blog_header() {
 						endif;?></h3>
 				</div>
 			</div>
-		</header>
+                    </div>
 
 	<?php endif;
 }
@@ -197,4 +197,80 @@ function flexia_blog_before_main_content() {
 }
 add_action('flexia_blog_before_content', 'flexia_blog_before_main_content', 1);
 
-?>
+/**
+ * flexia Archive Page Header Hook
+ */
+function flexia_archive_page_header() {
+    $flexia_show_archive_header 		= flexia_get_option( 'flexia_show_archive_header' );
+    $image = get_header_image();
+    $background_img = $image ? ' style="background-image: url('.$image.');"' : '';
+
+    if( $flexia_show_archive_header ) : ?>
+        <div class="page-header archive-header"<?php echo $background_img; ?>>
+        <div class="header-inner">
+            <div class="header-content">
+				<?php the_archive_title( '<h2 class="page-title">', '</h2>' ); ?>
+                <?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
+            </div>
+        </div>
+    </div>
+    <?php endif;
+}
+add_action('flexia_archive_header', 'flexia_archive_page_header');
+/**
+ * Flexia Archive Main Content Hook
+ */
+function flexia_archive_main_content() {
+    $flexia_archive_layout = flexia_get_option( 'flexia_archive_content_layout' );
+
+    echo '<main id="main" class="site-main flexia-container">';
+
+    if ( have_posts() ) :
+        
+        if ($flexia_archive_layout == 'flexia_blog_content_layout_grid' || $flexia_archive_layout == 'flexia_blog_content_layout_masonry') :
+            
+            /**
+             * A flexia hook to add archive layouts
+             */
+            do_action( 'flexia_archive_layout' );
+
+        // is layout not selected or startdard
+        else : 
+            /* Start the Loop */
+            while ( have_posts() ) : the_post();
+
+                /*
+                * Include the Post-Format-specific template for the content.
+                * If you want to override this in a child theme, then include a file
+                * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                */
+                get_template_part( 'framework/views/template-parts/content', get_post_format() );
+
+            endwhile;
+
+            get_template_part( 'framework/views/template-parts/content', 'pagination' );
+
+        endif;						
+
+    else :
+
+        get_template_part( 'framework/views/template-parts/content', 'none' );
+
+    endif;
+
+    wp_reset_query();
+
+    echo '</main>';
+}
+add_action('flexia_archive_content', 'flexia_archive_main_content', 2);
+/**
+ * Change the main archive query's posts per page number
+ */
+function flexia_modify_archive_main_query( $query ) {
+    
+    if ( $query->is_archive() && $query->is_main_query() && !is_admin() ) {
+        $flexia_archive_per_page    = flexia_get_option('flexia_archive_per_page');
+        $query->set( 'posts_per_page', $flexia_archive_per_page );
+    }
+}
+add_action( 'pre_get_posts', 'flexia_modify_archive_main_query' );

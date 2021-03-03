@@ -9,10 +9,10 @@ const minify = require('gulp-minify');
  * Note that all settings besides css_dir and sass_dir can just go in config.rb.
  */
 var compassConfig = {
-	css: 'sass/',     // Must match css_dir value in config.rb.
-	sass: 'sass/',     	  // Must match sass_dir value in config.rb
-	config_file: 'config.rb',
-	sourcemap: true
+    css: 'sass/', // Must match css_dir value in config.rb.
+    sass: 'sass/', // Must match sass_dir value in config.rb
+    config_file: 'config.rb',
+    sourcemap: true
 };
 
 /**
@@ -20,9 +20,9 @@ var compassConfig = {
  * also generally contain patterns of files that are watched to trigger compilation.
  */
 var files = {
-	sass: {
-		toCompile: ['sass/*.scss', 'sass/*/*.scss']
-	}
+    sass: {
+        toCompile: ['sass/*.scss', 'sass/*/*.scss']
+    }
 };
 
 // -------------
@@ -32,37 +32,37 @@ var files = {
 // Compile SASS
 
 function compassBuild() {
-	return src( files.sass.toCompile ).pipe( 
-		compass(compassConfig).on( 'error', notify.onError({
-			message: 'Sass/Compass failed. Check console for errors.'
-		}) ).on('error', function(error) {
-			console.log(error); // find the error about
-			this.emit('end');
-		})
-	)
-	.pipe(autoprefixer())
-	.pipe( dest( './' + compassConfig.css ) )
-	.pipe( notify( 'Sass/Compass successfully compiled' ) );
+    return src(files.sass.toCompile).pipe(
+            compass(compassConfig).on('error', notify.onError({
+                message: 'Sass/Compass failed. Check console for errors.'
+            })).on('error', function(error) {
+                console.log(error); // find the error about
+                this.emit('end');
+            })
+        )
+        .pipe(autoprefixer())
+        .pipe(dest('./' + compassConfig.css))
+        .pipe(notify('Sass/Compass successfully compiled'));
 }
 
 // Minify CSS
 function minifyCSS() {
-	return src('sass/style.css')
-		.pipe( cleanCSS() ) // minify the css 
-		.pipe( dest( 'site/css/' ) );
+    return src('sass/style.css')
+        .pipe(cleanCSS()) // minify the css 
+        .pipe(dest('site/css/'));
 }
 // Minify JS
 function minifyJS() {
-	return src('site/js/flexia-scripts.js')
-		.pipe(minify({
-	        ext:{
-	            min:'.min.js'
-	        },
-	        ignoreFiles: ['.min.js']
-	    }))
-		.pipe( dest( 'site/js/' ) );
+    return src('site/js/flexia-scripts.js')
+        .pipe(minify({
+            ext: {
+                min: '.min.js'
+            },
+            ignoreFiles: ['.min.js']
+        }))
+        .pipe(dest('site/js/'));
 }
-exports.default = function(){
-	watch(files.sass.toCompile, series( minifyCSS, compassBuild, minifyJS ) )
+exports.default = function() {
+    watch(files.sass.toCompile, series(minifyCSS, compassBuild, minifyJS))
 };
-exports.build = series( compassBuild, minifyCSS, minifyJS );
+exports.build = series(compassBuild, minifyCSS, minifyJS);
