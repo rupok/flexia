@@ -1,0 +1,65 @@
+<wpml-config>
+  <custom-fields>
+    <custom-field action="ignore">_flexia_meta_key_body_class</custom-field>
+    <custom-field action="ignore">_flexia_meta_key_page_header</custom-field>
+    <custom-field action="ignore">flexia-menu-item-mega-menu</custom-field>
+    <custom-field action="ignore">_flexia_post_meta_key_body_class</custom-field>
+    <custom-field action="ignore">_flexia_post_meta_key_page_title</custom-field>
+    <custom-field action="ignore">_flexia_post_meta_key_header_meta</custom-field>
+    <custom-field action="ignore">_flexia_post_meta_key_header_author_meta</custom-field>
+    <custom-field action="ignore">_flexia_post_meta_key_header_post_date</custom-field>
+    <custom-field action="ignore">_flexia_post_meta_key_header_post_category</custom-field>
+    <custom-field action="ignore">_flexia_post_meta_key_header_post_comments</custom-field>
+    <custom-field action="ignore">_flexia_post_meta_key_footer_meta</custom-field>
+    <custom-field action="ignore">_flexia_post_meta_key_post_sharer</custom-field>
+    <custom-field action="ignore">_flexia_post_meta_key_post_navigation</custom-field>
+    <custom-field action="ignore">_flexia_post_meta_key_post_comment</custom-field>
+  </custom-fields>
+  <admin-texts>
+    <key name="flexia-pro-license-key"/>
+    <key name="flexia-pro-license-status"/>
+    <key name="theme_mods_flexia">
+      <key name="0"/>
+      <key name="nav_menu_locations">
+        <key name="primary"/>
+        <key name="topbar-menu"/>
+      </key>
+      <key name="custom_css_post_id"/>
+      <key name="custom_logo"/>
+      <key name="flexia_header_logo_width"/>
+      <key name="flexia_navbar_padding"/>
+      <key name="flexia_blog_per_page"/>
+      <key name="flexia_paragraph_font_family"/>
+      <key name="flexia_paragraph_font_variants"/>
+      <key name="flexia_background_color"/>
+      <key name="flexia_blog_bg_color"/>
+      <key name="flexia_post_content_bg_color"/>
+      <key name="flexia_sidebar_widget_bg_color"/>
+      <key name="flexia_enable_topbar"/>
+      <key name="flexia_enable_topbar_menu"/>
+      <key name="flexia_pro_header_logo_padding"/>
+      <key name="flexia_pro_main_menu_item_padding"/>
+      <key name="flexia_pro_cta_padding"/>
+      <key name="flexia_header_layouts"/>
+      <key name="flexia_header_mobile_layouts"/>
+      <key name="flexia_woo_cart_menu"/>
+      <key name="flexia_enable_login_button"/>
+      <key name="flexia_primary_color"/>
+      <key name="flexia_link_color"/>
+      <key name="flexia_link_hover_color"/>
+      <key name="flexia_sticky_header_logo_width"/>
+      <key name="flexia_enable_topbar_on_mobile"/>
+      <key name="flexia_archive_content_layout"/>
+      <key name="flexia_enable_header_social"/>
+      <key name="flexia_header_social_position"/>
+      <key name="flexia_header_social_link_facebook"/>
+      <key name="flexia_header_social_link_instagram"/>
+      <key name="flexia_header_social_link_twitter"/>
+      <key name="flexia_header_social_link_linkedin"/>
+      <key name="flexia_header_social_link_youtube"/>
+      <key name="flexia_blog_content_layout"/>
+    </key>
+    <key name="wpins_flexia-core_force_tracked"/>
+    <key name="wpins_flexia-core_migrated"/>
+  </admin-texts>
+</wpml-config>
