@@ -3461,7 +3461,7 @@ function flexia_customize_register($wp_customize)
     $wp_customize->add_control(
         new WP_Customize_Color_Control(
             $wp_customize,
-            'flexia_navbar_bg_color',
+            'flexia_navbar_bg_color', 
             array(
                 'label' => __('Navbar Background Color', 'flexia'),
                 'section' => 'flexia_header_navbar',

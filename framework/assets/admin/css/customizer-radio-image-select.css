@@ -64,10 +64,17 @@
 
 .customize-control-flexia-radio-image .image label {
     position: relative;
+    display: inline-block;
+    height: auto;
+    padding: 0;
+    border: 0;
+    box-shadow: unset;
+    background-color: transparent;
+
 }
 .customize-control-flexia-radio-image .image label .show_label {
     position: absolute;
-    left: auto;
+    left: 0;
     right: auto;
     top: 100%;
     width: 101%;
