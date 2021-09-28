@@ -146,19 +146,19 @@ function flexia_customize_register($wp_customize)
                     array(
                         'content_layout1'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/content-layouts/content-sidebar-both.jpg',
-                            'label'   => 'Sidebar | Content | Sidebar',
+                            'label'   => __('Sidebar | Content | Sidebar', 'flexia'),
                         ),
                         'content_layout2'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/content-layouts/content-sidebar-left.jpg',
-                            'label'   => 'Sidebar | Content',
+                            'label'   => __('Sidebar | Content', 'flexia'),
                         ),
                         'content_layout3'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/content-layouts/content-sidebar-right.jpg',
-                            'label'   => 'Content | Sidebar',
+                            'label'   => __('Content | Sidebar', 'flexia'),
                         ),
                         'content_layout4'     => array(
                             'image' => get_template_directory_uri() . '/admin/img/content-layouts/content-no-sidebar.jpg',
-                            'label'   => 'No Sidebar',
+                            'label'   => __('No Sidebar', 'flexia'),
                         )
                     )
                 ),
@@ -798,7 +798,7 @@ function flexia_customize_register($wp_customize)
                 'label' => esc_html__('Show Breadcrumbs?', 'flexia'),
                 'section' => 'flexia_page_settings',
                 'settings' => 'flexia_page_breadcrumb',
-                'description' => 'Breadcrumb works on "Large Header" and "Mini Header"',
+                'description' => __('Breadcrumb works on "Large Header" and "Mini Header"', 'flexia'),
                 'type' => 'light', // light, ios, flat
                 'priority' => 20,
             )
@@ -823,7 +823,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Page Header', 'flexia'),
                 'section' => 'flexia_page_settings',
                 'settings' => 'flexia_page_header_layout',
-                'description' => 'Set the default page header layout (global). You can control for individual posts from Flexia Page Settings.',
+                'description' => __('Set the default page header layout (global). You can control for individual posts from Flexia Page Settings.', 'flexia'),
                 'type' => 'radio',
                 'priority' => 30,
                 'choices' => array(
@@ -1200,8 +1200,8 @@ function flexia_customize_register($wp_customize)
      * @flexia_typography_settings
      */
     $wp_customize->add_panel('flexia_typography_settings', array(
-        'title' => 'Typography',
-        'description' => 'Default Typography Settings',
+        'title' => __('Typography', 'flexia'),
+        'description' => __('Default Typography Settings', 'flexia'),
         'priority' => 40,
     ));
 
@@ -2204,7 +2204,7 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_blog_content_settings',
                 'settings' => 'flexia_blog_content_display',
                 'priority' => 10,
-                'description' => 'Show full post content or excerpt only on blog page Standard Layout.',
+                'description' => __('Show full post content or excerpt only on blog page Standard Layout.', 'flexia'),
                 'type' => 'radio',
                 'choices' => array(
                     'flexia_blog_content_display_full' => __('Show Full Post Content', 'flexia'),
@@ -2264,7 +2264,7 @@ function flexia_customize_register($wp_customize)
                 'section'        => 'flexia_blog_content_settings',
                 'settings'       => 'flexia_blog_content_layout',
                 'priority'        => 31,
-                'description'    => 'Set how you want to arrange your posts on blog page.',
+                'description'    => __('Set how you want to arrange your posts on blog page.', 'flexia'),
                 'type'           => 'radio',
                 'choices'        => array(
                     'flexia_blog_content_layout_standard'   => __('Standard Layout', 'flexia'),
@@ -2309,7 +2309,7 @@ function flexia_customize_register($wp_customize)
                 'section'        => 'flexia_blog_content_settings',
                 'settings'       => 'flexia_blog_grid_column',
                 'priority'        => 33,
-                'description'    => 'Set the number of columns for grid or masonry layout.',
+                'description'    => __('Set the number of columns for grid or masonry layout.', 'flexia'),
                 'type'           => 'select',
                 'choices'        => array(
                     '1'        => __('1', 'flexia'),
@@ -2554,7 +2554,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Blog Logo / Icon', 'flexia'),
                 'section' => 'flexia_blog_header_settings',
                 'settings' => 'show_blog_logo',
-                'description' => 'Set an icon or logo for blog home page.',
+                'description' => __('Set an icon or logo for blog home page.', 'flexia'),
                 'type' => 'select',
                 'choices' => array(
                     'blog_logo_image' => __('Image', 'flexia'),
@@ -2784,7 +2784,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Post Header Layout', 'flexia'),
                 'section' => 'flexia_single_posts_settings',
                 'settings' => 'flexia_single_posts_layout',
-                'description' => 'Set the default post layout (global). You can control for individual posts from Flexia Post Settings.',
+                'description' => __('Set the default post layout (global). You can control for individual posts from Flexia Post Settings.', 'flexia'),
                 'type' => 'radio',
                 'choices' => array(
                     'flexia_single_posts_layout_large' => __('Large Header (Featured Image Background)', 'flexia'),
@@ -2813,7 +2813,7 @@ function flexia_customize_register($wp_customize)
                 'label' => __('Post Sidebar', 'flexia'),
                 'section' => 'flexia_single_posts_settings',
                 'settings' => 'flexia_single_content_layout',
-                'description' => 'Set the default Sidebar for Single blog posts and other Single post types.',
+                'description' => __('Set the default Sidebar for Single blog posts and other Single post types.', 'flexia'),
                 'type' => 'radio',
                 'choices' => array(
                     'content_layout2' => __('Left Sidebar', 'flexia'),
@@ -3070,7 +3070,7 @@ function flexia_customize_register($wp_customize)
      */
     $wp_customize->add_panel('flexia_header_panel', array(
         'title' => 'Header',
-        'description' => 'Header Settings',
+        'description' => __('Header Settings', 'flexia'),
         'priority' => 50,
     ));
 
@@ -3561,6 +3561,54 @@ function flexia_customize_register($wp_customize)
         'priority' => 90,
     )));
 
+    //Custom Login Text
+    $wp_customize->add_setting('flexia_custom_login_text', array(
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => $defaults['flexia_custom_login_text'],
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_custom_login_text',
+            array(
+                'label' => __('Custom Login Text', 'flexia'),
+                'section' => 'flexia_header_navbar',
+                'settings' => 'flexia_custom_login_text',
+                'type' => 'text',
+                'input_attrs' => array(
+                    'placeholder' => __('Login Text', 'flexia'),
+                ),
+                'priority' => 91,
+            )
+        )
+    );
+
+    //Custom Logout Text
+    $wp_customize->add_setting('flexia_custom_logout_text', array(
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => $defaults['flexia_custom_logout_text'],
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'flexia_custom_logout_text',
+            array(
+                'label' => __('Custom Logout Text', 'flexia'),
+                'section' => 'flexia_header_navbar',
+                'settings' => 'flexia_custom_logout_text',
+                'type' => 'text',
+                'input_attrs' => array(
+                    'placeholder' => __('Logout Text', 'flexia'),
+                ),
+                'priority' => 92,
+            )
+        )
+    );
+
     //Custom Login URL
     $wp_customize->add_setting('flexia_custom_login_url', array(
         'capability' => 'edit_theme_options',
@@ -3728,7 +3776,7 @@ function flexia_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control('flexia_main_nav_menu_dropdown_animation', array(
-        'label' => 'Dropdown animation',
+        'label' => __('Dropdown animation', 'flexia'),
         'section' => 'flexia_header_navbar',
         'settings' => 'flexia_main_nav_menu_dropdown_animation',
         'type' => 'select',
@@ -5712,7 +5760,7 @@ function flexia_customize_register($wp_customize)
                 'section' => 'flexia_archive_content_settings',
                 'settings' => 'flexia_archive_content_display',
                 'priority' => 10,
-                'description' => 'Show full post content or excerpt only on archive page Standard Layout.',
+                'description' => __('Show full post content or excerpt only on archive page Standard Layout.', 'flexia'),
                 'type' => 'radio',
                 'choices' => array(
                     // keep same as blog settings to set the blog settings on archive page
@@ -5771,7 +5819,7 @@ function flexia_customize_register($wp_customize)
                 'section'        => 'flexia_archive_content_settings',
                 'settings'       => 'flexia_archive_content_layout',
                 'priority'        => 31,
-                'description'    => 'Set how you want to arrange your posts on archive pages.',
+                'description'    => __('Set how you want to arrange your posts on archive pages.', 'flexia'),
                 'type'           => 'radio',
                 'choices'        => array(
                     // keep same as blog settings to set the blog settings on archive page
@@ -5817,7 +5865,7 @@ function flexia_customize_register($wp_customize)
                 'section'        => 'flexia_archive_content_settings',
                 'settings'       => 'flexia_archive_grid_column',
                 'priority'        => 33,
-                'description'    => 'Set the number of columns for grid or masonry layout.',
+                'description'    => __('Set the number of columns for grid or masonry layout.', 'flexia'),
                 'type'           => 'select',
                 'choices'        => array(
                     '1'        => __('1', 'flexia'),

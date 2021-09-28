@@ -115,14 +115,14 @@ if (!function_exists('flexia_setup')) {
          */
         function flexia_nav_logo_button($items)
         {
-            $flexia_nav_login = get_theme_mod('flexia_enable_login_button', false);
-            $flexia_nav_login_url = get_theme_mod('flexia_custom_login_url');
+            $flexia_nav_login = flexia_get_option('flexia_enable_login_button');
+            $flexia_nav_login_url = flexia_get_option('flexia_custom_login_url');
             $login_url = (empty($flexia_nav_login_url) ? esc_url(wp_login_url(get_permalink())) : esc_url($flexia_nav_login_url));
             $logout_url = wp_logout_url(home_url());
-            $flexia_login_text = esc_html__('Sign in', 'flexia');
-            $flexia_logout_text = esc_html__('Log out', 'flexia');
+            $flexia_login_text = flexia_get_option('flexia_custom_login_text');
+            $flexia_logout_text = flexia_get_option('flexia_custom_logout_text');
             $flexia_log_in_out_url = is_user_logged_in() ? $logout_url : $login_url;
-            $flexia_log_in_out_text = is_user_logged_in() ? $flexia_logout_text : $flexia_login_text;
+            $flexia_log_in_out_text = is_user_logged_in() ? esc_html__($flexia_logout_text) : esc_html__($flexia_login_text);
 
             if ($flexia_nav_login == true) {
                 $items .= '<li class="menu-item navbar-login-menu">';

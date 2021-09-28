@@ -31,6 +31,7 @@
             jQuery('#customize-control-flexia_blog_load_more_text').hide();
             jQuery('#customize-control-flexia_blog_loading_text').hide();
             jQuery('#customize-control-flexia_blog_categories').hide();
+            jQuery('#customize-control-flexia_blog_category_all_text').hide();
             jQuery('#customize-control-flexia_blog_post_meta').hide();
         }
 
@@ -43,6 +44,7 @@
             jQuery('#customize-control-flexia_blog_load_more_text').show();
             jQuery('#customize-control-flexia_blog_loading_text').show();
             jQuery('#customize-control-flexia_blog_categories').show();
+            jQuery('#customize-control-flexia_blog_category_all_text').show();
             jQuery('#customize-control-flexia_blog_post_meta').show();
         }
 

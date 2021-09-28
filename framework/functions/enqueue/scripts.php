@@ -202,6 +202,8 @@ function flexia_customizer_condition()
         'flexia_main_nav_menu_submenu_link_hover_color' => array('flexia_navbar', '==', true),
         'flexia_main_nav_menu_submenu_link_hover_bg' => array('flexia_navbar', '==', true),
         'flexia_main_nav_menu_dropdown_animation' => array('flexia_navbar', '==', true),
+        'flexia_custom_login_text' => array('flexia_enable_login_button', '==', true),
+        'flexia_custom_logout_text' => array('flexia_enable_login_button', '==', true),
         'flexia_custom_login_url' => array('flexia_enable_login_button', '==', true),
         //Header Widget Area
         'flexia_header_widget_area_bg_color' => array('flexia_header_widget_area', '==', true),

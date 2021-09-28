@@ -11,6 +11,9 @@
             <key name="flexia_header_top_email"/>
             <key name="flexia_header_top_location"/>
             <key name="flexia_header_top_location_link"/>
+            <key name="flexia_custom_login_text"/>
+            <key name="flexia_custom_logout_text"/>
+            <key name="flexia_custom_login_url"/>
             <key name="flexia_header_social_link_facebook"/>
             <key name="flexia_header_social_link_instagram"/>
             <key name="flexia_header_social_link_twitter"/>
@@ -33,6 +36,7 @@
             <key name="flexia_call_to_action_button_text"/>
             <key name="flexia_call_to_action_url"/>
             <key name="flexia_preloader_image"/>
+            <key name="flexia_blog_category_all_text"/>
         </key>
         <key name="flexia-underconstruction">
             <key name="flexia_uc_site_title" />

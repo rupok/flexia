@@ -25,6 +25,7 @@ function flexia_blog_layout()
 		$flexia_magnific_popup 			= flexia_pro_get_option('flexia_blog_image_popup');
 		$flexia_show_filter 			= flexia_pro_get_option('flexia_blog_filterable');
 		$flexia_blog_categories			= get_theme_mod('flexia_blog_categories', '');
+		$flexia_blog_category_all_text = flexia_pro_get_option('flexia_blog_category_all_text');
 	}
 
 ?>
@@ -38,7 +39,7 @@ function flexia_blog_layout()
 			<?php if (class_exists('Flexia_Pro') && $flexia_show_filter == true && !empty($flexia_blog_categories)) : ?>
 				<div class="flexia-post-filter-control">
 					<?php if (!empty($flexia_blog_categories)) : ?>
-						<button class="button control is-checked" data-filter="*"><?php _e('All', 'flexia'); ?></button>
+						<button class="button control is-checked" data-filter="*"><?php esc_html_e($flexia_blog_category_all_text, 'flexia'); ?></button>
 					<?php endif ?>
 					<?php
 					// Post Arguments
@@ -110,7 +111,7 @@ function flexia_blog_layout()
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()) : $loop->the_post();
 					$terms = get_the_category();
-					$categories_list = get_the_category_list(esc_html__(', ', 'flexia'));
+					$categories_list = get_the_category_list(esc_attr(', ', 'flexia'));
 
 				?>
 					<article class="flexia-post-block-item flexia-post-block-column <?php foreach ($terms as $term) : echo $term->slug . ' ';
@@ -293,7 +294,7 @@ function flexia_pro_load_more_posts()
 	 */
 	while ($posts->have_posts()) : $posts->the_post();
 		$terms = get_the_category();
-		$categories_list = get_the_category_list(esc_html__(', ', 'flexia'));
+		$categories_list = get_the_category_list(esc_attr(', ', 'flexia'));
 	?>
 		<?php if ('flexia_blog_content_layout_masonry' === $flexia_blog_layout) : ?>
 			<div class="flexia-grid-post flexia-post-grid-column  <?php foreach ($terms as $term) : echo $term->slug . ' ';
@@ -628,7 +629,7 @@ function flexia_archive_load_more_button()
 		<div class="flexia-load-more-button-wrap">
 			<button id="load-more-post-archive" class="flexia-load-more-button">
 				<div class="flexia-btn-loader button__loader"></div>
-				<span><?php echo $flexia_load_more_text; ?></span>
+				<span><?php esc_html_e($flexia_load_more_text, 'flexia') ?></span>
 			</button>
 		</div>
 	<?php endif; ?>

@@ -223,6 +223,8 @@ if (!function_exists('flexia_get_option_defaults')) {
             'flexia_nav_menu_search' => true,
             'flexia_woo_cart_menu' => false,
             'flexia_enable_login_button' => false,
+            'flexia_custom_login_text' => 'Log In',
+            'flexia_custom_logout_text' => 'Log Out',
             'flexia_custom_login_url' => '',
 
             'flexia_enable_topbar' => false,
