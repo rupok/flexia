@@ -40,13 +40,21 @@ More details here: http://www.gnu.org/licenses/gpl-3.0.html
 
 = 2.3.1 =
 * Released: October 3, 2021
+* Added: WPML Support
+* Added: Login/logout text change control
+* Improvement:  Improved customizer experiences
+
 
 = 2.3.0 =
 * Released: March 3, 2021
-
-* Added: WPML Support
-* Added: Login/logout text change control
-* Improvement: Improved customizer experiences
+* Added: One more header layout
+* Added: Header layouts for Mobile
+* Added: Archive page customizer controls
+* Added: Add new social share option on blog posts
+* Fixed: Some bug fix and code improvements
+* Fixed: Menu overlap issue
+* Fixed: WooCommerce header issue
+* Improvement:  Improved customizer experiences
 
 
 = 2.2.2 =
