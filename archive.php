@@ -37,7 +37,7 @@ get_header();
 			/**
 			 * Flexia hook for Archive Content/The Loop
 			 */
-
+			
 			do_action('flexia_archive_content');
 			?>
 
