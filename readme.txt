@@ -4,8 +4,8 @@ Contributors: re_enter_rupok, Codetic, wpdevteam
 Theme URI: https://flexia.pro/
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.0
-Tested up to: 5.7
-Stable tag: 2.3.0
+Tested up to: 5.8
+Stable tag: 2.3.1
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -40,6 +40,7 @@ More details here: http://www.gnu.org/licenses/gpl-3.0.html
 
 = 2.3.1 =
 * Released: October 3, 2021
+
 * Added: WPML Support
 * Added: Login/logout text change control
 * Improvement:  Improved customizer experiences
