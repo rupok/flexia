@@ -30,12 +30,12 @@
 		"color": {
 			"palette": [
 				{
-					"color": "#000000",
+					"color": "#0057FF",
 					"name": "Primary",
 					"slug": "primary"
 				},
 				{
-					"color": "#A39FAE",
+					"color": "#F9FEFF",
 					"name": "Secondary",
 					"slug": "secondary"
 				},
@@ -45,29 +45,67 @@
 					"slug": "background"
 				},
 				{
-					"color": "#555555",
+					"color": "#515151",
 					"name": "Text",
 					"slug": "text"
 				},
 				{
-					"color": "#333333",
+					"color": "#202124",
 					"name": "Heading",
 					"slug": "Heading"
 				},
 				{
-					"color": "#0000EE",
+					"color": "#0057FF",
 					"name": "Link",
 					"slug": "link"
 				},
 				{
-					"color": "#F6F6F6",
+					"color": "#FFFFFF",
 					"name": "Button-text",
 					"slug": "button-text"
 				},
 				{
-					"color": "#0F0F0F",
+					"color": "#0057FF",
 					"name": "Button Background",
 					"slug": "button-background"
+				}
+			],
+			"gradients": [
+				{
+					"slug": "primary",
+					"gradient": "linear-gradient(270deg, #0057FF -5%, #4F2CDD 100%);",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
+					"gradient": "linear-gradient(270deg, #d9e0e2 -5%, #c4bfd9 100%);",
+					"name": "Secondary"
+				}
+			],
+			"duotone": [
+				{
+					"colors": [
+						"#0057FF",
+						"#0057FF"
+					],
+					"slug": "primary",
+					"name": "Primary"
+				},
+				{
+					"colors": [
+						"#F9FEFF",
+						"#F9FEFF"
+					],
+					"slug": "secondary",
+					"name": "Secondary"
+				},
+				{
+					"colors": [
+						"#FFFFFF",
+						"#FFFFFF"
+					],
+					"slug": "tertiary",
+					"name": "Tertiary"
 				}
 			]
 		},

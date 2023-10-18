@@ -47,10 +47,6 @@
 				}
 			]
 		},
-		"layout": {
-			"contentSize": "710px",
-			"wideSize": "1200px"
-		},
 		"typography": {
 			"fontSizes": [
 				{
