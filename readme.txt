@@ -249,3 +249,10 @@ More details here: http://www.gnu.org/licenses/gpl-3.0.html
 
 = 0.0.1 - July 19 2017 =
 * Initial release
+
+Sora Font
+Copyright 2019 The Sora Project Authors (https://github.com/sora-xor/sora-font) 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
+License URL: https://scripts.sil.org/OFL 
+Source: https://fonts.barnbrook.net
+-- End of Sora Font credits --
