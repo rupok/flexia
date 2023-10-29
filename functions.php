@@ -59,14 +59,6 @@ if( !function_exists( 'flexia_register' ) ) :
 
         if( function_exists( 'register_block_style' ) ) {
             register_block_style(
-                'core/heading',
-                [
-                    'name'         => 'sub-heading',
-                    'label'        => __( 'Sub Heading', 'flexia' ),
-                    'is_default'   => false,
-                ]
-            );
-            register_block_style(
                 'core/group',
                 [
                     'name'         => 'hover-border',
