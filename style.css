@@ -17,3 +17,38 @@ Flexia WordPress Theme, Copyright 2020 WPDeveloper.
 Flexia is distributed under the terms of the GPL.
 
 Note: The CSS files are loaded from framework/assets/site/css/ folder. */
+
+
+
+h2.wp-block-heading.is-style-sub-heading{
+    color: var(--wp--preset--color--primary);
+    font-size: var(--wp--preset--font-size--medium);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.is-style-hover-border{
+    border-bottom: 2px solid transparent;
+    transition: all .4s ease;
+}
+.is-style-hover-border:hover{
+    border-bottom-color: var(--wp--preset--color--primary)!important;
+    box-shadow: 0px 27px 19px 0px rgba(0, 1, 35, 0.08);
+}
+
+@media (min-width:1170px){
+
+    .ml-40{
+        margin-left: -40px;
+    }
+    .mb-60{
+        margin-bottom: -60px;
+    }
+    
+    .mt-60{
+        margin-top: -60px;
+    }
+}
