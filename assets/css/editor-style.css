@@ -1,15 +1,5 @@
 
-
-
-@media (min-width:1170px){
-    .ml-40{
-        margin-left: -40px;
-    }
-    .mb-60{
-        margin-bottom: -60px;
-    }
-    
-    .mt-60{
-        margin-top: -60px;
-    }
+.my--120 {
+    margin-bottom: -120px!important;
+    margin-top: -120px!important;
 }

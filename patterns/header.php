@@ -6,14 +6,14 @@
  * Inserter: no
  */
 ?>
-<!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:group {"align":"full","style":{"color":{"background":"#17244f"},"spacing":{"padding":{"right":"20px","left":"20px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-background" style="background-color:#17244f;padding-right:20px;padding-left:20px"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<<!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"right":"20px","left":"20px"}}},"backgroundColor":"Heading","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-heading-background-color has-background" style="padding-right:20px;padding-left:20px"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"10px"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left","verticalAlignment":"center"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":9,"width":"12px","height":"12px","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|grayscale"},"layout":{"selfStretch":"fit","flexSize":null}},"className":"is-style-default"} -->
-<figure class="wp-block-image size-full is-resized is-style-default"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mail-open-line.png" alt="" class="wp-image-9" style="object-fit:cover;width:12px;height:12px"/></figure>
+<figure class="wp-block-image size-full is-resized is-style-default"><img src="http://flexia-final.local/wp-content/themes/flexia/assets/images/mail-open-line.png" alt="" class="wp-image-9" style="object-fit:cover;width:12px;height:12px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:spacer {"width":"0px","style":{"layout":{"flexSize":"15px","selfStretch":"fixed"}}} -->
@@ -21,9 +21,9 @@
 <!-- /wp:spacer --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1"}},"textColor":"secondary","fontSize":"small"} -->
-<p class="has-secondary-color has-text-color has-small-font-size" style="line-height:1"><a href="#">email@themename</a></p>
-<!-- /wp:paragraph --></div>
+<!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}},"typography":{"fontStyle":"normal","fontWeight":"400"}},"fontSize":"small"} -->
+<h2 class="wp-block-heading has-link-color has-small-font-size" style="font-style:normal;font-weight:400"><a href="#">email@themename</a></h2>
+<!-- /wp:heading --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
@@ -32,7 +32,7 @@
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":15,"width":"12px","height":"12px","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|grayscale"},"layout":{"selfStretch":"fit","flexSize":null}},"className":"is-style-default"} -->
-<figure class="wp-block-image size-full is-resized is-style-default"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/user-line.png" alt="" class="wp-image-15" style="object-fit:cover;width:12px;height:12px"/></figure>
+<figure class="wp-block-image size-full is-resized is-style-default"><img src="http://flexia-final.local/wp-content/themes/flexia/assets/images/user-line.png" alt="" class="wp-image-15" style="object-fit:cover;width:12px;height:12px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:spacer {"width":"0px","style":{"layout":{"flexSize":"15px","selfStretch":"fixed"}}} -->
@@ -40,15 +40,15 @@
 <!-- /wp:spacer --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1"}},"textColor":"secondary","fontSize":"small"} -->
-<p class="has-secondary-color has-text-color has-small-font-size" style="line-height:1"><a href="#">Signup</a></p>
-<!-- /wp:paragraph --></div>
+<!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}},"typography":{"fontStyle":"normal","fontWeight":"400"}},"fontSize":"small"} -->
+<h2 class="wp-block-heading has-link-color has-small-font-size" style="font-style:normal;font-weight:400"><a href="#">Signup</a></h2>
+<!-- /wp:heading --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":15,"width":"12px","height":"12px","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|grayscale"},"layout":{"selfStretch":"fit","flexSize":null}},"className":"is-style-default"} -->
-<figure class="wp-block-image size-full is-resized is-style-default"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/user-line.png" alt="" class="wp-image-15" style="object-fit:cover;width:12px;height:12px"/></figure>
+<figure class="wp-block-image size-full is-resized is-style-default"><img src="http://flexia-final.local/wp-content/themes/flexia/assets/images/user-line.png" alt="" class="wp-image-15" style="object-fit:cover;width:12px;height:12px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:spacer {"width":"0px","style":{"layout":{"flexSize":"15px","selfStretch":"fixed"}}} -->

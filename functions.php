@@ -58,6 +58,7 @@ if( !function_exists( 'flexia_register' ) ) :
          */
 
         if( function_exists( 'register_block_style' ) ) {
+
             register_block_style(
                 'core/group',
                 [
@@ -65,8 +66,16 @@ if( !function_exists( 'flexia_register' ) ) :
                     'label'        => __( 'Hover Border', 'flexia' ),
                     'is_default'   => false,
                 ]
+               
             );
-
+            register_block_style(
+                'core/button',
+                [
+                    'name'         => 'solid-border',
+                    'label'        => __( 'Solid  Border', 'flexia' ),
+                    'is_default'   => false,
+                ]
+            );
            
         }
     }

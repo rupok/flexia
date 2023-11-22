@@ -27,17 +27,83 @@ Note: The CSS files are loaded from framework/assets/site/css/ folder. */
     border-bottom-color: var(--wp--preset--color--primary)!important;
     box-shadow: 0px 27px 19px 0px rgba(0, 1, 35, 0.08);
 }
+.is-style-hover-border img{
+    transition: all .4s ease;
+}
 
-@media (min-width:1170px){
+.is-style-hover-border:hover img{
+    filter: var(--wp--preset--duotone--dark-primary);
+}
 
-    .ml-40{
-        margin-left: -40px;
-    }
-    .mb-60{
-        margin-bottom: -60px;
-    }
+
+.my--120 {
+    margin-bottom: -120px!important;
+    margin-top: -120px!important;
+}
+
+.bg-shadow-light{
+    box-shadow: 0px 0px 10px rgba(0, 1, 35, 0.02);
+}
+
+/*  Solid border Button */
+
+.wp-block-button.is-style-solid-border{
+    padding: 0px;
+    border: 0px;
+    color: var(--wp--preset--color--text);
+    border-radius: 0px;
+}
+
+.wp-block-button.is-style-solid-border:hover a{
+    color: var(--wp--preset--color--primary)!important;
+}
+
+/*  Hover Box shadow */
+.hover-box-shadow{
+    transition: all .4s ease;
+}
+.hover-box-shadow:hover{
+    box-shadow: 0px 33px 75px 0px rgba(0, 1, 35, 0.08);
+    background: var(--wp--preset--color--background)!important;
+}
+
+.wp-block-group.hover-box-shadow:hover{
+    background: var(--wp--preset--color--background)!important;
+}
+
+.wp-block-group.hover-box-shadow .wp-element-button{
+    transition: all .4s ease;
+}
+.wp-block-group.hover-box-shadow:hover .wp-element-button{
+    background: var(--wp--preset--color--primary)!important;
+}
+
+/*  Cover style */
+
+.wp-block-cover.is-style-hover-content{
+    position: relative;
+    transition:all .4s ease ;
+
+}
+
+/*  Team style  */
+
+.flexia_team_hover,
+.flexia_team_hover.wp-block-cover .wp-block-cover__background{
+    transition: all .4s ease;
+}
+
+.flexia_team_hover .wp-block-social-links {
+    opacity: 0;
+    transition: all .4s ease;
+    margin-bottom: -150px;
+}
+.flexia_team_hover:hover .wp-block-social-links {
+    opacity: 1;
+    margin-bottom: 0px;
+}
+
     
-    .mt-60{
-        margin-top: -60px;
-    }
+.flexia_team_hover:hover .wp-block-cover__background{
+    opacity: 1!important;
 }
