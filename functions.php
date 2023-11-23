@@ -68,11 +68,39 @@ if( !function_exists( 'flexia_register' ) ) :
                 ]
                
             );
+
+            register_block_style(
+                'core/group',
+                [
+                    'name'         => 'hover-shadow',
+                    'label'        => __( 'Hover Shadow', 'flexia' ),
+                    'is_default'   => false,
+                ]
+               
+            );
             register_block_style(
                 'core/button',
                 [
                     'name'         => 'solid-border',
                     'label'        => __( 'Solid  Border', 'flexia' ),
+                    'is_default'   => false,
+                ]
+            );
+
+            register_block_style(
+                'core/list',
+                [
+                    'name'         => 'list-style-hide',
+                    'label'        => __( 'List Style Hide', 'flexia' ),
+                    'is_default'   => false,
+                ]
+            );
+           
+            register_block_style(
+                'core/post-author',
+                [
+                    'name'         => 'author-rounded',
+                    'label'        => __( 'Image Rounded', 'flexia' ),
                     'is_default'   => false,
                 ]
             );

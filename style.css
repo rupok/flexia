@@ -19,6 +19,14 @@ Flexia is distributed under the terms of the GPL.
 Note: The CSS files are loaded from framework/assets/site/css/ folder. */
 
 
+img ,a {
+    transition: all .4s ease;
+}
+
+a:hover{
+    cursor:pointer;
+}
+
 .is-style-hover-border{
     border-bottom: 2px solid transparent;
     transition: all .4s ease;
@@ -106,4 +114,59 @@ Note: The CSS files are loaded from framework/assets/site/css/ folder. */
     
 .flexia_team_hover:hover .wp-block-cover__background{
     opacity: 1!important;
+}
+
+.flexia_team_hover:hover .wp-block-cover__image-background {
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+/*  BannerStacked Images */
+
+.flexia-group-squeeze.wp-block-group > .wp-block-group {
+    margin-left: -15px!important;
+}
+
+
+.bg-shadow{
+    transition: all .4s ease;
+    box-shadow: 0px 1px 2px 0px rgba(0, 1, 35, 0.04);
+}
+.bg-shadow:hover{
+    box-shadow: 0px 16px 30px 0px rgba(0, 1, 35, 0.04);
+}
+
+/*  List style hide  */
+
+.is-style-list-style-hide li{
+    list-style: none;
+}
+
+.hover_img_zoom{
+    transition: all .4s ease;
+}
+
+.hover_img_zoom:hover{
+    transform: scale(.95);
+}
+
+/*  POst Author Image rounded */
+
+.is-style-author-rounded {
+    align-items: center;
+}
+
+.is-style-author-rounded img {
+    border-radius: 100%;
+}
+
+/*  Group Hover Shadow */
+
+.wp-block-group.is-style-hover-shadow{
+    transition: all .4s ease;
+}
+
+.wp-block-group.is-style-hover-shadow:hover{
+    box-shadow: 0px 16px 29px 0px rgba(0, 1, 35, 0.08);
 }

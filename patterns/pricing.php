@@ -6,30 +6,34 @@
  * Inserter: no
  */
 ?>
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"backgroundColor":"background","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-background-background-color has-background" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:cover {"overlayColor":"background","contentPosition":"center center","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|40","left":"0"}}}} -->
-<div class="wp-block-cover alignfull is-light" style="padding-top:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:0"><span aria-hidden="true" class="wp-block-cover__background has-background-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:group {"style":{"spacing":{"blockGap":"0","margin":{"bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--50)"><!-- wp:heading {"textAlign":"center","level":5,"style":{"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"500","letterSpacing":"4px"}},"textColor":"primary","fontSize":"medium"} -->
-<h5 class="wp-block-heading has-text-align-center has-primary-color has-text-color has-medium-font-size" style="font-style:normal;font-weight:500;letter-spacing:4px;text-transform:uppercase">pricing</h5>
-<!-- /wp:heading -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"},"blockGap":"var:preset|spacing|50"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"align":"center","style":{"typography":{"letterSpacing":"4px","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"small"} -->
+<p class="has-text-align-center has-primary-color has-text-color has-link-color has-small-font-size" style="letter-spacing:4px;text-transform:uppercase">pricing</p>
+<!-- /wp:paragraph -->
 
-<!-- wp:heading {"textAlign":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}},"textColor":"Heading","fontSize":"large-plus"} -->
-<h2 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-large-plus-font-size" style="margin-bottom:var(--wp--preset--spacing--30)">Flexible Pricing Plan</h2>
+<!-- wp:heading {"textAlign":"center","style":{"typography":{"textTransform":"capitalize"}},"textColor":"Heading","fontSize":"large-plus"} -->
+<h2 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-large-plus-font-size" style="text-transform:capitalize">Flexible Pricing Plan</h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"0","right":"0"}},"border":{"radius":"4px"}},"backgroundColor":"secondary","className":"hover-box-shadow","layout":{"type":"constrained"}} -->
-<div class="wp-block-group hover-box-shadow has-secondary-background-color has-background" style="border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:0"><!-- wp:group {"style":{"border":{"bottom":{"color":"#d7e4ff","width":"1px"},"top":{},"right":{},"left":{}},"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","bottom":"var:preset|spacing|30","top":"0"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group hover-box-shadow has-secondary-background-color has-background" style="border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:0"><!-- wp:group {"style":{"border":{"bottom":{"color":"#d7e4ff","width":"1px"},"top":[],"right":[],"left":[]},"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","bottom":"var:preset|spacing|30","top":"0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="border-bottom-color:#d7e4ff;border-bottom-width:1px;padding-top:0;padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:heading {"level":4,"textColor":"Heading","fontSize":"large"} -->
 <h4 class="wp-block-heading has-heading-color has-text-color has-large-font-size">Standard</h4>
 <!-- /wp:heading -->
 
-<!-- wp:heading {"textColor":"Heading","fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-heading-color has-text-color has-x-large-font-size">$49 <mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-text-color"><sub>/month</sub></mark></h2>
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:heading {"textColor":"Heading","fontSize":"x-large"} -->
+<h2 class="wp-block-heading has-heading-color has-text-color has-x-large-font-size">$49</h2>
 <!-- /wp:heading -->
+
+<!-- wp:heading {"textColor":"Heading","fontSize":"medium"} -->
+<h2 class="wp-block-heading has-heading-color has-text-color has-medium-font-size">/month</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
 
 <!-- wp:paragraph {"textColor":"text"} -->
 <p class="has-text-color">Get started with basic features and kickstart your journey</p>
@@ -72,7 +76,7 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"0","right":"0"}},"border":{"radius":"4px"}},"backgroundColor":"secondary","className":"is-style-default hover-box-shadow","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-default hover-box-shadow has-secondary-background-color has-background" style="border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:0"><!-- wp:group {"style":{"border":{"bottom":{"color":"#d7e4ff","width":"1px"},"top":{},"right":{},"left":{}},"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","bottom":"var:preset|spacing|30","top":"0"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-default hover-box-shadow has-secondary-background-color has-background" style="border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:0"><!-- wp:group {"style":{"border":{"bottom":{"color":"#d7e4ff","width":"1px"},"top":[],"right":[],"left":[]},"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","bottom":"var:preset|spacing|30","top":"0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="border-bottom-color:#d7e4ff;border-bottom-width:1px;padding-top:0;padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:columns {"verticalAlignment":"top"} -->
 <div class="wp-block-columns are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top"} -->
 <div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"level":4,"textColor":"Heading","fontSize":"large"} -->
@@ -91,9 +95,15 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:heading {"textColor":"Heading","fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-heading-color has-text-color has-x-large-font-size">$149 <mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-text-color"><sub>/month</sub></mark></h2>
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:heading {"textColor":"Heading","fontSize":"x-large"} -->
+<h2 class="wp-block-heading has-heading-color has-text-color has-x-large-font-size">$149</h2>
 <!-- /wp:heading -->
+
+<!-- wp:heading {"textColor":"Heading","fontSize":"medium"} -->
+<h2 class="wp-block-heading has-heading-color has-text-color has-medium-font-size">/month</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
 
 <!-- wp:paragraph {"textColor":"text"} -->
 <p class="has-text-color">Unlock advanced tools for greater results &amp; elevate experience</p>
@@ -126,8 +136,8 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button">Get Started</a></div>
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"dark-background","width":100} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-dark-background-background-color has-background wp-element-button">Get Started</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -136,14 +146,20 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"0","right":"0"}},"border":{"radius":"4px"}},"backgroundColor":"secondary","className":"hover-box-shadow","layout":{"type":"constrained"}} -->
-<div class="wp-block-group hover-box-shadow has-secondary-background-color has-background" style="border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:0"><!-- wp:group {"style":{"border":{"bottom":{"color":"#d7e4ff","width":"1px"},"top":{},"right":{},"left":{}},"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","bottom":"var:preset|spacing|30","top":"0"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group hover-box-shadow has-secondary-background-color has-background" style="border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:0"><!-- wp:group {"style":{"border":{"bottom":{"color":"#d7e4ff","width":"1px"},"top":[],"right":[],"left":[]},"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","bottom":"var:preset|spacing|30","top":"0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="border-bottom-color:#d7e4ff;border-bottom-width:1px;padding-top:0;padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:heading {"level":4,"textColor":"Heading","fontSize":"large"} -->
 <h4 class="wp-block-heading has-heading-color has-text-color has-large-font-size">Enterprise</h4>
 <!-- /wp:heading -->
 
-<!-- wp:heading {"textColor":"Heading","fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-heading-color has-text-color has-x-large-font-size">$200 <mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-text-color"><sub>/month</sub></mark></h2>
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:heading {"textColor":"Heading","fontSize":"x-large"} -->
+<h2 class="wp-block-heading has-heading-color has-text-color has-x-large-font-size">$200</h2>
 <!-- /wp:heading -->
+
+<!-- wp:heading {"textColor":"Heading","fontSize":"medium"} -->
+<h2 class="wp-block-heading has-heading-color has-text-color has-medium-font-size">/month</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
 
 <!-- wp:paragraph {"textColor":"text"} -->
 <p class="has-text-color">Get started with basic features and kickstart your journey</p>
@@ -184,6 +200,4 @@
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
-<!-- /wp:group --></div></div>
-<!-- /wp:cover --></div>
 <!-- /wp:group -->

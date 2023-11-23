@@ -1,5 +1,86 @@
 
+img , a{
+    transition: all .4s ease;
+}
+
+a:hover{
+    cursor:pointer;
+}
 .my--120 {
     margin-bottom: -120px!important;
     margin-top: -120px!important;
+}
+
+
+.bg-shadow{
+    transition: all .4s ease;
+    box-shadow: 0px 1px 2px 0px rgba(0, 1, 35, 0.04);
+
+}
+.bg-shadow:hover{
+    box-shadow: 0px 16px 30px 0px rgba(0, 1, 35, 0.04);
+}
+
+/*  List STyle hide */
+
+.is-style-list-style-hide li{
+    list-style: none;
+}
+
+
+/*  Team style  */
+
+.flexia_team_hover,
+.flexia_team_hover.wp-block-cover .wp-block-cover__background{
+    transition: all .4s ease;
+}
+
+.flexia_team_hover .wp-block-social-links {
+    opacity: 0;
+    transition: all .4s ease;
+    margin-bottom: -150px;
+}
+.flexia_team_hover:hover .wp-block-social-links {
+    opacity: 1;
+    margin-bottom: 0px;
+}
+
+    
+.flexia_team_hover:hover .wp-block-cover__background{
+    opacity: 1!important;
+}
+
+.flexia_team_hover:hover .wp-block-cover__image-background {
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+
+/*  Banner stacked image  */
+
+.flexia-group-squeeze.wp-block-group > .wp-block-group {
+    margin-left: -15px!important;
+}
+
+
+/*  POst Author Image rounded */
+
+.is-style-author-rounded {
+    align-items: center;
+}
+
+.is-style-author-rounded img {
+    border-radius: 100%;
+}
+ 
+
+/*  Group Hover Shadow */
+
+.wp-block-group.is-style-hover-shadow{
+    transition: all .4s ease;
+}
+
+.wp-block-group.is-style-hover-shadow:hover{
+    box-shadow: 0px 16px 29px 0px rgba(0, 1, 35, 0.08);
 }
