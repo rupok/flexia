@@ -5,9 +5,12 @@
  * Categories: hidden
  * Inserter: no
  */
+
+/** <?php echo esc_url( get_theme_file_uri("/assets/images/team/team-1.jpg") );?>  */
 ?>
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"0","right":"0"}}},"backgroundColor":"background","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-background-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:0;padding-bottom:var(--wp--preset--spacing--60);padding-left:0"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"constrained"}} -->
+
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"backgroundColor":"background","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"align":"center","style":{"typography":{"letterSpacing":"4px","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"small"} -->
 <p class="has-text-align-center has-primary-color has-text-color has-link-color has-small-font-size" style="letter-spacing:4px;text-transform:uppercase">Team</p>
 <!-- /wp:paragraph -->
@@ -26,8 +29,8 @@
 <div class="wp-block-column"><!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/11/team-1.jpg","id":539,"dimRatio":0,"minHeight":283,"minHeightUnit":"px","gradient":"priamry-trans","contentPosition":"bottom center","isDark":false,"style":{"border":{"radius":"4px"}},"className":"flexia_team_hover","layout":{"type":"constrained"}} -->
-<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center flexia_team_hover" style="border-radius:4px;min-height:283px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim has-background-gradient has-priamry-trans-gradient-background"></span><img class="wp-block-cover__image-background wp-image-539" alt="" src="http://flexia-final.local/wp-content/uploads/2023/11/team-1.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+<div class="wp-block-group"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/11/team-1.jpg","id":539,"dimRatio":0,"minHeight":283,"minHeightUnit":"px","gradient":"primary-trans","contentPosition":"bottom center","isDark":false,"style":{"border":{"radius":"4px"}},"className":"is-style-flexia-team","layout":{"type":"constrained"}} -->
+<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center is-style-flexia-team" style="border-radius:4px;min-height:283px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim has-background-gradient has-primary-trans-gradient-background"></span><img class="wp-block-cover__image-background wp-image-539" alt="" src="http://flexia-final.local/wp-content/uploads/2023/11/team-1.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"></p>
 <!-- /wp:paragraph -->
 
@@ -54,8 +57,8 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/11/team-2.jpg","id":553,"dimRatio":0,"minHeight":283,"minHeightUnit":"px","gradient":"priamry-trans","contentPosition":"bottom center","isDark":false,"style":{"border":{"radius":"4px"}},"className":"flexia_team_hover","layout":{"type":"constrained"}} -->
-<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center flexia_team_hover" style="border-radius:4px;min-height:283px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim has-background-gradient has-priamry-trans-gradient-background"></span><img class="wp-block-cover__image-background wp-image-553" alt="" src="http://flexia-final.local/wp-content/uploads/2023/11/team-2.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+<div class="wp-block-group"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/11/team-2.jpg","id":553,"dimRatio":0,"minHeight":283,"minHeightUnit":"px","gradient":"primary-trans","contentPosition":"bottom center","isDark":false,"style":{"border":{"radius":"4px"}},"className":"is-style-flexia-team","layout":{"type":"constrained"}} -->
+<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center is-style-flexia-team" style="border-radius:4px;min-height:283px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim has-background-gradient has-primary-trans-gradient-background"></span><img class="wp-block-cover__image-background wp-image-553" alt="" src="http://flexia-final.local/wp-content/uploads/2023/11/team-2.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"></p>
 <!-- /wp:paragraph -->
 
@@ -86,8 +89,8 @@
 <div class="wp-block-column"><!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/11/team-4.png","id":556,"dimRatio":0,"minHeight":283,"minHeightUnit":"px","gradient":"priamry-trans","contentPosition":"bottom center","style":{"border":{"radius":"4px"}},"className":"flexia_team_hover","layout":{"type":"constrained"}} -->
-<div class="wp-block-cover has-custom-content-position is-position-bottom-center flexia_team_hover" style="border-radius:4px;min-height:283px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim has-background-gradient has-priamry-trans-gradient-background"></span><img class="wp-block-cover__image-background wp-image-556" alt="" src="http://flexia-final.local/wp-content/uploads/2023/11/team-4.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+<div class="wp-block-group"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/11/team-4.png","id":556,"dimRatio":0,"minHeight":283,"minHeightUnit":"px","gradient":"primary-trans","contentPosition":"bottom center","style":{"border":{"radius":"4px"}},"className":"is-style-flexia-team","layout":{"type":"constrained"}} -->
+<div class="wp-block-cover has-custom-content-position is-position-bottom-center is-style-flexia-team" style="border-radius:4px;min-height:283px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim has-background-gradient has-primary-trans-gradient-background"></span><img class="wp-block-cover__image-background wp-image-556" alt="" src="http://flexia-final.local/wp-content/uploads/2023/11/team-4.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"></p>
 <!-- /wp:paragraph -->
 
@@ -114,8 +117,8 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/11/team-5.jpg","id":557,"dimRatio":0,"minHeight":283,"minHeightUnit":"px","gradient":"priamry-trans","contentPosition":"bottom center","isDark":false,"style":{"border":{"radius":"4px"}},"className":"flexia_team_hover","layout":{"type":"constrained"}} -->
-<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center flexia_team_hover" style="border-radius:4px;min-height:283px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim has-background-gradient has-priamry-trans-gradient-background"></span><img class="wp-block-cover__image-background wp-image-557" alt="" src="http://flexia-final.local/wp-content/uploads/2023/11/team-5.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+<div class="wp-block-group"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/11/team-5.jpg","id":557,"dimRatio":0,"minHeight":283,"minHeightUnit":"px","gradient":"primary-trans","contentPosition":"bottom center","isDark":false,"style":{"border":{"radius":"4px"}},"className":"is-style-flexia-team","layout":{"type":"constrained"}} -->
+<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center is-style-flexia-team" style="border-radius:4px;min-height:283px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim has-background-gradient has-primary-trans-gradient-background"></span><img class="wp-block-cover__image-background wp-image-557" alt="" src="http://flexia-final.local/wp-content/uploads/2023/11/team-5.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"></p>
 <!-- /wp:paragraph -->
 
@@ -148,8 +151,8 @@
 <div class="wp-block-column"><!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/11/team-8.jpg","id":563,"dimRatio":0,"minHeight":283,"minHeightUnit":"px","gradient":"priamry-trans","contentPosition":"bottom center","isDark":false,"style":{"border":{"radius":"4px"}},"className":"flexia_team_hover","layout":{"type":"constrained"}} -->
-<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center flexia_team_hover" style="border-radius:4px;min-height:283px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim has-background-gradient has-priamry-trans-gradient-background"></span><img class="wp-block-cover__image-background wp-image-563" alt="" src="http://flexia-final.local/wp-content/uploads/2023/11/team-8.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+<div class="wp-block-group"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/11/team-8.jpg","id":563,"dimRatio":0,"minHeight":283,"minHeightUnit":"px","gradient":"primary-trans","contentPosition":"bottom center","isDark":false,"style":{"border":{"radius":"4px"}},"className":"is-style-flexia-team","layout":{"type":"constrained"}} -->
+<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center is-style-flexia-team" style="border-radius:4px;min-height:283px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim has-background-gradient has-primary-trans-gradient-background"></span><img class="wp-block-cover__image-background wp-image-563" alt="" src="http://flexia-final.local/wp-content/uploads/2023/11/team-8.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"></p>
 <!-- /wp:paragraph -->
 
@@ -176,8 +179,8 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/11/team-9.jpg","id":564,"dimRatio":0,"minHeight":283,"minHeightUnit":"px","gradient":"priamry-trans","contentPosition":"bottom center","isDark":false,"style":{"border":{"radius":"4px"}},"className":"flexia_team_hover","layout":{"type":"constrained"}} -->
-<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center flexia_team_hover" style="border-radius:4px;min-height:283px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim has-background-gradient has-priamry-trans-gradient-background"></span><img class="wp-block-cover__image-background wp-image-564" alt="" src="http://flexia-final.local/wp-content/uploads/2023/11/team-9.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+<div class="wp-block-group"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/11/team-9.jpg","id":564,"dimRatio":0,"minHeight":283,"minHeightUnit":"px","gradient":"primary-trans","contentPosition":"bottom center","isDark":false,"style":{"border":{"radius":"4px"}},"className":"is-style-flexia-team","layout":{"type":"constrained"}} -->
+<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center is-style-flexia-team" style="border-radius:4px;min-height:283px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim has-background-gradient has-primary-trans-gradient-background"></span><img class="wp-block-cover__image-background wp-image-564" alt="" src="http://flexia-final.local/wp-content/uploads/2023/11/team-9.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"></p>
 <!-- /wp:paragraph -->
 
@@ -208,8 +211,8 @@
 <div class="wp-block-column"><!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/11/team-7.jpg","id":562,"dimRatio":0,"minHeight":283,"minHeightUnit":"px","gradient":"priamry-trans","contentPosition":"bottom center","isDark":false,"style":{"border":{"radius":"4px"}},"className":"flexia_team_hover","layout":{"type":"constrained"}} -->
-<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center flexia_team_hover" style="border-radius:4px;min-height:283px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim has-background-gradient has-priamry-trans-gradient-background"></span><img class="wp-block-cover__image-background wp-image-562" alt="" src="http://flexia-final.local/wp-content/uploads/2023/11/team-7.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+<div class="wp-block-group"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/11/team-7.jpg","id":562,"dimRatio":0,"minHeight":283,"minHeightUnit":"px","gradient":"primary-trans","contentPosition":"bottom center","isDark":false,"style":{"border":{"radius":"4px"}},"className":"is-style-flexia-team","layout":{"type":"constrained"}} -->
+<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center is-style-flexia-team" style="border-radius:4px;min-height:283px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim has-background-gradient has-primary-trans-gradient-background"></span><img class="wp-block-cover__image-background wp-image-562" alt="" src="http://flexia-final.local/wp-content/uploads/2023/11/team-7.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"></p>
 <!-- /wp:paragraph -->
 
@@ -236,8 +239,8 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/11/team-4.png","id":556,"dimRatio":0,"minHeight":283,"minHeightUnit":"px","gradient":"priamry-trans","contentPosition":"bottom center","style":{"border":{"radius":"4px"}},"className":"flexia_team_hover","layout":{"type":"constrained"}} -->
-<div class="wp-block-cover has-custom-content-position is-position-bottom-center flexia_team_hover" style="border-radius:4px;min-height:283px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim has-background-gradient has-priamry-trans-gradient-background"></span><img class="wp-block-cover__image-background wp-image-556" alt="" src="http://flexia-final.local/wp-content/uploads/2023/11/team-4.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+<div class="wp-block-group"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/11/team-4.png","id":556,"dimRatio":0,"minHeight":283,"minHeightUnit":"px","gradient":"primary-trans","contentPosition":"bottom center","style":{"border":{"radius":"4px"}},"className":"is-style-flexia-team","layout":{"type":"constrained"}} -->
+<div class="wp-block-cover has-custom-content-position is-position-bottom-center is-style-flexia-team" style="border-radius:4px;min-height:283px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim has-background-gradient has-primary-trans-gradient-background"></span><img class="wp-block-cover__image-background wp-image-556" alt="" src="http://flexia-final.local/wp-content/uploads/2023/11/team-4.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"></p>
 <!-- /wp:paragraph -->
 

@@ -27,20 +27,22 @@ a:hover{
     cursor:pointer;
 }
 
-.is-style-hover-border{
+
+/*  Group Hover box */
+.is-style-flexia-hover-border{
     border-bottom: 2px solid transparent;
     transition: all .4s ease;
 }
-.is-style-hover-border:hover{
+.is-style-flexia-hover-border:hover{
     border-bottom-color: var(--wp--preset--color--primary)!important;
     box-shadow: 0px 27px 19px 0px rgba(0, 1, 35, 0.08);
 }
-.is-style-hover-border img{
+.is-style-flexia-hover-border img{
     transition: all .4s ease;
 }
 
-.is-style-hover-border:hover img{
-    filter: var(--wp--preset--duotone--dark-primary);
+.is-style-flexia-hover-border:hover img{
+    filter: var(--wp--preset--duotone--primary);
 }
 
 
@@ -49,13 +51,11 @@ a:hover{
     margin-top: -120px!important;
 }
 
-.bg-shadow-light{
-    box-shadow: 0px 0px 10px rgba(0, 1, 35, 0.02);
-}
+
 
 /*  Solid border Button */
 
-.wp-block-button.is-style-solid-border{
+.wp-block-button.is-style-flexia-btn-solid-border{
     padding: 0px;
     border: 0px;
     color: var(--wp--preset--color--text);
@@ -67,22 +67,22 @@ a:hover{
 }
 
 /*  Hover Box shadow */
-.hover-box-shadow{
+.flexia-hover-box-shadow{
     transition: all .4s ease;
 }
-.hover-box-shadow:hover{
+.flexia-hover-box-shadow:hover{
     box-shadow: 0px 33px 75px 0px rgba(0, 1, 35, 0.08);
     background: var(--wp--preset--color--background)!important;
 }
 
-.wp-block-group.hover-box-shadow:hover{
+.wp-block-group.flexia-hover-box-shadow:hover{
     background: var(--wp--preset--color--background)!important;
 }
 
-.wp-block-group.hover-box-shadow .wp-element-button{
+.wp-block-group.flexia-hover-box-shadow .wp-element-button{
     transition: all .4s ease;
 }
-.wp-block-group.hover-box-shadow:hover .wp-element-button{
+.wp-block-group.flexia-hover-box-shadow:hover .wp-element-button{
     background: var(--wp--preset--color--primary)!important;
 }
 
@@ -91,32 +91,31 @@ a:hover{
 .wp-block-cover.is-style-hover-content{
     position: relative;
     transition:all .4s ease ;
-
 }
 
 /*  Team style  */
 
-.flexia_team_hover,
-.flexia_team_hover.wp-block-cover .wp-block-cover__background{
+.is-style-flexia-team,
+.is-style-flexia-team.wp-block-cover .wp-block-cover__background{
     transition: all .4s ease;
 }
 
-.flexia_team_hover .wp-block-social-links {
+.is-style-flexia-team .wp-block-social-links {
     opacity: 0;
     transition: all .4s ease;
     margin-bottom: -150px;
 }
-.flexia_team_hover:hover .wp-block-social-links {
+.is-style-flexia-team:hover .wp-block-social-links {
     opacity: 1;
     margin-bottom: 0px;
 }
 
     
-.flexia_team_hover:hover .wp-block-cover__background{
+.is-style-flexia-team:hover .wp-block-cover__background{
     opacity: 1!important;
 }
 
-.flexia_team_hover:hover .wp-block-cover__image-background {
+.is-style-flexia-team:hover .wp-block-cover__image-background {
     transform: scale(1.1);
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
@@ -129,44 +128,50 @@ a:hover{
 }
 
 
-.bg-shadow{
-    transition: all .4s ease;
-    box-shadow: 0px 1px 2px 0px rgba(0, 1, 35, 0.04);
-}
-.bg-shadow:hover{
-    box-shadow: 0px 16px 30px 0px rgba(0, 1, 35, 0.04);
-}
-
 /*  List style hide  */
 
-.is-style-list-style-hide li{
+.is-style-flexia-list-style-hide li{
     list-style: none;
 }
 
-.hover_img_zoom{
+.flexia-hover_img_zoom{
     transition: all .4s ease;
 }
 
-.hover_img_zoom:hover{
+.flexia-hover_img_zoom:hover{
     transform: scale(.95);
 }
 
 /*  POst Author Image rounded */
 
-.is-style-author-rounded {
+.is-style-flexia-author-rounded {
     align-items: center;
 }
 
-.is-style-author-rounded img {
+.is-style-flexia-author-rounded img {
     border-radius: 100%;
 }
 
 /*  Group Hover Shadow */
 
-.wp-block-group.is-style-hover-shadow{
+.wp-block-group.is-style-flexia-hover-shadow{
     transition: all .4s ease;
 }
 
-.wp-block-group.is-style-hover-shadow:hover{
+.wp-block-group.is-style-flexia-hover-shadow:hover{
     box-shadow: 0px 16px 29px 0px rgba(0, 1, 35, 0.08);
+    background: var(--wp--preset--color--white)!important;
+}
+.wp-block-group.is-style-flexia-hover-shadow:hover .wp-block-button__link{
+    background: var(--wp--preset--color--primary);
+}
+
+/*  testimonial bg shadow */
+
+.is-style-flexia-sm-bg-shadow{
+    transition: all .4s ease;
+    box-shadow: 0px 1px 2px 0px rgba(0, 1, 35, 0.04);
+}
+.is-style-flexia-sm-bg-shadow:hover{
+    box-shadow: 0px 16px 30px 0px rgba(0, 1, 35, 0.04);
 }

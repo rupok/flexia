@@ -62,7 +62,7 @@ if( !function_exists( 'flexia_register' ) ) :
             register_block_style(
                 'core/group',
                 [
-                    'name'         => 'hover-border',
+                    'name'         => 'flexia-hover-border',
                     'label'        => __( 'Hover Border', 'flexia' ),
                     'is_default'   => false,
                 ]
@@ -72,16 +72,37 @@ if( !function_exists( 'flexia_register' ) ) :
             register_block_style(
                 'core/group',
                 [
-                    'name'         => 'hover-shadow',
+                    'name'         => 'flexia-hover-shadow',
                     'label'        => __( 'Hover Shadow', 'flexia' ),
                     'is_default'   => false,
                 ]
                
             );
+
+
+            register_block_style(
+                'core/group',
+                [
+                    'name'         => 'flexia-sm-bg-shadow',
+                    'label'        => __( 'Small BG Shadow', 'flexia' ),
+                    'is_default'   => false,
+                ]
+               
+            );
+            register_block_style(
+                'core/cover',
+                [
+                    'name'         => 'flexia-team',
+                    'label'        => __( 'Image Hover', 'flexia' ),
+                    'is_default'   => false,
+                ]
+               
+            );
+
             register_block_style(
                 'core/button',
                 [
-                    'name'         => 'solid-border',
+                    'name'         => 'flexia-btn-solid-border',
                     'label'        => __( 'Solid  Border', 'flexia' ),
                     'is_default'   => false,
                 ]
@@ -90,7 +111,7 @@ if( !function_exists( 'flexia_register' ) ) :
             register_block_style(
                 'core/list',
                 [
-                    'name'         => 'list-style-hide',
+                    'name'         => 'flexia-list-style-hide',
                     'label'        => __( 'List Style Hide', 'flexia' ),
                     'is_default'   => false,
                 ]
@@ -99,7 +120,7 @@ if( !function_exists( 'flexia_register' ) ) :
             register_block_style(
                 'core/post-author',
                 [
-                    'name'         => 'author-rounded',
+                    'name'         => 'flexia-author-rounded',
                     'label'        => __( 'Image Rounded', 'flexia' ),
                     'is_default'   => false,
                 ]

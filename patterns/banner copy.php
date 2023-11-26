@@ -16,9 +16,10 @@
 
 ?>
 
+
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"<?php echo esc_url( $images[0] ); ?>","id":181,"dimRatio":0,"overlayColor":"secondary","contentPosition":"center center","isDark":false,"align":"wide","style":{"spacing":{"padding":{"right":"0px","left":"0px","top":"110px","bottom":"110px"}},"border":{"radius":"8px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover alignwide is-light" style="border-radius:8px;padding-top:110px;padding-right:0px;padding-bottom:110px;padding-left:0px"><span aria-hidden="true" class="wp-block-cover__background has-secondary-background-color has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-181" alt="" src="http://flexia-final.local/wp-content/themes/flexia/assets/images/banner-bg-1.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:columns {"verticalAlignment":"center","align":"wide"} -->
+<div class="wp-block-group"><!-- wp:cover {"url":" <?php echo esc_url( $images[0] ); ?>","id":181,"dimRatio":0,"overlayColor":"secondary","contentPosition":"center center","isDark":false,"align":"wide","style":{"spacing":{"padding":{"right":"0px","left":"0px","top":"110px","bottom":"110px"}},"border":{"radius":"8px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-cover alignwide is-light" style="border-radius:8px;padding-top:110px;padding-right:0px;padding-bottom:110px;padding-left:0px"><span aria-hidden="true" class="wp-block-cover__background has-secondary-background-color has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-181" alt="" src="<?php echo esc_url( $images[0] ); ?>" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:columns {"verticalAlignment":"center","align":"wide"} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"55%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%"><!-- wp:heading {"style":{"typography":{"textTransform":"capitalize"}},"fontSize":"huge"} -->
 <h2 class="wp-block-heading has-huge-font-size" style="text-transform:capitalize">Creative solutions to improve your business</h2>
@@ -26,8 +27,8 @@
 
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"0","left":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group" style="padding-right:0;padding-left:0"><!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary","textColor":"background","style":{"typography":{"textTransform":"capitalize"},"elements":{"link":{"color":{"text":"var:preset|color|background"}}}}} -->
-<div class="wp-block-button" style="text-transform:capitalize"><a class="wp-block-button__link has-background-color has-primary-background-color has-text-color has-background has-link-color wp-element-button">Get started</a></div>
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary","style":{"typography":{"textTransform":"capitalize"}}} -->
+<div class="wp-block-button" style="text-transform:capitalize"><a class="wp-block-button__link has-primary-background-color has-background wp-element-button">Get started</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 

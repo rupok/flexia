@@ -11,6 +11,10 @@
 <h2 class="wp-block-heading has-text-align-center has-large-plus-font-size" style="text-transform:capitalize">Frequently Asked Questions</h2>
 <!-- /wp:heading -->
 
+<!-- wp:spacer {"height":"20px"} -->
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
 <!-- wp:spacer {"height":"40px"} -->
 <div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
@@ -25,13 +29,13 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"backgroundColor":"outline","className":"is-style-swt-separator-wide-thin-line is-style-wide"} -->
-<hr class="wp-block-separator has-text-color has-outline-color has-alpha-channel-opacity has-outline-background-color has-background is-style-swt-separator-wide-thin-line is-style-wide" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)"/>
+<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}},"color":{"background":"#cad5e3"}},"className":"is-style-swt-separator-wide-thin-line is-style-wide"} -->
+<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background is-style-swt-separator-wide-thin-line is-style-wide" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30);background-color:#cad5e3;color:#cad5e3"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":4,"style":{"typography":{"textTransform":"capitalize"}},"fontSize":"medium-plus"} -->
-<h4 class="wp-block-heading has-medium-plus-font-size" style="text-transform:capitalize">What is the difference between "Annual" and "Lifetime"?</h4>
+<div class="wp-block-group"><!-- wp:heading {"level":4,"style":{"typography":{"textTransform":"capitalize"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}},"textColor":"text","fontSize":"medium-plus"} -->
+<h4 class="wp-block-heading has-text-color has-link-color has-medium-plus-font-size" style="text-transform:capitalize">What is the difference between "Annual" and "Lifetime"?</h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -39,8 +43,8 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"backgroundColor":"outline","className":"is-style-swt-separator-wide-thin-line is-style-wide"} -->
-<hr class="wp-block-separator has-text-color has-outline-color has-alpha-channel-opacity has-outline-background-color has-background is-style-swt-separator-wide-thin-line is-style-wide" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)"/>
+<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}},"color":{"background":"#cad5e3"}},"className":"is-style-swt-separator-wide-thin-line is-style-wide"} -->
+<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background is-style-swt-separator-wide-thin-line is-style-wide" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30);background-color:#cad5e3;color:#cad5e3"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
@@ -53,8 +57,8 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"backgroundColor":"outline","className":"is-style-swt-separator-wide-thin-line is-style-wide"} -->
-<hr class="wp-block-separator has-text-color has-outline-color has-alpha-channel-opacity has-outline-background-color has-background is-style-swt-separator-wide-thin-line is-style-wide" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)"/>
+<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}},"color":{"background":"#cad5e3"}},"className":"is-style-swt-separator-wide-thin-line is-style-wide"} -->
+<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background is-style-swt-separator-wide-thin-line is-style-wide" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30);background-color:#cad5e3;color:#cad5e3"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
