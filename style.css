@@ -105,9 +105,18 @@ a:hover{
     transition: all .4s ease;
     margin-bottom: -150px;
 }
+
 .is-style-flexia-team:hover .wp-block-social-links {
     opacity: 1;
     margin-bottom: 0px;
+}
+
+.is-style-flexia-team:hover .wp-block-social-links a{
+    color: var(--wp--preset--color--white);
+}
+
+.is-style-flexia-team:hover .wp-block-social-links a:hover{
+    color: var(--wp--preset--color--primary);
 }
 
     
@@ -130,9 +139,20 @@ a:hover{
 
 /*  List style hide  */
 
-.is-style-flexia-list-style-hide li{
-    list-style: none;
+.is-style-flexia-list-style-hide{
+    padding-left: 10px;
 }
+
+.is-style-flexia-list-style-hide li{
+    list-style-type: "\f15e";
+    padding-inline-start:10px;
+}
+
+.is-style-flexia-list-style-hide li::marker{
+    font-family: "dashicons";
+}
+
+
 
 .flexia-hover_img_zoom{
     transition: all .4s ease;
@@ -160,10 +180,11 @@ a:hover{
 
 .wp-block-group.is-style-flexia-hover-shadow:hover{
     box-shadow: 0px 16px 29px 0px rgba(0, 1, 35, 0.08);
-    background: var(--wp--preset--color--white)!important;
+    background: var(--wp--preset--color--light-background-three)!important;
 }
 .wp-block-group.is-style-flexia-hover-shadow:hover .wp-block-button__link{
     background: var(--wp--preset--color--primary);
+    color: var(--wp--preset--color--white);
 }
 
 /*  testimonial bg shadow */
@@ -174,4 +195,27 @@ a:hover{
 }
 .is-style-flexia-sm-bg-shadow:hover{
     box-shadow: 0px 16px 30px 0px rgba(0, 1, 35, 0.04);
+}
+
+
+.margin--left{
+    margin-left: -100px!important;
+}
+
+.wp-block-social-link{
+    border-radius: 8px;
+}
+
+.wp-block-search__inside-wrapper{
+    margin-top: 0px!important;
+}
+
+.wp-block-search__button{
+    background: transparent;
+    color: var(--wp--preset--color--body);;
+}
+
+.wp-block-search__button:hover{
+    background: transparent;
+    color: var(--wp--preset--color--primary);;
 }

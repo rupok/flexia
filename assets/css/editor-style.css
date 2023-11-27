@@ -15,10 +15,18 @@ a:hover{
 
 /*  List STyle hide */
 
-.is-style-flexia-list-style-hide li{
-    list-style: none;
+.is-style-flexia-list-style-hide{
+    padding-left: 10px;
 }
 
+.is-style-flexia-list-style-hide li{
+    list-style-type: "\f15e";
+    padding-inline-start:10px;
+}
+
+.is-style-flexia-list-style-hide li::marker{
+    font-family: "dashicons";
+}
 
 /*  Team style  */
 
@@ -46,6 +54,15 @@ a:hover{
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
 }
+
+.is-style-flexia-team:hover .wp-block-social-links a{
+    color: var(--wp--preset--color--white);
+}
+
+.is-style-flexia-team:hover .wp-block-social-links a:hover{
+    color: var(--wp--preset--color--primary);
+}
+
 
 
 /*  Banner stacked image  */
@@ -108,3 +125,28 @@ a:hover{
 .is-style-flexia-hover-border:hover img{
     filter: var(--wp--preset--duotone--primary)!important;
 }
+
+
+
+.margin--left{
+    margin-left: -100px!important;
+}
+
+
+/*  Block search  */
+
+.wp-block-search__inside-wrapper{
+    margin-top: 0px!important;
+}
+
+.wp-block-search__button{
+    background: transparent;
+    color: var(--wp--preset--color--body);
+    padding-right:0px!important;
+}
+
+.wp-block-search__button:hover{
+    background: transparent;
+    color: var(--wp--preset--color--primary);;
+}
+

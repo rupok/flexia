@@ -6,19 +6,19 @@
  * Inserter: no
  */
 ?>
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"32px","bottom":"32px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-top:32px;padding-bottom:32px"><!-- wp:columns {"isStackedOnMobile":false,"align":"wide"} -->
-<div class="wp-block-columns alignwide is-not-stacked-on-mobile"><!-- wp:column -->
+<!-- wp:group {"style":{"spacing":{"padding":{"right":"0","left":"0","top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:columns {"isStackedOnMobile":false,"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small","left":"var:preset|spacing|x-small","right":"var:preset|spacing|x-small"}},"border":{"radius":"8px"}},"backgroundColor":"light-background-three"} -->
+<div class="wp-block-columns alignwide is-not-stacked-on-mobile has-light-background-three-background-color has-background" style="border-radius:8px;padding-top:var(--wp--preset--spacing--x-small);padding-right:var(--wp--preset--spacing--x-small);padding-bottom:var(--wp--preset--spacing--x-small);padding-left:var(--wp--preset--spacing--x-small)"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"id":610,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri("/assets/images/clients/Frame-30.png") ); ?>" alt="" class="wp-image-610"/></figure>
+<figure class="wp-block-image size-full"><img src="http://flexia-final.local/wp-content/uploads/2023/11/Frame-30.png" alt="" class="wp-image-610"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"id":611,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri("/assets/images/clients/Frame-31.png") ); ?>" alt="" class="wp-image-611"/></figure>
+<figure class="wp-block-image size-full"><img src="http://flexia-final.local/wp-content/uploads/2023/11/Frame-31.png" alt="" class="wp-image-611"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -28,13 +28,13 @@
 <div class="wp-block-column"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"id":612,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri("/assets/images/clients/Frame-32.png") ); ?>" alt="" class="wp-image-612"/></figure>
+<figure class="wp-block-image size-full"><img src="http://flexia-final.local/wp-content/uploads/2023/11/Frame-32.png" alt="" class="wp-image-612"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"id":613,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri("/assets/images/clients/Frame-33.png") ); ?>" alt="" class="wp-image-613"/></figure>
+<figure class="wp-block-image size-full"><img src="http://flexia-final.local/wp-content/uploads/2023/11/Frame-33.png" alt="" class="wp-image-613"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -44,13 +44,13 @@
 <div class="wp-block-column"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"id":614,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri("/assets/images/clients/Frame-34.png") ); ?>" alt="" class="wp-image-614"/></figure>
+<figure class="wp-block-image size-full"><img src="http://flexia-final.local/wp-content/uploads/2023/11/Frame-34.png" alt="" class="wp-image-614"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"id":615,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri("/assets/images/clients/Frame-35.png") ); ?>" alt="" class="wp-image-615"/></figure>
+<figure class="wp-block-image size-full"><img src="http://flexia-final.local/wp-content/uploads/2023/11/Frame-35.png" alt="" class="wp-image-615"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>

@@ -116,7 +116,7 @@ if( !function_exists( 'flexia_register' ) ) :
                     'is_default'   => false,
                 ]
             );
-           
+
             register_block_style(
                 'core/post-author',
                 [

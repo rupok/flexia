@@ -41,7 +41,3 @@
 <!-- /wp:post-template --></div>
 <!-- /wp:query --></div>
 <!-- /wp:group -->
-
-<!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|text"}}}},"textColor":"text"} -->
-<h2 class="wp-block-heading has-text-color has-link-color">Test</h2>
-<!-- /wp:heading -->
