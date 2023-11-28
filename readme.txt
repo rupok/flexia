@@ -256,3 +256,10 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
 License URL: https://scripts.sil.org/OFL 
 Source: https://fonts.barnbrook.net
 -- End of Sora Font credits --
+
+Inter Font
+Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter) 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
+License URL: http://scripts.sil.org/OFL 
+Source: https://rsms.me/
+-- End of Inter Font credits --

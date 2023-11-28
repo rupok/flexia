@@ -1,9 +1,8 @@
 <?php
 /**
  * Title: Testimonials
- * Slug: flexia/tesimonials
- * Categories: hidden
- * Inserter: no
+ * Slug: flexia-patterns/tesimonials
+ * Categories: flexia-patterns
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"secondary-bg","layout":{"type":"constrained"}} -->

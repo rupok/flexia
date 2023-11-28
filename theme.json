@@ -74,7 +74,6 @@
 					"name": "Green",
 					"slug": "green"
 				},
-				
 				{
 					"colors": [
 						"#202124",
@@ -91,33 +90,28 @@
 					"name": "Midnight Blue",
 					"slug": "midnight-blue"
 				}
-
 			],
 			"gradients": [
 				{
 					"slug": "primary",
 					"gradient": "linear-gradient(270deg, #0057FF -5%, #4F2CDD 100%)",
 					"name": "Primary"
-					
 				},
 				{
 					"slug": "secondary",
 					"gradient": "linear-gradient(270deg, #d9e0e2 -5%, #c4bfd9 100%)",
 					"name": "Secondary"
-					
 				},
 				{
 					"slug": "vibrant",
-					"gradient": "linear-gradient(270deg, #DEFFD2 0%, #41E5BE 100%)",
+					"gradient": "linear-gradient(270deg, #00EDD0 2%, #0057FF 99.96%), #D9D9D9",
 					"name": "Vibrant"
-					
 				},
 				{
 					"slug": "primary-trans",
 					"gradient": "linear-gradient(0deg, #001847 0%, rgba(0, 87, 255, 0.00) 102.42%)",
 					"name": "Primary Transparent"
 				}
-
 			],
 			"palette": [
 				{
@@ -147,6 +141,11 @@
 				},
 				{
 					"color": "#FFFFFF",
+					"name": "Button Text",
+					"slug": "button-text"
+				},
+				{
+					"color": "#FFFFFF",
 					"name": "Background",
 					"slug": "background"
 				},
@@ -165,7 +164,6 @@
 					"name": "Heading",
 					"slug": "heading-text"
 				},
-
 				{
 					"color": "#FCFEFF",
 					"name": "Light Background",
@@ -176,25 +174,16 @@
 					"name": "Light BG Two",
 					"slug": "light-background-two"
 				},
-				
 				{
 					"color": "#001132",
 					"name": "Dark Background Two",
 					"slug": "dark-background-two"
 				},
-				
-				{
-					"color": "#FFFFFF",
-					"name": "Button Text",
-					"slug": "button-text"
-				},
-				
 				{
 					"color": "#202124",
 					"name": "Dark Background",
 					"slug": "dark-background"
 				},
-				
 				{
 					"color": "#C6D0E0",
 					"name": "Text Alt",
@@ -205,10 +194,8 @@
 					"name": "Light BG Three",
 					"slug": "light-background-three"
 				}
-				
 			],
 			"text": true
-			
 		},
 		"layout": {
 			"contentSize": "768px",
@@ -327,22 +314,6 @@
 					"slug": "dm-sans"
 				},
 				{
-					"fontFace": [
-						{
-							"fontFamily": "Inter",
-							"fontStretch": "normal",
-							"fontStyle": "normal",
-							"fontWeight": "200 900",
-							"src": [
-								"file:./assets/fonts/inter/Inter-VariableFont_slnt,wght.ttf"
-							]
-						}
-					],
-					"fontFamily": "\"Inter\", sans-serif",
-					"name": "Inter",
-					"slug": "inter"
-				},
-				{
 					"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
 					"name": "System Font",
 					"slug": "system-font"
@@ -376,6 +347,44 @@
 					],
 					"fontFamily": "Sora",
 					"slug": "sora"
+				},
+				{
+					"fontFamily": "Inter",
+					"slug": "inter",
+					"fontFace": [
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/inter_normal_400.ttf"
+							]
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": [
+								"file:./assets/fonts/inter_normal_500.ttf"
+							]
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"src": [
+								"file:./assets/fonts/inter_normal_600.ttf"
+							]
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/inter_normal_700.ttf"
+							]
+						}
+					]
 				}
 			],
 			"fontSizes": [
@@ -391,7 +400,7 @@
 				{
 					"fluid": {
 						"max": "1.125rem",
-						"min": "1rem"
+						"min": "0.875rem"
 					},
 					"name": "Medium",
 					"size": "1.125rem",
@@ -409,7 +418,7 @@
 				{
 					"fluid": {
 						"max": "1.5rem",
-						"min": "1.25rem"
+						"min": "1.125rem"
 					},
 					"name": "Medium Plus,24px",
 					"size": "1.5rem",
@@ -418,7 +427,7 @@
 				{
 					"fluid": {
 						"max": "1.875rem",
-						"min": "1.75rem"
+						"min": "1.5rem"
 					},
 					"name": "Large",
 					"size": "1.75rem",
@@ -616,24 +625,6 @@
 					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
-			
-			"core/social-links": {
-				"elements": {
-					"link": {
-						":hover": {
-							"color": {
-								"text": "var(--wp--preset--color--white)!important",
-								"background": "var(--wp--preset--color--primary)!important"
-							},
-							"border": {
-								"radius": "8px"
-							}
-						}
-						
-					}
-				}
-			},
-
 			"core/post-content": {
 				"elements": {
 					"link": {
@@ -643,7 +634,6 @@
 					}
 				}
 			},
-
 			"core/post-date": {
 				"elements": {
 					"link": {
@@ -803,7 +793,6 @@
 				}
 			},
 			"core/separator": {
-				"css": " &:not(.is-style-wide):not(.is-style-dots):not(.alignwide):not(.alignfull){width: 100px}",
 				"color": {
 					"background": "#DFEDF0"
 				}
@@ -863,7 +852,7 @@
 				":hover": {
 					"color": {
 						"background": "var(--wp--preset--color--primary)",
-						"text": "var(--wp--preset--color--secondary)"
+						"text": "var(--wp--preset--color--button-text)"
 					}
 				},
 				":visited": {
@@ -876,7 +865,7 @@
 				},
 				"color": {
 					"background": "var(--wp--preset--color--button-background)",
-					"text": "var(--wp--preset--color--white)"
+					"text": "var(--wp--preset--color--button-text)"
 				}
 			},
 			"h1": {
@@ -950,8 +939,7 @@
 					"text": "var(--wp--preset--color--link-text)"
 				},
 				"typography": {
-					"textDecoration": "none",
-					"textTransform":"capitalize"
+					"textDecoration": "none"
 				}
 			}
 		},

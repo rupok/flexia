@@ -47,6 +47,23 @@ endif;
 
 add_action( 'wp_enqueue_scripts', 'flexia_styles' );
 
+ /**
+ * Register block categories
+ */
+register_block_pattern_category(
+    'flexia-patterns',
+    [ 
+        'label' => __( 'Flexia Patterns', 'Flexia' )
+    ]
+);
+
+register_block_pattern_category(
+    'flexia-pages',
+    [ 
+        'label' => __( 'Flexia Pages', 'Flexia' )
+    ]
+);
+
 /**
  * Register block categories
  */
@@ -102,18 +119,67 @@ if( !function_exists( 'flexia_register' ) ) :
             register_block_style(
                 'core/button',
                 [
-                    'name'         => 'flexia-btn-solid-border',
-                    'label'        => __( 'Solid  Border', 'flexia' ),
+                    'name'         => 'flexia-btn-inverse',
+                    'label'        => __( 'Inverse', 'flexia' ),
                     'is_default'   => false,
+                    'inline_style' => '
+                    .is-style-flexia-btn-inverse .wp-block-button__link{
+                           background:var(--wp--preset--color--white);
+                           color:var(--wp--preset--color--black);
+                           border-radius:inherit;
+                        }
+
+                        .is-style-flexia-btn-inverse  .wp-block-button__link:hover{
+                            background:var(--wp--preset--color--primary);
+                            color:var(--wp--preset--color--white);
+                            border-radius:inherit;
+                         }
+                    ',
+                    
+                ]
+            );
+
+            register_block_style(
+                'core/button',
+                [
+                    'name'         => 'flexia-btn-theme',
+                    'label'        => __( 'Primary', 'flexia' ),
+                    'is_default'   => false,
+                    'inline_style' => '
+                        .is-style-flexia-btn-theme  .wp-block-button__link{
+                            background:var(--wp--preset--color--primary);
+                            color:var(--wp--preset--color--white);
+                            border-radius:inherit;
+                         }
+                         .is-style-flexia-btn-theme .wp-block-button__link:hover{
+                            background:var(--wp--preset--color--tertiary);
+                            color:var(--wp--preset--color--black);
+                            border-radius:inherit;
+                         }
+ 
+                    ',
+                    
                 ]
             );
 
             register_block_style(
                 'core/list',
                 [
-                    'name'         => 'flexia-list-style-hide',
-                    'label'        => __( 'List Style Hide', 'flexia' ),
+                    'name'         => 'flexia-checkmark-list',
+                    'label'        => __( 'Checkmark', 'flexia' ),
                     'is_default'   => false,
+                    'inline_style' => '
+                        ul.is-style-flexia-checkmark-list {
+                            list-style-type: "\f15e";
+                            padding-left:10px;
+                        }
+                        ul.is-style-flexia-checkmark-list li::marker{
+                            font-family: "dashicons";
+                        }
+
+                        ul.is-style-flexia-checkmark-list li {
+                            padding-inline-start: 1ch;
+                        }',
                 ]
             );
 
@@ -125,8 +191,45 @@ if( !function_exists( 'flexia_register' ) ) :
                     'is_default'   => false,
                 ]
             );
-           
+
+            register_block_style(
+                'core/separator',
+                [
+                    'name'         =>  'flexia-separator-wide-thin-line',
+                    'label'        => __( 'Wide Thin Line', 'flexia' ),
+                    'inline_style' => '
+                    .is-style-flexia-separator-wide-thin-line.wp-block-separator:not(.is-style-wide):not(.is-style-dots){
+                            max-width: var(--wp--style--global--content-size);
+                            width: 100%;
+                            border-width: 1px;
+                        }
+                    ',
+                ]
+            );
+            register_block_style(
+                'core/social-links',
+                [
+                    'name'         =>  'flexia-social-rounded',
+                    'label'        => __( 'Rounded Icon', 'flexia' ),
+                    'inline_style' => '
+                    .is-style-flexia-social-rounded .wp-social-link{ 
+                        border-radius: 8px; 
+                    }
+                        .is-style-flexia-social-rounded .wp-social-link a:hover{
+                            background:var(--wp--preset--color--primary)!important;
+                            color:var(--wp--preset--color--white)!important;
+                            border-radius: 8px; 
+                        } 
+                    ',
+                ]
+            );
+            
+        
         }
     }
     add_action( 'init', 'flexia_register' );
 endif;
+
+add_action('enqueue_block_assets', function (): void {
+    wp_enqueue_style('dashicons');
+});

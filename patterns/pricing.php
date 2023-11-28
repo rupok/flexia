@@ -1,9 +1,8 @@
 <?php
 /**
  * Title: Pricing
- * Slug: flexia/pricing
- * Categories: hidden
- * Inserter: no
+ * Slug: flexia-patterns/pricing
+ * Categories: flexia-patterns
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
@@ -44,13 +43,13 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"className":"is-style-wide"} -->
-<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide"/>
+<!-- wp:separator {"className":"is-style-flexia-separator-wide-thin-line"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-flexia-separator-wide-thin-line"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:list {"style":{"typography":{"lineHeight":"2.8"}},"className":"is-style-checkmark-list is-style-flexia-list-style-hide","fontSize":"small"} -->
-<ul style="line-height:2.8" class="is-style-checkmark-list is-style-flexia-list-style-hide has-small-font-size"><!-- wp:list-item -->
+<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:list {"style":{"typography":{"lineHeight":"2.8"}},"className":"is-style-checkmark-list is-style-flexia-list-style-hide is-style-flexia-checkmark-list","fontSize":"small"} -->
+<ul style="line-height:2.8" class="is-style-checkmark-list is-style-flexia-list-style-hide is-style-flexia-checkmark-list has-small-font-size"><!-- wp:list-item -->
 <li>Customization Options</li>
 <!-- /wp:list-item -->
 
@@ -76,8 +75,8 @@
 <!-- /wp:list -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"Heading","textColor":"background","width":100,"style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}}} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-background-color has-heading-background-color has-text-color has-background has-link-color wp-element-button">Get Started</a></div>
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"Heading","width":100} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-heading-background-color has-background wp-element-button">Get Started</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -120,13 +119,13 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"className":"is-style-wide"} -->
-<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide"/>
+<!-- wp:separator {"className":"is-style-flexia-separator-wide-thin-line"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-flexia-separator-wide-thin-line"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:list {"style":{"typography":{"lineHeight":"2.8"}},"className":"is-style-checkmark-list is-style-flexia-list-style-hide","fontSize":"small"} -->
-<ul style="line-height:2.8" class="is-style-checkmark-list is-style-flexia-list-style-hide has-small-font-size"><!-- wp:list-item -->
+<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:list {"style":{"typography":{"lineHeight":"2.8"}},"className":"is-style-checkmark-list is-style-flexia-list-style-hide is-style-flexia-checkmark-list","fontSize":"small"} -->
+<ul style="line-height:2.8" class="is-style-checkmark-list is-style-flexia-list-style-hide is-style-flexia-checkmark-list has-small-font-size"><!-- wp:list-item -->
 <li>Customization Options</li>
 <!-- /wp:list-item -->
 
@@ -152,8 +151,8 @@
 <!-- /wp:list -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"textColor":"background","width":100,"style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}}} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-background-color has-text-color has-link-color wp-element-button">Get Started</a></div>
+<div class="wp-block-buttons"><!-- wp:button {"width":100} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button">Get Started</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -182,13 +181,13 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"className":"is-style-wide"} -->
-<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide"/>
+<!-- wp:separator {"className":"is-style-flexia-separator-wide-thin-line"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-flexia-separator-wide-thin-line"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:list {"style":{"typography":{"lineHeight":"2.8"}},"className":"is-style-checkmark-list is-style-flexia-list-style-hide","fontSize":"small"} -->
-<ul style="line-height:2.8" class="is-style-checkmark-list is-style-flexia-list-style-hide has-small-font-size"><!-- wp:list-item -->
+<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:list {"style":{"typography":{"lineHeight":"2.8"}},"className":"is-style-checkmark-list is-style-flexia-list-style-hide is-style-flexia-checkmark-list","fontSize":"small"} -->
+<ul style="line-height:2.8" class="is-style-checkmark-list is-style-flexia-list-style-hide is-style-flexia-checkmark-list has-small-font-size"><!-- wp:list-item -->
 <li>Customization Options</li>
 <!-- /wp:list-item -->
 
@@ -214,8 +213,8 @@
 <!-- /wp:list -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"Heading","textColor":"background","width":100,"style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}}} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-background-color has-heading-background-color has-text-color has-background has-link-color wp-element-button">Get Started</a></div>
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"Heading","width":100} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-heading-background-color has-background wp-element-button">Get Started</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

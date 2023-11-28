@@ -1,9 +1,8 @@
 <?php
 /**
  * Title: Team
- * Slug: flexia/team
- * Categories: hidden
- * Inserter: no
+ * Slug: flexia-patterns/team
+ * Categories: flexia-patterns
  */
 
 /** <?php echo esc_url( get_theme_file_uri("/assets/images/team/team-1.jpg") );?>  */

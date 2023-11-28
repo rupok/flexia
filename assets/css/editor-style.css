@@ -13,21 +13,6 @@ a:hover{
 
 
 
-/*  List STyle hide */
-
-.is-style-flexia-list-style-hide{
-    padding-left: 10px;
-}
-
-.is-style-flexia-list-style-hide li{
-    list-style-type: "\f15e";
-    padding-inline-start:10px;
-}
-
-.is-style-flexia-list-style-hide li::marker{
-    font-family: "dashicons";
-}
-
 /*  Team style  */
 
 .is-style-flexia-team,
@@ -139,14 +124,44 @@ a:hover{
     margin-top: 0px!important;
 }
 
-.wp-block-search__button{
-    background: transparent;
-    color: var(--wp--preset--color--body);
-    padding-right:0px!important;
-}
 
+.wp-block-search__button.wp-element-button{
+    background-color: transparent!important;
+    color: var(--wp--preset--color--body)!important;
+    padding-right:0px!important;
+
+}
 .wp-block-search__button:hover{
     background: transparent;
     color: var(--wp--preset--color--primary);;
 }
 
+/* Rounded Social links
+ */
+
+.is-style-flexia-social-rounded .wp-social-link{ 
+    border-radius: 8px; 
+}
+.is-style-flexia-social-rounded .wp-social-link .wp-block-social-link-anchor:hover{
+    background:var(--wp--preset--color--primary)!important;
+    color:var(--wp--preset--color--white)!important;
+    border-radius: 8px; 
+} 
+
+/*  Button Theme */
+
+.is-style-flexia-btn-theme  .wp-block-button__link{
+    background:var(--wp--preset--color--primary);
+    color:var(--wp--preset--color--white);
+    border-radius:inherit;
+ }
+ .is-style-flexia-btn-theme .wp-block-button__link:hover{
+    background:var(--wp--preset--color--button-background);
+    color:var(--wp--preset--color--black);
+    border-radius:inherit;
+ }
+
+ /*  Login Logout */
+ .wp-block-loginout a{
+    color: var(--wp--preset--color--body-alt);
+}

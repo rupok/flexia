@@ -1,9 +1,8 @@
 <?php
 /**
  * Title: FAQ
- * Slug: flexia/faq
- * Categories: hidden
- * Inserter: no
+ * Slug: flexia-patterns/faq
+ * Categories: flexia-patterns
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"},"blockGap":"var:preset|spacing|medium"}},"backgroundColor":"secondary","layout":{"type":"constrained"}} -->
@@ -29,8 +28,8 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"className":"is-style-swt-separator-wide-thin-line is-style-wide"} -->
-<hr class="wp-block-separator has-alpha-channel-opacity is-style-swt-separator-wide-thin-line is-style-wide" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)"/>
+<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"className":"is-style-swt-separator-wide-thin-line is-style-flexia-separator-wide-thin-line"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-swt-separator-wide-thin-line is-style-flexia-separator-wide-thin-line" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
@@ -43,8 +42,8 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"className":"is-style-swt-separator-wide-thin-line is-style-wide"} -->
-<hr class="wp-block-separator has-alpha-channel-opacity is-style-swt-separator-wide-thin-line is-style-wide" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)"/>
+<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"className":"is-style-swt-separator-wide-thin-line is-style-flexia-separator-wide-thin-line"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-swt-separator-wide-thin-line is-style-flexia-separator-wide-thin-line" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
@@ -57,8 +56,8 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"className":"is-style-swt-separator-wide-thin-line is-style-wide"} -->
-<hr class="wp-block-separator has-alpha-channel-opacity is-style-swt-separator-wide-thin-line is-style-wide" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)"/>
+<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"className":"is-style-swt-separator-wide-thin-line is-style-flexia-separator-wide-thin-line"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-swt-separator-wide-thin-line is-style-flexia-separator-wide-thin-line" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->

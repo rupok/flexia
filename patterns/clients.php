@@ -1,9 +1,8 @@
 <?php
 /**
- * Title: Clients Section
- * Slug: flexia/clients
- * Categories: hidden
- * Inserter: no
+ * Title: Clients Logos
+ * Slug: flexia-patterns/clients
+ * Categories: flexia-patterns
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"0","left":"0","top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->

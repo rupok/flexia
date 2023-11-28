@@ -1,14 +1,14 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 2,
-	"title": "Dark",
+	"title": "Orange",
 	"settings": {
 		"color": {
 			"duotone": [
 				{
 					"colors": [
-						"#0057FF",
-						"#0057FF"
+						"#FF3F3F",
+						"#FF3F3F"
 					],
 					"name": "Primary",
 					"slug": "primary"
@@ -23,8 +23,8 @@
 				},
 				{
 					"colors": [
-						"#42E6BF",
-						"#42E6BF"
+						"#FFB400",
+						"#FFB400"
 					],
 					"name": "Tertiary",
 					"slug": "tertiary"
@@ -39,23 +39,15 @@
 				},
 				{
 					"colors": [
-						"#0CD8A5",
-						"#0CD8A5"
-					],
-					"name": "Green",
-					"slug": "green"
-				},
-				{
-					"colors": [
-						"#fff",
-						"#fff"
+						"#202124",
+						"#202124"
 					],
 					"name": "Dark Grayscale",
 					"slug": "dark-gray"
 				},
 				{
 					"colors": [
-						"#FFFFFF",
+						"#000000",
 						"#00A5FF"
 					],
 					"name": "Midnight Blue",
@@ -65,7 +57,7 @@
 			"gradients": [
 				{
 					"slug": "primary",
-					"gradient": "linear-gradient(270deg, #0057FF -5%, #4F2CDD 100%)",
+					"gradient": "background: linear-gradient(270deg, #FFB400 0.04%, #FF3F3F 99.95%), #D9D9D9",
 					"name": "Primary"
 					
 				},
@@ -77,7 +69,7 @@
 				},
 				{
 					"slug": "vibrant",
-					"gradient":"linear-gradient(270deg, #00EDD0 2%, #0057FF 99.96%), #D9D9D9",
+					"gradient": "linear-gradient(270deg, #FFB400 0.04%, #FF3F3F 99.95%), #D9D9D9 ",
 					"name": "Vibrant"
 					
 				},
@@ -90,54 +82,54 @@
 			],
 			"palette": [
 				{
-					"color": "#0057FF",
+					"color": "#FF3F3F",
 					"name": "Primary",
 					"slug": "primary"
 				},
 				{
-					"color": "#091733",
+					"color": "#FFF3F3",
 					"name": "Secondary",
 					"slug": "secondary"
 				},
 				{
-					"color": "#091733",
+					"color": "#FFFCF3",
 					"name": "Secondary BG",
 					"slug": "secondary-bg"
 				},
 				
 				{
-					"color": "#42E6BF",
+					"color": "#FFB400",
 					"name": "Tertiary",
 					"slug": "tertiary"
 				},
 				{
-					"color": "#01EED1",
+					"color": "#031E53",
 					"name": "Button Background",
 					"slug": "button-background"
 				},
 				{
-					"color": "#BFBFBF",
+					"color": "#FFFFFF",
 					"name": "Button-text",
 					"slug": "button-text"
 				},
 				{
-					"color": "#001132",
+					"color": "#FFFFFF",
 					"name": "Background",
 					"slug": "background"
 				},
 				{
-					"color": "#BFBFBF",
+					"color": "#515151",
 					"name": "Text",
 					"slug": "body"
 				},
 				
 				{
-					"color": "#0000EE",
+					"color": "#FF3F3F",
 					"name": "Link",
 					"slug": "link-text"
 				},
 				{
-					"color": "#FFFFFF",
+					"color": "#202124",
 					"name": "Heading",
 					"slug": "heading-text"
 				},
@@ -148,7 +140,7 @@
 					"slug": "light-background"
 				},
 				{
-					"color": "#06183D",
+					"color": "#F9FEFF",
 					"name": "Light BG Two",
 					"slug": "light-background-two"
 				},
@@ -169,7 +161,7 @@
 					"slug": "dark-background"
 				},
 				{
-					"color": "#06183D",
+					"color": "#fefefe",
 					"name": "Light BG /Three",
 					"slug": "light-background-three"
 				}
@@ -184,7 +176,6 @@
 					"text": "var(--wp--preset--color--heading-text)"
 				}
 			},
-			
 			"core/navigation": {
 				"elements": {
 					"link": {
@@ -237,7 +228,7 @@
 			},
 			"core/separator": {
 				"color": {
-					"background": "#264177"
+					"background": "#DFEDF0"
 				}
 			},
 		
@@ -316,7 +307,7 @@
 				},
 				"color": {
 					"background": "var(--wp--preset--color--button-background)",
-					"text": "var(--wp--preset--color--black)"
+					"text": "var(--wp--preset--color--button-text)"
 				}
 			},
 			"heading": {

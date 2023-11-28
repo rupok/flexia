@@ -1,9 +1,8 @@
 <?php
 /**
- * Title: footer
- * Slug: flexia/footer
- * Categories: hidden
- * Inserter: no
+ * Title: Footer
+ * Slug: flexia-patterns/footer
+ * Categories: flexia-patterns
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"120px","left":"20px","right":"20px","bottom":"var:preset|spacing|30"}}},"backgroundColor":"dark-background-two","layout":{"type":"constrained"}} -->
@@ -18,8 +17,8 @@
 <p class="has-body-alt-color has-text-color has-link-color">Empower your Brand &amp; Captivate your Audience With MultiGency right away and Boost your Business.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:social-links {"customIconColor":"#8f959f","iconColorValue":"#8f959f","customIconBackgroundColor":"#162747","iconBackgroundColorValue":"#162747","size":"has-normal-icon-size","style":{"spacing":{"blockGap":{"left":"16px"}}},"className":"is-style-default"} -->
-<ul class="wp-block-social-links has-normal-icon-size has-icon-color has-icon-background-color is-style-default"><!-- wp:social-link {"url":"#","service":"facebook","label":"fb","rel":""} /-->
+<!-- wp:social-links {"customIconColor":"#8f959f","iconColorValue":"#8f959f","customIconBackgroundColor":"#162747","iconBackgroundColorValue":"#162747","size":"has-normal-icon-size","style":{"spacing":{"blockGap":{"left":"16px"}}},"className":"is-style-flexia-social-rounded"} -->
+<ul class="wp-block-social-links has-normal-icon-size has-icon-color has-icon-background-color is-style-flexia-social-rounded"><!-- wp:social-link {"url":"#","service":"facebook","label":"fb","rel":""} /-->
 
 <!-- wp:social-link {"url":"#","service":"twitter","label":"","rel":""} /-->
 

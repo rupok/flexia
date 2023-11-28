@@ -1,9 +1,8 @@
 <?php
 /**
  * Title: Service Section
- * Slug: flexia/services
- * Categories: hidden
- * Inserter: no
+ * Slug: flexia-patterns/services
+ * Categories: flexia-patterns
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"backgroundColor":"secondary","layout":{"type":"constrained"}} -->
@@ -21,9 +20,9 @@
 <!-- /wp:spacer --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull" style="padding-right:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:columns {"align":"wide","style":{"spacing":{"padding":{"right":"0","left":"0"}}}} -->
-<div class="wp-block-columns alignwide" style="padding-right:0;padding-left:0"><!-- wp:column {"width":""} -->
+<!-- wp:group {"align":"wide","className":"flexia-column-wrap","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide flexia-column-wrap"><!-- wp:columns {"align":"full","style":{"spacing":{"padding":{"right":"0","left":"0"}}}} -->
+<div class="wp-block-columns alignfull" style="padding-right:0;padding-left:0"><!-- wp:column {"width":""} -->
 <div class="wp-block-column"><!-- wp:group {"style":{"border":{"radius":"4px","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"borderColor":"secondary","backgroundColor":"background","className":"is-style-hover-border is-style-flexia-hover-border","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-hover-border is-style-flexia-hover-border has-border-color has-secondary-border-color has-background-background-color has-background" style="border-width:1px;border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:image {"align":"center","id":313,"width":"70px","height":"70px","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|dark-gray"}}} -->
 <figure class="wp-block-image aligncenter size-full is-resized"><img src="http://flexia-final.local/wp-content/uploads/2023/10/Vector1.png" alt="" class="wp-image-313" style="object-fit:cover;width:70px;height:70px"/></figure>
@@ -41,8 +40,8 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"border":{"radius":"4px","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"borderColor":"secondary","backgroundColor":"background","className":"is-style-hover-border is-style-flexia-hover-border","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-hover-border is-style-flexia-hover-border has-border-color has-secondary-border-color has-background-background-color has-background" style="border-width:1px;border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:image {"align":"center","id":313,"width":"70px","height":"70px","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|dark-gray"}}} -->
-<figure class="wp-block-image aligncenter size-full is-resized"><img src="http://flexia-final.local/wp-content/uploads/2023/10/Vector1.png" alt="" class="wp-image-313" style="object-fit:cover;width:70px;height:70px"/></figure>
+<div class="wp-block-group is-style-hover-border is-style-flexia-hover-border has-border-color has-secondary-border-color has-background-background-color has-background" style="border-width:1px;border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:image {"align":"center","id":313,"width":"70px","height":"auto","aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|dark-gray"}}} -->
+<figure class="wp-block-image aligncenter size-full is-resized"><img src="http://flexia-final.local/wp-content/uploads/2023/10/Vector1.png" alt="" class="wp-image-313" style="aspect-ratio:1;object-fit:cover;width:70px;height:auto"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"textAlign":"center","fontSize":"medium-plus"} -->
@@ -72,8 +71,8 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:columns {"align":"wide","style":{"spacing":{"padding":{"right":"0","left":"0"}}}} -->
-<div class="wp-block-columns alignwide" style="padding-right:0;padding-left:0"><!-- wp:column -->
+<!-- wp:columns {"align":"full","style":{"spacing":{"padding":{"right":"0","left":"0"}}}} -->
+<div class="wp-block-columns alignfull" style="padding-right:0;padding-left:0"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"border":{"radius":"4px","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"borderColor":"secondary","backgroundColor":"background","className":"is-style-hover-border is-style-flexia-hover-border","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-hover-border is-style-flexia-hover-border has-border-color has-secondary-border-color has-background-background-color has-background" style="border-width:1px;border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:image {"align":"center","id":311,"width":"70px","height":"70px","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|dark-gray"}}} -->
 <figure class="wp-block-image aligncenter size-full is-resized"><img src="http://flexia-final.local/wp-content/uploads/2023/10/Group2.png" alt="" class="wp-image-311" style="object-fit:cover;width:70px;height:70px"/></figure>

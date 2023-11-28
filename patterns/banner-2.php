@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Banner Section
- * Slug: flexia/banner
+ * Title: Banner Two
+ * Slug: flexia/banner2
  * Categories: hidden
  * Inserter: no
  */
