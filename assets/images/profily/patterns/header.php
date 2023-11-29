@@ -1,0 +1,15 @@
+<?php
+/**
+ * Title: header
+ * Slug: profily/header
+ * Categories: hidden
+ * Inserter: no
+ */
+?>
+<!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"padding":{"top":"20px","bottom":"20px"},"margin":{"top":"0","bottom":"0"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:20px;padding-bottom:20px"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group alignwide"><!-- wp:site-title {"level":4,"style":{"typography":{"fontStyle":"normal","fontWeight":"700"}}} /-->
+
+<!-- wp:navigation {"ref":7,"style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} /--></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->

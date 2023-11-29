@@ -25,7 +25,7 @@
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","right":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30"},"blockGap":"0"},"border":{"radius":"4px"},"dimensions":{"minHeight":"100%"}},"backgroundColor":"light-background-three","className":"is-style-flexia-sm-bg-shadow","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-flexia-sm-bg-shadow has-light-background-three-background-color has-background" style="border-radius:4px;min-height:100%;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":766,"width":"40px","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="http://flexia-final.local/wp-content/uploads/2023/11/Rectangle-78-1.png" alt="" class="wp-image-766" style="border-radius:20px;width:40px"/></figure>
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri("/assets/images/user-1.png") ); ?>" alt="" class="wp-image-766" style="border-radius:20px;width:40px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
@@ -61,7 +61,7 @@
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","right":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30"},"blockGap":"0"},"border":{"radius":"4px"},"dimensions":{"minHeight":"100%"}},"backgroundColor":"light-background-three","className":"is-style-flexia-sm-bg-shadow","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-flexia-sm-bg-shadow has-light-background-three-background-color has-background" style="border-radius:4px;min-height:100%;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":765,"width":"40px","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="http://flexia-final.local/wp-content/uploads/2023/11/Rectangle-78.png" alt="" class="wp-image-765" style="border-radius:20px;width:40px"/></figure>
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri("/assets/images/user-2.png") ); ?>" alt="" class="wp-image-765" style="border-radius:20px;width:40px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->

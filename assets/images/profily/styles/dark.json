@@ -1,0 +1,114 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 2,
+    "title": "Dark",
+    "settings": {
+        "color": {
+            "palette": [
+                {
+                    "name": "Primary",
+                    "color": "#C5A4FE",
+                    "slug": "primary"
+                },
+                {
+                    "name": "Secondary",
+                    "color": "#CBADFF",
+                    "slug": "secondary"
+                },
+                {
+                    "name": "Heading",
+                    "color": "#FFFFFF",
+                    "slug": "heading"
+                },
+                {
+                    "name": "Body",
+                    "color": "#E5E7EB",
+                    "slug": "body"
+                },
+                {
+                    "name": "Background",
+                    "color": "#1A0B32",
+                    "slug": "background"
+                },
+                {
+                    "name": "Tertiary",
+                    "color": "#251044",
+                    "slug": "tertiary"
+                },
+                {
+                    "name": "Quaternary",
+                    "color": "#251045",
+                    "slug": "quaternary"
+                },
+                {
+                    "name": "Surface",
+                    "color": "#251046",
+                    "slug": "surface"
+                },
+                {
+                    "name": "Foreground",
+                    "color": "#251047",
+                    "slug": "foreground"
+                },
+                {
+                    "name": "Outline",
+                    "color": "#382A51",
+                    "slug": "outline"
+                },
+                {
+                    "name": "Neutral",
+                    "color": "#6E7787",
+                    "slug": "neutral"
+                },
+                {
+                    "name": "Transparent",
+                    "color": "transparent",
+                    "slug": "transparent"
+                },
+                {
+                    "name": "Current Color",
+                    "color": "currentColor",
+                    "slug": "currentColor"
+                },
+                {
+                    "name": "Inherit",
+                    "color": "inherit",
+                    "slug": "inherit"
+                }
+            ],
+            "gradients": [
+                {
+                    "slug": "primary",
+                    "gradient": "linear-gradient(284.04deg, #200E3D 0%, #60166C 25.33%, #4E2A8C 52.07%, #1A0B32 100%)",
+                    "name": "Primary"
+                }
+            ],
+            "duotone": [
+                {
+                    "colors": [
+                        "#C5A4FE",
+                        "#C5A4FE"
+                    ],
+                    "slug": "primary",
+                    "name": "Primary"
+                },
+                {
+                    "colors": [
+                        "#FFFFFF",
+                        "#FFFFFF"
+                    ],
+                    "slug": "secondary",
+                    "name": "Secondary"
+                },
+                {
+                  "colors": [
+                    "#1A0B32",
+                    "#1A0B32"
+                  ],
+                  "slug": "tertiary",
+                  "name": "Tertiary"
+                }
+            ]
+        }
+    }
+}

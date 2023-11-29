@@ -24,7 +24,7 @@
 <!-- wp:group {"style":{"border":{"radius":"8px"},"spacing":{"blockGap":"10px","padding":{"top":"14px","bottom":"14px","left":"20px","right":"20px"}}},"backgroundColor":"tertiary","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group has-tertiary-background-color has-background" style="border-radius:8px;padding-top:14px;padding-right:20px;padding-bottom:14px;padding-left:20px"><!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"right":"0","left":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group" style="padding-right:0;padding-left:0"><!-- wp:image {"id":1317,"width":"84px","height":"auto","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="http://flexia-final.local/wp-content/uploads/2023/11/cImage.png" alt="" class="wp-image-1317" style="object-fit:cover;width:84px;height:auto"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri("/assets/images/cImage.png") ); ?>" alt="" class="wp-image-1317" style="object-fit:cover;width:84px;height:auto"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group -->
 
@@ -37,7 +37,7 @@
 
 <!-- wp:column {"verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"id":1082,"sizeSlug":"full","linkDestination":"none","className":"margin\u002d\u002dleft"} -->
-<figure class="wp-block-image size-full margin--left"><img src="http://flexia-final.local/wp-content/uploads/2023/11/image-1.png" alt="" class="wp-image-1082"/></figure>
+<figure class="wp-block-image size-full margin--left"><img src="<?php echo esc_url( get_theme_file_uri("/assets/images/image-1.png") ); ?>" alt="" class="wp-image-1082"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
