@@ -93,8 +93,8 @@
 				},
 				{
 					"color": "#FFFCF3",
-					"name": "Secondary BG",
-					"slug": "secondary-bg"
+					"name": "background Alt",
+					"slug": "background-alt"
 				},
 				
 				{
@@ -139,31 +139,16 @@
 					"name": "Light Background",
 					"slug": "light-background"
 				},
-				{
-					"color": "#F9FEFF",
-					"name": "Light BG Two",
-					"slug": "light-background-two"
-				},
-
-				{
-					"color": "#06183D",
-					"name": "Dark Background Two",
-					"slug": "dark-background-two"
-				},
+	
 				{
 					"color": "#C6D0E0",
 					"name": "Text Alt",
 					"slug": "body-alt"
 				},
 				{
-					"color": "#202124",
+					"color": "#001132",
 					"name": "Dark Background",
 					"slug": "dark-background"
-				},
-				{
-					"color": "#fefefe",
-					"name": "Light BG /Three",
-					"slug": "light-background-three"
 				}
 			]
 		}

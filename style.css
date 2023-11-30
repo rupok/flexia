@@ -163,7 +163,7 @@ a:hover{
 
 .wp-block-group.is-style-flexia-hover-shadow:hover{
     box-shadow: 0px 16px 29px 0px rgba(0, 1, 35, 0.08);
-    background: var(--wp--preset--color--light-background-three)!important;
+    background: var(--wp--preset--color--light-background)!important;
 }
 .wp-block-group.is-style-flexia-hover-shadow:hover .wp-block-button__link{
     background: var(--wp--preset--color--primary);

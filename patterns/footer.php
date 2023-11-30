@@ -5,8 +5,8 @@
  * Categories: flexia-patterns
  */
 ?>
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"120px","left":"20px","right":"20px","bottom":"var:preset|spacing|30"}}},"backgroundColor":"dark-background-two","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-dark-background-two-background-color has-background" style="padding-top:120px;padding-right:20px;padding-bottom:var(--wp--preset--spacing--30);padding-left:20px"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|40"}}}} -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"120px","left":"20px","right":"20px","bottom":"var:preset|spacing|30"}}},"backgroundColor":"dark-background","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-dark-background-background-color has-background" style="padding-top:120px;padding-right:20px;padding-bottom:var(--wp--preset--spacing--30);padding-left:20px"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|40"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":100,"sizeSlug":"full","linkDestination":"none"} -->

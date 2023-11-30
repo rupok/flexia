@@ -68,14 +68,6 @@
 				},
 				{
 					"colors": [
-						"#0CD8A5",
-						"#0CD8A5"
-					],
-					"name": "Green",
-					"slug": "green"
-				},
-				{
-					"colors": [
 						"#202124",
 						"#202124"
 					],
@@ -124,11 +116,7 @@
 					"name": "Secondary",
 					"slug": "secondary"
 				},
-				{
-					"color": "#F1FEFF",
-					"name": "Secondary BG",
-					"slug": "secondary-bg"
-				},
+				
 				{
 					"color": "#42E6BF",
 					"name": "Tertiary",
@@ -141,11 +129,6 @@
 				},
 				{
 					"color": "#FFFFFF",
-					"name": "Button Text",
-					"slug": "button-text"
-				},
-				{
-					"color": "#FFFFFF",
 					"name": "Background",
 					"slug": "background"
 				},
@@ -155,45 +138,39 @@
 					"slug": "body"
 				},
 				{
-					"color": "#0057FF",
-					"name": "Link",
-					"slug": "link-text"
+					"color": "#C6D0E0",
+					"name": "Text Alt",
+					"slug": "body-alt"
 				},
 				{
 					"color": "#202124",
 					"name": "Heading",
 					"slug": "heading-text"
 				},
+				
 				{
-					"color": "#FCFEFF",
+					"color": "#F1FEFF",
+					"name": "Background Alt",
+					"slug": "background-alt"
+				},
+				{
+					"color": "#FDFEFF",
 					"name": "Light Background",
 					"slug": "light-background"
 				},
-				{
-					"color": "#F9FEFF",
-					"name": "Light BG Two",
-					"slug": "light-background-two"
-				},
+				
 				{
 					"color": "#001132",
-					"name": "Dark Background Two",
-					"slug": "dark-background-two"
-				},
-				{
-					"color": "#202124",
 					"name": "Dark Background",
 					"slug": "dark-background"
 				},
 				{
-					"color": "#C6D0E0",
-					"name": "Text Alt",
-					"slug": "body-alt"
-				},
-				{
-					"color": "#fefefe",
-					"name": "Light BG Three",
-					"slug": "light-background-three"
+					"color": "#0057FF",
+					"name": "Link",
+					"slug": "link-text"
 				}
+				
+				
 			],
 			"text": true
 		},
@@ -427,7 +404,7 @@
 				{
 					"fluid": {
 						"max": "1.875rem",
-						"min": "1.5rem"
+						"min": "1.75rem"
 					},
 					"name": "Large",
 					"size": "1.75rem",
@@ -852,7 +829,7 @@
 				":hover": {
 					"color": {
 						"background": "var(--wp--preset--color--primary)",
-						"text": "var(--wp--preset--color--button-text)"
+						"text": "var(--wp--preset--color--white)"
 					}
 				},
 				":visited": {
@@ -865,7 +842,7 @@
 				},
 				"color": {
 					"background": "var(--wp--preset--color--button-background)",
-					"text": "var(--wp--preset--color--button-text)"
+					"text": "var(--wp--preset--color--white)"
 				}
 			},
 			"h1": {
