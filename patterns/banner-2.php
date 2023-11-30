@@ -1,24 +1,23 @@
 <?php
-/**
- * Title: Banner Two
- * Slug: flexia/banner2
- * Categories: hidden
- * Inserter: no
- */
+    /**
+     * Title: Banner Two
+     * Slug: flexia/banner2
+     * Categories: hidden
+     * Inserter: no
+     */
 
- $get_url = trailingslashit(get_template_directory_uri());
+    $get_url = trailingslashit( get_template_directory_uri() );
 
- $images = [
-    $get_url . "/assets/images/banner-bg-1.png",
-    $get_url . "/assets/images/stack-img.png",
- ];
-
+    $images = [
+        $get_url . "/assets/images/banner-bg-1.png",
+        $get_url . "/assets/images/stack-img.png"
+    ];
 
 ?>
 
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":" <?php echo esc_url( $images[0] ); ?>","id":181,"dimRatio":0,"overlayColor":"secondary","contentPosition":"center center","isDark":false,"align":"wide","style":{"spacing":{"padding":{"right":"0px","left":"0px","top":"110px","bottom":"110px"}},"border":{"radius":"8px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:cover {"url":"                                                   <?php echo esc_url( $images[0] ); ?>","id":181,"dimRatio":0,"overlayColor":"secondary","contentPosition":"center center","isDark":false,"align":"wide","style":{"spacing":{"padding":{"right":"0px","left":"0px","top":"110px","bottom":"110px"}},"border":{"radius":"8px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-cover alignwide is-light" style="border-radius:8px;padding-top:110px;padding-right:0px;padding-bottom:110px;padding-left:0px"><span aria-hidden="true" class="wp-block-cover__background has-secondary-background-color has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-181" alt="" src="<?php echo esc_url( $images[0] ); ?>" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:columns {"verticalAlignment":"center","align":"wide"} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"55%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%"><!-- wp:heading {"style":{"typography":{"textTransform":"capitalize"}},"fontSize":"huge"} -->
