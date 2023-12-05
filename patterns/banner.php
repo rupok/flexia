@@ -1,8 +1,8 @@
 <?php
     /**
      * Title: Banner
-     * Slug: flexia-patterns/banner
-     * Categories: flexia-patterns
+     * Slug: flexia/banner
+     * Categories: flexia
      */
 
 ?>

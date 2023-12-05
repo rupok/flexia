@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: FAQ
- * Slug: flexia-patterns/faq
- * Categories: flexia-patterns
+ * Slug: flexia/faq
+ * Categories: flexia
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"},"blockGap":"var:preset|spacing|medium"}},"backgroundColor":"secondary","layout":{"type":"constrained"}} -->

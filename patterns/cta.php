@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: CTA
- * Slug: flexia-patterns/cta
- * Categories: flexia-patterns
+ * Slug: flexia/cta
+ * Categories: flexia
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->

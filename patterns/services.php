@@ -1,8 +1,8 @@
 <?php
     /**
      * Title: Service Section
-     * Slug: flexia-patterns/services
-     * Categories: flexia-patterns
+     * Slug: flexia/services
+     * Categories: flexia
      */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"backgroundColor":"secondary","layout":{"type":"constrained"}} -->

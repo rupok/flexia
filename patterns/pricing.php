@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Pricing
- * Slug: flexia-patterns/pricing
- * Categories: flexia-patterns
+ * Slug: flexia/pricing
+ * Categories: flexia
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->

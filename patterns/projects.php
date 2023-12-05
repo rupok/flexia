@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Projects
- * Slug: flexia-patterns/projects
- * Categories: flexia-patterns
+ * Slug: flexia/projects
+ * Categories: flexia
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"className":"flexia-column-wrap","layout":{"type":"constrained"}} -->

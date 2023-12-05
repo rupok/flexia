@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Funfact
- * Slug: flexia-patterns/funfacts
- * Categories: flexia-patterns
+ * Slug: flexia/funfacts
+ * Categories: flexia
  */
 
 

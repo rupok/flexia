@@ -51,7 +51,7 @@ add_action( 'wp_enqueue_scripts', 'flexia_styles' );
  * Register block categories
  */
 register_block_pattern_category(
-    'flexia-patterns',
+    'flexia',
     [ 
         'label' => __( 'Flexia Patterns', 'Flexia' )
     ]

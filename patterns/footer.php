@@ -1,7 +1,7 @@
 <?php
     /**
      * Title: Footer
-     * Slug: flexia/footer
+     * Slug: flexia-patterns/footer
      * Categories: flexia-patterns
      */
 ?>

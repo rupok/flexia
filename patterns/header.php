@@ -2,7 +2,7 @@
     /**
      * Title: Header
      * Slug: flexia/header
-     * Categories: flexia-patterns
+     * Categories: flexia
      */
 ?>
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->

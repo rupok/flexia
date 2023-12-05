@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Blog
- * Slug: flexia-patterns/blog
- * Categories: flexia-patterns
+ * Slug: flexia/blog
+ * Categories: flexia
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
