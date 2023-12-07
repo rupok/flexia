@@ -47,15 +47,7 @@
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small","left":"var:preset|spacing|xx-small","right":"var:preset|spacing|xx-small"}},"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-contrast-color has-text-color has-link-color" style="padding-top:var(--wp--preset--spacing--x-small);padding-right:var(--wp--preset--spacing--xx-small);padding-bottom:var(--wp--preset--spacing--x-small);padding-left:var(--wp--preset--spacing--xx-small)"><!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
 <div class="wp-block-group alignwide">
-    <?php 
-
-    if ( has_custom_logo() ) { ?>
-        <!-- wp:site-logo {"width":180,"shouldSyncIcon":true,"style":{"color":{"duotone":"var:preset|duotone|midnight-blue"}}} /-->
-   <?php } else {
-        echo '<h2>' . get_bloginfo('name') . '</h2>';
-    }
-    ?>
-
+ <!-- wp:site-logo {"width":180,"shouldSyncIcon":true,"style":{"color":{"duotone":"var:preset|duotone|midnight-blue"}}} /-->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"0","left":"0"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","justifyContent":"right","flexWrap":"nowrap"}} -->
 <div class="wp-block-group" style="padding-right:0;padding-left:0"><!-- wp:navigation {"ref":48,"textColor":"Heading","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right"},"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"fontSize":"medium"} /-->

@@ -23,7 +23,7 @@ if ( ! function_exists( 'flexia_support' ) ) :
 		add_editor_style( 'assets/css/editor-style.css' );
 	}
 
-    add_theme_support( 'custom-logo' );
+    // add_theme_support( 'custom-logo' );
 
 endif;
 

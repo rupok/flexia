@@ -1,8 +1,8 @@
 <?php
     /**
      * Title: Footer
-     * Slug: flexia-patterns/footer
-     * Categories: flexia-patterns
+     * Slug: flexia/footer
+     * Categories: flexia, footer
      */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"120px","left":"20px","right":"20px","bottom":"var:preset|spacing|30"}}},"backgroundColor":"dark-background","layout":{"type":"constrained"}} -->
@@ -10,7 +10,7 @@
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":100,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/logo-2.png" ) ); ?>" alt="" class="wp-image-100"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/logo-2.png" ) ); ?>" alt="Footer Logo" class="wp-image-100"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|body-alt"}}}},"textColor":"body-alt"} -->
