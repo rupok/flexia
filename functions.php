@@ -23,6 +23,8 @@ if ( ! function_exists( 'flexia_support' ) ) :
 		add_editor_style( 'assets/css/editor-style.css' );
 	}
 
+    add_theme_support( 'custom-logo' );
+
 endif;
 
 add_action( 'after_setup_theme', 'flexia_support' );
@@ -233,3 +235,4 @@ endif;
 add_action('enqueue_block_assets', function (): void {
     wp_enqueue_style('dashicons');
 });
+
