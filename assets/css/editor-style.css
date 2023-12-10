@@ -165,3 +165,147 @@ a:hover{
  .wp-block-loginout a{
     color: var(--wp--preset--color--body-alt);
 }
+
+
+
+
+/*  Categories List */
+
+.wp-block-categories-list{
+    list-style-type: none;
+}
+
+.wp-block-categories-list li{
+    position: relative;
+    padding-left: var(--wp--preset--spacing--20);
+}
+
+.wp-block-categories-list li:after{
+    position: absolute;
+    content: url('https://api.iconify.design/dashicons/arrow-right-alt.svg');
+    font-family:"Dashicons";
+    left:0px;
+    top:0px;
+
+}
+
+/*  Latest posts lists */
+
+.wp-block-latest-posts__list li{
+    margin-bottom: 15px;
+}
+.wp-block-latest-posts__list li:last-child{
+    margin-bottom: 0px;
+}
+ .wp-block-latest-posts__featured-image img{
+    width: 92px;
+    height: 82px;
+    border-radius:4px;
+}
+
+
+.wp-block-latest-posts__post-date{
+    font-size: 14px;
+}
+
+.wp-block-latest-posts a {
+    margin-bottom: 10px;
+    display: block!important;
+}
+
+/*  Pill shape Tags */
+
+
+.wp-block-tag-cloud a{
+    border-radius: 4px;
+    background: var(--wp--preset--color--background);
+    padding: 4px 12px;
+    color: #515151;
+    font-size: 12px!important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 200% */
+    letter-spacing: -0.072px;
+    margin-bottom: 10px;
+    margin-right: 8px;
+}
+
+.wp-block-tag-cloud a:hover{
+    background: var(--wp--preset--color--primary);
+    color: var(--wp--preset--color--background);
+}
+
+/*  Search Block */
+
+.wp-block-search {
+    position: relative;
+}
+.wp-block-search__inside-wrapper {
+    border-radius: 8px;
+    border: 1px solid var(--wp--preset--color--background);
+    background: var(--wp--preset--color--background);
+    height: 50px;
+    transition: all .4s ease;
+    padding: 10px 12px 10px 40px;
+}
+
+.wp-block-search__inside-wrapper:hover{
+    box-shadow: 0px 9px 18px 0px rgba(0, 0, 0, 0.08);
+}
+
+.wp-block-search__button-inside .wp-block-search__button{
+    position:absolute;
+    left: 0px;
+    padding: 0px;
+}
+
+
+
+
+/*  Pagination Numbers */
+
+.wp-block-query-pagination>.wp-block-query-pagination-numbers{
+    margin:0px;
+}
+.wp-block-query-pagination-numbers{
+    margin-bottom: 0px!important;
+}
+.wp-block-query-pagination-numbers .page-numbers{
+    padding: 0px;
+    display: inline-block;
+    margin: 5px;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+} 
+
+
+.wp-block-query-pagination-numbers .page-numbers:hover{
+    text-decoration: none;
+}
+
+
+/*  Pagination text */
+
+.wp-block-query-pagination{
+    gap: 0px;
+}
+.wp-block-query-pagination>.wp-block-query-pagination-previous,
+.wp-block-query-pagination> .wp-block-query-pagination-next{
+    margin-bottom: 0px!important;
+    padding: 0px;
+    display: inline-block;
+    width: 44px;
+    height: 46px;
+    text-align: center;
+    line-height: 45px;
+   margin:0px;
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-previous-arrow.is-arrow-arrow,
+.wp-block-query-pagination .wp-block-query-pagination-next-arrow.is-arrow-arrow{
+    margin-right:0px;
+    margin-left:0px;
+}
+

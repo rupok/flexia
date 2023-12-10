@@ -119,6 +119,30 @@ if( !function_exists( 'flexia_register' ) ) :
             );
 
             register_block_style(
+                'core/search',
+                [
+                    'name'         => 'flexia-minimal-search',
+                    'label'        => __( 'Minimal', 'flexia' ),
+                    'is_default'   => false,
+                    'inline_style' => '
+                    .is-style-flexia-minimal-search .wp-block-search__inside-wrapper{
+                           height:auto;
+                           padding:0px;
+                        }
+
+                        .is-style-flexia-minimal-search  .wp-block-search__inside-wrapper:hover{
+                            box-shadow: 0px 9px 18px 0px rgba(0, 0, 0, 0.08);
+                        }
+                        .is-style-flexia-minimal-search .wp-block-search__button{
+                            position:static;
+                        }
+                    ',
+                    
+                ]
+               
+            );
+
+            register_block_style(
                 'core/button',
                 [
                     'name'         => 'flexia-btn-inverse',
