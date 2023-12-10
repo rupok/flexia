@@ -5,24 +5,23 @@
  * Categories: flexia-pages
  */
 ?>
-<!-- wp:template-part {"slug":"header","area":"header","theme":"flexia"} /-->
+<!-- wp:template-part {"slug":"header","area":"header","tagName":"header"} /-->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"top":"0px","bottom":"0px"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group" style="padding-top:0px;padding-bottom:0px">
-    <!-- wp:pattern {"slug":"flexia-patterns/banner"} /-->  
-    <!-- wp:pattern {"slug":"flexia-patterns/clients"} /-->
-    <!-- wp:pattern {"slug":"flexia-patterns/about"} /-->
-    <!-- wp:pattern {"slug":"flexia-patterns/funfacts"} /-->
-    <!-- wp:pattern {"slug":"flexia-patterns/services"} /-->
-    <!-- wp:pattern {"slug":"flexia-patterns/projects"} /-->
-    <!-- wp:pattern {"slug":"flexia-patterns/cta"} /-->
-    <!-- wp:pattern {"slug":"flexia-patterns/pricing"} /-->
-    <!-- wp:pattern {"slug":"flexia-patterns/tesimonials"} /-->
-    <!-- wp:pattern {"slug":"flexia-patterns/team"} /-->
-    <!-- wp:pattern {"slug":"flexia-patterns/faq"} /-->
-    <!-- wp:pattern {"slug":"flexia-patterns/blog"} /-->
-    
-  </div>
-  <!-- /wp:group -->
-  
-  <!-- wp:template-part {"slug":"footer","area":"footer","theme":"flexia"} /-->
+<!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"top":"0px","bottom":"0px"}},"layout":{"type":"default"}} -->
+<div class="wp-block-group" style="padding-top:0px;padding-bottom:0px;">
+  <!-- wp:pattern {"slug":"flexia/banner"} /-->
+  <!-- wp:pattern {"slug":"flexia/clients"} /-->
+  <!-- wp:pattern {"slug":"flexia/about"} /-->
+  <!-- wp:pattern {"slug":"flexia/funfacts"} /-->
+  <!-- wp:pattern {"slug":"flexia/services"} /-->
+  <!-- wp:pattern {"slug":"flexia/projects"} /-->
+  <!-- wp:pattern {"slug":"flexia/cta"} /-->
+  <!-- wp:pattern {"slug":"flexia/pricing"} /-->
+  <!-- wp:pattern {"slug":"flexia/tesimonials"} /-->
+  <!-- wp:pattern {"slug":"flexia/team"} /-->
+  <!-- wp:pattern {"slug":"flexia/faq"} /-->
+  <!-- wp:pattern {"slug":"flexia/blog"} /-->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"footer"} /-->
