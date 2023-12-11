@@ -357,3 +357,136 @@ a:hover{
     margin-right:0px;
     margin-left:0px;
 }
+
+.wp-block-post-author{
+    align-items: center;;
+}
+
+.wp-block-post-author__avatar{
+    border-radius: 100%;
+    overflow: hidden;
+    height: 40px;
+}
+.wp-block-post-author__avatar img{
+    width: 40px;  
+    height:auto;
+}
+
+.wp-block-post-date,.wp-block-comment-date{
+    position: relative;
+    padding-left: var(--wp--preset--spacing--20);
+}
+.wp-block-post-date:before,
+.wp-block-comment-date:before{
+    position: absolute;
+    content: "\f508";
+    font-family: "Dashicons";
+    left: 0px;
+    top: 0px;
+    width: 20px;
+
+}
+
+.wp-block-comment-date:before{
+    font-size: 16px;
+    color: var(--wp--preset--color--primary);
+}
+
+ /*  Comments Form */
+
+.wp-block-post-comments-form label {
+    display: block;
+    font-size: var(--wp--preset--font-size--tiny-plus);
+    font-weight: 500;
+    padding-bottom: 5px;
+    color: var(--wp--preset--color--heading-text);
+}
+
+.wp-block-post-comments-form .form-submit .wp-element-button{
+    background: var(--wp--preset--color--primary);
+}
+
+.wp-block-post-comments-form .form-submit .wp-element-button:hover{
+    background: var(--wp--preset--color--black);
+}
+.wp-block-post-comments-form input:not([type=submit]), 
+.wp-block-post-comments-form textarea {
+    background: var(--wp--preset--color--background);
+    border: 0px;
+    font-family: inherit;
+    font-size: 1em;
+    border-radius: 7px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 1, 35, 0.11);
+}
+
+.wp-block-post-comments-form .comment-form-cookies-consent #wp-comment-cookies-consent{
+    box-shadow: none;
+   
+}
+
+.comment-form-cookies-consent label{
+    font-weight: 400;
+    padding-bottom: 0px;
+    color: var(--wp--preset--color--heading-body);
+}
+
+
+/* Comments Template - Level 2 bg */
+ol.wp-block-comment-template li.depth-1 > .wp-block-columns {
+    padding: 32px;
+    border-radius: 8px;
+    background-color: var(--wp--preset--color--secondary) !important;
+}
+ol.wp-block-comment-template ol .wp-block-columns {
+    padding: 32px;
+    border-radius: 8px;
+    background-color: var(--wp--preset--color--background-alt) !important;
+}
+
+
+.wp-block-comment-template ol {
+    padding-left: 4rem;
+}
+
+@media (max-width:767px){
+    .wp-block-comment-template ol {
+        padding-left: 1rem;
+    }
+}
+
+
+.wp-block-post-comments-form label {
+    display: block;
+    font-size: var(--wp--preset--font-size--tiny-plus);
+    font-weight: 400;
+    padding-bottom: 0.5rem;
+}
+
+
+.wp-block-post-comments-form input[type="checkbox"] {
+    width: 20px;
+    margin-top: -0.25em!important;
+    margin-right: 0.35em;
+}
+
+.wp-block-post-comments-form .form-submit {
+    margin-top: 1.5em;
+}
+
+.wp-comment-cookies-consent {
+    font-weight: normal;
+}
+
+
+
+/* Post User */
+
+.wp-block-avatar{
+    overflow: hidden;
+    border-radius:100px;
+    max-width: 64px;
+}
+.wp-block-avatar img {
+    width: 64px;
+    height: auto;
+}
