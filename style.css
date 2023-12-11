@@ -248,6 +248,9 @@ a:hover{
 }
 
 /*  Latest posts lists */
+.wp-block-latest-posts{
+    overflow: hidden!important;
+}
 
 .wp-block-latest-posts__list li{
     margin-bottom: 15px;
@@ -269,6 +272,13 @@ a:hover{
 .wp-block-latest-posts a{
     margin-bottom: 10px;
     display: block;
+}
+.wp-block-post-excerpt__more-link {
+    color: var(--wp--preset--color--heading-text)!important;
+}
+
+.wp-block-post-excerpt__more-link:hover {
+    color: var(--wp--preset--color--primary)!important;
 }
 
 /*  Pill shape Tags */
@@ -404,6 +414,7 @@ a:hover{
 
 .wp-block-post-comments-form .form-submit .wp-element-button{
     background: var(--wp--preset--color--primary);
+    color: var(--wp--preset--color--white);
 }
 
 .wp-block-post-comments-form .form-submit .wp-element-button:hover{
@@ -490,3 +501,9 @@ ol.wp-block-comment-template ol .wp-block-columns {
     width: 64px;
     height: auto;
 }
+
+
+.wp-block-search__inside-wrapper .wp-block-search__input{
+    background:transparent;
+}
+
