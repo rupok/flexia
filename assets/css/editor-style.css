@@ -309,3 +309,10 @@ a:hover{
     margin-left:0px;
 }
 
+
+
+.wp-block-query-pagination>.wp-block-query-pagination-previous, 
+.wp-block-query-pagination> .wp-block-query-pagination-next{
+    width: auto;
+    padding:4px 18px;
+}

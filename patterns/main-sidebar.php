@@ -14,8 +14,8 @@
 <h6 class="wp-block-heading has-x-medium-font-size" style="font-style:normal;font-weight:500;text-transform:capitalize">Categories</h6>
 <!-- /wp:heading -->
 
-<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|xx-small","bottom":"var:preset|spacing|xx-small"}},"color":{"background":"#d2def2"}}} -->
-<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background" style="margin-top:var(--wp--preset--spacing--xx-small);margin-bottom:var(--wp--preset--spacing--xx-small);background-color:#d2def2;color:#d2def2"/>
+<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|xx-small","bottom":"var:preset|spacing|xx-small"}},"color":{"background":"#d2def2"}},"className":"is-style-wide"} -->
+<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background is-style-wide" style="margin-top:var(--wp--preset--spacing--xx-small);margin-bottom:var(--wp--preset--spacing--xx-small);background-color:#d2def2;color:#d2def2"/>
 <!-- /wp:separator --></div>
 <!-- /wp:group -->
 
@@ -27,8 +27,8 @@
 <h6 class="wp-block-heading has-x-medium-font-size" style="font-style:normal;font-weight:500;text-transform:capitalize">Recent Posts</h6>
 <!-- /wp:heading -->
 
-<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|xx-small","bottom":"var:preset|spacing|xx-small"}},"color":{"background":"#d2def2"}}} -->
-<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background" style="margin-top:var(--wp--preset--spacing--xx-small);margin-bottom:var(--wp--preset--spacing--xx-small);background-color:#d2def2;color:#d2def2"/>
+<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|xx-small","bottom":"var:preset|spacing|xx-small"}},"color":{"background":"#d2def2"}},"className":"is-style-wide"} -->
+<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background is-style-wide" style="margin-top:var(--wp--preset--spacing--xx-small);margin-bottom:var(--wp--preset--spacing--xx-small);background-color:#d2def2;color:#d2def2"/>
 <!-- /wp:separator -->
 
 <!-- wp:latest-posts {"postsToShow":3,"excerptLength":12,"displayPostDate":true,"displayFeaturedImage":true,"featuredImageAlign":"left","featuredImageSizeWidth":82,"featuredImageSizeHeight":92,"addLinkToFeaturedImage":true} /--></div>
@@ -39,8 +39,8 @@
 <h6 class="wp-block-heading has-x-medium-font-size" style="font-style:normal;font-weight:500;text-transform:capitalize">tags</h6>
 <!-- /wp:heading -->
 
-<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|xx-small","bottom":"var:preset|spacing|xx-small"}},"color":{"background":"#d2def2"}}} -->
-<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background" style="margin-top:var(--wp--preset--spacing--xx-small);margin-bottom:var(--wp--preset--spacing--xx-small);background-color:#d2def2;color:#d2def2"/>
+<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|xx-small","bottom":"var:preset|spacing|xx-small"}},"color":{"background":"#d2def2"}},"className":"is-style-wide"} -->
+<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background is-style-wide" style="margin-top:var(--wp--preset--spacing--xx-small);margin-bottom:var(--wp--preset--spacing--xx-small);background-color:#d2def2;color:#d2def2"/>
 <!-- /wp:separator -->
 
 <!-- wp:tag-cloud {"className":"is-style-flexia-tag-pill"} /--></div>
@@ -51,8 +51,8 @@
 <h6 class="wp-block-heading has-x-medium-font-size" style="font-style:normal;font-weight:500;text-transform:capitalize">Social Links</h6>
 <!-- /wp:heading -->
 
-<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|xx-small","bottom":"var:preset|spacing|xx-small"}},"color":{"background":"#d2def2"}}} -->
-<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background" style="margin-top:var(--wp--preset--spacing--xx-small);margin-bottom:var(--wp--preset--spacing--xx-small);background-color:#d2def2;color:#d2def2"/>
+<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|xx-small","bottom":"var:preset|spacing|xx-small"}},"color":{"background":"#d2def2"}},"className":"is-style-wide"} -->
+<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background is-style-wide" style="margin-top:var(--wp--preset--spacing--xx-small);margin-bottom:var(--wp--preset--spacing--xx-small);background-color:#d2def2;color:#d2def2"/>
 <!-- /wp:separator -->
 
 <!-- wp:social-links {"iconColor":"primary","iconColorValue":"#0057FF","iconBackgroundColor":"background","iconBackgroundColorValue":"#FFFFFF","className":"is-style-flexia-social-rounded"} -->

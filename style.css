@@ -501,3 +501,11 @@ ol.wp-block-comment-template ol .wp-block-columns {
     width: 64px;
     height: auto;
 }
+
+
+
+.wp-block-query-pagination>.wp-block-query-pagination-previous, 
+.wp-block-query-pagination> .wp-block-query-pagination-next{
+    width: auto;
+    padding:4px 18px;
+}
