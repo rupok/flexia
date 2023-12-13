@@ -26,7 +26,7 @@ if ( ! function_exists( 'flexia_support' ) ) :
     add_theme_support('wp-block-styles');
     
     // Remove core block patterns support.
-    remove_theme_support( 'core-block-patterns' );
+    // remove_theme_support( 'core-block-patterns' );
 
 
 endif;
