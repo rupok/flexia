@@ -38,7 +38,13 @@
 <h2 class="wp-block-heading has-white-color has-text-color has-link-color has-x-medium-font-size">Product</h2>
 <!-- /wp:heading -->
 
-<!-- wp:navigation {"ref":109,"textColor":"body-alt","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"10px"}},"fontSize":"medium","fontFamily":"inter"} /--></div>
+<!-- wp:navigation {"textColor":"body-alt","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"10px"}},"fontSize":"medium","fontFamily":"inter"} -->
+<!-- wp:navigation-link {"label":"Features","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Pricing","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Case Studies","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Reviews","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Updates","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- /wp:navigation --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
@@ -46,7 +52,14 @@
 <h2 class="wp-block-heading has-white-color has-text-color has-x-medium-font-size">Company</h2>
 <!-- /wp:heading -->
 
-<!-- wp:navigation {"ref":128,"textColor":"body-alt","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"10px"}},"fontSize":"medium","fontFamily":"inter"} /--></div>
+<!-- wp:navigation {"textColor":"body-alt","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"10px"}},"fontSize":"medium","fontFamily":"inter"} -->
+<!-- wp:navigation-link {"label":"About","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Contact Us","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Careers","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Culture","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Blog","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- /wp:navigation --></div>
+
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:column -->
@@ -58,7 +71,12 @@
 <h2 class="wp-block-heading has-white-color has-text-color has-x-medium-font-size">Support</h2>
 <!-- /wp:heading -->
 
-<!-- wp:navigation {"ref":132,"textColor":"body-alt","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"10px"}},"fontSize":"medium","fontFamily":"inter"} /--></div>
+<!-- wp:navigation {"textColor":"body-alt","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"10px"}},"fontSize":"medium","fontFamily":"inter"} -->
+<!-- wp:navigation-link {"label":"Getting Started","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Help Center","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Server Status","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Report a bug","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- /wp:navigation --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
@@ -66,7 +84,12 @@
 <h2 class="wp-block-heading has-white-color has-text-color has-x-medium-font-size">Downloads</h2>
 <!-- /wp:heading -->
 
-<!-- wp:navigation {"ref":135,"textColor":"body-alt","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"10px"}},"fontSize":"medium","fontFamily":"inter"} /--></div>
+<!-- wp:navigation {"textColor":"body-alt","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"10px"}},"fontSize":"medium","fontFamily":"inter"} -->
+<!-- wp:navigation-link {"label":"IOS","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Android","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Mac","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Windows","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- /wp:navigation --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:column --></div>

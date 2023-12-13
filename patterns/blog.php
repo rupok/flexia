@@ -1,8 +1,9 @@
 <?php
 /**
- * Title: Blog
+ * Title: Grid of posts, 3 columns
  * Slug: flexia/blog
- * Categories: flexia
+ * Categories: flexia, posts
+ * Block Types: core/query
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->

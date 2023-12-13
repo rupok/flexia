@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
  * Define Constants
  */
 define('FLEXIA_DEV_MODE', false);
-define('FLEXIA_VERSION', '3.0.0');
+define('FLEXIA_VERSION', '1.0.0');
 define('FLEXIA_SLUG', 'flexia');
 define('FLEXIA_NAME', 'Flexia FSE');
 
@@ -23,7 +23,11 @@ if ( ! function_exists( 'flexia_support' ) ) :
 		add_editor_style( 'assets/css/editor-style.css' );
 	}
 
-    // add_theme_support( 'custom-logo' );
+    add_theme_support('wp-block-styles');
+    
+    // Remove core block patterns support.
+    remove_theme_support( 'core-block-patterns' );
+
 
 endif;
 
@@ -71,6 +75,8 @@ register_block_pattern_category(
  */
 if( !function_exists( 'flexia_register' ) ) :
     function flexia_register() {
+
+
 
         /**
          * Register block styles
