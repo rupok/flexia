@@ -7,6 +7,10 @@ a:hover{
     cursor:pointer;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /*  Group Hover box */
 .is-style-flexia-hover-border{
     border-bottom: 2px solid transparent;
