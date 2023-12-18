@@ -12,7 +12,6 @@ a:hover{
 }
 
 
-
 /*  Team style  */
 
 .is-style-flexia-team,
@@ -315,4 +314,27 @@ a:hover{
 .wp-block-query-pagination> .wp-block-query-pagination-next{
     width: auto;
     padding:4px 18px;
+}
+
+
+/*  Block Quote  */
+
+.wp-block-quote{
+    border-left: 0px;
+}
+
+.wp-block-pullquote{
+    border-top:1px solid var(--wp--preset--color--primary);
+    border-bottom:1px solid var(--wp--preset--color--primary);
+}
+.wp-block-quote p ,
+.wp-block-pullquote p{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: var(--wp--preset--spacing--xx-small);
+}
+
+.wp-block-quote cite,
+.wp-block-pullquote cite{
+    text-transform: capitalize;
 }

@@ -1,12 +1,11 @@
 <?php
     /**
-     * Title: Post With Left Sidebar
+     * Title: Post With Right Sidebar
      * Slug: flexia/post-with-sidebar
      * Categories: flexia
      * Post Types: page, wp_template
      */
 ?>
-<!-- wp:template-part {"slug":"header","theme":"flexia","area":"header"} /-->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"left":"var:preset|spacing|30","right":"var:preset|spacing|30","bottom":"0","top":"0"},"blockGap":"0","margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:0;padding-right:var(--wp--preset--spacing--30);padding-bottom:0;padding-left:var(--wp--preset--spacing--30)"><!-- wp:cover {"url":"http://flexia-final.local/wp-content/uploads/2023/12/page-banner-img.jpg","id":1479,"dimRatio":60,"customOverlayColor":"#0f125c","minHeight":250,"minHeightUnit":"px","align":"wide"} -->
@@ -35,9 +34,6 @@
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
 <div class="wp-block-columns alignwide">
-<!-- wp:column {"width":"33.33%"} -->
-<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:pattern {"slug":"flexia/main-sidebar"} /--></div>
-<!-- /wp:column --></div>
 
 <!-- wp:column {"width":"66.66%"} -->
 <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:query {"query":{"perPage":"2","pages":0,"offset":"0","postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"align":"wide","layout":{"type":"default"}} -->
@@ -74,7 +70,10 @@
 <!-- /wp:query-pagination --></div>
 <!-- /wp:query --></div>
 <!-- /wp:column --></div>
+
+<!-- wp:column {"width":"33.33%"} -->
+<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:pattern {"slug":"flexia/main-sidebar","tagName":"aside"} /--></div>
+<!-- /wp:column --></div>
+
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer","theme":"flexia","area":"footer"} /-->

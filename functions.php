@@ -18,16 +18,9 @@ define('FLEXIA_NAME', 'Flexia FSE');
 if ( ! function_exists( 'flexia_support' ) ) :
 
 	function flexia_support() {
-
         // Custom editor styling
 		add_editor_style( 'assets/css/editor-style.css' );
 	}
-
-    add_theme_support('wp-block-styles');
-    
-    // Remove core block patterns support.
-    // remove_theme_support( 'core-block-patterns' );
-
 
 endif;
 
@@ -39,7 +32,10 @@ if ( ! function_exists( 'flexia_styles' ) ) :
 	 * Enqueue styles.
 	 */
 	function flexia_styles() {
-		// Register theme stylesheet.
+
+        wp_enqueue_style('flexia-custom', get_template_directory_uri() . '/assets/css/custom.css', array(), FLEXIA_VERSION );
+        
+        // Register theme stylesheet.
 		wp_register_style(
 			'flexia-style', get_template_directory_uri() . '/style.css', array(), FLEXIA_VERSION
 		);
@@ -75,8 +71,6 @@ register_block_pattern_category(
  */
 if( !function_exists( 'flexia_register' ) ) :
     function flexia_register() {
-
-
 
         /**
          * Register block styles

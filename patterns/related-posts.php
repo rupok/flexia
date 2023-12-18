@@ -9,7 +9,7 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:0;padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull"><!-- wp:heading {"textAlign":"center","align":"full","style":{"typography":{"textTransform":"capitalize"}},"textColor":"Heading","fontSize":"large-plus"} -->
-<h2 class="wp-block-heading alignfull has-text-align-center has-heading-color has-text-color has-large-plus-font-size" style="text-transform:capitalize">related blog</h2>
+<h2 class="wp-block-heading alignfull has-text-align-center has-heading-color has-text-color has-large-plus-font-size" style="text-transform:capitalize">You May Also Like</h2>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"20px"} -->
