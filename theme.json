@@ -10,8 +10,8 @@
 		},
 		{
 			"name": "single-right-sidebar",
-			"postTypes": ["post"],
-			"title": "Single with Right Sidebar"
+			"postTypes": ["post","page"],
+			"title": "Post with Right Sidebar"
 		},
 		{
 			"name": "page-with-sidebar",
@@ -21,7 +21,7 @@
 		{
 			"name": "page-no-title",
 			"postTypes": ["page"],
-			"title": "Full Width Template(Without Title)"
+			"title": "Page (without title)"
 		}
 		
 	],
@@ -554,6 +554,11 @@
 					}
 				}
 			},
+			"caption": {
+				"color": {
+					"text": "var(--wp--preset--color--body)"
+				}
+			},
 			"h3": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--x-large)"
@@ -735,7 +740,10 @@
 					}
 				}
 			},
-			
+			"core/loginout": {
+				"css": "& a{color: var(--wp--preset--color--body-alt);}"
+
+			},
 			"core/comment-date": {
 				"elements": {
 					"link": {
