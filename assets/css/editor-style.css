@@ -11,6 +11,10 @@ a:hover{
     margin-top: -120px!important;
 }
 
+.margin--left{
+    margin-left: -100px!important;
+}
+
 
 /*  Team style  */
 
@@ -108,12 +112,6 @@ a:hover{
 
 .is-style-flexia-hover-border:hover img{
     filter: var(--wp--preset--duotone--primary)!important;
-}
-
-
-
-.margin--left{
-    margin-left: -100px!important;
 }
 
 
@@ -265,10 +263,9 @@ a:hover{
 
 .wp-block-query-pagination>.wp-block-query-pagination-numbers{
     margin:0px;
-}
-.wp-block-query-pagination-numbers{
     margin-bottom: 0px!important;
 }
+
 .wp-block-query-pagination-numbers .page-numbers{
     padding: 0px;
     display: inline-block;
@@ -300,20 +297,14 @@ a:hover{
     text-align: center;
     line-height: 45px;
    margin:0px;
+   width: auto;
+    padding:4px 18px;
 }
 
 .wp-block-query-pagination .wp-block-query-pagination-previous-arrow.is-arrow-arrow,
 .wp-block-query-pagination .wp-block-query-pagination-next-arrow.is-arrow-arrow{
     margin-right:0px;
     margin-left:0px;
-}
-
-
-
-.wp-block-query-pagination>.wp-block-query-pagination-previous, 
-.wp-block-query-pagination> .wp-block-query-pagination-next{
-    width: auto;
-    padding:4px 18px;
 }
 
 
