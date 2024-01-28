@@ -258,49 +258,6 @@
 			"fluid": true,
 			"fontFamilies": [
 				{
-					"fontFace": [
-						{
-							"fontFamily": "DM Sans",
-							"fontStretch": "normal",
-							"fontStyle": "normal",
-							"fontWeight": "400",
-							"src": [
-								"file:./assets/fonts/dm-sans/DMSans-Regular.woff2"
-							]
-						},
-						{
-							"fontFamily": "DM Sans",
-							"fontStretch": "normal",
-							"fontStyle": "italic",
-							"fontWeight": "400",
-							"src": [
-								"file:./assets/fonts/dm-sans/DMSans-Regular-Italic.woff2"
-							]
-						},
-						{
-							"fontFamily": "DM Sans",
-							"fontStretch": "normal",
-							"fontStyle": "normal",
-							"fontWeight": "700",
-							"src": [
-								"file:./assets/fonts/dm-sans/DMSans-Bold.woff2"
-							]
-						},
-						{
-							"fontFamily": "DM Sans",
-							"fontStretch": "normal",
-							"fontStyle": "italic",
-							"fontWeight": "700",
-							"src": [
-								"file:./assets/fonts/dm-sans/DMSans-Bold-Italic.woff2"
-							]
-						}
-					],
-					"fontFamily": "\"DM Sans\", sans-serif",
-					"name": "DM Sans",
-					"slug": "dm-sans"
-				},
-				{
 					"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
 					"name": "System Font",
 					"slug": "system-font"
@@ -345,30 +302,6 @@
 							"fontWeight": "400",
 							"src": [
 								"file:./assets/fonts/inter_normal_400.ttf"
-							]
-						},
-						{
-							"fontFamily": "Inter",
-							"fontStyle": "normal",
-							"fontWeight": "500",
-							"src": [
-								"file:./assets/fonts/inter_normal_500.ttf"
-							]
-						},
-						{
-							"fontFamily": "Inter",
-							"fontStyle": "normal",
-							"fontWeight": "600",
-							"src": [
-								"file:./assets/fonts/inter_normal_600.ttf"
-							]
-						},
-						{
-							"fontFamily": "Inter",
-							"fontStyle": "normal",
-							"fontWeight": "700",
-							"src": [
-								"file:./assets/fonts/inter_normal_700.ttf"
 							]
 						}
 					]
