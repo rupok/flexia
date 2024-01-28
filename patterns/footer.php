@@ -11,7 +11,7 @@
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"constrained"}} -->
 
 <div class="wp-block-group"><!-- wp:image {"width":"128px","height":"auto","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|secondary"}}} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/logo-2.png" ) ); ?>" alt="" class="" style="width:128px;height:auto"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/logo.png" ) ); ?>" alt="" class="" style="width:128px;height:auto"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|body-alt"}}}},"textColor":"body-alt"} -->
