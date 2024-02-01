@@ -187,6 +187,12 @@
 					"text": "var(--wp--preset--color--primary)"
 				}
 			},
+			"core/site-logo": {
+				"filter": {
+					"duotone": "var(--wp--preset--duotone--midnight-blue)"
+				}
+			},
+			
 			
 			"core/query-pagination": {
 				"elements": {

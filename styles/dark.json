@@ -224,6 +224,13 @@
 					"background": "#264177"
 				}
 			},
+			
+			"core/site-logo": {
+				"filter": {
+					"duotone": "var(--wp--preset--duotone--midnight-blue)"
+				}
+			},
+			
 		
 			"core/site-title": {
 				"elements": {

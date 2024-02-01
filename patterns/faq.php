@@ -5,8 +5,8 @@
  * Categories: flexia
  */
 ?>
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"},"blockGap":"var:preset|spacing|medium"}},"backgroundColor":"secondary","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-secondary-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:heading {"textAlign":"center","style":{"typography":{"textTransform":"capitalize"}},"fontSize":"large-plus"} -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|x-small","right":"var:preset|spacing|x-small"},"blockGap":"var:preset|spacing|medium"}},"backgroundColor":"secondary","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-secondary-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--x-small);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--x-small)"><!-- wp:heading {"textAlign":"center","style":{"typography":{"textTransform":"capitalize"}},"fontSize":"large-plus"} -->
 <h2 class="wp-block-heading has-text-align-center has-large-plus-font-size" style="text-transform:capitalize">Frequently Asked Questions</h2>
 <!-- /wp:heading -->
 

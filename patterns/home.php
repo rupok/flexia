@@ -5,10 +5,10 @@
  * Categories: flexia-pages
  */
 ?>
-<!-- wp:template-part {"slug":"header","area":"header","tagName":"header"} /-->
+<!-- wp:template-part {"slug":"header","theme":"flexia","tagName":"header","area":"header"} /-->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"top":"0px","bottom":"0px"}},"layout":{"type":"default"}} -->
-<div class="wp-block-group" style="padding-top:0px;padding-bottom:0px;">
+<!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
+<div class="wp-block-group" style="margin-top:0;margin-bottom:0">
   <!-- wp:pattern {"slug":"flexia/banner"} /-->
   <!-- wp:pattern {"slug":"flexia/clients"} /-->
   <!-- wp:pattern {"slug":"flexia/about"} /-->
@@ -24,4 +24,4 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"footer"} /-->
+<!-- wp:template-part {"slug":"footer","theme":"flexia","tagName":"footer","area":"footer"} /-->
