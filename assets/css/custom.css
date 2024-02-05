@@ -3,6 +3,10 @@ img ,a {
     transition: all .4s ease;
 }
 
+img{
+ max-width:100%;   
+}
+
 a:hover{
     cursor:pointer;
 }
@@ -118,14 +122,16 @@ html {
 .flexia-group-squeeze.wp-block-group > .wp-block-group {
     margin-left: -15px!important;
 }
-
+.flexia-hover_img_zoom img{
+ width:100%   
+}
 
 .flexia-hover_img_zoom{
     transition: all .4s ease;
 }
 
 .flexia-hover_img_zoom:hover{
-    transform: scale(.95);
+    transform: scale(1.05);
 }
 
 /*  POst Author Image rounded */
@@ -494,3 +500,18 @@ ol.wp-block-comment-template ol .wp-block-columns {
     border-top:1px solid var(--wp--preset--color--primary);
     border-bottom:1px solid var(--wp--preset--color--primary);
 }
+
+@media (max-width:768px){
+    .theme_logo{
+        max-width:100px;
+    }
+
+}
+
+@media (max-width:425px){
+ 
+    .theme_logo{
+        max-width:120px;
+    }
+    
+} 
