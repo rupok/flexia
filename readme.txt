@@ -15,25 +15,21 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Enhance your WordPress experience with a modern and versatile Gutenberg-ready block theme built with the Full Site Editing (FSE) feature. It allows more flexibility with endless customization options and enables users to edit everything from headers and footers to templates with blocks. It is lightweight and highly extendable with Customizer and offers true responsiveness with modern Flexbox and mobile-first design. This best multi-purpose theme is fully compatible with WooCommerce. Agencies of any niche can benefit from this exclusive WordPress theme as it is perfect for showcasing your portfolio, attracting clients, and building a professional brand image.
 
 
-== Exclusive Features ==
-##Full Site Editor
+== 🚀 Exclusive Features ==
+
+##🌐 Full Site Editor
 Design and personalize the entire website effortlessly with the block theme and Full Site Editor. Achieve a unique and professional look and make website building an enjoyable and accessible experience.
 
-##Flexible & Customizable
+##⚙️ Flexible & Customizable
 Customize your website exactly the way you want it. Make it versatile by adding individual control over each page and post.
 
-##Modern & Lightweight
+##⚡ Modern & Lightweight
 Design beautiful and modern websites with Flexia Multipurpose theme and optimize your website for faster loading.
 
-##Responsive & Dynamic
+##💻 Responsive & Dynamic
 Perfect responsiveness on all devices with modern Flexbox and Bootstrap 4 grids.
 
 **Get the Flexia classic theme: [Github Link](https://github.com/rupok/flexia/tree/flexia-2.3.1)**
-
-
-== Flexia License ==
-Flexia is licensed under the GNU General Public License v3 or later
-More details here: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 == Changelog ==
