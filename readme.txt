@@ -1,8 +1,8 @@
 === Flexia ===
 
-Contributors: re_enter_rupok, Codetic, wpdevteam
+Contributors: re_enter_rupok, Codetic, wpdevteam, jamilbd07, esratpopy
 Theme URI: https://flexia.pro/
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: FSE, Full Site Editing, Full Site Editor, Block, Block Theme, Theme Options, Agency Solutions, Business Portfolio, Corporate Website, Customizable Layouts, Block-Based Design, Responsive Design, WooCommerce Compatible, Gutenberg Ready, Visual Branding Options, Patterns
 Requires at least: 5.6
 Tested up to: 6.2
 Stable tag: 3.0.0
@@ -10,28 +10,28 @@ Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-A modern lightweight and versatile theme for WordPress with the endless customization options through Customizer. Built to work flawlessly with any Page Builder like Elementor, Cornerstone, Divi, Visual Composer and Beaver Builder. 10+ page templates give you the ability set any kind of page layout.
+== Description ==
 
-For more information, please visit - https://flexia.pro/
-
--------------------------------------------------------
-Description
--------------------------------------------------------
-
-A modern lightweight and versatile theme for WordPress with endless customization options. Works great with any WordPress Page Builder.
-
--------------------------------------------------------
-Installation
--------------------------------------------------------
-
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
+Enhance your WordPress experience with a modern and versatile Gutenberg-ready block theme built with the Full Site Editing (FSE) feature. It allows more flexibility with endless customization options and enables users to edit everything from headers and footers to templates with blocks. It is lightweight and highly extendable with Customizer and offers true responsiveness with modern Flexbox and mobile-first design. This best multi-purpose theme is fully compatible with WooCommerce. Agencies of any niche can benefit from this exclusive WordPress theme as it is perfect for showcasing your portfolio, attracting clients, and building a professional brand image.
 
 
--------------------------------------------------------
-Flexia License
--------------------------------------------------------
+== Exclusive Features ==
+##Full Site Editor
+Design and personalize the entire website effortlessly with the block theme and Full Site Editor. Achieve a unique and professional look and make website building an enjoyable and accessible experience.
+
+##Flexible & Customizable
+Customize your website exactly the way you want it. Make it versatile by adding individual control over each page and post.
+
+##Modern & Lightweight
+Design beautiful and modern websites with Flexia Multipurpose theme and optimize your website for faster loading.
+
+##Responsive & Dynamic
+Perfect responsiveness on all devices with modern Flexbox and Bootstrap 4 grids.
+
+**Get the Flexia classic theme: [Github Link](https://github.com/rupok/flexia/tree/flexia-2.3.1)**
+
+
+== Flexia License ==
 Flexia is licensed under the GNU General Public License v3 or later
 More details here: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -252,17 +252,3 @@ More details here: http://www.gnu.org/licenses/gpl-3.0.html
 
 = 0.0.1 - July 19 2017 =
 * Initial release
-
-Sora Font
-Copyright 2019 The Sora Project Authors (https://github.com/sora-xor/sora-font) 
-This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
-License URL: https://scripts.sil.org/OFL 
-Source: https://fonts.barnbrook.net
--- End of Sora Font credits --
-
-Inter Font
-Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter) 
-This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
-License URL: http://scripts.sil.org/OFL 
-Source: https://rsms.me/
--- End of Inter Font credits --
