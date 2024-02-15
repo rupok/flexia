@@ -11,7 +11,7 @@
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":6,"style":{"typography":{"fontStyle":"normal","fontWeight":"500","textTransform":"capitalize"}},"fontSize":"x-medium"} -->
-<h6 class="wp-block-heading has-x-medium-font-size" style="font-style:normal;font-weight:500;text-transform:capitalize">Categories</h6>
+<h6 class="wp-block-heading has-x-medium-font-size" style="font-style:normal;font-weight:500;text-transform:capitalize"><?php echo esc_html_x( 'Categories', 'Message to convey sidebar', 'flexia' ); ?></h6>
 <!-- /wp:heading -->
 
 <!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|xx-small","bottom":"var:preset|spacing|xx-small"}},"color":{"background":"#d2def2"}},"className":"is-style-wide"} -->
@@ -24,7 +24,7 @@
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":6,"style":{"typography":{"fontStyle":"normal","fontWeight":"500","textTransform":"capitalize"}},"fontSize":"x-medium"} -->
-<h6 class="wp-block-heading has-x-medium-font-size" style="font-style:normal;font-weight:500;text-transform:capitalize">Recent Posts</h6>
+<h6 class="wp-block-heading has-x-medium-font-size" style="font-style:normal;font-weight:500;text-transform:capitalize"><?php echo esc_html_x( 'Recent Posts', 'Message to convey sidebar', 'flexia' ); ?></h6>
 <!-- /wp:heading -->
 
 <!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|xx-small","bottom":"var:preset|spacing|xx-small"}},"color":{"background":"#d2def2"}},"className":"is-style-wide"} -->
@@ -36,7 +36,7 @@
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":6,"style":{"typography":{"fontStyle":"normal","fontWeight":"500","textTransform":"capitalize"}},"fontSize":"x-medium"} -->
-<h6 class="wp-block-heading has-x-medium-font-size" style="font-style:normal;font-weight:500;text-transform:capitalize">tags</h6>
+<h6 class="wp-block-heading has-x-medium-font-size" style="font-style:normal;font-weight:500;text-transform:capitalize"><?php echo esc_html_x( 'tags', 'Message to convey sidebar', 'flexia' ); ?></h6>
 <!-- /wp:heading -->
 
 <!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|xx-small","bottom":"var:preset|spacing|xx-small"}},"color":{"background":"#d2def2"}},"className":"is-style-wide"} -->
@@ -48,7 +48,7 @@
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":6,"style":{"typography":{"fontStyle":"normal","fontWeight":"500","textTransform":"capitalize"}},"fontSize":"x-medium"} -->
-<h6 class="wp-block-heading has-x-medium-font-size" style="font-style:normal;font-weight:500;text-transform:capitalize">Social Links</h6>
+<h6 class="wp-block-heading has-x-medium-font-size" style="font-style:normal;font-weight:500;text-transform:capitalize"><?php echo esc_html_x( 'Social Link', 'Message to convey sidebar', 'flexia' ); ?>s</h6>
 <!-- /wp:heading -->
 
 <!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|xx-small","bottom":"var:preset|spacing|xx-small"}},"color":{"background":"#d2def2"}},"className":"is-style-wide"} -->

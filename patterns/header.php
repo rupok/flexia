@@ -15,7 +15,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|body-alt"}}}},"textColor":"body-alt","fontSize":"small"} -->
-<p class="has-body-alt-color has-text-color has-link-color has-small-font-size"><a href="#">email@example.com</a></p>
+<p class="has-body-alt-color has-text-color has-link-color has-small-font-size"><a href="#"><?php echo esc_html_x( 'email@example.com', 'Message to convey header', 'flexia' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -28,7 +28,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|body-alt"}}}},"textColor":"body-alt","className":"is-style-list-style-no-bullet is-style-list-style-hide","fontSize":"small"} -->
-<p class="is-style-list-style-no-bullet is-style-list-style-hide has-body-alt-color has-text-color has-link-color has-small-font-size"><a href="#">Sign up</a></p>
+<p class="is-style-list-style-no-bullet is-style-list-style-hide has-body-alt-color has-text-color has-link-color has-small-font-size"><a href="#"><?php echo esc_html_x( 'Sign up', 'Message to convey header', 'flexia' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

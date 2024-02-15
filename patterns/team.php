@@ -9,11 +9,11 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"backgroundColor":"background","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-background-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"align":"center","style":{"typography":{"letterSpacing":"4px","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"small"} -->
-<p class="has-text-align-center has-primary-color has-text-color has-link-color has-small-font-size" style="letter-spacing:4px;text-transform:uppercase">Team</p>
+<p class="has-text-align-center has-primary-color has-text-color has-link-color has-small-font-size" style="letter-spacing:4px;text-transform:uppercase"><?php echo esc_html_x( 'Team', 'Message to convey team content', 'flexia' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"textAlign":"center","style":{"typography":{"textTransform":"capitalize"}},"textColor":"Heading","fontSize":"large-plus"} -->
-<h2 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-large-plus-font-size" style="text-transform:capitalize">Awesome team member</h2>
+<h2 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-large-plus-font-size" style="text-transform:capitalize"><?php echo esc_html_x( 'Awesome team member', 'Message to convey team content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"20px"} -->
@@ -42,11 +42,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","level":4,"textColor":"Heading","fontSize":"medium-plus"} -->
-<h4 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-medium-plus-font-size">Alex Carter</h4>
+<h4 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-medium-plus-font-size"><?php echo esc_html_x( 'Alex Carter', 'Message to convey team content', 'flexia' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color">Creative Director</p>
+<p class="has-text-align-center has-text-color"><?php echo esc_html_x( 'Creative Director', 'Message to convey team content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -70,11 +70,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","level":4,"textColor":"Heading","fontSize":"medium-plus"} -->
-<h4 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-medium-plus-font-size">Alex Carter</h4>
+<h4 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-medium-plus-font-size"><?php echo esc_html_x( 'Alex Carter', 'Message to convey team content', 'flexia' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color">Creative Director</p>
+<p class="has-text-align-center has-text-color"><?php echo esc_html_x( 'Creative Director', 'Message to convey team content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -102,11 +102,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","level":4,"textColor":"Heading","fontSize":"medium-plus"} -->
-<h4 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-medium-plus-font-size">Alex Carter</h4>
+<h4 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-medium-plus-font-size"><?php echo esc_html_x( 'Alex Carter', 'Message to convey team content', 'flexia' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color">Creative Director</p>
+<p class="has-text-align-center has-text-color"><?php echo esc_html_x( 'Creative Director', 'Message to convey team content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -130,11 +130,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","level":4,"textColor":"Heading","fontSize":"medium-plus"} -->
-<h4 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-medium-plus-font-size">Alex Carter</h4>
+<h4 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-medium-plus-font-size"><?php echo esc_html_x( 'Alex Carter', 'Message to convey team content', 'flexia' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color">Creative Director</p>
+<p class="has-text-align-center has-text-color"><?php echo esc_html_x( 'Creative Director', 'Message to convey team content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -164,11 +164,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","level":4,"textColor":"Heading","fontSize":"medium-plus"} -->
-<h4 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-medium-plus-font-size">Alex Carter</h4>
+<h4 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-medium-plus-font-size"><?php echo esc_html_x( 'Alex Carter', 'Message to convey team content', 'flexia' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color">Creative Director</p>
+<p class="has-text-align-center has-text-color"><?php echo esc_html_x( 'Creative Director', 'Message to convey team content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -192,11 +192,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","level":4,"textColor":"Heading","fontSize":"medium-plus"} -->
-<h4 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-medium-plus-font-size">Alex Carter</h4>
+<h4 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-medium-plus-font-size"><?php echo esc_html_x( 'Alex Carter', 'Message to convey team content', 'flexia' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color">Creative Director</p>
+<p class="has-text-align-center has-text-color"><?php echo esc_html_x( 'Creative Director', 'Message to convey team content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -224,11 +224,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","level":4,"textColor":"Heading","fontSize":"medium-plus"} -->
-<h4 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-medium-plus-font-size">Alex Carter</h4>
+<h4 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-medium-plus-font-size"><?php echo esc_html_x( 'Alex Carter', 'Message to convey team content', 'flexia' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color">Creative Director</p>
+<p class="has-text-align-center has-text-color"><?php echo esc_html_x( 'Creative Director', 'Message to convey team content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -252,11 +252,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","level":4,"textColor":"Heading","fontSize":"medium-plus"} -->
-<h4 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-medium-plus-font-size">Alex Carter</h4>
+<h4 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-medium-plus-font-size"><?php echo esc_html_x( 'Alex Carter', 'Message to convey team content', 'flexia' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color">Creative Director</p>
+<p class="has-text-align-center has-text-color"><?php echo esc_html_x( 'Creative Director', 'Message to convey team content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

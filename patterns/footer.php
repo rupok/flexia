@@ -15,7 +15,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|body-alt"}}}},"textColor":"body-alt"} -->
-<p class="has-body-alt-color has-text-color has-link-color">Empower your Brand &amp; Captivate your Audience With MultiGency right away and Boost your Business.</p>
+<p class="has-body-alt-color has-text-color has-link-color"><?php echo esc_html_x( 'Empower your Brand & Captivate your Audience With MultiGency right away and Boost your Business.', 'Message to convey footer content', 'flexia' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:social-links {"customIconColor":"#8f959f","iconColorValue":"#8f959f","customIconBackgroundColor":"#162747","iconBackgroundColorValue":"#162747","size":"has-normal-icon-size","style":{"spacing":{"blockGap":{"left":"16px"}}},"className":"is-style-flexia-social-rounded"} -->
@@ -36,7 +36,7 @@
 <div class="wp-block-column"><!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","fontSize":"x-medium"} -->
-<h2 class="wp-block-heading has-white-color has-text-color has-link-color has-x-medium-font-size">Product</h2>
+<h2 class="wp-block-heading has-white-color has-text-color has-link-color has-x-medium-font-size"><?php echo esc_html_x( 'Product', 'Message to convey footer content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"textColor":"body-alt","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"10px"}},"fontSize":"medium","fontFamily":"inter"} -->
@@ -50,7 +50,7 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:heading {"textColor":"white","fontSize":"x-medium"} -->
-<h2 class="wp-block-heading has-white-color has-text-color has-x-medium-font-size">Company</h2>
+<h2 class="wp-block-heading has-white-color has-text-color has-x-medium-font-size"><?php echo esc_html_x( 'Company', 'Message to convey footer content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"textColor":"body-alt","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"10px"}},"fontSize":"medium","fontFamily":"inter"} -->
@@ -69,7 +69,7 @@
 <div class="wp-block-column"><!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:heading {"textColor":"white","fontSize":"x-medium"} -->
-<h2 class="wp-block-heading has-white-color has-text-color has-x-medium-font-size">Support</h2>
+<h2 class="wp-block-heading has-white-color has-text-color has-x-medium-font-size"><?php echo esc_html_x( 'Support', 'Message to convey footer content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"textColor":"body-alt","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"10px"}},"fontSize":"medium","fontFamily":"inter"} -->
@@ -82,7 +82,7 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:heading {"textColor":"white","fontSize":"x-medium"} -->
-<h2 class="wp-block-heading has-white-color has-text-color has-x-medium-font-size">Downloads</h2>
+<h2 class="wp-block-heading has-white-color has-text-color has-x-medium-font-size"><?php echo esc_html_x( 'Downloads', 'Message to convey footer content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"textColor":"body-alt","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"10px"}},"fontSize":"medium","fontFamily":"inter"} -->
@@ -98,7 +98,7 @@
 
 <!-- wp:group {"align":"wide","style":{"border":{"top":{"color":"#202124fa","width":"1px"},"right":{},"bottom":{},"left":{}},"spacing":{"padding":{"top":"var:preset|spacing|30"},"margin":{"top":"var:preset|spacing|50"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
 <div class="wp-block-group alignwide" style="border-top-color:#202124fa;border-top-width:1px;margin-top:var(--wp--preset--spacing--50);padding-top:var(--wp--preset--spacing--30)"><!-- wp:paragraph {"align":"center","textColor":"body-alt"} -->
-<p class="has-text-align-center has-body-alt-color has-text-color">© Copyright by WPDeveloper</p>
+<p class="has-text-align-center has-body-alt-color has-text-color"><?php echo esc_html_x( '© Copyright by WPDeveloper', 'Message to convey footer content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

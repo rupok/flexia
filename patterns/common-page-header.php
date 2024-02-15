@@ -14,7 +14,7 @@
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size">Home</p>
+<p class="has-small-font-size"><?php echo esc_html_x( 'Home', 'Message to convey page header content', 'flexia' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->

@@ -11,13 +11,13 @@
 <div class="wp-block-group alignwide has-background-background-color has-background" style="padding-top:0;padding-right:0;padding-left:0"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"padding":{"right":"0","left":"0"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center" style="padding-right:0;padding-left:0"><!-- wp:column {"verticalAlignment":"center","width":"55%","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}}} -->
 <div class="wp-block-column is-vertically-aligned-center" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);flex-basis:55%"><!-- wp:heading {"style":{"typography":{"textTransform":"capitalize"}},"fontSize":"huge"} -->
-<h2 class="wp-block-heading has-huge-font-size" style="text-transform:capitalize">Creative solutions to improve your business</h2>
+<h2 class="wp-block-heading has-huge-font-size" style="text-transform:capitalize"><?php echo esc_html_x( 'Creative solutions to improve your business', 'Message to convey banner', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"0","left":"0"},"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"wrap","orientation":"horizontal"}} -->
 <div class="wp-block-group" style="padding-right:0;padding-left:0"><!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"style":{"typography":{"textTransform":"capitalize"},"border":{"radius":"8px"}},"className":"is-style-flexia-btn-theme"} -->
-<div class="wp-block-button is-style-flexia-btn-theme" style="text-transform:capitalize"><a class="wp-block-button__link wp-element-button" style="border-radius:8px">Get started</a></div>
+<div class="wp-block-button is-style-flexia-btn-theme" style="text-transform:capitalize"><a class="wp-block-button__link wp-element-button" style="border-radius:8px"><?php echo esc_html_x( 'Get started', 'Message to convey banner', 'flexia' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 
@@ -29,7 +29,7 @@
 <!-- /wp:group -->
 
 <!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|dark-background"},":hover":{"color":{"text":"var:preset|color|primary"}}}},"typography":{"textTransform":"capitalize"}},"textColor":"text","fontSize":"small"} -->
-<h2 class="wp-block-heading has-text-color has-link-color has-small-font-size" style="text-transform:capitalize"><a href="#">Book A Call</a></h2>
+<h2 class="wp-block-heading has-text-color has-link-color has-small-font-size" style="text-transform:capitalize"><a href="#"><?php echo esc_html_x( 'Book A Call', 'Message to convey that banner', 'flexia' ); ?></a></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

@@ -8,11 +8,11 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
 <div id="pricing" class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"align":"center","style":{"typography":{"letterSpacing":"4px","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"small"} -->
-<p class="has-text-align-center has-primary-color has-text-color has-link-color has-small-font-size" style="letter-spacing:4px;text-transform:uppercase">pricing</p>
+<p class="has-text-align-center has-primary-color has-text-color has-link-color has-small-font-size" style="letter-spacing:4px;text-transform:uppercase"><?php echo esc_html_x( 'pricing', 'Message to convey pricing content', 'flexia' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"textAlign":"center","style":{"typography":{"textTransform":"capitalize"}},"textColor":"Heading","fontSize":"large-plus"} -->
-<h2 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-large-plus-font-size" style="text-transform:capitalize">Flexible Pricing Plan</h2>
+<h2 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-large-plus-font-size" style="text-transform:capitalize"><?php echo esc_html_x( 'Flexible Pricing Plan', 'Message to convey pricing content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"20px"} -->
@@ -25,21 +25,21 @@
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"0","right":"0"}},"border":{"radius":"4px"}},"backgroundColor":"secondary","className":"hover-box-shadow is-style-flexia-hover-shadow","layout":{"type":"constrained"}} -->
 <div class="wp-block-group hover-box-shadow is-style-flexia-hover-shadow has-secondary-background-color has-background" style="border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:0"><!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","top":"0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:0;padding-right:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:heading {"level":4,"textColor":"Heading","fontSize":"large"} -->
-<h4 class="wp-block-heading has-heading-color has-text-color has-large-font-size">Standard</h4>
+<h4 class="wp-block-heading has-heading-color has-text-color has-large-font-size"><?php echo esc_html_x( 'Standard', 'Message to convey pricing content', 'flexia' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textColor":"Heading","fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-heading-color has-text-color has-x-large-font-size">$49</h2>
+<h2 class="wp-block-heading has-heading-color has-text-color has-x-large-font-size"><?php echo esc_html_x( '$49', 'Message to convey pricing content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:heading {"textColor":"Heading","fontSize":"medium"} -->
-<h2 class="wp-block-heading has-heading-color has-text-color has-medium-font-size">/month</h2>
+<h2 class="wp-block-heading has-heading-color has-text-color has-medium-font-size"><?php echo esc_html_x( '/month', 'Message to convey pricing content', 'flexia' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"textColor":"text"} -->
-<p class="has-text-color">Get started with basic features and kickstart your journey</p>
+<p class="has-text-color"><?php echo esc_html_x( 'Get started with basic features and kickstart your journey', 'Message to convey pricing content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -50,33 +50,33 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:list {"style":{"typography":{"lineHeight":"2.8"}},"className":"is-style-checkmark-list is-style-flexia-list-style-hide is-style-flexia-checkmark-list","fontSize":"small"} -->
 <ul style="line-height:2.8" class="is-style-checkmark-list is-style-flexia-list-style-hide is-style-flexia-checkmark-list has-small-font-size"><!-- wp:list-item -->
-<li>Customization Options</li>
+<li><?php echo esc_html_x( 'Customization Options', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Responsive Design</li>
+<li><?php echo esc_html_x( 'Responsive Design', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>SEO Optimization</li>
+<li><?php echo esc_html_x( 'SEO Optimization', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Blog Integration</li>
+<li><?php echo esc_html_x( 'Blog Integration', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>24/7 Live Chat Support</li>
+<li><?php echo esc_html_x( '24/7 Live Chat Support', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Priority Updates</li>
+<li><?php echo esc_html_x( 'Priority Updates', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list -->
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"Heading","width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-heading-background-color has-background wp-element-button">Get Started</a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-heading-background-color has-background wp-element-button"><?php echo esc_html_x( 'Get Started', 'Message to convey pricing content', 'flexia' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -89,7 +89,7 @@
 <div class="wp-block-group" style="padding-top:0;padding-right:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:columns {"verticalAlignment":"top","isStackedOnMobile":false} -->
 <div class="wp-block-columns are-vertically-aligned-top is-not-stacked-on-mobile"><!-- wp:column {"verticalAlignment":"top"} -->
 <div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"level":4,"textColor":"Heading","fontSize":"large"} -->
-<h4 class="wp-block-heading has-heading-color has-text-color has-large-font-size">Premium</h4>
+<h4 class="wp-block-heading has-heading-color has-text-color has-large-font-size"><?php echo esc_html_x( 'Premium', 'Message to convey pricing content', 'flexia' ); ?></h4>
 <!-- /wp:heading --></div>
 <!-- /wp:column -->
 
@@ -97,7 +97,7 @@
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:110px"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"border":{"radius":"26px"},"position":{"type":""},"spacing":{"blockGap":"0","padding":{"top":"8px","bottom":"8px","left":"8px","right":"8px"}},"dimensions":{"minHeight":""}},"backgroundColor":"luminous-vivid-amber","className":"is-style-default","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","flexWrap":"wrap"}} -->
 <div class="wp-block-group is-style-default has-luminous-vivid-amber-background-color has-background" style="border-radius:26px;padding-top:8px;padding-right:8px;padding-bottom:8px;padding-left:8px"><!-- wp:paragraph {"align":"center","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}},"layout":{"selfStretch":"fit","flexSize":""}},"textColor":"black","fontSize":"small"} -->
-<p class="has-text-align-center has-black-color has-text-color has-small-font-size" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">Popular</p>
+<p class="has-text-align-center has-black-color has-text-color has-small-font-size" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><?php echo esc_html_x( 'Popular', 'Message to convey pricing content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -106,16 +106,16 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textColor":"Heading","fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-heading-color has-text-color has-x-large-font-size">$149</h2>
+<h2 class="wp-block-heading has-heading-color has-text-color has-x-large-font-size"><?php echo esc_html_x( '$149', 'Message to convey pricing content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:heading {"textColor":"Heading","fontSize":"medium"} -->
-<h2 class="wp-block-heading has-heading-color has-text-color has-medium-font-size">/month</h2>
+<h2 class="wp-block-heading has-heading-color has-text-color has-medium-font-size"><?php echo esc_html_x( '/month', 'Message to convey pricing content', 'flexia' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"textColor":"text"} -->
-<p class="has-text-color">Unlock advanced tools for greater results &amp; elevate experience</p>
+<p class="has-text-color"><?php echo esc_html_x( 'Unlock advanced tools for greater results & elevate experience', 'Message to convey pricing content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -126,33 +126,33 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:list {"style":{"typography":{"lineHeight":"2.8"}},"className":"is-style-checkmark-list is-style-flexia-list-style-hide is-style-flexia-checkmark-list","fontSize":"small"} -->
 <ul style="line-height:2.8" class="is-style-checkmark-list is-style-flexia-list-style-hide is-style-flexia-checkmark-list has-small-font-size"><!-- wp:list-item -->
-<li>Customization Options</li>
+<li><?php echo esc_html_x( 'Customization Options', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Responsive Design</li>
+<li><?php echo esc_html_x( 'Responsive Design', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>SEO Optimization</li>
+<li><?php echo esc_html_x( 'SEO Optimization', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Blog Integration</li>
+<li><?php echo esc_html_x( 'Blog Integration', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>24/7 Live Chat Support</li>
+<li><?php echo esc_html_x( '24/7 Live Chat Support', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Priority Updates</li>
+<li><?php echo esc_html_x( 'Priority Updates', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list -->
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button">Get Started</a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button"><?php echo esc_html_x( 'Get Started', 'Message to convey pricing content', 'flexia' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -163,21 +163,21 @@
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"0","right":"0"}},"border":{"radius":"4px"}},"backgroundColor":"secondary","className":"hover-box-shadow is-style-flexia-hover-shadow","layout":{"type":"constrained"}} -->
 <div class="wp-block-group hover-box-shadow is-style-flexia-hover-shadow has-secondary-background-color has-background" style="border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:0"><!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","top":"0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:0;padding-right:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:heading {"level":4,"textColor":"Heading","fontSize":"large"} -->
-<h4 class="wp-block-heading has-heading-color has-text-color has-large-font-size">Enterprise</h4>
+<h4 class="wp-block-heading has-heading-color has-text-color has-large-font-size"><?php echo esc_html_x( 'Enterprise', 'Message to convey pricing content', 'flexia' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textColor":"Heading","fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-heading-color has-text-color has-x-large-font-size">$200</h2>
+<h2 class="wp-block-heading has-heading-color has-text-color has-x-large-font-size"><?php echo esc_html_x( '$200', 'Message to convey pricing content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:heading {"textColor":"Heading","fontSize":"medium"} -->
-<h2 class="wp-block-heading has-heading-color has-text-color has-medium-font-size">/month</h2>
+<h2 class="wp-block-heading has-heading-color has-text-color has-medium-font-size"><?php echo esc_html_x( '/month', 'Message to convey pricing content', 'flexia' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"textColor":"text"} -->
-<p class="has-text-color">Get started with basic features and kickstart your journey</p>
+<p class="has-text-color"><?php echo esc_html_x( 'Get started with basic features and kickstart your journey', 'Message to convey pricing content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -188,33 +188,33 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:list {"style":{"typography":{"lineHeight":"2.8"}},"className":"is-style-checkmark-list is-style-flexia-list-style-hide is-style-flexia-checkmark-list","fontSize":"small"} -->
 <ul style="line-height:2.8" class="is-style-checkmark-list is-style-flexia-list-style-hide is-style-flexia-checkmark-list has-small-font-size"><!-- wp:list-item -->
-<li>Customization Options</li>
+<li><?php echo esc_html_x( 'Customization Options', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Responsive Design</li>
+<li><?php echo esc_html_x( 'Responsive Design', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>SEO Optimization</li>
+<li><?php echo esc_html_x( 'SEO Optimization', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Blog Integration</li>
+<li><?php echo esc_html_x( 'Blog Integration', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>24/7 Live Chat Support</li>
+<li><?php echo esc_html_x( '24/7 Live Chat Support', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Priority Updates</li>
+<li><?php echo esc_html_x( 'Priority Updates', 'Message to convey pricing content', 'flexia' ); ?></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list -->
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"Heading","width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-heading-background-color has-background wp-element-button">Get Started</a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-heading-background-color has-background wp-element-button"><?php echo esc_html_x( 'Get Started', 'Message to convey pricing content', 'flexia' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

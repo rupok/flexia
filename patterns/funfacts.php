@@ -19,11 +19,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-x-large-font-size">99%</h2>
+<h2 class="wp-block-heading has-x-large-font-size"><?php echo esc_html_x( '99%', 'Message to convey funfacts', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Happy Customers</p>
+<p><?php echo esc_html_x( 'Happy Customers', 'Message to convey funfacts', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -37,11 +37,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-x-large-font-size">10M</h2>
+<h2 class="wp-block-heading has-x-large-font-size"><?php echo esc_html_x( '10M', 'Message to convey funfacts', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Active Users</p>
+<p><?php echo esc_html_x( 'Active Users', 'Message to convey funfacts', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -59,11 +59,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-x-large-font-size">100%</h2>
+<h2 class="wp-block-heading has-x-large-font-size"><?php echo esc_html_x( '100%', 'Message to convey funfacts', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Company Growth</p>
+<p><?php echo esc_html_x( 'Company Growth', 'Message to convey funfacts', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -77,11 +77,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-x-large-font-size">100+</h2>
+<h2 class="wp-block-heading has-x-large-font-size"><?php echo esc_html_x( '100+', 'Message to convey funfacts', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Team Members</p>
+<p><?php echo esc_html_x( 'Team Members', 'Message to convey funfacts', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

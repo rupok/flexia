@@ -7,14 +7,14 @@
  */
 ?>
 
-<!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"blockGap":"0"}},"layout":{"type":"default"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0"><!-- wp:cover {"url":"<?php echo esc_url( get_theme_file_uri("/assets/images/page-banner-img.jpg") ); ?>","dimRatio":60,"customOverlayColor":"#0f125c","minHeight":257,"minHeightUnit":"px","align":"full","className":"alignwide"} -->
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"blockGap":"0"}},"layout":{"type":"default"}} -->
+<main class="wp-block-group" style="margin-top:0;margin-bottom:0"><!-- wp:cover {"url":"<?php echo esc_url( get_theme_file_uri("/assets/images/page-banner-img.jpg") ); ?>","dimRatio":60,"customOverlayColor":"#0f125c","minHeight":257,"minHeightUnit":"px","align":"full","className":"alignwide"} -->
 <div class="wp-block-cover alignfull alignwide" style="min-height:257px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-60 has-background-dim" style="background-color:#0f125c"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_theme_file_uri("/assets/images/page-banner-img.jpg") ); ?>" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:query-title {"type":"search","textAlign":"center","fontSize":"huge"} /-->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size">Home</p>
+<p class="has-small-font-size"><?php echo esc_html_x( 'Home', 'Message to convey search page content', 'flexia' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -22,7 +22,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"textAlign":"center","fontSize":"small"} -->
-<h2 class="wp-block-heading has-text-align-center has-small-font-size">Search</h2>
+<h2 class="wp-block-heading has-text-align-center has-small-font-size"><?php echo esc_html_x( 'Search', 'Message to convey search page content', 'flexia' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div></div>
@@ -38,7 +38,7 @@
 <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:query {"queryId":9,"query":{"perPage":10,"pages":0,"offset":"0","postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"align":"wide","layout":{"type":"default"}} -->
 <div class="wp-block-query alignwide"><!-- wp:query-no-results -->
 <!-- wp:paragraph {"placeholder":"Add text or blocks that will display when a query returns no results."} -->
-<p>No posts were found.</p>
+<p><?php echo esc_html_x( 'No posts were found.', 'Message to convey search page content', 'flexia' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- /wp:query-no-results -->
 
@@ -78,6 +78,6 @@
 <!-- /wp:query --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
-<!-- /wp:group --></div>
+<!-- /wp:group --></main>
 <!-- /wp:group -->
 

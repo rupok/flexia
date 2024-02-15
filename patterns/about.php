@@ -13,15 +13,15 @@
 <div class="wp-block-group"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"width":"80%"} -->
 <div class="wp-block-column" style="flex-basis:80%"><!-- wp:paragraph {"align":"left","style":{"typography":{"letterSpacing":"4px","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"small"} -->
-<p class="has-text-align-left has-primary-color has-text-color has-link-color has-small-font-size" style="letter-spacing:4px;text-transform:uppercase">About us</p>
+<p class="has-text-align-left has-primary-color has-text-color has-link-color has-small-font-size" style="letter-spacing:4px;text-transform:uppercase"><?php echo esc_html_x( 'About us', 'Message to convey that about page', 'flexia' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-x-large-font-size">Transforming Dreams into Business Brilliance</h2>
+<h2 class="wp-block-heading has-x-large-font-size"><?php echo esc_html_x( 'Transforming Dreams into Business Brilliance', 'Message to convey that about page content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>It seems like you're looking for a suggestion for the "About Us" page title for an agency. The "About Us" page is typically where organizations provide information about their mission, values, history, team,.</p>
+<p><?php echo esc_html_x( 'It seems like you\'re looking for a suggestion for the About Us page title for an agency. The About Us page is typically where organizations provide information about their mission, values, history, team,.', 'Message to convey that about page content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -45,15 +45,15 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small","padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|heading"}}}},"textColor":"heading","fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-heading-color has-text-color has-link-color has-x-large-font-size">Where Vision Meets Business - Your Dreams, Our Expertise.</h2>
+<h2 class="wp-block-heading has-heading-color has-text-color has-link-color has-x-large-font-size"><?php echo esc_html_x( 'Where Vision Meets Business - Your Dreams, Our Expertise.', 'Message to convey that about page', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|body"}}}},"textColor":"body"} -->
-<p class="has-body-color has-text-color has-link-color">It seems like you're looking for a suggestion for the "About Us" page title for an agency. The "About Us" page is typically where organizations provide information about their mission. onsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p class="has-body-color has-text-color has-link-color"><?php echo esc_html_x( 'It seems like you\'re looking for a suggestion for the "About Us" page title for an agency. The "About Us" page is typically where organizations provide information about their mission. onsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Message to convey that about page', 'flexia' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"textTransform":"capitalize"}},"fontSize":"small"} -->
-<p class="has-small-font-size" style="text-transform:capitalize"><a href="#">Read more</a></p>
+<p class="has-small-font-size" style="text-transform:capitalize"><a href="#"><?php echo esc_html_x( 'Read more', 'Message to convey that about page', 'flexia' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
