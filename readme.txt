@@ -3,8 +3,8 @@
 Contributors: re_enter_rupok, Codetic, wpdevteam, jamilbd07, esratpopy
 Theme URI: https://flexia.pro/
 Tags: FSE, Full Site Editing, Full Site Editor, Block, Block Theme, Theme Options, Agency Solutions, Business Portfolio, Corporate Website, Customizable Layouts, Block-Based Design, Responsive Design, WooCommerce Compatible, Gutenberg Ready, Visual Branding Options, Patterns
-Requires at least: 5.6
-Tested up to: 6.2
+Requires at least: 5.8
+Tested up to: 6.5
 Stable tag: 3.0.0
 Domain Path: /languages/
 License: GNU General Public License v3 or later
