@@ -9,9 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Define Constants
  */
 define( 'FLEXIA_DEV_MODE', false );
-define( 'FLEXIA_VERSION', '4.0.0' );
+define( 'FLEXIA_VERSION', '3.0.0' );
 define( 'FLEXIA_SLUG', 'flexia' );
-define( 'FLEXIA_NAME', 'Flexia FSE' );
+define( 'FLEXIA_NAME', 'Flexia' );
+define( 'FLEXIA_DIR_PATH', get_template_directory() );
 
 if ( ! function_exists( 'flexia_support' ) ):
 
@@ -271,3 +272,5 @@ function flexiapro_deactive_on_update_fse()
 
 add_action( 'admin_init', 'flexiapro_deactive_on_update_fse' );
 add_action( 'after_setup_theme', 'flexiapro_deactive_on_update_fse' );
+
+require_once(FLEXIA_DIR_PATH . '/includes/compatibility.php'); //Load compatibility file

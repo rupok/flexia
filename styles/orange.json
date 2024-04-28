@@ -59,26 +59,22 @@
 					"slug": "primary",
 					"gradient": "background: linear-gradient(270deg, #FFB400 0.04%, #FF3F3F 99.95%), #D9D9D9",
 					"name": "Primary"
-					
 				},
 				{
 					"slug": "secondary",
 					"gradient": "linear-gradient(270deg, #d9e0e2 -5%, #c4bfd9 100%)",
 					"name": "Secondary"
-					
 				},
 				{
 					"slug": "vibrant",
 					"gradient": "linear-gradient(270deg, #FFB400 0.04%, #FF3F3F 99.95%), #D9D9D9 ",
 					"name": "Vibrant"
-					
 				},
 				{
 					"slug": "primary-trans",
 					"gradient": "linear-gradient(0deg, #001847 0%, rgba(0, 87, 255, 0.00) 102.42%)",
 					"name": "Primary Transparent"
 				}
-
 			],
 			"palette": [
 				{
@@ -96,7 +92,6 @@
 					"name": "background Alt",
 					"slug": "background-alt"
 				},
-				
 				{
 					"color": "#FFB400",
 					"name": "Tertiary",
@@ -122,7 +117,6 @@
 					"name": "Text",
 					"slug": "body"
 				},
-				
 				{
 					"color": "#FF3F3F",
 					"name": "Link",
@@ -133,13 +127,11 @@
 					"name": "Heading",
 					"slug": "heading-text"
 				},
-				
 				{
 					"color": "#FCFEFF",
 					"name": "Light Background",
 					"slug": "light-background"
 				},
-	
 				{
 					"color": "#C6D0E0",
 					"name": "Text Alt",
@@ -152,7 +144,6 @@
 				}
 			]
 		}
-		
 	},
 	"styles": {
 		"blocks": {
@@ -175,7 +166,6 @@
 						"color": {
 							"text": "var(--wp--preset--color--heading-text)"
 						}
-						
 					}
 				},
 				"typography": {
@@ -192,8 +182,6 @@
 					"duotone": "var(--wp--preset--duotone--midnight-blue)"
 				}
 			},
-			
-			
 			"core/query-pagination": {
 				"elements": {
 					"link": {
@@ -222,7 +210,6 @@
 					"background": "#DFEDF0"
 				}
 			},
-		
 			"core/site-title": {
 				"elements": {
 					"link": {
@@ -264,9 +251,7 @@
 						}
 					}
 				}
-			
 			}
-			
 		},
 		"elements": {
 			"button": {
@@ -320,7 +305,6 @@
 						"textDecoration": "underline dashed"
 					}
 				},
-				
 				":hover": {
 					"color": {
 						"text": "var(--wp--preset--color--primary)"
