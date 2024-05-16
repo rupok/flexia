@@ -1,11 +1,3 @@
-<?php
-    /**
-     * Title: Banner
-     * Slug: flexia/banner
-     * Categories: flexia
-     */
-
-?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"var:preset|spacing|x-small","right":"var:preset|spacing|x-small"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:0;padding-right:var(--wp--preset--spacing--x-small);padding-bottom:0;padding-left:var(--wp--preset--spacing--x-small)"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0","right":"0","left":"0"}}},"backgroundColor":"background","layout":{"type":"flex","flexWrap":"wrap"}} -->
 <div class="wp-block-group alignwide has-background-background-color has-background" style="padding-top:0;padding-right:0;padding-left:0"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"padding":{"right":"0","left":"0"}}}} -->
@@ -16,13 +8,13 @@
 
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"0","left":"0"},"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"wrap","orientation":"horizontal"}} -->
 <div class="wp-block-group" style="padding-right:0;padding-left:0"><!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"style":{"typography":{"textTransform":"capitalize"},"border":{"radius":"8px"}},"className":"is-style-flexia-btn-theme"} -->
-<div class="wp-block-button is-style-flexia-btn-theme" style="text-transform:capitalize"><a class="wp-block-button__link wp-element-button" style="border-radius:8px"><?php echo esc_html_x( 'Get started', 'Message to convey banner', 'flexia' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"textColor":"primary","gradient":"primary-grad","style":{"typography":{"textTransform":"capitalize"},"border":{"radius":"12px","color":"#eaeaff","width":"1px"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"className":"is-style-flexia-btn-theme"} -->
+<div class="wp-block-button is-style-flexia-btn-theme" style="text-transform:capitalize"><a class="wp-block-button__link has-primary-color has-primary-grad-gradient-background has-text-color has-background has-link-color has-border-color wp-element-button" style="border-color:#eaeaff;border-width:1px;border-radius:12px"><?php echo esc_html_x( 'Get started', 'Message to convey banner', 'flexia' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 
-<!-- wp:group {"style":{"border":{"radius":"8px"},"spacing":{"blockGap":"10px","padding":{"top":"13px","bottom":"13px","left":"var:preset|spacing|x-small","right":"var:preset|spacing|x-small"}}},"backgroundColor":"tertiary","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group has-tertiary-background-color has-background" style="border-radius:8px;padding-top:13px;padding-right:var(--wp--preset--spacing--x-small);padding-bottom:13px;padding-left:var(--wp--preset--spacing--x-small)"><!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"right":"0","left":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"border":{"radius":"10px","color":"#e8f8df","width":"1px"},"spacing":{"blockGap":"10px","padding":{"top":"13px","bottom":"13px","left":"var:preset|spacing|x-small","right":"var:preset|spacing|x-small"}}},"gradient":"secondary-grad","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group has-border-color has-secondary-grad-gradient-background has-background" style="border-color:#e8f8df;border-width:1px;border-radius:10px;padding-top:13px;padding-right:var(--wp--preset--spacing--x-small);padding-bottom:13px;padding-left:var(--wp--preset--spacing--x-small)"><!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"right":"0","left":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group" style="padding-right:0;padding-left:0"><!-- wp:image {"width":"76px","height":"auto","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/stack-img.png" ) ); ?>" alt="" style="object-fit:cover;width:76px;height:auto"/></figure>
 <!-- /wp:image --></div>

@@ -22,10 +22,10 @@
 
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}}} -->
-<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","right":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30"},"blockGap":"0"},"border":{"radius":"4px"},"dimensions":{"minHeight":"100%"}},"backgroundColor":"light-background","className":"is-style-flexia-sm-bg-shadow","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-flexia-sm-bg-shadow has-light-background-background-color has-background" style="border-radius:4px;min-height:100%;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","right":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30"},"blockGap":"0"},"border":{"radius":"12px","width":"1px"},"dimensions":{"minHeight":"100%"}},"borderColor":"border-color","className":"is-style-flexia-sm-bg-shadow","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-flexia-sm-bg-shadow has-border-color has-border-color-border-color" style="border-width:1px;border-radius:12px;min-height:100%;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"width":"40px","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri("/assets/images/user-1.png") ); ?>" alt="" style="border-radius:20px;width:40px"/></figure>
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri("/assets/images/user-1.png") ); ?> alt="" style="border-radius:20px;width:40px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
@@ -58,8 +58,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}}} -->
-<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","right":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30"},"blockGap":"0"},"border":{"radius":"4px"},"dimensions":{"minHeight":"100%"}},"backgroundColor":"light-background","className":"is-style-flexia-sm-bg-shadow","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-flexia-sm-bg-shadow has-light-background-background-color has-background" style="border-radius:4px;min-height:100%;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","right":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30"},"blockGap":"0"},"border":{"radius":"12px","width":"1px"},"dimensions":{"minHeight":"100%"}},"borderColor":"border-color","className":"is-style-flexia-sm-bg-shadow","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-flexia-sm-bg-shadow has-border-color has-border-color-border-color" style="border-width:1px;border-radius:12px;min-height:100%;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"width":"40px","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}}} -->
 <figure class="wp-block-image size-full is-resized has-custom-border"><img src="<?php echo esc_url( get_theme_file_uri("/assets/images/user-2.png") ); ?>" alt="" style="border-radius:20px;width:40px"/></figure>
 <!-- /wp:image -->

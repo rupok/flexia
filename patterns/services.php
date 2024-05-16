@@ -23,49 +23,55 @@
 <!-- wp:group {"align":"wide","className":"flexia-column-wrap","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide flexia-column-wrap"><!-- wp:columns {"align":"full","style":{"spacing":{"padding":{"right":"0","left":"0"}}}} -->
 <div class="wp-block-columns alignfull" style="padding-right:0;padding-left:0"><!-- wp:column {"width":""} -->
-<div class="wp-block-column"><!-- wp:group {"style":{"border":{"radius":"4px","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"borderColor":"secondary","backgroundColor":"light-background","className":"is-style-hover-border is-style-flexia-hover-border","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-hover-border is-style-flexia-hover-border has-border-color has-secondary-border-color has-light-background-background-color has-background" style="border-width:1px;border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:image {"align":"center","width":"70px","height":"70px","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|dark-gray"}}} -->
-<figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/services/Vector1.png" ) ); ?>" alt="" class="" style="object-fit:cover;width:70px;height:70px"/></figure>
-<!-- /wp:image -->
+<div class="wp-block-column"><!-- wp:group {"style":{"border":{"radius":"4px","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"borderColor":"border-color","backgroundColor":"light-background","className":"is-style-hover-border is-style-flexia-hover-border","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-hover-border is-style-flexia-hover-border has-border-color has-border-color-border-color has-light-background-background-color has-background" style="border-width:1px;border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"style":{"dimensions":{"minHeight":"100px"},"border":{"radius":"26px"}},"backgroundColor":"background","layout":{"type":"flex","orientation":"horizontal","justifyContent":"center"}} -->
+<div class="wp-block-group has-background-background-color has-background" style="border-radius:26px;min-height:100px"><!-- wp:image {"width":"70px","height":"70px","scale":"cover","sizeSlug":"full","linkDestination":"none","align":"center","style":{"color":{}}} -->
+<figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/icon-1.png" ) ); ?>" alt="" class="" style="object-fit:cover;width:70px;height:70px"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group -->
 
 <!-- wp:heading {"textAlign":"center","fontSize":"medium-plus"} -->
 <h2 class="wp-block-heading has-text-align-center has-medium-plus-font-size"><?php echo esc_html_x( 'UX Designs', 'Message to convey service content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
+<p class="has-text-align-center has-text-color has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"style":{"border":{"radius":"4px","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"borderColor":"secondary","backgroundColor":"light-background","className":"is-style-hover-border is-style-flexia-hover-border","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-hover-border is-style-flexia-hover-border has-border-color has-secondary-border-color has-light-background-background-color has-background" style="border-width:1px;border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:image {"align":"center","width":"70px","height":"auto","aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|dark-gray"}}} -->
-<figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/services/Vector1.png" ) ); ?>" alt="" class="" style="aspect-ratio:1;object-fit:cover;width:70px;height:auto"/></figure>
-<!-- /wp:image -->
+<div class="wp-block-column"><!-- wp:group {"style":{"border":{"radius":"4px","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"borderColor":"border-color","backgroundColor":"light-background","className":"is-style-hover-border is-style-flexia-hover-border","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-hover-border is-style-flexia-hover-border has-border-color has-border-color-border-color has-light-background-background-color has-background" style="border-width:1px;border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"style":{"dimensions":{"minHeight":"100px"},"border":{"radius":"26px"}},"backgroundColor":"white-bg","layout":{"type":"flex","orientation":"horizontal","justifyContent":"center"}} -->
+<div class="wp-block-group has-white-bg-background-color has-background" style="border-radius:26px;min-height:100px"><!-- wp:image {"width":"70px","height":"70px","scale":"cover","sizeSlug":"full","linkDestination":"none","align":"center","style":{"color":{}}} -->
+<figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/services/icon-2.png" ) ); ?>" alt="" class="" style="object-fit:cover;width:70px;height:70px"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group -->
 
 <!-- wp:heading {"textAlign":"center","fontSize":"medium-plus"} -->
 <h2 class="wp-block-heading has-text-align-center has-medium-plus-font-size"><?php echo esc_html_x( 'SEO Optimized', 'Message to convey service content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
+<p class="has-text-align-center has-text-color has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"33.3%"} -->
-<div class="wp-block-column" style="flex-basis:33.3%"><!-- wp:group {"style":{"border":{"radius":"4px","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"borderColor":"secondary","backgroundColor":"light-background","className":"is-style-hover-border is-style-flexia-hover-border","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-hover-border is-style-flexia-hover-border has-border-color has-secondary-border-color has-light-background-background-color has-background" style="border-width:1px;border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:image {"align":"center","width":"70px","height":"70px","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|dark-gray"}}} -->
-<figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/services/Vecto2r.png" ) ); ?>" alt="" class="" style="object-fit:cover;width:70px;height:70px"/></figure>
-<!-- /wp:image -->
+<div class="wp-block-column" style="flex-basis:33.3%"><!-- wp:group {"style":{"border":{"radius":"4px","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"borderColor":"border-color","backgroundColor":"light-background","className":"is-style-hover-border is-style-flexia-hover-border","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-hover-border is-style-flexia-hover-border has-border-color has-border-color-border-color has-light-background-background-color has-background" style="border-width:1px;border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"style":{"dimensions":{"minHeight":"100px"},"border":{"radius":"26px"}},"backgroundColor":"white-bg","layout":{"type":"flex","orientation":"horizontal","justifyContent":"center"}} -->
+<div class="wp-block-group has-white-bg-background-color has-background" style="border-radius:26px;min-height:100px"><!-- wp:image {"width":"70px","height":"70px","scale":"cover","sizeSlug":"full","linkDestination":"none","align":"center","style":{"color":{}}} -->
+<figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/services/icon-4.png" ) ); ?>" alt="" class="" style="object-fit:cover;width:70px;height:70px"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group -->
 
 <!-- wp:heading {"textAlign":"center","fontSize":"medium-plus"} -->
 <h2 class="wp-block-heading has-text-align-center has-medium-plus-font-size"><?php echo esc_html_x( 'Digital Marketing', 'Message to convey service content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
+<p class="has-text-align-center has-text-color has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -73,49 +79,55 @@
 
 <!-- wp:columns {"align":"full","style":{"spacing":{"padding":{"right":"0","left":"0"}}}} -->
 <div class="wp-block-columns alignfull" style="padding-right:0;padding-left:0"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"style":{"border":{"radius":"4px","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"borderColor":"secondary","backgroundColor":"light-background","className":"is-style-hover-border is-style-flexia-hover-border","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-hover-border is-style-flexia-hover-border has-border-color has-secondary-border-color has-light-background-background-color has-background" style="border-width:1px;border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:image {"align":"center","width":"70px","height":"70px","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|dark-gray"}}} -->
-<figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/services/Group2.png" ) ); ?>" alt="" class="" style="object-fit:cover;width:70px;height:70px"/></figure>
-<!-- /wp:image -->
+<div class="wp-block-column"><!-- wp:group {"style":{"border":{"radius":"4px","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"borderColor":"border-color","backgroundColor":"light-background","className":"is-style-hover-border is-style-flexia-hover-border","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-hover-border is-style-flexia-hover-border has-border-color has-border-color-border-color has-light-background-background-color has-background" style="border-width:1px;border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"style":{"dimensions":{"minHeight":"100px"},"border":{"radius":"26px"}},"backgroundColor":"white-bg","layout":{"type":"flex","orientation":"horizontal","justifyContent":"center"}} -->
+<div class="wp-block-group has-white-bg-background-color has-background" style="border-radius:26px;min-height:100px"><!-- wp:image {"width":"70px","height":"70px","scale":"cover","sizeSlug":"full","linkDestination":"none","align":"center","style":{"color":{}}} -->
+<figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/services/icon-6.png" ) ); ?>" alt="" class="" style="object-fit:cover;width:70px;height:70px"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group -->
 
 <!-- wp:heading {"textAlign":"center","fontSize":"medium-plus"} -->
-<h2 class="wp-block-heading has-text-align-center has-medium-plus-font-size"><?php echo esc_html_x( 'Social Media Marketin', 'Message to convey service content', 'flexia' ); ?>g</h2>
+<h2 class="wp-block-heading has-text-align-center has-medium-plus-font-size"><?php echo esc_html_x( 'Social Media Marketin', 'Message to convey service content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
+<p class="has-text-align-center has-text-color has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"style":{"border":{"radius":"4px","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"borderColor":"secondary","backgroundColor":"light-background","className":"is-style-hover-border is-style-flexia-hover-border","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-hover-border is-style-flexia-hover-border has-border-color has-secondary-border-color has-light-background-background-color has-background" style="border-width:1px;border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:image {"align":"center","width":"70px","height":"70px","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|dark-gray"}}} -->
-<figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/services/Frame4.png" ) ); ?>" alt="" class="" style="object-fit:cover;width:70px;height:70px"/></figure>
-<!-- /wp:image -->
+<div class="wp-block-column"><!-- wp:group {"style":{"border":{"radius":"4px","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"borderColor":"border-color","backgroundColor":"light-background","className":"is-style-hover-border is-style-flexia-hover-border","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-hover-border is-style-flexia-hover-border has-border-color has-border-color-border-color has-light-background-background-color has-background" style="border-width:1px;border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"style":{"dimensions":{"minHeight":"100px"},"border":{"radius":"26px"}},"backgroundColor":"white-bg","layout":{"type":"flex","orientation":"horizontal","justifyContent":"center"}} -->
+<div class="wp-block-group has-white-bg-background-color has-background" style="border-radius:26px;min-height:100px"><!-- wp:image {"width":"70px","height":"70px","scale":"cover","sizeSlug":"full","linkDestination":"none","align":"center","style":{"color":{}}} -->
+<figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/services/icon-5.png" ) ); ?>" alt="" class="" style="object-fit:cover;width:70px;height:70px"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group -->
 
 <!-- wp:heading {"textAlign":"center","fontSize":"medium-plus"} -->
 <h2 class="wp-block-heading has-text-align-center has-medium-plus-font-size"><?php echo esc_html_x( 'UI Designs', 'Message to convey service content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
+<p class="has-text-align-center has-text-color has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"33.3%"} -->
-<div class="wp-block-column" style="flex-basis:33.3%"><!-- wp:group {"style":{"border":{"radius":"4px","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"borderColor":"secondary","backgroundColor":"light-background","className":"is-style-hover-border is-style-flexia-hover-border","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-hover-border is-style-flexia-hover-border has-border-color has-secondary-border-color has-light-background-background-color has-background" style="border-width:1px;border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:image {"align":"center","width":"70px","height":"70px","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|dark-gray"}}} -->
-<figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/services/Frame6.png" ) ); ?>" alt="" class="" style="object-fit:cover;width:70px;height:70px"/></figure>
-<!-- /wp:image -->
+<div class="wp-block-column" style="flex-basis:33.3%"><!-- wp:group {"style":{"border":{"radius":"4px","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"borderColor":"border-color","backgroundColor":"light-background","className":"is-style-hover-border is-style-flexia-hover-border","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-hover-border is-style-flexia-hover-border has-border-color has-border-color-border-color has-light-background-background-color has-background" style="border-width:1px;border-radius:4px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"style":{"dimensions":{"minHeight":"100px"},"border":{"radius":"26px"}},"backgroundColor":"white-bg","layout":{"type":"flex","orientation":"horizontal","justifyContent":"center"}} -->
+<div class="wp-block-group has-white-bg-background-color has-background" style="border-radius:26px;min-height:100px"><!-- wp:image {"width":"70px","height":"70px","scale":"cover","sizeSlug":"full","linkDestination":"none","align":"center","style":{"color":{}}} -->
+<figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/services/icon-3.png" ) ); ?>" alt="" class="" style="object-fit:cover;width:70px;height:70px"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group -->
 
 <!-- wp:heading {"textAlign":"center","fontSize":"medium-plus"} -->
 <h2 class="wp-block-heading has-text-align-center has-medium-plus-font-size"><?php echo esc_html_x( 'Business Strategy', 'Message to convey service content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
+<p class="has-text-align-center has-text-color has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>

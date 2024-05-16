@@ -191,17 +191,17 @@ if ( ! function_exists( 'flexia_register' ) ):
                     'label'        => __( 'Checkmark', 'flexia' ),
                     'is_default'   => false,
                     'inline_style' => '
-																																																											                        ul.is-style-flexia-checkmark-list {
-																																																											                            list-style-type: "\f15e";
-																																																											                            padding-left:10px;
-																																																											                        }
-																																																											                        ul.is-style-flexia-checkmark-list li::marker{
-																																																											                            font-family: "dashicons";
-																																																											                        }
+                                                                                                                                                                                                                             ul.is-style-flexia-checkmark-list {
+                                                                                                                                                                                                                                    list-style-type: "\f15e";
+                                                                                                                                                                                                                                    padding-left:10px;
+                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                ul.is-style-flexia-checkmark-list li::marker{
+                                                                                                                                                                                                                                    font-family: "dashicons";
+                                                                                                                                                                                                                                }
 
-																																																											                        ul.is-style-flexia-checkmark-list li {
-																																																											                            padding-inline-start: 1ch;
-																																																											                        }'
+                                                                                                                                                                                                                                ul.is-style-flexia-checkmark-list li {
+                                                                                                                                                                                                                                    padding-inline-start: 1ch;
+                                                                                                                                                                                                                                }'
                  ]
             );
 

@@ -45,8 +45,9 @@
 			"duotone": [
 				{
 					"colors": [
-						"#0057FF",
-						"#0057FF"
+						"#7E65FF",
+						"#7E65FF"
+						
 					],
 					"name": "Primary",
 					"slug": "primary"
@@ -95,7 +96,7 @@
 			"gradients": [
 				{
 					"slug": "primary",
-					"gradient": "linear-gradient(270deg, #0057FF -5%, #4F2CDD 100%)",
+					"gradient": "linear-gradient(270deg, #7E65FF -5%, #4F2CDD 100%)",
 					"name": "Primary"
 				},
 				{
@@ -105,26 +106,62 @@
 				},
 				{
 					"slug": "vibrant",
-					"gradient": "linear-gradient(270deg, #00EDD0 2%, #0057FF 99.96%), #D9D9D9",
+					"gradient": "linear-gradient(270deg, #F1F6FF 2%, #0057FF 99.96%), #D9D9D9",
 					"name": "Vibrant"
 				},
 				{
 					"slug": "primary-trans",
 					"gradient": "linear-gradient(0deg, #001847 0%, rgba(0, 87, 255, 0.00) 102.42%)",
 					"name": "Primary Transparent"
+				},
+				{
+					"slug": "primary-grad",
+					"gradient": "conic-gradient(from -29.33deg at 8.97% 20.54%, #ABDCFF 0deg, #FDFEFF 177.65deg, #ABDCFF 360deg)",
+					"name": "Primary Gradient"
+				},
+				{
+					"slug": "secondary-grad",
+					"gradient": "conic-gradient(from -29.33deg at 8.97% 20.54%, #C5FFF1 0deg, #F0FBF7 177.65deg, #C5FFF1 360deg)",
+					"name": "Secondary Gradient"
 				}
+
 			],
 			"palette": [
 				{
-					"color": "#0057FF",
+					"color": "#7E65FF",
 					"name": "Primary",
 					"slug": "primary"
 				},
+				
+				{
+					"color": "#F7FCFF",
+					"name": "Primary Trans",
+					"slug": "primary-trans-color"
+				},
+
 				{
 					"color": "#F1F6FF",
 					"name": "Secondary",
 					"slug": "secondary"
 				},
+				
+				{
+					"color": "#EEF9FE",
+					"name": "Secondary BG",
+					"slug": "secondary-bg"
+				},
+
+				{
+					"color": "#fff",
+					"name": "Text White",
+					"slug": "body-white"
+				},
+				{
+					"color": "#fff",
+					"name": "White BG",
+					"slug": "white-bg"
+				},
+
 				{
 					"color": "#42E6BF",
 					"name": "Tertiary",
@@ -150,6 +187,7 @@
 					"name": "Text Alt",
 					"slug": "body-alt"
 				},
+				
 				{
 					"color": "#202124",
 					"name": "Heading",
@@ -170,6 +208,13 @@
 					"name": "Dark Background",
 					"slug": "dark-background"
 				},
+				
+				{
+					"color": "#F0F5FB",
+					"name": "Border Color",
+					"slug": "border-color"
+				},
+
 				{
 					"color": "#0057FF",
 					"name": "Link",
@@ -1258,7 +1303,7 @@
 				},
 				"color": {
 					"text": "var(--wp--preset--color--body)",
-					"background": "var(--wp--preset--color--background)"
+					"background": "transparent"
 				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)",

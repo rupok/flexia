@@ -28,9 +28,14 @@ html {
     transition: all .4s ease;
 }
 
-.is-style-flexia-hover-border:hover img{
-    filter: var(--wp--preset--duotone--primary);
+.is-style-flexia-hover-border .wp-block-group{
+    width:100px;
+    box-shadow: 4.376px 13.129px 48.628px -6.322px rgba(22, 52, 80, 0.10);
 }
+
+/* .is-style-flexia-hover-border:hover img{
+    filter: var(--wp--preset--duotone--primary);
+} */
 
 
 .my--120 {
@@ -42,6 +47,13 @@ html {
 .margin--left{
     margin-left: -100px!important;
 }
+
+
+.margin--left-130{
+    margin-left: -130px!important;
+}
+
+
 
 
 /*  Solid border Button */
@@ -152,7 +164,7 @@ html {
 
 .wp-block-group.is-style-flexia-hover-shadow:hover{
     box-shadow: 0px 16px 29px 0px rgba(0, 1, 35, 0.08);
-    background: var(--wp--preset--color--light-background)!important;
+    background: var(--wp--preset--color--light-background);
 }
 .wp-block-group.is-style-flexia-hover-shadow:hover .wp-block-button__link{
     background: var(--wp--preset--color--primary);
@@ -163,10 +175,12 @@ html {
 
 .is-style-flexia-sm-bg-shadow{
     transition: all .4s ease;
-    box-shadow: 0px 1px 2px 0px rgba(0, 1, 35, 0.04);
+    box-shadow: 0px 22.33px 16.25px 0px rgba(0, 1, 35, 0.05);
+    background:var(--wp--preset--color--primary-trans-color);
 }
 .is-style-flexia-sm-bg-shadow:hover{
-    box-shadow: 0px 16px 30px 0px rgba(0, 1, 35, 0.04);
+    background: var(--wp--preset--color--background);
+    box-shadow: 0px 22.33px 16.25px 0px rgba(0, 1, 35, 0.05);
 }
 
 
@@ -292,8 +306,8 @@ html {
 
 .wp-block-search__inside-wrapper {
     border-radius: 8px;
-    border: 1px solid var(--wp--preset--color--background);
-    background: var(--wp--preset--color--background);
+    border: 1px solid transparent;
+    background: transparent;
     height: 50px;
     transition: all .4s ease;
     padding: 10px 12px 10px 40px;
