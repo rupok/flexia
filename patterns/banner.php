@@ -1,3 +1,11 @@
+<?php
+    /**
+     * Title: Banner
+     * Slug: flexia/banner
+     * Categories: flexia
+     */
+?>
+
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"var:preset|spacing|x-small","right":"var:preset|spacing|x-small"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:0;padding-right:var(--wp--preset--spacing--x-small);padding-bottom:0;padding-left:var(--wp--preset--spacing--x-small)"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0","right":"0","left":"0"}}},"backgroundColor":"background","layout":{"type":"flex","flexWrap":"wrap"}} -->
 <div class="wp-block-group alignwide has-background-background-color has-background" style="padding-top:0;padding-right:0;padding-left:0"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"padding":{"right":"0","left":"0"}}}} -->
