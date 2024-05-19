@@ -96,6 +96,29 @@
 					"slug": "secondary-grad",
 					"gradient": "conic-gradient(from -29.33deg at 8.97% 20.54%, #C5FFF1 0deg, #F0FBF7 177.65deg, #C5FFF1 360deg)",
 					"name": "Secondary Gradient"
+				},
+				{
+					"slug": "icon-grad",
+					"gradient": "radial-gradient(26.92% 26.92% at 6.73% 5.77%, rgba(0, 87, 255, 0.35) 0%, rgba(24, 31, 44, 0.5) 100%)",
+					"name": "Icon Gradient1"
+				},
+				
+				{
+					"slug": "icon-grad-2",
+					"gradient": "radial-gradient(25.96% 25.96% at 6.73% 5.77%, rgba(0, 120, 171, 0.35) 0%, rgba(24, 31, 44, 0.5) 100%)",		
+					"name": "Icon Gradient2"
+				},
+
+				{
+					"slug": "icon-grad-3",
+					"gradient": "radial-gradient(31.73% 31.73% at 6.73% 7.69%, rgba(0, 146, 23, 0.35) 0%, rgba(24, 31, 44, 0.5) 100%)",		
+					"name": "Icon Gradient3"
+				},
+				
+				{
+					"slug": "icon-grad-4",
+					"gradient": "radial-gradient(34.62% 34.62% at 3.85% 9.62%, rgba(142, 95, 39, 0.35) 0%, rgba(24, 31, 44, 0.5) 100%) ",		
+					"name": "Icon Gradient4"
 				}
 
 			],
@@ -143,7 +166,7 @@
 					"slug": "tertiary"
 				},
 				{
-					"color": "#01EED1",
+					"color": "#031E53",
 					"name": "Button Background",
 					"slug": "button-background"
 				},
