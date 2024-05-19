@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Pricing
- * Slug: flexia/pricing
+ * Slug: flexia/pricing-2
  * Categories: flexia
  */
 ?>

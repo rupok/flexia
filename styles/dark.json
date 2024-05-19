@@ -121,7 +121,6 @@
 					"name": "Secondary BG",
 					"slug": "secondary-bg"
 				},
-
 				{
 					"color": "#fff",
 					"name": "Text White",
@@ -132,7 +131,6 @@
 					"name": "White BG",
 					"slug": "white-bg"
 				},
-
 				{
 					"color": "#00091B",
 					"name": "Background Alt",
