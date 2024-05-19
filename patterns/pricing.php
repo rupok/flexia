@@ -75,8 +75,8 @@
 <!-- /wp:list -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"Heading","width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-heading-background-color has-background wp-element-button"><?php echo esc_html_x( 'Get Started', 'Message to convey pricing content', 'flexia' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"Heading","textColor":"body-white","width":100,"style":{"elements":{"link":{"color":{"text":"var:preset|color|body-white"}}}}} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-body-white-color has-heading-background-color has-text-color has-background has-link-color wp-element-button">Get Started</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -153,8 +153,8 @@
 <!-- /wp:list -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button"><?php echo esc_html_x( 'Get Started', 'Message to convey pricing content', 'flexia' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"Heading","textColor":"body-white","width":100,"style":{"elements":{"link":{"color":{"text":"var:preset|color|body-white"}}}}} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-body-white-color has-heading-background-color has-text-color has-background has-link-color wp-element-button">Get Started</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -215,8 +215,8 @@
 <!-- /wp:list -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"Heading","width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-heading-background-color has-background wp-element-button"><?php echo esc_html_x( 'Get Started', 'Message to convey pricing content', 'flexia' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"Heading","textColor":"body-white","width":100,"style":{"elements":{"link":{"color":{"text":"var:preset|color|body-white"}}}}} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-body-white-color has-heading-background-color has-text-color has-background has-link-color wp-element-button">Get Started</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
