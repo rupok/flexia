@@ -2,7 +2,7 @@
 
 Contributors: re_enter_rupok, Codetic, wpdevteam, jamilbd07, esratpopy
 Theme URI: https://flexia.pro/
-Tags: FSE, Full Site Editing, Full Site Editor, Block, Block Theme, Theme Options, Agency Solutions, Business Portfolio, Corporate Website, Customizable Layouts, Block-Based Design, Responsive Design, WooCommerce Compatible, Gutenberg Ready, Visual Branding Options, Patterns
+Tags: FSE, Full Site Editing, Full Site Editor, Block, Block Theme, Theme Options, Blog, Custom Background, Custom logo, Header, Footer, eCommerce, WooCommerce, Block Editor, Patterns, Block Editor Pattern, Custom Colors, Editor Style, Agency WordPress Theme, Professional Website Design, Creative Agency Solutions, Business Portfolio, Corporate Website, Customizable Layouts, Block Based Design, Responsive Design, Gutenberg Ready, blog, Gutenberg, WordPress
 Requires at least: 6.0
 Tested up to: 6.5
 Stable tag: 3.0.0
