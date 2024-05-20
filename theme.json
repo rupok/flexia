@@ -123,6 +123,30 @@
 					"slug": "secondary-grad",
 					"gradient": "conic-gradient(from -29.33deg at 8.97% 20.54%, #C5FFF1 0deg, #F0FBF7 177.65deg, #C5FFF1 360deg)",
 					"name": "Secondary Gradient"
+				},
+				{
+					"slug": "icon-grad",
+					"gradient": "radial-gradient(26.92% 26.92% at 5.77% 7.69%, rgba(0, 87, 255, 0.29) 0%, rgba(215, 238, 255, 0.29) 100%)",
+					"name": "Icon Gradient1"
+				},
+				
+				{
+					"slug": "icon-grad-2",
+					"gradient": "radial-gradient(31.73% 31.73% at 6.73% 5.77%, rgba(0, 162, 255, 0.29) 0%, rgba(215, 253, 255, 0.29) 100%)",		
+					"name": "Icon Gradient2"
+				},
+
+
+				{
+					"slug": "icon-grad-3",
+					"gradient": "radial-gradient(30.77% 30.77% at 6.73% 6.73%, rgba(0, 255, 41, 0.29) 0%, rgba(215, 255, 238, 0.29) 100%)",		
+					"name": "Icon Gradient3"
+				},
+				
+				{
+					"slug": "icon-grad-4",
+					"gradient": "radial-gradient(32.69% 32.69% at 6.73% 7.69%, rgba(255, 159, 47, 0.29) 0%, rgba(255, 249, 233, 0.29) 100%)",		
+					"name": "Icon Gradient4"
 				}
 
 			],

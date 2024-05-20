@@ -129,6 +129,21 @@ a:hover{
     box-shadow: 4.376px 13.129px 48.628px -6.322px rgba(22, 52, 80, 0.10);
 }
 
+/*  Hover shadow */
+.wp-block-group.is-style-flexia-hover-shadow{
+    transition: all .4s ease;
+    background: var(--wp--preset--color--primary-trans-color);
+}
+
+.wp-block-group.is-style-flexia-hover-shadow:hover{
+    box-shadow: 0px 16px 29px 0px rgba(0, 1, 35, 0.08);
+    background: var(--wp--preset--color--background);
+}
+.wp-block-group.is-style-flexia-hover-shadow:hover .wp-block-button__link{
+    background: var(--wp--preset--color--primary);
+    color: var(--wp--preset--color--white);
+}
+
 /*  Block search  */
 
 .wp-block-search__inside-wrapper{

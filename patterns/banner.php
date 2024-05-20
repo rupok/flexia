@@ -21,8 +21,8 @@
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 
-<!-- wp:group {"style":{"border":{"radius":"10px","color":"#e8f8df","width":"1px"},"spacing":{"blockGap":"10px","padding":{"top":"13px","bottom":"13px","left":"var:preset|spacing|x-small","right":"var:preset|spacing|x-small"}}},"gradient":"secondary-grad","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group has-border-color has-secondary-grad-gradient-background has-background" style="border-color:#e8f8df;border-width:1px;border-radius:10px;padding-top:13px;padding-right:var(--wp--preset--spacing--x-small);padding-bottom:13px;padding-left:var(--wp--preset--spacing--x-small)"><!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"right":"0","left":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"border":{"radius":"10px","color":"#F1F6FF","width":"1px"},"spacing":{"blockGap":"10px","padding":{"top":"13px","bottom":"13px","left":"var:preset|spacing|x-small","right":"var:preset|spacing|x-small"}}},"gradient":"secondary-grad","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group has-border-color has-secondary-grad-gradient-background has-background" style="border-color:#F1F6FF;border-width:1px;border-radius:10px;padding-top:13px;padding-right:var(--wp--preset--spacing--x-small);padding-bottom:13px;padding-left:var(--wp--preset--spacing--x-small)"><!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"right":"0","left":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group" style="padding-right:0;padding-left:0"><!-- wp:image {"width":"76px","height":"auto","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/stack-img.png" ) ); ?>" alt="" style="object-fit:cover;width:76px;height:auto"/></figure>
 <!-- /wp:image --></div>
@@ -37,7 +37,7 @@
 
 <!-- wp:column {"verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"margin\u002d\u002dleft"} -->
-<figure class="wp-block-image size-full margin--left"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/image-1.png" ) ); ?>" alt=""/></figure>
+<figure class="wp-block-image size-full margin--left"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/banner-img.png" ) ); ?>" alt=""/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
