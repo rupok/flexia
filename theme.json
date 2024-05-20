@@ -1,4 +1,6 @@
 {
+	"$schema": "https://schemas.wp.org/wp/6.5/theme.json",
+	"version": 2,
 	"customTemplates": [
 		{
 			"name": "blank",
@@ -47,7 +49,6 @@
 					"colors": [
 						"#7E65FF",
 						"#7E65FF"
-						
 					],
 					"name": "Primary",
 					"slug": "primary"
@@ -129,26 +130,21 @@
 					"gradient": "radial-gradient(26.92% 26.92% at 5.77% 7.69%, rgba(0, 87, 255, 0.29) 0%, rgba(215, 238, 255, 0.29) 100%)",
 					"name": "Icon Gradient1"
 				},
-				
 				{
 					"slug": "icon-grad-2",
-					"gradient": "radial-gradient(31.73% 31.73% at 6.73% 5.77%, rgba(0, 162, 255, 0.29) 0%, rgba(215, 253, 255, 0.29) 100%)",		
+					"gradient": "radial-gradient(31.73% 31.73% at 6.73% 5.77%, rgba(0, 162, 255, 0.29) 0%, rgba(215, 253, 255, 0.29) 100%)",
 					"name": "Icon Gradient2"
 				},
-
-
 				{
 					"slug": "icon-grad-3",
-					"gradient": "radial-gradient(30.77% 30.77% at 6.73% 6.73%, rgba(0, 255, 41, 0.29) 0%, rgba(215, 255, 238, 0.29) 100%)",		
+					"gradient": "radial-gradient(30.77% 30.77% at 6.73% 6.73%, rgba(0, 255, 41, 0.29) 0%, rgba(215, 255, 238, 0.29) 100%)",
 					"name": "Icon Gradient3"
 				},
-				
 				{
 					"slug": "icon-grad-4",
-					"gradient": "radial-gradient(32.69% 32.69% at 6.73% 7.69%, rgba(255, 159, 47, 0.29) 0%, rgba(255, 249, 233, 0.29) 100%)",		
+					"gradient": "radial-gradient(32.69% 32.69% at 6.73% 7.69%, rgba(255, 159, 47, 0.29) 0%, rgba(255, 249, 233, 0.29) 100%)",
 					"name": "Icon Gradient4"
 				}
-
 			],
 			"palette": [
 				{
@@ -156,25 +152,21 @@
 					"name": "Primary",
 					"slug": "primary"
 				},
-				
 				{
 					"color": "#F7FCFF",
 					"name": "Primary Trans",
 					"slug": "primary-trans-color"
 				},
-
 				{
 					"color": "#F1F6FF",
 					"name": "Secondary",
 					"slug": "secondary"
 				},
-				
 				{
 					"color": "#EEF9FE",
 					"name": "Secondary BG",
 					"slug": "secondary-bg"
 				},
-
 				{
 					"color": "#fff",
 					"name": "Text White",
@@ -185,7 +177,6 @@
 					"name": "White BG",
 					"slug": "white-bg"
 				},
-
 				{
 					"color": "#42E6BF",
 					"name": "Tertiary",
@@ -211,7 +202,6 @@
 					"name": "Text Alt",
 					"slug": "body-alt"
 				},
-				
 				{
 					"color": "#202124",
 					"name": "Heading",
@@ -232,13 +222,11 @@
 					"name": "Dark Background",
 					"slug": "dark-background"
 				},
-				
 				{
 					"color": "#F0F5FB",
 					"name": "Border Color",
 					"slug": "border-color"
 				},
-
 				{
 					"color": "#0057FF",
 					"name": "Link",
@@ -1411,7 +1399,5 @@
 			"name": "footer",
 			"title": "Footer"
 		}
-	],
-	"version": 2,
-	"$schema": "https://schemas.wp.org/wp/6.4/theme.json"
+	]
 }
