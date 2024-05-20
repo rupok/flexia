@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'FLEXIA_DEV_MODE', false );
 define( 'FLEXIA_VERSION', '3.0.0' );
 define( 'FLEXIA_SLUG', 'flexia' );
-define( 'FLEXIA_NAME', 'Flexia' );
+define( 'FLEXIA_NAME', 'flexia' );
 define( 'FLEXIA_DIR_PATH', get_template_directory() );
 
 if ( ! function_exists( 'flexia_support' ) ):
@@ -53,14 +53,14 @@ add_action( 'wp_enqueue_scripts', 'flexia_styles' );
 register_block_pattern_category(
     'flexia',
     [
-        'label' => __( 'Flexia Patterns', 'Flexia' )
+        'label' => __( 'Flexia Patterns', 'flexia' )
      ]
 );
 
 register_block_pattern_category(
     'flexia-pages',
     [
-        'label' => __( 'Flexia Pages', 'Flexia' )
+        'label' => __( 'Flexia Pages', 'flexia' )
      ]
 );
 
