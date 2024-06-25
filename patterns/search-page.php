@@ -35,7 +35,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"66.66%"} -->
-<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:query {"queryId":9,"query":{"perPage":10,"pages":0,"offset":"0","postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"align":"wide","layout":{"type":"default"}} -->
+<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:query {"query":{"perPage":10,"pages":0,"offset":"0","postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"align":"wide","layout":{"type":"default"}} -->
 <div class="wp-block-query alignwide"><!-- wp:query-no-results -->
 <!-- wp:paragraph {"placeholder":"Add text or blocks that will display when a query returns no results."} -->
 <p><?php echo esc_html_x( 'No posts were found.', 'Message to convey search page content', 'flexia' ); ?></p>
@@ -58,7 +58,7 @@
 <!-- wp:post-terms {"term":"category","style":{"elements":{"link":{"color":{"text":"var:preset|color|text"}}}},"textColor":"text","fontSize":"small"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:post-excerpt {"moreText":"Read More","excerptLength":40} /--></div>
+<!-- wp:post-excerpt {"moreText":"<?php echo esc_attr_x( 'Read More', 'Read More button text', 'flexia' ); ?>","excerptLength":40} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 <!-- /wp:post-template -->

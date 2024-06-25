@@ -40,11 +40,11 @@
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"textColor":"body-alt","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"10px"}},"fontSize":"medium","fontFamily":"inter"} -->
-<!-- wp:navigation-link {"label":"Features","url":"#","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Pricing","url":"#","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Case Studies","url":"#","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Reviews","url":"#","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Updates","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Features', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Pricing', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Case Studies', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Reviews', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Updates', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
 <!-- /wp:navigation --></div>
 <!-- /wp:column -->
 
@@ -54,11 +54,11 @@
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"textColor":"body-alt","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"10px"}},"fontSize":"medium","fontFamily":"inter"} -->
-<!-- wp:navigation-link {"label":"About","url":"#","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Contact Us","url":"#","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Careers","url":"#","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Culture","url":"#","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Blog","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'About', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Contact Us', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Careers', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Culture', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Blog', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
 <!-- /wp:navigation --></div>
 
 <!-- /wp:column --></div>
@@ -73,10 +73,10 @@
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"textColor":"body-alt","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"10px"}},"fontSize":"medium","fontFamily":"inter"} -->
-<!-- wp:navigation-link {"label":"Getting Started","url":"#","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Help Center","url":"#","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Server Status","url":"#","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Report a bug","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Getting Started', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Help Center', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Server Status', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Report a bug', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
 <!-- /wp:navigation --></div>
 <!-- /wp:column -->
 
@@ -86,10 +86,10 @@
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"textColor":"body-alt","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"10px"}},"fontSize":"medium","fontFamily":"inter"} -->
-<!-- wp:navigation-link {"label":"IOS","url":"#","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Android","url":"#","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Mac","url":"#","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Windows","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'IOS', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Android', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Mac', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Windows', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
 <!-- /wp:navigation --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>

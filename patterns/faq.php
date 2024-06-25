@@ -52,7 +52,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php echo esc_html_x( 'If you don\’t renew, you won’t get the premium support and automatic updates. But you can always get the latest version from your account, download them and update manually.', 'Message to convey FAQ', 'flexia' ); ?></p>
+<p><?php echo esc_html_x( 'If you don\'t renew, you won\'t get the premium support and automatic updates. But you can always get the latest version from your account, download them and update manually.', 'Message to convey FAQ', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

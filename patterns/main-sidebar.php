@@ -6,7 +6,7 @@
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"},"blockGap":"var:preset|spacing|30"},"border":{"radius":"8px"}},"backgroundColor":"secondary","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-secondary-background-color has-background" style="border-radius:8px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search blog","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true} /-->
+<div class="wp-block-group has-secondary-background-color has-background" style="border-radius:8px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:search {"label":"<?php echo esc_attr_x( 'Search', 'search button label', 'flexia' ); ?>","showLabel":false,"placeholder":"<?php echo esc_attr_x( 'Search', 'search button label', 'flexia' ); ?>","buttonText":"<?php echo esc_attr_x( 'Search', 'search button text', 'flexia' ); ?>","buttonPosition":"button-inside","buttonUseIcon":true} /-->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
