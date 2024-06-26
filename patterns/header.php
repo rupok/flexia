@@ -52,15 +52,15 @@
 <!-- /wp:image -->
 
 <!-- wp:navigation {"textColor":"Heading","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right"},"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"fontSize":"medium"} -->
-<!-- wp:navigation-link {"label":"Home","url":"#","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"About","url":"#about","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Services","url":"#services","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Pricing","url":"#pricing","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Blog","url":"#blog","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"Contact","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Home', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'About', 'flexia' ); ?>","url":"#about","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Services', 'flexia' ); ?>","url":"#services","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Pricing', 'flexia' ); ?>","url":"#pricing","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Blog', 'flexia' ); ?>","url":"#blog","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Contact', 'flexia' ); ?>","url":"#","kind":"custom","isTopLevelLink":true} /-->
 <!-- /wp:navigation -->
 
-<!-- wp:search {"label":"Search","showLabel":false,"buttonText":"Search","buttonPosition":"button-only","buttonUseIcon":true,"isSearchFieldHidden":true,"style":{"border":{"width":"0px","style":"none","radius":"0px"},"layout":{"selfStretch":"fit","flexSize":null}},"textColor":"Heading","className":"header-search is-style-flexia-minimal-search","fontSize":"small"} /--></div>
+<!-- wp:search {"label":"<?php echo esc_attr_x( 'Search', 'search button text', 'flexia' ); ?>","showLabel":false,"buttonText":"<?php echo esc_attr_x( 'Search', 'search button text', 'flexia' ); ?>","buttonPosition":"button-only","buttonUseIcon":true,"isSearchFieldHidden":true,"style":{"border":{"width":"0px","style":"none","radius":"0px"},"layout":{"selfStretch":"fit","flexSize":null}},"textColor":"Heading","className":"header-search is-style-flexia-minimal-search","fontSize":"small"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

@@ -21,7 +21,7 @@
 <!-- wp:post-date {"fontSize":"small"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:post-excerpt {"moreText":"Read More","excerptLength":30} /--></div>
+<!-- wp:post-excerpt {"moreText":"<?php echo esc_attr_x( 'Read More', 'Read More button text', 'flexia' ); ?>","excerptLength":30} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 <!-- /wp:post-template -->

@@ -76,7 +76,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"Heading","textColor":"body-white","width":100,"style":{"elements":{"link":{"color":{"text":"var:preset|color|body-white"}}}}} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-body-white-color has-heading-background-color has-text-color has-background has-link-color wp-element-button">Get Started</a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-body-white-color has-heading-background-color has-text-color has-background has-link-color wp-element-button"><?php esc_html_e( 'Get Started', 'flexia' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -154,7 +154,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"Heading","textColor":"body-white","width":100,"style":{"elements":{"link":{"color":{"text":"var:preset|color|body-white"}}}}} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-body-white-color has-heading-background-color has-text-color has-background has-link-color wp-element-button">Get Started</a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-body-white-color has-heading-background-color has-text-color has-background has-link-color wp-element-button"><?php esc_html_e( 'Get Started', 'flexia' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -216,7 +216,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"Heading","textColor":"body-white","width":100,"style":{"elements":{"link":{"color":{"text":"var:preset|color|body-white"}}}}} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-body-white-color has-heading-background-color has-text-color has-background has-link-color wp-element-button">Get Started</a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-body-white-color has-heading-background-color has-text-color has-background has-link-color wp-element-button"><?php esc_html_e( 'Get Started', 'flexia' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Define Constants
  */
 define( 'FLEXIA_DEV_MODE', false );
-define( 'FLEXIA_VERSION', '3.0.0' );
+define( 'FLEXIA_VERSION', '3.0.1' );
 define( 'FLEXIA_SLUG', 'flexia' );
 define( 'FLEXIA_NAME', 'flexia' );
 define( 'FLEXIA_DIR_PATH', get_template_directory() );
@@ -121,18 +121,18 @@ if ( ! function_exists( 'flexia_register' ) ):
                     'label'        => __( 'Minimal', 'flexia' ),
                     'is_default'   => false,
                     'inline_style' => '
-																																																												                    .is-style-flexia-minimal-search .wp-block-search__inside-wrapper{
-																																																												                           height:auto;
-																																																												                           padding:0px;
-																																																												                        }
+																																																															                    .is-style-flexia-minimal-search .wp-block-search__inside-wrapper{
+																																																															                           height:auto;
+																																																															                           padding:0px;
+																																																															                        }
 
-																																																												                        .is-style-flexia-minimal-search  .wp-block-search__inside-wrapper:hover{
-																																																												                            box-shadow: 0px 9px 18px 0px rgba(0, 0, 0, 0.08);
-																																																												                        }
-																																																												                        .is-style-flexia-minimal-search .wp-block-search__button{
-																																																												                            position:static;
-																																																												                        }
-																																																												                    '
+																																																															                        .is-style-flexia-minimal-search  .wp-block-search__inside-wrapper:hover{
+																																																															                            box-shadow: 0px 9px 18px 0px rgba(0, 0, 0, 0.08);
+																																																															                        }
+																																																															                        .is-style-flexia-minimal-search .wp-block-search__button{
+																																																															                            position:static;
+																																																															                        }
+																																																															                    '
 
                  ]
 
@@ -145,18 +145,18 @@ if ( ! function_exists( 'flexia_register' ) ):
                     'label'        => __( 'Inverse', 'flexia' ),
                     'is_default'   => false,
                     'inline_style' => '
-																																																												                    .is-style-flexia-btn-inverse .wp-block-button__link{
-																																																												                           background:var(--wp--preset--color--white);
-																																																												                           color:var(--wp--preset--color--black);
-																																																												                           border-radius:inherit;
-																																																												                        }
+																																																															                    .is-style-flexia-btn-inverse .wp-block-button__link{
+																																																															                           background:var(--wp--preset--color--white);
+																																																															                           color:var(--wp--preset--color--black);
+																																																															                           border-radius:inherit;
+																																																															                        }
 
-																																																												                        .is-style-flexia-btn-inverse  .wp-block-button__link:hover{
-																																																												                            background:var(--wp--preset--color--primary);
-																																																												                            color:var(--wp--preset--color--white);
-																																																												                            border-radius:inherit;
-																																																												                         }
-																																																												                    '
+																																																															                        .is-style-flexia-btn-inverse  .wp-block-button__link:hover{
+																																																															                            background:var(--wp--preset--color--primary);
+																																																															                            color:var(--wp--preset--color--white);
+																																																															                            border-radius:inherit;
+																																																															                         }
+																																																															                    '
 
                  ]
             );
@@ -168,18 +168,18 @@ if ( ! function_exists( 'flexia_register' ) ):
                     'label'        => __( 'Primary', 'flexia' ),
                     'is_default'   => false,
                     'inline_style' => '
-																																																												                        .is-style-flexia-btn-theme  .wp-block-button__link{
-																																																												                            background:var(--wp--preset--color--primary);
-																																																												                            color:var(--wp--preset--color--white);
-																																																												                            border-radius:inherit;
-																																																												                         }
-																																																												                         .is-style-flexia-btn-theme .wp-block-button__link:hover{
-																																																												                            background:var(--wp--preset--color--tertiary);
-																																																												                            color:var(--wp--preset--color--black);
-																																																												                            border-radius:inherit;
-																																																												                         }
+																																																															                        .is-style-flexia-btn-theme  .wp-block-button__link{
+																																																															                            background:var(--wp--preset--color--primary);
+																																																															                            color:var(--wp--preset--color--white);
+																																																															                            border-radius:inherit;
+																																																															                         }
+																																																															                         .is-style-flexia-btn-theme .wp-block-button__link:hover{
+																																																															                            background:var(--wp--preset--color--tertiary);
+																																																															                            color:var(--wp--preset--color--black);
+																																																															                            border-radius:inherit;
+																																																															                         }
 
-																																																												                    '
+																																																															                    '
 
                  ]
             );
@@ -191,17 +191,17 @@ if ( ! function_exists( 'flexia_register' ) ):
                     'label'        => __( 'Checkmark', 'flexia' ),
                     'is_default'   => false,
                     'inline_style' => '
-	                                                                                                                                                                                                                             ul.is-style-flexia-checkmark-list {
-	                                                                                                                                                                                                                                    list-style-type: "\f15e";
-	                                                                                                                                                                                                                                    padding-left:10px;
-	                                                                                                                                                                                                                                }
-	                                                                                                                                                                                                                                ul.is-style-flexia-checkmark-list li::marker{
-	                                                                                                                                                                                                                                    font-family: "dashicons";
-	                                                                                                                                                                                                                                }
+				                                                                                                                                                                                                                             ul.is-style-flexia-checkmark-list {
+				                                                                                                                                                                                                                                    list-style-type: "\f15e";
+				                                                                                                                                                                                                                                    padding-left:10px;
+				                                                                                                                                                                                                                                }
+				                                                                                                                                                                                                                                ul.is-style-flexia-checkmark-list li::marker{
+				                                                                                                                                                                                                                                    font-family: "dashicons";
+				                                                                                                                                                                                                                                }
 
-	                                                                                                                                                                                                                                ul.is-style-flexia-checkmark-list li {
-	                                                                                                                                                                                                                                    padding-inline-start: 1ch;
-	                                                                                                                                                                                                                                }'
+				                                                                                                                                                                                                                                ul.is-style-flexia-checkmark-list li {
+				                                                                                                                                                                                                                                    padding-inline-start: 1ch;
+				                                                                                                                                                                                                                                }'
                  ]
             );
 
@@ -220,12 +220,12 @@ if ( ! function_exists( 'flexia_register' ) ):
                     'name'         => 'flexia-separator-wide-thin-line',
                     'label'        => __( 'Wide Thin Line', 'flexia' ),
                     'inline_style' => '
-																																																												                    .is-style-flexia-separator-wide-thin-line.wp-block-separator:not(.is-style-wide):not(.is-style-dots){
-																																																												                            max-width: var(--wp--style--global--content-size);
-																																																												                            width: 100%;
-																																																												                            border-width: 1px;
-																																																												                        }
-																																																												                    '
+																																																															                    .is-style-flexia-separator-wide-thin-line.wp-block-separator:not(.is-style-wide):not(.is-style-dots){
+																																																															                            max-width: var(--wp--style--global--content-size);
+																																																															                            width: 100%;
+																																																															                            border-width: 1px;
+																																																															                        }
+																																																															                    '
                  ]
             );
             register_block_style(
@@ -234,15 +234,15 @@ if ( ! function_exists( 'flexia_register' ) ):
                     'name'         => 'flexia-social-rounded',
                     'label'        => __( 'Rounded Icon', 'flexia' ),
                     'inline_style' => '
-																																																												                    .is-style-flexia-social-rounded .wp-social-link{
-																																																												                        border-radius: 8px;
-																																																												                    }
-																																																												                        .is-style-flexia-social-rounded .wp-social-link a:hover{
-																																																												                            background:var(--wp--preset--color--primary)!important;
-																																																												                            color:var(--wp--preset--color--white)!important;
-																																																												                            border-radius: 8px;
-																																																												                        }
-																																																												                    '
+																																																															                    .is-style-flexia-social-rounded .wp-social-link{
+																																																															                        border-radius: 8px;
+																																																															                    }
+																																																															                        .is-style-flexia-social-rounded .wp-social-link a:hover{
+																																																															                            background:var(--wp--preset--color--primary)!important;
+																																																															                            color:var(--wp--preset--color--white)!important;
+																																																															                            border-radius: 8px;
+																																																															                        }
+																																																															                    '
                  ]
             );
         }

@@ -5,7 +5,7 @@ Theme URI: https://flexia.pro/
 Tags: FSE, Full Site Editing, Full Site Editor, Block, Block Theme, Theme Options, Blog, Custom Background, Custom logo, Header, Footer, eCommerce, WooCommerce, Block Editor, Patterns, Block Editor Pattern, Custom Colors, Editor Style, Agency WordPress Theme, Professional Website Design, Creative Agency Solutions, Business Portfolio, Corporate Website, Customizable Layouts, Block Based Design, Responsive Design, Gutenberg Ready, blog, Gutenberg, WordPress
 Requires at least: 6.0
 Tested up to: 6.5
-Stable tag: 3.0.0
+Stable tag: 3.0.1
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -33,6 +33,9 @@ Perfect responsiveness on all devices with modern Flexbox and Bootstrap 4 grids.
 
 
 == Changelog ==
+
+= 3.0.1 =
+* Improved: WPML Compatibility support
 
 = 3.0.0 =
 * Released: Convert to Block Theme
