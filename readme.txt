@@ -35,7 +35,7 @@ Perfect responsiveness on all devices with modern Flexbox and Bootstrap 4 grids.
 == Changelog ==
 
 = 3.0.1 =
-* Improved: WPML Compatibility support
+* Added: Translation compatibility with WPML
 
 = 3.0.0 =
 * Released: Convert to Block Theme
