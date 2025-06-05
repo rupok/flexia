@@ -11,7 +11,7 @@
 <div class="wp-block-group alignwide responsive_row"><!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"width":"18px","height":"20px","scale":"contain","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|grayscale"}}} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/mail-open-line.png" ) ); ?>" alt="" style="object-fit:contain;width:18px;height:20px"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/mail-open-line.svg" ) ); ?>" alt="" style="object-fit:contain;width:18px;height:20px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|body-alt"}}}},"textColor":"body-alt","fontSize":"small"} -->
@@ -24,7 +24,7 @@
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right","orientation":"horizontal"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"width":"18px","height":"20px","scale":"contain","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/user-line.png" ) ); ?>" alt="" style="object-fit:contain;width:18px;height:20px"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/user-line.svg" ) ); ?>" alt="" style="object-fit:contain;width:18px;height:20px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|body-alt"}}}},"textColor":"body-alt","className":"is-style-list-style-no-bullet is-style-list-style-hide","fontSize":"small"} -->
@@ -34,7 +34,7 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"width":"18px","height":"20px","scale":"contain","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/user-line.png" ) ); ?>" alt="" style="object-fit:contain;width:18px;height:20px"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( "/assets/images/user-line.svg" ) ); ?>" alt="" style="object-fit:contain;width:18px;height:20px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:loginout {"fontSize":"small"} /--></div>
@@ -48,7 +48,7 @@
 <div class="wp-block-group alignfull has-contrast-color has-text-color has-link-color" style="padding-top:var(--wp--preset--spacing--x-small);padding-right:var(--wp--preset--spacing--x-small);padding-bottom:var(--wp--preset--spacing--x-small);padding-left:var(--wp--preset--spacing--x-small)"><!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
 <div class="wp-block-group alignwide"><!-- wp:image {"width":"140px","height":"35px","scale":"contain","style":{"color":{"duotone":"var:preset|duotone|midnight-blue"}},"className":"size-full theme_logo"} -->
 <figure class="wp-block-image is-resized size-full theme_logo"><a href="<?php echo esc_url( get_home_url() ); ?>">
-<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo.png" alt="Home" style="object-fit:contain;width:140px;height:35px"/></a></figure>
+<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo.svg" alt="Home" style="object-fit:contain;width:140px;height:35px"/></a></figure>
 <!-- /wp:image -->
 
 <!-- wp:navigation {"textColor":"Heading","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right"},"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"fontSize":"medium"} -->

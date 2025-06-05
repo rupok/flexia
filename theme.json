@@ -31,6 +31,20 @@
 				"page"
 			],
 			"title": "Page (without title)"
+		},
+		{
+			"name": "woocommerce",
+			"postTypes": [
+				"product"
+			],
+			"title": "WooCommerce Shop"
+		},
+		{
+			"name": "single-product",
+			"postTypes": [
+				"product"
+			],
+			"title": "Single Product"
 		}
 	],
 	"settings": {
