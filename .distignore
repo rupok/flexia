@@ -1,7 +1,10 @@
+# WordPress.org Distribution Exclusions
+# Development files and directories
 .distignore
 .editorconfig
 .git
 .gitignore
+.github
 .gitlab-ci.yml
 .travis.yml
 .DS_Store
@@ -20,12 +23,63 @@ multisite.xml
 multisite.xml.dist
 phpcs.xml
 phpcs.xml.dist
-README.md
 wp-cli.local.yml
 yarn.lock
 tests
 vendor
 node_modules
+
+# Build and development files
+build.sh
+build
+dist
 *.sql
 *.tar.gz
 *.zip
+
+# Documentation and development files
+README.md
+flexia-todo.md
+PR-TEMPLATE.md
+CHANGELOG.md
+CONTRIBUTING.md
+
+# IDE and editor files
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
+.phpstorm.meta.php
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Log files
+*.log
+error_log
+debug.log
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production

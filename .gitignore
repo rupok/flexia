@@ -12,3 +12,6 @@ framework/assets/.swp
 .phpintel/c667272f5e34816b58ed8a673e437908
 .phpintel/index
 flexia-todo.md
+
+# WordPress.org build files
+build/
