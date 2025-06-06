@@ -530,3 +530,89 @@ ol.wp-block-comment-template ol .wp-block-columns {
     }
     
 } 
+
+/* WooCommerce Styles */
+.woocommerce-main {
+    min-height: 60vh;
+}
+
+.wc-block-product {
+    padding: var(--wp--preset--spacing--20);
+    background: var(--wp--preset--color--background);
+    transition: all 0.3s ease;
+    border: 1px solid var(--wp--preset--color--primary-trans-color);
+}
+
+.wc-block-product:hover {
+    box-shadow: 0px 16px 29px 0px rgba(0, 1, 35, 0.08);
+    transform: translateY(-2px);
+}
+
+.wc-block-product .wp-block-post-title a {
+    text-decoration: none;
+    color: var(--wp--preset--color--contrast);
+}
+
+.wc-block-product .wp-block-post-title a:hover {
+    color: var(--wp--preset--color--primary);
+}
+
+.wc-block-components-product-price {
+    font-weight: 600;
+    color: var(--wp--preset--color--primary);
+}
+
+.wc-block-components-product-button .wp-element-button {
+    background-color: var(--wp--preset--color--primary);
+    border-color: var(--wp--preset--color--primary);
+    transition: all 0.3s ease;
+}
+
+.wc-block-components-product-button .wp-element-button:hover {
+    background-color: var(--wp--preset--color--tertiary);
+    border-color: var(--wp--preset--color--tertiary);
+    color: var(--wp--preset--color--contrast);
+}
+
+/* Single Product Page */
+.wc-block-components-product-image-gallery {
+    margin-bottom: var(--wp--preset--spacing--30);
+}
+
+.wc-block-components-product-rating .wc-block-components-product-rating__stars {
+    color: #ffc107;
+}
+
+.single-product .wp-block-post-title {
+    margin-bottom: var(--wp--preset--spacing--20);
+}
+
+/* Product Gallery */
+.wc-block-product-gallery-large-image img {
+    border-radius: 8px;
+}
+
+.wc-block-product-gallery-thumbnails img {
+    border-radius: 4px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.wc-block-product-gallery-thumbnails img:hover,
+.wc-block-product-gallery-thumbnails img.active {
+    border-color: var(--wp--preset--color--primary);
+}
+
+/* WooCommerce Breadcrumbs */
+.wc-block-breadcrumbs {
+    margin-bottom: var(--wp--preset--spacing--30);
+}
+
+.wc-block-breadcrumbs a {
+    color: var(--wp--preset--color--primary);
+    text-decoration: none;
+}
+
+.wc-block-breadcrumbs a:hover {
+    text-decoration: underline;
+}

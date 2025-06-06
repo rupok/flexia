@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Define Constants
  */
 define( 'FLEXIA_DEV_MODE', false );
-define( 'FLEXIA_VERSION', '3.0.1' );
+define( 'FLEXIA_VERSION', '3.1.0' );
 define( 'FLEXIA_SLUG', 'flexia' );
 define( 'FLEXIA_NAME', 'flexia' );
 define( 'FLEXIA_DIR_PATH', get_template_directory() );
@@ -25,6 +25,49 @@ if ( ! function_exists( 'flexia_support' ) ):
 endif;
 
 add_action( 'after_setup_theme', 'flexia_support' );
+
+/**
+ * Add WooCommerce support
+ */
+if ( ! function_exists( 'flexia_woocommerce_support' ) ) :
+    function flexia_woocommerce_support() {
+        // Add WooCommerce support
+        add_theme_support( 'woocommerce' );
+        
+        // Add support for WC features
+        add_theme_support( 'wc-product-gallery-zoom' );
+        add_theme_support( 'wc-product-gallery-lightbox' );
+        add_theme_support( 'wc-product-gallery-slider' );
+        
+        // Remove default WooCommerce wrapper
+        remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+        remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+        
+        // Add our own wrapper
+        add_action( 'woocommerce_before_main_content', 'flexia_woocommerce_wrapper_start', 10 );
+        add_action( 'woocommerce_after_main_content', 'flexia_woocommerce_wrapper_end', 10 );
+    }
+endif;
+
+add_action( 'after_setup_theme', 'flexia_woocommerce_support' );
+
+/**
+ * WooCommerce wrapper start
+ */
+if ( ! function_exists( 'flexia_woocommerce_wrapper_start' ) ) :
+    function flexia_woocommerce_wrapper_start() {
+        echo '<main class="wp-block-group woocommerce-main" style="margin-top:0;margin-bottom:0">';
+    }
+endif;
+
+/**
+ * WooCommerce wrapper end
+ */
+if ( ! function_exists( 'flexia_woocommerce_wrapper_end' ) ) :
+    function flexia_woocommerce_wrapper_end() {
+        echo '</main>';
+    }
+endif;
 
 if ( ! function_exists( 'flexia_styles' ) ):
     /**
