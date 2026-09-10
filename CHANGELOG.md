@@ -1,6 +1,10 @@
 # Changelog
 
-## 3.2.0 — development
+## 3.2.1 — 2026-09-10
+
+Package the security and modernization changes below for release review. Synchronize theme, runtime and translation metadata to 3.2.1. See the GitHub release for distribution status and installable ZIP.
+
+## 3.2.0 — unreleased development baseline
 
 Restore optional-plugin security defaults; remove automatic Pro deactivation and remote icon requests; guard pattern/include entry points. Keep the theme independent of retired Flexia Core functionality.
 
