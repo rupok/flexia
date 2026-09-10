@@ -4,6 +4,10 @@
      * Slug: flexia/footer
      * Categories: flexia, footer
      */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"120px","left":"20px","right":"20px","bottom":"var:preset|spacing|30"}}},"backgroundColor":"dark-background","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-dark-background-background-color has-background" style="padding-top:120px;padding-right:20px;padding-bottom:var(--wp--preset--spacing--30);padding-left:20px"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|40"}}}} -->

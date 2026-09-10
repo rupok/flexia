@@ -4,6 +4,10 @@
  * Slug: flexia-pages/home
  * Categories: flexia-pages
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 ?>
 <!-- wp:template-part {"slug":"header","theme":"flexia","tagName":"header","area":"header"} /-->
 

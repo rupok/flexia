@@ -5,6 +5,10 @@
  * Categories: flexia
  * Inserter: no
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 ?>
 
 

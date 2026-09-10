@@ -240,7 +240,7 @@ html {
 
 .wp-block-categories-list li:after{
     position: absolute;
-    content: url('https://api.iconify.design/dashicons/arrow-right-alt.svg');
+    content: url('../images/arrow-right.svg');
     font-family:"Dashicons";
     left:0px;
     top:0px;

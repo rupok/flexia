@@ -5,6 +5,10 @@
  * Categories: flexia-pages
  * Inserter: no
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 ?>
 
 <!-- wp:group {"tagName":"main","align":"full","style":{"spacing":{"margin":{"top":"0"}}}} -->

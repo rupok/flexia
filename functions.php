@@ -298,22 +298,6 @@ add_action( 'enqueue_block_assets', function (): void {
     wp_enqueue_style( 'dashicons' );
 } );
 
-//ACF Support
-add_filter( 'acf/shortcode/allow_in_block_themes_outside_content', '__return_true' );
-
-//Deactive flexia pro on switch theme
-function flexiapro_deactive_on_update_fse()
-{
-    $current_version = wp_get_theme()->get( 'Version' );
-    if ( version_compare( $current_version, '3.0.0', '==' ) ) {
-        if ( ! function_exists( 'deactivate_plugins' ) ) {
-            include ABSPATH . '/wp-admin/includes/plugin.php';
-        }
-        deactivate_plugins( 'flexia-pro/flexia-pro.php' );
-    }
-}
-
-add_action( 'admin_init', 'flexiapro_deactive_on_update_fse' );
-add_action( 'after_setup_theme', 'flexiapro_deactive_on_update_fse' );
+// Keep optional plugins' security and lifecycle policies under their own control.
 
 require_once FLEXIA_DIR_PATH . '/includes/compatibility.php'; //Load compatibility file
