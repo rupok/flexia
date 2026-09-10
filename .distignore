@@ -83,3 +83,7 @@ debug.log
 .env.development
 .env.test
 .env.production
+# Release and regression tooling (build uses tools/release-files.txt)
+tools
+docs
+phpcs.xml.dist

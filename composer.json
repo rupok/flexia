@@ -1,0 +1,15 @@
+{
+  "name": "wpdeveloper/flexia",
+  "description": "Development checks for the independent Flexia block theme",
+  "type": "wordpress-theme",
+  "license": "GPL-3.0-or-later",
+  "require-dev": {
+    "wp-coding-standards/wpcs": "3.4.1",
+    "dealerdirect/phpcodesniffer-composer-installer": "1.1.2"
+  },
+  "config": {
+    "allow-plugins": { "dealerdirect/phpcodesniffer-composer-installer": true },
+    "sort-packages": true
+  },
+  "scripts": { "lint": "phpcs --standard=phpcs.xml.dist" }
+}

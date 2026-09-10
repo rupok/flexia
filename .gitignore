@@ -15,3 +15,11 @@ flexia-todo.md
 
 # WordPress.org build files
 build/
+
+# Local development tooling
+vendor/
+__pycache__/
+*.pyc
+.env*
+*.log
+.venv/
