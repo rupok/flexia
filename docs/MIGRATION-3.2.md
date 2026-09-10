@@ -1,0 +1,17 @@
+# Upgrade to Flexia 3.2
+
+Back up the database and theme/plugin files, then test on a staging clone. WordPress 6.6+ is now required; a secure deployment should also use a supported PHP release. WooCommerce 11.0.1 needs WordPress 6.9+.
+
+- **Core independence:** no installation or code migration into the theme is needed. Check historical layout shortcodes and custom CSS/scripts before removing Core; follow CORE-RETIREMENT.md.
+- **ACF:** the theme-wide outside-content shortcode override is gone. Inventory saved ACF shortcodes in templates, widgets, reusable patterns and content. Use an explicitly scoped field-display integration with ACF field-access controls for intended public values. Do not restore the blanket filter to conceal a missing migration.
+- **Pro:** normal page loads never deactivate Pro. Review old Core/Pro/classic integrations separately. The harmless `flexia_get_option` stub remains for child-theme compatibility; it returns an empty string and is not a settings API.
+- **Home/blog:** home.html is now a posts index. For the previous agency layout, insert the Agency landing page pattern into a page and choose that page as the static front page in Reading settings. It is no longer forced onto the posts index.
+- **Archives/sidebar:** archives inherit the requested category/date/author and pagination. Single-with-sidebar renders the selected post body and comments, rather than a latest-post list.
+- **Commerce:** archive-product.html supplies the actual catalog override. The old woocommerce custom-template filename remains as an alias for existing assignments. Related products now use WooCommerce's current-product context.
+- **Site identity:** configure your Site Logo, Site Title and Navigation. Default chrome no longer contains vendor demo contact links or signup links. Existing database-saved header/footer parts remain untouched.
+- **Styles:** theme.json v3, accessible palette updates, shared editor CSS, focus/touch behavior and reduced motion may change appearance. Compare default/dark/orange variations and any child styles before rollout. No existing style/pattern slug is intentionally removed.
+- **Fonts:** missing DM Sans files are replaced by an explicit system fallback under the old preset slug. Missing Inter weights are no longer declared. Existing Sora/Inter files are served as WOFF2; old TTF URLs remain available. If exact typography is contractual, review those presets before updating.
+
+Inventory saved wp_template, wp_template_part and wp_global_styles records. They take precedence over source files, so updating a ZIP does not necessarily update every website's markup. Reconcile changes in the Site Editor; do not delete customer customizations wholesale.
+
+Release only the built ZIP after the local/CI checks pass. Verify a canary site's home/posts/archives/search, comments, sidebar, product/category pages, cart/checkout and editor. Keyboard, reduced-motion, mobile and RTL checks remain part of site-specific acceptance. Roll back code and saved configuration together if needed.
