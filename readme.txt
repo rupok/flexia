@@ -3,36 +3,32 @@
 Contributors: re_enter_rupok, Codetic, wpdevteam, jamilbd07, esratpopy
 Theme URI: https://flexia.pro/
 Tags: FSE, Full Site Editing, Full Site Editor, Block, Block Theme, Theme Options, Blog, Custom Background, Custom logo, Header, Footer, eCommerce, WooCommerce, Block Editor, Patterns, Block Editor Pattern, Custom Colors, Editor Style, Agency WordPress Theme, Professional Website Design, Creative Agency Solutions, Business Portfolio, Corporate Website, Customizable Layouts, Block Based Design, Responsive Design, Gutenberg Ready, blog, Gutenberg, WordPress
-Requires at least: 6.0
+Requires at least: 6.6
 Tested up to: 6.8
-Stable tag: 3.1.0
+Stable tag: 3.2.0
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == Description ==
 
-Enhance your WordPress experience with a modern and versatile Gutenberg-ready block theme built with the Full Site Editing (FSE) feature. It allows more flexibility with endless customization options and enables users to edit everything from headers and footers to templates with blocks. It is lightweight and highly extendable with Customizer and offers true responsiveness with modern Flexbox and mobile-first design. This best multi-purpose theme is fully compatible with WooCommerce. Agencies of any niche can benefit from this exclusive WordPress theme as it is perfect for showcasing your portfolio, attracting clients, and building a professional brand image.
+Flexia is an independent WordPress block theme with Site Editor templates, reusable page patterns, local fonts and three style variations. Build blogs, agency sites and optional WooCommerce stores with native blocks. Flexia Core and Flexia Pro are not required.
 
+Customize the header, footer, navigation and templates in the Site Editor. The posts index shows your posts; the Agency landing page is an optional page pattern.
 
-== 🚀 Exclusive Features ==
-
-##🌐 Full Site Editor
-Design and personalize the entire website effortlessly with the block theme and Full Site Editor. Achieve a unique and professional look and make website building an enjoyable and accessible experience.
-
-##⚙️ Flexible & Customizable
-Customize your website exactly the way you want it. Make it versatile by adding individual control over each page and post.
-
-##⚡ Modern & Lightweight
-Design beautiful and modern websites with Flexia Multipurpose theme and optimize your website for faster loading.
-
-##💻 Responsive & Dynamic
-Perfect responsiveness on all devices with modern Flexbox and Bootstrap 4 grids.
-
-**Get the Flexia classic theme: [Github Link](https://github.com/rupok/flexia/tree/flexia-2.3.1)**
-
+Version 3.2 requires WordPress 6.6 or later. Review docs/MIGRATION-3.2.md in the source repository before upgrading existing sites, especially saved template overrides and historical Core shortcodes.
 
 == Changelog ==
+
+= 3.2.0 =
+* Security: Restore optional plugin security defaults and remove automatic Pro deactivation.
+* Security: Guard direct PHP access, use local icons, and add verified release packaging.
+* Fixed: Blog/archive queries, selected-post sidebar rendering, and WooCommerce catalog routing.
+* Fixed: Related product context, invalid pattern attributes, and missing font references.
+* Improved: Native site branding/navigation, keyboard/touch/motion support, contrast, and RTL styles.
+* Improved: Theme.json v3 (WordPress 6.6+), shared editor styles, and release tests.
+* Retired: Flexia Core recommendation. The theme is independent; migrate legacy shortcodes before removal.
+
 
 = 3.1.0 =
 * Updated: WordPress compatibility to 6.8

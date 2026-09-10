@@ -1,303 +1,105 @@
 <?php
-
-// No direct access, please
+/**
+ * Flexia block theme setup. Optional plugins own their lifecycle and policy.
+ *
+ * @package Flexia
+ */
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+	exit;
 }
 
-/**
- * Define Constants
- */
 define( 'FLEXIA_DEV_MODE', false );
-define( 'FLEXIA_VERSION', '3.1.0' );
+define( 'FLEXIA_VERSION', '3.2.0' );
 define( 'FLEXIA_SLUG', 'flexia' );
 define( 'FLEXIA_NAME', 'flexia' );
 define( 'FLEXIA_DIR_PATH', get_template_directory() );
 
-if ( ! function_exists( 'flexia_support' ) ):
-
-    function flexia_support()
-{
-        // Custom editor styling
-        add_editor_style( 'assets/css/editor-style.css' );
-    }
-
-endif;
-
+if ( ! function_exists( 'flexia_support' ) ) {
+	/** Use the same styles in the editor and frontend. */
+	function flexia_support() {
+		add_editor_style( array( 'assets/css/custom.css', 'assets/css/block-styles.css', 'assets/css/editor-style.css' ) );
+		add_theme_support( 'wp-block-styles' );
+	}
+}
 add_action( 'after_setup_theme', 'flexia_support' );
 
-/**
- * Add WooCommerce support
- */
-if ( ! function_exists( 'flexia_woocommerce_support' ) ) :
-    function flexia_woocommerce_support() {
-        // Add WooCommerce support
-        add_theme_support( 'woocommerce' );
-        
-        // Add support for WC features
-        add_theme_support( 'wc-product-gallery-zoom' );
-        add_theme_support( 'wc-product-gallery-lightbox' );
-        add_theme_support( 'wc-product-gallery-slider' );
-        
-        // Remove default WooCommerce wrapper
-        remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
-        remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
-        
-        // Add our own wrapper
-        add_action( 'woocommerce_before_main_content', 'flexia_woocommerce_wrapper_start', 10 );
-        add_action( 'woocommerce_after_main_content', 'flexia_woocommerce_wrapper_end', 10 );
-    }
-endif;
-
+if ( ! function_exists( 'flexia_woocommerce_support' ) ) {
+	/** Declare optional commerce support without changing plugin state. */
+	function flexia_woocommerce_support() {
+		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
+		remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+		remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+		add_action( 'woocommerce_before_main_content', 'flexia_woocommerce_wrapper_start', 10 );
+		add_action( 'woocommerce_after_main_content', 'flexia_woocommerce_wrapper_end', 10 );
+	}
+}
 add_action( 'after_setup_theme', 'flexia_woocommerce_support' );
 
-/**
- * WooCommerce wrapper start
- */
-if ( ! function_exists( 'flexia_woocommerce_wrapper_start' ) ) :
-    function flexia_woocommerce_wrapper_start() {
-        echo '<main class="wp-block-group woocommerce-main" style="margin-top:0;margin-bottom:0">';
-    }
-endif;
+if ( ! function_exists( 'flexia_woocommerce_wrapper_start' ) ) {
+	/** Legacy commerce renders inside the block template's main landmark. */
+	function flexia_woocommerce_wrapper_start() {
+		echo '<div class="wp-block-group woocommerce-main">';
+	}
+}
+if ( ! function_exists( 'flexia_woocommerce_wrapper_end' ) ) {
+	/** Close the legacy commerce wrapper. */
+	function flexia_woocommerce_wrapper_end() {
+		echo '</div>';
+	}
+}
 
-/**
- * WooCommerce wrapper end
- */
-if ( ! function_exists( 'flexia_woocommerce_wrapper_end' ) ) :
-    function flexia_woocommerce_wrapper_end() {
-        echo '</main>';
-    }
-endif;
-
-if ( ! function_exists( 'flexia_styles' ) ):
-    /**
-     * Enqueue styles.
-     */
-    function flexia_styles()
-{
-        wp_enqueue_style( 'flexia-custom', get_template_directory_uri() . '/assets/css/custom.css', [  ], FLEXIA_VERSION );
-
-        // Register theme stylesheet.
-        wp_register_style(
-            'flexia-style', get_template_directory_uri() . '/style.css', [  ], FLEXIA_VERSION
-        );
-
-        // Enqueue theme stylesheet.
-        wp_enqueue_style( 'flexia-style' );
-    }
-
-endif;
-
+if ( ! function_exists( 'flexia_styles' ) ) {
+	/** Load theme assets without companion plugin dependencies. */
+	function flexia_styles() {
+		wp_enqueue_style( 'flexia-custom', get_theme_file_uri( 'assets/css/custom.css' ), array(), FLEXIA_VERSION );
+		wp_enqueue_style( 'flexia-block-styles', get_theme_file_uri( 'assets/css/block-styles.css' ), array( 'flexia-custom' ), FLEXIA_VERSION );
+		wp_enqueue_style( 'flexia-style', get_stylesheet_uri(), array( 'flexia-block-styles' ), FLEXIA_VERSION );
+	}
+}
 add_action( 'wp_enqueue_scripts', 'flexia_styles' );
 
-/**
- * Register block categories
- */
-register_block_pattern_category(
-    'flexia',
-    [
-        'label' => __( 'Flexia Patterns', 'flexia' )
-     ]
-);
+if ( ! function_exists( 'flexia_register' ) ) {
+	/** Register categories and styles after WordPress initializes. */
+	function flexia_register() {
+		register_block_pattern_category( 'flexia', array( 'label' => __( 'Flexia Patterns', 'flexia' ) ) );
+		register_block_pattern_category( 'flexia-pages', array( 'label' => __( 'Flexia Pages', 'flexia' ) ) );
+		$styles = array(
+			'core/group'        => array(
+				'flexia-hover-border' => __( 'Hover Border', 'flexia' ),
+				'flexia-hover-shadow' => __( 'Hover Shadow', 'flexia' ),
+				'flexia-sm-bg-shadow' => __( 'Small BG Shadow', 'flexia' ),
+			),
+			'core/cover'        => array( 'flexia-team' => __( 'Image Hover', 'flexia' ) ),
+			'core/search'       => array( 'flexia-minimal-search' => __( 'Minimal', 'flexia' ) ),
+			'core/button'       => array(
+				'flexia-btn-inverse' => __( 'Inverse', 'flexia' ),
+				'flexia-btn-theme'   => __( 'Primary', 'flexia' ),
+			),
+			'core/list'         => array( 'flexia-checkmark-list' => __( 'Checkmark', 'flexia' ) ),
+			'core/post-author'  => array( 'flexia-author-rounded' => __( 'Image Rounded', 'flexia' ) ),
+			'core/separator'    => array( 'flexia-separator-wide-thin-line' => __( 'Wide Thin Line', 'flexia' ) ),
+			'core/social-links' => array( 'flexia-social-rounded' => __( 'Rounded Icon', 'flexia' ) ),
+		);
+		if ( class_exists( 'WooCommerce' ) ) {
+			foreach ( array( 'woocommerce/product-collection', 'woocommerce/legacy-template', 'woocommerce/product-image-gallery', 'woocommerce/cart', 'woocommerce/checkout' ) as $commerce_block ) {
+				wp_enqueue_block_style( $commerce_block, array(
+					'handle' => 'flexia-commerce',
+					'src'    => get_theme_file_uri( 'assets/css/woocommerce.css' ),
+					'ver'    => FLEXIA_VERSION,
+				) );
+			}
+		}
+		foreach ( $styles as $block => $variations ) {
+			foreach ( $variations as $name => $label ) {
+				register_block_style( $block, array( 'name' => $name, 'label' => $label ) );
+			}
+		}
+	}
+}
+add_action( 'init', 'flexia_register' );
 
-register_block_pattern_category(
-    'flexia-pages',
-    [
-        'label' => __( 'Flexia Pages', 'flexia' )
-     ]
-);
-
-/**
- * Register block categories
- */
-if ( ! function_exists( 'flexia_register' ) ):
-    function flexia_register()
-{
-        /**
-         * Register block styles
-         */
-
-        if ( function_exists( 'register_block_style' ) ) {
-            register_block_style(
-                'core/group',
-                [
-                    'name'       => 'flexia-hover-border',
-                    'label'      => __( 'Hover Border', 'flexia' ),
-                    'is_default' => false
-                 ]
-
-            );
-
-            register_block_style(
-                'core/group',
-                [
-                    'name'       => 'flexia-hover-shadow',
-                    'label'      => __( 'Hover Shadow', 'flexia' ),
-                    'is_default' => false
-                 ]
-
-            );
-
-            register_block_style(
-                'core/group',
-                [
-                    'name'       => 'flexia-sm-bg-shadow',
-                    'label'      => __( 'Small BG Shadow', 'flexia' ),
-                    'is_default' => false
-                 ]
-
-            );
-            register_block_style(
-                'core/cover',
-                [
-                    'name'       => 'flexia-team',
-                    'label'      => __( 'Image Hover', 'flexia' ),
-                    'is_default' => false
-                 ]
-
-            );
-
-            register_block_style(
-                'core/search',
-                [
-                    'name'         => 'flexia-minimal-search',
-                    'label'        => __( 'Minimal', 'flexia' ),
-                    'is_default'   => false,
-                    'inline_style' => '
-																																																															                    .is-style-flexia-minimal-search .wp-block-search__inside-wrapper{
-																																																															                           height:auto;
-																																																															                           padding:0px;
-																																																															                        }
-
-																																																															                        .is-style-flexia-minimal-search  .wp-block-search__inside-wrapper:hover{
-																																																															                            box-shadow: 0px 9px 18px 0px rgba(0, 0, 0, 0.08);
-																																																															                        }
-																																																															                        .is-style-flexia-minimal-search .wp-block-search__button{
-																																																															                            position:static;
-																																																															                        }
-																																																															                    '
-
-                 ]
-
-            );
-
-            register_block_style(
-                'core/button',
-                [
-                    'name'         => 'flexia-btn-inverse',
-                    'label'        => __( 'Inverse', 'flexia' ),
-                    'is_default'   => false,
-                    'inline_style' => '
-																																																															                    .is-style-flexia-btn-inverse .wp-block-button__link{
-																																																															                           background:var(--wp--preset--color--white);
-																																																															                           color:var(--wp--preset--color--black);
-																																																															                           border-radius:inherit;
-																																																															                        }
-
-																																																															                        .is-style-flexia-btn-inverse  .wp-block-button__link:hover{
-																																																															                            background:var(--wp--preset--color--primary);
-																																																															                            color:var(--wp--preset--color--white);
-																																																															                            border-radius:inherit;
-																																																															                         }
-																																																															                    '
-
-                 ]
-            );
-
-            register_block_style(
-                'core/button',
-                [
-                    'name'         => 'flexia-btn-theme',
-                    'label'        => __( 'Primary', 'flexia' ),
-                    'is_default'   => false,
-                    'inline_style' => '
-																																																															                        .is-style-flexia-btn-theme  .wp-block-button__link{
-																																																															                            background:var(--wp--preset--color--primary);
-																																																															                            color:var(--wp--preset--color--white);
-																																																															                            border-radius:inherit;
-																																																															                         }
-																																																															                         .is-style-flexia-btn-theme .wp-block-button__link:hover{
-																																																															                            background:var(--wp--preset--color--tertiary);
-																																																															                            color:var(--wp--preset--color--black);
-																																																															                            border-radius:inherit;
-																																																															                         }
-
-																																																															                    '
-
-                 ]
-            );
-
-            register_block_style(
-                'core/list',
-                [
-                    'name'         => 'flexia-checkmark-list',
-                    'label'        => __( 'Checkmark', 'flexia' ),
-                    'is_default'   => false,
-                    'inline_style' => '
-				                                                                                                                                                                                                                             ul.is-style-flexia-checkmark-list {
-				                                                                                                                                                                                                                                    list-style-type: "\f15e";
-				                                                                                                                                                                                                                                    padding-left:10px;
-				                                                                                                                                                                                                                                }
-				                                                                                                                                                                                                                                ul.is-style-flexia-checkmark-list li::marker{
-				                                                                                                                                                                                                                                    font-family: "dashicons";
-				                                                                                                                                                                                                                                }
-
-				                                                                                                                                                                                                                                ul.is-style-flexia-checkmark-list li {
-				                                                                                                                                                                                                                                    padding-inline-start: 1ch;
-				                                                                                                                                                                                                                                }'
-                 ]
-            );
-
-            register_block_style(
-                'core/post-author',
-                [
-                    'name'       => 'flexia-author-rounded',
-                    'label'      => __( 'Image Rounded', 'flexia' ),
-                    'is_default' => false
-                 ]
-            );
-
-            register_block_style(
-                'core/separator',
-                [
-                    'name'         => 'flexia-separator-wide-thin-line',
-                    'label'        => __( 'Wide Thin Line', 'flexia' ),
-                    'inline_style' => '
-																																																															                    .is-style-flexia-separator-wide-thin-line.wp-block-separator:not(.is-style-wide):not(.is-style-dots){
-																																																															                            max-width: var(--wp--style--global--content-size);
-																																																															                            width: 100%;
-																																																															                            border-width: 1px;
-																																																															                        }
-																																																															                    '
-                 ]
-            );
-            register_block_style(
-                'core/social-links',
-                [
-                    'name'         => 'flexia-social-rounded',
-                    'label'        => __( 'Rounded Icon', 'flexia' ),
-                    'inline_style' => '
-																																																															                    .is-style-flexia-social-rounded .wp-social-link{
-																																																															                        border-radius: 8px;
-																																																															                    }
-																																																															                        .is-style-flexia-social-rounded .wp-social-link a:hover{
-																																																															                            background:var(--wp--preset--color--primary)!important;
-																																																															                            color:var(--wp--preset--color--white)!important;
-																																																															                            border-radius: 8px;
-																																																															                        }
-																																																															                    '
-                 ]
-            );
-        }
-    }
-
-    add_action( 'init', 'flexia_register' );
-endif;
-
-add_action( 'enqueue_block_assets', function (): void {
-    wp_enqueue_style( 'dashicons' );
-} );
-
-// Keep optional plugins' security and lifecycle policies under their own control.
-
-require_once FLEXIA_DIR_PATH . '/includes/compatibility.php'; //Load compatibility file
+// Keep the harmless legacy helper for existing child themes during migration.
+require_once FLEXIA_DIR_PATH . '/includes/compatibility.php';
