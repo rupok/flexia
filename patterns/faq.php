@@ -37,8 +37,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:separator -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":4,"style":{"typography":{"textTransform":"capitalize"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}},"textColor":"text","fontSize":"medium-plus"} -->
-<h4 class="wp-block-heading has-text-color has-link-color has-medium-plus-font-size" style="text-transform:capitalize"><?php echo esc_html_x( 'What is the difference between "Annual" and "Lifetime"?', 'Message to convey FAQ', 'flexia' ); ?></h4>
+<div class="wp-block-group"><!-- wp:heading {"level":4,"style":{"typography":{"textTransform":"capitalize"},"elements":{"link":{"color":{"text":"var:preset|color|body"}}}},"textColor":"body","fontSize":"medium-plus"} -->
+<h4 class="wp-block-heading has-body-color has-link-color has-medium-plus-font-size" style="text-transform:capitalize"><?php echo esc_html_x( 'What is the difference between "Annual" and "Lifetime"?', 'Message to convey FAQ', 'flexia' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->

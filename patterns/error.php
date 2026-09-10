@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","fontSize":"small"} -->
-<p class="has-text-align-center has-small-font-size"><?php echo esc_html_x( 'We\'re sorry, the page you requested could not be found \'<br>\' please go back to the homepage', 'Message to error page', 'flexia' ); ?></p>
+<p class="has-text-align-center has-small-font-size"><?php echo esc_html_x( 'The page you requested could not be found. Please return to the homepage.', 'Message to error page', 'flexia' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"24px"} -->
@@ -37,4 +37,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></main>
 <!-- /wp:group -->
-

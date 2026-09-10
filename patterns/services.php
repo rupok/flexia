@@ -12,11 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"backgroundColor":"secondary","layout":{"type":"constrained"}} -->
 <div id="services" class="wp-block-group has-secondary-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"align":"center","style":{"typography":{"letterSpacing":"4px","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"small"} -->
-<p class="has-text-align-center has-primary-color has-text-color has-link-color has-small-font-size" style="letter-spacing:4px;text-transform:uppercase"><?php echo esc_html_x( 'services', 'Message to convey service content', 'flexia' ); ?></p>
+<p class="has-text-align-center has-primary-color has-body-color has-link-color has-small-font-size" style="letter-spacing:4px;text-transform:uppercase"><?php echo esc_html_x( 'services', 'Message to convey service content', 'flexia' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"textAlign":"center","style":{"typography":{"textTransform":"capitalize"}},"textColor":"Heading","fontSize":"large-plus"} -->
-<h2 class="wp-block-heading has-text-align-center has-heading-color has-text-color has-large-plus-font-size" style="text-transform:capitalize"><?php echo esc_html_x( 'Services We Offer', 'Message to convey service content', 'flexia' ); ?></h2>
+<!-- wp:heading {"textAlign":"center","style":{"typography":{"textTransform":"capitalize"}},"textColor":"heading-text","fontSize":"large-plus"} -->
+<h2 class="wp-block-heading has-text-align-center has-heading-color has-body-color has-large-plus-font-size" style="text-transform:capitalize"><?php echo esc_html_x( 'Services We Offer', 'Message to convey service content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"20px"} -->
@@ -38,8 +38,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading has-text-align-center has-medium-plus-font-size"><?php echo esc_html_x( 'UX Designs', 'Message to convey service content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
+<!-- wp:paragraph {"align":"center","textColor":"body"} -->
+<p class="has-text-align-center has-body-color has-body-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -56,8 +56,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading has-text-align-center has-medium-plus-font-size"><?php echo esc_html_x( 'SEO Optimized', 'Message to convey service content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
+<!-- wp:paragraph {"align":"center","textColor":"body"} -->
+<p class="has-text-align-center has-body-color has-body-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -74,8 +74,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading has-text-align-center has-medium-plus-font-size"><?php echo esc_html_x( 'Digital Marketing', 'Message to convey service content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
+<!-- wp:paragraph {"align":"center","textColor":"body"} -->
+<p class="has-text-align-center has-body-color has-body-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -94,8 +94,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading has-text-align-center has-medium-plus-font-size"><?php echo esc_html_x( 'Social Media Marketin', 'Message to convey service content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
+<!-- wp:paragraph {"align":"center","textColor":"body"} -->
+<p class="has-text-align-center has-body-color has-body-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -112,8 +112,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading has-text-align-center has-medium-plus-font-size"><?php echo esc_html_x( 'UI Designs', 'Message to convey service content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
+<!-- wp:paragraph {"align":"center","textColor":"body"} -->
+<p class="has-text-align-center has-body-color has-body-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -130,8 +130,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading has-text-align-center has-medium-plus-font-size"><?php echo esc_html_x( 'Business Strategy', 'Message to convey service content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","textColor":"text"} -->
-<p class="has-text-align-center has-text-color has-text-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
+<!-- wp:paragraph {"align":"center","textColor":"body"} -->
+<p class="has-text-align-center has-body-color has-body-color"><?php echo esc_html_x( 'Provide the best, most intuitive support across all channels from. Proactively.', 'Message to convey service content', 'flexia' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>

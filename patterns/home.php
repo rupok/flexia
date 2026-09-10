@@ -1,16 +1,17 @@
 <?php
 /**
- * Title: Home
+ * Title: Agency landing page
  * Slug: flexia-pages/home
  * Categories: flexia-pages
+ * Block Types: core/post-content
+ * Post Types: page
+ * Description: An optional agency page built entirely with WordPress blocks.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 ?>
-<!-- wp:template-part {"slug":"header","theme":"flexia","tagName":"header","area":"header"} /-->
-
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
 <div class="wp-block-group" style="margin-top:0;margin-bottom:0">
   <!-- wp:pattern {"slug":"flexia/banner"} /-->
@@ -27,5 +28,3 @@ if ( ! defined( 'ABSPATH' ) ) {
   <!-- wp:pattern {"slug":"flexia/blog"} /-->
 </div>
 <!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer","theme":"flexia","tagName":"footer","area":"footer"} /-->
