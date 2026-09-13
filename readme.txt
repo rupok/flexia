@@ -5,7 +5,7 @@ Theme URI: https://flexia.pro/
 Tags: FSE, Full Site Editing, Full Site Editor, Block, Block Theme, Theme Options, Blog, Custom Background, Custom logo, Header, Footer, eCommerce, WooCommerce, Block Editor, Patterns, Block Editor Pattern, Custom Colors, Editor Style, Agency WordPress Theme, Professional Website Design, Creative Agency Solutions, Business Portfolio, Corporate Website, Customizable Layouts, Block Based Design, Responsive Design, Gutenberg Ready, blog, Gutenberg, WordPress
 Requires at least: 6.6
 Tested up to: 7.1
-Stable tag: 3.2.1
+Stable tag: 3.2.0
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -20,12 +20,8 @@ Version 3.2 requires WordPress 6.6 or later. Review docs/MIGRATION-3.2.md in the
 
 == Changelog ==
 
-= 3.2.1 =
-* Fixed: Correct Tested up to metadata to WordPress 7.1; release ZIP rebuilt on September 13, 2026.
-* Release: Package the security, independence and modernization changes from the 3.2.0 development baseline.
-* Updated: Synchronize theme, runtime, translation catalog and release metadata to 3.2.1.
-
 = 3.2.0 =
+* Updated: Tested up to WordPress 7.1, the current stable release verified by compatibility tests.
 * Security: Restore optional plugin security defaults and remove automatic Pro deactivation.
 * Security: Guard direct PHP access, use local icons, and add verified release packaging.
 * Fixed: Blog/archive queries, selected-post sidebar rendering, and WooCommerce catalog routing.

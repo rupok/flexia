@@ -1,12 +1,8 @@
 # Changelog
 
-## 3.2.1 — 2026-09-10 (package corrected 2026-09-13)
+## 3.2.0 — 2026-09-13
 
-Correct the stale Tested up to headers in style.css and readme.txt to WordPress 7.1, verified against the current official stable release and compatibility tests. Rebuild the same 3.2.1 release package and checksum; theme behavior is unchanged.
-
-Package the security and modernization changes below for release review. Synchronize theme, runtime and translation metadata to 3.2.1. See the GitHub release for distribution status and installable ZIP.
-
-## 3.2.0 — unreleased development baseline
+Update from the public 3.1.0 release. Requires WordPress 6.6 or later; tested up to WordPress 7.1.
 
 Restore optional-plugin security defaults; remove automatic Pro deactivation and remote icon requests; guard pattern/include entry points. Keep the theme independent of retired Flexia Core functionality.
 

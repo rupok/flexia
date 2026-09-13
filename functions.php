@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define( 'FLEXIA_DEV_MODE', false );
-define( 'FLEXIA_VERSION', '3.2.1' );
+define( 'FLEXIA_VERSION', '3.2.0' );
 define( 'FLEXIA_SLUG', 'flexia' );
 define( 'FLEXIA_NAME', 'flexia' );
 define( 'FLEXIA_DIR_PATH', get_template_directory() );
