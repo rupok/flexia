@@ -5,11 +5,15 @@
  * Categories: flexia
  * Inserter: no
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:0;padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull"><!-- wp:heading {"textAlign":"center","align":"full","style":{"typography":{"textTransform":"capitalize"}},"textColor":"Heading","fontSize":"large-plus"} -->
-<h2 class="wp-block-heading alignfull has-text-align-center has-heading-color has-text-color has-large-plus-font-size" style="text-transform:capitalize"><?php echo esc_html_x( 'You May Also Like', 'Message to convey related post content', 'flexia' ); ?></h2>
+<div class="wp-block-group alignfull"><!-- wp:heading {"textAlign":"center","align":"full","style":{"typography":{"textTransform":"capitalize"}},"textColor":"heading-text","fontSize":"large-plus"} -->
+<h2 class="wp-block-heading alignfull has-text-align-center has-heading-color has-body-color has-large-plus-font-size" style="text-transform:capitalize"><?php echo esc_html_x( 'You May Also Like', 'Message to convey related post content', 'flexia' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"20px"} -->
@@ -28,7 +32,7 @@
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:post-date {"fontSize":"small"} /-->
 
-<!-- wp:post-terms {"term":"category","style":{"elements":{"link":{"color":{"text":"var:preset|color|text"}}}},"textColor":"text","fontSize":"small"} /--></div>
+<!-- wp:post-terms {"term":"category","style":{"elements":{"link":{"color":{"text":"var:preset|color|body"}}}},"textColor":"body","fontSize":"small"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:post-author {"className":"is-style-author-rounded is-style-flexia-author-rounded"} /--></div>

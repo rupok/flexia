@@ -1,2058 +1,1162 @@
-# Copyright (C) 2021 WPDeveloper
+# Copyright (C) 2026 WPDeveloper
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Flexia 2.3.0\n"
+"Project-Id-Version: Flexia 3.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/flexia\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-09-29T09:53:46+00:00\n"
+"POT-Creation-Date: 2026-09-10T11:47:55+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: flexia\n"
 
 #. Theme Name of the theme
+#: style.css
 msgid "Flexia"
 msgstr ""
 
 #. Theme URI of the theme
+#: style.css
 msgid "https://flexia.pro"
 msgstr ""
 
 #. Description of the theme
-msgid "A modern lightweight and versatile Gutenberg ready theme for WordPress with endless customization options. Lightweight and highly extendable with Customizer and Child Theme. True responsiveness with modern Flexbox and mobile first design. WooCommerce and Easy Downloads ready and best multi-purpose theme. Works great with any WordPress Page Builder including Elementor, Cornerstone, DIVI, Beaver Builder, Visual Composer. For more info : https://flexia.pro/"
+#: style.css
+msgid "Flexia is an independent WordPress block theme with Site Editor templates, reusable page patterns, local fonts and three style variations. Build blogs, agency sites and optional WooCommerce stores with native blocks. Flexia Core and Flexia Pro are not required."
 msgstr ""
 
 #. Author of the theme
+#: style.css
 msgid "WPDeveloper"
 msgstr ""
 
 #. Author URI of the theme
+#: style.css
 msgid "https://wpdeveloper.net"
 msgstr ""
 
-#: 404.php:20
-msgid "Oops! That page can&rsquo;t be found."
+#: functions.php:67
+msgid "Flexia Patterns"
 msgstr ""
 
-#: 404.php:88
-msgid "Bummer! The page you are looking for is no longer here, or never existed in the first place. You can try searching for what you are looking for using the form below. If that still doesn't provide the results you are looking for, you can always start over from the home page."
-msgstr ""
-
-#: admin/metabox/class-flexia-metaboxes-installer.php:8
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:8
-msgid "Flexia Settings"
-msgstr ""
-
-#: admin/metabox/class-flexia-metaboxes-installer.php:26
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:28
-msgid "Additional Body Class"
-msgstr ""
-
-#: admin/metabox/class-flexia-metaboxes-installer.php:34
-#: framework/functions/customizer/customizer.php:823
-msgid "Page Header"
-msgstr ""
-
-#: admin/metabox/class-flexia-metaboxes-installer.php:38
-msgid "Default Header ( Customizer )"
-msgstr ""
-
-#: admin/metabox/class-flexia-metaboxes-installer.php:41
-#: framework/functions/customizer/customizer.php:831
-msgid "Large Header"
-msgstr ""
-
-#: admin/metabox/class-flexia-metaboxes-installer.php:44
-#: framework/functions/customizer/customizer.php:832
-msgid "Mini Header"
-msgstr ""
-
-#: admin/metabox/class-flexia-metaboxes-installer.php:47
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:54
-#: framework/functions/customizer/customizer.php:2793
-msgid "No Header"
-msgstr ""
-
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:38
-msgid "Post Layout"
-msgstr ""
-
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:42
-msgid "Default (from Customizer)"
-msgstr ""
-
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:45
-#: framework/functions/customizer/customizer.php:2790
-msgid "Large Header (Featured Image Background)"
-msgstr ""
-
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:48
-#: framework/functions/customizer/customizer.php:2791
-msgid "Simple Header"
-msgstr ""
-
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:51
-#: framework/functions/customizer/customizer.php:2792
-msgid "Simple Header No Container"
-msgstr ""
-
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:64
-msgid "Show Header Meta"
-msgstr ""
-
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:68
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:84
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:100
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:116
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:132
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:148
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:164
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:180
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:196
-msgid "Yes"
-msgstr ""
-
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:71
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:87
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:103
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:119
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:135
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:151
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:167
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:183
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:199
-msgid "No"
-msgstr ""
-
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:80
-msgid "Show Post Author"
-msgstr ""
-
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:96
-msgid "Show Post Date"
-msgstr ""
-
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:112
-msgid "Show Post Category"
-msgstr ""
-
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:128
-msgid "Show Post Comments Count"
-msgstr ""
-
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:144
-msgid "Show Footer Meta"
-msgstr ""
-
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:160
-msgid "Show Social Sharer"
-msgstr ""
-
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:176
-msgid "Show Post Navigation"
-msgstr ""
-
-#: admin/metabox/class-flexia-post-metaboxes-installer.php:192
-msgid "Show Post Comment"
-msgstr ""
-
-#: admin/plugin-installer.php:93
-msgid "Activate"
-msgstr ""
-
-#: admin/plugin-installer.php:96
-msgid "Activated"
-msgstr ""
-
-#: admin/plugin-installer.php:99
-msgid "Install Now"
-msgstr ""
-
-#: admin/plugin-installer.php:183
-msgid "You don't have permission to install the plugins"
-msgstr ""
-
-#: admin/plugin-installer.php:280
-#: admin/plugin-installer.php:312
-msgid "By:"
-msgstr ""
-
-#: admin/plugin-installer.php:288
-#: admin/plugin-installer.php:320
-msgid "More Details"
-msgstr ""
-
-#: admin/plugin-installer.php:292
-msgid "Free"
-msgstr ""
-
-#: admin/plugin-installer.php:318
-msgid "Get Now"
-msgstr ""
-
-#: admin/plugin-installer.php:324
-msgid "Premium"
-msgstr ""
-
-#. translators: 1: title.
-#: comments.php:38
-msgid "One thought on &ldquo;%1$s&rdquo;"
-msgstr ""
-
-#. translators: 1: comment count number, 2: title.
-#: comments.php:44
-msgctxt "comments title"
-msgid "%1$s thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
-
-#: comments.php:67
-msgid "Comments are closed."
-msgstr ""
-
-#: footer.php:42
-msgid "Hit ENTER to search or ESC to close"
-msgstr ""
-
-#: footer.php:53
-msgid "Scroll back to top"
-msgstr ""
-
-#: framework/functions/customizer/controls.php:399
-msgid "Go Pro"
-msgstr ""
-
-#: framework/functions/customizer/controls.php:628
-msgid "Color 1"
-msgstr ""
-
-#: framework/functions/customizer/controls.php:632
-#: framework/functions/customizer/controls.php:642
-#: framework/functions/customizer/controls.php:652
-#: framework/functions/customizer/controls.php:662
-msgid "%"
-msgstr ""
-
-#: framework/functions/customizer/controls.php:638
-msgid "Color 2"
-msgstr ""
-
-#: framework/functions/customizer/controls.php:648
-msgid "Color 3"
-msgstr ""
-
-#: framework/functions/customizer/controls.php:658
-msgid "Color 4"
-msgstr ""
-
-#: framework/functions/customizer/controls.php:668
-msgid "Direction"
-msgstr ""
-
-#: framework/functions/customizer/controls.php:681
-msgid "Angle"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:39
-msgid "Site Info"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:40
-msgid "Site Name"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:41
-msgid "Site Description"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:46
-msgid "Homepage Preferences"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:48
-msgid "Choose Homepage Preference"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:49
-msgid "Select Homepage"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:50
-msgid "Select Blog Homepage"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:81
-#: framework/functions/customizer/customizer.php:2243
-#: framework/functions/customizer/customizer.php:5799
-msgid "Layout Settings"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:99
-msgid "Site Max Width (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:120
-msgid "Site Width (%)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:140
-#: framework/functions/customizer/customizer.php:2263
-#: framework/functions/customizer/customizer.php:5818
-msgid "Content Layout"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:149
-msgid "Sidebar | Content | Sidebar"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:153
-msgid "Sidebar | Content"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:157
-msgid "Content | Sidebar"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:161
-#: framework/functions/customizer/customizer.php:2821
-msgid "No Sidebar"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:191
-msgid "Left Sidebar Width (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:214
-msgid "Right Sidebar Width (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:229
-msgid "Default Colors"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:249
-msgid "Primary Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:273
-msgid "Default Text Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:297
-msgid "Heading Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:316
-msgid "Site Links"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:338
-msgid "Site Link Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:362
-msgid "Site Link Hover Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:381
-msgid "Site Background"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:403
-msgid "Site Background Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:429
-msgid "Enable Background Image?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:458
-msgid "Upload an Image for Background"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:488
-msgid "Background Property"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:516
-msgid "Size"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:526
-msgid "Auto"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:527
-msgid "Cover"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:528
-msgid "Contain"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:529
-msgid "Initial"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:530
-msgid "Inherit"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:556
-msgid "Position"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:566
-msgid "left top"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:567
-msgid "left center"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:568
-msgid "left bottom"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:569
-msgid "right top"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:570
-msgid "right center"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:571
-msgid "right bottom"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:572
-msgid "center top"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:573
-msgid "center center"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:574
-msgid "center bottom"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:599
-msgid "Repeat"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:609
-msgid "repeat"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:610
-msgid "repeat-x"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:611
-msgid "repeat-y"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:612
-msgid "no-repeat"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:613
-msgid "space"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:614
-msgid "round"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:641
-msgid "Attachment"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:647
-msgid "initial"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:648
-msgid "inherit"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:649
-msgid "scroll"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:650
-msgid "fixed"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:651
-msgid "local"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:678
-msgid "Page & Posts Backgrounds"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:699
-msgid "Blog/Archive Background"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:723
-msgid "Page/Post Content Background"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:748
-msgid "Sidebar Widget Background"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:760
-msgid "Page Settings"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:776
-msgid "Show Header?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:798
-msgid "Show Breadcrumbs?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:801
-msgid "Breadcrumb works on \"Large Header\" and \"Mini Header\""
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:826
-msgid "Set the default page header layout (global). You can control for individual posts from Flexia Page Settings."
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:830
-msgid "Default Header"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:847
-msgid "Color & Typography"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:864
-msgid "Page Title Background Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:883
-msgid "Page Title Font Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:904
-msgid "Page Title Font Size (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:926
-msgid "Breadcrumb Font Size (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:946
-msgid "Breadcrumb Font Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:965
-msgid "Breadcrumb Active Font Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:976
-msgid "Overlay Search"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:991
-msgid "Search Overlay Background Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1009
-msgid "Search Overlay Border Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1028
-msgid "Search Overlay Border width (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1045
-msgid "Search Field"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1061
-msgid "Search Field Font Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1080
-msgid "Search Field Font Size (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1100
-msgid "Label Font Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1119
-msgid "Label Font Size (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1136
-msgid "Close Button"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1152
-msgid "Close Button Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1170
-msgid "Close Button Hover Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1189
-msgid "Close Button Size (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1203
-msgid "Typography"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1204
-msgid "Default Typography Settings"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1215
-msgid "Body"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1238
-msgid "Body Font Size (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1239
-msgid "Other font size are relative to Body Font Size. "
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1269
-#: framework/functions/customizer/customizer.php:1442
-#: framework/functions/customizer/customizer.php:1735
-#: framework/functions/customizer/customizer.php:1902
-#: framework/functions/customizer/customizer.php:2071
-msgid "Line Height"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1294
-msgid "Body Font"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1317
-msgid "Body Font Variants"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1341
-msgid "Body Font Subsets"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1368
-#: framework/functions/customizer/customizer.php:1541
-#: framework/functions/customizer/customizer.php:1834
-#: framework/functions/customizer/customizer.php:2001
-#: framework/functions/customizer/customizer.php:2170
-msgid "Text Transform"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1370
-#: framework/functions/customizer/customizer.php:1543
-#: framework/functions/customizer/customizer.php:1836
-#: framework/functions/customizer/customizer.php:2003
-#: framework/functions/customizer/customizer.php:2172
-#: framework/functions/customizer/customizer.php:2561
-msgid "None"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1371
-#: framework/functions/customizer/customizer.php:1544
-#: framework/functions/customizer/customizer.php:1837
-#: framework/functions/customizer/customizer.php:2004
-#: framework/functions/customizer/customizer.php:2173
-msgid "Capitalize"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1372
-#: framework/functions/customizer/customizer.php:1545
-#: framework/functions/customizer/customizer.php:1838
-#: framework/functions/customizer/customizer.php:2005
-#: framework/functions/customizer/customizer.php:2174
-msgid "Uppercase"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1373
-#: framework/functions/customizer/customizer.php:1546
-#: framework/functions/customizer/customizer.php:1839
-#: framework/functions/customizer/customizer.php:2006
-#: framework/functions/customizer/customizer.php:2175
-msgid "Lowercase"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1389
-msgid "Paragraph"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1412
-msgid "Paragraph Font Size (em)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1467
-msgid "Paragraph Font"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1490
-msgid "Paragraph Font Variants"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1514
-msgid "Paragraph Font Subsets"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1562
-msgid "Heading"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1582
-msgid "H1 Font Size (em)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1607
-msgid "H2 Font Size (em)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1632
-msgid "H3 Font Size (em)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1657
-msgid "H4 Font Size (em)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1682
-msgid "H5 Font Size (em)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1707
-msgid "H6 Font Size (em)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1760
-msgid "Heading Font"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1783
-msgid "Heading Font Variants"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1807
-msgid "Heading Font Subsets"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1850
-msgid "Link"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1872
-msgid "Link Font Size (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1927
-msgid "Link Font"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1950
-msgid "Link Font Variants"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:1974
-msgid "Link Font Subsets"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2019
-msgid "Button"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2041
-#: framework/functions/customizer/customizer.php:5963
-msgid "Button Font Size (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2096
-msgid "Button Font"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2119
-msgid "Button Font Variants"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2143
-msgid "Button Font Subsets"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2186
-msgid "Blog Content Settings"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2203
-#: framework/functions/customizer/customizer.php:5759
-msgid "Content Display"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2207
-msgid "Show full post content or excerpt only on blog page Standard Layout."
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2210
-#: framework/functions/customizer/customizer.php:5767
-msgid "Show Full Post Content"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2211
-#: framework/functions/customizer/customizer.php:5768
-msgid "Show Excerpt only"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2227
-#: framework/functions/customizer/customizer.php:5784
-msgid "Excerpt Count (words)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2267
-msgid "Set how you want to arrange your posts on blog page."
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2270
-#: framework/functions/customizer/customizer.php:5826
-msgid "Standard Layout"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2271
-#: framework/functions/customizer/customizer.php:5827
-msgid "Flex Layout"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2272
-#: framework/functions/customizer/customizer.php:5828
-msgid "Masonry Layout"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2289
-#: framework/functions/customizer/customizer.php:5845
-msgid "Posts Per Page"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2308
-#: framework/functions/customizer/customizer.php:5864
-msgid "Grid/Masonry Column"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2312
-#: framework/functions/customizer/customizer.php:5868
-msgid "Set the number of columns for grid or masonry layout."
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2315
-#: framework/functions/customizer/customizer.php:5871
-msgid "1"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2316
-#: framework/functions/customizer/customizer.php:5872
-msgid "2"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2317
-#: framework/functions/customizer/customizer.php:5873
-msgid "3"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2318
-#: framework/functions/customizer/customizer.php:5874
-msgid "4"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2319
-#: framework/functions/customizer/customizer.php:5875
-msgid "5"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2320
-#: framework/functions/customizer/customizer.php:5876
-msgid "6"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2327
-msgid "Blog Header Settings"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2332
-msgid "Blog Header style"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2346
-#: framework/functions/customizer/customizer.php:5889
-msgid "Load More Options"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2347
-#: framework/functions/customizer/customizer.php:5890
-msgid "This feature will work for Grid and Masonry Layout"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2360
-#: framework/functions/customizer/customizer.php:5903
-msgid "Show Load More?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2378
-#: framework/functions/customizer/customizer.php:5921
-msgid "Load More Text"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2398
-#: framework/functions/customizer/customizer.php:5941
-msgid "Loading"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2420
-msgid "Button Font Font Size (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2441
-#: framework/functions/customizer/customizer.php:5984
-msgid "Load More Button Background"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2460
-#: framework/functions/customizer/customizer.php:6003
-msgid "Load More Button Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2479
-#: framework/functions/customizer/customizer.php:6022
-msgid "Load More Hover Button Background"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2498
-#: framework/functions/customizer/customizer.php:6041
-msgid "Load More Hover Button Text Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2518
-msgid "Show Blog Header?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2536
-msgid "Blog Header Background Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2554
-msgid "Blog Logo / Icon"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2557
-msgid "Set an icon or logo for blog home page."
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2560
-msgid "Image"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2577
-msgid "Upload a logo for blog"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2598
-msgid "Blog Logo width (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2618
-msgid "Blog Title"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2639
-msgid "Blog Title Font Size (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2660
-msgid "Blog Title Font Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2677
-msgid "Blog Title Font Family"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2698
-msgid "Blog Description"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2719
-msgid "Blog Description Font Size (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2740
-msgid "Blog Description Font Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2757
-msgid "Blog Description Font Family"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2767
-#: framework/functions/customizer/customizer.php:6055
-msgid "Single Posts Settings"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2784
-msgid "Post Header Layout"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2787
-msgid "Set the default post layout (global). You can control for individual posts from Flexia Post Settings."
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2813
-msgid "Post Sidebar"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2816
-msgid "Set the default Sidebar for Single blog posts and other Single post types."
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2819
-msgid "Left Sidebar"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2820
-msgid "Right Sidebar"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2838
-msgid "Post Meta Background"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2857
-msgid "Post Max Width (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2878
-msgid "Post Width (%)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2896
-msgid "Hide Next/Prev posts?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2911
-msgid "Hide Author under post?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2925
-msgid "Social Sharing"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2937
-msgid "Disable Social Sharing?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2953
-msgid "Social Sharing Title"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2968
-msgid "Facebook Sharing"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2981
-msgid "Twitter Sharing"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:2994
-msgid "Linkedin Sharing"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3007
-msgid "Gmail Sharing"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3020
-msgid "Pinterest Sharing"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3033
-msgid "Reddit Sharing"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3046
-msgid "Blogger Sharing"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3059
-msgid "Thumblr Sharing"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3073
-#: framework/functions/customizer/customizer.php:5563
-#: framework/functions/customizer/customizer.php:5578
-msgid "Header Settings"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3084
-msgid "Layout"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3105
-msgid "Header Layout Type"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3107
-msgid "Boxed/ Container"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3108
-msgid "Full Width"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3128
-msgid "Navbar Position"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3133
-msgid "Default Top"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3134
-msgid "Sticky Top"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3135
-msgid "Transparent Default Top"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3136
-msgid "Transparent Sticky Top"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3160
-msgid "Header Styles"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3166
-msgid "Header Layout 1"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3170
-msgid "Header Layout 2"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3174
-msgid "Header Layout 3"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3178
-msgid "Header Layout 4"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3184
-msgid "Header Layout Pro 1"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3218
-msgid "Header Styles Mobile"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3224
-msgid "Header Mobile Layout 1"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3230
-msgid "Header Mobile Layout 2"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3269
-msgid "Logo Text Color (if no logo image)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3285
-msgid "Primary Logo"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3326
-msgid "Logo Width (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3349
-msgid "Sticky Logo"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3370
-msgid "Upload Sticky Logo"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3399
-msgid "Sticky Header Logo Width (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3421
-msgid "Navbar"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3433
-msgid "Navbar Settings"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3448
-msgid "Enable Navbar?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3466
-msgid "Navbar Background Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3485
-msgid "Navbar Padding (PX)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3490
-msgid "top"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3491
-msgid "right"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3492
-msgid "bottom"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3493
-msgid "left"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3513
-msgid "Primary Menu Settings"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3527
-msgid "Enable Search Menu?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3542
-msgid "Enable Cart Menu?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3557
-msgid "Enable Login Button?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3576
-msgid "Custom Login Text"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3581
-msgid "Login Text"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3600
-msgid "Custom Logout Text"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3605
-msgid "Logout Text"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3624
-msgid "Custom Login URL"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3625
-msgid "Leave empty to use default login URL"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3631
-#: framework/functions/customizer/customizer.php:5353
-msgid "Your Login Page URL"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3650
-#: framework/functions/customizer/customizer.php:4179
-msgid "Links color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3669
-#: framework/functions/customizer/customizer.php:4198
-msgid "Links hover color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3688
-#: framework/functions/customizer/customizer.php:4217
-msgid "Links hover background"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3707
-#: framework/functions/customizer/customizer.php:4236
-msgid "Dropdown background"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3726
-#: framework/functions/customizer/customizer.php:4255
-msgid "Dropdown links color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3745
-#: framework/functions/customizer/customizer.php:4274
-msgid "Dropdown links hover color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3764
-#: framework/functions/customizer/customizer.php:4293
-msgid "Dropdown links hover background"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3779
-#: framework/functions/customizer/customizer.php:4308
-msgid "Dropdown animation"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3799
-msgid "Header Widget Area"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3813
-msgid "Enable Header Widget Area?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3832
-msgid "Header Widget Area Background"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3852
-#: framework/functions/customizer/customizer.php:4382
-msgid "Top Bar"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3863
-msgid "Topbar Settings"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3877
-msgid "Enable Topbar?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3892
-msgid "Enable Topbar on Mobile?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3910
-msgid "Topbar Background Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3919
-msgid "This is Topbar Content. Cutomize this from Customize > Header > Topbar Content"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3928
-msgid "Topbar Content"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3948
-msgid "Topbar Contact Info Settings"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3970
-msgid "Phone Number"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3976
-msgid "XXX XXX XXXX"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:3998
-msgid "Email Address"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4004
-msgid "info@wpdeveloper.net"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4026
-msgid "Location"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4032
-msgid "Display name of your location"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4054
-msgid "Location Link"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4060
-msgid "Link of your Google Map Location"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4083
-msgid "Font Size"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4108
-msgid "Text Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4132
-msgid "Hover Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4147
-msgid "Topbar Menu Settings"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4161
-msgid "Enable Topbar Menu?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4333
-msgid "Social Media"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4356
-msgid "Enable Header Social?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4380
-msgid "Social Links Position"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4383
-msgid "Header Main"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4404
-msgid "Social Links Alignment"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4406
-msgid "Left"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4407
-msgid "Right"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4408
-msgid "Center"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4429
-msgid "Icon Size"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4454
-msgid "Icon Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4477
-msgid "Icon Hover Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4500
-msgid "Social Links Open in?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4502
-msgid "Open in New Tab"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4503
-msgid "Open in same Tab"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4526
-msgid "Social Media Links"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4527
-msgid "Leave Empty to hide any social media"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4550
-msgid "Facebook URL"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4555
-msgid "https://www.facebook.com/"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4577
-msgid "Instagram URL"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4582
-msgid "https://www.instagram.com/"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4604
-msgid "Twitter URL"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4609
-msgid "https://www.twitter.com/"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4631
-msgid "Linkedin URL"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4636
-msgid "https://www.linkedin.com/"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4658
-msgid "YouTube URL"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4663
-msgid "https://www.youtube.com/"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4685
-msgid "Pinterest URL"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4690
-msgid "https://www.pinterest.com/"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4712
-msgid "Reddit URL"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4717
-msgid "https://www.reddit.com/"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4739
-msgid "RSS URL"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4744
-msgid "Your RSS Feed Link"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4759
-msgid "Footer"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4771
-msgid "Enable Scrol to top?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4784
-msgid "Footer Widget"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4798
-msgid "Enable Footer Widget Area?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4821
-msgid "Widget Columns"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4826
-msgid "One Column"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4827
-msgid "Two Columns"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4828
-msgid "Three Columns"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4829
-msgid "Four Columns"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4847
-msgid "Footer Widget Area Background Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4866
-msgid "Footer Widget Content Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4885
-msgid "Footer Widget Link Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4904
-msgid "Footer Widget Link Hover Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4918
-msgid "Copyright Area"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4932
-msgid "Enable Bottom Footer?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4947
-msgid "Enable Footer Menu?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4965
-msgid "Footer Background"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:4984
-msgid "Footer Content Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5003
-msgid "Footer Links Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5022
-msgid "Footer Links Hover Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5043
-msgid "Footer Content"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5058
-#: framework/functions/flexia/widgets.php:34
-msgid "WooCommerce Sidebar"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5083
-msgid "Default Sidebar for WooCommerce"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5104
-msgid "Enable Sidebar in Shop Page?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5128
-msgid "Enable Sidebar in Single Product Page?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5152
-msgid "Enable Sidebar in Cart Page?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5176
-msgid "Enable Sidebar in Checkout Page?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5200
-msgid "Enable Sidebar in Product Archive Page?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5218
-msgid "Call to Action"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5233
-msgid "Enable Call to Action?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5236
-msgid "Call to Action fullwidth section will be displayed before the Footer Section"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5254
-msgid "Select Layout"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5303
-msgid "Title"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5326
-msgid "Sub-Title"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5347
-msgid "Button Text"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5373
-msgid "Destination URL"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5378
-msgid "Call to Action Destination URL"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5389
-msgid "Global"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5390
-msgid "Controls the basic settings for the theme."
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5396
-msgid "Design"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5397
-msgid "Controls the design settings for the theme."
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5407
-msgid "Header Script"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5419
-msgid "Add your header script without script tag"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5429
-msgid "Footer Script"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5440
-msgid "Add your footer script without script tag"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5450
-msgid "Google Analytics"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5461
-msgid "Paste your Google Analytics code as is."
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5472
-msgid "Custom JavaScripts"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5473
-msgid "Add custom header/footer scripts or Google Analytics"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5509
-msgid "Header Image"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5519
-msgid "Blog Styles"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5520
-msgid "Controls the blog settings for the theme."
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5530
-msgid "Blog"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5541
-msgid "Archive"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5552
-msgid "Single Post"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5569
-#: framework/functions/customizer/customizer.php:5584
-msgid "Content Settings"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5599
-msgid "Show Archive Header?"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5617
-msgid "Header Background Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5637
-msgid "Archive Title Font Size (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5658
-msgid "Archive Title Font Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5676
-msgid "Archive Title Font Family"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5698
-msgid "Archive Description Font Size (px)"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5719
-msgid "Archive Description Font Color"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5737
-msgid "Archive Description Font Family"
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5763
-msgid "Show full post content or excerpt only on archive page Standard Layout."
-msgstr ""
-
-#: framework/functions/customizer/customizer.php:5822
-msgid "Set how you want to arrange your posts on archive pages."
-msgstr ""
-
-#: framework/functions/customizer/defaults.php:198
-msgid "Share This Story"
-msgstr ""
-
-#: framework/functions/customizer/defaults.php:290
-#: framework/functions/enqueue/scripts.php:59
-msgid "Load More"
-msgstr ""
-
-#: framework/functions/customizer/defaults.php:291
-#: framework/functions/enqueue/scripts.php:60
-msgid "Loading..."
-msgstr ""
-
-#: framework/functions/flexia/breadcrumb.php:134
-msgid "Page"
-msgstr ""
-
-#: framework/functions/flexia/flexia-extra-menu-field.php:4
-msgid "Flexia Mega Menu"
-msgstr ""
-
-#: framework/functions/flexia/flexia-extra-menu-field.php:8
-msgid "Select Widget for Mega Menu"
-msgstr ""
-
-#: framework/functions/flexia/flexia-helper.php:192
-msgid "<a href=\"%s\" target=\"_blank\">Manage License</a>"
-msgstr ""
-
-#: framework/functions/flexia/flexia-helper.php:202
-msgid "<a href=\"%s\" target=\"_blank\">Upgrade to Pro</a>"
-msgstr ""
-
-#: framework/functions/flexia/integrations/edd/edd-integration.php:18
-#: framework/functions/flexia/integrations/woocommerce/woocommerce-integration.php:212
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
-
-#: framework/functions/flexia/integrations/woocommerce/woocommerce-integration.php:188
-msgid "View your shopping cart"
-msgstr ""
-
-#: framework/functions/flexia/widgets.php:20
-msgid "Sidebar Left"
-msgstr ""
-
-#: framework/functions/flexia/widgets.php:21
-msgid "Sidebar Right"
-msgstr ""
-
-#: framework/functions/flexia/widgets.php:22
-msgid "Header 1"
-msgstr ""
-
-#: framework/functions/flexia/widgets.php:23
-msgid "Header 2"
-msgstr ""
-
-#: framework/functions/flexia/widgets.php:24
-msgid "Header 3"
-msgstr ""
-
-#: framework/functions/flexia/widgets.php:25
-msgid "Header 4"
-msgstr ""
-
-#: framework/functions/flexia/widgets.php:26
-msgid "Footer 1"
-msgstr ""
-
-#: framework/functions/flexia/widgets.php:27
-msgid "Footer 2"
-msgstr ""
-
-#: framework/functions/flexia/widgets.php:28
-msgid "Footer 3"
-msgstr ""
-
-#: framework/functions/flexia/widgets.php:29
-msgid "Footer 4"
-msgstr ""
-
-#: framework/views/template-parts/content-footer-bottom.php:32
-msgid "Assign Footer Menu"
-msgstr ""
-
-#. translators: 1: link to WP admin new post page.
-#: framework/views/template-parts/content-none.php:29
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: framework/views/template-parts/content-none.php:42
-msgid "Nothing Found!"
-msgstr ""
-
-#: framework/views/template-parts/content-none.php:43
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr ""
-
-#: framework/views/template-parts/content-none.php:49
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr ""
-
-#: framework/views/template-parts/content-page.php:32
-#: framework/views/template-parts/content-single.php:54
-#: framework/views/template-parts/content.php:68
-msgid "Pages:"
-msgstr ""
-
-#. translators: %s: Name of current post. Only visible to screen readers
-#: framework/views/template-parts/content-page.php:45
-#: inc/template-tags.php:241
-msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr ""
-
-#: framework/views/template-parts/content-post-author.php:25
-msgid "Author"
-msgstr ""
-
-#. translators: %s: Name of current post. Only visible to screen readers
-#: framework/views/template-parts/content-single-download.php:35
-#: framework/views/template-parts/content-single.php:43
-#: framework/views/template-parts/content.php:63
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr ""
-
-#: framework/views/template-parts/content.php:55
-msgid "Continue Reading"
-msgstr ""
-
-#: functions.php:69
-msgid "Primary Menu"
-msgstr ""
-
-#: functions.php:70
-msgid "Topbar Menu"
+#: functions.php:68
+msgid "Flexia Pages"
 msgstr ""
 
 #: functions.php:71
-msgid "Footer Menu"
+msgid "Hover Border"
 msgstr ""
 
-#. translators: %s: post date.
-#: inc/template-tags.php:70
-#: inc/template-tags.php:100
-msgid "<span class=\"screen-reader-text\">Posted on</span> %s"
+#: functions.php:72
+msgid "Hover Shadow"
 msgstr ""
 
-#. translators: %s: post author.
-#: inc/template-tags.php:80
-#: inc/template-tags.php:106
-msgid "<span class=\"screen-reader-text\">Posted by</span> %s"
+#: functions.php:73
+msgid "Small BG Shadow"
 msgstr ""
 
-#: inc/template-tags.php:89
-#: inc/template-tags.php:112
-#: inc/template-tags.php:165
-#: inc/template-tags.php:174
-msgid ", "
+#: functions.php:75
+msgid "Image Hover"
 msgstr ""
 
-#. translators: 1: list of categories.
-#: inc/template-tags.php:92
-#: inc/template-tags.php:115
-#: inc/template-tags.php:168
-#: inc/template-tags.php:177
-msgid "<span class=\"screen-reader-text\">Categories</span> %s"
+#: functions.php:76
+msgid "Minimal"
 msgstr ""
 
-#. translators: %s: post date.
-#: inc/template-tags.php:144
-#: inc/template-tags.php:153
-msgctxt "post date"
-msgid "Updated on %s"
+#: functions.php:78
+msgid "Inverse"
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:211
-msgctxt "list item separator"
-msgid ", "
+#: functions.php:79
+msgid "Primary"
 msgstr ""
 
-#. translators: 1: list of tags.
-#: inc/template-tags.php:214
-msgid "<span class=\"screen-reader-text\">Tags</span> %s"
+#: functions.php:81
+msgid "Checkmark"
 msgstr ""
 
-#. translators: %s: post title
-#: inc/template-tags.php:224
-msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+#: functions.php:82
+msgid "Image Rounded"
 msgstr ""
 
-#. translators: %s: search query.
-#: search.php:24
-msgid "Search Results for : %s"
+#: functions.php:83
+msgid "Wide Thin Line"
 msgstr ""
 
-#. Template Name of the theme
-msgid "Blank - Container | Header, Footer"
+#: functions.php:84
+msgid "Rounded Icon"
 msgstr ""
 
-#. Template Name of the theme
-msgid "Blank - Container | Header, No Footer"
+#: patterns/about.php
+msgctxt "Pattern title"
+msgid "About"
 msgstr ""
 
-#. Template Name of the theme
-msgid "Blank - Container | No Header, No Footer"
+#: patterns/about.php:20
+msgctxt "Message to convey that about page"
+msgid "About us"
 msgstr ""
 
-#. Template Name of the theme
-msgid "Gutenberg Template"
+#: patterns/about.php:24
+msgctxt "Message to convey that about page content"
+msgid "Transforming Dreams into Business Brilliance"
 msgstr ""
 
-#. Template Name of the theme
-msgid "Fullwidth Layout"
+#: patterns/about.php:28
+msgctxt "Message to convey that about page content"
+msgid "It seems like you're looking for a suggestion for the About Us page title for an agency. The About Us page is typically where organizations provide information about their mission, values, history, team,."
 msgstr ""
 
-#. Template Name of the theme
-msgid "Sidebar Left, Content Right"
+#: patterns/about.php:52
+msgctxt "Message to convey that about page"
+msgid "Where Vision Meets Business - Your Dreams, Our Expertise."
 msgstr ""
 
-#. Template Name of the theme
-msgid "Sidebar Right, Content Left"
+#: patterns/about.php:56
+msgctxt "Message to convey that about page"
+msgid "It seems like you're looking for a suggestion for the \"About Us\" page title for an agency. The \"About Us\" page is typically where organizations provide information about their mission. onsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 msgstr ""
 
-#. Template Name of the theme
-msgid "No Container | Header, Footer"
+#: patterns/about.php:60
+msgctxt "Message to convey that about page"
+msgid "Read more"
 msgstr ""
 
-#. Template Name of the theme
-msgid "No Container | No Header, Footer"
+#: patterns/archieve-page-header.php
+msgctxt "Pattern title"
+msgid "Archieve Page Header"
 msgstr ""
 
-#. Template Name of the theme
-msgid "No Container | Header, No Footer"
+#: patterns/banner.php
+msgctxt "Pattern title"
+msgid "Banner"
 msgstr ""
 
-#. Template Name of the theme
-msgid "No Container | No Header, No Footer"
+#: patterns/banner.php:18
+msgctxt "Message to convey banner"
+msgid "Creative solutions to improve your business"
+msgstr ""
+
+#: patterns/banner.php:24
+msgctxt "Message to convey banner"
+msgid "Get started"
+msgstr ""
+
+#: patterns/banner.php:36
+msgctxt "Message to convey that banner"
+msgid "Book A Call"
+msgstr ""
+
+#: patterns/blog-page-header.php
+msgctxt "Pattern title"
+msgid "Blog Page Header"
+msgstr ""
+
+#: patterns/blog-page-header.php:17
+msgctxt "Posts index title"
+msgid "Blog"
+msgstr ""
+
+#: patterns/blog.php
+msgctxt "Pattern title"
+msgid "Grid of posts, 3 columns"
+msgstr ""
+
+#: patterns/blog.php:16
+msgctxt "Message to convey blog content"
+msgid "BLog"
+msgstr ""
+
+#: patterns/blog.php:20
+msgctxt "Message to convey blog content"
+msgid "latest News"
+msgstr ""
+
+#: patterns/clients.php
+msgctxt "Pattern title"
+msgid "Clients Logos"
+msgstr ""
+
+#: patterns/common-page-header.php
+msgctxt "Pattern title"
+msgid "Common Page Header"
+msgstr ""
+
+#: patterns/cta.php
+msgctxt "Pattern title"
+msgid "CTA"
+msgstr ""
+
+#: patterns/cta.php:18
+msgctxt "Message to convey CTA"
+msgid "We Help to Build the Business"
+msgstr ""
+
+#: patterns/cta.php:24
+msgctxt "Message to convey CTA"
+msgid "Get started"
+msgstr ""
+
+#: patterns/error.php
+msgctxt "Pattern title"
+msgid "Error"
+msgstr ""
+
+#: patterns/error.php:22
+msgctxt "Message to error page"
+msgid "Page Not Found"
+msgstr ""
+
+#: patterns/error.php:26
+msgctxt "Message to error page"
+msgid "The page you requested could not be found. Please return to the homepage."
+msgstr ""
+
+#: patterns/error.php:36
+msgctxt "Message to error page"
+msgid "Go Home"
+msgstr ""
+
+#: patterns/faq.php
+msgctxt "Pattern title"
+msgid "FAQ"
+msgstr ""
+
+#: patterns/faq.php:14
+msgctxt "Message to convey FAQ"
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: patterns/faq.php:27
+msgctxt "Message to convey FAQ"
+msgid "How do I get updates?"
+msgstr ""
+
+#: patterns/faq.php:31
+msgctxt "Message to convey FAQ"
+msgid "You will get automatic update for Flexia from wp.org. If Flexia Pro is validated, you will get the automatic update in the same way, right from your WordPress Dashboard."
+msgstr ""
+
+#: patterns/faq.php:41
+msgctxt "Message to convey FAQ"
+msgid "What is the difference between \"Annual\" and \"Lifetime\"?"
+msgstr ""
+
+#: patterns/faq.php:45
+msgctxt "Message to convey FAQ"
+msgid "For annual license, you will receive premium support and automatic updates for 1 year. You will need to renew your license to avail them. For lifetime license, you get everything for lifetime!"
+msgstr ""
+
+#: patterns/faq.php:55
+msgctxt "Message to convey FAQ"
+msgid "What if I don't renew my annual license?"
+msgstr ""
+
+#: patterns/faq.php:59
+msgctxt "Message to convey FAQ"
+msgid "If you don't renew, you won't get the premium support and automatic updates. But you can always get the latest version from your account, download them and update manually."
+msgstr ""
+
+#: patterns/faq.php:69
+msgctxt "Message to convey FAQ"
+msgid "Responsive & Dynamic"
+msgstr ""
+
+#: patterns/faq.php:73
+msgctxt "Message to convey FAQ"
+msgid "Pixel perfect responsiveness with modern Flexbox and Bootstrap 4 grid to make it perfect responsiveness for all devices."
+msgstr ""
+
+#: patterns/footer.php
+msgctxt "Pattern title"
+msgid "Footer"
+msgstr ""
+
+#: patterns/funfacts.php
+msgctxt "Pattern title"
+msgid "Funfact"
+msgstr ""
+
+#: patterns/funfacts.php:26
+msgctxt "Message to convey funfacts"
+msgid "99%"
+msgstr ""
+
+#: patterns/funfacts.php:30
+msgctxt "Message to convey funfacts"
+msgid "Happy Customers"
+msgstr ""
+
+#: patterns/funfacts.php:46
+msgctxt "Message to convey funfacts"
+msgid "10M"
+msgstr ""
+
+#: patterns/funfacts.php:50
+msgctxt "Message to convey funfacts"
+msgid "Active Users"
+msgstr ""
+
+#: patterns/funfacts.php:70
+msgctxt "Message to convey funfacts"
+msgid "100%"
+msgstr ""
+
+#: patterns/funfacts.php:74
+msgctxt "Message to convey funfacts"
+msgid "Company Growth"
+msgstr ""
+
+#: patterns/funfacts.php:90
+msgctxt "Message to convey funfacts"
+msgid "100+"
+msgstr ""
+
+#: patterns/funfacts.php:94
+msgctxt "Message to convey funfacts"
+msgid "Team Members"
+msgstr ""
+
+#: patterns/header.php
+msgctxt "Pattern title"
+msgid "Header"
+msgstr ""
+
+#: patterns/home.php
+msgctxt "Pattern title"
+msgid "Agency landing page"
+msgstr ""
+
+#: patterns/home.php
+msgctxt "Pattern description"
+msgid "An optional agency page built entirely with WordPress blocks."
+msgstr ""
+
+#: patterns/main-sidebar.php
+msgctxt "Pattern title"
+msgid "Sidebar"
+msgstr ""
+
+#: patterns/main-sidebar.php:13
+msgctxt "search button label"
+msgid "Search"
+msgstr ""
+
+#: patterns/main-sidebar.php:13
+msgctxt "search button text"
+msgid "Search"
+msgstr ""
+
+#: patterns/main-sidebar.php:18
+msgctxt "Message to convey sidebar"
+msgid "Categories"
+msgstr ""
+
+#: patterns/main-sidebar.php:31
+msgctxt "Message to convey sidebar"
+msgid "Recent Posts"
+msgstr ""
+
+#: patterns/main-sidebar.php:43
+msgctxt "Message to convey sidebar"
+msgid "tags"
+msgstr ""
+
+#: patterns/post-page-header.php
+msgctxt "Pattern title"
+msgid "Post Page Header"
+msgstr ""
+
+#: patterns/post-with-sidebar.php
+msgctxt "Pattern title"
+msgid "Post With Right Sidebar"
+msgstr ""
+
+#: patterns/posts-list.php
+msgctxt "Pattern title"
+msgid "List of posts, 1 columns"
+msgstr ""
+
+#: patterns/posts-list.php:28
+#: patterns/search-page.php:50
+#: patterns/template-archive.php:45
+msgctxt "Read More button text"
+msgid "Read More"
+msgstr ""
+
+#: patterns/pricing.php
+msgctxt "Pattern title"
+msgid "Pricing"
+msgstr ""
+
+#: patterns/pricing.php:15
+msgctxt "Message to convey pricing content"
+msgid "pricing"
+msgstr ""
+
+#: patterns/pricing.php:19
+msgctxt "Message to convey pricing content"
+msgid "Flexible Pricing Plan"
+msgstr ""
+
+#: patterns/pricing.php:34
+msgctxt "Message to convey pricing content"
+msgid "Standard"
+msgstr ""
+
+#: patterns/pricing.php:39
+msgctxt "Message to convey pricing content"
+msgid "$49"
+msgstr ""
+
+#: patterns/pricing.php:43
+#: patterns/pricing.php:108
+#: patterns/pricing.php:183
+msgctxt "Message to convey pricing content"
+msgid "/month"
+msgstr ""
+
+#: patterns/pricing.php:48
+#: patterns/pricing.php:188
+msgctxt "Message to convey pricing content"
+msgid "Get started with basic features and kickstart your journey"
+msgstr ""
+
+#: patterns/pricing.php:57
+#: patterns/pricing.php:135
+#: patterns/pricing.php:197
+msgctxt "Message to convey pricing content"
+msgid "Customization Options"
+msgstr ""
+
+#: patterns/pricing.php:61
+#: patterns/pricing.php:139
+#: patterns/pricing.php:201
+msgctxt "Message to convey pricing content"
+msgid "Responsive Design"
+msgstr ""
+
+#: patterns/pricing.php:65
+#: patterns/pricing.php:143
+#: patterns/pricing.php:205
+msgctxt "Message to convey pricing content"
+msgid "SEO Optimization"
+msgstr ""
+
+#: patterns/pricing.php:69
+#: patterns/pricing.php:147
+#: patterns/pricing.php:209
+msgctxt "Message to convey pricing content"
+msgid "Blog Integration"
+msgstr ""
+
+#: patterns/pricing.php:73
+#: patterns/pricing.php:151
+#: patterns/pricing.php:213
+msgctxt "Message to convey pricing content"
+msgid "24/7 Live Chat Support"
+msgstr ""
+
+#: patterns/pricing.php:77
+#: patterns/pricing.php:155
+#: patterns/pricing.php:217
+msgctxt "Message to convey pricing content"
+msgid "Priority Updates"
+msgstr ""
+
+#: patterns/pricing.php:83
+#: patterns/pricing.php:161
+#: patterns/pricing.php:223
+msgid "Get Started"
+msgstr ""
+
+#: patterns/pricing.php:99
+msgctxt "Message to convey pricing content"
+msgid "Premium"
+msgstr ""
+
+#: patterns/pricing.php:104
+msgctxt "Message to convey pricing content"
+msgid "$149"
+msgstr ""
+
+#: patterns/pricing.php:118
+msgctxt "Message to convey pricing content"
+msgid "Popular"
+msgstr ""
+
+#: patterns/pricing.php:126
+msgctxt "Message to convey pricing content"
+msgid "Unlock advanced tools for greater results & elevate experience"
+msgstr ""
+
+#: patterns/pricing.php:174
+msgctxt "Message to convey pricing content"
+msgid "Enterprise"
+msgstr ""
+
+#: patterns/pricing.php:179
+msgctxt "Message to convey pricing content"
+msgid "$200"
+msgstr ""
+
+#: patterns/product-catalog.php
+msgctxt "Pattern title"
+msgid "Product catalog"
+msgstr ""
+
+#: patterns/product-catalog.php:67
+msgid "No products found"
+msgstr ""
+
+#: patterns/product-catalog.php:71
+msgid "Try adjusting your search criteria or browse our categories."
+msgstr ""
+
+#: patterns/product-catalog.php:85
+msgid "Search products"
+msgstr ""
+
+#: patterns/product-catalog.php:85
+msgid "Search"
+msgstr ""
+
+#: patterns/product-catalog.php:86
+msgid "Product categories"
+msgstr ""
+
+#: patterns/projects.php
+msgctxt "Pattern title"
+msgid "Projects"
+msgstr ""
+
+#: patterns/projects.php:15
+#: patterns/projects.php:62
+msgctxt "Message to convey portfolio content"
+msgid "projects"
+msgstr ""
+
+#: patterns/projects.php:19
+msgctxt "Message to convey portfolio content"
+msgid "Recent Projects"
+msgstr ""
+
+#: patterns/projects.php:36
+#: patterns/projects.php:62
+#: patterns/projects.php:88
+msgctxt "Message to convey portfolio content"
+msgid "Digital Revamp Pro"
+msgstr ""
+
+#: patterns/projects.php:42
+#: patterns/projects.php:68
+#: patterns/projects.php:94
+msgctxt "Message to convey portfolio content"
+msgid "Learn More"
+msgstr ""
+
+#: patterns/related-posts.php
+msgctxt "Pattern title"
+msgid "Related Posts"
+msgstr ""
+
+#: patterns/related-posts.php:16
+msgctxt "Message to convey related post content"
+msgid "You May Also Like"
+msgstr ""
+
+#: patterns/search-page.php
+msgctxt "Pattern title"
+msgid "Search Page"
+msgstr ""
+
+#: patterns/search-page.php:30
+msgctxt "Message to convey search page content"
+msgid "No posts were found."
+msgstr ""
+
+#: patterns/services.php
+msgctxt "Pattern title"
+msgid "Service Section"
+msgstr ""
+
+#: patterns/services.php:15
+msgctxt "Message to convey service content"
+msgid "services"
+msgstr ""
+
+#: patterns/services.php:19
+msgctxt "Message to convey service content"
+msgid "Services We Offer"
+msgstr ""
+
+#: patterns/services.php:38
+msgctxt "Message to convey service content"
+msgid "UX Designs"
+msgstr ""
+
+#: patterns/services.php:42
+#: patterns/services.php:60
+#: patterns/services.php:78
+#: patterns/services.php:98
+#: patterns/services.php:116
+#: patterns/services.php:134
+msgctxt "Message to convey service content"
+msgid "Provide the best, most intuitive support across all channels from. Proactively."
+msgstr ""
+
+#: patterns/services.php:56
+msgctxt "Message to convey service content"
+msgid "SEO Optimized"
+msgstr ""
+
+#: patterns/services.php:74
+msgctxt "Message to convey service content"
+msgid "Digital Marketing"
+msgstr ""
+
+#: patterns/services.php:94
+msgctxt "Message to convey service content"
+msgid "Social Media Marketin"
+msgstr ""
+
+#: patterns/services.php:112
+msgctxt "Message to convey service content"
+msgid "UI Designs"
+msgstr ""
+
+#: patterns/services.php:130
+msgctxt "Message to convey service content"
+msgid "Business Strategy"
+msgstr ""
+
+#: patterns/single-content.php
+msgctxt "Pattern title"
+msgid "Single post content"
+msgstr ""
+
+#: patterns/single-product.php
+msgctxt "Pattern title"
+msgid "Single product"
+msgstr ""
+
+#: patterns/single-product.php:65
+msgid "Related Products"
+msgstr ""
+
+#: patterns/single-product.php:90
+msgid "No related products found."
+msgstr ""
+
+#: patterns/team.php
+msgctxt "Pattern title"
+msgid "Team"
+msgstr ""
+
+#: patterns/team.php:16
+msgctxt "Message to convey team content"
+msgid "Team"
+msgstr ""
+
+#: patterns/team.php:20
+msgctxt "Message to convey team content"
+msgid "Awesome team member"
+msgstr ""
+
+#: patterns/team.php:49
+#: patterns/team.php:77
+#: patterns/team.php:109
+#: patterns/team.php:137
+#: patterns/team.php:171
+#: patterns/team.php:199
+#: patterns/team.php:231
+#: patterns/team.php:259
+msgctxt "Message to convey team content"
+msgid "Alex Carter"
+msgstr ""
+
+#: patterns/team.php:53
+#: patterns/team.php:81
+#: patterns/team.php:113
+#: patterns/team.php:141
+#: patterns/team.php:175
+#: patterns/team.php:203
+#: patterns/team.php:235
+#: patterns/team.php:263
+msgctxt "Message to convey team content"
+msgid "Creative Director"
+msgstr ""
+
+#: patterns/template-archive.php
+msgctxt "Pattern title"
+msgid "Template Archive"
+msgstr ""
+
+#: patterns/template-archive.php:25
+msgctxt "query placeholder text"
+msgid "Add text or blocks that will display when a query returns no results."
+msgstr ""
+
+#: patterns/template-archive.php:26
+msgctxt "No post found text"
+msgid "No posts were found."
+msgstr ""
+
+#: patterns/template-single.php
+msgctxt "Pattern title"
+msgid "Template Single"
+msgstr ""
+
+#: patterns/testimonials.php
+msgctxt "Pattern title"
+msgid "Testimonials"
+msgstr ""
+
+#: patterns/testimonials.php:15
+msgctxt "Message to convey testimonial content"
+msgid "Testimonials"
+msgstr ""
+
+#: patterns/testimonials.php:19
+msgctxt "Message to convey testimonial content"
+msgid "what people have to say about us"
+msgstr ""
+
+#: patterns/testimonials.php:37
+msgctxt "Message to convey testimonial content"
+msgid "John Smith"
+msgstr ""
+
+#: patterns/testimonials.php:41
+msgctxt "Message to convey testimonial content"
+msgid "Web designer"
+msgstr ""
+
+#: patterns/testimonials.php:51
+msgctxt "Message to convey testimonial content"
+msgid "Highly recommended!"
+msgstr ""
+
+#: patterns/testimonials.php:59
+#: patterns/testimonials.php:95
+msgctxt "Message to convey testimonial content"
+msgid "A Brilliant Journey. Choosing BizOCapital was one of the best decisions we made for our startup. Their financial expertise and tailored approach helped us secure vital funding and navigate. financial challenges. Their team is not only knowledgeable but also responsive and attentive to our needs."
+msgstr ""
+
+#: patterns/testimonials.php:73
+msgctxt "Message to convey testimonial content"
+msgid "Jacob Jones"
+msgstr ""
+
+#: patterns/testimonials.php:77
+msgctxt "Message to convey testimonial content"
+msgid "Freelancer"
+msgstr ""
+
+#: patterns/testimonials.php:87
+msgctxt "Message to convey testimonial content"
+msgid "Endless customization"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Blank"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Post with Right Sidebar"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Page With Sidebar"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Page (without title)"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "WooCommerce Shop"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Single Product"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Duotone name"
+msgid "Primary"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Duotone name"
+msgid "Secondary"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Duotone name"
+msgid "Tertiary"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Duotone name"
+msgid "White"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Duotone name"
+msgid "Dark Grayscale"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Duotone name"
+msgid "Midnight Blue"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Gradient name"
+msgid "Primary"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Gradient name"
+msgid "Secondary"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Gradient name"
+msgid "Vibrant"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Gradient name"
+msgid "Primary Transparent"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Gradient name"
+msgid "Primary Gradient"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Gradient name"
+msgid "Secondary Gradient"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Gradient name"
+msgid "Icon Gradient1"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Gradient name"
+msgid "Icon Gradient2"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Gradient name"
+msgid "Icon Gradient3"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Gradient name"
+msgid "Icon Gradient4"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Primary Trans"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Secondary BG"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Text White"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "White BG"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Tertiary"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Button Background"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Background"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Text"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Text Alt"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Heading"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Background Alt"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Light Background"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Dark Background"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Border Color"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Link"
+msgstr ""
+
+#: theme.json
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Text on primary"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "1"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "2"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "3"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "4"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "5"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "6"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "XX Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "X Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "DM Sans (system fallback)"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "System Font"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium Plus,24px"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large Plus,48px"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Huge, 64px"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Sidebar"
+msgstr ""
+
+#: styles/dark.json
+msgctxt "Style variation name"
+msgid "Dark"
+msgstr ""
+
+#: styles/dark.json
+msgctxt "Duotone name"
+msgid "Green"
+msgstr ""
+
+#: styles/dark.json
+#: styles/orange.json
+msgctxt "Color name"
+msgid "Button-text"
+msgstr ""
+
+#: styles/orange.json
+msgctxt "Style variation name"
+msgid "Orange"
 msgstr ""

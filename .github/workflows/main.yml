@@ -1,19 +1,79 @@
-name: WPCS check
-
-on: pull_request
-
+name: Theme release checks
+on:
+  push:
+    branches: [dev, master, main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
 jobs:
-  phpcs:
-      name: WPCS
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - name: WPCS check
-          uses: 10up/wpcs-action@stable
-          with:
-            enable_warnings: false # Enable checking for warnings (-w)
-            paths: '.' # Paths to check, space separated
-            excludes: '' # Paths to excludes, space separated
-            standard: 'WordPress' # Standard to use. Accepts WordPress|WordPress-Core|WordPress-Docs|WordPress-Extra|WordPress-VIP-Go|WordPressVIPMinimum|10up-Default.
-            standard_repo: '' # Public (git) repository URL of the coding standard
-            repo_branch: 'develop' # Branch of Standard repository
+  theme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - php: '7.4'
+            wordpress: '6.6'
+            commerce: false
+          - php: '8.3'
+            wordpress: 'latest'
+            commerce: true
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: wordpress-test-only
+          MYSQL_DATABASE: flexia_test
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost -pwordpress-test-only"
+          --health-interval=10s --health-timeout=5s --health-retries=10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # 2.37.2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mysqli
+          tools: composer:2.9.8, wp-cli:2.12.0
+          coverage: none
+      - name: Install locked development tools
+        run: |
+          composer install --no-interaction --prefer-dist --no-progress
+          python3 -m venv "$RUNNER_TEMP/flexia-python"
+          "$RUNNER_TEMP/flexia-python/bin/pip" install jsonschema==4.25.1
+      - name: Source, security and packaging checks
+        run: |
+          find . -path ./vendor -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l
+          composer audit --locked
+          composer lint
+          python3 tools/check-theme.py
+          "$RUNNER_TEMP/flexia-python/bin/python" tools/check-schema.py
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
+          ./build.sh
+      - name: Install isolated WordPress
+        env:
+          TEST_WORDPRESS: ${{ matrix.wordpress }}
+        run: |
+          export WP_CLI_CACHE_DIR="$RUNNER_TEMP/wp-cli-cache"
+          mkdir -p "$RUNNER_TEMP/flexia-wp"
+          wp core download --path="$RUNNER_TEMP/flexia-wp" --version="$TEST_WORDPRESS"
+          wp config create --path="$RUNNER_TEMP/flexia-wp" --dbname=flexia_test --dbuser=root --dbpass=wordpress-test-only --dbhost=127.0.0.1
+          wp config set FLEXIA_TEST_ENVIRONMENT true --raw --path="$RUNNER_TEMP/flexia-wp"
+          wp config set DISABLE_WP_CRON true --raw --path="$RUNNER_TEMP/flexia-wp"
+          wp core install --path="$RUNNER_TEMP/flexia-wp" --url=http://localhost --title=Flexia-Tests --admin_user=fixture --admin_email=fixture@example.invalid --admin_password=disposable-test-only --skip-email
+          ln -s "$GITHUB_WORKSPACE" "$RUNNER_TEMP/flexia-wp/wp-content/themes/flexia"
+          wp theme activate flexia --path="$RUNNER_TEMP/flexia-wp"
+          mkdir -p "$RUNNER_TEMP/flexia-wp/wp-content/mu-plugins"
+          printf '%s\n' '<?php' 'add_filter("pre_http_request", function() { return new WP_Error("test_network_blocked", "Network disabled in tests"); });' 'add_filter("pre_wp_mail", "__return_true");' > "$RUNNER_TEMP/flexia-wp/wp-content/mu-plugins/test-isolation.php"
+      - name: Independent theme regressions
+        run: wp eval-file tests/wordpress.php --path="$RUNNER_TEMP/flexia-wp"
+      - name: Commerce regressions
+        if: matrix.commerce
+        run: |
+          wp plugin install woocommerce --version=11.0.1 --path="$RUNNER_TEMP/flexia-wp" --skip-plugins --skip-themes --require=tests/allow-cli-download.php
+          wp plugin activate woocommerce --path="$RUNNER_TEMP/flexia-wp"
+          wp eval-file tests/woocommerce.php --path="$RUNNER_TEMP/flexia-wp"

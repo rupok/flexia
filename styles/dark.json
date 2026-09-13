@@ -1,6 +1,6 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"version": 2,
+	"$schema": "https://schemas.wp.org/wp/6.6/theme.json",
+	"version": 3,
 	"title": "Dark",
 	"settings": {
 		"color": {
@@ -13,7 +13,6 @@
 					"name": "Primary",
 					"slug": "primary"
 				},
-				
 				{
 					"colors": [
 						"#F9FEFF",
@@ -68,19 +67,16 @@
 					"slug": "primary",
 					"gradient": "linear-gradient(270deg, #0057FF -5%, #4F2CDD 100%)",
 					"name": "Primary"
-					
 				},
 				{
 					"slug": "secondary",
 					"gradient": "linear-gradient(270deg, #d9e0e2 -5%, #c4bfd9 100%)",
 					"name": "Secondary"
-					
 				},
 				{
 					"slug": "vibrant",
-					"gradient":"linear-gradient(270deg, #F1F6FF 2%, #0057FF 99.96%), #D9D9D9",
+					"gradient": "linear-gradient(270deg, #F1F6FF 2%, #0057FF 99.96%), #D9D9D9",
 					"name": "Vibrant"
-					
 				},
 				{
 					"slug": "primary-trans",
@@ -102,29 +98,25 @@
 					"gradient": "radial-gradient(26.92% 26.92% at 6.73% 5.77%, rgba(0, 87, 255, 0.35) 0%, rgba(24, 31, 44, 0.5) 100%)",
 					"name": "Icon Gradient1"
 				},
-				
 				{
 					"slug": "icon-grad-2",
-					"gradient": "radial-gradient(25.96% 25.96% at 6.73% 5.77%, rgba(0, 120, 171, 0.35) 0%, rgba(24, 31, 44, 0.5) 100%)",		
+					"gradient": "radial-gradient(25.96% 25.96% at 6.73% 5.77%, rgba(0, 120, 171, 0.35) 0%, rgba(24, 31, 44, 0.5) 100%)",
 					"name": "Icon Gradient2"
 				},
-
 				{
 					"slug": "icon-grad-3",
-					"gradient": "radial-gradient(31.73% 31.73% at 6.73% 7.69%, rgba(0, 146, 23, 0.35) 0%, rgba(24, 31, 44, 0.5) 100%)",		
+					"gradient": "radial-gradient(31.73% 31.73% at 6.73% 7.69%, rgba(0, 146, 23, 0.35) 0%, rgba(24, 31, 44, 0.5) 100%)",
 					"name": "Icon Gradient3"
 				},
-				
 				{
 					"slug": "icon-grad-4",
-					"gradient": "radial-gradient(34.62% 34.62% at 3.85% 9.62%, rgba(142, 95, 39, 0.35) 0%, rgba(24, 31, 44, 0.5) 100%) ",		
+					"gradient": "radial-gradient(34.62% 34.62% at 3.85% 9.62%, rgba(142, 95, 39, 0.35) 0%, rgba(24, 31, 44, 0.5) 100%) ",
 					"name": "Icon Gradient4"
 				}
-
 			],
 			"palette": [
 				{
-					"color": "#0057FF",
+					"color": "#9B8AFF",
 					"name": "Primary",
 					"slug": "primary"
 				},
@@ -138,7 +130,6 @@
 					"name": "Secondary",
 					"slug": "secondary"
 				},
-
 				{
 					"color": "#1B2538",
 					"name": "Secondary BG",
@@ -159,19 +150,18 @@
 					"name": "Background Alt",
 					"slug": "background-alt"
 				},
-				
 				{
 					"color": "#42E6BF",
 					"name": "Tertiary",
 					"slug": "tertiary"
 				},
 				{
-					"color": "#031E53",
+					"color": "#D8E6FF",
 					"name": "Button Background",
 					"slug": "button-background"
 				},
 				{
-					"color": "#BFBFBF",
+					"color": "#001132",
 					"name": "Button-text",
 					"slug": "button-text"
 				},
@@ -185,9 +175,8 @@
 					"name": "Text",
 					"slug": "body"
 				},
-				
 				{
-					"color": "#0000EE",
+					"color": "#9FC5FF",
 					"name": "Link",
 					"slug": "link-text"
 				},
@@ -215,10 +204,14 @@
 					"color": "#1B2538",
 					"name": "Border Color",
 					"slug": "border-color"
+				},
+				{
+					"slug": "primary-foreground",
+					"name": "Text on primary",
+					"color": "#000000"
 				}
 			]
 		}
-		
 	},
 	"styles": {
 		"blocks": {
@@ -227,13 +220,12 @@
 					"text": "var(--wp--preset--color--heading-text)"
 				}
 			},
-			
 			"core/navigation": {
 				"elements": {
 					"link": {
 						":hover": {
 							"color": {
-								"text": "var(--wp--preset--color--primary)!important"
+								"text": "var(--wp--preset--color--primary)"
 							},
 							"typography": {
 								"textDecoration": "none"
@@ -242,7 +234,6 @@
 						"color": {
 							"text": "var(--wp--preset--color--heading-text)"
 						}
-						
 					}
 				},
 				"typography": {
@@ -254,13 +245,12 @@
 					"text": "var(--wp--preset--color--primary)"
 				}
 			},
-			
 			"core/query-pagination": {
 				"elements": {
 					"link": {
 						":hover": {
 							"border": {
-								"color": "var(--wp--preset--color--contrast)"
+								"color": "var(--wp--preset--color--heading-text)"
 							},
 							"color": {
 								"background": "var(--wp--preset--color--tertiary)"
@@ -283,14 +273,11 @@
 					"background": "#264177"
 				}
 			},
-			
 			"core/site-logo": {
 				"filter": {
 					"duotone": "var(--wp--preset--duotone--midnight-blue)"
 				}
 			},
-			
-		
 			"core/site-title": {
 				"elements": {
 					"link": {
@@ -332,9 +319,7 @@
 						}
 					}
 				}
-			
 			}
-			
 		},
 		"elements": {
 			"button": {
@@ -344,29 +329,24 @@
 				":hover": {
 					"color": {
 						"background": "var(--wp--preset--color--primary)",
-						"text": "var(--wp--preset--color--button-text)"
+						"text": "var(--wp--preset--color--black)"
 					}
 				},
 				":focus": {
 					"color": {
 						"background": "var(--wp--preset--color--primary)",
-						"text": "var(--wp--preset--color--secondary)"
+						"text": "var(--wp--preset--color--black)"
 					}
 				},
 				":active": {
 					"color": {
 						"background": "var(--wp--preset--color--primary)",
-						"text": "var(--wp--preset--color--secondary)"
-					}
-				},
-				":visited": {
-					"color": {
-						"text": "var(--wp--preset--color--secondary)"
+						"text": "var(--wp--preset--color--black)"
 					}
 				},
 				"color": {
 					"background": "var(--wp--preset--color--button-background)",
-					"text": "var(--wp--preset--color--black)"
+					"text": "var(--wp--preset--color--button-text)"
 				}
 			},
 			"heading": {
@@ -377,24 +357,26 @@
 			"link": {
 				":active": {
 					"color": {
-						"text": "var(--wp--preset--color--secondary)"
+						"text": "var(--wp--preset--color--link-text)"
 					},
 					"typography": {
-						"textDecoration": "none"
+						"textDecoration": "underline"
 					}
 				},
 				":focus": {
-					"typography": {
-						"textDecoration": "underline dashed"
-					}
-				},
-				
-				":hover": {
 					"color": {
-						"text": "var(--wp--preset--color--primary)"
+						"text": "var(--wp--preset--color--link-text)"
 					},
 					"typography": {
-						"textDecoration": "none"
+						"textDecoration": "underline"
+					}
+				},
+				":hover": {
+					"color": {
+						"text": "var(--wp--preset--color--link-text)"
+					},
+					"typography": {
+						"textDecoration": "underline"
 					}
 				},
 				"color": {

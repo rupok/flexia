@@ -1,0 +1,100 @@
+<?php
+/**
+ * Title: Product catalog
+ * Slug: flexia/product-catalog
+ * Categories: flexia-pages
+ * Inserter: no
+ */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+?>
+<!-- wp:template-part {"slug":"header","tagName":"header","area":"header"} /-->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"blockGap":"0"}},"layout":{"type":"default"}} -->
+<main class="wp-block-group" style="margin-top:0;margin-bottom:0">
+
+    <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+
+        <!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+        <div class="wp-block-group alignwide">
+
+            <!-- wp:woocommerce/breadcrumbs {"align":"wide"} /-->
+            <!-- wp:query-title {"type":"archive","level":1,"showPrefix":false} /-->
+
+            <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
+            <div class="wp-block-columns alignwide">
+
+                <!-- wp:column {"width":"75%"} -->
+                <div class="wp-block-column" style="flex-basis:75%">
+
+                    <!-- wp:woocommerce/store-notices /-->
+
+                    <!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
+                    <div class="wp-block-group">
+                        <!-- wp:woocommerce/product-results-count /-->
+                        <!-- wp:woocommerce/catalog-sorting /-->
+                    </div>
+                    <!-- /wp:group -->
+
+                    <!-- wp:woocommerce/product-collection {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"product","order":"desc","orderBy":"date","search":"","exclude":[],"inherit":true,"taxQuery":{},"isProductCollectionBlock":true,"featured":false,"woocommerceOnSale":false,"woocommerceStockStatus":["instock","outofstock","onbackorder"],"woocommerceAttributes":[],"woocommerceHandPickedProducts":[]},"tagName":"div","displayLayout":{"type":"flex","columns":3,"shrinkColumns":true},"collection":"woocommerce/product-collection/product-catalog"} -->
+                    <div class="wp-block-woocommerce-product-collection">
+
+                        <!-- wp:woocommerce/product-template -->
+                        <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"},"border":{"radius":"8px"}},"className":"wc-block-product","layout":{"type":"constrained"}} -->
+                        <div class="wp-block-group wc-block-product" style="border-radius:8px">
+
+                            <!-- wp:woocommerce/product-image {"imageSizing":"thumbnail","isDescendentOfQueryLoop":true,"style":{"border":{"radius":"4px"}}} /-->
+
+                            <!-- wp:post-title {"textAlign":"center","level":3,"isLink":true,"style":{"spacing":{"margin":{"bottom":"0.75rem","top":"0.75rem"}}},"fontSize":"medium","__woocommerceNamespace":"woocommerce/product-collection/product-title"} /-->
+
+                            <!-- wp:woocommerce/product-price {"isDescendentOfQueryLoop":true,"textAlign":"center","style":{"spacing":{"margin":{"bottom":"0.75rem"}}}} /-->
+
+                            <!-- wp:woocommerce/product-button {"textAlign":"center","isDescendentOfQueryLoop":true,"style":{"spacing":{"margin":{"bottom":"0.75rem"}}}} /-->
+                        </div>
+                        <!-- /wp:group -->
+                        <!-- /wp:woocommerce/product-template -->
+
+                        <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"}} -->
+                        <!-- wp:query-pagination-previous /-->
+                        <!-- wp:query-pagination-numbers /-->
+                        <!-- wp:query-pagination-next /-->
+                        <!-- /wp:query-pagination -->
+
+                        <!-- wp:woocommerce/product-collection-no-results -->
+                        <!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center","flexWrap":"wrap"}} -->
+                        <div class="wp-block-group">
+                            <!-- wp:paragraph {"textAlign":"center"} -->
+                            <p class="has-text-align-center"><strong><?php esc_html_e( 'No products found', 'flexia' ); ?></strong></p>
+                            <!-- /wp:paragraph -->
+
+                            <!-- wp:paragraph {"textAlign":"center"} -->
+                            <p class="has-text-align-center"><?php esc_html_e( 'Try adjusting your search criteria or browse our categories.', 'flexia' ); ?></p>
+                            <!-- /wp:paragraph -->
+                        </div>
+                        <!-- /wp:group -->
+                        <!-- /wp:woocommerce/product-collection-no-results -->
+                    </div>
+                    <!-- /wp:woocommerce/product-collection -->
+                </div>
+                <!-- /wp:column -->
+
+                <!-- wp:column {"width":"25%"} -->
+                <div class="wp-block-column" style="flex-basis:25%">
+                    <!-- wp:group {"tagName":"aside","layout":{"type":"constrained"}} -->
+                    <aside class="wp-block-group">
+                    <!-- wp:search {"label":<?php echo wp_json_encode( __( 'Search products', 'flexia' ), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ); ?>,"buttonText":<?php echo wp_json_encode( __( 'Search', 'flexia' ), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ); ?>,"query":{"post_type":"product"}} /-->
+                    <!-- wp:heading {"level":2,"fontSize":"medium"} --><h2 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Product categories', 'flexia' ); ?></h2><!-- /wp:heading -->
+                    <!-- wp:woocommerce/product-categories /-->
+                    </aside><!-- /wp:group -->
+                </div>
+                <!-- /wp:column -->
+            </div>
+            <!-- /wp:columns -->
+        </div>
+        <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer","area":"footer"} /-->

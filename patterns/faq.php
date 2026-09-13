@@ -4,6 +4,10 @@
  * Slug: flexia/faq
  * Categories: flexia
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|x-small","right":"var:preset|spacing|x-small"},"blockGap":"var:preset|spacing|medium"}},"backgroundColor":"secondary","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-secondary-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--x-small);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--x-small)"><!-- wp:heading {"textAlign":"center","style":{"typography":{"textTransform":"capitalize"}},"fontSize":"large-plus"} -->
@@ -33,8 +37,8 @@
 <!-- /wp:separator -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":4,"style":{"typography":{"textTransform":"capitalize"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}},"textColor":"text","fontSize":"medium-plus"} -->
-<h4 class="wp-block-heading has-text-color has-link-color has-medium-plus-font-size" style="text-transform:capitalize"><?php echo esc_html_x( 'What is the difference between "Annual" and "Lifetime"?', 'Message to convey FAQ', 'flexia' ); ?></h4>
+<div class="wp-block-group"><!-- wp:heading {"level":4,"style":{"typography":{"textTransform":"capitalize"},"elements":{"link":{"color":{"text":"var:preset|color|body"}}}},"textColor":"body","fontSize":"medium-plus"} -->
+<h4 class="wp-block-heading has-body-color has-link-color has-medium-plus-font-size" style="text-transform:capitalize"><?php echo esc_html_x( 'What is the difference between "Annual" and "Lifetime"?', 'Message to convey FAQ', 'flexia' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->

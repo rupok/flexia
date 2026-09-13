@@ -4,6 +4,10 @@
      * Slug: flexia/banner
      * Categories: flexia
      */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 ?>
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"var:preset|spacing|x-small","right":"var:preset|spacing|x-small"}}},"layout":{"type":"constrained"}} -->
@@ -17,7 +21,7 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"0","left":"0"},"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"wrap","orientation":"horizontal"}} -->
 <div class="wp-block-group" style="padding-right:0;padding-left:0"><!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"textColor":"primary","gradient":"primary-grad","style":{"typography":{"textTransform":"capitalize"},"border":{"radius":"12px","color":"#eaeaff","width":"1px"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"className":"is-style-flexia-btn-theme"} -->
-<div class="wp-block-button is-style-flexia-btn-theme" style="text-transform:capitalize"><a class="wp-block-button__link has-primary-color has-primary-grad-gradient-background has-text-color has-background has-link-color has-border-color wp-element-button" style="border-color:#eaeaff;border-width:1px;border-radius:12px"><?php echo esc_html_x( 'Get started', 'Message to convey banner', 'flexia' ); ?></a></div>
+<div class="wp-block-button is-style-flexia-btn-theme" style="text-transform:capitalize"><a class="wp-block-button__link has-primary-color has-primary-grad-gradient-background has-body-color has-background has-link-color has-border-color wp-element-button" style="border-color:#eaeaff;border-width:1px;border-radius:12px"><?php echo esc_html_x( 'Get started', 'Message to convey banner', 'flexia' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 
@@ -28,8 +32,8 @@
 <!-- /wp:image --></div>
 <!-- /wp:group -->
 
-<!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|dark-background"},":hover":{"color":{"text":"var:preset|color|primary"}}}},"typography":{"textTransform":"capitalize"}},"textColor":"text","fontSize":"small"} -->
-<h2 class="wp-block-heading has-text-color has-link-color has-small-font-size" style="text-transform:capitalize"><a href="#"><?php echo esc_html_x( 'Book A Call', 'Message to convey that banner', 'flexia' ); ?></a></h2>
+<!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|dark-background"},":hover":{"color":{"text":"var:preset|color|primary"}}}},"typography":{"textTransform":"capitalize"}},"textColor":"body","fontSize":"small"} -->
+<h2 class="wp-block-heading has-body-color has-link-color has-small-font-size" style="text-transform:capitalize"><a href="#"><?php echo esc_html_x( 'Book A Call', 'Message to convey that banner', 'flexia' ); ?></a></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

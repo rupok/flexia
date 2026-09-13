@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ruleset name="Flexia security">
+  <description>Focused WordPress output and request security checks across shipped PHP.</description>
+  <file>functions.php</file>
+  <file>index.php</file>
+  <file>includes</file>
+  <file>patterns</file>
+  <arg name="extensions" value="php"/>
+  <rule ref="WordPress.Security.EscapeOutput"/>
+  <rule ref="WordPress.Security.ValidatedSanitizedInput"/>
+  <rule ref="WordPress.Security.NonceVerification"/>
+</ruleset>
