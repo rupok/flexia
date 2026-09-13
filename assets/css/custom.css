@@ -563,5 +563,6 @@ ol.wp-block-comment-template ol .wp-block-columns {
         scroll-behavior: auto !important;
     }
 }
-.wp-block-post-content a { text-decoration: underline; }
-.wp-block-post-content a:hover { text-decoration-thickness: 2px; }
+/* Body links are underlined, but button-shaped links are not. */
+.wp-block-post-content a:not(.wp-element-button):not(.wp-block-button__link):not(.wc-block-components-button) { text-decoration: underline; }
+.wp-block-post-content a:not(.wp-element-button):not(.wp-block-button__link):not(.wc-block-components-button):hover { text-decoration-thickness: 2px; }

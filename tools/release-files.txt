@@ -1,4 +1,4 @@
-# Reviewed runtime inventory for Flexia 3.2.0. One path per line.
+# Reviewed runtime inventory for Flexia 3.2.1. One path per line.
 assets/css/block-styles.css
 assets/css/custom.css
 assets/css/editor-style.css
@@ -87,8 +87,10 @@ patterns/common-page-header.php
 patterns/cta.php
 patterns/error.php
 patterns/faq.php
+patterns/footer-minimal.php
 patterns/footer.php
 patterns/funfacts.php
+patterns/header-minimal.php
 patterns/header.php
 patterns/home.php
 patterns/main-sidebar.php
