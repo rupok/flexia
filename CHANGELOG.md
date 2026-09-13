@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.2.1 — unreleased
+## 3.2.1 — 2026-09-13
 
 Upgrade QA follow-up to 3.2.0. Updating an existing site no longer replaces its header and footer layout.
 
