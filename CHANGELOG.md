@@ -1,5 +1,15 @@
 # Changelog
 
+## 3.2.1 — unreleased
+
+Upgrade QA follow-up to 3.2.0. Updating an existing site no longer replaces its header and footer layout.
+
+- Restore the 3.1.0 header and footer under the `flexia/header` and `flexia/footer` slugs, so existing sites keep their chrome on update. The 3.2 native-identity chrome remains available as the new `flexia/header-minimal` and `flexia/footer-minimal` patterns.
+- Give the minimal header's navigation an explicit page-list fallback so it no longer resolves to an unrelated saved menu.
+- Lay the minimal header out without wrapping, keeping WooCommerce's account and mini-cart icons on the logo and menu row.
+- Stop underlining button-shaped links inside post content, including WooCommerce's "Proceed to Checkout" button.
+- Correct the 3.2 migration note: a database-saved header/footer part that only references a pattern still follows the theme's current pattern.
+
 ## 3.2.0 — 2026-09-13
 
 Update from the public 3.1.0 release. Requires WordPress 6.6 or later; tested up to WordPress 7.1.

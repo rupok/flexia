@@ -20,6 +20,13 @@ Version 3.2 requires WordPress 6.6 or later. Review docs/MIGRATION-3.2.md in the
 
 == Changelog ==
 
+= 3.2.1 =
+* Fixed: Updating from 3.1.0 no longer replaces the site header and footer layout.
+* Fixed: The header menu no longer falls back to an unrelated saved navigation menu.
+* Fixed: WooCommerce account and cart icons no longer wrap onto a second header row.
+* Fixed: The "Proceed to Checkout" button label is no longer underlined.
+* Added: Header (minimal) and Footer (minimal) patterns for native site identity chrome.
+
 = 3.2.0 =
 * Updated: Tested up to WordPress 7.1, the current stable release verified by compatibility tests.
 * Security: Restore optional plugin security defaults and remove automatic Pro deactivation.

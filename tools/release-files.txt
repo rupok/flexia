@@ -87,8 +87,10 @@ patterns/common-page-header.php
 patterns/cta.php
 patterns/error.php
 patterns/faq.php
+patterns/footer-minimal.php
 patterns/footer.php
 patterns/funfacts.php
+patterns/header-minimal.php
 patterns/header.php
 patterns/home.php
 patterns/main-sidebar.php
