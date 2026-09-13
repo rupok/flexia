@@ -33,7 +33,7 @@ WPCS was updated to 3.4.1 after the dependency audit flagged the initially selec
 
 ## Before website rollout
 
-1. Run the configured hosted CI matrix; PHP 7.4 and 8.3 were not executed locally. The local core reporting 7.1 is not asserted to be an official stable release. The pre-existing “Tested up to 6.8” header is retained.
+1. Run the configured hosted CI matrix before each release. Hosted tests passed on PHP 7.4 / WordPress 6.6 and PHP 8.3 / WordPress 7.1; local tests used PHP 8.2.29. WordPress.org confirms 7.1 as the current stable release as of 2026-09-13, and both Tested up to headers are corrected to 7.1 in Flexia 3.2.1.
 2. Back up and reconcile saved templates, global styles, child themes and ACF field-display integrations. Test real multisite/network activation and site-specific supported plugins. The child-version regression is a controlled simulation, not a complete child-theme/editor or multisite audit.
 3. Complete Core retirement per website using CORE-RETIREMENT.md. Source independence does not prove every historical website has no shortcode/customization dependency. Protect shared WPDeveloper settings/schedules and suppress final tracking during controlled deactivation.
 4. Finish representative keyboard/screen-reader, long-translation/RTL, zoom and editor insert/save/reopen acceptance. The checks above validate raw block JSON and rendering; they do not certify every legacy pattern's editor serialization or WCAG conformance.

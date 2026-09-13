@@ -1,6 +1,8 @@
 # Changelog
 
-## 3.2.1 — 2026-09-10
+## 3.2.1 — 2026-09-10 (package corrected 2026-09-13)
+
+Correct the stale Tested up to headers in style.css and readme.txt to WordPress 7.1, verified against the current official stable release and compatibility tests. Rebuild the same 3.2.1 release package and checksum; theme behavior is unchanged.
 
 Package the security and modernization changes below for release review. Synchronize theme, runtime and translation metadata to 3.2.1. See the GitHub release for distribution status and installable ZIP.
 
