@@ -81,6 +81,16 @@ try {
 		flexia_test_assert( substr_count( $html, '<main' ) === 1, $template . ' must have one main landmark.' );
 		flexia_test_assert( substr_count( $html, '<h1' ) === 1, $template . ' must have one page title.' );
 	}
+	// The parent style.css only holds the theme header: without a child theme it
+	// must not become a stylesheet request, but the handle keeps printing inline CSS.
+	wp_deregister_style( 'flexia-style' );
+	flexia_styles();
+	wp_add_inline_style( 'flexia-style', '.flexia-inline-probe{color:red}' );
+	flexia_test_assert( false === wp_styles()->registered['flexia-style']->src, 'Parent style.css must not be requested without a child theme.' );
+	ob_start();
+	wp_styles()->do_item( 'flexia-style' );
+	$style_html = ob_get_clean();
+	flexia_test_assert( strpos( $style_html, 'flexia-inline-probe' ) !== false && strpos( $style_html, '<link' ) === false, 'Inline styles on flexia-style must still print without a stylesheet link.' );
 	// Simulate an active child at the legacy trigger version; no actor may cause
 	// an ordinary setup request to mutate the site's plugin activation list.
 	$child = get_theme_root() . '/flexia-test-child';
@@ -91,6 +101,9 @@ try {
 	$plugins = get_option( 'active_plugins' );
 	try {
 		update_option( 'stylesheet', 'flexia-test-child' );
+		wp_deregister_style( 'flexia-style' );
+		flexia_styles();
+		flexia_test_assert( get_stylesheet_uri() === wp_styles()->registered['flexia-style']->src, 'A child theme stylesheet must still load through flexia-style.' );
 		update_option( 'active_plugins', array_merge( $plugins, array( 'flexia-pro/flexia-pro.php' ) ) );
 		$expected = get_option( 'active_plugins' );
 		foreach ( array( 0, 1 ) as $actor ) {
