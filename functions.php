@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define( 'FLEXIA_DEV_MODE', false );
-define( 'FLEXIA_VERSION', '3.2.0' );
+define( 'FLEXIA_VERSION', '3.2.1' );
 define( 'FLEXIA_SLUG', 'flexia' );
 define( 'FLEXIA_NAME', 'flexia' );
 define( 'FLEXIA_DIR_PATH', get_template_directory() );
@@ -56,7 +56,12 @@ if ( ! function_exists( 'flexia_styles' ) ) {
 	function flexia_styles() {
 		wp_enqueue_style( 'flexia-custom', get_theme_file_uri( 'assets/css/custom.css' ), array(), FLEXIA_VERSION );
 		wp_enqueue_style( 'flexia-block-styles', get_theme_file_uri( 'assets/css/block-styles.css' ), array( 'flexia-custom' ), FLEXIA_VERSION );
-		wp_enqueue_style( 'flexia-style', get_stylesheet_uri(), array( 'flexia-block-styles' ), FLEXIA_VERSION );
+		// The parent style.css only carries the theme header, so it is fetched
+		// only for a child theme's stylesheet. Without a child the handle stays
+		// registered with no source so inline styles added to it still print.
+		// Registered first: wp_enqueue_style() skips registration for a false src.
+		wp_register_style( 'flexia-style', is_child_theme() ? get_stylesheet_uri() : false, array( 'flexia-block-styles' ), FLEXIA_VERSION );
+		wp_enqueue_style( 'flexia-style' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'flexia_styles' );
@@ -103,3 +108,4 @@ add_action( 'init', 'flexia_register' );
 
 // Keep the harmless legacy helper for existing child themes during migration.
 require_once FLEXIA_DIR_PATH . '/includes/compatibility.php';
+require_once FLEXIA_DIR_PATH . '/includes/elementor.php';

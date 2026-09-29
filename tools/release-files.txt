@@ -1,4 +1,4 @@
-# Reviewed runtime inventory for Flexia 3.2.0. One path per line.
+# Reviewed runtime inventory for Flexia 3.2.1. One path per line.
 assets/css/block-styles.css
 assets/css/custom.css
 assets/css/editor-style.css
@@ -8,12 +8,20 @@ assets/fonts/README.txt
 assets/fonts/Sora-OFL.txt
 assets/fonts/inter_normal_400.ttf
 assets/fonts/inter_normal_400.woff2
+assets/fonts/inter_normal_400_ext.woff2
+assets/fonts/inter_normal_400_latin.woff2
 assets/fonts/sora_normal_400.ttf
 assets/fonts/sora_normal_400.woff2
+assets/fonts/sora_normal_400_ext.woff2
+assets/fonts/sora_normal_400_latin.woff2
 assets/fonts/sora_normal_500.ttf
 assets/fonts/sora_normal_500.woff2
+assets/fonts/sora_normal_500_ext.woff2
+assets/fonts/sora_normal_500_latin.woff2
 assets/fonts/sora_normal_600.ttf
 assets/fonts/sora_normal_600.woff2
+assets/fonts/sora_normal_600_ext.woff2
+assets/fonts/sora_normal_600_latin.woff2
 assets/images/about/about-img-1.jpg
 assets/images/about/about-img-2.jpg
 assets/images/about/about-img-3.jpg
@@ -72,6 +80,7 @@ assets/images/user-line.png
 assets/images/user-line.svg
 functions.php
 includes/compatibility.php
+includes/elementor.php
 index.php
 languages/flexia.pot
 parts/footer.html
@@ -87,8 +96,10 @@ patterns/common-page-header.php
 patterns/cta.php
 patterns/error.php
 patterns/faq.php
+patterns/footer-minimal.php
 patterns/footer.php
 patterns/funfacts.php
+patterns/header-minimal.php
 patterns/header.php
 patterns/home.php
 patterns/main-sidebar.php
