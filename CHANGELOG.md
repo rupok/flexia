@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Open Elementor Pro Theme Builder header and footer templates in the Elementor editor again. Flexia's block templates never call `get_header()`/`get_footer()`, where Elementor Pro prints those documents, so the editor preview stopped on "the content area was not found". Flexia now lets Elementor render header/footer templates with its own Header & Footer page template when Elementor registered the location on the theme's behalf.
+
 ## 3.2.1 — 2026-09-13
 
 Upgrade QA follow-up to 3.2.0. Updating an existing site no longer replaces its header and footer layout.

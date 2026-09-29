@@ -108,3 +108,4 @@ add_action( 'init', 'flexia_register' );
 
 // Keep the harmless legacy helper for existing child themes during migration.
 require_once FLEXIA_DIR_PATH . '/includes/compatibility.php';
+require_once FLEXIA_DIR_PATH . '/includes/elementor.php';

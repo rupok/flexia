@@ -80,6 +80,7 @@ assets/images/user-line.png
 assets/images/user-line.svg
 functions.php
 includes/compatibility.php
+includes/elementor.php
 index.php
 languages/flexia.pot
 parts/footer.html
