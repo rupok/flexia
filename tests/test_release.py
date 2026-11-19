@@ -1,3 +1,4 @@
+import re
 """Release-boundary regressions operate on disposable copies of the checkout."""
 import hashlib
 from pathlib import Path
@@ -42,7 +43,8 @@ class ReleaseTests(unittest.TestCase):
             self.assertTrue(all(x.startswith('flexia/') for x in names))
 
     def test_missing_declared_font_fails(self):
-        next((self.root / 'assets/fonts').glob('*.woff2')).unlink()
+        declared = re.findall(r'file:\./(assets/fonts/[^"]+)', (self.root / 'theme.json').read_text())
+        (self.root / declared[0]).unlink()
         result = self.run_build()
         self.assertNotEqual(result.returncode, 0)
         self.assertFalse(list(self.output.glob('*.zip')))

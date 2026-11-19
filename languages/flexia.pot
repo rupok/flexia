@@ -384,6 +384,7 @@ msgstr ""
 #: patterns/posts-list.php:28
 #: patterns/search-page.php:50
 #: patterns/template-archive.php:45
+#: patterns/template-blog-home.php:44
 msgctxt "Read More button text"
 msgid "Read More"
 msgstr ""

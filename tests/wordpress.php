@@ -73,6 +73,28 @@ try {
 	$GLOBALS['wp_query'] = new WP_Query( array( 'cat' => $term_id, 'posts_per_page' => 2, 'paged' => 2 ) );
 	$page_two = flexia_test_render( 'templates/archive.html' );
 	flexia_test_assert( $html !== $page_two && strpos( $page_two, 'FLEXIA_INCLUDED_' ) !== false, 'Archive page 2 must render a different matching post.' );
+	// Issue #57: the posts index and fallback templates must use the translatable
+	// blog pattern; static template HTML cannot pass "Read More" through gettext.
+	foreach ( array( 'templates/home.html', 'templates/index.html' ) as $template ) {
+		$source = file_get_contents( get_template_directory() . '/' . $template );
+		flexia_test_assert( strpos( $source, '"slug":"flexia/template-blog-home"' ) !== false && strpos( $source, 'moreText' ) === false, $template . ' must load the translatable blog pattern.' );
+		$GLOBALS['wp_query'] = new WP_Query( array( 'cat' => $term_id, 'posts_per_page' => 2, 'paged' => 1 ) );
+		flexia_test_assert( strpos( flexia_test_render( $template ), 'FLEXIA_INCLUDED_' ) !== false, $template . ' must render the posts index.' );
+	}
+	$more = function( $translation, $text, $context, $domain ) {
+		return ( 'flexia' === $domain && 'Read More' === $text ) ? 'FLEXIA_TRANSLATED_MORE "quoted"' : $translation;
+	};
+	add_filter( 'gettext_with_context', $more, 10, 4 );
+	$GLOBALS['wp_query'] = new WP_Query( array( 'cat' => $term_id, 'posts_per_page' => 2, 'paged' => 1 ) );
+	$blog = flexia_test_render( 'patterns/template-blog-home.php' );
+	remove_filter( 'gettext_with_context', $more, 10 );
+	flexia_test_assert( strpos( $blog, 'FLEXIA_TRANSLATED_MORE' ) !== false && strpos( $blog, '>Read More<' ) === false, 'Blog "Read More" text must be translatable.' );
+	// The 404 button must follow home_url() so multilingual plugins can localize it.
+	$home = function() { return 'https://flexia.invalid/fr/'; };
+	add_filter( 'home_url', $home );
+	ob_start(); include get_template_directory() . '/patterns/error.php'; $error_page = ob_get_clean();
+	remove_filter( 'home_url', $home );
+	flexia_test_assert( strpos( $error_page, 'href="https://flexia.invalid/fr/"' ) !== false && strpos( $error_page, 'href="/"' ) === false, '404 "Go Home" must link to home_url().' );
 	foreach ( array( 'templates/single.html', 'templates/single-right-sidebar.html' ) as $template ) {
 		$GLOBALS['wp_query'] = new WP_Query( array( 'p' => $created[0] ) );
 		$GLOBALS['wp_query']->the_post();
@@ -81,6 +103,16 @@ try {
 		flexia_test_assert( substr_count( $html, '<main' ) === 1, $template . ' must have one main landmark.' );
 		flexia_test_assert( substr_count( $html, '<h1' ) === 1, $template . ' must have one page title.' );
 	}
+	// The parent style.css only holds the theme header: without a child theme it
+	// must not become a stylesheet request, but the handle keeps printing inline CSS.
+	wp_deregister_style( 'flexia-style' );
+	flexia_styles();
+	wp_add_inline_style( 'flexia-style', '.flexia-inline-probe{color:red}' );
+	flexia_test_assert( false === wp_styles()->registered['flexia-style']->src, 'Parent style.css must not be requested without a child theme.' );
+	ob_start();
+	wp_styles()->do_item( 'flexia-style' );
+	$style_html = ob_get_clean();
+	flexia_test_assert( strpos( $style_html, 'flexia-inline-probe' ) !== false && strpos( $style_html, '<link' ) === false, 'Inline styles on flexia-style must still print without a stylesheet link.' );
 	// Simulate an active child at the legacy trigger version; no actor may cause
 	// an ordinary setup request to mutate the site's plugin activation list.
 	$child = get_theme_root() . '/flexia-test-child';
@@ -91,6 +123,11 @@ try {
 	$plugins = get_option( 'active_plugins' );
 	try {
 		update_option( 'stylesheet', 'flexia-test-child' );
+		// is_child_theme() reads globals set once per request (WP 6.5+).
+		wp_set_template_globals();
+		wp_deregister_style( 'flexia-style' );
+		flexia_styles();
+		flexia_test_assert( get_stylesheet_uri() === wp_styles()->registered['flexia-style']->src, 'A child theme stylesheet must still load through flexia-style.' );
 		update_option( 'active_plugins', array_merge( $plugins, array( 'flexia-pro/flexia-pro.php' ) ) );
 		$expected = get_option( 'active_plugins' );
 		foreach ( array( 0, 1 ) as $actor ) {
@@ -108,6 +145,7 @@ try {
 		}
 	} finally {
 		update_option( 'stylesheet', $old_stylesheet );
+		wp_set_template_globals();
 		update_option( 'active_plugins', $plugins );
 		unlink( $child . '/style.css' ); rmdir( $child ); wp_clean_themes_cache();
 	}
