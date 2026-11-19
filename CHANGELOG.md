@@ -1,10 +1,14 @@
 # Changelog
 
-## Unreleased
+## 3.2.2 — 2026-11-19
+
+WPML compatibility fixes (#57), an Elementor Theme Builder fix and lighter front-end assets.
 
 - WPML compatibility (#57): the blog posts index (`home.html` and `index.html`) now loads a hidden `flexia/template-blog-home` pattern, so its "Read More" link text is translatable like the archive and search templates. Sites that saved a customized Blog Home or Index template in the Site Editor keep their saved copy.
 - WPML compatibility (#57): the 404 page's "Go Home" button links to `home_url()` instead of a fixed `/`, so multilingual plugins send visitors to the current language's home page.
 - Open Elementor Pro Theme Builder header and footer templates in the Elementor editor again. Flexia's block templates never call `get_header()`/`get_footer()`, where Elementor Pro prints those documents, so the editor preview stopped on "the content area was not found". Flexia now lets Elementor render header/footer templates with its own Header & Footer page template when Elementor registered the location on the theme's behalf.
+- Serve each bundled font as a Latin subset and an extended subset declared with `unicodeRange` in theme.json, so Latin pages download Inter at 24.6 KB instead of 97 KB and Sora at about 16 KB instead of 23 KB per weight. The full WOFF2/TTF files stay available for direct references.
+- Stop requesting the parent `style.css` (which only holds the theme header) on every page. The `flexia-style` handle stays registered so inline styles and dependants keep working, and a child theme's stylesheet still loads through it.
 
 ## 3.2.1 — 2026-09-13
 
