@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"0"}}}} -->
 <div class="wp-block-buttons" style="margin-top:0"><!-- wp:button {"className":"aligncenter"} -->
-<div class="wp-block-button aligncenter"><a class="wp-block-button__link wp-element-button" href="/"><?php echo esc_html_x( 'Go Home', 'Message to error page', 'flexia' ); ?></a></div>
+<div class="wp-block-button aligncenter"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html_x( 'Go Home', 'Message to error page', 'flexia' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></main>
 <!-- /wp:group -->

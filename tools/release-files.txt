@@ -116,6 +116,7 @@ patterns/single-content.php
 patterns/single-product.php
 patterns/team.php
 patterns/template-archive.php
+patterns/template-blog-home.php
 patterns/template-single.php
 patterns/testimonials.php
 readme.txt

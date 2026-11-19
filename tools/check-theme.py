@@ -21,6 +21,8 @@ def check(root):
     total = 0
     for p in sorted([*root.glob('patterns/*.php'), *root.glob('templates/*.html'), *root.glob('parts/*.html')]):
         source = p.read_text()
+        if p.suffix == '.html' and re.search(r'"moreText"\s*:\s*"', source):
+            errors.append(f'{p.relative_to(root)}: hard-coded moreText cannot be translated; move it into a PHP pattern')
         def placeholder(m):
             php = m[0]
             value = '"CHECK"' if 'wp_json_encode(' in php else 'CHECK' if 'echo ' in php or 'esc_html_e' in php else ''

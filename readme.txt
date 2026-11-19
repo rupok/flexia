@@ -21,6 +21,8 @@ Version 3.2 requires WordPress 6.6 or later. Review docs/MIGRATION-3.2.md in the
 == Changelog ==
 
 = Unreleased =
+* Fixed: The blog "Read More" link text can now be translated with WPML and other translation plugins.
+* Fixed: The 404 page "Go Home" button now goes to the current language's home page.
 * Fixed: Elementor Pro Theme Builder header and footer templates open in the Elementor editor again.
 
 = 3.2.1 =
