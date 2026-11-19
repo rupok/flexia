@@ -5,7 +5,7 @@ Theme URI: https://flexia.pro/
 Tags: blog, e-commerce, full-site-editing, block-patterns, block-styles, editor-style, style-variations, translation-ready
 Requires at least: 6.6
 Tested up to: 7.1
-Stable tag: 3.2.1
+Stable tag: 3.2.2
 Domain Path: /languages/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -20,10 +20,12 @@ Version 3.2 requires WordPress 6.6 or later. Review docs/MIGRATION-3.2.md in the
 
 == Changelog ==
 
-= Unreleased =
+= 3.2.2 =
 * Fixed: The blog "Read More" link text can now be translated with WPML and other translation plugins.
 * Fixed: The 404 page "Go Home" button now goes to the current language's home page.
 * Fixed: Elementor Pro Theme Builder header and footer templates open in the Elementor editor again.
+* Improved: Pages using Latin script download smaller font files.
+* Improved: The theme no longer requests an empty stylesheet on every page unless a child theme is active.
 
 = 3.2.1 =
 * Fixed: Updating from 3.1.0 no longer replaces the site header and footer layout.
