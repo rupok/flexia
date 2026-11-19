@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- WPML compatibility (#57): the blog posts index (`home.html` and `index.html`) now loads a hidden `flexia/template-blog-home` pattern, so its "Read More" link text is translatable like the archive and search templates. Sites that saved a customized Blog Home or Index template in the Site Editor keep their saved copy.
+- WPML compatibility (#57): the 404 page's "Go Home" button links to `home_url()` instead of a fixed `/`, so multilingual plugins send visitors to the current language's home page.
 - Open Elementor Pro Theme Builder header and footer templates in the Elementor editor again. Flexia's block templates never call `get_header()`/`get_footer()`, where Elementor Pro prints those documents, so the editor preview stopped on "the content area was not found". Flexia now lets Elementor render header/footer templates with its own Header & Footer page template when Elementor registered the location on the theme's behalf.
 
 ## 3.2.1 — 2026-09-13

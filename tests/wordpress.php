@@ -73,6 +73,28 @@ try {
 	$GLOBALS['wp_query'] = new WP_Query( array( 'cat' => $term_id, 'posts_per_page' => 2, 'paged' => 2 ) );
 	$page_two = flexia_test_render( 'templates/archive.html' );
 	flexia_test_assert( $html !== $page_two && strpos( $page_two, 'FLEXIA_INCLUDED_' ) !== false, 'Archive page 2 must render a different matching post.' );
+	// Issue #57: the posts index and fallback templates must use the translatable
+	// blog pattern; static template HTML cannot pass "Read More" through gettext.
+	foreach ( array( 'templates/home.html', 'templates/index.html' ) as $template ) {
+		$source = file_get_contents( get_template_directory() . '/' . $template );
+		flexia_test_assert( strpos( $source, '"slug":"flexia/template-blog-home"' ) !== false && strpos( $source, 'moreText' ) === false, $template . ' must load the translatable blog pattern.' );
+		$GLOBALS['wp_query'] = new WP_Query( array( 'cat' => $term_id, 'posts_per_page' => 2, 'paged' => 1 ) );
+		flexia_test_assert( strpos( flexia_test_render( $template ), 'FLEXIA_INCLUDED_' ) !== false, $template . ' must render the posts index.' );
+	}
+	$more = function( $translation, $text, $context, $domain ) {
+		return ( 'flexia' === $domain && 'Read More' === $text ) ? 'FLEXIA_TRANSLATED_MORE "quoted"' : $translation;
+	};
+	add_filter( 'gettext_with_context', $more, 10, 4 );
+	$GLOBALS['wp_query'] = new WP_Query( array( 'cat' => $term_id, 'posts_per_page' => 2, 'paged' => 1 ) );
+	$blog = flexia_test_render( 'patterns/template-blog-home.php' );
+	remove_filter( 'gettext_with_context', $more, 10 );
+	flexia_test_assert( strpos( $blog, 'FLEXIA_TRANSLATED_MORE' ) !== false && strpos( $blog, '>Read More<' ) === false, 'Blog "Read More" text must be translatable.' );
+	// The 404 button must follow home_url() so multilingual plugins can localize it.
+	$home = function() { return 'https://flexia.invalid/fr/'; };
+	add_filter( 'home_url', $home );
+	ob_start(); include get_template_directory() . '/patterns/error.php'; $error_page = ob_get_clean();
+	remove_filter( 'home_url', $home );
+	flexia_test_assert( strpos( $error_page, 'href="https://flexia.invalid/fr/"' ) !== false && strpos( $error_page, 'href="/"' ) === false, '404 "Go Home" must link to home_url().' );
 	foreach ( array( 'templates/single.html', 'templates/single-right-sidebar.html' ) as $template ) {
 		$GLOBALS['wp_query'] = new WP_Query( array( 'p' => $created[0] ) );
 		$GLOBALS['wp_query']->the_post();
